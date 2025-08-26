@@ -150,6 +150,10 @@ export const useNavigationStore = defineStore('navigation', {
         updated: false,
       },
       {
+        name: 'Csv',
+        path: '/modules/csv-module'
+      },
+      {
         name: 'Datetime',
         path: '/modules/datetime-module',
       },
