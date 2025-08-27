@@ -57,7 +57,7 @@ with open(file_path, 'w', newline='') as csvfile:
   # do something
 ```
 
-The "do something" block could be replaced with the use of the following functions.
+The "do something" block could be replaced with the use of the following functions:
 ### writer.writerow()
 Writes a single row to the CSV file.
 
