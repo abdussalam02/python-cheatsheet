@@ -44,6 +44,7 @@ with open(file_path, 'r', newline='') as csvfile:
 This function returns a reader object which can be easily iterated over to obtain each row. Each column in the corresponding rows can be accessed by the index, without the need to use the built-in function [`split()`](https://www.pythoncheatsheet.org/cheatsheet/manipulating-strings#split).
 
 ## csv.writer()
+
 This function receives the file to be written as a csv file, similar to the reader function, it should be invoked as this:
 
 ```python
@@ -59,6 +60,7 @@ with open(file_path, 'w', newline='') as csvfile:
 
 The "do something" block could be replaced with the use of the following functions:
 ### writer.writerow()
+
 Writes a single row to the CSV file.
 
 ```python
@@ -67,6 +69,7 @@ writer.writerow(['Alice', 30, 'London'])
 ```
 
 ### writer.writerows()
+
 Writes multiple rows at once.
 
 ```python
@@ -122,6 +125,7 @@ with open('people_dict.csv', 'w', newline='') as csvfile:
 ## Additional params to csv.reader() and csv.writer()
 
 ### delimiter
+
 Should be the character used to separate the fields. As the file type says, the default is the comma ','. Depending on the locale, Excel might generate csv files with the semicolon as a delimiter.
 
 ```python
@@ -134,9 +138,11 @@ with open('data_semicolon.csv', newline='') as csvfile:
 ```
 
 ### lineterminator
+
 Character or sequence of characters to end a line. Most common is "\r\n" but it could be "\n".
 
 ### quotechar
+
 Character used to quote fields containing special characters (default is `"`).
 
 ```python
