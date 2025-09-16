@@ -207,13 +207,13 @@ Ternary operators can be chained:
 >>> print('kid' if age < 13 else 'teen' if age < 18 else 'adult')
 
 >>> # is equivalent to this if statement:
->>> if age < 18:
-...     if age < 13:
-...         print('kid')
-...     else:
-...         print('teen')
+>>> if age < 13:
+...     print('kid')
 ... else:
-...     print('adult')
+...     if age < 18:
+...         print('teen')
+...     else:
+...         print('adult')
 ...
 # output: teen
 ```
