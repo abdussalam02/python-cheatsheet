@@ -74,9 +74,10 @@ def slow_function():
 result = slow_function()
 # slow_function took 1.0041 seconds
 print(result)  # Done!
+```
 
 See the <router-link to="/cheatsheet/decorators">Decorators (cheatsheet)</router-link> for additional decorator templates and common patterns.
-```
+
 
 Notice how we use `*args` and `**kwargs` (see <router-link to="/cheatsheet/args-and-kwargs">Args & kwargs</router-link>)? This makes our decorator work with any function, regardless of how many arguments it takes.
 
