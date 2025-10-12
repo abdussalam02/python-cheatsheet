@@ -9,6 +9,14 @@ updated: August 16, 2025
 Changelog
 </base-title>
 
+
+## 2025-10-12
+
+- Added `csv` module with examples of basic usage and reference. Thanks [@manuothatceguy](https://github.com/manuothatceguy)
+- Fixed typo in Python decorators blog post. Thanks [@manuothatceguy](https://github.com/manuothatceguy)
+- Fixed ordering of ternary operator. Thanks [@larskrjo](https://github.com/larskrjo)
+
+
 ## 2025-08-16
 
 - Added new blog post <router-link to="/blog/python-decorators-for-beginners">Python Decorators: Simple Patterns to Level Up Your Code</router-link>
