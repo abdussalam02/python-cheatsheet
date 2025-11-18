@@ -18,12 +18,10 @@ const tags = props.frontmatter.tags?.split(', ')
 <template>
   <div>
     <div class="flex items-center">
-      <span
-        class="hidden font-display text-sm font-medium text-sky-500 sm:flex"
-      >
+      <span class="font-display text-sm font-medium text-primary-500">
         Posted on {{ frontmatter.date }}
       </span>
-      <span class="ml-2 hidden text-slate-400 sm:flex">·</span>
+      <span class="ml-2 text-slate-400">·</span>
       <span
         v-if="frontmatter.updated"
         class="font-display text-sm text-slate-400 sm:ml-2"
@@ -40,7 +38,7 @@ const tags = props.frontmatter.tags?.split(', ')
       <span
         v-for="tag in tags"
         :key="tag"
-        class="rounded bg-sky-500 px-1.5 py-1 dark:bg-sky-600"
+        class="rounded bg-primary-500 px-1.5 py-1 dark:bg-primary-600"
       >
         #{{ tag }}
       </span>

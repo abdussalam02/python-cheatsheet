@@ -11,7 +11,7 @@
   --docsearch-modal-shadow: theme('boxShadow.xl');
   --docsearch-searchbox-height: 3rem;
   --docsearch-hit-color: theme('colors.slate.700');
-  --docsearch-hit-active-color: theme('colors.sky.600');
+  --docsearch-hit-active-color: theme('colors.primary.600');
   --docsearch-hit-active-background: theme('colors.slate.100');
   --docsearch-footer-height: 3rem;
   --docsearch-border-color: theme('colors.slate.200');
@@ -32,10 +32,10 @@
   --docsearch-emphasis-color: theme('colors.white');
   --docsearch-logo-color: theme('colors.slate.300');
   --docsearch-modal-background: theme('colors.slate.800');
-  --docsearch-modal-shadow: 0 0 0 1px theme('colors.slate.700'),
-    theme('boxShadow.xl');
+  --docsearch-modal-shadow:
+    0 0 0 1px theme('colors.slate.700'), theme('boxShadow.xl');
   --docsearch-hit-color: theme('colors.slate.300');
-  --docsearch-hit-active-color: theme('colors.sky.400');
+  --docsearch-hit-active-color: theme('colors.primary.400');
   --docsearch-hit-active-background: rgb(51 65 85 / 0.3);
   --docsearch-border-color: rgb(148 163 184 / 0.1);
   --docsearch-heading-color: theme('colors.white');
@@ -53,7 +53,7 @@
   overflow: hidden !important;
 }
 
-.DocSearch-VisuallyHiddenForAccessibility{
+.DocSearch-VisuallyHiddenForAccessibility {
   visibility: hidden;
 }
 
@@ -530,7 +530,7 @@ svg.DocSearch-Hit-Select-Icon {
   box-shadow: var(--docsearch-searchbox-shadow);
   color: #e2e8f0;
   outline: none;
-  border: 1px solid #38bdf8;
+  border: 1px solid #2e7eee;
 }
 
 .DocSearch-Button:active,
@@ -540,7 +540,7 @@ svg.DocSearch-Hit-Select-Icon {
   box-shadow: var(--docsearch-searchbox-shadow);
   color: var(--docsearch-text-color);
   outline: none;
-  border: 1px solid #38bdf8;
+  border: 1px solid #2e7eee;
 }
 .DocSearch-Button-Container {
   align-items: center;
@@ -583,7 +583,9 @@ svg.DocSearch-Hit-Select-Icon {
   font-weight: 500;
   border: 0;
   width: 16px;
-  transition: color 0.3s, border-color 0.3s;
+  transition:
+    color 0.3s,
+    border-color 0.3s;
 }
 
 @screen md {

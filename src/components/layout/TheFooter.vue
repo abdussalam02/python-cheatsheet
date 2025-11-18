@@ -8,28 +8,29 @@ const props = defineProps<{
 }>()
 
 const route = useRoute()
+const { t } = useI18n()
 
-const EditLink = {
-  linkHeader: 'Edit this page on',
-  linkText: 'GitHub',
+const EditLink = computed(() => ({
+  linkHeader: t('footer.editThisPageOn'),
+  linkText: t('footer.github'),
   url: `${props.repository}${route.path}.md`,
   icon: EditIcon,
-}
+}))
 
-const footerLinks = [
+const footerLinks = computed(() => [
   {
-    linkHeader: 'Do you have a question?',
-    linkText: 'ask the community',
+    linkHeader: t('footer.doYouHaveAQuestion'),
+    linkText: t('footer.askTheCommunity'),
     url: 'https://github.com/wilfredinni/python-cheatsheet/discussions',
     icon: QuestionIcon,
   },
   {
-    linkHeader: 'Do you see a bug?',
-    linkText: 'open an issue on GitHub',
+    linkHeader: t('footer.doYouSeeABug'),
+    linkText: t('footer.openAnIssueOnGithub'),
     url: 'https://github.com/wilfredinni/python-cheatsheet/issues',
     icon: BugIcon,
   },
-]
+])
 
 const routesWithoutGithub = ['index', 'blog']
 </script>
@@ -49,8 +50,8 @@ const routesWithoutGithub = ['index', 'blog']
           {{ EditLink.linkHeader }}
           <a
             target="_blank"
-            :href="`${repository}${$route.path}.md`"
-            class="ml-1 flex text-sky-500 hover:text-sky-600 dark:text-sky-400 dark:hover:text-sky-500"
+            :href="`${props.repository}${route.path}.md`"
+            class="ml-1 flex text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-500"
           >
             {{ EditLink.linkText }}
           </a>
@@ -58,7 +59,6 @@ const routesWithoutGithub = ['index', 'blog']
 
         <div
           v-for="link in footerLinks"
-          v-once
           :key="link.url"
           class="flex items-center text-slate-600 dark:text-slate-400"
         >
@@ -67,15 +67,11 @@ const routesWithoutGithub = ['index', 'blog']
           <a
             target="_blank"
             :href="link.url"
-            class="ml-1 flex text-sky-500 hover:text-sky-600 dark:text-sky-400 dark:hover:text-sky-500"
+            class="ml-1 flex text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-500"
           >
             {{ link.linkText }}
           </a>
         </div>
-      </div>
-
-      <div class="mt-4 grid sm:mt-0">
-        <netlify-badge class="mx-auto" />
       </div>
     </div>
   </footer>

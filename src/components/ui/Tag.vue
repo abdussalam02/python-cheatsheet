@@ -1,6 +1,6 @@
 <template>
   <span
-    class="rounded text-xs bg-sky-500 px-1.5 py-1 dark:bg-sky-600 text-slate-50 dark:text-white"
+    class="rounded text-xs bg-primary-500 px-1.5 py-1 dark:bg-primary-600 text-slate-50 dark:text-white"
   >
     #<slot />
   </span>

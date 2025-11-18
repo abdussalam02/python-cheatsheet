@@ -7,6 +7,7 @@
 export {}
 declare global {
   const EffectScope: typeof import('vue')['EffectScope']
+  const SUPPORTED_LOCALES: typeof import('./composables/useI18n')['SUPPORTED_LOCALES']
   const asyncComputed: typeof import('@vueuse/core')['asyncComputed']
   const autoResetRef: typeof import('@vueuse/core')['autoResetRef']
   const computed: typeof import('vue')['computed']
@@ -135,7 +136,6 @@ declare global {
   const useBroadcastChannel: typeof import('@vueuse/core')['useBroadcastChannel']
   const useBrowserLocation: typeof import('@vueuse/core')['useBrowserLocation']
   const useCached: typeof import('@vueuse/core')['useCached']
-  const useCarbon: typeof import('./composables/carbon')['useCarbon']
   const useClipboard: typeof import('@vueuse/core')['useClipboard']
   const useClipboardItems: typeof import('@vueuse/core')['useClipboardItems']
   const useCloned: typeof import('@vueuse/core')['useCloned']
@@ -180,6 +180,7 @@ declare global {
   const useGamepad: typeof import('@vueuse/core')['useGamepad']
   const useGeolocation: typeof import('@vueuse/core')['useGeolocation']
   const useHead: typeof import('@vueuse/head')['useHead']
+  const useI18n: typeof import('./composables/useI18n')['useI18n']
   const useId: typeof import('vue')['useId']
   const useIdle: typeof import('@vueuse/core')['useIdle']
   const useImage: typeof import('@vueuse/core')['useImage']
@@ -207,7 +208,6 @@ declare global {
   const useNavigationStore: typeof import('./store/navigation')['useNavigationStore']
   const useNavigatorLanguage: typeof import('@vueuse/core')['useNavigatorLanguage']
   const useNetwork: typeof import('@vueuse/core')['useNetwork']
-  const useNewsletterStore: typeof import('./store/newsletter')['useNewsletterStore']
   const useNow: typeof import('@vueuse/core')['useNow']
   const useObjectUrl: typeof import('@vueuse/core')['useObjectUrl']
   const useOffsetPagination: typeof import('@vueuse/core')['useOffsetPagination']
@@ -314,6 +314,7 @@ declare module 'vue' {
   interface GlobalComponents {}
   interface ComponentCustomProperties {
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
+    readonly SUPPORTED_LOCALES: UnwrapRef<typeof import('./composables/useI18n')['SUPPORTED_LOCALES']>
     readonly asyncComputed: UnwrapRef<typeof import('@vueuse/core')['asyncComputed']>
     readonly autoResetRef: UnwrapRef<typeof import('@vueuse/core')['autoResetRef']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
@@ -442,7 +443,6 @@ declare module 'vue' {
     readonly useBroadcastChannel: UnwrapRef<typeof import('@vueuse/core')['useBroadcastChannel']>
     readonly useBrowserLocation: UnwrapRef<typeof import('@vueuse/core')['useBrowserLocation']>
     readonly useCached: UnwrapRef<typeof import('@vueuse/core')['useCached']>
-    readonly useCarbon: UnwrapRef<typeof import('./composables/carbon')['useCarbon']>
     readonly useClipboard: UnwrapRef<typeof import('@vueuse/core')['useClipboard']>
     readonly useClipboardItems: UnwrapRef<typeof import('@vueuse/core')['useClipboardItems']>
     readonly useCloned: UnwrapRef<typeof import('@vueuse/core')['useCloned']>
@@ -487,6 +487,7 @@ declare module 'vue' {
     readonly useGamepad: UnwrapRef<typeof import('@vueuse/core')['useGamepad']>
     readonly useGeolocation: UnwrapRef<typeof import('@vueuse/core')['useGeolocation']>
     readonly useHead: UnwrapRef<typeof import('@vueuse/head')['useHead']>
+    readonly useI18n: UnwrapRef<typeof import('./composables/useI18n')['useI18n']>
     readonly useId: UnwrapRef<typeof import('vue')['useId']>
     readonly useIdle: UnwrapRef<typeof import('@vueuse/core')['useIdle']>
     readonly useImage: UnwrapRef<typeof import('@vueuse/core')['useImage']>
@@ -514,7 +515,6 @@ declare module 'vue' {
     readonly useNavigationStore: UnwrapRef<typeof import('./store/navigation')['useNavigationStore']>
     readonly useNavigatorLanguage: UnwrapRef<typeof import('@vueuse/core')['useNavigatorLanguage']>
     readonly useNetwork: UnwrapRef<typeof import('@vueuse/core')['useNetwork']>
-    readonly useNewsletterStore: UnwrapRef<typeof import('./store/newsletter')['useNewsletterStore']>
     readonly useNow: UnwrapRef<typeof import('@vueuse/core')['useNow']>
     readonly useObjectUrl: UnwrapRef<typeof import('@vueuse/core')['useObjectUrl']>
     readonly useOffsetPagination: UnwrapRef<typeof import('@vueuse/core')['useOffsetPagination']>

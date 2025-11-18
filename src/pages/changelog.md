@@ -9,13 +9,16 @@ updated: August 16, 2025
 Changelog
 </base-title>
 
+## 2025-11-17
+
+- Added i18n internationalization support for multi-language localization
+- Integrated LabEx hands-on labs for interactive learning
 
 ## 2025-10-12
 
 - Added `csv` module with examples of basic usage and reference. Thanks [@manuothatceguy](https://github.com/manuothatceguy)
 - Fixed typo in Python decorators blog post. Thanks [@manuothatceguy](https://github.com/manuothatceguy)
 - Fixed ordering of ternary operator. Thanks [@larskrjo](https://github.com/larskrjo)
-
 
 ## 2025-08-16
 

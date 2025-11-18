@@ -14,7 +14,7 @@
         gradientUnits="userSpaceOnUse"
         gradientTransform="matrix(0 21 -21 0 20 11)"
       >
-        <stop stop-color="#0EA5E9"></stop>
+        <stop stop-color="#2e7eee"></stop>
         <stop stop-color="#22D3EE" offset=".527"></stop>
         <stop stop-color="#818CF8" offset="1"></stop>
       </radialGradient>
@@ -26,7 +26,7 @@
         gradientUnits="userSpaceOnUse"
         gradientTransform="matrix(0 22.75 -22.75 0 16 6.25)"
       >
-        <stop stop-color="#0EA5E9"></stop>
+        <stop stop-color="#2e7eee"></stop>
         <stop stop-color="#22D3EE" offset=".527"></stop>
         <stop stop-color="#818CF8" offset="1"></stop>
       </radialGradient>
@@ -38,7 +38,7 @@
         gradientUnits="userSpaceOnUse"
         gradientTransform="matrix(0 14 -14 0 16 10)"
       >
-        <stop stop-color="#0EA5E9"></stop>
+        <stop stop-color="#2e7eee"></stop>
         <stop stop-color="#22D3EE" offset=".527"></stop>
         <stop stop-color="#818CF8" offset="1"></stop>
       </radialGradient>

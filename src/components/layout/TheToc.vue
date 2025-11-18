@@ -1,6 +1,5 @@
 <script setup lang="ts">
 const { theToc, currentSection } = useToc()
-const { reload } = useCarbon()
 
 const route = useRoute()
 
@@ -26,11 +25,12 @@ const pageToc = computed(() => {
     class="flex h-full w-72 flex-col justify-between"
   >
     <div>
-      <h3
+      <p
+        id="on-this-page-title"
         class="font-display text-sm font-medium text-slate-900 dark:text-white"
       >
         On this page
-      </h3>
+      </p>
 
       <ul class="mt-4 text-sm">
         <li v-for="item in pageToc" :key="item.id">
@@ -39,7 +39,7 @@ const pageToc = computed(() => {
             class="block py-1 font-medium transition duration-200"
             :class="
               currentSection === item.id
-                ? 'text-sky-500 '
+                ? 'text-primary-500 '
                 : ' text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-300'
             "
           >
@@ -48,7 +48,5 @@ const pageToc = computed(() => {
         </li>
       </ul>
     </div>
-
-    <carbon-ads v-if="!reload" />
   </nav>
 </template>

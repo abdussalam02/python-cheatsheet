@@ -1,7 +1,7 @@
 <template>
   <a
     href="https://www.javascriptcheatsheet.org/"
-    class="text-xs relative flex items-center rounded-full px-4 py-0.5 leading-6 text-sky-600 dark:text-sky-500 dark:ring-slate-100/10 ring-1 ring-slate-900/10 hover:ring-gray-900/20"
+    class="text-xs relative flex items-center rounded-full px-4 py-0.5 leading-6 text-primary-600 dark:text-primary-500 dark:ring-slate-100/10 ring-1 ring-slate-900/10 hover:ring-gray-900/20"
   >
     <strong class="line-clamp-1 font-semibold">
       <slot>
@@ -25,7 +25,7 @@
     <svg
       width="3"
       height="6"
-      class="ml-3 overflow-visible text-sky-600 dark:text-sky-400"
+      class="ml-3 overflow-visible text-primary-600 dark:text-primary-400"
       aria-hidden="true"
     >
       <path
