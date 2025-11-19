@@ -64,6 +64,8 @@
     "cardLinks": {
       "viewOnGithub": "Посмотреть на GitHub",
       "viewOnGithubDesc": "Поставьте звезду на GitHub, если вы считаете этот проект полезным.",
+      "pythonPlayground": "Python Playground",
+      "pythonPlaygroundDesc": "Попробуйте код Python в интерактивной онлайн-среде.",
       "contribute": "Внести вклад",
       "contributeDesc": "Узнайте, насколько легко внести вклад в шпаргалку Python.",
       "blog": "Блог",

@@ -64,6 +64,8 @@
     "cardLinks": {
       "viewOnGithub": "Ver no GitHub",
       "viewOnGithubDesc": "Deixe uma estrela no GitHub se você achar este projeto útil.",
+      "pythonPlayground": "Python Playground",
+      "pythonPlaygroundDesc": "Experimente código Python em um ambiente online interativo.",
       "contribute": "Contribuir",
       "contributeDesc": "Saiba como é fácil contribuir para a Folha de referência Python.",
       "blog": "Blog",

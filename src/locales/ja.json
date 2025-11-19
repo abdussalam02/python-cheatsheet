@@ -64,6 +64,8 @@
     "cardLinks": {
       "viewOnGithub": "GitHub で見る",
       "viewOnGithubDesc": "このプロジェクトが役立つと思ったら、GitHub でスターを付けてください。",
+      "pythonPlayground": "Python Playground",
+      "pythonPlaygroundDesc": "インタラクティブなオンライン環境で Python コードを試す。",
       "contribute": "貢献する",
       "contributeDesc": "Python チートシートへの貢献がいかに簡単かを知ってください。",
       "blog": "ブログ",

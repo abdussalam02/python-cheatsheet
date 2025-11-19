@@ -64,6 +64,8 @@
     "cardLinks": {
       "viewOnGithub": "Voir sur GitHub",
       "viewOnGithubDesc": "Laissez une étoile sur GitHub si vous trouvez ce projet utile.",
+      "pythonPlayground": "Python Playground",
+      "pythonPlaygroundDesc": "Essayez le code Python dans un environnement en ligne interactif.",
       "contribute": "Contribuer",
       "contributeDesc": "Découvrez à quel point il est facile de contribuer à l'Aide-mémoire Python.",
       "blog": "Blog",
