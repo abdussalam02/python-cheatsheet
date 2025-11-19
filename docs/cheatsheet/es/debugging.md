@@ -156,7 +156,7 @@ logging.debug('Inicio del programa')
 def factorial(n):
     logging.debug('Inicio de factorial(%s)' % (n))
     total = 1
-    for i in range(1, n + 1):
+    for i in range(0, n + 1):
         total *= i
         logging.debug('i es ' + str(i) + ', total es ' + str(total))
     logging.debug('Fin de factorial(%s)' % (n))
