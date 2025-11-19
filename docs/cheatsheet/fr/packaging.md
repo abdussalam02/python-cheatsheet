@@ -1,6 +1,6 @@
 ---
 title: 'Python Packaging - Fiche de Référence Python'
-description: 'Apprenez à empaqueter des projets Python en utilisant setup.py et pyproject.toml. Comprenez l'approche moderne de l'empaquetage Python avec les spécifications PEP-517, PEP-518 et PEP-660.'
+description: "Apprenez à empaqueter des projets Python en utilisant setup.py et pyproject.toml. Comprenez l'approche moderne de l'empaquetage Python avec les spécifications PEP-517, PEP-518 et PEP-660."
 labUrl: 'https://labex.io/fr/labs/python-python-setup-py-633666?course=python-cheatsheet'
 ---
 
@@ -133,4 +133,3 @@ Pour plus d'informations, visitez la [documentation officielle](http://docs.pyth
 - <router-link to="/blog/python-projects-with-poetry-and-vscode-part-2">Projets Python avec Poetry et VSCode. Partie 2</router-link>
 - <router-link to="/blog/python-projects-with-poetry-and-vscode-part-3">Projets Python avec Poetry et VSCode. Partie 3</router-link>
 - <router-link to="/builtin/import">import()</router-link>
-
