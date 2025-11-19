@@ -127,7 +127,7 @@ for i in range(5):         # this comment has too many spaces
 
 프로그래밍에 진지하다면 프로젝트 테스트 방법을 배우는 것이 중요합니다. 이는 출시 후 치명적인 버그가 나타날 가능성을 줄여 자신감을 가지고 프로그램을 작성하고 제공할 수 있게 해주는 매우 유용한 기술입니다.
 
-[Pytest](https://docs.pytest.org/en/latest/)은 테스트 작성을 위한 매우 인기 있고 사용자 친화적인 프레임워크입니다. 우리는 이미 [설치했습니다](https://www.pythoncheatsheet.org/blog/python-projects-with-poetry-and-vscode-part-1#Dependency-Management). 따라서 *VSCode*와 통합할 것입니다.
+[Pytest](https://docs.pytest.org/en/latest/)은 테스트 작성을 위한 매우 인기 있고 사용자 친화적인 프레임워크입니다. 우리는 이미 [설치했습니다](https://pythoncheatsheet.org/blog/python-projects-with-poetry-and-vscode-part-1#Dependency-Management). 따라서 *VSCode*와 통합할 것입니다.
 
 **tests** 폴더를 열고 `test_how_long.py` 파일을 선택하십시오. *Poetry*는 이미 첫 번째 테스트를 제공합니다.
 

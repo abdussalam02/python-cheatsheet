@@ -181,7 +181,7 @@ Wenn Sie die Grundlagen der _List Comprehensions_ gelernt haben... Herzlichen Gl
 # {'name': 'Christine', 'age': 98}
 ```
 
-> Empfohlener Artikel: [Python Sets: Was, Warum und Wie ](https://www.pythoncheatsheet.org/blog/python-sets-what-why-how).
+> Empfohlener Artikel: [Python Sets: Was, Warum und Wie ](https://pythoncheatsheet.org/blog/python-sets-what-why-how).
 
 ## Fazit
 

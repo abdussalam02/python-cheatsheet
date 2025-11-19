@@ -177,7 +177,7 @@ Você pode agora usar `poetry install` no seu terminal para instalar e provar se
 Execution Time: 705 ms.
 ```
 
-[Execute os testes](https://www.pythoncheatsheet.org/blog/python-projects-with-poetry-and-vscode-part-2#Pytest) e se tudo estiver correto, siga em frente.
+[Execute os testes](https://pythoncheatsheet.org/blog/python-projects-with-poetry-and-vscode-part-2#Pytest) e se tudo estiver correto, siga em frente.
 
 ## Construção e Publicação
 

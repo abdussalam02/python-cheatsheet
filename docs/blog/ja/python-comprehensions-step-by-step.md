@@ -181,7 +181,7 @@ _List Comprehensions_ の基本を学んだなら...おめでとうございま�
 # {'name': 'Christine', 'age': 98}
 ```
 
-> 推奨記事：[Python Sets: What, Why and How ](https://www.pythoncheatsheet.org/blog/python-sets-what-why-how).
+> 推奨記事：[Python Sets: What, Why and How ](https://pythoncheatsheet.org/blog/python-sets-what-why-how).
 
 ## Conclusion
 

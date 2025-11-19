@@ -180,7 +180,7 @@ If you learned the basics of _List Comprehensions_... Congratulations! You just 
 # {'name': 'Christine', 'age': 98}
 ```
 
-> Recommended Article: [Python Sets: What, Why and How ](https://www.pythoncheatsheet.org/blog/python-sets-what-why-how).
+> Recommended Article: [Python Sets: What, Why and How ](https://pythoncheatsheet.org/blog/python-sets-what-why-how).
 
 ## Conclusion
 

@@ -127,7 +127,7 @@ Schließlich verwendet _Black_ standardmäßig 88 Zeichen pro Zeile, im Gegensat
 
 Wenn Sie es ernst mit der Programmierung meinen, ist es entscheidend, dass Sie lernen, wie Sie Ihre Projekte testen. Es ist eine unglaublich nützliche Fähigkeit, die es Ihnen ermöglicht, Programme mit Zuversicht zu schreiben und auszuliefern, indem die Möglichkeit katastrophaler Fehler nach der Auslieferung reduziert wird.
 
-[Pytest](https://docs.pytest.org/en/latest/) ist ein sehr beliebtes und benutzerfreundliches Framework zum Schreiben von Tests. Wir [haben es bereits installiert](https://www.pythoncheatsheet.org/blog/python-projects-with-poetry-and-vscode-part-1#Dependency-Management), also werden wir es auch mit _VSCode_ integrieren.
+[Pytest](https://docs.pytest.org/en/latest/) ist ein sehr beliebtes und benutzerfreundliches Framework zum Schreiben von Tests. Wir [haben es bereits installiert](https://pythoncheatsheet.org/blog/python-projects-with-poetry-and-vscode-part-1#Dependency-Management), also werden wir es auch mit _VSCode_ integrieren.
 
 Öffnen Sie den Ordner **tests** und wählen Sie die Datei `test_how_long.py`. _Poetry_ liefert uns bereits unseren ersten Test:
 

@@ -127,7 +127,7 @@ Enfin, _Black_ utilise par défaut 88 caractères par ligne, contrairement aux 8
 
 Si vous êtes sérieux dans votre programmation, il est crucial pour vous d'apprendre à tester vos projets. C'est une compétence incroyablement utile qui vous permet d'écrire et de livrer des programmes en toute confiance en réduisant la possibilité que des bugs catastrophiques apparaissent après la livraison.
 
-[Pytest](https://docs.pytest.org/en/latest/) est un framework très populaire et convivial pour l'écriture de tests. Nous l'[avons déjà installé](https://www.pythoncheatsheet.org/blog/python-projects-with-poetry-and-vscode-part-1#Dependency-Management), nous allons donc également l'intégrer avec _VSCode_.
+[Pytest](https://docs.pytest.org/en/latest/) est un framework très populaire et convivial pour l'écriture de tests. Nous l'[avons déjà installé](https://pythoncheatsheet.org/blog/python-projects-with-poetry-and-vscode-part-1#Dependency-Management), nous allons donc également l'intégrer avec _VSCode_.
 
 Ouvrez le dossier **tests** et sélectionnez le fichier `test_how_long.py`. _Poetry_ nous donne déjà notre premier test :
 

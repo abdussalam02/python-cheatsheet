@@ -44,7 +44,7 @@ with open(file_path, 'r', newline='') as csvfile:
     print(line)
 ```
 
-이 함수는 리더 객체를 반환하며, 이를 쉽게 반복하여 각 행을 얻을 수 있습니다. 해당 행의 각 열은 내장 함수 [`split()`](https://www.pythoncheatsheet.org/cheatsheet/manipulating-strings#split)을 사용할 필요 없이 인덱스로 접근할 수 있습니다.
+이 함수는 리더 객체를 반환하며, 이를 쉽게 반복하여 각 행을 얻을 수 있습니다. 해당 행의 각 열은 내장 함수 [`split()`](https://pythoncheatsheet.org/cheatsheet/manipulating-strings#split)을 사용할 필요 없이 인덱스로 접근할 수 있습니다.
 
 ## csv.writer()
 

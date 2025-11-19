@@ -23,11 +23,11 @@ meta:
 
 Я не знаю как вы, но каждый раз, когда я видел функцию с параметрами `*args` и `**kwargs`, мне становилось немного страшно. Я даже "использовал" их при работе с бэкендом на Django, ничего не понимая. Если вы такой же самоучка, как и я, я знаю, что вы тоже через это проходили.
 
-Несколько месяцев назад я решил перестать лениться и начал исследовать этот вопрос. К моему удивлению, их было легко понять, играя с интерпретатором, но не так просто, когда читаешь о них. Я написал этот пост, пытаясь объяснить [args и kwargs](https://www.pythoncheatsheet.org/#args-and-kwargs) так, как мне хотелось бы, чтобы мне их объяснили.
+Несколько месяцев назад я решил перестать лениться и начал исследовать этот вопрос. К моему удивлению, их было легко понять, играя с интерпретатором, но не так просто, когда читаешь о них. Я написал этот пост, пытаясь объяснить [args и kwargs](https://pythoncheatsheet.org/#args-and-kwargs) так, как мне хотелось бы, чтобы мне их объяснили.
 
 ## Основы
 
-Первое, что вам нужно знать, это то, что `*args` и `**kwargs` позволяют передавать неопределенное количество `arguments` (аргументов) и `keywords` (ключевых слов) при вызове [функции](https://www.pythoncheatsheet.org/#Functions):
+Первое, что вам нужно знать, это то, что `*args` и `**kwargs` позволяют передавать неопределенное количество `arguments` (аргументов) и `keywords` (ключевых слов) при вызове [функции](https://pythoncheatsheet.org/#Functions):
 
 ```python
 def some_function(*args, **kwargs):
@@ -70,7 +70,7 @@ def some_function(*arguments, **keywords):
 
 ## args
 
-Мы уже знаем, как передавать несколько аргументов, используя `*args` в качестве параметра нашим функциям, но как с ними работать? Это просто: все аргументы находятся в переменной `args` в виде [кортежа](https://www.pythoncheatsheet.org/#Tuple-Data-Type):
+Мы уже знаем, как передавать несколько аргументов, используя `*args` в качестве параметра нашим функциям, но как с ними работать? Это просто: все аргументы находятся в переменной `args` в виде [кортежа](https://pythoncheatsheet.org/#Tuple-Data-Type):
 
 ```python
 def some_function(*args):
@@ -116,11 +116,11 @@ some_function('arg1', 'arg2', 'arg3')
 # ('arg1', 'arg2')
 ```
 
-Все, что вы можете делать с [кортежем](https://www.pythoncheatsheet.org/#Tuple-Data-Type), вы можете делать и с `args`.
+Все, что вы можете делать с [кортежем](https://pythoncheatsheet.org/#Tuple-Data-Type), вы можете делать и с `args`.
 
 ## kwargs
 
-В то время как аргументы находятся в переменной args, ключевые слова находятся в `kwargs`, но на этот раз в виде [словаря](https://www.pythoncheatsheet.org/#Dictionaries-and-Structuring-Data), где ключ — это ключевое слово:
+В то время как аргументы находятся в переменной args, ключевые слова находятся в `kwargs`, но на этот раз в виде [словаря](https://pythoncheatsheet.org/#Dictionaries-and-Structuring-Data), где ключ — это ключевое слово:
 
 ```python
 def some_function(**kwargs):
@@ -131,7 +131,7 @@ some_function(key1='arg1', key2='arg2', key3='arg3')
 # keywords: {'key1': 'arg1', 'key2': 'arg2', 'key3': 'arg3'} as <class 'dict'>
 ```
 
-Опять же, мы можем делать с `kwargs` то же самое, что и с любым [словарем](https://www.pythoncheatsheet.org/#Dictionaries-and-Structuring-Data).
+Опять же, мы можем делать с `kwargs` то же самое, что и с любым [словарем](https://pythoncheatsheet.org/#Dictionaries-and-Structuring-Data).
 
 Перебор:
 
@@ -158,12 +158,12 @@ some_function('key3', key1='arg1', key2='arg2', key3='arg3')
 # arg3
 ```
 
-И многое [другое](https://www.pythoncheatsheet.org/#Dictionaries-and-Structuring-Data) =).
+И многое [другое](https://pythoncheatsheet.org/#Dictionaries-and-Structuring-Data) =).
 
 ## Заключение
 
-`*args` и `**kwargs` могут показаться пугающими, но правда в том, что их не так уж сложно понять, и они дают вашим функциям большую гибкость. Если вы знаете о [кортежах](https://www.pythoncheatsheet.org/#Tuple-Data-Type) и [словарях](https://www.pythoncheatsheet.org/#Dictionaries-and-Structuring-Data), вы готовы к работе.
+`*args` и `**kwargs` могут показаться пугающими, но правда в том, что их не так уж сложно понять, и они дают вашим функциям большую гибкость. Если вы знаете о [кортежах](https://pythoncheatsheet.org/#Tuple-Data-Type) и [словарях](https://pythoncheatsheet.org/#Dictionaries-and-Structuring-Data), вы готовы к работе.
 
 Хотите поиграть с args и kwargs? [Этот](https://mybinder.org/v2/gh/labex-labs/python-cheatsheet/master?filepath=jupyter_notebooks) онлайн-блокнот Jupyter Notebook для вас, чтобы попробовать.
 
-Некоторые примеры используют `f-strings`, относительно новый способ форматирования строк в Python 3.6+. [Здесь](https://www.pythoncheatsheet.org/#Formatted-String-Literals-or-f-strings) вы можете прочитать о них больше.
+Некоторые примеры используют `f-strings`, относительно новый способ форматирования строк в Python 3.6+. [Здесь](https://pythoncheatsheet.org/#Formatted-String-Literals-or-f-strings) вы можете прочитать о них больше.

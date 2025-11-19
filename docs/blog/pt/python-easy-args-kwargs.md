@@ -23,11 +23,11 @@ meta:
 
 Eu não sei sobre você, mas toda vez que eu via alguma função com `*args` e `**kwargs` como parâmetros, eu ficava um pouco assustado. Eu até "usei" eles ao fazer algum trabalho de backend com Django sem entender nada. Se você é um desenvolvedor autodidata como eu, sei que você já passou por isso também.
 
-Alguns meses atrás, decidi parar de ser preguiçoso e comecei a pesquisar sobre isso. Para minha surpresa, eles eram fáceis de entender ao brincar com o interpretador, mas não tanto ao ler sobre eles. Escrevi esta postagem tentando explicar [args e kwargs](https://www.pythoncheatsheet.org/#args-and-kwargs) da maneira que eu gostaria que alguém tivesse me explicado.
+Alguns meses atrás, decidi parar de ser preguiçoso e comecei a pesquisar sobre isso. Para minha surpresa, eles eram fáceis de entender ao brincar com o interpretador, mas não tanto ao ler sobre eles. Escrevi esta postagem tentando explicar [args e kwargs](https://pythoncheatsheet.org/#args-and-kwargs) da maneira que eu gostaria que alguém tivesse me explicado.
 
 ## Fundamentos
 
-A primeira coisa que você precisa saber é que `*args` e `**kwargs` permitem que você passe um número indefinido de `arguments` e `keywords` ao chamar uma [function](https://www.pythoncheatsheet.org/#Functions):
+A primeira coisa que você precisa saber é que `*args` e `**kwargs` permitem que você passe um número indefinido de `arguments` e `keywords` ao chamar uma [function](https://pythoncheatsheet.org/#Functions):
 
 ```python
 def some_function(*args, **kwargs):
@@ -70,7 +70,7 @@ Agora que cobrimos os fundamentos, vamos trabalhar com eles 👊.
 
 ## args
 
-Agora sabemos como passar múltiplos argumentos usando `*args` como um parâmetro para nossas funções, mas como trabalhamos com eles? É fácil: todos os argumentos estão dentro da variável `args` como uma [tuple](https://www.pythoncheatsheet.org/#Tuple-Data-Type):
+Agora sabemos como passar múltiplos argumentos usando `*args` como um parâmetro para nossas funções, mas como trabalhamos com eles? É fácil: todos os argumentos estão dentro da variável `args` como uma [tuple](https://pythoncheatsheet.org/#Tuple-Data-Type):
 
 ```python
 def some_function(*args):
@@ -116,11 +116,11 @@ some_function('arg1', 'arg2', 'arg3')
 # ('arg1', 'arg2')
 ```
 
-Tudo o que você faz com uma [tuple](https://www.pythoncheatsheet.org/#Tuple-Data-Type), você pode fazer com `args`.
+Tudo o que você faz com uma [tuple](https://pythoncheatsheet.org/#Tuple-Data-Type), você pode fazer com `args`.
 
 ## kwargs
 
-Enquanto os argumentos estão na variável args, as palavras-chave estão dentro de `kwargs`, mas desta vez como um [dictionary](https://www.pythoncheatsheet.org/#Dictionaries-and-Structuring-Data) onde a chave é a palavra-chave:
+Enquanto os argumentos estão na variável args, as palavras-chave estão dentro de `kwargs`, mas desta vez como um [dictionary](https://pythoncheatsheet.org/#Dictionaries-and-Structuring-Data) onde a chave é a palavra-chave:
 
 ```python
 def some_function(**kwargs):
@@ -131,7 +131,7 @@ some_function(key1='arg1', key2='arg2', key3='arg3')
 # keywords: {'key1': 'arg1', 'key2': 'arg2', 'key3': 'arg3'} as <class 'dict'>
 ```
 
-Novamente, podemos fazer com `kwargs` o mesmo que faríamos com qualquer [dictionary](https://www.pythoncheatsheet.org/#Dictionaries-and-Structuring-Data).
+Novamente, podemos fazer com `kwargs` o mesmo que faríamos com qualquer [dictionary](https://pythoncheatsheet.org/#Dictionaries-and-Structuring-Data).
 
 Iterar sobre:
 
@@ -158,12 +158,12 @@ some_function('key3', key1='arg1', key2='arg2', key3='arg3')
 # arg3
 ```
 
-E muito [mais](https://www.pythoncheatsheet.org/#Dictionaries-and-Structuring-Data) =).
+E muito [mais](https://pythoncheatsheet.org/#Dictionaries-and-Structuring-Data) =).
 
 ## Conclusão
 
-`*args` e `**kwargs` podem parecer assustadores, mas a verdade é que eles não são tão difíceis de entender e têm o poder de conceder muita flexibilidade às suas funções. Se você conhece [tuples](https://www.pythoncheatsheet.org/#Tuple-Data-Type) e [dictionaries](https://www.pythoncheatsheet.org/#Dictionaries-and-Structuring-Data), você está pronto para começar.
+`*args` e `**kwargs` podem parecer assustadores, mas a verdade é que eles não são tão difíceis de entender e têm o poder de conceder muita flexibilidade às suas funções. Se você conhece [tuples](https://pythoncheatsheet.org/#Tuple-Data-Type) e [dictionaries](https://pythoncheatsheet.org/#Dictionaries-and-Structuring-Data), você está pronto para começar.
 
 Quer brincar com args e kwargs? [Este](https://mybinder.org/v2/gh/labex-labs/python-cheatsheet/master?filepath=jupyter_notebooks) é um Jupyter Notebook online para você experimentar.
 
-Alguns exemplos fazem uso de `f-strings`, uma maneira relativamente nova de formatar strings no Python 3.6+. [Aqui](https://www.pythoncheatsheet.org/#Formatted-String-Literals-or-f-strings) você pode ler mais sobre isso.
+Alguns exemplos fazem uso de `f-strings`, uma maneira relativamente nova de formatar strings no Python 3.6+. [Aqui](https://pythoncheatsheet.org/#Formatted-String-Literals-or-f-strings) você pode ler mais sobre isso.

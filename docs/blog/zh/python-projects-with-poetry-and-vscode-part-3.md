@@ -177,7 +177,7 @@ def test_wrap():
 Execution Time: 705 ms.
 ```
 
-[运行测试](https://www.pythoncheatsheet.org/blog/python-projects-with-poetry-and-vscode-part-2#Pytest)，如果一切正常，请继续。
+[运行测试](https://pythoncheatsheet.org/blog/python-projects-with-poetry-and-vscode-part-2#Pytest)，如果一切正常，请继续。
 
 ## 构建和发布
 

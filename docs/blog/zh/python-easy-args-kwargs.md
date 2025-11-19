@@ -23,11 +23,11 @@ meta:
 
 我不知道你怎么样，但每次我看到带有 `*args` 和 `**kwargs` 作为参数的函数时，我都会有点害怕。即使在用 Django 做后端工作时，我也“使用”过它们，但却一无所知。如果你像我一样是自学成才的开发者，我知道你也有过同样的经历。
 
-几个月前，我决定不再懒惰并开始研究它。令我惊讶的是，在解释器中把玩时它们很容易理解，但在阅读关于它们的内容时却没那么容易。我写了这篇文章，试图以我希望别人向我解释的方式来解释 [args 和 kwargs](https://www.pythoncheatsheet.org/#args-and-kwargs)。
+几个月前，我决定不再懒惰并开始研究它。令我惊讶的是，在解释器中把玩时它们很容易理解，但在阅读关于它们的内容时却没那么容易。我写了这篇文章，试图以我希望别人向我解释的方式来解释 [args 和 kwargs](https://pythoncheatsheet.org/#args-and-kwargs)。
 
 ## 基础知识 (Basics)
 
-你需要知道的第一件事是 `*args` 和 `**kwargs` 允许你在调用 [函数](https://www.pythoncheatsheet.org/#Functions) 时传递**未定义数量**的 `arguments`（参数）和 `keywords`（关键字参数）：
+你需要知道的第一件事是 `*args` 和 `**kwargs` 允许你在调用 [函数](https://pythoncheatsheet.org/#Functions) 时传递**未定义数量**的 `arguments`（参数）和 `keywords`（关键字参数）：
 
 ```python
 def some_function(*args, **kwargs):
@@ -70,7 +70,7 @@ def some_function(*arguments, **keywords):
 
 ## args
 
-我们现在知道如何使用 `*args` 作为函数的参数来传递多个参数，但我们如何使用它们呢？这很简单：所有参数都包含在 `args` 变量中，形式为一个 [元组](https://www.pythoncheatsheet.org/#Tuple-Data-Type)：
+我们现在知道如何使用 `*args` 作为函数的参数来传递多个参数，但我们如何使用它们呢？这很简单：所有参数都包含在 `args` 变量中，形式为一个 [元组](https://pythoncheatsheet.org/#Tuple-Data-Type)：
 
 ```python
 def some_function(*args):
@@ -116,11 +116,11 @@ some_function('arg1', 'arg2', 'arg3')
 # ('arg1', 'arg2')
 ```
 
-任何你可以对 [元组](https://www.pythoncheatsheet.org/#Tuple-Data-Type) 做的事情，你都可以对 `args` 做。
+任何你可以对 [元组](https://pythoncheatsheet.org/#Tuple-Data-Type) 做的事情，你都可以对 `args` 做。
 
 ## kwargs
 
-参数在 `args` 变量中，而关键字参数在 `kwargs` 中，但这次是以 [字典](https://www.pythoncheatsheet.org/#Dictionaries-and-Structuring-Data) 的形式，其中键是关键字：
+参数在 `args` 变量中，而关键字参数在 `kwargs` 中，但这次是以 [字典](https://pythoncheatsheet.org/#Dictionaries-and-Structuring-Data) 的形式，其中键是关键字：
 
 ```python
 def some_function(**kwargs):
@@ -131,7 +131,7 @@ some_function(key1='arg1', key2='arg2', key3='arg3')
 # keywords: {'key1': 'arg1', 'key2': 'arg2', 'key3': 'arg3'} as <class 'dict'>
 ```
 
-同样，我们可以对 `kwargs` 做任何我们对任何 [字典](https://www.pythoncheatsheet.org/#Dictionaries-and-Structuring-Data) 会做的事情。
+同样，我们可以对 `kwargs` 做任何我们对任何 [字典](https://pythoncheatsheet.org/#Dictionaries-and-Structuring-Data) 会做的事情。
 
 遍历：
 
@@ -158,12 +158,12 @@ some_function('key3', key1='arg1', key2='arg2', key3='arg3')
 # arg3
 ```
 
-还有更多 [内容](https://www.pythoncheatsheet.org/#Dictionaries-and-Structuring-Data) =)。
+还有更多 [内容](https://pythoncheatsheet.org/#Dictionaries-and-Structuring-Data) =)。
 
 ## 结论 (Conclusion)
 
-`*args` 和 `**kwargs` 可能看起来很吓人，但事实是它们并不难理解，并且有能力为你的函数带来很大的灵活性。如果你了解 [元组](https://www.pythoncheatsheet.org/#Tuple-Data-Type) 和 [字典](https://www.pythoncheatsheet.org/#Dictionaries-and-Structuring-Data)，你就准备好了。
+`*args` 和 `**kwargs` 可能看起来很吓人，但事实是它们并不难理解，并且有能力为你的函数带来很大的灵活性。如果你了解 [元组](https://pythoncheatsheet.org/#Tuple-Data-Type) 和 [字典](https://pythoncheatsheet.org/#Dictionaries-and-Structuring-Data)，你就准备好了。
 
 想玩玩 args 和 kwargs 吗？[这里](https://mybinder.org/v2/gh/labex-labs/python-cheatsheet/master?filepath=jupyter_notebooks) 是一个在线 Jupyter Notebook 供你尝试。
 
-有些示例使用了 `f-strings`，这是 Python 3.6+ 中一种相对较新的格式化字符串的方式。[在这里](https://www.pythoncheatsheet.org/#Formatted-String-Literals-or-f-strings) 你可以阅读更多相关信息。
+有些示例使用了 `f-strings`，这是 Python 3.6+ 中一种相对较新的格式化字符串的方式。[在这里](https://pythoncheatsheet.org/#Formatted-String-Literals-or-f-strings) 你可以阅读更多相关信息。

@@ -127,7 +127,7 @@ for i in range(5):         # this comment has too many spaces
 
 Если вы серьезно относитесь к программированию, крайне важно научиться тестировать свои проекты. Это невероятно полезный навык, который позволяет писать и поставлять программы с уверенностью, уменьшая вероятность появления катастрофических ошибок после выпуска.
 
-[Pytest](https://docs.pytest.org/en/latest/) — очень популярный и удобный фреймворк для написания тестов. Мы [уже установили его](https://www.pythoncheatsheet.org/blog/python-projects-with-poetry-and-vscode-part-1#Dependency-Management), поэтому мы также интегрируем его с _VSCode_.
+[Pytest](https://docs.pytest.org/en/latest/) — очень популярный и удобный фреймворк для написания тестов. Мы [уже установили его](https://pythoncheatsheet.org/blog/python-projects-with-poetry-and-vscode-part-1#Dependency-Management), поэтому мы также интегрируем его с _VSCode_.
 
 Откройте папку **tests** и выберите файл `test_how_long.py`. _Poetry_ уже предоставляет нам первый тест:
 

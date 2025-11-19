@@ -44,7 +44,7 @@ with open(file_path, 'r', newline='') as csvfile:
     print(line)
 ```
 
-Cette fonction retourne un objet lecteur qui peut être facilement parcouru pour obtenir chaque ligne. Chaque colonne des lignes correspondantes peut être accédée par son index, sans avoir besoin d'utiliser la fonction intégrée [`split()`](https://www.pythoncheatsheet.org/cheatsheet/manipulating-strings#split).
+Cette fonction retourne un objet lecteur qui peut être facilement parcouru pour obtenir chaque ligne. Chaque colonne des lignes correspondantes peut être accédée par son index, sans avoir besoin d'utiliser la fonction intégrée [`split()`](https://pythoncheatsheet.org/cheatsheet/manipulating-strings#split).
 
 ## csv.writer()
 

@@ -176,7 +176,7 @@ You can now use `poetry install` on your terminal to install and prove your pack
 Execution Time: 705 ms.
 ```
 
-[Run the tests](https://www.pythoncheatsheet.org/blog/python-projects-with-poetry-and-vscode-part-2#Pytest) and if everything is fine, move on.
+[Run the tests](https://pythoncheatsheet.org/blog/python-projects-with-poetry-and-vscode-part-2#Pytest) and if everything is fine, move on.
 
 ## Building and Publishing
 

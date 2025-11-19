@@ -127,7 +127,7 @@ for i in range(5):         # this comment has too many spaces
 
 プログラミングに真剣に取り組んでいるなら、プロジェクトのテスト方法を学ぶことは非常に重要です。これは、出荷後に壊滅的なバグが出現する可能性を減らすことで、自信を持ってプログラムを作成し提供できるようにする、信じられないほど役立つスキルです。
 
-[Pytest](https://docs.pytest.org/en/latest/)は、テストの記述に非常に人気があり、ユーザーフレンドリーなフレームワークです。私たちはすでに[インストールしています](https://www.pythoncheatsheet.org/blog/python-projects-with-poetry-and-vscode-part-1#Dependency-Management)。そのため、*VSCode*との統合も行います。
+[Pytest](https://docs.pytest.org/en/latest/)は、テストの記述に非常に人気があり、ユーザーフレンドリーなフレームワークです。私たちはすでに[インストールしています](https://pythoncheatsheet.org/blog/python-projects-with-poetry-and-vscode-part-1#Dependency-Management)。そのため、*VSCode*との統合も行います。
 
 **tests**フォルダーを開き、`test_how_long.py`ファイルを選択します。*Poetry*はすでに最初のテストを提供してくれています。
 

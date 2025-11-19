@@ -177,7 +177,7 @@ def test_wrap():
 Execution Time: 705 ms.
 ```
 
-[테스트를 실행](https://www.pythoncheatsheet.org/blog/python-projects-with-poetry-and-vscode-part-2#Pytest)하고 모든 것이 괜찮다면 다음으로 넘어갑니다.
+[테스트를 실행](https://pythoncheatsheet.org/blog/python-projects-with-poetry-and-vscode-part-2#Pytest)하고 모든 것이 괜찮다면 다음으로 넘어갑니다.
 
 ## 빌드 및 게시
 

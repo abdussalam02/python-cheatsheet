@@ -44,7 +44,7 @@ with open(file_path, 'r', newline='') as csvfile:
     print(line)
 ```
 
-此函数返回一个 reader 对象，可以轻松地对其进行迭代以获取每一行。相应行中的每个列都可以通过索引访问，而无需使用内置函数 [`split()`](https://www.pythoncheatsheet.org/cheatsheet/manipulating-strings#split)。
+此函数返回一个 reader 对象，可以轻松地对其进行迭代以获取每一行。相应行中的每个列都可以通过索引访问，而无需使用内置函数 [`split()`](https://pythoncheatsheet.org/cheatsheet/manipulating-strings#split)。
 
 ## csv.writer()
 

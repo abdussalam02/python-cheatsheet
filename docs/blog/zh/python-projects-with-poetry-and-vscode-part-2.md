@@ -127,7 +127,7 @@ for i in range(5):         # this comment has too many spaces
 
 如果您是认真的程序员，学习如何测试您的项目至关重要。这是一项非常有用的技能，它允许您通过减少发布后出现灾难性错误的可能来自信地编写和交付程序。
 
-[Pytest](https://docs.pytest.org/en/latest/) 是一个非常流行且用户友好的测试框架。我们[已经安装了它](https://www.pythoncheatsheet.org/blog/python-projects-with-poetry-and-vscode-part-1#Dependency-Management)，所以我们也将它与 _VSCode_ 集成。
+[Pytest](https://docs.pytest.org/en/latest/) 是一个非常流行且用户友好的测试框架。我们[已经安装了它](https://pythoncheatsheet.org/blog/python-projects-with-poetry-and-vscode-part-1#Dependency-Management)，所以我们也将它与 _VSCode_ 集成。
 
 打开 **tests** 文件夹并选择 `test_how_long.py` 文件。_Poetry_ 已经为我们提供了第一个测试：
 

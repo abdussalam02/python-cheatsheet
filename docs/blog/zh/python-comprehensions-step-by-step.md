@@ -181,7 +181,7 @@ new_list = [
 # {'name': 'Christine', 'age': 98}
 ```
 
-> 推荐文章：[Python 集合：是什么、为什么以及如何操作 ](https://www.pythoncheatsheet.org/blog/python-sets-what-why-how)。
+> 推荐文章：[Python 集合：是什么、为什么以及如何操作 ](https://pythoncheatsheet.org/blog/python-sets-what-why-how)。
 
 ## 结论
 

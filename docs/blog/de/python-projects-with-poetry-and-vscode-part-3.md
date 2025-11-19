@@ -177,7 +177,7 @@ Sie können nun `poetry install` in Ihrem Terminal ausführen, um Ihr Paket loka
 Execution Time: 705 ms.
 ```
 
-[Führen Sie die Tests aus](https://www.pythoncheatsheet.org/blog/python-projects-with-poetry-and-vscode-part-2#Pytest) und wenn alles in Ordnung ist, fahren Sie fort.
+[Führen Sie die Tests aus](https://pythoncheatsheet.org/blog/python-projects-with-poetry-and-vscode-part-2#Pytest) und wenn alles in Ordnung ist, fahren Sie fort.
 
 ## Bauen und Veröffentlichen
 

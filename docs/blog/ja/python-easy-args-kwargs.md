@@ -23,11 +23,11 @@ meta:
 
 私についてはわかりませんが、`*args` と `**kwargs` を引数として持つ関数を見るたびに、少し怖くなりました。Django を使ったバックエンド作業で、何も理解せずに「使用」したことさえあります。私のような独学のデベロッパーなら、あなたも同じ経験をしたことがあるはずです。
 
-数ヶ月前、私は怠けるのをやめてリサーチを始めました。驚いたことに、それらはインタープリタで試すときは理解しやすかったのですが、それらについて読むときはそうではありませんでした。私は、誰かに説明してほしかった方法で、[args と kwargs](https://www.pythoncheatsheet.org/#args-and-kwargs) を説明しようと、この記事を書きました。
+数ヶ月前、私は怠けるのをやめてリサーチを始めました。驚いたことに、それらはインタープリタで試すときは理解しやすかったのですが、それらについて読むときはそうではありませんでした。私は、誰かに説明してほしかった方法で、[args と kwargs](https://pythoncheatsheet.org/#args-and-kwargs) を説明しようと、この記事を書きました。
 
 ## 基本
 
-最初に知っておくべきことは、`*args` と `**kwargs` を使うと、[関数](https://www.pythoncheatsheet.org/#Functions) を呼び出す際に、未定義の数の `arguments` と `keywords` を渡せるということです。
+最初に知っておくべきことは、`*args` と `**kwargs` を使うと、[関数](https://pythoncheatsheet.org/#Functions) を呼び出す際に、未定義の数の `arguments` と `keywords` を渡せるということです。
 
 ```python
 def some_function(*args, **kwargs):
@@ -70,7 +70,7 @@ def some_function(*arguments, **keywords):
 
 ## args
 
-これで、`*args` を関数へのパラメーターとして使用して複数の引数を渡す方法がわかりましたが、それらをどのように扱うのでしょうか？簡単です。すべての引数は、`args` 変数内に [タプル](https://www.pythoncheatsheet.org/#Tuple-Data-Type) として格納されています。
+これで、`*args` を関数へのパラメーターとして使用して複数の引数を渡す方法がわかりましたが、それらをどのように扱うのでしょうか？簡単です。すべての引数は、`args` 変数内に [タプル](https://pythoncheatsheet.org/#Tuple-Data-Type) として格納されています。
 
 ```python
 def some_function(*args):
@@ -116,11 +116,11 @@ some_function('arg1', 'arg2', 'arg3')
 # ('arg1', 'arg2')
 ```
 
-[タプル](https://www.pythoncheatsheet.org/#Tuple-Data-Type) でできることは何でも、`args` で実行できます。
+[タプル](https://pythoncheatsheet.org/#Tuple-Data-Type) でできることは何でも、`args` で実行できます。
 
 ## kwargs
 
-引数は `args` 変数内にありますが、キーワードは `kwargs` 内にあり、今回はキーがキーワードとなる [辞書](https://www.pythoncheatsheet.org/#Dictionaries-and-Structuring-Data) として格納されます。
+引数は `args` 変数内にありますが、キーワードは `kwargs` 内にあり、今回はキーがキーワードとなる [辞書](https://pythoncheatsheet.org/#Dictionaries-and-Structuring-Data) として格納されます。
 
 ```python
 def some_function(**kwargs):
@@ -131,7 +131,7 @@ some_function(key1='arg1', key2='arg2', key3='arg3')
 # keywords: {'key1': 'arg1', 'key2': 'arg2', 'key3': 'arg3'} as <class 'dict'>
 ```
 
-ここでも、`kwargs` に対して、任意の [辞書](https://www.pythoncheatsheet.org/#Dictionaries-and-Structuring-Data) に対して行うのと同じことを行うことができます。
+ここでも、`kwargs` に対して、任意の [辞書](https://pythoncheatsheet.org/#Dictionaries-and-Structuring-Data) に対して行うのと同じことを行うことができます。
 
 反復処理します。
 
@@ -158,12 +158,12 @@ some_function('key3', key1='arg1', key2='arg2', key3='arg3')
 # arg3
 ```
 
-そして、[もっとたくさん](https://www.pythoncheatsheet.org/#Dictionaries-and-Structuring-Data) あります =)。
+そして、[もっとたくさん](https://pythoncheatsheet.org/#Dictionaries-and-Structuring-Data) あります =)。
 
 ## 結論
 
-`*args` と `**kwargs` は恐ろしく見えるかもしれませんが、実際には理解するのはそれほど難しくなく、関数に多くの柔軟性を与える力を持っています。[タプル](https://www.pythoncheatsheet.org/#Tuple-Data-Type) と [辞書](https://www.pythoncheatsheet.org/#Dictionaries-and-Structuring-Data) について知っていれば、準備完了です。
+`*args` と `**kwargs` は恐ろしく見えるかもしれませんが、実際には理解するのはそれほど難しくなく、関数に多くの柔軟性を与える力を持っています。[タプル](https://pythoncheatsheet.org/#Tuple-Data-Type) と [辞書](https://pythoncheatsheet.org/#Dictionaries-and-Structuring-Data) について知っていれば、準備完了です。
 
 args と kwargs を試してみたいですか？[こちら](https://mybinder.org/v2/gh/labex-labs/python-cheatsheet/master?filepath=jupyter_notebooks) は、試すためのオンライン Jupyter Notebook です。
 
-いくつかの例では、Python 3.6 以降で文字列をフォーマットする比較的新しい方法である `f-string` を使用しています。それについてもっと読むには[こちら](https://www.pythoncheatsheet.org/#Formatted-String-Literals-or-f-strings)をご覧ください。
+いくつかの例では、Python 3.6 以降で文字列をフォーマットする比較的新しい方法である `f-string` を使用しています。それについてもっと読むには[こちら](https://pythoncheatsheet.org/#Formatted-String-Literals-or-f-strings)をご覧ください。

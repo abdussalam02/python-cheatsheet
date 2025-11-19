@@ -181,7 +181,7 @@ new_list = [
 # {'name': 'Christine', 'age': 98}
 ```
 
-> 추천 기사: [Python Sets: What, Why and How ](https://www.pythoncheatsheet.org/blog/python-sets-what-why-how).
+> 추천 기사: [Python Sets: What, Why and How ](https://pythoncheatsheet.org/blog/python-sets-what-why-how).
 
 ## Conclusion
 

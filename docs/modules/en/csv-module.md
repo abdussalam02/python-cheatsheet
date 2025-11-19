@@ -44,7 +44,7 @@ with open(file_path, 'r', newline='') as csvfile:
     print(line)
 ```
 
-This function returns a reader object which can be easily iterated over to obtain each row. Each column in the corresponding rows can be accessed by the index, without the need to use the built-in function [`split()`](https://www.pythoncheatsheet.org/cheatsheet/manipulating-strings#split).
+This function returns a reader object which can be easily iterated over to obtain each row. Each column in the corresponding rows can be accessed by the index, without the need to use the built-in function [`split()`](https://pythoncheatsheet.org/cheatsheet/manipulating-strings#split).
 
 ## csv.writer()
 

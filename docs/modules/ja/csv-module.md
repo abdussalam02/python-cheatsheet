@@ -44,7 +44,7 @@ with open(file_path, 'r', newline='') as csvfile:
     print(line)
 ```
 
-この関数はリーダーオブジェクトを返し、それを簡単に反復処理することで各行を取得できます。対応する行の各列には、組み込み関数 [`split()`](https://www.pythoncheatsheet.org/cheatsheet/manipulating-strings#split) を使用する必要なく、インデックスでアクセスできます。
+この関数はリーダーオブジェクトを返し、それを簡単に反復処理することで各行を取得できます。対応する行の各列には、組み込み関数 [`split()`](https://pythoncheatsheet.org/cheatsheet/manipulating-strings#split) を使用する必要なく、インデックスでアクセスできます。
 
 ## csv.writer()
 
