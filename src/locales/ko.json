@@ -126,7 +126,7 @@
   "banner": {
     "title": "블랙 프라이데이 2025:",
     "learnPython": "Python 배우기",
-    "withLabex": "LabEx Hands-on Labs와 함께.",
+    "withLabex": "LabEx Hands-on Labs 와 함께.",
     "getDiscount": "지금 50% 할인 받기 →",
     "shortMessage": "블랙 프라이데이 2025: Python Hands-on Labs",
     "shortDiscount": "50% 할인 받기 →"
@@ -136,5 +136,10 @@
     "copied": "복사됨",
     "expand": "펼치기",
     "collapse": "접기"
+  },
+  "meta": {
+    "title": "Python 치트 시트 – 무료 초보자 친화적 가이드, 랩 및 PDF 포함",
+    "description": "가장 완전한 온라인 Python 치트 시트. 대화형 랩으로 단계별 학습, 무료 PDF 치트 시트 다운로드, 초보자 친화적 Python 가이드 탐색.",
+    "keywords": "python 치트 시트, python cheatsheet, python 기초, python 문법 가이드, python 참조, python 배우기, python pdf 치트 시트"
   }
 }

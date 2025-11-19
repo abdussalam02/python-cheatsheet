@@ -1,11 +1,11 @@
-import { SUPPORTED_LOCALES } from './useI18n'
+import { SUPPORTED_LOCALES, useI18n } from './useI18n'
 
 export function useMeta() {
   const route = useRoute()
+  const { t } = useI18n()
   const base_url = import.meta.env.VITE_BASE_URL || 'localhost:3000'
 
-  const description =
-    'Anyone can forget how to make character classes for a regex, slice a list or do a for loop. This cheat sheet tries to provide a basic reference for beginner and advanced developers, lower the entry barrier for newcomers and help veterans refresh the old tricks. Available as a free PDF download.'
+  const description = computed(() => t('meta.description'))
   const cardImage =
     'https://raw.githubusercontent.com/labex-labs/python-cheatsheet/master/public/screenshots/dark.png'
   const themeColor = computed(() => (isDark.value ? '#1f2937' : '#ffffff'))
@@ -49,65 +49,32 @@ export function useMeta() {
     return links
   })
 
-  const keywords = [
-    'python',
-    'cheatsheet',
-    'cheat',
-    'sheet',
-    'functions',
-    'args',
-    'kwargs',
-    'sets',
-    'dictionary',
-    'list',
-    'string',
-    'regular',
-    'expression',
-    'formatting',
-    'file',
-    'path',
-    'json',
-    'test',
-    'vscode',
-    'comprehension',
-    'exception',
-    'debugging',
-    'dataclasses',
-    'environments',
-    'flow control',
-    'itertools',
-    'pdf',
-    'download pdf',
-    'python pdf',
-    'python cheatsheet pdf',
-    'python reference pdf',
-    'python guide pdf',
-    'python quick reference',
-  ]
+  const title = computed(() => t('meta.title'))
+  const keywords = computed(() => t('meta.keywords'))
 
-  const meta = {
-    title: 'Python Cheatsheet - Python Cheatsheet PDF Download',
-    description,
+  const meta = computed(() => ({
+    title: title.value,
+    description: description.value,
     meta: [
-      { name: 'theme-color', content: themeColor },
-      { name: 'description', content: description },
+      { name: 'theme-color', content: themeColor.value },
+      { name: 'description', content: description.value },
       { name: 'author', content: 'Python Cheatsheet' },
-      { name: 'keywords', content: keywords.join(', ') },
-      { property: 'og:title', content: 'Python Cheatsheet - Python Cheatsheet PDF Download' },
-      { property: 'og:description', content: description },
-      { property: 'og:url', content: url },
+      { name: 'keywords', content: keywords.value },
+      { property: 'og:title', content: title.value },
+      { property: 'og:description', content: description.value },
+      { property: 'og:url', content: url.value },
       { property: 'og:type', content: 'article' },
       { property: 'og:image', content: cardImage },
-      { name: 'twitter:title', content: 'Python Cheatsheet - Python Cheatsheet PDF Download' },
-      { name: 'twitter:description', content: description },
+      { name: 'twitter:title', content: title.value },
+      { name: 'twitter:description', content: description.value },
       { name: 'twitter:image', content: cardImage },
       { name: 'twitter:card', content: 'summary' },
     ],
     link: [
-      { rel: 'canonical', href: url },
+      { rel: 'canonical', href: url.value },
       ...generateHreflangLinks.value,
     ],
-  }
+  }))
 
   return { meta, description }
 }

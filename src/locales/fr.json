@@ -136,5 +136,10 @@
     "copied": "Copié",
     "expand": "Développer",
     "collapse": "Réduire"
+  },
+  "meta": {
+    "title": "Aide-mémoire Python – Guide gratuit pour débutants avec laboratoires et PDF",
+    "description": "L'aide-mémoire Python le plus complet en ligne. Apprenez étape par étape avec des laboratoires interactifs, téléchargez des aides-mémoire PDF gratuits et explorez des guides Python pour débutants.",
+    "keywords": "aide-mémoire python, python cheatsheet, bases python, guide syntaxe python, référence python, apprendre python, aide-mémoire pdf python"
   }
 }

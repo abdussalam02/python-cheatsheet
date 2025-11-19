@@ -138,8 +138,8 @@
     "collapse": "折叠"
   },
   "meta": {
-    "title": "Python 速查表 - Python 速查表 PDF 下载",
-    "description": "任何人都可能忘记如何为正则表达式创建字符类、切片列表或执行 for 循环。这个速查表试图为初学者和高级开发者提供基本参考，降低新手的入门门槛，并帮助老手重温旧技巧。可免费下载 PDF 版本。",
-    "keywords": "python, 速查表, 参考手册, 函数, 参数, 集合, 字典, 列表, 字符串, 正则表达式, 格式化, 文件, 路径, json, 测试, vscode, 推导式, 异常, 调试, 数据类, 环境, 流程控制, itertools, pdf, 下载 pdf, python pdf, python 速查表 pdf, python 参考手册 pdf, python 指南 pdf, python 快速参考"
+    "title": "Python 速查表 – 免费初学者友好指南，含实验和 PDF",
+    "description": "最完整的在线 Python 速查表。通过交互式实验逐步学习，下载免费 PDF 速查表，探索适合初学者的 Python 指南。",
+    "keywords": "python 速查表，python cheatsheet, python 基础，python 语法指南，python 参考，学习 python, python pdf 速查表"
   }
 }

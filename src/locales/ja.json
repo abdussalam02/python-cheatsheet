@@ -136,5 +136,10 @@
     "copied": "コピーしました",
     "expand": "展開",
     "collapse": "折りたたむ"
+  },
+  "meta": {
+    "title": "Python チートシート – 無料の初心者向けガイド、ラボと PDF 付き",
+    "description": "最も完全なオンライン Python チートシート。インタラクティブなラボで段階的に学習し、無料の PDF チートシートをダウンロードし、初心者向けの Python ガイドを探索できます。",
+    "keywords": "python チートシート，python cheatsheet, python 基礎，python 構文ガイド，python リファレンス，python を学ぶ，python pdf チートシート"
   }
 }
