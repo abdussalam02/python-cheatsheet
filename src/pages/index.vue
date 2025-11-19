@@ -12,10 +12,10 @@ const { t, localePath } = useI18n()
 
 const cardLinks = computed(() => [
   {
-    path: 'https://github.com/labex-labs/python-cheatsheet',
-    name: t('home.cardLinks.viewOnGithub'),
-    description: t('home.cardLinks.viewOnGithubDesc'),
-    icon: ArrowIcon,
+    path: 'https://labex.io/learn/python',
+    name: t('home.cardLinks.pythonCourse'),
+    description: t('home.cardLinks.pythonCourseDesc'),
+    icon: BookIcon,
     external: true,
   },
   {
@@ -26,10 +26,10 @@ const cardLinks = computed(() => [
     external: true,
   },
   {
-    path: 'https://labex.io/learn/python',
-    name: t('home.cardLinks.pythonCourse'),
-    description: t('home.cardLinks.pythonCourseDesc'),
-    icon: BookIcon,
+    path: 'https://github.com/labex-labs/python-cheatsheet',
+    name: t('home.cardLinks.viewOnGithub'),
+    description: t('home.cardLinks.viewOnGithubDesc'),
+    icon: ArrowIcon,
     external: true,
   },
   {

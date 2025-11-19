@@ -11,17 +11,17 @@ const { t, localePath } = useI18n()
 
 const cardLinks = computed(() => [
   {
-    path: 'https://github.com/labex-labs/python-cheatsheet',
-    name: t('home.cardLinks.viewOnGithub'),
-    description: t('home.cardLinks.viewOnGithubDesc'),
-    icon: ArrowIcon,
-    external: true,
-  },
-  {
     path: 'https://labex.io/labs/python-use-vs-code-for-python-development-585783?course=python-cheatsheet',
     name: t('home.cardLinks.pythonPlayground'),
     description: t('home.cardLinks.pythonPlaygroundDesc'),
     icon: LightBulbIcon,
+    external: true,
+  },
+  {
+    path: 'https://github.com/labex-labs/python-cheatsheet',
+    name: t('home.cardLinks.viewOnGithub'),
+    description: t('home.cardLinks.viewOnGithubDesc'),
+    icon: ArrowIcon,
     external: true,
   },
   {
