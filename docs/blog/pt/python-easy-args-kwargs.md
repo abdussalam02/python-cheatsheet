@@ -164,6 +164,6 @@ E muito [mais](https://www.pythoncheatsheet.org/#Dictionaries-and-Structuring-Da
 
 `*args` e `**kwargs` podem parecer assustadores, mas a verdade é que eles não são tão difíceis de entender e têm o poder de conceder muita flexibilidade às suas funções. Se você conhece [tuples](https://www.pythoncheatsheet.org/#Tuple-Data-Type) e [dictionaries](https://www.pythoncheatsheet.org/#Dictionaries-and-Structuring-Data), você está pronto para começar.
 
-Quer brincar com args e kwargs? [Este](https://mybinder.org/v2/gh/wilfredinni/python-cheatsheet/master?filepath=jupyter_notebooks) é um Jupyter Notebook online para você experimentar.
+Quer brincar com args e kwargs? [Este](https://mybinder.org/v2/gh/labex-labs/python-cheatsheet/master?filepath=jupyter_notebooks) é um Jupyter Notebook online para você experimentar.
 
 Alguns exemplos fazem uso de `f-strings`, uma maneira relativamente nova de formatar strings no Python 3.6+. [Aqui](https://www.pythoncheatsheet.org/#Formatted-String-Literals-or-f-strings) você pode ler mais sobre isso.

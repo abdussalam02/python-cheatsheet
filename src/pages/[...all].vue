@@ -25,8 +25,8 @@ useHead({
             class="h-12 w-auto"
             :src="
               isDark
-                ? 'https://raw.githubusercontent.com/wilfredinni/python-cheatsheet/refs/heads/master/public/logo.svg'
-                : 'https://raw.githubusercontent.com/wilfredinni/python-cheatsheet/refs/heads/master/public/logo-light.svg'
+                ? 'https://raw.githubusercontent.com/labex-labs/python-cheatsheet/refs/heads/master/public/logo.svg'
+                : 'https://raw.githubusercontent.com/labex-labs/python-cheatsheet/refs/heads/master/public/logo-light.svg'
             "
             alt="python-cheatsheet"
           />

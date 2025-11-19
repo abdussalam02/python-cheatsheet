@@ -164,6 +164,6 @@ some_function('key3', key1='arg1', key2='arg2', key3='arg3')
 
 `*args` и `**kwargs` могут показаться пугающими, но правда в том, что их не так уж сложно понять, и они дают вашим функциям большую гибкость. Если вы знаете о [кортежах](https://www.pythoncheatsheet.org/#Tuple-Data-Type) и [словарях](https://www.pythoncheatsheet.org/#Dictionaries-and-Structuring-Data), вы готовы к работе.
 
-Хотите поиграть с args и kwargs? [Этот](https://mybinder.org/v2/gh/wilfredinni/python-cheatsheet/master?filepath=jupyter_notebooks) онлайн-блокнот Jupyter Notebook для вас, чтобы попробовать.
+Хотите поиграть с args и kwargs? [Этот](https://mybinder.org/v2/gh/labex-labs/python-cheatsheet/master?filepath=jupyter_notebooks) онлайн-блокнот Jupyter Notebook для вас, чтобы попробовать.
 
 Некоторые примеры используют `f-strings`, относительно новый способ форматирования строк в Python 3.6+. [Здесь](https://www.pythoncheatsheet.org/#Formatted-String-Literals-or-f-strings) вы можете прочитать о них больше.

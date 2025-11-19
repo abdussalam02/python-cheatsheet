@@ -164,6 +164,6 @@ some_function('key3', key1='arg1', key2='arg2', key3='arg3')
 
 `*args` と `**kwargs` は恐ろしく見えるかもしれませんが、実際には理解するのはそれほど難しくなく、関数に多くの柔軟性を与える力を持っています。[タプル](https://www.pythoncheatsheet.org/#Tuple-Data-Type) と [辞書](https://www.pythoncheatsheet.org/#Dictionaries-and-Structuring-Data) について知っていれば、準備完了です。
 
-args と kwargs を試してみたいですか？[こちら](https://mybinder.org/v2/gh/wilfredinni/python-cheatsheet/master?filepath=jupyter_notebooks) は、試すためのオンライン Jupyter Notebook です。
+args と kwargs を試してみたいですか？[こちら](https://mybinder.org/v2/gh/labex-labs/python-cheatsheet/master?filepath=jupyter_notebooks) は、試すためのオンライン Jupyter Notebook です。
 
 いくつかの例では、Python 3.6 以降で文字列をフォーマットする比較的新しい方法である `f-string` を使用しています。それについてもっと読むには[こちら](https://www.pythoncheatsheet.org/#Formatted-String-Literals-or-f-strings)をご覧ください。

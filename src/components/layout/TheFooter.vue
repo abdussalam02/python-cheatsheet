@@ -21,13 +21,13 @@ const footerLinks = computed(() => [
   {
     linkHeader: t('footer.doYouHaveAQuestion'),
     linkText: t('footer.askTheCommunity'),
-    url: 'https://github.com/wilfredinni/python-cheatsheet/discussions',
+    url: 'https://github.com/labex-labs/python-cheatsheet/discussions',
     icon: QuestionIcon,
   },
   {
     linkHeader: t('footer.doYouSeeABug'),
     linkText: t('footer.openAnIssueOnGithub'),
-    url: 'https://github.com/wilfredinni/python-cheatsheet/issues',
+    url: 'https://github.com/labex-labs/python-cheatsheet/issues',
     icon: BugIcon,
   },
 ])

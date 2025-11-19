@@ -10,7 +10,7 @@ const { t, localePath } = useI18n()
 
 const cardLinks = computed(() => [
   {
-    path: 'https://github.com/wilfredinni/python-cheatsheet',
+    path: 'https://github.com/labex-labs/python-cheatsheet',
     name: t('home.cardLinks.viewOnGithub'),
     description: t('home.cardLinks.viewOnGithubDesc'),
     icon: ArrowIcon,
@@ -51,8 +51,8 @@ const smAndLarger = breakpoints.greater('sm')
           class="h-20 w-auto"
           :src="
             isDark
-              ? 'https://raw.githubusercontent.com/wilfredinni/python-cheatsheet/refs/heads/master/public/logo.svg'
-              : 'https://raw.githubusercontent.com/wilfredinni/python-cheatsheet/refs/heads/master/public/logo-light.svg'
+              ? 'https://raw.githubusercontent.com/labex-labs/python-cheatsheet/refs/heads/master/public/logo.svg'
+              : 'https://raw.githubusercontent.com/labex-labs/python-cheatsheet/refs/heads/master/public/logo-light.svg'
           "
           alt="python-cheatsheet"
         />
@@ -113,7 +113,7 @@ const smAndLarger = breakpoints.greater('sm')
         </router-link>
         . {{ t('home.description') }}
         <a
-          href="https://github.com/wilfredinni/python-cheatsheet/blob/master/contributors/contributors.json"
+          href="https://github.com/labex-labs/python-cheatsheet/blob/master/contributors/contributors.json"
           target="_blank"
           rel="noopener noreferrer"
         >

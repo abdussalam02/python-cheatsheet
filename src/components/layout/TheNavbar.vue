@@ -27,8 +27,8 @@ const { localePath, t } = useI18n()
                 class="h-6 w-auto sm:h-7"
                 :src="
                   isDark
-                    ? 'https://raw.githubusercontent.com/wilfredinni/python-cheatsheet/refs/heads/master/public/logo.svg'
-                    : 'https://raw.githubusercontent.com/wilfredinni/python-cheatsheet/refs/heads/master/public/logo-light.svg'
+                    ? 'https://raw.githubusercontent.com/labex-labs/python-cheatsheet/refs/heads/master/public/logo.svg'
+                    : 'https://raw.githubusercontent.com/labex-labs/python-cheatsheet/refs/heads/master/public/logo-light.svg'
                 "
                 alt="python-cheatsheet"
                 height="10"
@@ -145,7 +145,7 @@ const { localePath, t } = useI18n()
           <base-reader-mode />
           <a
             target="_blank"
-            href="https://github.com/wilfredinni/python-cheatsheet"
+            href="https://github.com/labex-labs/python-cheatsheet"
             rel="noreferrer"
           >
             <github-icon />

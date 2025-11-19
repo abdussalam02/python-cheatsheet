@@ -164,6 +164,6 @@ some_function('key3', key1='arg1', key2='arg2', key3='arg3')
 
 `*args`와 `**kwargs`는 무서워 보일 수 있지만, 사실 이해하기가 그렇게 어렵지 않으며 함수에 많은 유연성을 부여하는 힘을 가지고 있습니다. [튜플 (tuples)](https://www.pythoncheatsheet.org/#Tuple-Data-Type)과 [딕셔너리 (dictionaries)](https://www.pythoncheatsheet.org/#Dictionaries-and-Structuring-Data)에 대해 알고 있다면, 바로 시작할 준비가 된 것입니다.
 
-args 와 kwargs 로 가지고 놀고 싶으신가요? [이것](https://mybinder.org/v2/gh/wilfredinni/python-cheatsheet/master?filepath=jupyter_notebooks)은 시도해 볼 수 있는 온라인 Jupyter Notebook 입니다.
+args 와 kwargs 로 가지고 놀고 싶으신가요? [이것](https://mybinder.org/v2/gh/labex-labs/python-cheatsheet/master?filepath=jupyter_notebooks)은 시도해 볼 수 있는 온라인 Jupyter Notebook 입니다.
 
 일부 예제는 비교적 최신 문자열 포맷팅 방식인 Python 3.6+ 의 f-string 을 사용합니다. [여기](https://www.pythoncheatsheet.org/#Formatted-String-Literals-or-f-strings)에서 이에 대해 더 읽어볼 수 있습니다.

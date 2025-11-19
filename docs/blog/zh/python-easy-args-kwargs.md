@@ -164,6 +164,6 @@ some_function('key3', key1='arg1', key2='arg2', key3='arg3')
 
 `*args` 和 `**kwargs` 可能看起来很吓人，但事实是它们并不难理解，并且有能力为你的函数带来很大的灵活性。如果你了解 [元组](https://www.pythoncheatsheet.org/#Tuple-Data-Type) 和 [字典](https://www.pythoncheatsheet.org/#Dictionaries-and-Structuring-Data)，你就准备好了。
 
-想玩玩 args 和 kwargs 吗？[这里](https://mybinder.org/v2/gh/wilfredinni/python-cheatsheet/master?filepath=jupyter_notebooks) 是一个在线 Jupyter Notebook 供你尝试。
+想玩玩 args 和 kwargs 吗？[这里](https://mybinder.org/v2/gh/labex-labs/python-cheatsheet/master?filepath=jupyter_notebooks) 是一个在线 Jupyter Notebook 供你尝试。
 
 有些示例使用了 `f-strings`，这是 Python 3.6+ 中一种相对较新的格式化字符串的方式。[在这里](https://www.pythoncheatsheet.org/#Formatted-String-Literals-or-f-strings) 你可以阅读更多相关信息。

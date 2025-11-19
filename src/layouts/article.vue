@@ -20,7 +20,7 @@ const reader = useReaderStore()
         </article>
 
         <the-footer
-          repository="https://github.com/wilfredinni/python-cheatsheet/blob/master/docs"
+          repository="https://github.com/labex-labs/python-cheatsheet/blob/master/docs"
         />
       </div>
 

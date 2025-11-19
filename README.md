@@ -10,8 +10,8 @@
 
 <div align="center">
   <a href="https://www.pythoncheatsheet.org/">pythoncheatsheet.org</a> |
-  <a href="https://github.com/wilfredinni/python-cheatsheet/blob/master/src/pages/contributing.md">Contribute</a> |
-  <a href="https://github.com/wilfredinni/python-cheatsheet/blob/master/src/pages/changelog.md">Changelog</a>
+  <a href="https://github.com/labex-labs/python-cheatsheet/blob/master/src/pages/contributing.md">Contribute</a> |
+  <a href="https://github.com/labex-labs/python-cheatsheet/blob/master/src/pages/changelog.md">Changelog</a>
 </div>
 
 <img src="public/screenshots/light.png">
@@ -31,7 +31,7 @@ Anyone can forget how to make character classes for a regex, slice a list, or do
 
 ## Quick Links
 
-- **[View on GitHub](https://github.com/wilfredinni/python-cheatsheet)**: Drop a star on GitHub if you find this project useful
+- **[View on GitHub](https://github.com/labex-labs/python-cheatsheet)**: Drop a star on GitHub if you find this project useful
 - **[Contribute](https://www.pythoncheatsheet.org/contributing)**: Get to know how easy it is to contribute to the Python Cheatsheet
 - **[Blog](https://www.pythoncheatsheet.org/blog)**: Read detailed articles about Python and its ecosystem
 - **[Changelog](https://www.pythoncheatsheet.org/changelog)**: See what is new, what got fixed, and what is coming
