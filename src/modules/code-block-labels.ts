@@ -1,4 +1,71 @@
 import { type UserModule } from '~/types'
+import enTranslations from '~/locales/en.json'
+import zhTranslations from '~/locales/zh.json'
+import esTranslations from '~/locales/es.json'
+import frTranslations from '~/locales/fr.json'
+import deTranslations from '~/locales/de.json'
+import jaTranslations from '~/locales/ja.json'
+import ruTranslations from '~/locales/ru.json'
+import koTranslations from '~/locales/ko.json'
+import ptTranslations from '~/locales/pt.json'
+
+type Locale = 'en' | 'zh' | 'es' | 'fr' | 'de' | 'ja' | 'ru' | 'ko' | 'pt'
+
+const translations: Record<Locale, typeof enTranslations> = {
+  en: enTranslations,
+  zh: zhTranslations,
+  es: esTranslations,
+  fr: frTranslations,
+  de: deTranslations,
+  ja: jaTranslations,
+  ru: ruTranslations,
+  ko: koTranslations,
+  pt: ptTranslations,
+}
+
+// Get current locale from URL path
+const getCurrentLocale = (): Locale => {
+  if (typeof window === 'undefined') return 'en'
+  const path = window.location.pathname
+  const segments = path.split('/').filter(Boolean)
+  const supportedLocales: Locale[] = ['en', 'zh', 'es', 'fr', 'de', 'ja', 'ru', 'ko', 'pt']
+
+  if (segments.length > 0 && supportedLocales.includes(segments[0] as Locale)) {
+    return segments[0] as Locale
+  }
+  return 'en'
+}
+
+// Get translation text
+const t = (key: string): string => {
+  const locale = getCurrentLocale()
+  const keys = key.split('.')
+
+  const getValue = (obj: any): any => {
+    let value: any = obj
+    for (const k of keys) {
+      if (value && typeof value === 'object' && k in value) {
+        value = value[k as keyof typeof value]
+      } else {
+        return undefined
+      }
+    }
+    return value
+  }
+
+  const value = getValue(translations[locale])
+  if (typeof value === 'string') {
+    return value
+  }
+
+  // Fallback to English
+  const fallbackValue = getValue(translations.en)
+  if (typeof fallbackValue === 'string') {
+    return fallbackValue
+  }
+
+  return key
+}
 
 export const install: UserModule = ({ router }) => {
   if (typeof window === 'undefined') return
@@ -8,7 +75,7 @@ export const install: UserModule = ({ router }) => {
     try {
       await navigator.clipboard.writeText(text)
       const originalText = button.textContent
-      button.textContent = 'Copied'
+      button.textContent = t('codeBlock.copied')
       button.classList.add('copied')
       setTimeout(() => {
         button.textContent = originalText
@@ -16,6 +83,28 @@ export const install: UserModule = ({ router }) => {
       }, 2000)
     } catch (err) {
       console.error('Failed to copy:', err)
+    }
+  }
+
+  // Toggle output block visibility
+  const toggleOutputBlock = (pre: Element, toggleButton: HTMLElement) => {
+    const isCollapsed = pre.classList.contains('output-collapsed')
+    const codeElement = pre.querySelector('code')
+
+    if (isCollapsed) {
+      pre.classList.remove('output-collapsed')
+      toggleButton.textContent = t('codeBlock.collapse')
+      toggleButton.setAttribute('aria-expanded', 'true')
+      if (codeElement) {
+        codeElement.style.display = 'block'
+      }
+    } else {
+      pre.classList.add('output-collapsed')
+      toggleButton.textContent = t('codeBlock.expand')
+      toggleButton.setAttribute('aria-expanded', 'false')
+      if (codeElement) {
+        codeElement.style.display = 'none'
+      }
     }
   }
 
@@ -39,6 +128,15 @@ export const install: UserModule = ({ router }) => {
           const codeElement = pre.querySelector('code')
           const codeText = codeElement?.textContent || ''
 
+          // Check if this is an output block (language is "output")
+          const isOutput = language === 'output'
+          if (isOutput) {
+            pre.classList.add('output-block', 'output-collapsed')
+            if (codeElement) {
+              codeElement.style.display = 'none'
+            }
+          }
+
           // Create header element
           const header = document.createElement('div')
           header.className = 'code-block-header'
@@ -48,18 +146,39 @@ export const install: UserModule = ({ router }) => {
           label.className = 'code-block-label'
           label.textContent = language
 
-          // Create copy button
-          const copyButton = document.createElement('button')
-          copyButton.className = 'code-block-copy-button'
-          copyButton.setAttribute('aria-label', 'Copy code')
-          copyButton.textContent = 'Copy'
-          copyButton.addEventListener('click', () => {
-            copyToClipboard(codeText, copyButton)
-          })
+          // Create button container
+          const buttonContainer = document.createElement('div')
+          buttonContainer.className = 'code-block-buttons'
+          buttonContainer.style.display = 'flex'
+          buttonContainer.style.gap = '0.5rem'
 
-          // Append label and button to header
+          // For output blocks, only show toggle button
+          if (isOutput) {
+            const toggleButton = document.createElement('button')
+            toggleButton.className = 'code-block-toggle-button'
+            toggleButton.setAttribute('aria-label', t('codeBlock.expand'))
+            toggleButton.textContent = t('codeBlock.expand')
+            toggleButton.setAttribute('aria-expanded', 'false')
+            toggleButton.addEventListener('click', (e) => {
+              e.stopPropagation()
+              toggleOutputBlock(pre, toggleButton)
+            })
+            buttonContainer.appendChild(toggleButton)
+          } else {
+            // For non-output blocks, only show copy button
+            const copyButton = document.createElement('button')
+            copyButton.className = 'code-block-copy-button'
+            copyButton.setAttribute('aria-label', t('codeBlock.copy'))
+            copyButton.textContent = t('codeBlock.copy')
+            copyButton.addEventListener('click', () => {
+              copyToClipboard(codeText, copyButton)
+            })
+            buttonContainer.appendChild(copyButton)
+          }
+
+          // Append label and buttons to header
           header.appendChild(label)
-          header.appendChild(copyButton)
+          header.appendChild(buttonContainer)
 
           // Insert header at the beginning of pre element
           pre.insertBefore(header, pre.firstChild)
