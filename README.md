@@ -39,3 +39,7 @@ Anyone can forget how to make character classes for a regex, slice a list, or do
 ## Contributing
 
 Contributions are welcome! Please see the [Contributing Guide](https://pythoncheatsheet.org/contributing) for details on how to get started.
+
+## License
+
+Content is licensed under [MIT](https://opensource.org/licenses/MIT) and maintained by the [LabEx](https://labex.io/) team.
