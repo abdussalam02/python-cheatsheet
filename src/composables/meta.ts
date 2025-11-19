@@ -2,7 +2,7 @@ import { SUPPORTED_LOCALES, useI18n } from './useI18n'
 
 export function useMeta() {
   const route = useRoute()
-  const { t } = useI18n()
+  const { t, currentLocale } = useI18n()
   const base_url = import.meta.env.VITE_BASE_URL || 'localhost:3000'
 
   const description = computed(() => t('meta.description'))
@@ -55,6 +55,9 @@ export function useMeta() {
   const meta = computed(() => ({
     title: title.value,
     description: description.value,
+    htmlAttrs: {
+      lang: currentLocale.value,
+    },
     meta: [
       { name: 'theme-color', content: themeColor.value },
       { name: 'description', content: description.value },
