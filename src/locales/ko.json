@@ -66,6 +66,8 @@
       "viewOnGithubDesc": "이 프로젝트가 유용하다고 생각되면 GitHub 에서 별표를 남겨주세요.",
       "pythonPlayground": "Python Playground",
       "pythonPlaygroundDesc": "대화형 온라인 환경에서 Python 코드를 시도해보세요.",
+      "pythonCourse": "Python 코스",
+      "pythonCourseDesc": "대화형 실습 랩으로 Python을 배우고 Python 프로그래밍을 마스터하세요.",
       "contribute": "기여하기",
       "contributeDesc": "Python 치트 시트에 기여하는 것이 얼마나 쉬운지 알아보세요.",
       "blog": "블로그",

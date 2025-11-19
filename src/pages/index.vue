@@ -5,6 +5,7 @@ import PluginIcon from '~/components/icons/PluginIcon.vue'
 import ArrowIcon from '~/components/icons/ArrowIcon.vue'
 import GridIcon from '~/components/icons/GridIcon.vue'
 import LightBulbIcon from '~/components/icons/LightBulbIcon.vue'
+import BookIcon from '~/components/icons/BookIcon.vue'
 import { computed } from 'vue'
 
 const { t, localePath } = useI18n()
@@ -22,6 +23,13 @@ const cardLinks = computed(() => [
     name: t('home.cardLinks.pythonPlayground'),
     description: t('home.cardLinks.pythonPlaygroundDesc'),
     icon: LightBulbIcon,
+    external: true,
+  },
+  {
+    path: 'https://labex.io/learn/python',
+    name: t('home.cardLinks.pythonCourse'),
+    description: t('home.cardLinks.pythonCourseDesc'),
+    icon: BookIcon,
     external: true,
   },
   {

@@ -66,6 +66,8 @@
       "viewOnGithubDesc": "Laissez une étoile sur GitHub si vous trouvez ce projet utile.",
       "pythonPlayground": "Python Playground",
       "pythonPlaygroundDesc": "Essayez le code Python dans un environnement en ligne interactif.",
+      "pythonCourse": "Cours Python",
+      "pythonCourseDesc": "Apprenez Python avec des laboratoires pratiques interactifs et maîtrisez la programmation Python.",
       "contribute": "Contribuer",
       "contributeDesc": "Découvrez à quel point il est facile de contribuer à l'Aide-mémoire Python.",
       "blog": "Blog",

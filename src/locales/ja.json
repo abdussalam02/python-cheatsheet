@@ -66,6 +66,8 @@
       "viewOnGithubDesc": "このプロジェクトが役立つと思ったら、GitHub でスターを付けてください。",
       "pythonPlayground": "Python Playground",
       "pythonPlaygroundDesc": "インタラクティブなオンライン環境で Python コードを試す。",
+      "pythonCourse": "Python コース",
+      "pythonCourseDesc": "インタラクティブな実践ラボで Python を学び、Python プログラミングをマスターしましょう。",
       "contribute": "貢献する",
       "contributeDesc": "Python チートシートへの貢献がいかに簡単かを知ってください。",
       "blog": "ブログ",

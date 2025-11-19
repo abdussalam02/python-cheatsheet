@@ -66,6 +66,8 @@
       "viewOnGithubDesc": "Drop a star on GitHub if you find this project useful.",
       "pythonPlayground": "Python Playground",
       "pythonPlaygroundDesc": "Try Python code in an interactive online environment.",
+      "pythonCourse": "Python Course",
+      "pythonCourseDesc": "Learn Python with interactive hands-on labs and master Python programming.",
       "contribute": "Contribute",
       "contributeDesc": "Get to know how easy it is to contribute to the Python Cheatsheet.",
       "blog": "Blog",

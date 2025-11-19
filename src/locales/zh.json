@@ -66,6 +66,8 @@
       "viewOnGithubDesc": "如果您觉得这个项目有用，请在 GitHub 上点个星标。",
       "pythonPlayground": "Python Playground",
       "pythonPlaygroundDesc": "在交互式在线环境中尝试 Python 代码。",
+      "pythonCourse": "Python 课程",
+      "pythonCourseDesc": "通过交互式实践实验室学习 Python，掌握 Python 编程。",
       "contribute": "贡献",
       "contributeDesc": "了解为 Python 速查表做贡献是多么容易。",
       "blog": "博客",

@@ -66,6 +66,8 @@
       "viewOnGithubDesc": "Поставьте звезду на GitHub, если вы считаете этот проект полезным.",
       "pythonPlayground": "Python Playground",
       "pythonPlaygroundDesc": "Попробуйте код Python в интерактивной онлайн-среде.",
+      "pythonCourse": "Курс Python",
+      "pythonCourseDesc": "Изучайте Python с помощью интерактивных практических лабораторий и освойте программирование на Python.",
       "contribute": "Внести вклад",
       "contributeDesc": "Узнайте, насколько легко внести вклад в шпаргалку Python.",
       "blog": "Блог",

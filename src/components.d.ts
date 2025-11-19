@@ -32,6 +32,7 @@ declare module 'vue' {
     BaseWarningTitle: typeof import('./components/ui/warning/BaseWarningTitle.vue')['default']
     BlogPagination: typeof import('./components/blog/BlogPagination.vue')['default']
     BlogTitleHeader: typeof import('./components/BlogTitleHeader.vue')['default']
+    BookIcon: typeof import('./components/icons/BookIcon.vue')['default']
     BugIcon: typeof import('./components/icons/BugIcon.vue')['default']
     Dialog: typeof import('@headlessui/vue')['Dialog']
     DialogPanel: typeof import('@headlessui/vue')['DialogPanel']
