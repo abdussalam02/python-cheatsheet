@@ -2,6 +2,7 @@
 import EditIcon from '~/components/icons/EditIcon.vue'
 import QuestionIcon from '~/components/icons/QuestionIcon.vue'
 import BugIcon from '~/components/icons/BugIcon.vue'
+import { SUPPORTED_LOCALES } from '~/composables/useI18n'
 
 const props = defineProps<{
   repository?: string
@@ -10,10 +11,47 @@ const props = defineProps<{
 const route = useRoute()
 const { t } = useI18n()
 
+// Convert route path to GitHub file path
+// For docs directory:
+//   Route: /zh/cheatsheet/basics -> File: /cheatsheet/zh/basics.md
+//   Route: /cheatsheet/basics -> File: /cheatsheet/en/basics.md
+// For src/pages directory (contributing, changelog):
+//   Route: /contributing -> File: /contributing.md
+//   Route: /zh/contributing -> File: /contributing.md (redirects to English)
+const getGitHubFilePath = (path: string): string => {
+  const segments = path.split('/').filter(Boolean)
+  
+  if (segments.length === 0) {
+    return ''
+  }
+
+  // Check if first segment is a locale
+  const firstSegment = segments[0]
+  const isLocaleFirst = SUPPORTED_LOCALES.includes(firstSegment as typeof SUPPORTED_LOCALES[number])
+  
+  // Handle docs directory structure: {section}/{locale}/{file}.md
+  if (isLocaleFirst && segments.length >= 3) {
+    // Format: /{locale}/{section}/{file} -> /{section}/{locale}/{file}.md
+    const [, section, ...fileParts] = segments
+    const file = fileParts.join('/')
+    return `/${section}/${firstSegment}/${file}.md`
+  } else if (segments.length >= 2) {
+    // Format: /{section}/{file} -> /{section}/en/{file}.md (English default)
+    const [section, ...fileParts] = segments
+    const file = fileParts.join('/')
+    return `/${section}/en/${file}.md`
+  } else {
+    // Single segment (e.g., /contributing, /changelog)
+    // For src/pages, these are .md files directly
+    // For locale versions that redirect, still point to the English .md file
+    return `/${segments[0]}.md`
+  }
+}
+
 const EditLink = computed(() => ({
   linkHeader: t('footer.editThisPageOn'),
   linkText: t('footer.github'),
-  url: `${props.repository}${route.path}.md`,
+  url: `${props.repository}${getGitHubFilePath(route.path)}`,
   icon: EditIcon,
 }))
 
@@ -50,7 +88,7 @@ const routesWithoutGithub = ['index', 'blog']
           {{ EditLink.linkHeader }}
           <a
             target="_blank"
-            :href="`${props.repository}${route.path}.md`"
+            :href="EditLink.url"
             class="ml-1 flex text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-500"
           >
             {{ EditLink.linkText }}
