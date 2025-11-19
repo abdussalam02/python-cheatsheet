@@ -3,6 +3,27 @@ const { meta } = useMeta()
 useHead(meta)
 useScrollBehavior()
 const { t } = useI18n()
+
+// Inject Google Analytics script if VITE_GTAG is configured
+const gTag = import.meta.env.VITE_GTAG
+if (gTag && gTag !== 'tag' && gTag.trim() !== '') {
+  useHead({
+    script: [
+      {
+        src: `https://www.googletagmanager.com/gtag/js?id=${gTag}`,
+        async: true,
+      },
+      {
+        innerHTML: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${gTag}');
+        `,
+      },
+    ],
+  })
+}
 </script>
 
 <template>
