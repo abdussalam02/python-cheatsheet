@@ -76,6 +76,39 @@ for filename in my_files:
 /home/labex/project/invite.docx
 ```
 
+### 展开用户主目录
+
+使用 `os.path.expanduser()` 将 `~` 展开为用户主目录：
+
+```python
+import os.path
+
+# 将 ~ 展开为用户主目录
+print(os.path.expanduser('~'))
+```
+
+```output
+/home/labex/project
+```
+
+```python
+# 将 ~/Documents 展开为完整路径
+print(os.path.expanduser('~/Documents'))
+```
+
+```output
+/home/labex/project/Documents
+```
+
+```python
+# 适用于包含 ~ 的路径
+print(os.path.expanduser('~/myfile.txt'))
+```
+
+```output
+/home/labex/project/myfile.txt
+```
+
 ## 当前工作目录
 
 您可以使用 `pathlib` 获取当前工作目录：

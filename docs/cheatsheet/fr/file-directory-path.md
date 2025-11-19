@@ -76,6 +76,39 @@ for filename in my_files:
 /home/labex/project/invite.docx
 ```
 
+### Développer le répertoire personnel de l'utilisateur
+
+Utiliser `os.path.expanduser()` pour développer `~` vers le répertoire personnel de l'utilisateur :
+
+```python
+import os.path
+
+# Développer ~ vers le répertoire personnel de l'utilisateur
+print(os.path.expanduser('~'))
+```
+
+```output
+/home/labex/project
+```
+
+```python
+# Développer ~/Documents vers le chemin complet
+print(os.path.expanduser('~/Documents'))
+```
+
+```output
+/home/labex/project/Documents
+```
+
+```python
+# Fonctionne avec les chemins contenant ~
+print(os.path.expanduser('~/myfile.txt'))
+```
+
+```output
+/home/labex/project/myfile.txt
+```
+
 ## Le répertoire de travail actuel
 
 Vous pouvez obtenir le répertoire de travail actuel en utilisant `pathlib` :

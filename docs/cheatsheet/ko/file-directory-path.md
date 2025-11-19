@@ -76,6 +76,39 @@ for filename in my_files:
 /home/labex/project/invite.docx
 ```
 
+### 사용자 홈 디렉터리 확장
+
+`os.path.expanduser()`를 사용하여 `~`를 사용자 홈 디렉터리로 확장:
+
+```python
+import os.path
+
+# ~를 사용자 홈 디렉터리로 확장
+print(os.path.expanduser('~'))
+```
+
+```output
+/home/labex/project
+```
+
+```python
+# ~/Documents를 전체 경로로 확장
+print(os.path.expanduser('~/Documents'))
+```
+
+```output
+/home/labex/project/Documents
+```
+
+```python
+# ~를 포함하는 경로에서 작동
+print(os.path.expanduser('~/myfile.txt'))
+```
+
+```output
+/home/labex/project/myfile.txt
+```
+
 ## 현재 작업 디렉터리
 
 `pathlib`을 사용하여 현재 작업 디렉터리를 가져올 수 있습니다:

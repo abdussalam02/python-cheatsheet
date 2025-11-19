@@ -76,6 +76,39 @@ for filename in my_files:
 /home/labex/project/invite.docx
 ```
 
+### ユーザーのホームディレクトリを展開
+
+`os.path.expanduser()` を使用して `~` をユーザーのホームディレクトリに展開：
+
+```python
+import os.path
+
+# ~ をユーザーのホームディレクトリに展開
+print(os.path.expanduser('~'))
+```
+
+```output
+/home/labex/project
+```
+
+```python
+# ~/Documents を完全なパスに展開
+print(os.path.expanduser('~/Documents'))
+```
+
+```output
+/home/labex/project/Documents
+```
+
+```python
+# ~ を含むパスで動作
+print(os.path.expanduser('~/myfile.txt'))
+```
+
+```output
+/home/labex/project/myfile.txt
+```
+
 ## 現在の作業ディレクトリ
 
 `pathlib` を使用して現在の作業ディレクトリを取得できます：

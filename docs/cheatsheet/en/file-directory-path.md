@@ -82,6 +82,39 @@ for filename in my_files:
 /home/labex/project/invite.docx
 ```
 
+### Expanding user home directory
+
+Using `os.path.expanduser()` to expand `~` to the user's home directory:
+
+```python
+import os.path
+
+# Expand ~ to user's home directory
+print(os.path.expanduser('~'))
+```
+
+```output
+/home/labex/project
+```
+
+```python
+# Expand ~/Documents to full path
+print(os.path.expanduser('~/Documents'))
+```
+
+```output
+/home/labex/project/Documents
+```
+
+```python
+# Works with paths containing ~
+print(os.path.expanduser('~/myfile.txt'))
+```
+
+```output
+/home/labex/project/myfile.txt
+```
+
 ## The current working directory
 
 You can get the current working directory using `pathlib`:

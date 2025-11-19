@@ -80,6 +80,39 @@ for filename in my_files:
 /home/labex/project/invite.docx
 ```
 
+### Развертывание домашнего каталога пользователя
+
+Использовать `os.path.expanduser()` для развертывания `~` в домашний каталог пользователя:
+
+```python
+import os.path
+
+# Развернуть ~ в домашний каталог пользователя
+print(os.path.expanduser('~'))
+```
+
+```output
+/home/labex/project
+```
+
+```python
+# Развернуть ~/Documents в полный путь
+print(os.path.expanduser('~/Documents'))
+```
+
+```output
+/home/labex/project/Documents
+```
+
+```python
+# Работает с путями, содержащими ~
+print(os.path.expanduser('~/myfile.txt'))
+```
+
+```output
+/home/labex/project/myfile.txt
+```
+
 ## Текущий рабочий каталог
 
 Вы можете получить текущий рабочий каталог с помощью `pathlib`:

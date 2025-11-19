@@ -77,6 +77,39 @@ for filename in my_files:
 /home/labex/project/invite.docx
 ```
 
+### Benutzer-Home-Verzeichnis erweitern
+
+Verwenden Sie `os.path.expanduser()`, um `~` zum Benutzer-Home-Verzeichnis zu erweitern:
+
+```python
+import os.path
+
+# ~ zum Benutzer-Home-Verzeichnis erweitern
+print(os.path.expanduser('~'))
+```
+
+```output
+/home/labex/project
+```
+
+```python
+# ~/Documents zum vollständigen Pfad erweitern
+print(os.path.expanduser('~/Documents'))
+```
+
+```output
+/home/labex/project/Documents
+```
+
+```python
+# Funktioniert mit Pfaden, die ~ enthalten
+print(os.path.expanduser('~/myfile.txt'))
+```
+
+```output
+/home/labex/project/myfile.txt
+```
+
 ## Das aktuelle Arbeitsverzeichnis
 
 Sie können das aktuelle Arbeitsverzeichnis mit `pathlib` abrufen:

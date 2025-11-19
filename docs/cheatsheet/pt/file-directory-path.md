@@ -80,6 +80,39 @@ for filename in my_files:
 /home/labex/project/invite.docx
 ```
 
+### Expandir o diretório inicial do usuário
+
+Usar `os.path.expanduser()` para expandir `~` para o diretório inicial do usuário:
+
+```python
+import os.path
+
+# Expandir ~ para o diretório inicial do usuário
+print(os.path.expanduser('~'))
+```
+
+```output
+/home/labex/project
+```
+
+```python
+# Expandir ~/Documents para o caminho completo
+print(os.path.expanduser('~/Documents'))
+```
+
+```output
+/home/labex/project/Documents
+```
+
+```python
+# Funciona com caminhos que contêm ~
+print(os.path.expanduser('~/myfile.txt'))
+```
+
+```output
+/home/labex/project/myfile.txt
+```
+
 ## O diretório de trabalho atual
 
 Você pode obter o diretório de trabalho atual usando `pathlib`:
