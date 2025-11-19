@@ -1,6 +1,6 @@
 ---
 title: 'Python Virtuelle Umgebungen - Python Spickzettel'
-description: 'Virtuelle Umgebungen dienen dazu, Python-Code in gekapselten Umgebungen zu testen und die Basis-Python-Installation frei von Bibliotheken zu halten, die nur für ein einzelnes Projekt benötigt werden.'
+description: 'Virtuelle Umgebungen dienen dazu, Python-Code in gekapselten Umgebungen zu testen und die Basis-Python-Installation nicht mit Bibliotheken zu füllen, die nur für ein Projekt benötigt werden.'
 labUrl: 'https://labex.io/de/labs/python-python-virtual-environments-633669?course=python-cheatsheet'
 ---
 
@@ -12,15 +12,69 @@ Virtuelle Umgebung
 
 Die Verwendung einer virtuellen Umgebung dient dazu, Python-Code in gekapselten Umgebungen zu testen und zu vermeiden, dass die Basis-Python-Installation mit Bibliotheken gefüllt wird, die wir möglicherweise nur für ein einziges Projekt verwenden.
 
+## venv
+
+`venv` ist das Standardmodul der Standardbibliothek zur Erstellung virtueller Umgebungen in Python 3.3+. Es ist in Python integriert, sodass keine Installation erforderlich ist.
+
+1. Virtuelle Umgebung erstellen
+
+```bash
+python -m venv venv
+```
+
+Oder auf einigen Systemen:
+
+```bash
+python3 -m venv venv
+```
+
+Dadurch wird ein `venv`-Verzeichnis in Ihrem aktuellen Ordner erstellt, das die virtuelle Umgebung enthält.
+
+2. Virtuelle Umgebung aktivieren
+
+Unter Linux/macOS:
+
+```bash
+source venv/bin/activate
+```
+
+Unter Windows:
+
+```bash
+venv\Scripts\activate
+```
+
+Sobald sie aktiviert ist, sehen Sie `(venv)` am Anfang Ihrer Eingabeaufforderung, was anzeigt, dass die virtuelle Umgebung aktiv ist.
+
+3. Pakete installieren
+
+Installieren Sie Pakete mit pip, während die virtuelle Umgebung aktiviert ist:
+
+```bash
+pip install package_name
+```
+
+Installierte Pakete sind spezifisch für diese virtuelle Umgebung.
+
+4. Virtuelle Umgebung deaktivieren
+
+Um die virtuelle Umgebung zu verlassen:
+
+```bash
+deactivate
+```
+
+Das Präfix `(venv)` verschwindet aus Ihrer Eingabeaufforderung.
+
 ## virtualenv
 
-1. Installieren Sie virtualenv
+1. virtualenv installieren
 
 ```bash
 pip install virtualenv
 ```
 
-1. Installieren Sie virtualenvwrapper-win (Windows)
+1. virtualenvwrapper-win (Windows) installieren
 
 ```bash
 pip install virtualenvwrapper-win
@@ -28,17 +82,17 @@ pip install virtualenvwrapper-win
 
 Verwendung:
 
-1. Erstellen Sie eine virtuelle Umgebung namens `HelloWorld`
+1. Eine virtuelle Umgebung namens `HelloWorld` erstellen
 
 ```bash
 mkvirtualenv HelloWorld
 ```
 
-    Alles, was wir jetzt installieren, ist spezifisch für dieses Projekt. Und für die Projekte verfügbar, die wir mit dieser Umgebung verbinden.
+Alles, was wir jetzt installieren, ist spezifisch für dieses Projekt. Und für die Projekte verfügbar, die wir mit dieser Umgebung verbinden.
 
 1. Projektverzeichnis festlegen
 
-   Um unsere virtuelle Umgebung mit unserem aktuellen Arbeitsverzeichnis zu verknüpfen, geben wir einfach Folgendes ein:
+Um unsere virtuelle Umgebung mit unserem aktuellen Arbeitsverzeichnis zu verknüpfen, geben wir einfach Folgendes ein:
 
 ```bash
 setprojectdir .
@@ -46,17 +100,17 @@ setprojectdir .
 
 1. Deaktivieren
 
-   Um zu etwas anderem in der Kommandozeile überzugehen, geben Sie `deactivate` ein, um Ihre Umgebung zu deaktivieren.
+Um in der Befehlszeile zu etwas anderem überzugehen, geben Sie `deactivate` ein, um Ihre Umgebung zu deaktivieren.
 
 ```bash
 deactivate
 ```
 
-    Beachten Sie, wie die Klammern verschwinden.
+Beachten Sie, wie die Klammern verschwinden.
 
-1. Arbeiten mit (Workon)
+1. Workon
 
-   Öffnen Sie die Eingabeaufforderung und geben Sie `workon HelloWorld` ein, um die Umgebung zu aktivieren und in Ihren Stammprojektordner zu wechseln
+Öffnen Sie die Eingabeaufforderung und geben Sie `workon HelloWorld` ein, um die Umgebung zu aktivieren und in Ihren Stammprojektordner zu wechseln
 
 ```bash
 workon HelloWorld
@@ -69,7 +123,7 @@ workon HelloWorld
     Von der <a href="https://python-poetry.org/">Poetry-Website</a>
   </base-disclaimer-title>
   <base-disclaimer-content>
-    Poetry ist ein Werkzeug zur Abhängigkeitsverwaltung und Paketierung in Python. Es ermöglicht Ihnen, die Bibliotheken zu deklarieren, von denen Ihr Projekt abhängt, und es wird diese für Sie verwalten (installieren/aktualisieren).
+    Poetry ist ein Werkzeug für das Abhängigkeitsmanagement und die Paketierung in Python. Es ermöglicht Ihnen, die Bibliotheken zu deklarieren, von denen Ihr Projekt abhängt, und es wird diese für Sie verwalten (installieren/aktualisieren).
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -79,13 +133,13 @@ workon HelloWorld
 pip install --user poetry
 ```
 
-2. Ein neues Projekt erstellen
+2. Neues Projekt erstellen
 
 ```bash
 poetry new my-project
 ```
 
-    Dies erstellt ein my-project-Verzeichnis:
+Dies erstellt ein Verzeichnis `my-project`:
 
 ```plaintext
 my-project
@@ -98,7 +152,7 @@ my-project
     └── test_poetry_demo.py
 ```
 
-    Die Datei pyproject.toml orchestriert Ihr Projekt und seine Abhängigkeiten:
+Die Datei `pyproject.toml` orchestriert Ihr Projekt und seine Abhängigkeiten:
 
 ```toml
 [tool.poetry]
@@ -116,26 +170,26 @@ pytest = "^3.4"
 
 3. Pakete
 
-   Um Abhängigkeiten zu Ihrem Projekt hinzuzufügen, können Sie diese im Abschnitt tool.poetry.dependencies angeben:
+Um Abhängigkeiten zu Ihrem Projekt hinzuzufügen, können Sie diese im Abschnitt `tool.poetry.dependencies` angeben:
 
 ```toml
 [tool.poetry.dependencies]
 pendulum = "^1.4"
 ```
 
-    Anstatt die Datei pyproject.toml manuell zu bearbeiten, können Sie auch den Befehl `add` verwenden, und er findet automatisch eine geeignete Versionsbeschränkung.
+Anstatt die Datei `pyproject.toml` manuell zu bearbeiten, können Sie auch den Befehl `add` verwenden, und er findet automatisch eine geeignete Versionsbeschränkung.
 
 ```bash
 poetry add pendulum
 ```
 
-    Um die in pyproject.toml aufgeführten Abhängigkeiten zu installieren:
+Um die in `pyproject.toml` aufgeführten Abhängigkeiten zu installieren:
 
 ```bash
 poetry install
 ```
 
-    Um Abhängigkeiten zu entfernen:
+Um Abhängigkeiten zu entfernen:
 
 ```bash
 poetry remove pendulum
@@ -158,20 +212,20 @@ Weitere Informationen finden Sie in der [Dokumentation](https://poetry.eustace.i
   </base-disclaimer-content>
 </base-disclaimer>
 
-1. Pipenv installieren
+1. pipenv installieren
 
 ```bash
 pip install pipenv
 ```
 
-2. Wechseln Sie in Ihr Projektverzeichnis und installieren Sie die Pakete für Ihr Projekt
+2. In Ihr Projektverzeichnis wechseln und die Pakete für Ihr Projekt installieren
 
 ```bash
 cd my_project
 pipenv install <package>
 ```
 
-    Pipenv installiert Ihr Paket und erstellt eine Pipfile in Ihrem Projektverzeichnis. Die Pipfile wird verwendet, um zu verfolgen, welche Abhängigkeiten Ihr Projekt benötigt, falls Sie sie neu installieren müssen.
+Pipenv installiert Ihr Paket und erstellt eine `Pipfile` für Sie im Verzeichnis Ihres Projekts. Die `Pipfile` wird verwendet, um zu verfolgen, welche Abhängigkeiten Ihr Projekt benötigt, falls Sie sie neu installieren müssen.
 
 3. Pakete deinstallieren
 
@@ -179,7 +233,7 @@ pipenv install <package>
 pipenv uninstall <package>
 ```
 
-4. Die virtuelle Umgebung aktivieren, die mit Ihrem Python-Projekt verknüpft ist
+4. Die mit Ihrem Python-Projekt verbundene virtuelle Umgebung aktivieren
 
 ```bash
 pipenv shell
@@ -206,21 +260,21 @@ Weitere Informationen und ein Video finden Sie unter [docs.pipenv.org](https://d
 
 Verwendung:
 
-1. Eine virtuelle Umgebung erstellen
+1. Virtuelle Umgebung erstellen
 
 ```bash
 conda create -n HelloWorld
 ```
 
-2. Um die virtuelle Umgebung zu nutzen, aktivieren Sie sie durch:
+2. Um die virtuelle Umgebung zu verwenden, aktivieren Sie sie mit:
 
 ```bash
 conda activate HelloWorld
 ```
 
-    Alles, was jetzt installiert wird, ist spezifisch für das Projekt HelloWorld
+Alles, was jetzt installiert wird, ist spezifisch für das Projekt HelloWorld
 
-3. Die virtuelle Umgebung verlassen
+3. Virtuelle Umgebung verlassen
 
 ```bash
 conda deactivate
@@ -233,21 +287,21 @@ conda deactivate
     Aus der <a target="_blank" href="https://docs.astral.sh/uv/">UV-Dokumentation</a>
   </base-disclaimer-title>
   <base-disclaimer-content>
-    UV ist ein extrem schneller Python-Paketinstallations- und Resolver, der als direkter Ersatz für Pip- und Pip-Tools-Workflows konzipiert ist. UV ist 10-100x schneller als Pip und bietet einheitliche Paketverwaltung, virtuelle Umgebungs-Erstellung und Python-Versionsverwaltung.
+    UV ist ein extrem schneller Python-Paketinstallations- und Resolver, der als direkter Ersatz für Pip- und Pip-Tools-Workflows konzipiert ist. UV ist 10-100x schneller als Pip und bietet einheitliches Paketmanagement, Erstellung virtueller Umgebungen und Verwaltung von Python-Versionen.
   </base-disclaimer-content>
 </base-disclaimer>
 
 1. UV installieren
 
 ```bash
-# Verwendung von curl (Linux/macOS)
+# Mit curl (Linux/macOS)
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
-# Verwendung von pip oder pipx
+# Mit pip oder pipx
 pip install uv
 ```
 
-2. Ein neues Projekt mit virtueller Umgebung erstellen
+2. Neues Projekt mit virtueller Umgebung erstellen
 
 ```bash
 uv init my-project
@@ -277,7 +331,7 @@ UV verwaltet virtuelle Umgebungen, Python-Versionen und Abhängigkeiten automati
 
 ## Relevante Links
 
-- <router-link to="/cheatsheet/packaging">Packaging</router-link>
+- <router-link to="/cheatsheet/packaging">Paketierung</router-link>
 - <router-link to="/blog/python-projects-with-poetry-and-vscode-part-1">Python-Projekte mit Poetry und VSCode. Teil 1</router-link>
 - <router-link to="/blog/python-projects-with-poetry-and-vscode-part-2">Python-Projekte mit Poetry und VSCode. Teil 2</router-link>
 - <router-link to="/blog/python-projects-with-poetry-and-vscode-part-3">Python-Projekte mit Poetry und VSCode. Teil 3</router-link>

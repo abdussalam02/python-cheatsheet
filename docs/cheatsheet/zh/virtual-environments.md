@@ -1,16 +1,70 @@
 ---
 title: 'Python 虚拟环境 - Python 速查表'
-description: '使用虚拟环境是为了在隔离的环境中测试 Python 代码，并避免用仅供单个项目使用的库填满基础 Python 安装。'
+description: '使用虚拟环境是为了在隔离环境中测试 Python 代码，并避免用仅供单个项目使用的库填充基础 Python 安装。'
 labUrl: 'https://labex.io/zh/labs/python-python-virtual-environments-633669?course=python-cheatsheet'
 ---
 
 <base-title :title="frontmatter.title" :description="frontmatter.description">
-Python 虚拟环境 - Python 速查表
+虚拟环境
 </base-title>
 
 <base-lab-url :url="frontmatter.labUrl" />
 
-使用虚拟环境是为了在**封装的环境中测试 Python 代码**，同时**避免用仅供单个项目使用的库填满基础 Python 安装**。
+使用虚拟环境是为了在隔离的环境中测试 Python 代码，同时避免用仅为一个项目使用的库填满基础 Python 安装。
+
+## venv
+
+`venv` 是 Python 3.3+ 中用于创建虚拟环境的标准库模块。它内置于 Python 中，因此无需安装。
+
+1. 创建一个虚拟环境
+
+```bash
+python -m venv venv
+```
+
+或者在某些系统上：
+
+```bash
+python3 -m venv venv
+```
+
+这会在你当前文件夹中创建一个包含虚拟环境的 `venv` 目录。
+
+2. 激活虚拟环境
+
+在 Linux/macOS 上：
+
+```bash
+source venv/bin/activate
+```
+
+在 Windows 上：
+
+```bash
+venv\Scripts\activate
+```
+
+激活后，你的命令提示符开头会显示 `(venv)`，表示虚拟环境已激活。
+
+3. 安装包
+
+在虚拟环境激活的情况下，使用 pip 安装包：
+
+```bash
+pip install package_name
+```
+
+安装的包将特定于此虚拟环境。
+
+4. 停用虚拟环境
+
+要退出虚拟环境：
+
+```bash
+deactivate
+```
+
+`(venv)` 前缀将从你的命令提示符中消失。
 
 ## virtualenv
 
@@ -34,11 +88,11 @@ pip install virtualenvwrapper-win
 mkvirtualenv HelloWorld
 ```
 
-    现在安装的任何内容都将特定于此项目，并可供连接到此环境的项目使用。
+现在安装的任何内容都将特定于此项目。并且可供我们连接到此环境的项目使用。
 
 1. 设置项目目录
 
-   要将我们的 virtualenv 与当前工作目录绑定，我们只需输入：
+要将我们的 virtualenv 与当前工作目录绑定，我们只需输入：
 
 ```bash
 setprojectdir .
@@ -46,17 +100,17 @@ setprojectdir .
 
 1. 停用
 
-   要在命令行中切换到其他任务，请键入 `deactivate` 以停用您的环境。
+要切换到命令行中的其他操作，输入 `deactivate` 来停用你的环境。
 
 ```bash
 deactivate
 ```
 
-    注意括号如何消失。
+注意括号是如何消失的。
 
-1. 激活 (Workon)
+1. Workon
 
-   打开命令提示符并键入 `workon HelloWorld` 以激活环境并进入项目根文件夹
+打开命令提示符并输入 `workon HelloWorld` 来激活环境并进入你的根项目文件夹
 
 ```bash
 workon HelloWorld
@@ -69,7 +123,7 @@ workon HelloWorld
     来自 <a href="https://python-poetry.org/">Poetry 网站</a>
   </base-disclaimer-title>
   <base-disclaimer-content>
-    Poetry 是一个用于 Python 中依赖管理和打包的工具。它允许您声明项目所依赖的库，并为您管理（安装/更新）它们。
+    Poetry 是一个用于 Python 中依赖管理和打包的工具。它允许你声明项目所依赖的库，然后它会为你管理（安装/更新）它们。
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -85,7 +139,7 @@ pip install --user poetry
 poetry new my-project
 ```
 
-    这将创建一个 my-project 目录：
+这将创建一个 my-project 目录：
 
 ```plaintext
 my-project
@@ -98,7 +152,7 @@ my-project
     └── test_poetry_demo.py
 ```
 
-    `pyproject.toml` 文件将协调您的项目及其依赖项：
+pyproject.toml 文件将协调你的项目及其依赖项：
 
 ```toml
 [tool.poetry]
@@ -116,26 +170,26 @@ pytest = "^3.4"
 
 3. 包
 
-   要向项目中添加依赖项，可以在 `tool.poetry.dependencies` 部分指定它们：
+要向项目中添加依赖项，可以在 tool.poetry.dependencies 部分指定它们：
 
 ```toml
 [tool.poetry.dependencies]
 pendulum = "^1.4"
 ```
 
-    此外，您可以使用 `add` 命令，而不是手动修改 `pyproject.toml` 文件，它会自动找到合适的版本约束。
+此外，你可以使用 add 命令而不是手动修改 pyproject.toml 文件，它会自动找到合适的版本约束。
 
 ```bash
 poetry add pendulum
 ```
 
-    安装 `pyproject.toml` 中列出的依赖项：
+要安装 pyproject.toml 中列出的依赖项：
 
 ```bash
 poetry install
 ```
 
-    移除依赖项：
+要删除依赖项：
 
 ```bash
 poetry remove pendulum
@@ -164,14 +218,14 @@ poetry remove pendulum
 pip install pipenv
 ```
 
-2. 进入您的项目目录并安装项目的包
+2. 进入你的项目目录并安装项目的包
 
 ```bash
 cd my_project
 pipenv install <package>
 ```
 
-    Pipenv 将安装您的包并在项目目录中为您创建一个 `Pipfile`。`Pipfile` 用于跟踪项目所需的依赖项，以防您需要重新安装它们。
+Pipenv 将安装你的包并在项目目录中为你创建一个 Pipfile。Pipfile 用于跟踪项目所需的依赖项，以防你需要重新安装它们。
 
 3. 卸载包
 
@@ -179,7 +233,7 @@ pipenv install <package>
 pipenv uninstall <package>
 ```
 
-4. 激活与您的 Python 项目关联的虚拟环境
+4. 激活与你的 Python 项目关联的虚拟环境
 
 ```bash
 pipenv shell
@@ -197,10 +251,10 @@ exit
 
 <base-disclaimer>
   <base-disclaimer-title>
-    <a target="k" href="https://anaconda.com/">Anaconda</a> 是另一个流行的 Python 包管理工具。
+    <a target="k" href="https://anaconda.com/">Anaconda</a> 是另一个流行的管理 Python 包的工具。
   </base-disclaimer-title>
   <base-disclaimer-content>
-    在这里共享包、Notebook、项目和环境。您免费获取公共 conda 包托管的地方。
+    在这里共享包、Notebook、项目和环境。您免费公开 conda 包托管的地方。
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -218,7 +272,7 @@ conda create -n HelloWorld
 conda activate HelloWorld
 ```
 
-    现在安装的任何内容都将特定于 HelloWorld 项目
+现在安装的任何内容都将特定于 HelloWorld 项目
 
 3. 退出虚拟环境
 
@@ -233,7 +287,7 @@ conda deactivate
     来自 <a target="_blank" href="https://docs.astral.sh/uv/">UV 文档</a>
   </base-disclaimer-title>
   <base-disclaimer-content>
-    UV 是一个极其快速的 Python 包安装程序和解析器，旨在作为 pip 和 pip-tools 工作流程的直接替代品。UV 比 pip 快 10-100 倍，并提供统一的包管理、虚拟环境创建和 Python 版本管理。
+    UV 是一个极其快速的 Python 包安装程序和解析器，设计为 pip 和 pip-tools 工作流程的直接替代品。UV 比 pip 快 10-100 倍，并提供统一的包管理、虚拟环境创建和 Python 版本管理。
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -273,7 +327,7 @@ source .venv/bin/activate  # Linux/macOS
 .venv\Scripts\activate     # Windows
 ```
 
-UV 以极快的速度和便利性自动管理虚拟环境、Python 版本和依赖项。
+UV 以卓越的速度和便利性自动管理虚拟环境、Python 版本和依赖项。
 
 ## 相关链接
 

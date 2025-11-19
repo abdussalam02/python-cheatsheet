@@ -1,6 +1,6 @@
 ---
 title: 'Python 仮想環境 - Python チートシート'
-description: '仮想環境の使用は、Python コードをカプセル化された環境でテストするため、また特定のプロジェクトでのみ使用するライブラリで基本の Python インストールを過剰にしないために行われます。'
+description: '仮想環境の使用は、Python コードをカプセル化された環境でテストし、単一プロジェクトでのみ使用するライブラリで基本の Python インストールを埋め尽くすのを避けるためです。'
 labUrl: 'https://labex.io/ja/labs/python-python-virtual-environments-633669?course=python-cheatsheet'
 ---
 
@@ -10,7 +10,61 @@ labUrl: 'https://labex.io/ja/labs/python-python-virtual-environments-633669?cour
 
 <base-lab-url :url="frontmatter.labUrl" />
 
-仮想環境を使用する目的は、カプセル化された環境で Python コードをテストすること、および単一のプロジェクトでのみ使用する可能性のあるライブラリでベースの Python インストールを埋め尽くすことを避けることです。
+仮想環境の使用は、カプセル化された環境で Python コードをテストするため、また、単一のプロジェクトでのみ使用する可能性のあるライブラリでベースの Python インストールを埋め尽くすのを避けるためです。
+
+## venv
+
+`venv` は、Python 3.3 以降で仮想環境を作成するための標準ライブラリモジュールです。Python に組み込まれているため、インストールは不要です。
+
+1. 仮想環境の作成
+
+```bash
+python -m venv venv
+```
+
+または、システムによっては：
+
+```bash
+python3 -m venv venv
+```
+
+これにより、現在のフォルダー内に仮想環境を含む `venv` ディレクトリが作成されます。
+
+2. 仮想環境のアクティベート
+
+Linux/macOS の場合：
+
+```bash
+source venv/bin/activate
+```
+
+Windows の場合：
+
+```bash
+venv\Scripts\activate
+```
+
+アクティベートされると、コマンドプロンプトの先頭に `(venv)` と表示され、仮想環境がアクティブであることを示します。
+
+3. パッケージのインストール
+
+仮想環境がアクティブな状態で、pip を使用してパッケージをインストールします。
+
+```bash
+pip install package_name
+```
+
+インストールされたパッケージはこの仮想環境に固有のものになります。
+
+4. 仮想環境のディアクティベート
+
+仮想環境を終了するには：
+
+```bash
+deactivate
+```
+
+コマンドプロンプトから `(venv)` プレフィックスが消えます。
 
 ## virtualenv
 
@@ -34,29 +88,29 @@ pip install virtualenvwrapper-win
 mkvirtualenv HelloWorld
 ```
 
-    ここでインストールするものはすべて、このプロジェクト固有のものになります。そして、この環境に接続するプロジェクトで利用可能になります。
+ここからインストールするものはすべてこのプロジェクトに固有のものになります。そして、この環境に接続するプロジェクトで利用可能になります。
 
 1. プロジェクトディレクトリの設定
 
-   現在の作業ディレクトリに virtualenv をバインドするには、次のように入力するだけです。
+現在の作業ディレクトリに virtualenv をバインドするには、単に以下を入力します。
 
 ```bash
 setprojectdir .
 ```
 
-1. 非アクティブ化
+1. ディアクティベート
 
-   コマンドラインで別の作業に移るには、`deactivate` と入力して環境を非アクティブ化します。
+コマンドラインで別の作業に移るには、`deactivate` と入力して環境をディアクティベートします。
 
 ```bash
 deactivate
 ```
 
-    括弧が消えることに注意してください。
+括弧が消えることに注意してください。
 
-1. 作業の再開 (Workon)
+1. workon
 
-   コマンドプロンプトを開き、`workon HelloWorld` と入力して環境をアクティブ化し、プロジェクトのルートフォルダーに移動します。
+コマンドプロンプトを開き、`workon HelloWorld` と入力して環境をアクティベートし、プロジェクトのルートフォルダーに移動します。
 
 ```bash
 workon HelloWorld
@@ -85,7 +139,7 @@ pip install --user poetry
 poetry new my-project
 ```
 
-    これにより、`my-project` ディレクトリが作成されます。
+これにより、my-project ディレクトリが作成されます。
 
 ```plaintext
 my-project
@@ -98,7 +152,7 @@ my-project
     └── test_poetry_demo.py
 ```
 
-    `pyproject.toml` ファイルがプロジェクトとその依存関係を調整します。
+pyproject.toml ファイルがプロジェクトとその依存関係を調整します。
 
 ```toml
 [tool.poetry]
@@ -116,26 +170,26 @@ pytest = "^3.4"
 
 3. パッケージ
 
-   プロジェクトに依存関係を追加するには、`tool.poetry.dependencies` セクションで指定できます。
+プロジェクトに依存関係を追加するには、tool.poetry.dependencies セクションで指定できます。
 
 ```toml
 [tool.poetry.dependencies]
 pendulum = "^1.4"
 ```
 
-    また、`pyproject.toml` ファイルを手動で変更する代わりに、`add` コマンドを使用すると、適切なバージョン制約が自動的に見つかります。
+また、pyproject.toml ファイルを手動で変更する代わりに、`add` コマンドを使用すると、適切なバージョン制約が自動的に見つかります。
 
 ```bash
 poetry add pendulum
 ```
 
-    `pyproject.toml` にリストされている依存関係をインストールするには:
+pyproject.toml にリストされている依存関係をインストールするには：
 
 ```bash
 poetry install
 ```
 
-    依存関係を削除するには:
+依存関係を削除するには：
 
 ```bash
 poetry remove pendulum
@@ -143,9 +197,9 @@ poetry remove pendulum
 
 詳細については、[ドキュメント](https://poetry.eustace.io/docs/)を確認するか、こちらをお読みください。
 
-- <router-link to="/blog/python-projects-with-poetry-and-vscode-part-1">Poetry と VSCode を使用した Python プロジェクト。パート 1</router-link>
-- <router-link to="/blog/python-projects-with-poetry-and-vscode-part-2">Poetry と VSCode を使用した Python プロジェクト。パート 2</router-link>
-- <router-link to="/blog/python-projects-with-poetry-and-vscode-part-3">Poetry と VSCode を使用した Python プロジェクト。パート 3</router-link>
+- <router-link to="/blog/python-projects-with-poetry-and-vscode-part-1">Python projects with Poetry and VSCode. Part 1</router-link>
+- <router-link to="/blog/python-projects-with-poetry-and-vscode-part-2">Python projects with Poetry and VSCode. Part 2</router-link>
+- <router-link to="/blog/python-projects-with-poetry-and-vscode-part-3">Python projects with Poetry and VSCode. Part 3</router-link>
 
 ## Pipenv
 
@@ -154,7 +208,7 @@ poetry remove pendulum
     <a target="_blank" href="https://pipenv.pypa.io/en/latest/">Pipenv ウェブサイト</a>より
   </base-disclaimer-title>
   <base-disclaimer-content>
-    Pipenv は、すべてのパッケージングの世界（bundler、composer、npm、cargo、yarn など）の最高のもの を Python の世界にもたらすことを目指したツールです。Windows は、私たちの世界では一流の市民です。
+    Pipenv は、すべてのパッケージングの世界（bundler、composer、npm、cargo、yarn など）の最高のもの Python の世界にもたらすことを目指したツールです。Windows は、私たちの世界では一流の市民です。
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -171,7 +225,7 @@ cd my_project
 pipenv install <package>
 ```
 
-    Pipenv はパッケージをインストールし、プロジェクトのディレクトリに Pipfile を作成します。Pipfile は、依存関係を再インストールする必要がある場合に備えて、プロジェクトが必要とする依存関係を追跡するために使用されます。
+Pipenv はパッケージをインストールし、プロジェクトのディレクトリに Pipfile を作成します。Pipfile は、依存関係を再インストールする必要がある場合に備えて、プロジェクトが必要とする依存関係を追跡するために使用されます。
 
 3. パッケージのアンインストール
 
@@ -179,19 +233,19 @@ pipenv install <package>
 pipenv uninstall <package>
 ```
 
-4. Python プロジェクトに関連付けられた仮想環境のアクティブ化
+4. Python プロジェクトに関連付けられた仮想環境のアクティベート
 
 ```bash
 pipenv shell
 ```
 
-5. 仮想環境からの終了
+5. 仮想環境の終了
 
 ```bash
 exit
 ```
 
-詳細情報とビデオは [docs.pipenv.org](https://docs.pipenv.org/) で確認してください。
+[docs.pipenv.org](https://docs.pipenv.org/) で詳細情報とビデオをご覧ください。
 
 ## Anaconda
 
@@ -212,13 +266,13 @@ exit
 conda create -n HelloWorld
 ```
 
-2. 仮想環境を使用するには、次のようにアクティブ化します。
+2. 仮想環境を使用するには、次のようにアクティベートします。
 
 ```bash
 conda activate HelloWorld
 ```
 
-    ここでインストールされるものはすべて、プロジェクト HelloWorld 専用になります。
+ここからインストールされるものはすべてプロジェクト HelloWorld に固有のものになります。
 
 3. 仮想環境の終了
 
@@ -233,7 +287,7 @@ conda deactivate
     <a target="_blank" href="https://docs.astral.sh/uv/">UV ドキュメント</a>より
   </base-disclaimer-title>
   <base-disclaimer-content>
-    UV は、極めて高速な Python パッケージインストーラーおよびリゾルバーであり、pip および pip-tools ワークフローのドロップイン代替として設計されています。UV は pip よりも 10〜100 倍高速で、統合されたパッケージ管理、仮想環境の作成、Python バージョンの管理を提供します。
+    UV は、非常に高速な Python パッケージインストーラーおよびリゾルバーであり、pip および pip-tools ワークフローのドロップイン代替として設計されています。UV は pip よりも 10〜100 倍高速で、統合されたパッケージ管理、仮想環境の作成、Python バージョンの管理を提供します。
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -260,26 +314,26 @@ cd my-project
 uv add requests
 ```
 
-4. プロジェクト環境内でのコマンドの実行
+4. プロジェクト環境でのコマンドの実行
 
 ```bash
 uv run python script.py
 ```
 
-5. 仮想環境を手動でアクティブ化 (オプション)
+5. 仮想環境の手動アクティベート (オプション)
 
 ```bash
 source .venv/bin/activate  # Linux/macOS
 .venv\Scripts\activate     # Windows
 ```
 
-UV は、卓越した速度と利便性で、仮想環境、Python バージョン、および依存関係を自動的に管理します。
+UV は、驚異的な速度と利便性で、仮想環境、Python バージョン、および依存関係を自動的に管理します。
 
 ## 関連リンク
 
 - <router-link to="/cheatsheet/packaging">Packaging</router-link>
-- <router-link to="/blog/python-projects-with-poetry-and-vscode-part-1">Poetry と VSCode を使用した Python プロジェクト。パート 1</router-link>
-- <router-link to="/blog/python-projects-with-poetry-and-vscode-part-2">Poetry と VSCode を使用した Python プロジェクト。パート 2</router-link>
-- <router-link to="/blog/python-projects-with-poetry-and-vscode-part-3">Poetry と VSCode を使用した Python プロジェクト。パート 3</router-link>
-- <router-link to="/blog/python-uv-package-manager">UV: 超高速 Python パッケージマネージャー</router-link>
+- <router-link to="/blog/python-projects-with-poetry-and-vscode-part-1">Python projects with Poetry and VSCode. Part 1</router-link>
+- <router-link to="/blog/python-projects-with-poetry-and-vscode-part-2">Python projects with Poetry and VSCode. Part 2</router-link>
+- <router-link to="/blog/python-projects-with-poetry-and-vscode-part-3">Python projects with Poetry and VSCode. Part 3</router-link>
+- <router-link to="/blog/python-uv-package-manager">UV: The Lightning-Fast Python Package Manager</router-link>
 - <router-link to="/builtin/import">import()</router-link>

@@ -1,6 +1,6 @@
 ---
 title: 'Entornos Virtuales de Python - Hoja de Trucos de Python'
-description: 'El uso de un Entorno Virtual es para probar código Python en entornos encapsulados y para evitar llenar la instalación base de Python con librerías que podríamos usar para un solo proyecto.'
+description: 'El uso de un Entorno Virtual es para probar código Python en entornos encapsulados y también para evitar llenar la instalación base de Python con librerías que podríamos usar para un solo proyecto.'
 labUrl: 'https://labex.io/es/labs/python-python-virtual-environments-633669?course=python-cheatsheet'
 ---
 
@@ -11,6 +11,60 @@ Entorno Virtual
 <base-lab-url :url="frontmatter.labUrl" />
 
 El uso de un Entorno Virtual es para probar código python en entornos encapsulados, y también para evitar llenar la instalación base de Python con librerías que podríamos usar solo para un proyecto.
+
+## venv
+
+`venv` es el módulo de la librería estándar para crear entornos virtuales en Python 3.3+. Está integrado en Python, por lo que no requiere instalación.
+
+1. Crear un entorno virtual
+
+```bash
+python -m venv venv
+```
+
+O en algunos sistemas:
+
+```bash
+python3 -m venv venv
+```
+
+Esto crea un directorio `venv` en tu carpeta actual que contiene el entorno virtual.
+
+2. Activar el entorno virtual
+
+En Linux/macOS:
+
+```bash
+source venv/bin/activate
+```
+
+En Windows:
+
+```bash
+venv\Scripts\activate
+```
+
+Una vez activado, verás `(venv)` al principio de tu símbolo del sistema, indicando que el entorno virtual está activo.
+
+3. Instalar paquetes
+
+Con el entorno virtual activado, instala paquetes usando pip:
+
+```bash
+pip install package_name
+```
+
+Los paquetes instalados serán específicos de este entorno virtual.
+
+4. Desactivar el entorno virtual
+
+Para salir del entorno virtual:
+
+```bash
+deactivate
+```
+
+El prefijo `(venv)` desaparecerá de tu símbolo del sistema.
 
 ## virtualenv
 
@@ -34,11 +88,11 @@ Uso:
 mkvirtualenv HelloWorld
 ```
 
-    Cualquier cosa que instalemos ahora será específica para este proyecto. Y estará disponible para los proyectos que conectemos a este entorno.
+Cualquier cosa que instalemos ahora será específica para este proyecto. Y estará disponible para los proyectos que conectemos a este entorno.
 
 1. Establecer Directorio del Proyecto
 
-   Para vincular nuestro virtualenv con nuestro directorio de trabajo actual, simplemente ingresamos:
+Para vincular nuestro virtualenv con nuestro directorio de trabajo actual, simplemente escribimos:
 
 ```bash
 setprojectdir .
@@ -46,17 +100,17 @@ setprojectdir .
 
 1. Desactivar
 
-   Para pasar a otra cosa en la línea de comandos, escriba `deactivate` para desactivar su entorno.
+Para pasar a otra cosa en la línea de comandos, escribe `deactivate` para desactivar tu entorno.
 
 ```bash
 deactivate
 ```
 
-    Observe cómo desaparecen los paréntesis.
+Observa cómo desaparecen los paréntesis.
 
 1. Workon
 
-   Abra el símbolo del sistema y escriba `workon HelloWorld` para activar el entorno y moverse a la carpeta raíz de su proyecto
+Abre el símbolo del sistema y escribe `workon HelloWorld` para activar el entorno y moverte a la carpeta raíz de tu proyecto
 
 ```bash
 workon HelloWorld
@@ -69,7 +123,7 @@ workon HelloWorld
     Desde <a href="https://python-poetry.org/">sitio web de Poetry</a>
   </base-disclaimer-title>
   <base-disclaimer-content>
-    Poetry es una herramienta para la gestión de dependencias y el empaquetado en Python. Le permite declarar las librerías de las que depende su proyecto y él las gestionará (instalará/actualizará) por usted.
+    Poetry es una herramienta para la gestión de dependencias y el empaquetado en Python. Te permite declarar las librerías de las que depende tu proyecto y las gestionará (instalará/actualizará) por ti.
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -85,7 +139,7 @@ pip install --user poetry
 poetry new my-project
 ```
 
-    Esto creará un directorio my-project:
+Esto creará un directorio my-project:
 
 ```plaintext
 my-project
@@ -98,7 +152,7 @@ my-project
     └── test_poetry_demo.py
 ```
 
-    El archivo pyproject.toml orquestará su proyecto y sus dependencias:
+El archivo pyproject.toml orquestará tu proyecto y sus dependencias:
 
 ```toml
 [tool.poetry]
@@ -116,36 +170,36 @@ pytest = "^3.4"
 
 3. Paquetes
 
-   Para agregar dependencias a su proyecto, puede especificarlas en la sección tool.poetry.dependencies:
+Para añadir dependencias a tu proyecto, puedes especificarlas en la sección tool.poetry.dependencies:
 
 ```toml
 [tool.poetry.dependencies]
 pendulum = "^1.4"
 ```
 
-    Además, en lugar de modificar el archivo pyproject.toml manualmente, puede usar el comando add y encontrará automáticamente una restricción de versión adecuada.
+Además, en lugar de modificar el archivo pyproject.toml a mano, puedes usar el comando add y automáticamente encontrará una restricción de versión adecuada.
 
 ```bash
 poetry add pendulum
 ```
 
-    Para instalar las dependencias listadas en pyproject.toml:
+Para instalar las dependencias listadas en pyproject.toml:
 
 ```bash
 poetry install
 ```
 
-    Para eliminar dependencias:
+Para eliminar dependencias:
 
 ```bash
 poetry remove pendulum
 ```
 
-Para más información, consulte la [documentación](https://poetry.eustace.io/docs/) o lea aquí:
+Para más información, consulta la [documentación](https://poetry.eustace.io/docs/) o lee aquí:
 
-- <router-link to="/blog/python-projects-with-poetry-and-vscode-part-1">Proyectos de Python con Poetry y VSCode. Parte 1</router-link>
-- <router-link to="/blog/python-projects-with-poetry-and-vscode-part-2">Proyectos de Python con Poetry y VSCode. Parte 2</router-link>
-- <router-link to="/blog/python-projects-with-poetry-and-vscode-part-3">Proyectos de Python con Poetry y VSCode. Parte 3</router-link>
+- <router-link to="/blog/python-projects-with-poetry-and-vscode-part-1">Proyectos Python con Poetry y VSCode. Parte 1</router-link>
+- <router-link to="/blog/python-projects-with-poetry-and-vscode-part-2">Proyectos Python con Poetry y VSCode. Parte 2</router-link>
+- <router-link to="/blog/python-projects-with-poetry-and-vscode-part-3">Proyectos Python con Poetry y VSCode. Parte 3</router-link>
 
 ## Pipenv
 
@@ -154,7 +208,7 @@ Para más información, consulte la [documentación](https://poetry.eustace.io/d
     Desde <a target="_blank" href="https://pipenv.pypa.io/en/latest/">sitio web de Pipenv</a>
   </base-disclaimer-title>
   <base-disclaimer-content>
-    Pipenv es una herramienta que tiene como objetivo llevar lo mejor de todos los mundos de empaquetado (bundler, composer, npm, cargo, yarn, etc.) al mundo de Python. Windows es un ciudadano de primera clase, en nuestro mundo.
+    Pipenv es una herramienta que tiene como objetivo traer lo mejor de todos los mundos de empaquetado (bundler, composer, npm, cargo, yarn, etc.) al mundo de Python. Windows es un ciudadano de primera clase en nuestro mundo.
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -164,14 +218,14 @@ Para más información, consulte la [documentación](https://poetry.eustace.io/d
 pip install pipenv
 ```
 
-2. Ingrese al directorio de su Proyecto e instale los Paquetes para su proyecto
+2. Entra en el directorio de tu Proyecto e instala los Paquetes para tu proyecto
 
 ```bash
 cd my_project
 pipenv install <package>
 ```
 
-    Pipenv instalará su paquete y creará un Pipfile para usted en el directorio de su proyecto. El Pipfile se utiliza para rastrear qué dependencias necesita su proyecto en caso de que necesite reinstalarlas.
+Pipenv instalará tu paquete y creará un Pipfile para ti en el directorio de tu proyecto. El Pipfile se utiliza para rastrear qué dependencias necesita tu proyecto en caso de que necesites reinstalarlas.
 
 3. Desinstalar Paquetes
 
@@ -179,7 +233,7 @@ pipenv install <package>
 pipenv uninstall <package>
 ```
 
-4. Activar el Entorno Virtual asociado con su proyecto Python
+4. Activar el Entorno Virtual asociado con tu proyecto Python
 
 ```bash
 pipenv shell
@@ -191,7 +245,7 @@ pipenv shell
 exit
 ```
 
-Encuentre más información y un video en [docs.pipenv.org](https://docs.pipenv.org/).
+Encuentra más información y un video en [docs.pipenv.org](https://docs.pipenv.org/).
 
 ## Anaconda
 
@@ -200,7 +254,7 @@ Encuentre más información y un video en [docs.pipenv.org](https://docs.pipenv.
     <a target="k" href="https://anaconda.com/">Anaconda</a> es otra herramienta popular para gestionar paquetes de python.
   </base-disclaimer-title>
   <base-disclaimer-content>
-    Donde se comparten paquetes, notebooks, proyectos y entornos. Su lugar para alojamiento público gratuito de paquetes conda.
+    Donde se comparten paquetes, notebooks, proyectos y entornos. Tu lugar para el alojamiento público gratuito de paquetes conda.
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -212,13 +266,13 @@ Uso:
 conda create -n HelloWorld
 ```
 
-2. Para usar el Entorno Virtual, actívelo mediante:
+2. Para usar el Entorno Virtual, actívalo mediante:
 
 ```bash
 conda activate HelloWorld
 ```
 
-    Cualquier cosa instalada ahora será específica para el proyecto HelloWorld
+Cualquier cosa instalada ahora será específica para el proyecto HelloWorld
 
 3. Salir del Entorno Virtual
 
@@ -254,7 +308,7 @@ uv init my-project
 cd my-project
 ```
 
-3. Agregar dependencias
+3. Añadir dependencias
 
 ```bash
 uv add requests
@@ -273,13 +327,13 @@ source .venv/bin/activate  # Linux/macOS
 .venv\Scripts\activate     # Windows
 ```
 
-UV gestiona automáticamente entornos virtuales, versiones de Python y dependencias con una velocidad y conveniencia excepcionales.
+UV gestiona automáticamente los entornos virtuales, las versiones de Python y las dependencias con una velocidad y comodidad excepcionales.
 
 ## Enlaces relevantes
 
-- <router-link to="/cheatsheet/packaging">Packaging</router-link>
-- <router-link to="/blog/python-projects-with-poetry-and-vscode-part-1">Proyectos de Python con Poetry y VSCode. Parte 1</router-link>
-- <router-link to="/blog/python-projects-with-poetry-and-vscode-part-2">Proyectos de Python con Poetry y VSCode. Parte 2</router-link>
-- <router-link to="/blog/python-projects-with-poetry-and-vscode-part-3">Proyectos de Python con Poetry y VSCode. Parte 3</router-link>
-- <router-link to="/blog/python-uv-package-manager">UV: El Gestor de Paquetes de Python Ultrarrápido</router-link>
+- <router-link to="/cheatsheet/packaging">Empaquetado</router-link>
+- <router-link to="/blog/python-projects-with-poetry-and-vscode-part-1">Proyectos Python con Poetry y VSCode. Parte 1</router-link>
+- <router-link to="/blog/python-projects-with-poetry-and-vscode-part-2">Proyectos Python con Poetry y VSCode. Parte 2</router-link>
+- <router-link to="/blog/python-projects-with-poetry-and-vscode-part-3">Proyectos Python con Poetry y VSCode. Parte 3</router-link>
+- <router-link to="/blog/python-uv-package-manager">UV: El Gestor de Paquetes Python Ultrarrápido</router-link>
 - <router-link to="/builtin/import">import()</router-link>

@@ -1,5 +1,5 @@
 ---
-title: 'Виртуальные среды Python - Шпаргалка по Python'
+title: 'Виртуальные среды Python - Справочник по Python'
 description: 'Виртуальная среда используется для тестирования кода Python в изолированных окружениях и для предотвращения заполнения базовой установки Python библиотеками, которые могут понадобиться только для одного проекта.'
 labUrl: 'https://labex.io/ru/labs/python-python-virtual-environments-633669?course=python-cheatsheet'
 ---
@@ -10,7 +10,61 @@ labUrl: 'https://labex.io/ru/labs/python-python-virtual-environments-633669?cour
 
 <base-lab-url :url="frontmatter.labUrl" />
 
-Использование Виртуального Окружения позволяет тестировать код Python в инкапсулированных средах, а также избегать заполнения базовой установки Python библиотеками, которые могут использоваться только для одного проекта.
+Использование Виртуального Окружения заключается в тестировании кода Python в инкапсулированных средах, а также в избежании заполнения базовой установки Python библиотеками, которые мы можем использовать только для одного проекта.
+
+## venv
+
+`venv` — это модуль стандартной библиотеки для создания виртуальных окружений в Python 3.3+. Он встроен в Python, поэтому установка не требуется.
+
+1. Создание виртуального окружения
+
+```bash
+python -m venv venv
+```
+
+Или в некоторых системах:
+
+```bash
+python3 -m venv venv
+```
+
+Это создает каталог `venv` в вашей текущей папке, содержащий виртуальное окружение.
+
+2. Активация виртуального окружения
+
+В Linux/macOS:
+
+```bash
+source venv/bin/activate
+```
+
+В Windows:
+
+```bash
+venv\Scripts\activate
+```
+
+После активации в начале вашей командной строки появится `(venv)`, указывающее на то, что виртуальное окружение активно.
+
+3. Установка пакетов
+
+При активном виртуальном окружении устанавливайте пакеты с помощью pip:
+
+```bash
+pip install package_name
+```
+
+Установленные пакеты будут специфичны для этого виртуального окружения.
+
+4. Деактивация виртуального окружения
+
+Чтобы выйти из виртуального окружения:
+
+```bash
+deactivate
+```
+
+Префикс `(venv)` исчезнет из вашей командной строки.
 
 ## virtualenv
 
@@ -34,11 +88,11 @@ pip install virtualenvwrapper-win
 mkvirtualenv HelloWorld
 ```
 
-    Все, что мы установим сейчас, будет специфично для этого проекта. И доступно для проектов, которые мы подключаем к этому окружению.
+Все, что мы установим сейчас, будет специфично для этого проекта. И доступно для проектов, которые мы подключаем к этому окружению.
 
 1. Установка каталога проекта
 
-   Чтобы связать наше виртуальное окружение с текущим рабочим каталогом, мы просто вводим:
+Чтобы связать наш virtualenv с текущим рабочим каталогом, мы просто вводим:
 
 ```bash
 setprojectdir .
@@ -46,17 +100,17 @@ setprojectdir .
 
 1. Деактивация
 
-   Чтобы перейти к чему-то другому в командной строке, введите `deactivate` для деактивации вашего окружения.
+Чтобы перейти к чему-то другому в командной строке, введите `deactivate` для деактивации вашего окружения.
 
 ```bash
 deactivate
 ```
 
-    Обратите внимание, как исчезают скобки.
+Обратите внимание, как исчезают скобки.
 
-1. Активация (Workon)
+1. Workon
 
-   Откройте командную строку и введите `workon HelloWorld`, чтобы активировать окружение и перейти в корневую папку вашего проекта
+Откройте командную строку и введите `workon HelloWorld`, чтобы активировать окружение и перейти в корневую папку вашего проекта
 
 ```bash
 workon HelloWorld
@@ -69,7 +123,7 @@ workon HelloWorld
     С <a href="https://python-poetry.org/">веб-сайта Poetry</a>
   </base-disclaimer-title>
   <base-disclaimer-content>
-    Poetry — это инструмент для управления зависимостями и упаковки в Python. Он позволяет объявить библиотеки, от которых зависит ваш проект, и будет управлять ими (устанавливать/обновлять) за вас.
+    Poetry — это инструмент для управления зависимостями и упаковки в Python. Он позволяет объявлять библиотеки, от которых зависит ваш проект, и будет управлять ими (устанавливать/обновлять) за вас.
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -85,7 +139,7 @@ pip install --user poetry
 poetry new my-project
 ```
 
-    Это создаст каталог my-project:
+Это создаст каталог my-project:
 
 ```plaintext
 my-project
@@ -98,7 +152,7 @@ my-project
     └── test_poetry_demo.py
 ```
 
-    Файл pyproject.toml будет оркестровать ваш проект и его зависимости:
+Файл pyproject.toml будет оркестровать ваш проект и его зависимости:
 
 ```toml
 [tool.poetry]
@@ -116,26 +170,26 @@ pytest = "^3.4"
 
 3. Пакеты
 
-   Чтобы добавить зависимости в ваш проект, вы можете указать их в разделе tool.poetry.dependencies:
+Чтобы добавить зависимости в ваш проект, вы можете указать их в разделе tool.poetry.dependencies:
 
 ```toml
 [tool.poetry.dependencies]
 pendulum = "^1.4"
 ```
 
-    Кроме того, вместо ручного изменения файла pyproject.toml вы можете использовать команду `add`, и она автоматически найдет подходящее ограничение версии.
+Кроме того, вместо ручного изменения файла pyproject.toml вы можете использовать команду add, и она автоматически найдет подходящее ограничение версии.
 
 ```bash
 poetry add pendulum
 ```
 
-    Чтобы установить зависимости, перечисленные в pyproject.toml:
+Чтобы установить зависимости, перечисленные в pyproject.toml:
 
 ```bash
 poetry install
 ```
 
-    Чтобы удалить зависимости:
+Чтобы удалить зависимости:
 
 ```bash
 poetry remove pendulum
@@ -143,9 +197,9 @@ poetry remove pendulum
 
 Для получения дополнительной информации ознакомьтесь с [документацией](https://poetry.eustace.io/docs/) или прочтите здесь:
 
-- <router-link to="/blog/python-projects-with-poetry-and-vscode-part-1">Проекты Python с Poetry и VSCode. Часть 1</router-link>
-- <router-link to="/blog/python-projects-with-poetry-and-vscode-part-2">Проекты Python с Poetry и VSCode. Часть 2</router-link>
-- <router-link to="/blog/python-projects-with-poetry-and-vscode-part-3">Проекты Python с Poetry и VSCode. Часть 3</router-link>
+- <router-link to="/blog/python-projects-with-poetry-and-vscode-part-1">Python projects with Poetry and VSCode. Part 1</router-link>
+- <router-link to="/blog/python-projects-with-poetry-and-vscode-part-2">Python projects with Poetry and VSCode. Part 2</router-link>
+- <router-link to="/blog/python-projects-with-poetry-and-vscode-part-3">Python projects with Poetry and VSCode. Part 3</router-link>
 
 ## Pipenv
 
@@ -164,14 +218,14 @@ poetry remove pendulum
 pip install pipenv
 ```
 
-2. Войдите в каталог вашего проекта и установите пакеты для вашего проекта
+2. Перейдите в каталог вашего проекта и установите пакеты для вашего проекта
 
 ```bash
 cd my_project
 pipenv install <package>
 ```
 
-    Pipenv установит ваш пакет и создаст для вас файл Pipfile в каталоге вашего проекта. Pipfile используется для отслеживания зависимостей, необходимых вашему проекту, на случай, если вам потребуется их переустановить.
+Pipenv установит ваш пакет и создаст для вас файл Pipfile в каталоге вашего проекта. Pipfile используется для отслеживания зависимостей, необходимых вашему проекту, на случай, если вам потребуется их переустановить.
 
 3. Удаление пакетов
 
@@ -212,13 +266,13 @@ exit
 conda create -n HelloWorld
 ```
 
-2. Для использования виртуального окружения активируйте его с помощью:
+2. Чтобы использовать виртуальное окружение, активируйте его с помощью:
 
 ```bash
 conda activate HelloWorld
 ```
 
-    Все, что будет установлено сейчас, будет специфично для проекта HelloWorld
+Все, что будет установлено сейчас, будет специфично для проекта HelloWorld
 
 3. Выход из виртуального окружения
 
@@ -230,7 +284,7 @@ conda deactivate
 
 <base-disclaimer>
   <base-disclaimer-title>
-    Из <a target="_blank" href="https://docs.astral.sh/uv/">документации UV</a>
+    Из <a target="_blank" href="https://docs.astral.sh/uv/">Документации UV</a>
   </base-disclaimer-title>
   <base-disclaimer-content>
     UV — это чрезвычайно быстрый установщик и решатель пакетов Python, разработанный как прямая замена рабочим процессам pip и pip-tools. UV в 10-100 раз быстрее, чем pip, и обеспечивает унифицированное управление пакетами, создание виртуальных окружений и управление версиями Python.
@@ -277,9 +331,9 @@ UV автоматически управляет виртуальными окр
 
 ## Соответствующие ссылки
 
-- <router-link to="/cheatsheet/packaging">Packaging</router-link>
-- <router-link to="/blog/python-projects-with-poetry-and-vscode-part-1">Проекты Python с Poetry и VSCode. Часть 1</router-link>
-- <router-link to="/blog/python-projects-with-poetry-and-vscode-part-2">Проекты Python с Poetry и VSCode. Часть 2</router-link>
-- <router-link to="/blog/python-projects-with-poetry-and-vscode-part-3">Проекты Python с Poetry и VSCode. Часть 3</router-link>
-- <router-link to="/blog/python-uv-package-manager">UV: Молниеносный менеджер пакетов Python</router-link>
+- <router-link to="/cheatsheet/packaging">Упаковка</router-link>
+- <router-link to="/blog/python-projects-with-poetry-and-vscode-part-1">Python projects with Poetry and VSCode. Part 1</router-link>
+- <router-link to="/blog/python-projects-with-poetry-and-vscode-part-2">Python projects with Poetry and VSCode. Part 2</router-link>
+- <router-link to="/blog/python-projects-with-poetry-and-vscode-part-3">Python projects with Poetry and VSCode. Part 3</router-link>
+- <router-link to="/blog/python-uv-package-manager">UV: The Lightning-Fast Python Package Manager</router-link>
 - <router-link to="/builtin/import">import()</router-link>

@@ -12,6 +12,60 @@ Virtual Environment
 
 The use of a Virtual Environment is to test python code in encapsulated environments, and to also avoid filling the base Python installation with libraries we might use for only one project.
 
+## venv
+
+`venv` is the standard library module for creating virtual environments in Python 3.3+. It's built into Python, so no installation is required.
+
+1. Create a virtual environment
+
+```bash
+python -m venv venv
+```
+
+Or on some systems:
+
+```bash
+python3 -m venv venv
+```
+
+This creates a `venv` directory in your current folder containing the virtual environment.
+
+2. Activate the virtual environment
+
+On Linux/macOS:
+
+```bash
+source venv/bin/activate
+```
+
+On Windows:
+
+```bash
+venv\Scripts\activate
+```
+
+Once activated, you'll see `(venv)` at the beginning of your command prompt, indicating the virtual environment is active.
+
+3. Install packages
+
+With the virtual environment activated, install packages using pip:
+
+```bash
+pip install package_name
+```
+
+Packages installed will be specific to this virtual environment.
+
+4. Deactivate the virtual environment
+
+To exit the virtual environment:
+
+```bash
+deactivate
+```
+
+The `(venv)` prefix will disappear from your command prompt.
+
 ## virtualenv
 
 1. Install virtualenv
@@ -34,11 +88,11 @@ Usage:
 mkvirtualenv HelloWorld
 ```
 
-    Anything we install now will be specific to this project. And available to the projects we connect to this environment.
+Anything we install now will be specific to this project. And available to the projects we connect to this environment.
 
 1. Set Project Directory
 
-   To bind our virtualenv with our current working directory we simply enter:
+To bind our virtualenv with our current working directory we simply enter:
 
 ```bash
 setprojectdir .
@@ -46,17 +100,17 @@ setprojectdir .
 
 1. Deactivate
 
-   To move onto something else in the command line type `deactivate` to deactivate your environment.
+To move onto something else in the command line type `deactivate` to deactivate your environment.
 
 ```bash
 deactivate
 ```
 
-    Notice how the parenthesis disappear.
+Notice how the parenthesis disappear.
 
 1. Workon
 
-   Open up the command prompt and type `workon HelloWorld` to activate the environment and move into your root project folder
+Open up the command prompt and type `workon HelloWorld` to activate the environment and move into your root project folder
 
 ```bash
 workon HelloWorld
@@ -85,7 +139,7 @@ pip install --user poetry
 poetry new my-project
 ```
 
-    This will create a my-project directory:
+This will create a my-project directory:
 
 ```plaintext
 my-project
@@ -98,7 +152,7 @@ my-project
     └── test_poetry_demo.py
 ```
 
-    The pyproject.toml file will orchestrate your project and its dependencies:
+The pyproject.toml file will orchestrate your project and its dependencies:
 
 ```toml
 [tool.poetry]
@@ -116,26 +170,26 @@ pytest = "^3.4"
 
 3. Packages
 
-   To add dependencies to your project, you can specify them in the tool.poetry.dependencies section:
+To add dependencies to your project, you can specify them in the tool.poetry.dependencies section:
 
 ```toml
 [tool.poetry.dependencies]
 pendulum = "^1.4"
 ```
 
-    Also, instead of modifying the pyproject.toml file by hand, you can use the add command and it will automatically find a suitable version constraint.
+Also, instead of modifying the pyproject.toml file by hand, you can use the add command and it will automatically find a suitable version constraint.
 
 ```bash
 poetry add pendulum
 ```
 
-    To install the dependencies listed in the pyproject.toml:
+To install the dependencies listed in the pyproject.toml:
 
 ```bash
 poetry install
 ```
 
-    To remove dependencies:
+To remove dependencies:
 
 ```bash
 poetry remove pendulum
@@ -171,7 +225,7 @@ cd my_project
 pipenv install <package>
 ```
 
-    Pipenv will install your package and create a Pipfile for you in your project's directory. The Pipfile is used to track which dependencies your project needs in case you need to re-install them.
+Pipenv will install your package and create a Pipfile for you in your project's directory. The Pipfile is used to track which dependencies your project needs in case you need to re-install them.
 
 3.  Uninstall Packages
 
@@ -218,7 +272,7 @@ conda create -n HelloWorld
 conda activate HelloWorld
 ```
 
-    Anything installed now will be specific to the project HelloWorld
+Anything installed now will be specific to the project HelloWorld
 
 3.  Exit the Virtual Environment
 

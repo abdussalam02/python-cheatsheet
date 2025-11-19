@@ -1,6 +1,6 @@
 ---
 title: 'Ambientes Virtuais Python - Guia Rápido Python'
-description: 'O uso de um Ambiente Virtual é testar código Python em ambientes encapsulados e evitar preencher a instalação base do Python com bibliotecas usadas apenas para um projeto.'
+description: 'O uso de um Ambiente Virtual é testar código Python em ambientes encapsulados e evitar preencher a instalação base do Python com bibliotecas que usaremos apenas para um projeto.'
 labUrl: 'https://labex.io/pt/labs/python-python-virtual-environments-633669?course=python-cheatsheet'
 ---
 
@@ -10,7 +10,61 @@ Ambiente Virtual
 
 <base-lab-url :url="frontmatter.labUrl" />
 
-O uso de um Ambiente Virtual é para testar código python em ambientes encapsulados e também para evitar preencher a instalação base do Python com bibliotecas que podemos usar para apenas um projeto.
+O uso de um Ambiente Virtual serve para testar código Python em ambientes encapsulados e também para evitar preencher a instalação base do Python com bibliotecas que podemos usar para apenas um projeto.
+
+## venv
+
+`venv` é o módulo da biblioteca padrão para criar ambientes virtuais no Python 3.3+. Ele é embutido no Python, então nenhuma instalação é necessária.
+
+1. Criar um ambiente virtual
+
+```bash
+python -m venv venv
+```
+
+Ou em alguns sistemas:
+
+```bash
+python3 -m venv venv
+```
+
+Isso cria um diretório `venv` na sua pasta atual contendo o ambiente virtual.
+
+2. Ativar o ambiente virtual
+
+No Linux/macOS:
+
+```bash
+source venv/bin/activate
+```
+
+No Windows:
+
+```bash
+venv\Scripts\activate
+```
+
+Uma vez ativado, você verá `(venv)` no início do seu prompt de comando, indicando que o ambiente virtual está ativo.
+
+3. Instalar pacotes
+
+Com o ambiente virtual ativado, instale pacotes usando pip:
+
+```bash
+pip install package_name
+```
+
+Os pacotes instalados serão específicos para este ambiente virtual.
+
+4. Desativar o ambiente virtual
+
+Para sair do ambiente virtual:
+
+```bash
+deactivate
+```
+
+O prefixo `(venv)` desaparecerá do seu prompt de comando.
 
 ## virtualenv
 
@@ -34,11 +88,11 @@ Uso:
 mkvirtualenv HelloWorld
 ```
 
-    Tudo o que instalarmos agora será específico para este projeto. E disponível para os projetos que conectarmos a este ambiente.
+Tudo o que instalarmos agora será específico para este projeto. E disponível para os projetos que conectarmos a este ambiente.
 
 1. Definir Diretório do Projeto
 
-   Para vincular nosso virtualenv ao nosso diretório de trabalho atual, simplesmente digitamos:
+Para vincular nosso virtualenv ao nosso diretório de trabalho atual, simplesmente digitamos:
 
 ```bash
 setprojectdir .
@@ -46,17 +100,17 @@ setprojectdir .
 
 1. Desativar
 
-   Para passar para outra coisa na linha de comando, digite `deactivate` para desativar seu ambiente.
+Para passar para outra coisa na linha de comando, digite `deactivate` para desativar seu ambiente.
 
 ```bash
 deactivate
 ```
 
-    Note como os parênteses desaparecem.
+Note como os parênteses desaparecem.
 
 1. Workon
 
-   Abra o prompt de comando e digite `workon HelloWorld` para ativar o ambiente e mover para a pasta raiz do seu projeto
+Abra o prompt de comando e digite `workon HelloWorld` para ativar o ambiente e mover para a pasta raiz do seu projeto
 
 ```bash
 workon HelloWorld
@@ -69,7 +123,7 @@ workon HelloWorld
     Do <a href="https://python-poetry.org/">site do Poetry</a>
   </base-disclaimer-title>
   <base-disclaimer-content>
-    Poetry é uma ferramenta para gerenciamento de dependências e empacotamento em Python. Ele permite que você declare as bibliotecas das quais seu projeto depende e as gerenciará (instalará/atualizará) para você.
+    Poetry é uma ferramenta para gerenciamento de dependências e empacotamento em Python. Ele permite que você declare as bibliotecas das quais seu projeto depende e ele as gerenciará (instalará/atualizará) para você.
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -85,7 +139,7 @@ pip install --user poetry
 poetry new my-project
 ```
 
-    Isso criará um diretório my-project:
+Isso criará um diretório my-project:
 
 ```plaintext
 my-project
@@ -98,7 +152,7 @@ my-project
     └── test_poetry_demo.py
 ```
 
-    O arquivo pyproject.toml orquestrará seu projeto e suas dependências:
+O arquivo pyproject.toml orquestrará seu projeto e suas dependências:
 
 ```toml
 [tool.poetry]
@@ -116,26 +170,26 @@ pytest = "^3.4"
 
 3. Pacotes
 
-   Para adicionar dependências ao seu projeto, você pode especificá-las na seção tool.poetry.dependencies:
+Para adicionar dependências ao seu projeto, você pode especificá-las na seção tool.poetry.dependencies:
 
 ```toml
 [tool.poetry.dependencies]
 pendulum = "^1.4"
 ```
 
-    Além disso, em vez de modificar o arquivo pyproject.toml manualmente, você pode usar o comando add e ele encontrará automaticamente uma restrição de versão adequada.
+Além disso, em vez de modificar o arquivo pyproject.toml manualmente, você pode usar o comando add e ele encontrará automaticamente uma restrição de versão adequada.
 
 ```bash
 poetry add pendulum
 ```
 
-    Para instalar as dependências listadas em pyproject.toml:
+Para instalar as dependências listadas em pyproject.toml:
 
 ```bash
 poetry install
 ```
 
-    Para remover dependências:
+Para remover dependências:
 
 ```bash
 poetry remove pendulum
@@ -171,7 +225,7 @@ cd my_project
 pipenv install <package>
 ```
 
-    O Pipenv instalará seu pacote e criará um Pipfile para você no diretório do seu projeto. O Pipfile é usado para rastrear quais dependências seu projeto precisa caso você precise reinstalá-las.
+Pipenv instalará seu pacote e criará um Pipfile para você no diretório do seu projeto. O Pipfile é usado para rastrear quais dependências seu projeto precisa caso você precise reinstalá-las.
 
 3. Desinstalar Pacotes
 
@@ -197,7 +251,7 @@ Encontre mais informações e um vídeo em [docs.pipenv.org](https://docs.pipenv
 
 <base-disclaimer>
   <base-disclaimer-title>
-    <a target="k" href="https://anaconda.com/">Anaconda</a> é outra ferramenta popular para gerenciar pacotes python.
+    <a target="k" href="https://anaconda.com/">Anaconda</a> é outra ferramenta popular para gerenciar pacotes Python.
   </base-disclaimer-title>
   <base-disclaimer-content>
     Onde pacotes, notebooks, projetos e ambientes são compartilhados. Seu lugar para hospedagem pública gratuita de pacotes conda.
@@ -218,7 +272,7 @@ conda create -n HelloWorld
 conda activate HelloWorld
 ```
 
-    Tudo o que for instalado agora será específico para o projeto HelloWorld
+Tudo o que for instalado agora será específico para o projeto HelloWorld
 
 3. Sair do Ambiente Virtual
 
@@ -273,11 +327,11 @@ source .venv/bin/activate  # Linux/macOS
 .venv\Scripts\activate     # Windows
 ```
 
-O UV gerencia automaticamente ambientes virtuais, versões Python e dependências com velocidade e conveniência excepcionais.
+UV gerencia automaticamente ambientes virtuais, versões Python e dependências com velocidade e conveniência excepcionais.
 
-## Links relevantes
+## Links Relevantes
 
-- <router-link to="/cheatsheet/packaging">Packaging</router-link>
+- <router-link to="/cheatsheet/packaging">Empacotamento</router-link>
 - <router-link to="/blog/python-projects-with-poetry-and-vscode-part-1">Projetos Python com Poetry e VSCode. Parte 1</router-link>
 - <router-link to="/blog/python-projects-with-poetry-and-vscode-part-2">Projetos Python com Poetry e VSCode. Parte 2</router-link>
 - <router-link to="/blog/python-projects-with-poetry-and-vscode-part-3">Projetos Python com Poetry e VSCode. Parte 3</router-link>

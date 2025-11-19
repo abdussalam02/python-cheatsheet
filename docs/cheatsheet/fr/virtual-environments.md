@@ -12,6 +12,60 @@ Environnement Virtuel
 
 L'utilisation d'un Environnement Virtuel sert à tester du code python dans des environnements encapsulés, et également à éviter de remplir l'installation Python de base avec des bibliothèques que nous pourrions n'utiliser que pour un seul projet.
 
+## venv
+
+`venv` est le module de la bibliothèque standard pour créer des environnements virtuels dans Python 3.3+. Il est intégré à Python, donc aucune installation n'est requise.
+
+1. Créer un environnement virtuel
+
+```bash
+python -m venv venv
+```
+
+Ou sur certains systèmes :
+
+```bash
+python3 -m venv venv
+```
+
+Ceci crée un répertoire `venv` dans votre dossier actuel contenant l'environnement virtuel.
+
+2. Activer l'environnement virtuel
+
+Sur Linux/macOS :
+
+```bash
+source venv/bin/activate
+```
+
+Sur Windows :
+
+```bash
+venv\Scripts\activate
+```
+
+Une fois activé, vous verrez `(venv)` au début de votre invite de commande, indiquant que l'environnement virtuel est actif.
+
+3. Installer des paquets
+
+Avec l'environnement virtuel activé, installez des paquets en utilisant pip :
+
+```bash
+pip install package_name
+```
+
+Les paquets installés seront spécifiques à cet environnement virtuel.
+
+4. Désactiver l'environnement virtuel
+
+Pour quitter l'environnement virtuel :
+
+```bash
+deactivate
+```
+
+Le préfixe `(venv)` disparaîtra de votre invite de commande.
+
 ## virtualenv
 
 1. Installer virtualenv
@@ -28,17 +82,17 @@ pip install virtualenvwrapper-win
 
 Utilisation :
 
-1. Créer un Environnement Virtuel nommé `HelloWorld`
+1. Créer un environnement virtuel nommé `HelloWorld`
 
 ```bash
 mkvirtualenv HelloWorld
 ```
 
-    Tout ce que nous installons maintenant sera spécifique à ce projet. Et disponible pour les projets que nous connectons à cet environnement.
+Tout ce que nous installons maintenant sera spécifique à ce projet. Et disponible pour les projets que nous connectons à cet environnement.
 
-1. Définir le Répertoire du Projet
+1. Définir le répertoire du projet
 
-   Pour lier notre virtualenv à notre répertoire de travail actuel, nous entrons simplement :
+Pour lier notre virtualenv à notre répertoire de travail actuel, nous entrons simplement :
 
 ```bash
 setprojectdir .
@@ -46,17 +100,17 @@ setprojectdir .
 
 1. Désactiver
 
-   Pour passer à autre chose dans la ligne de commande, tapez `deactivate` pour désactiver votre environnement.
+Pour passer à autre chose dans l'invite de commande, tapez `deactivate` pour désactiver votre environnement.
 
 ```bash
 deactivate
 ```
 
-    Remarquez comment les parenthèses disparaissent.
+Remarquez comment les parenthèses disparaissent.
 
 1. Travailler sur (Workon)
 
-   Ouvrez l'invite de commande et tapez `workon HelloWorld` pour activer l'environnement et vous déplacer dans le dossier racine de votre projet
+Ouvrez l'invite de commande et tapez `workon HelloWorld` pour activer l'environnement et vous déplacer dans le dossier racine de votre projet
 
 ```bash
 workon HelloWorld
@@ -66,7 +120,7 @@ workon HelloWorld
 
 <base-disclaimer>
   <base-disclaimer-title>
-    Depuis le <a href="https://python-poetry.org/">site web de Poetry</a>
+    Du site web de <a href="https://python-poetry.org/">Poetry</a>
   </base-disclaimer-title>
   <base-disclaimer-content>
     Poetry est un outil de gestion des dépendances et de packaging en Python. Il vous permet de déclarer les bibliothèques dont votre projet dépend et il les gérera (installera/mettra à jour) pour vous.
@@ -85,7 +139,7 @@ pip install --user poetry
 poetry new my-project
 ```
 
-    Ceci créera un répertoire my-project :
+Ceci créera un répertoire my-project :
 
 ```plaintext
 my-project
@@ -98,7 +152,7 @@ my-project
     └── test_poetry_demo.py
 ```
 
-    Le fichier pyproject.toml orchestrera votre projet et ses dépendances :
+Le fichier pyproject.toml orchestrera votre projet et ses dépendances :
 
 ```toml
 [tool.poetry]
@@ -116,26 +170,26 @@ pytest = "^3.4"
 
 3. Paquets
 
-   Pour ajouter des dépendances à votre projet, vous pouvez les spécifier dans la section tool.poetry.dependencies :
+Pour ajouter des dépendances à votre projet, vous pouvez les spécifier dans la section tool.poetry.dependencies :
 
 ```toml
 [tool.poetry.dependencies]
 pendulum = "^1.4"
 ```
 
-    De plus, au lieu de modifier le fichier pyproject.toml à la main, vous pouvez utiliser la commande `add` et elle trouvera automatiquement une contrainte de version appropriée.
+Aussi, au lieu de modifier le fichier pyproject.toml à la main, vous pouvez utiliser la commande `add` et elle trouvera automatiquement une contrainte de version appropriée.
 
 ```bash
 poetry add pendulum
 ```
 
-    Pour installer les dépendances listées dans pyproject.toml :
+Pour installer les dépendances listées dans pyproject.toml :
 
 ```bash
 poetry install
 ```
 
-    Pour supprimer des dépendances :
+Pour supprimer des dépendances :
 
 ```bash
 poetry remove pendulum
@@ -151,10 +205,10 @@ Pour plus d'informations, consultez la [documentation](https://poetry.eustace.io
 
 <base-disclaimer>
   <base-disclaimer-title>
-    Depuis le <a target="_blank" href="https://pipenv.pypa.io/en/latest/">site web de Pipenv</a>
+    Du site web de <a target="_blank" href="https://pipenv.pypa.io/en/latest/">Pipenv</a>
   </base-disclaimer-title>
   <base-disclaimer-content>
-    Pipenv est un outil qui vise à apporter le meilleur de tous les mondes du packaging (bundler, composer, npm, cargo, yarn, etc.) au monde Python. Windows est un citoyen de première classe, dans notre monde.
+    Pipenv est un outil qui vise à apporter le meilleur de tous les mondes de packaging (bundler, composer, npm, cargo, yarn, etc.) au monde Python. Windows est un citoyen de première classe, dans notre monde.
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -164,28 +218,28 @@ Pour plus d'informations, consultez la [documentation](https://poetry.eustace.io
 pip install pipenv
 ```
 
-2. Entrez dans le répertoire de votre Projet et installez les Paquets pour votre projet
+2. Entrez dans le répertoire de votre projet et installez les paquets pour votre projet
 
 ```bash
 cd my_project
 pipenv install <package>
 ```
 
-    Pipenv installera votre paquet et créera un Pipfile pour vous dans le répertoire de votre projet. Le Pipfile est utilisé pour suivre les dépendances dont votre projet a besoin au cas où vous auriez besoin de les réinstaller.
+Pipenv installera votre paquet et créera un Pipfile pour vous dans le répertoire de votre projet. Le Pipfile est utilisé pour suivre les dépendances dont votre projet a besoin au cas où vous devriez les réinstaller.
 
-3. Désinstaller des Paquets
+3. Désinstaller des paquets
 
 ```bash
 pipenv uninstall <package>
 ```
 
-4. Activer l'Environnement Virtuel associé à votre projet Python
+4. Activer l'environnement virtuel associé à votre projet Python
 
 ```bash
 pipenv shell
 ```
 
-5. Quitter l'Environnement Virtuel
+5. Quitter l'environnement virtuel
 
 ```bash
 exit
@@ -206,21 +260,21 @@ Trouvez plus d'informations et une vidéo sur [docs.pipenv.org](https://docs.pip
 
 Utilisation :
 
-1. Créer un Environnement Virtuel
+1. Créer un environnement virtuel
 
 ```bash
 conda create -n HelloWorld
 ```
 
-2. Pour utiliser l'Environnement Virtuel, activez-le par :
+2. Pour utiliser l'environnement virtuel, activez-le par :
 
 ```bash
 conda activate HelloWorld
 ```
 
-    Tout ce qui est installé maintenant sera spécifique au projet HelloWorld
+Tout ce qui est installé maintenant sera spécifique au projet HelloWorld
 
-3. Quitter l'Environnement Virtuel
+3. Quitter l'environnement virtuel
 
 ```bash
 conda deactivate
@@ -230,7 +284,7 @@ conda deactivate
 
 <base-disclaimer>
   <base-disclaimer-title>
-    Depuis la <a target="_blank" href="https://docs.astral.sh/uv/">Documentation UV</a>
+    De la <a target="_blank" href="https://docs.astral.sh/uv/">Documentation UV</a>
   </base-disclaimer-title>
   <base-disclaimer-content>
     UV est un installateur et résolveur de paquets Python extrêmement rapide, conçu comme un remplacement direct pour les flux de travail pip et pip-tools. UV est 10 à 100 fois plus rapide que pip et fournit une gestion unifiée des paquets, la création d'environnements virtuels et la gestion des versions Python.
