@@ -47,6 +47,6 @@ if __name__ == "__main__":  # Only runs when file is executed, not when imported
 ## Relevant links
 
 - <router-link to="/cheatsheet/functions">Functions</router-link>
-- <router-link to="/cheatsheet/setup-py">setup.py</router-link>
+- <router-link to="/cheatsheet/packaging">Packaging</router-link>
 - <router-link to="/blog/python-projects-with-poetry-and-vscode-part-1">Python projects with Poetry and VSCode. Part 1</router-link>
 - <router-link to="/builtin/import">import()</router-link>

@@ -47,6 +47,6 @@ if __name__ == "__main__":  # Запускается только при пря�
 ## Соответствующие ссылки
 
 - <router-link to="/cheatsheet/functions">Функции</router-link>
-- <router-link to="/cheatsheet/setup-py">setup.py</router-link>
+- <router-link to="/cheatsheet/packaging">Packaging</router-link>
 - <router-link to="/blog/python-projects-with-poetry-and-vscode-part-1">Проекты Python с Poetry и VSCode. Часть 1</router-link>
 - <router-link to="/builtin/import">import()</router-link>

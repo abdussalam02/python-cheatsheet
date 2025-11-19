@@ -277,7 +277,7 @@ O UV gerencia automaticamente ambientes virtuais, versões Python e dependência
 
 ## Links relevantes
 
-- <router-link to="/cheatsheet/setup-py">setup.py</router-link>
+- <router-link to="/cheatsheet/packaging">Packaging</router-link>
 - <router-link to="/blog/python-projects-with-poetry-and-vscode-part-1">Projetos Python com Poetry e VSCode. Parte 1</router-link>
 - <router-link to="/blog/python-projects-with-poetry-and-vscode-part-2">Projetos Python com Poetry e VSCode. Parte 2</router-link>
 - <router-link to="/blog/python-projects-with-poetry-and-vscode-part-3">Projetos Python com Poetry e VSCode. Parte 3</router-link>

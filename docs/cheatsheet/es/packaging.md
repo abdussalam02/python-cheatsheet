@@ -1,11 +1,11 @@
 ---
-title: 'Python Setup.py - Hoja de Trucos de Python'
-description: 'El script setup es el centro de toda actividad en la construcción, distribución e instalación de módulos usando Distutils. El propósito principal del script setup es describir su distribución de módulos a Distutils para que los diversos comandos que operan sobre sus módulos realicen la acción correcta.'
+title: 'Python Packaging - Hoja de Trucos de Python'
+description: 'Aprende cómo empaquetar proyectos Python usando setup.py y pyproject.toml. Comprende el enfoque moderno para el empaquetado de Python con las especificaciones PEP-517, PEP-518 y PEP-660.'
 labUrl: 'https://labex.io/es/labs/python-python-setup-py-633666?course=python-cheatsheet'
 ---
 
 <base-title :title="frontmatter.title" :description="frontmatter.description">
-setup.py de Python
+Python Packaging
 </base-title>
 
 <base-lab-url :url="frontmatter.labUrl" />
@@ -29,11 +29,13 @@ Para una guía completa sobre UV, el gestor de paquetes de Python ultrarrápido,
 
 ## Introducción
 
-El script de configuración (setup script) es el centro de toda la actividad en la construcción, distribución e instalación de módulos utilizando Distutils. El propósito principal del script de configuración es describir tu distribución de módulos a Distutils, para que los diversos comandos que operan en tus módulos hagan lo correcto.
+El empaquetado de Python es el proceso de preparar tu proyecto Python para distribución e instalación. Hay dos enfoques principales: el método tradicional `setup.py` y el enfoque moderno `pyproject.toml` (definido en PEP-517, PEP-518 y PEP-660).
 
 Para una guía completa sobre el manejo de rutas de archivos y directorios, lo cual es esencial para gestionar estructuras de proyectos, consulta la página de <router-link to="/cheatsheet/file-directory-path">Rutas de Archivos y Directorios</router-link>.
 
-El archivo `setup.py` está en el corazón de un proyecto de Python. Describe todos los metadatos sobre tu proyecto. Hay bastantes campos que puedes añadir a un proyecto para darle un rico conjunto de metadatos que describen el proyecto. Sin embargo, solo hay tres campos obligatorios: `name`, `version` y `packages`. El campo `name` debe ser único si deseas publicar tu paquete en el Python Package Index (PyPI). El campo `version` realiza un seguimiento de las diferentes versiones del proyecto. El campo `packages` describe dónde has colocado el código fuente de Python dentro de tu proyecto.
+## Enfoque tradicional: setup.py
+
+El archivo `setup.py` está en el corazón de un proyecto de Python tradicional. Describe todos los metadatos sobre tu proyecto. Hay bastantes campos que puedes añadir a un proyecto para darle un rico conjunto de metadatos que describen el proyecto. Sin embargo, solo hay tres campos obligatorios: `name`, `version` y `packages`. El campo `name` debe ser único si deseas publicar tu paquete en el Python Package Index (PyPI). El campo `version` realiza un seguimiento de las diferentes versiones del proyecto. El campo `packages` describe dónde has colocado el código fuente de Python dentro de tu proyecto.
 
 Esto te permite instalar fácilmente paquetes de Python. A menudo es suficiente escribir:
 
@@ -43,7 +45,7 @@ python setup.py install
 
 y el módulo se instalará a sí mismo.
 
-## Ejemplo
+### Ejemplo: setup.py
 
 Nuestro `setup.py` inicial también incluirá información sobre la licencia y reutilizará el archivo `README.txt` para el campo `long_description`. Se verá así:
 
@@ -58,6 +60,67 @@ setup(
    long_description=open('README.txt').read(),  # Leer descripción desde el archivo
 )
 ```
+
+## Enfoque moderno: pyproject.toml
+
+El archivo `pyproject.toml` es el estándar moderno para la configuración de proyectos Python (PEP-517, PEP-518, PEP-660). Proporciona una forma unificada de especificar los requisitos del sistema de compilación y los metadatos del proyecto en un único formato de archivo declarativo.
+
+### Beneficios de pyproject.toml
+
+- **Declarativo**: Todos los metadatos del proyecto en un solo lugar
+- **Independiente del sistema de compilación**: Funciona con setuptools, poetry, flit y otros backends de compilación
+- **Sin ejecución de código**: Más seguro y predecible que setup.py
+- **Estandarizado**: Sigue los estándares PEP para mejor soporte de herramientas
+
+### Ejemplo: pyproject.toml
+
+Aquí tienes un ejemplo básico de `pyproject.toml` usando setuptools:
+
+```toml
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pythonCheatsheet"
+version = "0.1"
+description = "Un paquete de hoja de trucos de Python"
+readme = "README.txt"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "Tu Nombre", email = "your.email@example.com"}
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "black>=22.0",
+]
+```
+
+### Instalación desde pyproject.toml
+
+Con `pyproject.toml`, puedes instalar tu paquete usando pip:
+
+```bash
+pip install .
+```
+
+O en modo editable:
+
+```bash
+pip install -e .
+```
+
+## Elegir el enfoque correcto
+
+- **Usa `setup.py`**: Si estás trabajando con proyectos heredados o necesitas control detallado
+- **Usa `pyproject.toml`**: Para proyectos nuevos (recomendado), ya que es el estándar moderno y proporciona mejor soporte de herramientas
 
 Encuentra más información visitando la [documentación oficial](http://docs.python.org/3.11/install/index.html).
 

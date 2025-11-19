@@ -47,6 +47,6 @@ if __name__ == "__main__":  # 파일이 직접 실행될 때만 실행되며, �
 ## 관련 링크
 
 - <router-link to="/cheatsheet/functions">함수</router-link>
-- <router-link to="/cheatsheet/setup-py">setup.py</router-link>
+- <router-link to="/cheatsheet/packaging">Packaging</router-link>
 - <router-link to="/blog/python-projects-with-poetry-and-vscode-part-1">Poetry 및 VSCode 를 사용한 Python 프로젝트. 파트 1</router-link>
 - <router-link to="/builtin/import">import()</router-link>

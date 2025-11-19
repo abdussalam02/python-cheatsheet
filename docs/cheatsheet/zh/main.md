@@ -47,6 +47,6 @@ if __name__ == "__main__":  # 仅在文件被直接执行时运行，而不是�
 ## 相关链接
 
 - <router-link to="/cheatsheet/functions">函数</router-link>
-- <router-link to="/cheatsheet/setup-py">setup.py</router-link>
+- <router-link to="/cheatsheet/packaging">打包</router-link>
 - <router-link to="/blog/python-projects-with-poetry-and-vscode-part-1">使用 Poetry 和 VSCode 的 Python 项目。第一部分</router-link>
 - <router-link to="/builtin/import">import()</router-link>

@@ -47,6 +47,6 @@ if __name__ == "__main__":  # Solo se ejecuta cuando se ejecuta el archivo, no c
 ## Enlaces relevantes
 
 - <router-link to="/cheatsheet/functions">Funciones</router-link>
-- <router-link to="/cheatsheet/setup-py">setup.py</router-link>
+- <router-link to="/cheatsheet/packaging">Packaging</router-link>
 - <router-link to="/blog/python-projects-with-poetry-and-vscode-part-1">Proyectos de Python con Poetry y VSCode. Parte 1</router-link>
 - <router-link to="/builtin/import">import()</router-link>

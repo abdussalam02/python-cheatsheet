@@ -52,7 +52,7 @@ print(math_module.sqrt(4))
 ## Соответствующие ссылки
 
 - <router-link :to="'/modules/importlib'">Модуль importlib</router-link>
-- <router-link :to="'/cheatsheet/setup-py'">setup.py</router-link>
+- <router-link :to="'/cheatsheet/packaging'">Packaging</router-link>
 - <router-link :to="'/blog/python-projects-with-poetry-and-vscode-part-1'">Проекты Python с Poetry и VS Code (Часть 1)</router-link>
 - <router-link :to="'/builtin/globals'">globals()</router-link>
 - <router-link :to="'/builtin/locals'">locals()</router-link>

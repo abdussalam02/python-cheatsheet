@@ -52,7 +52,7 @@ print(math_module.sqrt(4))
 ## 相关链接
 
 - <router-link :to="'/modules/importlib'">importlib 模块</router-link>
-- <router-link :to="'/cheatsheet/setup-py'">setup.py</router-link>
+- <router-link :to="'/cheatsheet/packaging'">打包</router-link>
 - <router-link :to="'/blog/python-projects-with-poetry-and-vscode-part-1'">使用 Poetry 和 VS Code 的 Python 项目（第 1 部分）</router-link>
 - <router-link :to="'/builtin/globals'">globals()</router-link>
 - <router-link :to="'/builtin/locals'">locals()</router-link>

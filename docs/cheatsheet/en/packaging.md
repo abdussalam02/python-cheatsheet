@@ -1,11 +1,11 @@
 ---
-title: Python Setup.py - Python Cheatsheet
-description: The setup script is the centre of all activity in building, distributing, and installing modules using the Distutils. The main purpose of the setup script is to describe your module distribution to the Distutils, so that the various commands that operate on your modules do the right thing.
+title: Python Packaging - Python Cheatsheet
+description: Learn how to package Python projects using setup.py and pyproject.toml. Understand the modern approach to Python packaging with PEP-517, PEP-518, and PEP-660 specifications.
 labUrl: https://labex.io/labs/python-python-setup-py-633666?course=python-cheatsheet
 ---
 
 <base-title :title="frontmatter.title" :description="frontmatter.description">
-Python setup.py
+Python Packaging
 </base-title>
 
 <base-lab-url :url="frontmatter.labUrl" />
@@ -29,11 +29,13 @@ For a comprehensive guide to UV, the lightning-fast Python package manager, read
 
 ## Introduction
 
-The setup script is the center of all activity in building, distributing, and installing modules using the Distutils. The main purpose of the setup script is to describe your module distribution to the Distutils, so that the various commands that operate on your modules do the right thing.
+Python packaging is the process of preparing your Python project for distribution and installation. There are two main approaches: the traditional `setup.py` method and the modern `pyproject.toml` approach (defined in PEP-517, PEP-518, and PEP-660).
 
 For a comprehensive guide on handling file and directory paths, which is essential for managing project structures, see the <router-link to="/cheatsheet/file-directory-path">File and directory Paths</router-link> page.
 
-The `setup.py` file is at the heart of a Python project. It describes all the metadata about your project. There are quite a few fields you can add to a project to give it a rich set of metadata describing the project. However, there are only three required fields: name, version, and packages. The name field must be unique if you wish to publish your package on the Python Package Index (PyPI). The version field keeps track of different releases of the project. The package's field describes where you’ve put the Python source code within your project.
+## Traditional Approach: setup.py
+
+The `setup.py` file is at the heart of a traditional Python project. It describes all the metadata about your project. There are quite a few fields you can add to a project to give it a rich set of metadata describing the project. However, there are only three required fields: name, version, and packages. The name field must be unique if you wish to publish your package on the Python Package Index (PyPI). The version field keeps track of different releases of the project. The package's field describes where you've put the Python source code within your project.
 
 This allows you to easily install Python packages. Often it's enough to write:
 
@@ -43,7 +45,7 @@ python setup.py install
 
 and module will install itself.
 
-## Example
+### Example: setup.py
 
 Our initial setup.py will also include information about the license and will re-use the README.txt file for the long_description field. This will look like:
 
@@ -58,6 +60,67 @@ setup(
    long_description=open('README.txt').read(),  # Read description from file
 )
 ```
+
+## Modern Approach: pyproject.toml
+
+The `pyproject.toml` file is the modern standard for Python project configuration (PEP-517, PEP-518, PEP-660). It provides a unified way to specify build system requirements and project metadata in a single, declarative file format.
+
+### Benefits of pyproject.toml
+
+- **Declarative**: All project metadata in one place
+- **Build system agnostic**: Works with setuptools, poetry, flit, and other build backends
+- **No code execution**: Safer and more predictable than setup.py
+- **Standardized**: Follows PEP standards for better tooling support
+
+### Example: pyproject.toml
+
+Here's a basic `pyproject.toml` example using setuptools:
+
+```toml
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pythonCheatsheet"
+version = "0.1"
+description = "A Python cheatsheet package"
+readme = "README.txt"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "Your Name", email = "your.email@example.com"}
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "black>=22.0",
+]
+```
+
+### Installing from pyproject.toml
+
+With `pyproject.toml`, you can install your package using pip:
+
+```bash
+pip install .
+```
+
+Or in editable mode:
+
+```bash
+pip install -e .
+```
+
+## Choosing the Right Approach
+
+- **Use `setup.py`**: If you're working with legacy projects or need fine-grained control
+- **Use `pyproject.toml`**: For new projects (recommended), as it's the modern standard and provides better tooling support
 
 Find more information visit the [official documentation](http://docs.python.org/3.11/install/index.html).
 

@@ -277,7 +277,7 @@ UV 는 탁월한 속도와 편의성으로 가상 환경, Python 버전 및 종�
 
 ## 관련 링크
 
-- <router-link to="/cheatsheet/setup-py">setup.py</router-link>
+- <router-link to="/cheatsheet/packaging">Packaging</router-link>
 - <router-link to="/blog/python-projects-with-poetry-and-vscode-part-1">Poetry 와 VSCode 를 사용한 Python 프로젝트. 파트 1</router-link>
 - <router-link to="/blog/python-projects-with-poetry-and-vscode-part-2">Poetry 와 VSCode 를 사용한 Python 프로젝트. 파트 2</router-link>
 - <router-link to="/blog/python-projects-with-poetry-and-vscode-part-3">Poetry 와 VSCode 를 사용한 Python 프로젝트. 파트 3</router-link>

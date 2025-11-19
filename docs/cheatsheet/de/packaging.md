@@ -1,11 +1,11 @@
 ---
-title: 'Python Setup.py - Python Spickzettel'
-description: 'Das Setup-Skript ist das Zentrum aller Aktivitäten beim Erstellen, Verteilen und Installieren von Modulen mit Distutils. Der Hauptzweck des Setup-Skripts besteht darin, Ihre Modulverteilung für Distutils zu beschreiben, damit die verschiedenen Befehle, die auf Ihre Module angewendet werden, korrekt funktionieren.'
+title: 'Python Packaging - Python Spickzettel'
+description: 'Lernen Sie, wie Sie Python-Projekte mit setup.py und pyproject.toml verpacken. Verstehen Sie den modernen Ansatz für Python-Packaging mit PEP-517, PEP-518 und PEP-660 Spezifikationen.'
 labUrl: 'https://labex.io/de/labs/python-python-setup-py-633666?course=python-cheatsheet'
 ---
 
 <base-title :title="frontmatter.title" :description="frontmatter.description">
-Python setup.py
+Python Packaging
 </base-title>
 
 <base-lab-url :url="frontmatter.labUrl" />
@@ -29,11 +29,13 @@ Für eine umfassende Anleitung zu UV, dem blitzschnellen Python-Paketmanager, le
 
 ## Einführung
 
-Das Setup-Skript ist das Zentrum aller Aktivitäten beim Erstellen, Verteilen und Installieren von Modulen mit Distutils. Der Hauptzweck des Setup-Skripts besteht darin, Ihre Modulverteilung gegenüber Distutils zu beschreiben, damit die verschiedenen Befehle, die auf Ihre Module angewendet werden, das Richtige tun.
+Python-Packaging ist der Prozess der Vorbereitung Ihres Python-Projekts für die Verteilung und Installation. Es gibt zwei Hauptansätze: die traditionelle `setup.py`-Methode und den modernen `pyproject.toml`-Ansatz (definiert in PEP-517, PEP-518 und PEP-660).
 
 Für eine umfassende Anleitung zur Handhabung von Datei- und Verzeichnispfaden, was für die Verwaltung von Projektstrukturen unerlässlich ist, siehe die Seite <router-link to="/cheatsheet/file-directory-path">Datei- und Verzeichnispfade</router-link>.
 
-Die Datei `setup.py` steht im Mittelpunkt eines Python-Projekts. Sie beschreibt alle Metadaten über Ihr Projekt. Es gibt einige Felder, die Sie einem Projekt hinzufügen können, um ihm einen reichhaltigen Satz von Metadaten zur Beschreibung des Projekts zu geben. Es gibt jedoch nur drei erforderliche Felder: name, version und packages. Das Feld name muss eindeutig sein, wenn Sie Ihr Paket im Python Package Index (PyPI) veröffentlichen möchten. Das Feld version verfolgt verschiedene Versionen des Projekts. Das Feld packages beschreibt, wo Sie den Python-Quellcode innerhalb Ihres Projekts abgelegt haben.
+## Traditioneller Ansatz: setup.py
+
+Die Datei `setup.py` steht im Mittelpunkt eines traditionellen Python-Projekts. Sie beschreibt alle Metadaten über Ihr Projekt. Es gibt einige Felder, die Sie einem Projekt hinzufügen können, um ihm einen reichhaltigen Satz von Metadaten zur Beschreibung des Projekts zu geben. Es gibt jedoch nur drei erforderliche Felder: name, version und packages. Das Feld name muss eindeutig sein, wenn Sie Ihr Paket im Python Package Index (PyPI) veröffentlichen möchten. Das Feld version verfolgt verschiedene Versionen des Projekts. Das Feld packages beschreibt, wo Sie den Python-Quellcode innerhalb Ihres Projekts abgelegt haben.
 
 Dies ermöglicht es Ihnen, Python-Pakete einfach zu installieren. Oft genügt es, Folgendes zu schreiben:
 
@@ -43,7 +45,7 @@ python setup.py install
 
 und das Modul installiert sich selbst.
 
-## Beispiel
+### Beispiel: setup.py
 
 Unser anfängliches setup.py wird auch Informationen über die Lizenz enthalten und die Datei README.txt für das Feld long_description wiederverwenden. Dies sieht dann wie folgt aus:
 
@@ -59,6 +61,67 @@ setup(
 )
 ```
 
+## Moderner Ansatz: pyproject.toml
+
+Die Datei `pyproject.toml` ist der moderne Standard für die Python-Projektkonfiguration (PEP-517, PEP-518, PEP-660). Sie bietet eine einheitliche Möglichkeit, Build-System-Anforderungen und Projektmetadaten in einem einzigen, deklarativen Dateiformat anzugeben.
+
+### Vorteile von pyproject.toml
+
+- **Deklarativ**: Alle Projektmetadaten an einem Ort
+- **Build-System-unabhängig**: Funktioniert mit setuptools, poetry, flit und anderen Build-Backends
+- **Keine Code-Ausführung**: Sicherer und vorhersehbarer als setup.py
+- **Standardisiert**: Folgt PEP-Standards für bessere Tool-Unterstützung
+
+### Beispiel: pyproject.toml
+
+Hier ist ein grundlegendes `pyproject.toml`-Beispiel mit setuptools:
+
+```toml
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pythonCheatsheet"
+version = "0.1"
+description = "Ein Python-Spickzettel-Paket"
+readme = "README.txt"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "Ihr Name", email = "your.email@example.com"}
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "black>=22.0",
+]
+```
+
+### Installation aus pyproject.toml
+
+Mit `pyproject.toml` können Sie Ihr Paket mit pip installieren:
+
+```bash
+pip install .
+```
+
+Oder im bearbeitbaren Modus:
+
+```bash
+pip install -e .
+```
+
+## Den richtigen Ansatz wählen
+
+- **Verwenden Sie `setup.py`**: Wenn Sie mit Legacy-Projekten arbeiten oder eine fein abgestimmte Kontrolle benötigen
+- **Verwenden Sie `pyproject.toml`**: Für neue Projekte (empfohlen), da es der moderne Standard ist und bessere Tool-Unterstützung bietet
+
 Weitere Informationen finden Sie in der [offiziellen Dokumentation](http://docs.python.org/3.11/install/index.html).
 
 ## Relevante Links
@@ -70,3 +133,4 @@ Weitere Informationen finden Sie in der [offiziellen Dokumentation](http://docs.
 - <router-link to="/blog/python-projects-with-poetry-and-vscode-part-2">Python-Projekte mit Poetry und VSCode. Teil 2</router-link>
 - <router-link to="/blog/python-projects-with-poetry-and-vscode-part-3">Python-Projekte mit Poetry und VSCode. Teil 3</router-link>
 - <router-link to="/builtin/import">import()</router-link>
+
