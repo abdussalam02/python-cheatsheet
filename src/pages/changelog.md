@@ -9,10 +9,18 @@ updated: August 16, 2025
 Changelog
 </base-title>
 
-## 2025-11-17
+## 2025-11-19
 
-- Added i18n internationalization support for multi-language localization
-- Integrated LabEx hands-on labs for interactive learning
+🎉 Big news! [Python Cheat Sheet](https://pythoncheatsheet.org) is now part of [LabEx](https://labex.io)!
+
+**What's new:**
+
+- **Interactive Labs** – practice Python as you learn in the LabEx VM
+- **PDF Download** – grab your offline copy anytime
+- **Built-in Functions Module** – all the built-ins in one place
+- **Localization** – supports 🇨🇳 🇯🇵 🇪🇸 🇩🇪 🇫🇷 🇵🇹 🇰🇷 🇷🇺
+
+What's the same: **open-source** & **free**, just like always.
 
 ## 2025-10-12
 
