@@ -24,3 +24,4 @@ dist-ssr
 coverage
 .env
 .github/prompts/custom.prompt.md
+.vite

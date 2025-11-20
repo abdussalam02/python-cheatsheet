@@ -4,9 +4,9 @@ const reader = useReaderStore()
 
 <template>
   <button
-    @click="reader.toggle()"
     class="rounded text-slate-500 transition duration-300 hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300"
     :class="reader.isActive ? 'text-primary-500 dark:text-primary-400' : ''"
+    @click="reader.toggle()"
   >
     <span class="sr-only">Reader mode</span>
     <svg

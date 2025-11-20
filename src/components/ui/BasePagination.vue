@@ -20,7 +20,7 @@ const previous = computed(() => {
     })
     const prev = allRoutes[index - 1]
     return prev ? { ...prev, path: localePath(prev.path) } : null
-  } catch (err) {
+  } catch {
     return null
   }
 })
@@ -34,7 +34,7 @@ const next = computed(() => {
     })
     const nextItem = allRoutes[index + 1]
     return nextItem ? { ...nextItem, path: localePath(nextItem.path) } : null
-  } catch (err) {
+  } catch {
     return null
   }
 })

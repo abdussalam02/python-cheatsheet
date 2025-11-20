@@ -10,6 +10,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 import Markdown from 'unplugin-vue-markdown/vite'
 import Prism from 'markdown-it-prism'
 import LinkAttributes from 'markdown-it-link-attributes'
+import anchor from 'markdown-it-anchor'
 import string from 'string'
 import { generateI18nSitemap } from './scripts/generate-i18n-sitemap'
 import PrismLib from 'prismjs'
@@ -98,7 +99,7 @@ export default defineConfig(({ mode }) => {
           // Register 'output' as an alias for 'plaintext' to avoid Prism warnings
           PrismLib.languages.output = PrismLib.languages.plaintext
           
-          md.use(require('markdown-it-anchor'), {
+          md.use(anchor, {
             slugify: (s: string) => string(s).slugify().toString(),
           })
           md.use(Prism, {})

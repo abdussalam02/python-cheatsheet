@@ -13,7 +13,7 @@ async function download(url: string, fileName: string) {
     console.log('downloading', fileName)
     const image = await ofetch(url, { responseType: 'arrayBuffer' })
     await fs.writeFile(fileName, Buffer.from(image))
-  } catch (e) {
+  } catch {
     console.log('error downloading', fileName)
   }
 }
