@@ -5,11 +5,19 @@ import PluginIcon from '~/components/icons/PluginIcon.vue'
 import ArrowIcon from '~/components/icons/ArrowIcon.vue'
 import GridIcon from '~/components/icons/GridIcon.vue'
 import LightBulbIcon from '~/components/icons/LightBulbIcon.vue'
+import BookIcon from '~/components/icons/BookIcon.vue'
 import { computed } from 'vue'
 
 const { t, localePath } = useI18n()
 
 const cardLinks = computed(() => [
+  {
+    path: 'https://labex.io/learn/python',
+    name: t('home.cardLinks.pythonCourse'),
+    description: t('home.cardLinks.pythonCourseDesc'),
+    icon: BookIcon,
+    external: true,
+  },
   {
     path: 'https://labex.io/labs/python-use-vs-code-for-python-development-585783?course=python-cheatsheet',
     name: t('home.cardLinks.pythonPlayground'),
