@@ -139,6 +139,12 @@
     "expand": "Expandir",
     "collapse": "Contraer"
   },
+  "quiz": {
+    "label": "Quiz",
+    "correct": "Correcto",
+    "wrong": "Incorrecto",
+    "correctAnswer": "Respuesta correcta"
+  },
   "meta": {
     "title": "Hoja de referencia Python – Guía gratuita para principiantes con laboratorios y PDF",
     "description": "La hoja de referencia Python más completa en línea. Aprende paso a paso con laboratorios interactivos, descarga hojas de referencia PDF gratuitas y explora guías de Python para principiantes.",

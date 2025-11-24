@@ -139,6 +139,12 @@
     "expand": "Erweitern",
     "collapse": "Einklappen"
   },
+  "quiz": {
+    "label": "Quiz",
+    "correct": "Richtig",
+    "wrong": "Falsch",
+    "correctAnswer": "Richtige Antwort"
+  },
   "meta": {
     "title": "Python Spickzettel – Kostenlose, anfängerfreundliche Anleitung mit Labs & PDF",
     "description": "Der vollständigste Python-Spickzettel online. Lernen Sie Schritt für Schritt mit interaktiven Labs, laden Sie kostenlose PDF-Spickzettel herunter und erkunden Sie anfängerfreundliche Python-Anleitungen.",

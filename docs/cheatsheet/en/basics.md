@@ -1,6 +1,6 @@
 ---
 title: Python Basics - Python Cheatsheet
-description: The basics of python. We all need to start somewhere, so how about doing it here.
+description: Learn Python basics with our comprehensive guide covering operators, data types, variables, functions, and more. Perfect for beginners learning Python programming fundamentals.
 labUrl: https://labex.io/labs/python-python-basics-633647?course=python-cheatsheet
 ---
 
@@ -10,15 +10,23 @@ Python Basics
 
 <base-lab-url :url="frontmatter.labUrl" />
 
-We all need to start somewhere, so how about doing it here.
+We all need to start somewhere, so how about doing it here. This guide covers the fundamental Python basics including operators, data types, variables, and core functions.
 
 <base-disclaimer>
-  <base-disclaimer-title>
-    From the <a href="https://docs.python.org/3/tutorial/index.html">Python 3 tutorial</a>
-  </base-disclaimer-title>
-  <base-disclaimer-content>
-    Python is an easy to learn, powerful programming language [...] Python’s elegant syntax and dynamic typing, together with its interpreted nature, make it an ideal language for scripting and rapid application development.
-  </base-disclaimer-content>
+<base-disclaimer-title>
+Python Basics Overview
+</base-disclaimer-title>
+<base-disclaimer-content>
+The core Python basics every beginner should know:
+
+- Variables and basic types
+- Operators and expressions
+- Strings and common methods
+- Lists, tuples, and dictionaries
+- Basic control flow (if, for, while)
+- Simple functions
+
+</base-disclaimer-content>
 </base-disclaimer>
 
 ## Math Operators
@@ -89,6 +97,25 @@ Examples of expressions:
 16.0
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+What is the result of this Python expression?
+
+```python
+4 + 2 * 3
+```
+
+</template>
+
+<base-quiz-option value="A" correct>A. 10</base-quiz-option>
+<base-quiz-option value="B">B. 18</base-quiz-option>
+<base-quiz-option value="C">C. 12</base-quiz-option>
+<base-quiz-option value="D">D. 20</base-quiz-option>
+<base-quiz-answer value="A">Multiplication has higher precedence than addition, so this evaluates as: 4 + (2 \* 3) = 4 + 6 = 10</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Augmented Assignment Operators
 
 | Operator    | Equivalent       |
@@ -136,6 +163,26 @@ my_list
 ['item', 'item', 'item']
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+What is the value of <code>x</code> after executing this code?
+
+```python
+x = 5
+x += 3
+```
+
+</template>
+
+<base-quiz-option value="A">A. 3</base-quiz-option>
+<base-quiz-option value="B" correct>B. 8</base-quiz-option>
+<base-quiz-option value="C">C. 5</base-quiz-option>
+<base-quiz-option value="D">D. 15</base-quiz-option>
+<base-quiz-answer value="B">The augmented assignment operator <code>+=</code> is equivalent to <code>x = x + 3</code>. So <code>x</code> starts as 5, then becomes 5 + 3 = 8.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Walrus Operator
 
 The Walrus Operator allows assignment of variables within an expression while returning the value of the variable
@@ -182,7 +229,7 @@ The _Walrus Operator_, or **Assignment Expression Operator** was firstly introdu
 
 ## Data Types
 
-Python has nine core built-in data types that cover almost everything you'll need:
+Understanding data types is one of the most important Python basics. Python has nine core built-in data types that cover almost everything you'll need:
 
 | Data Type                                                  | Examples                                 | Description                           |
 | ---------------------------------------------------------- | ---------------------------------------- | ------------------------------------- |
@@ -254,7 +301,7 @@ String replication:
 
 ## Variables
 
-You can name a variable anything as long as it obeys the following rules:
+Variables are a fundamental part of Python basics. You can name a variable anything as long as it obeys the following rules:
 
 1. It can be only one word.
 
@@ -293,6 +340,20 @@ my_var_2 = 'Hello'
 _spam = 'Hello'
 ```
 
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+In Python basics, which of the following is a valid variable name?
+</template>
+
+<base-quiz-option value="A">A. <code>3value</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>user-name</code></base-quiz-option>
+<base-quiz-option value="C" correct>C. <code>user_name</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>for</code></base-quiz-option>
+<base-quiz-answer value="C"><code>user_name</code> is a valid variable name because it uses only letters, numbers, and underscores, and doesn't start with a number.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Comments
 
 Inline comment:
@@ -329,7 +390,7 @@ def foo():
 
 ## The print() Function
 
-The `print()` function writes the value of the argument(s) it is given. [...] it handles multiple arguments, floating point-quantities, and strings. Strings are printed without quotes, and a space is inserted between items, so you can format things nicely:
+The `print()` function is one of the first Python basics you'll learn. It writes the value of the argument(s) it is given. [...] it handles multiple arguments, floating point-quantities, and strings. Strings are printed without quotes, and a space is inserted between items, so you can format things nicely:
 
 ```python
 print('Hello world!')
@@ -417,6 +478,20 @@ print(f'Hi, {my_name}')  # f-string for string formatting
 What is your name? Martha
 Hi, Martha
 ```
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+In Python basics, what type does `input()` return?
+</template>
+
+<base-quiz-option value="A">A. int</base-quiz-option>
+<base-quiz-option value="B" correct>B. str</base-quiz-option>
+<base-quiz-option value="C">C. float</base-quiz-option>
+<base-quiz-option value="D">D. Depends on user input</base-quiz-option>
+<base-quiz-answer value="B">The <code>input()</code> function always returns a string, regardless of what the user types. You need to convert it to other types if needed.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## The len() Function
 
@@ -512,6 +587,26 @@ float('3.14')  # Returns 3.14
 ```output
 3.14
 ```
+
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+What is the result of this Python code?
+
+```python
+result = int('42')
+type(result)
+```
+
+</template>
+
+<base-quiz-option value="A">A. <code>str</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>float</code></base-quiz-option>
+<base-quiz-option value="C" correct>C. <code>int</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>NoneType</code></base-quiz-option>
+<base-quiz-answer value="C">The <code>int()</code> function converts a string to an integer. So <code>int('42')</code> returns the integer <code>42</code>, and <code>type(42)</code> returns <code>int</code>.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Relevant Links
 

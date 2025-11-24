@@ -1,6 +1,6 @@
 ---
-title: 'Python Básico - Folha de Cola Python'
-description: 'Os fundamentos do Python. Todos precisamos de um começo, que tal começar aqui.'
+title: 'Básico de Python - Folha de Dicas Python'
+description: 'Aprenda o básico de Python com nosso guia completo cobrindo operadores, tipos de dados, variáveis, funções e mais. Perfeito para iniciantes que estudam os fundamentos da programação Python.'
 labUrl: 'https://labex.io/pt/labs/python-python-basics-633647?course=python-cheatsheet'
 ---
 
@@ -10,15 +10,23 @@ Básicos de Python
 
 <base-lab-url :url="frontmatter.labUrl" />
 
-Todos nós precisamos começar em algum lugar, então que tal começar por aqui.
+Todos precisamos começar em algum lugar, então que tal começar por aqui. Este guia cobre os fundamentos básicos do Python, incluindo operadores, tipos de dados, variáveis e funções principais.
 
 <base-disclaimer>
-  <base-disclaimer-title>
-    Do <a href="https://docs.python.org/3/tutorial/index.html">tutorial do Python 3</a>
-  </base-disclaimer-title>
-  <base-disclaimer-content>
-    Python é uma linguagem de programação poderosa e fácil de aprender [...] A sintaxe elegante e a tipagem dinâmica do Python, juntamente com sua natureza interpretada, a tornam uma linguagem ideal para scripting e desenvolvimento rápido de aplicações.
-  </base-disclaimer-content>
+<base-disclaimer-title>
+Visão Geral dos Fundamentos do Python
+</base-disclaimer-title>
+<base-disclaimer-content>
+Os fundamentos básicos do Python que todo iniciante deve saber:
+
+- Variáveis e tipos básicos
+- Operadores e expressões
+- Strings e métodos comuns
+- Listas, tuplas e dicionários
+- Fluxo de controle básico (if, for, while)
+- Funções simples
+
+</base-disclaimer-content>
 </base-disclaimer>
 
 ## Operadores Matemáticos
@@ -38,7 +46,7 @@ De **maior** para **menor** precedência:
 Exemplos de expressões:
 
 ```python
-# A multiplicação tem maior precedência que a adição
+# A multiplicação tem precedência maior que a adição
 # Então isso é avaliado como: 2 + (3 * 6) = 2 + 18 = 20
 2 + 3 * 6
 ```
@@ -89,6 +97,25 @@ Exemplos de expressões:
 16.0
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+Qual é o resultado desta expressão Python?
+
+```python
+4 + 2 * 3
+```
+
+</template>
+
+<base-quiz-option value="A" correct>A. 10</base-quiz-option>
+<base-quiz-option value="B">B. 18</base-quiz-option>
+<base-quiz-option value="C">C. 12</base-quiz-option>
+<base-quiz-option value="D">D. 20</base-quiz-option>
+<base-quiz-answer value="A">A multiplicação tem precedência maior que a adição, então isso é avaliado como: 4 + (2 \* 3) = 4 + 6 = 10</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Operadores de Atribuição Aumentada
 
 | Operador    | Equivalente      |
@@ -136,15 +163,35 @@ my_list
 ['item', 'item', 'item']
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Qual é o valor de <code>x</code> após executar este código?
+
+```python
+x = 5
+x += 3
+```
+
+</template>
+
+<base-quiz-option value="A">A. 3</base-quiz-option>
+<base-quiz-option value="B" correct>B. 8</base-quiz-option>
+<base-quiz-option value="C">C. 5</base-quiz-option>
+<base-quiz-option value="D">D. 15</base-quiz-option>
+<base-quiz-answer value="B">O operador de atribuição aumentada <code>+=</code> é equivalente a <code>x = x + 3</code>. Então <code>x</code> começa como 5, e depois se torna 5 + 3 = 8.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Operador Walrus
 
-O Operador Walrus permite a atribuição de variáveis dentro de uma expressão, retornando o valor da variável.
+O Operador Walrus permite a atribuição de variáveis dentro de uma expressão, retornando o valor da variável
 
 Exemplo:
 
 ```python
-# O Operador Walrus atribui e retorna o valor em uma única expressão
-# my_var recebe "Hello World!" e então é impresso
+# O operador Walrus atribui e retorna o valor em uma única expressão
+# my_var recebe "Hello World!" e depois é impresso
 print(my_var:="Hello World!")
 ```
 
@@ -169,20 +216,20 @@ print(my_var:="Hello")
 Hello
 ```
 
-O _Operador Walrus_, ou **Operador de Expressão de Atribuição**, foi introduzido pela primeira vez em 2018 através da [PEP 572](https://peps.python.org/pep-0572/), e depois lançado oficialmente com o **Python 3.8** em outubro de 2019.
+O _Operador Walrus_, ou **Operador de Expressão de Atribuição**, foi introduzido pela primeira vez em 2018 através do [PEP 572](https://peps.python.org/pep-0572/), e depois lançado oficialmente com o **Python 3.8** em outubro de 2019.
 
 <base-disclaimer>
   <base-disclaimer-title>
-    Semântica da Sintaxe e Exemplos
+    Sintaxe Semântica & Exemplos
   </base-disclaimer-title>
   <base-disclaimer-content>
-  A <a href="https://peps.python.org/pep-0572/" target="_blank">PEP 572</a> fornece a sintaxe, semântica e exemplos para o Operador Walrus.
+  O <a href="https://peps.python.org/pep-0572/" target="_blank">PEP 572</a> fornece a sintaxe, semântica e exemplos para o Operador Walrus.
   </base-disclaimer-content>
 </base-disclaimer>
 
 ## Tipos de Dados
 
-Python possui nove tipos de dados principais integrados que cobrem quase tudo o que você precisará:
+Compreender os tipos de dados é um dos fundamentos básicos mais importantes do Python. O Python tem nove tipos de dados principais integrados que cobrem quase tudo o que você precisará:
 
 | Tipo de Dado                                               | Exemplos                                 | Descrição                              |
 | ---------------------------------------------------------- | ---------------------------------------- | -------------------------------------- |
@@ -254,7 +301,7 @@ Replicação de strings:
 
 ## Variáveis
 
-Você pode nomear uma variável como quiser, desde que obedeça às seguintes regras:
+Variáveis são uma parte fundamental dos conceitos básicos do Python. Você pode nomear uma variável como quiser, desde que obedeça às seguintes regras:
 
 1. Pode ser apenas uma palavra.
 
@@ -286,12 +333,26 @@ my_var_2 = 'Hello'
 23_var = 'hello'
 ```
 
-4. Nomes de variáveis que começam com um sublinhado (`_`) são considerados "inúteis".
+4. Nomes de variáveis que começam com um sublinhado (`_`) são considerados "não úteis".
 
 ```python
 # _spam não deve ser usado novamente no código
 _spam = 'Hello'
 ```
+
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+Nos fundamentos do Python, qual dos seguintes é um nome de variável válido?
+</template>
+
+<base-quiz-option value="A">A. <code>3value</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>user-name</code></base-quiz-option>
+<base-quiz-option value="C" correct>C. <code>user_name</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>for</code></base-quiz-option>
+<base-quiz-answer value="C"><code>user_name</code> é um nome de variável válido porque usa apenas letras, números e sublinhados, e não começa com um número.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Comentários
 
@@ -329,7 +390,7 @@ def foo():
 
 ## A Função print()
 
-A função `print()` escreve o valor do(s) argumento(s) que recebe. [...] ela lida com múltiplos argumentos, quantidades de ponto flutuante e strings. Strings são impressas sem aspas, e um espaço é inserido entre os itens, para que você possa formatar as coisas de forma agradável:
+A função `print()` é um dos primeiros conceitos básicos do Python que você aprenderá. Ela escreve o valor do(s) argumento(s) que recebe. [...] ela lida com múltiplos argumentos, quantidades de ponto flutuante e strings. As strings são impressas sem aspas, e um espaço é inserido entre os itens, para que você possa formatar as coisas de forma agradável:
 
 ```python
 print('Hello world!')
@@ -353,10 +414,10 @@ Hello world! 1
 O argumento de palavra-chave `end` pode ser usado para evitar a nova linha após a saída, ou terminar a saída com uma string diferente:
 
 ```python
-# Usa o parâmetro end para mudar o que vem após cada instrução print
+# Use o parâmetro end para mudar o que vem depois de cada instrução print
 phrase = ['printed', 'with', 'a', 'dash', 'in', 'between']
 for word in phrase:
-    print(word, end='-')  # Usa '-' em vez de nova linha
+    print(word, end='-')  # Use '-' em vez de nova linha
 ```
 
 ```output
@@ -368,7 +429,7 @@ printed-with-a-dash-in-between-
 A palavra-chave `sep` especifica como separar os objetos, se houver mais de um:
 
 ```python
-# Usa o parâmetro sep para especificar o separador entre múltiplos argumentos
+# Use o parâmetro sep para especificar o separador entre múltiplos argumentos
 print('cats', 'dogs', 'mice', sep=',')  # Saída separada por vírgula
 ```
 
@@ -418,9 +479,23 @@ What is your name? Martha
 Hi, Martha
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Nos fundamentos do Python, que tipo `input()` retorna?
+</template>
+
+<base-quiz-option value="A">A. int</base-quiz-option>
+<base-quiz-option value="B" correct>B. str</base-quiz-option>
+<base-quiz-option value="C">C. float</base-quiz-option>
+<base-quiz-option value="D">D. Depende da entrada do usuário</base-quiz-option>
+<base-quiz-answer value="B">A função <code>input()</code> sempre retorna uma string, independentemente do que o usuário digita. Você precisa convertê-la para outros tipos, se necessário.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## A Função len()
 
-Avalia-se para o valor inteiro do número de caracteres em uma string, lista, dicionário, etc.:
+Avalia-se como o valor inteiro do número de caracteres em uma string, lista, dicionário, etc.:
 
 ```python
 # len() retorna o número de caracteres em uma string
@@ -513,6 +588,26 @@ float('3.14')  # Retorna 3.14
 3.14
 ```
 
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+Qual é o resultado deste código Python?
+
+```python
+result = int('42')
+type(result)
+```
+
+</template>
+
+<base-quiz-option value="A">A. <code>str</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>float</code></base-quiz-option>
+<base-quiz-option value="C" correct>C. <code>int</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>NoneType</code></base-quiz-option>
+<base-quiz-answer value="C">A função <code>int()</code> converte uma string em um inteiro. Portanto, <code>int('42')</code> retorna o inteiro <code>42</code>, e <code>type(42)</code> retorna <code>int</code>.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Links Relevantes
 
 - <router-link to="/blog/python-data-types">Tipos de Dados em Python: Um Guia Visual para Iniciantes</router-link>
@@ -521,5 +616,5 @@ float('3.14')  # Retorna 3.14
 - <router-link to="/cheatsheet/functions">Funções</router-link>
 - <router-link to="/cheatsheet/lists-and-tuples">Listas e Tuplas</router-link>
 - <router-link to="/cheatsheet/dictionaries">Dicionários</router-link>
-- <router-link to="/cheatsheet/sets">Conjuntos (Sets)</router-link>
+- <router-link to="/cheatsheet/sets">Sets</router-link>
 - <router-link to="/cheatsheet/string-formatting">Formatação de Strings</router-link>

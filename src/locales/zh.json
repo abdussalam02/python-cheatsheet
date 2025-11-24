@@ -139,6 +139,12 @@
     "expand": "展开",
     "collapse": "折叠"
   },
+  "quiz": {
+    "label": "测验",
+    "correct": "正确",
+    "wrong": "错误",
+    "correctAnswer": "正确答案"
+  },
   "meta": {
     "title": "Python 速查表 – 免费初学者友好指南，含实验和 PDF",
     "description": "最完整的在线 Python 速查表。通过交互式实验逐步学习，下载免费 PDF 速查表，探索适合初学者的 Python 指南。",

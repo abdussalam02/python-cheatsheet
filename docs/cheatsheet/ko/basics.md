@@ -1,45 +1,53 @@
 ---
 title: '파이썬 기초 - 파이썬 치트 시트'
-description: '파이썬의 기본 사항. 모두가 시작할 곳이 필요합니다. 바로 여기서 시작해 보세요.'
+description: '연산자, 데이터 유형, 변수, 함수 등을 다루는 포괄적인 가이드로 파이썬 기초를 배우세요. 파이썬 프로그래밍 기본기를 배우는 초보자에게 완벽합니다.'
 labUrl: 'https://labex.io/ko/labs/python-python-basics-633647?course=python-cheatsheet'
 ---
 
 <base-title :title="frontmatter.title" :description="frontmatter.description">
-Python 기초
+Python 기본
 </base-title>
 
 <base-lab-url :url="frontmatter.labUrl" />
 
-우리 모두 어딘가에서 시작해야 하므로, 여기서 시작하는 것은 어떨까요.
+우리 모두 어딘가에서 시작해야 하므로, 여기서 시작하는 것은 어떨까요. 이 가이드는 연산자, 데이터 유형, 변수 및 핵심 함수를 포함한 기본적인 Python 기초를 다룹니다.
 
 <base-disclaimer>
-  <base-disclaimer-title>
-    <a href="https://docs.python.org/3/tutorial/index.html">Python 3 튜토리얼</a>에서 발췌
-  </base-disclaimer-title>
-  <base-disclaimer-content>
-    Python 은 배우기 쉽고 강력한 프로그래밍 언어입니다 [...] Python 의 우아한 구문과 동적 타이핑은 인터프리터 방식과 더불어 스크립팅 및 신속한 애플리케이션 개발에 이상적인 언어로 만듭니다.
-  </base-disclaimer-content>
+<base-disclaimer-title>
+Python 기본 개요
+</base-disclaimer-title>
+<base-disclaimer-content>
+모든 초보자가 알아야 할 핵심 Python 기본 사항:
+
+- 변수 및 기본 유형
+- 연산자 및 표현식
+- 문자열 및 일반적인 메서드
+- 리스트, 튜플 및 딕셔너리
+- 기본 제어 흐름 (if, for, while)
+- 간단한 함수
+
+</base-disclaimer-content>
 </base-disclaimer>
 
 ## 수학 연산자
 
-**가장 높은** 우선순위부터 **가장 낮은** 우선순위까지:
+**가장 높음**에서 **가장 낮음** 우선순위 순:
 
-| 연산자 | 연산             | 예시            |
-| ------ | ---------------- | --------------- |
-| \*\*   | 거듭제곱         | `2 ** 3 = 8`    |
-| %      | 나머지 (Modulus) | `22 % 8 = 6`    |
-| //     | 정수 나눗셈      | `22 // 8 = 2`   |
-| /      | 나눗셈           | `22 / 8 = 2.75` |
-| \*     | 곱셈             | `3 * 3 = 9`     |
-| -      | 뺄셈             | `5 - 2 = 3`     |
-| +      | 덧셈             | `2 + 2 = 4`     |
+| 연산자 | 연산        | 예시            |
+| ------ | ----------- | --------------- |
+| \*\*   | 거듭제곱    | `2 ** 3 = 8`    |
+| %      | 나머지      | `22 % 8 = 6`    |
+| //     | 정수 나누기 | `22 // 8 = 2`   |
+| /      | 나누기      | `22 / 8 = 2.75` |
+| \*     | 곱셈        | `3 * 3 = 9`     |
+| -      | 뺄셈        | `5 - 2 = 3`     |
+| +      | 덧셈        | `2 + 2 = 4`     |
 
 표현식 예시:
 
 ```python
 # 곱셈은 덧셈보다 우선순위가 높습니다
-# 따라서 이것은 다음과 같이 계산됩니다: 2 + (3 * 6) = 2 + 18 = 20
+# 따라서 이것은 다음과 같이 평가됩니다: 2 + (3 * 6) = 2 + 18 = 20
 2 + 3 * 6
 ```
 
@@ -49,7 +57,7 @@ Python 기초
 
 ```python
 # 괄호는 연산자 우선순위를 재정의합니다
-# 이것은 다음과 같이 계산됩니다: 5 * 6 = 30
+# 이것은 다음과 같이 평가됩니다: 5 * 6 = 30
 (2 + 3) * 6
 ```
 
@@ -89,9 +97,28 @@ Python 기초
 16.0
 ```
 
-## 증감 대입 연산자 (Augmented Assignment Operators)
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+다음 Python 표현식의 결과는 무엇입니까?
 
-| 연산자      | 동등한 표현      |
+```python
+4 + 2 * 3
+```
+
+</template>
+
+<base-quiz-option value="A" correct>A. 10</base-quiz-option>
+<base-quiz-option value="B">B. 18</base-quiz-option>
+<base-quiz-option value="C">C. 12</base-quiz-option>
+<base-quiz-option value="D">D. 20</base-quiz-option>
+<base-quiz-answer value="A">곱셈이 덧셈보다 우선순위가 높으므로, 이는 다음과 같이 평가됩니다: 4 + (2 \* 3) = 4 + 6 = 10</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+## 증감 할당 연산자
+
+| 연산자      | 등가 표현        |
 | ----------- | ---------------- |
 | `var += 1`  | `var = var + 1`  |
 | `var -= 1`  | `var = var - 1`  |
@@ -104,7 +131,7 @@ Python 기초
 예시:
 
 ```python
-# 증감 대입: greeting = greeting + ' world!' 와 동일
+# 증감 할당: greeting = greeting + ' world!'와 동일
 greeting = 'Hello'
 greeting += ' world!'
 greeting
@@ -136,15 +163,35 @@ my_list
 ['item', 'item', 'item']
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+이 코드를 실행한 후 <code>x</code>의 값은 얼마입니까?
+
+```python
+x = 5
+x += 3
+```
+
+</template>
+
+<base-quiz-option value="A">A. 3</base-quiz-option>
+<base-quiz-option value="B" correct>B. 8</base-quiz-option>
+<base-quiz-option value="C">C. 5</base-quiz-option>
+<base-quiz-option value="D">D. 15</base-quiz-option>
+<base-quiz-answer value="B">증감 할당 연산자 <code>+=</code>는 <code>x = x + 3</code>과 동일합니다. 따라서 <code>x</code>는 5 로 시작하여 5 + 3 = 8 이 됩니다.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## 월러스 연산자 (Walrus Operator)
 
-월러스 연산자는 변수에 값을 할당하는 동시에 해당 표현식의 값을 반환할 수 있게 해줍니다.
+월러스 연산자는 변수에 값을 할당하는 동시에 해당 변수의 값을 반환하여 표현식 내에서 변수 할당을 허용합니다.
 
 예시:
 
 ```python
-# 월러스 연산자는 하나의 표현식 내에서 값을 할당하고 반환합니다
-# my_var 에 "Hello World!"가 할당된 후 출력됩니다
+# 월러스 연산자는 하나의 표현식에서 값을 할당하고 반환합니다
+# my_var 에 "Hello World!"가 할당된 다음 출력됩니다
 print(my_var:="Hello World!")
 ```
 
@@ -169,7 +216,7 @@ print(my_var:="Hello")
 Hello
 ```
 
-_월러스 연산자_ 또는 **할당 표현식 연산자 (Assignment Expression Operator)**는 2018 년 [PEP 572](https://peps.python.org/pep-0572/)를 통해 처음 도입되었으며, 2019 년 10 월 **Python 3.8**과 함께 공식적으로 출시되었습니다.
+_월러스 연산자_ 또는 **할당 표현식 연산자**는 [PEP 572](https://peps.python.org/pep-0572/)를 통해 2018 년에 처음 도입되었으며, 2019 년 10 월 **Python 3.8**과 함께 공식적으로 출시되었습니다.
 
 <base-disclaimer>
   <base-disclaimer-title>
@@ -180,27 +227,27 @@ _월러스 연산자_ 또는 **할당 표현식 연산자 (Assignment Expression
   </base-disclaimer-content>
 </base-disclaimer>
 
-## 데이터 타입
+## 데이터 유형
 
-Python 에는 거의 모든 것에 필요한 9 가지 핵심 내장 데이터 타입이 있습니다:
+데이터 유형을 이해하는 것은 가장 중요한 Python 기본 사항 중 하나입니다. Python 에는 필요한 거의 모든 것을 다루는 아홉 가지 핵심 내장 데이터 유형이 있습니다.
 
-| 데이터 타입                                                | 예시                                     | 설명                                      |
-| ---------------------------------------------------------- | ---------------------------------------- | ----------------------------------------- |
-| **숫자 (Numbers)**                                         |                                          |                                           |
-| <router-link to='/builtin/int'>`int`</router-link>         | `-2, -1, 0, 1, 2, 3, 4, 5`               | 정수 (Whole numbers)                      |
+| 데이터 유형                                                | 예시                                     | 설명                                      |
+| :--------------------------------------------------------- | :--------------------------------------- | :---------------------------------------- |
+| **숫자**                                                   |                                          |                                           |
+| <router-link to='/builtin/int'>`int`</router-link>         | `-2, -1, 0, 1, 2, 3, 4, 5`               | 정수 (whole numbers)                      |
 | <router-link to='/builtin/float'>`float`</router-link>     | `-1.25, -1.0, -0.5, 0.0, 0.5, 1.0, 1.25` | 소수점이 있는 숫자                        |
 | <router-link to='/builtin/complex'>`complex`</router-link> | `2+3j, complex(1, 4)`                    | 실수부와 허수부를 가진 숫자               |
-| **텍스트 (Text)**                                          |                                          |                                           |
+| **텍스트**                                                 |                                          |                                           |
 | <router-link to='/builtin/str'>`str`</router-link>         | `'a', 'Hello!', "Python"`                | 텍스트 및 문자                            |
-| **불리언 (Boolean)**                                       |                                          |                                           |
+| **불리언**                                                 |                                          |                                           |
 | <router-link to='/builtin/bool'>`bool`</router-link>       | `True, False`                            | 참 또는 거짓 값                           |
 | **None**                                                   |                                          |                                           |
-| `NoneType`                                                 | `None`                                   | "값이 없음" 또는 "아무것도 아님"을 나타냄 |
-| **컬렉션 (Collections)**                                   |                                          |                                           |
+| `NoneType`                                                 | `None`                                   | "값이 없음" 또는 "아무것도 없음"을 나타냄 |
+| **컬렉션**                                                 |                                          |                                           |
 | <router-link to='/builtin/list'>`list`</router-link>       | `[1, 2, 3], ['a', 'b', 'c']`             | 순서가 있고 변경 가능한 컬렉션            |
 | <router-link to='/builtin/dict'>`dict`</router-link>       | `{'name': 'Alice', 'age': 30}`           | 키 - 값 쌍                                |
 | <router-link to='/builtin/tuple'>`tuple`</router-link>     | `(1, 2, 3), ('a', 'b')`                  | 순서가 있고 변경 불가능한 컬렉션          |
-| <router-link to='/builtin/set'>`set`</router-link>         | `{1, 2, 3}, {'a', 'b', 'c'}`             | 순서가 없는 고유 항목 컬렉션              |
+| <router-link to='/builtin/set'>`set`</router-link>         | `{1, 2, 3}, {'a', 'b', 'c'}`             | 순서가 없고 고유한 항목의 컬렉션          |
 
 ### 간단한 예시
 
@@ -226,9 +273,9 @@ coordinates = (10, 20)     # tuple
 unique_ids = {1, 2, 3}     # set
 ```
 
-각 유형을 언제 사용해야 하는지에 대한 시각적 예시와 자세한 설명은 다음을 참조하십시오: <router-link to="/blog/python-data-types">Python 데이터 타입: 초보자를 위한 시각적 가이드</router-link>.
+각 유형을 언제 사용해야 하는지에 대한 시각적 예시와 자세한 설명이 포함된 포괄적인 가이드는 다음을 참조하십시오: <router-link to="/blog/python-data-types">Python 데이터 유형: 초보자를 위한 시각적 가이드</router-link>.
 
-## 연결 및 복제 (Concatenation and Replication)
+## 연결 및 복제
 
 문자열 연결:
 
@@ -252,11 +299,11 @@ unique_ids = {1, 2, 3}     # set
 'AliceAliceAliceAliceAlice'
 ```
 
-## 변수 (Variables)
+## 변수
 
-변수 이름은 다음 규칙을 준수하는 한 무엇이든 될 수 있습니다:
+변수는 Python 기본 사항의 기본 부분입니다. 다음 규칙만 준수하면 변수 이름을 자유롭게 지정할 수 있습니다.
 
-1. 한 단어로만 구성되어야 합니다.
+1. 한 단어로만 구성될 수 있습니다.
 
 ```python
 # 나쁨
@@ -293,7 +340,21 @@ my_var_2 = 'Hello'
 _spam = 'Hello'
 ```
 
-## 주석 (Comments)
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+Python 기본 사항에서 다음 중 유효한 변수 이름은 무엇입니까?
+</template>
+
+<base-quiz-option value="A">A. <code>3value</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>user-name</code></base-quiz-option>
+<base-quiz-option value="C" correct>C. <code>user_name</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>for</code></base-quiz-option>
+<base-quiz-answer value="C"><code>user_name</code>은 문자, 숫자 및 밑줄만 사용하고 숫자로 시작하지 않으므로 유효한 변수 이름입니다.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+## 주석
 
 인라인 주석:
 
@@ -316,20 +377,20 @@ a = 1  # 초기화
 
 주석 앞에 공백 두 칸에 유의하십시오.
 
-함수 독스트링 (Docstring):
+함수 docstring:
 
 ```python
 def foo():
     """
-    이것은 함수 독스트링입니다
+    이것은 함수 docstring 입니다
     다음도 사용할 수 있습니다:
-    ''' 함수 독스트링 '''
+    ''' 함수 Docstring '''
     """
 ```
 
 ## print() 함수
 
-`print()` 함수는 전달받은 인수의 값을 출력합니다. [...] 여러 인수를 처리하고, 부동 소수점 수량 및 문자열을 처리합니다. 문자열은 따옴표 없이 인쇄되며, 항목 사이에 공백이 삽입되어 깔끔하게 형식을 지정할 수 있습니다:
+`print()` 함수는 가장 먼저 배우게 될 Python 기본 사항 중 하나입니다. 전달된 인수의 값을 출력합니다. [...] 여러 인수, 부동 소수점 수량 및 문자열을 처리합니다. 문자열은 따옴표 없이 인쇄되며 항목 사이에 공백이 삽입되어 형식을 깔끔하게 지정할 수 있습니다.
 
 ```python
 print('Hello world!')
@@ -350,7 +411,7 @@ Hello world! 1
 
 ### end 키워드
 
-`end` 키워드 인수를 사용하여 출력 후 줄 바꿈을 피하거나 출력을 다른 문자열로 끝낼 수 있습니다:
+`end` 키워드 인수를 사용하여 출력 후 줄 바꿈을 방지하거나 출력을 다른 문자열로 끝낼 수 있습니다.
 
 ```python
 # end 매개변수를 사용하여 각 print 문 뒤에 오는 것을 변경합니다
@@ -365,10 +426,10 @@ printed-with-a-dash-in-between-
 
 ### sep 키워드
 
-`sep` 키워드는 여러 인수가 있는 경우 객체를 구분하는 방법을 지정합니다:
+`sep` 키워드는 여러 개의 객체가 있을 경우 객체들을 구분하는 방법을 지정합니다.
 
 ```python
-# sep 매개변수를 사용하여 여러 인수 사이의 구분자를 지정합니다
+# sep 매개변수를 사용하여 여러 인수 사이의 구분 기호를 지정합니다
 print('cats', 'dogs', 'mice', sep=',')  # 쉼표로 구분된 출력
 ```
 
@@ -378,7 +439,7 @@ cats,dogs,mice
 
 ## input() 함수
 
-이 함수는 사용자로부터 입력을 받아 문자열로 변환합니다:
+이 함수는 사용자로부터 입력을 받아 문자열로 변환합니다.
 
 ```python
 # input() 은 사용자 입력을 읽고 문자열로 반환합니다
@@ -393,7 +454,7 @@ Martha
 Hi, Martha
 ```
 
-`input()`은 `print()`를 사용하지 않고도 기본 메시지를 설정할 수 있습니다:
+`input()`은 `print()`를 사용하지 않고도 기본 메시지를 설정할 수 있습니다.
 
 ```python
 my_name = input('What is your name? ')  # 기본 메시지
@@ -405,7 +466,7 @@ What is your name? Martha
 Hi, Martha
 ```
 
-.format 을 사용하지 않기 위해 서식 지정된 문자열을 사용하는 것도 가능합니다:
+.format 을 사용하지 않기 위해 서식 지정된 문자열을 사용하는 것도 가능합니다.
 
 ```python
 # input() 은 프롬프트 메시지를 직접 표시할 수 있습니다
@@ -418,13 +479,27 @@ What is your name? Martha
 Hi, Martha
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Python 기본 사항에서 `input()` 은 어떤 유형을 반환합니까?
+</template>
+
+<base-quiz-option value="A">A. int</base-quiz-option>
+<base-quiz-option value="B" correct>B. str</base-quiz-option>
+<base-quiz-option value="C">C. float</base-quiz-option>
+<base-quiz-option value="D">D. 사용자 입력에 따라 다름</base-quiz-option>
+<base-quiz-answer value="B"><code>input()</code> 함수는 사용자가 입력하는 내용에 관계없이 항상 문자열을 반환합니다. 필요한 경우 다른 유형으로 변환해야 합니다.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## len() 함수
 
-문자열, 리스트, 딕셔너리 등의 문자 수를 정수 값으로 평가합니다:
+문자열, 리스트, 딕셔너리 등의 문자 수, 항목 수를 정수 값으로 평가합니다.
 
 ```python
 # len() 은 문자열의 문자 수를 반환합니다
-len('hello')  # 5 를 반환합니다
+len('hello')  # 5 반환
 ```
 
 ```output
@@ -433,7 +508,7 @@ len('hello')  # 5 를 반환합니다
 
 ```python
 # len() 은 리스트의 항목 수를 반환합니다
-len(['cat', 3, 'dog'])  # 3 을 반환합니다 (세 개의 항목)
+len(['cat', 3, 'dog'])  # 3 반환 (세 항목)
 ```
 
 ```output
@@ -443,7 +518,8 @@ len(['cat', 3, 'dog'])  # 3 을 반환합니다 (세 개의 항목)
 <base-warning>
   <base-warning-title>비어 있음 테스트</base-warning-title>
   <base-warning-content>
-    문자열, 리스트, 딕셔너리 등의 비어 있음 테스트는 <code>len</code>을 사용해서는 안 되며, 직접적인 불리언 평가를 선호해야 합니다.
+    문자열, 리스트, 딕셔너리 등의 비어 있음 테스트는
+    <code>len</code>을 사용하는 대신 직접적인 불리언 평가를 선호해야 합니다.
   </base-warning-content>
 </base-warning>
 
@@ -473,11 +549,11 @@ the list is not empty!
 
 ## str(), int(), 및 float() 함수
 
-이 함수들은 변수의 타입을 변경할 수 있게 해줍니다. 예를 들어, `integer` 또는 `float`를 `string`으로 변환할 수 있습니다:
+이 함수들을 사용하면 변수의 유형을 변경할 수 있습니다. 예를 들어, `integer` 또는 `float`를 `string`으로 변환할 수 있습니다.
 
 ```python
 # 정수를 문자열로 변환
-str(29)  # '29'를 반환합니다
+str(29)  # '29' 반환
 ```
 
 ```output
@@ -492,11 +568,11 @@ str(-3.14)
 '-3.14'
 ```
 
-또는 `string`을 `integer` 또는 `float`로 변환할 수 있습니다:
+또는 `string`을 `integer` 또는 `float`로 변환할 수 있습니다.
 
 ```python
 # 문자열을 정수로 변환
-int('11')  # 11 을 반환합니다
+int('11')  # 11 반환
 ```
 
 ```output
@@ -505,20 +581,40 @@ int('11')  # 11 을 반환합니다
 
 ```python
 # 문자열을 float 으로 변환
-float('3.14')  # 3.14 를 반환합니다
+float('3.14')  # 3.14 반환
 ```
 
 ```output
 3.14
 ```
 
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+다음 Python 코드의 결과는 무엇입니까?
+
+```python
+result = int('42')
+type(result)
+```
+
+</template>
+
+<base-quiz-option value="A">A. <code>str</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>float</code></base-quiz-option>
+<base-quiz-option value="C" correct>C. <code>int</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>NoneType</code></base-quiz-option>
+<base-quiz-answer value="C"><code>int()</code> 함수는 문자열을 정수로 변환합니다. 따라서 <code>int('42')</code>는 정수 <code>42</code>를 반환하고 <code>type(42)</code>는 <code>int</code>를 반환합니다.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## 관련 링크
 
-- <router-link to="/blog/python-data-types">Python 데이터 타입: 초보자를 위한 시각적 가이드</router-link>
+- <router-link to="/blog/python-data-types">Python 데이터 유형: 초보자를 위한 시각적 가이드</router-link>
 - <router-link to="/blog/python-comprehensions-step-by-step">Python Comprehensions 단계별 가이드</router-link>
 - <router-link to="/cheatsheet/control-flow">제어 흐름</router-link>
 - <router-link to="/cheatsheet/functions">함수</router-link>
-- <router-link to="/cheatsheet/lists-and-tuples">리스트와 튜플</router-link>
+- <router-link to="/cheatsheet/lists-and-tuples">리스트 및 튜플</router-link>
 - <router-link to="/cheatsheet/dictionaries">딕셔너리</router-link>
 - <router-link to="/cheatsheet/sets">집합 (Sets)</router-link>
 - <router-link to="/cheatsheet/string-formatting">문자열 서식 지정</router-link>

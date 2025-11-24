@@ -139,6 +139,12 @@
     "expand": "Développer",
     "collapse": "Réduire"
   },
+  "quiz": {
+    "label": "Quiz",
+    "correct": "Correct",
+    "wrong": "Incorrect",
+    "correctAnswer": "Bonne réponse"
+  },
   "meta": {
     "title": "Aide-mémoire Python – Guide gratuit pour débutants avec laboratoires et PDF",
     "description": "L'aide-mémoire Python le plus complet en ligne. Apprenez étape par étape avec des laboratoires interactifs, téléchargez des aides-mémoire PDF gratuits et explorez des guides Python pour débutants.",

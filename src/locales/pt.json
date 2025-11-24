@@ -139,6 +139,12 @@
     "expand": "Expandir",
     "collapse": "Recolher"
   },
+  "quiz": {
+    "label": "Quiz",
+    "correct": "Correto",
+    "wrong": "Incorreto",
+    "correctAnswer": "Resposta correta"
+  },
   "meta": {
     "title": "Folha de referência Python – Guia gratuito para iniciantes com laboratórios e PDF",
     "description": "A folha de referência Python mais completa online. Aprenda passo a passo com laboratórios interativos, baixe folhas de referência PDF gratuitas e explore guias Python para iniciantes.",

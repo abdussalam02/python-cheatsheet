@@ -1,6 +1,6 @@
 ---
 title: 'Bases Python - Aide-mémoire Python'
-description: 'Les fondamentaux de Python. Nous devons tous commencer quelque part, alors pourquoi pas ici.'
+description: 'Apprenez les bases de Python avec notre guide complet couvrant les opérateurs, types de données, variables, fonctions et plus. Idéal pour les débutants en programmation Python.'
 labUrl: 'https://labex.io/fr/labs/python-python-basics-633647?course=python-cheatsheet'
 ---
 
@@ -10,20 +10,28 @@ Bases de Python
 
 <base-lab-url :url="frontmatter.labUrl" />
 
-Nous devons tous commencer quelque part, alors pourquoi ne pas le faire ici.
+Nous devons tous commencer quelque part, alors pourquoi ne pas commencer ici. Ce guide couvre les bases fondamentales de Python, y compris les opérateurs, les types de données, les variables et les fonctions de base.
 
 <base-disclaimer>
-  <base-disclaimer-title>
-    Tiré du <a href="https://docs.python.org/3/tutorial/index.html">tutoriel Python 3</a>
-  </base-disclaimer-title>
-  <base-disclaimer-content>
-    Python est un langage de programmation puissant et facile à apprendre [...] La syntaxe élégante de Python et son typage dynamique, ainsi que sa nature interprétée, en font un langage idéal pour le scripting et le développement rapide d'applications.
-  </base-disclaimer-content>
+<base-disclaimer-title>
+Aperçu des bases de Python
+</base-disclaimer-title>
+<base-disclaimer-content>
+Les bases fondamentales de Python que tout débutant devrait connaître :
+
+- Variables et types de base
+- Opérateurs et expressions
+- Chaînes de caractères et méthodes courantes
+- Listes, tuples et dictionnaires
+- Flux de contrôle de base (if, for, while)
+- Fonctions simples
+
+</base-disclaimer-content>
 </base-disclaimer>
 
 ## Opérateurs Mathématiques
 
-De la **plus haute** à la **plus basse** précédence :
+De la précédence la **plus élevée** à la **plus basse** :
 
 | Opérateurs | Opération        | Exemple         |
 | ---------- | ---------------- | --------------- |
@@ -89,6 +97,25 @@ Exemples d'expressions :
 16.0
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+Quel est le résultat de cette expression Python ?
+
+```python
+4 + 2 * 3
+```
+
+</template>
+
+<base-quiz-option value="A" correct>A. 10</base-quiz-option>
+<base-quiz-option value="B">B. 18</base-quiz-option>
+<base-quiz-option value="C">C. 12</base-quiz-option>
+<base-quiz-option value="D">D. 20</base-quiz-option>
+<base-quiz-answer value="A">La multiplication a une précédence plus élevée que l'addition, donc ceci est évalué comme : 4 + (2 \* 3) = 4 + 6 = 10</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Opérateurs d'Affectation Augmentée
 
 | Opérateur   | Équivalent       |
@@ -136,15 +163,35 @@ my_list
 ['item', 'item', 'item']
 ```
 
-## Opérateur Morse (Walrus Operator)
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Quelle est la valeur de <code>x</code> après l'exécution de ce code ?
 
-L'opérateur Morse permet l'affectation de variables au sein d'une expression tout en retournant la valeur de la variable
+```python
+x = 5
+x += 3
+```
+
+</template>
+
+<base-quiz-option value="A">A. 3</base-quiz-option>
+<base-quiz-option value="B" correct>B. 8</base-quiz-option>
+<base-quiz-option value="C">C. 5</base-quiz-option>
+<base-quiz-option value="D">D. 15</base-quiz-option>
+<base-quiz-answer value="B">L'opérateur d'affectation augmentée <code>+=</code> est équivalent à <code>x = x + 3</code>. Donc <code>x</code> commence à 5, puis devient 5 + 3 = 8.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+## Opérateur Walrus
+
+L'opérateur Walrus permet l'affectation de variables au sein d'une expression tout en retournant la valeur de la variable
 
 Exemple :
 
 ```python
-# L'opérateur Morse affecte et retourne la valeur en une seule expression
-# my_var est affecté à "Hello World!" puis imprimé
+# L'opérateur Walrus affecte et retourne la valeur en une seule expression
+# my_var reçoit "Hello World!" puis est affiché
 print(my_var:="Hello World!")
 ```
 
@@ -169,26 +216,26 @@ print(my_var:="Hello")
 Hello
 ```
 
-L'_Opérateur Morse_, ou **Opérateur d'Expression d'Affectation**, a été introduit pour la première fois en 2018 via [PEP 572](https://peps.python.org/pep-0572/), puis officiellement publié avec **Python 3.8** en octobre 2019.
+L'opérateur _Walrus_, ou **Opérateur d'Expression d'Affectation**, a été introduit pour la première fois en 2018 via la [PEP 572](https://peps.python.org/pep-0572/), puis officiellement publié avec **Python 3.8** en octobre 2019.
 
 <base-disclaimer>
   <base-disclaimer-title>
-    Sémantique de la Syntaxe et Exemples
+    Sémantique de la Syntaxe & Exemples
   </base-disclaimer-title>
   <base-disclaimer-content>
-  Le <a href="https://peps.python.org/pep-0572/" target="_blank">PEP 572</a> fournit la syntaxe, la sémantique et des exemples pour l'Opérateur Morse.
+  La <a href="https://peps.python.org/pep-0572/" target="_blank">PEP 572</a> fournit la syntaxe, la sémantique et des exemples pour l'opérateur Walrus.
   </base-disclaimer-content>
 </base-disclaimer>
 
 ## Types de Données
 
-Python possède neuf types de données intégrés principaux qui couvrent presque tout ce dont vous aurez besoin :
+Comprendre les types de données est l'une des bases les plus importantes de Python. Python possède neuf types de données intégrés principaux qui couvrent presque tout ce dont vous aurez besoin :
 
 | Type de Donnée                                             | Exemples                                 | Description                                  |
 | ---------------------------------------------------------- | ---------------------------------------- | -------------------------------------------- |
 | **Nombres**                                                |                                          |                                              |
 | <router-link to='/builtin/int'>`int`</router-link>         | `-2, -1, 0, 1, 2, 3, 4, 5`               | Nombres entiers (entiers)                    |
-| <router-link to='/builtin/float'>`float`</router-link>     | `-1.25, -1.0, -0.5, 0.0, 0.5, 1.0, 1.25` | Nombres avec virgule décimale                |
+| <router-link to='/builtin/float'>`float`</router-link>     | `-1.25, -1.0, -0.5, 0.0, 0.5, 1.0, 1.25` | Nombres avec des points décimaux             |
 | <router-link to='/builtin/complex'>`complex`</router-link> | `2+3j, complex(1, 4)`                    | Nombres avec parties réelle et imaginaire    |
 | **Texte**                                                  |                                          |                                              |
 | <router-link to='/builtin/str'>`str`</router-link>         | `'a', 'Hello!', "Python"`                | Texte et caractères                          |
@@ -230,7 +277,7 @@ Pour un guide complet avec des exemples visuels et des explications détaillées
 
 ## Concaténation et Réplication
 
-Concaténation de chaînes :
+Concaténation de chaînes de caractères :
 
 ```python
 # Concaténation de chaînes : les chaînes adjacentes sont automatiquement jointes
@@ -241,7 +288,7 @@ Concaténation de chaînes :
 'AliceBob'
 ```
 
-Réplication de chaînes :
+Réplication de chaînes de caractères :
 
 ```python
 # Réplication de chaînes : répéter la chaîne plusieurs fois
@@ -254,7 +301,7 @@ Réplication de chaînes :
 
 ## Variables
 
-Vous pouvez nommer une variable comme vous le souhaitez tant qu'elle respecte les règles suivantes :
+Les variables sont un élément fondamental des bases de Python. Vous pouvez nommer une variable comme vous le souhaitez tant qu'elle respecte les règles suivantes :
 
 1. Elle ne peut être qu'un seul mot.
 
@@ -286,12 +333,26 @@ my_var_2 = 'Hello'
 23_var = 'hello'
 ```
 
-4. Un nom de variable commençant par un trait de soulignement (`_`) est considéré comme "inutile".
+4. Un nom de variable commençant par un trait de soulignement (`_`) est considéré comme "non utile".
 
 ```python
 # _spam ne doit pas être réutilisé dans le code
 _spam = 'Hello'
 ```
+
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+Dans les bases de Python, lequel des éléments suivants est un nom de variable valide ?
+</template>
+
+<base-quiz-option value="A">A. <code>3value</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>user-name</code></base-quiz-option>
+<base-quiz-option value="C" correct>C. <code>user_name</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>for</code></base-quiz-option>
+<base-quiz-answer value="C"><code>user_name</code> est un nom de variable valide car il n'utilise que des lettres, des chiffres et des traits de soulignement, et ne commence pas par un chiffre.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Commentaires
 
@@ -329,7 +390,7 @@ def foo():
 
 ## La Fonction print()
 
-La fonction `print()` écrit la valeur de l'argument(s) qu'elle reçoit. [...] elle gère les arguments multiples, les quantités à virgule flottante et les chaînes de caractères. Les chaînes sont imprimées sans guillemets, et un espace est inséré entre les éléments, vous pouvez donc formater joliment :
+La fonction `print()` est l'une des premières bases de Python que vous apprendrez. Elle écrit la valeur de l'argument(s) qu'on lui donne. [...] elle gère les arguments multiples, les quantités à virgule flottante et les chaînes de caractères. Les chaînes sont imprimées sans guillemets, et un espace est inséré entre les éléments, vous pouvez donc formater joliment :
 
 ```python
 print('Hello world!')
@@ -382,7 +443,7 @@ Cette fonction prend l'entrée de l'utilisateur et la convertit en une chaîne d
 
 ```python
 # input() lit l'entrée utilisateur et la retourne comme une chaîne
-print('What is your name?')   # demander son nom
+print('What is your name?')   # demander leur nom
 my_name = input()  # Attendre que l'utilisateur tape et appuie sur Entrée
 print('Hi, {}'.format(my_name))
 ```
@@ -418,9 +479,23 @@ What is your name? Martha
 Hi, Martha
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Dans les bases de Python, quel type retourne `input()` ?
+</template>
+
+<base-quiz-option value="A">A. int</base-quiz-option>
+<base-quiz-option value="B" correct>B. str</base-quiz-option>
+<base-quiz-option value="C">C. float</base-quiz-option>
+<base-quiz-option value="D">D. Dépend de l'entrée de l'utilisateur</base-quiz-option>
+<base-quiz-answer value="B">La fonction <code>input()</code> retourne toujours une chaîne de caractères, quel que soit ce que l'utilisateur tape. Vous devez la convertir à d'autres types si nécessaire.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## La Fonction len()
 
-Évalue à la valeur entière du nombre de caractères dans une chaîne, une liste, un dictionnaire, etc. :
+Évalue au nombre entier de caractères dans une chaîne, une liste, un dictionnaire, etc. :
 
 ```python
 # len() retourne le nombre de caractères dans une chaîne
@@ -443,7 +518,7 @@ len(['cat', 3, 'dog'])  # Retourne 3 (trois éléments)
 <base-warning>
   <base-warning-title>Test de vacuité</base-warning-title>
   <base-warning-content>
-    Le test de vacuité des chaînes, listes, dictionnaires, etc., ne doit pas utiliser
+    Le test de vacuité des chaînes, listes, dictionnaires, etc., ne devrait pas utiliser
     <code>len</code>, mais préférer l'évaluation booléenne directe.
   </base-warning-content>
 </base-warning>
@@ -474,7 +549,7 @@ the list is not empty!
 
 ## Les Fonctions str(), int(), et float()
 
-Ces fonctions vous permettent de changer le type de variable. Par exemple, vous pouvez transformer un `integer` ou un `float` en `string` :
+Ces fonctions vous permettent de changer le type d'une variable. Par exemple, vous pouvez transformer un `entier` ou un `float` en une `chaîne de caractères` :
 
 ```python
 # Convertir un entier en chaîne
@@ -493,7 +568,7 @@ str(-3.14)
 '-3.14'
 ```
 
-Ou d'une `string` en `integer` ou `float` :
+Ou d'une `chaîne de caractères` à un `entier` ou un `float` :
 
 ```python
 # Convertir une chaîne en entier
@@ -505,13 +580,33 @@ int('11')  # Retourne 11
 ```
 
 ```python
-# Convertir une chaîne en flottant
+# Convertir une chaîne en float
 float('3.14')  # Retourne 3.14
 ```
 
 ```output
 3.14
 ```
+
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+Quel est le résultat de ce code Python ?
+
+```python
+result = int('42')
+type(result)
+```
+
+</template>
+
+<base-quiz-option value="A">A. <code>str</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>float</code></base-quiz-option>
+<base-quiz-option value="C" correct>C. <code>int</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>NoneType</code></base-quiz-option>
+<base-quiz-answer value="C">La fonction <code>int()</code> convertit une chaîne en un entier. Donc <code>int('42')</code> retourne l'entier <code>42</code>, et <code>type(42)</code> retourne <code>int</code>.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Liens Pertinents
 
@@ -522,4 +617,4 @@ float('3.14')  # Retourne 3.14
 - <router-link to="/cheatsheet/lists-and-tuples">Listes et Tuples</router-link>
 - <router-link to="/cheatsheet/dictionaries">Dictionnaires</router-link>
 - <router-link to="/cheatsheet/sets">Ensembles (Sets)</router-link>
-- <router-link to="/cheatsheet/string-formatting">Formatage de Chaînes</router-link>
+- <router-link to="/cheatsheet/string-formatting">Formatage de Chaînes de Caractères</router-link>

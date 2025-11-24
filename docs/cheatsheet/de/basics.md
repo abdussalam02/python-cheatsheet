@@ -1,6 +1,6 @@
 ---
 title: 'Python Grundlagen - Python Spickzettel'
-description: 'Die Python-Grundlagen. Wir alle müssen irgendwo anfangen, warum also nicht hier.'
+description: 'Lernen Sie die Python-Grundlagen mit unserem umfassenden Leitfaden zu Operatoren, Datentypen, Variablen, Funktionen und mehr. Perfekt für Anfänger, die die Grundlagen der Python-Programmierung erlernen.'
 labUrl: 'https://labex.io/de/labs/python-python-basics-633647?course=python-cheatsheet'
 ---
 
@@ -10,15 +10,23 @@ Python Grundlagen
 
 <base-lab-url :url="frontmatter.labUrl" />
 
-Wir alle müssen irgendwo anfangen, also wie wäre es, hier zu beginnen.
+Wir alle müssen irgendwo anfangen, also wie wäre es hier. Dieser Leitfaden behandelt die grundlegenden Python-Basics, einschließlich Operatoren, Datentypen, Variablen und Kernfunktionen.
 
 <base-disclaimer>
-  <base-disclaimer-title>
-    Aus dem <a href="https://docs.python.org/3/tutorial/index.html">Python 3 Tutorial</a>
-  </base-disclaimer-title>
-  <base-disclaimer-content>
-    Python ist eine leicht zu erlernende, leistungsstarke Programmiersprache [...] Pythons elegante Syntax und dynamische Typisierung machen es zusammen mit seinem interpretierten Charakter zu einer idealen Sprache für Skripterstellung und schnelle Anwendungsentwicklung.
-  </base-disclaimer-content>
+<base-disclaimer-title>
+Übersicht der Python-Grundlagen
+</base-disclaimer-title>
+<base-disclaimer-content>
+Die Kern-Python-Grundlagen, die jeder Anfänger kennen sollte:
+
+- Variablen und grundlegende Typen
+- Operatoren und Ausdrücke
+- Strings und gängige Methoden
+- Listen, Tupel und Dictionaries
+- Grundlegende Kontrollstrukturen (if, for, while)
+- Einfache Funktionen
+
+</base-disclaimer-content>
 </base-disclaimer>
 
 ## Mathematische Operatoren
@@ -89,9 +97,28 @@ Beispiele für Ausdrücke:
 16.0
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+Was ist das Ergebnis dieses Python-Ausdrucks?
+
+```python
+4 + 2 * 3
+```
+
+</template>
+
+<base-quiz-option value="A" correct>A. 10</base-quiz-option>
+<base-quiz-option value="B">B. 18</base-quiz-option>
+<base-quiz-option value="C">C. 12</base-quiz-option>
+<base-quiz-option value="D">D. 20</base-quiz-option>
+<base-quiz-answer value="A">Multiplikation hat eine höhere Priorität als Addition, daher wird dies ausgewertet als: 4 + (2 \* 3) = 4 + 6 = 10</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Augmented Assignment Operatoren
 
-| Operator    | Äquivalent       |
+| Operator    | Entsprechung     |
 | ----------- | ---------------- |
 | `var += 1`  | `var = var + 1`  |
 | `var -= 1`  | `var = var - 1`  |
@@ -104,7 +131,7 @@ Beispiele für Ausdrücke:
 Beispiele:
 
 ```python
-# Augmented Assignment: äquivalent zu greeting = greeting + ' world!'
+# Augmented Assignment: entspricht greeting = greeting + ' world!'
 greeting = 'Hello'
 greeting += ' world!'
 greeting
@@ -126,7 +153,7 @@ number
 ```
 
 ```python
-# Listelemente replizieren: äquivalent zu my_list = my_list * 3
+# Liste replizieren: entspricht my_list = my_list * 3
 my_list = ['item']
 my_list *= 3
 my_list
@@ -136,6 +163,26 @@ my_list
 ['item', 'item', 'item']
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Was ist der Wert von <code>x</code> nach Ausführung dieses Codes?
+
+```python
+x = 5
+x += 3
+```
+
+</template>
+
+<base-quiz-option value="A">A. 3</base-quiz-option>
+<base-quiz-option value="B" correct>B. 8</base-quiz-option>
+<base-quiz-option value="C">C. 5</base-quiz-option>
+<base-quiz-option value="D">D. 15</base-quiz-option>
+<base-quiz-answer value="B">Der Augmented Assignment Operator <code>+=</code> entspricht <code>x = x + 3</code>. Also beginnt <code>x</code> bei 5 und wird dann zu 5 + 3 = 8.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Walrus Operator
 
 Der Walrus Operator ermöglicht die Zuweisung von Variablen innerhalb eines Ausdrucks, während gleichzeitig der Wert der Variablen zurückgegeben wird.
@@ -143,7 +190,7 @@ Der Walrus Operator ermöglicht die Zuweisung von Variablen innerhalb eines Ausd
 Beispiel:
 
 ```python
-# Walrus Operator weist zu und gibt den Wert in einem Ausdruck zurück
+# Walrus Operator weist zu und gibt Wert in einem Ausdruck zurück
 # my_var wird "Hello World!" zugewiesen und dann gedruckt
 print(my_var:="Hello World!")
 ```
@@ -176,20 +223,20 @@ Der _Walrus Operator_, oder **Assignment Expression Operator**, wurde erstmals 2
     Syntax Semantik & Beispiele
   </base-disclaimer-title>
   <base-disclaimer-content>
-  Das <a href="https://peps.python.org/pep-0572/" target="_blank">PEP 572</a> stellt die Syntax, Semantik und Beispiele für den Walrus Operator bereit.
+  Das <a href="https://peps.python.org/pep-0572/" target="_blank">PEP 572</a> liefert die Syntax, Semantik und Beispiele für den Walrus Operator.
   </base-disclaimer-content>
 </base-disclaimer>
 
 ## Datentypen
 
-Python verfügt über neun grundlegende eingebaute Datentypen, die fast alles abdecken, was Sie benötigen:
+Das Verständnis von Datentypen ist eine der wichtigsten Grundlagen in Python. Python verfügt über neun grundlegende eingebaute Datentypen, die fast alles abdecken, was Sie benötigen:
 
 | Datentyp                                                   | Beispiele                                | Beschreibung                                |
 | ---------------------------------------------------------- | ---------------------------------------- | ------------------------------------------- |
 | **Zahlen**                                                 |                                          |                                             |
 | <router-link to='/builtin/int'>`int`</router-link>         | `-2, -1, 0, 1, 2, 3, 4, 5`               | Ganze Zahlen (Integer)                      |
 | <router-link to='/builtin/float'>`float`</router-link>     | `-1.25, -1.0, -0.5, 0.0, 0.5, 1.0, 1.25` | Zahlen mit Dezimalpunkten                   |
-| <router-link to='/builtin/complex'>`complex`</router-link> | `2+3j, complex(1, 4)`                    | Zahlen mit realen und imaginären Teilen     |
+| <router-link to='/builtin/complex'>`complex`</router-link> | `2+3j, complex(1, 4)`                    | Zahlen mit Real- und Imaginärteil           |
 | **Text**                                                   |                                          |                                             |
 | <router-link to='/builtin/str'>`str`</router-link>         | `'a', 'Hello!', "Python"`                | Text und Zeichen                            |
 | **Boolesch**                                               |                                          |                                             |
@@ -254,7 +301,7 @@ String-Replikation:
 
 ## Variablen
 
-Sie können einer Variablen einen beliebigen Namen geben, solange sie die folgenden Regeln befolgt:
+Variablen sind ein grundlegender Bestandteil der Python-Basics. Sie können einer Variablen einen beliebigen Namen geben, solange sie die folgenden Regeln befolgt:
 
 1. Sie kann nur ein Wort sein.
 
@@ -266,7 +313,7 @@ my variable = 'Hello'
 var = 'Hello'
 ```
 
-2. Sie darf nur Buchstaben, Zahlen und den Unterstrich (`_`) enthalten.
+2. Sie darf nur Buchstaben, Zahlen und das Unterstrichzeichen (`_`) enthalten.
 
 ```python
 # schlecht
@@ -292,6 +339,20 @@ my_var_2 = 'Hello'
 # _spam sollte im Code nicht wiederverwendet werden
 _spam = 'Hello'
 ```
+
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+Welche der folgenden Bezeichnungen ist in Python-Grundlagen ein gültiger Variablenname?
+</template>
+
+<base-quiz-option value="A">A. <code>3value</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>user-name</code></base-quiz-option>
+<base-quiz-option value="C" correct>C. <code>user_name</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>for</code></base-quiz-option>
+<base-quiz-answer value="C"><code>user_name</code> ist ein gültiger Variablenname, da er nur Buchstaben, Zahlen und Unterstriche verwendet und nicht mit einer Zahl beginnt.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Kommentare
 
@@ -329,7 +390,7 @@ def foo():
 
 ## Die print() Funktion
 
-Die Funktion `print()` schreibt den Wert des ihr übergebenen Arguments/der ihr übergebenen Argumente. [...] sie verarbeitet mehrere Argumente, Gleitkommazahlen und Zeichenketten. Zeichenketten werden ohne Anführungszeichen gedruckt, und zwischen den Elementen wird ein Leerzeichen eingefügt, sodass Sie Dinge schön formatieren können:
+Die Funktion `print()` ist eine der ersten Python-Grundlagen, die Sie lernen werden. Sie schreibt den Wert des/der ihr übergebenen Argument(e). [...] sie verarbeitet mehrere Argumente, Gleitkommazahlen und Strings. Strings werden ohne Anführungszeichen gedruckt, und zwischen den Elementen wird ein Leerzeichen eingefügt, sodass Sie Dinge schön formatieren können:
 
 ```python
 print('Hello world!')
@@ -350,7 +411,7 @@ Hello world! 1
 
 ### Das end Schlüsselwort
 
-Das Schlüsselwortargument `end` kann verwendet werden, um den Zeilenumbruch nach der Ausgabe zu vermeiden oder die Ausgabe mit einer anderen Zeichenfolge zu beenden:
+Das Schlüsselwortargument `end` kann verwendet werden, um den Zeilenumbruch nach der Ausgabe zu vermeiden oder die Ausgabe mit einem anderen String zu beenden:
 
 ```python
 # Verwenden Sie den end-Parameter, um zu ändern, was nach jeder print-Anweisung kommt
@@ -378,10 +439,10 @@ cats,dogs,mice
 
 ## Die input() Funktion
 
-Diese Funktion nimmt die Eingabe des Benutzers entgegen und wandelt sie in eine Zeichenfolge um:
+Diese Funktion nimmt die Eingabe des Benutzers entgegen und wandelt sie in einen String um:
 
 ```python
-# input() liest Benutzereingaben und gibt sie als Zeichenfolge zurück
+# input() liest Benutzereingaben und gibt sie als String zurück
 print('What is your name?')   # nach dem Namen fragen
 my_name = input()  # Warten, bis der Benutzer tippt und Enter drückt
 print('Hi, {}'.format(my_name))
@@ -405,12 +466,12 @@ What is your name? Martha
 Hi, Martha
 ```
 
-Es ist auch möglich, formatierte Zeichenfolgen zu verwenden, um die Verwendung von .format zu vermeiden:
+Es ist auch möglich, formatierte Strings zu verwenden, um die Verwendung von .format zu vermeiden:
 
 ```python
 # input() kann eine Eingabeaufforderungsnachricht direkt anzeigen
 my_name = input('What is your name? ')  # Eingabeaufforderung und Lesen in einem Aufruf
-print(f'Hi, {my_name}')  # f-string für String-Formatierung
+print(f'Hi, {my_name}')  # f-String für String-Formatierung
 ```
 
 ```output
@@ -418,12 +479,26 @@ What is your name? Martha
 Hi, Martha
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Welchen Typ gibt `input()` in Python-Grundlagen zurück?
+</template>
+
+<base-quiz-option value="A">A. int</base-quiz-option>
+<base-quiz-option value="B" correct>B. str</base-quiz-option>
+<base-quiz-option value="C">C. float</base-quiz-option>
+<base-quiz-option value="D">D. Hängt von der Benutzereingabe ab</base-quiz-option>
+<base-quiz-answer value="B">Die Funktion <code>input()</code> gibt immer einen String zurück, unabhängig davon, was der Benutzer eingibt. Sie müssen ihn bei Bedarf in andere Typen umwandeln.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Die len() Funktion
 
-Evaluierung ergibt den ganzzahligen Wert der Anzahl der Zeichen in einer Zeichenfolge, Liste, einem Wörterbuch usw.:
+Ergibt den ganzzahligen Wert der Anzahl der Zeichen in einem String, einer Liste, einem Dictionary usw.:
 
 ```python
-# len() gibt die Anzahl der Zeichen in einer Zeichenfolge zurück
+# len() gibt die Anzahl der Zeichen in einem String zurück
 len('hello')  # Gibt 5 zurück
 ```
 
@@ -443,12 +518,12 @@ len(['cat', 3, 'dog'])  # Gibt 3 zurück (drei Elemente)
 <base-warning>
   <base-warning-title>Test auf Leere</base-warning-title>
   <base-warning-content>
-    Tests auf Leere von Zeichenfolgen, Listen, Wörterbüchern usw. sollten nicht
+    Der Test auf die Leere von Strings, Listen, Dictionaries usw. sollte nicht
     <code>len</code> verwenden, sondern die direkte boolesche Auswertung bevorzugen.
   </base-warning-content>
 </base-warning>
 
-Testbeispiel auf Leere:
+Testbeispiel für Leere:
 
 ```python
 a = [1, 2, 3]
@@ -463,7 +538,7 @@ the list is not empty!
 ```
 
 ```python
-# gut: direkte boolesche Auswertung (Pythonic Way)
+# gut: direkte boolesche Auswertung (Pythonischer Weg)
 if a:  # ergibt True, wenn die Liste nicht leer ist
     print("the list is not empty!")
 ```
@@ -474,7 +549,7 @@ the list is not empty!
 
 ## Die str(), int() und float() Funktionen
 
-Diese Funktionen ermöglichen es Ihnen, den Typ der Variablen zu ändern. Sie können beispielsweise von einem `Integer` oder `Float` in einen `String` umwandeln:
+Diese Funktionen ermöglichen es Ihnen, den Typ einer Variablen zu ändern. Sie können beispielsweise von einem `Integer` oder `Float` in einen `String` umwandeln:
 
 ```python
 # Integer in String umwandeln
@@ -512,6 +587,26 @@ float('3.14')  # Gibt 3.14 zurück
 ```output
 3.14
 ```
+
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+Was ist das Ergebnis dieses Python-Codes?
+
+```python
+result = int('42')
+type(result)
+```
+
+</template>
+
+<base-quiz-option value="A">A. <code>str</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>float</code></base-quiz-option>
+<base-quiz-option value="C" correct>C. <code>int</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>NoneType</code></base-quiz-option>
+<base-quiz-answer value="C">Die Funktion <code>int()</code> konvertiert einen String in einen Integer. Daher gibt <code>int('42')</code> den Integer <code>42</code> zurück, und <code>type(42)</code> gibt <code>int</code> zurück.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Relevante Links
 

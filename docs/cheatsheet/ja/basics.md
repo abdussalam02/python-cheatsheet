@@ -1,6 +1,6 @@
 ---
 title: 'Python の基礎 - Python チートシート'
-description: 'Python の基本。誰もがどこかから始める必要があります。ここから始めてみませんか。'
+description: '演算子、データ型、変数、関数などを網羅した包括的なガイドで Python の基礎を学びましょう。Python プログラミングの基本を学ぶ初心者の方に最適です。'
 labUrl: 'https://labex.io/ja/labs/python-python-basics-633647?course=python-cheatsheet'
 ---
 
@@ -10,15 +10,23 @@ Python の基本
 
 <base-lab-url :url="frontmatter.labUrl" />
 
-どこからでも始める必要があります。ここで始めるのはどうでしょうか。
+誰もがどこかから始める必要があります。ここでは、その第一歩を踏み出しましょう。このガイドでは、演算子、データ型、変数、およびコア関数を含む基本的な Python の基礎を網羅します。
 
 <base-disclaimer>
-  <base-disclaimer-title>
-    <a href="https://docs.python.org/3/tutorial/index.html">Python 3 チュートリアル</a>より
-  </base-disclaimer-title>
-  <base-disclaimer-content>
-    Python は学習しやすく、強力なプログラミング言語です。[...] Python のエレガントな構文と動的型付けは、インタプリタ型と相まって、スクリプト作成や迅速なアプリケーション開発に最適な言語となっています。
-  </base-disclaimer-content>
+<base-disclaimer-title>
+Python の基本概要
+</base-disclaimer-title>
+<base-disclaimer-content>
+初心者が知っておくべき Python のコアな基本：
+
+- 変数と基本型
+- 演算子と式
+- 文字列と一般的なメソッド
+- リスト、タプル、辞書
+- 基本的な制御フロー（if、for、while）
+- 簡単な関数
+
+</base-disclaimer-content>
 </base-disclaimer>
 
 ## 数学演算子
@@ -48,7 +56,7 @@ Python の基本
 ```
 
 ```python
-# 括弧は演算子の優先順位を上書きします
+# 丸括弧は演算子の優先順位を上書きします
 # これは次のように評価されます：5 * 6 = 30
 (2 + 3) * 6
 ```
@@ -89,9 +97,28 @@ Python の基本
 16.0
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+この Python 式の結果は何ですか？
+
+```python
+4 + 2 * 3
+```
+
+</template>
+
+<base-quiz-option value="A" correct>A. 10</base-quiz-option>
+<base-quiz-option value="B">B. 18</base-quiz-option>
+<base-quiz-option value="C">C. 12</base-quiz-option>
+<base-quiz-option value="D">D. 20</base-quiz-option>
+<base-quiz-answer value="A">乗算は加算よりも優先順位が高いため、これは次のように評価されます：4 + (2 \* 3) = 4 + 6 = 10</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## 複合代入演算子
 
-| 演算子      | 同等             |
+| 演算子      | 同等な記述       |
 | :---------- | :--------------- |
 | `var += 1`  | `var = var + 1`  |
 | `var -= 1`  | `var = var - 1`  |
@@ -136,14 +163,34 @@ my_list
 ['item', 'item', 'item']
 ```
 
-## セイウチ演算子 (Walrus Operator)
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+このコードを実行した後、<code>x</code>の値は何になりますか？
 
-セイウチ演算子（Walrus Operator）は、式内で変数に代入しながらその変数の値を返すことを可能にします。
+```python
+x = 5
+x += 3
+```
+
+</template>
+
+<base-quiz-option value="A">A. 3</base-quiz-option>
+<base-quiz-option value="B" correct>B. 8</base-quiz-option>
+<base-quiz-option value="C">C. 5</base-quiz-option>
+<base-quiz-option value="D">D. 15</base-quiz-option>
+<base-quiz-answer value="B">複合代入演算子 <code>+=</code> は <code>x = x + 3</code> と同等です。したがって、<code>x</code>は 5 から始まり、5 + 3 = 8 になります。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+## ウォルラス演算子 (Walrus Operator)
+
+ウォルラス演算子（:=）は、式内で変数に値を代入しつつ、その変数の値を返すことを可能にします。
 
 例：
 
 ```python
-# セイウチ演算子は、1 つの式で値を代入し、その値を返します
+# ウォルラス演算子は、1 つの式で代入と値の返却を行います
 # my_var に "Hello World!" が代入され、その後に出力されます
 print(my_var:="Hello World!")
 ```
@@ -169,20 +216,20 @@ print(my_var:="Hello")
 Hello
 ```
 
-セイウチ演算子、または**代入式演算子**は、[PEP 572](https://peps.python.org/pep-0572/)によって 2018 年に初めて導入され、2019 年 10 月に**Python 3.8**で正式にリリースされました。
+ウォルラス演算子、または**代入式演算子**は、[PEP 572](https://peps.python.org/pep-0572/)によって 2018 年に初めて導入され、2019 年 10 月に**Python 3.8**で正式にリリースされました。
 
 <base-disclaimer>
   <base-disclaimer-title>
-    構文セマンティクスと例
+    構文のセマンティクスと例
   </base-disclaimer-title>
   <base-disclaimer-content>
-  <a href="https://peps.python.org/pep-0572/" target="_blank">PEP 572</a>は、セイウチ演算子の構文、セマンティクス、および例を提供します。
+  <a href="https://peps.python.org/pep-0572/" target="_blank">PEP 572</a>には、ウォルラス演算子の構文、セマンティクス、および例が記載されています。
   </base-disclaimer-content>
 </base-disclaimer>
 
 ## データ型
 
-Python には、必要なもののほぼすべてをカバーする 9 つのコア組み込みデータ型があります。
+データ型を理解することは、Python の最も重要な基本事項の 1 つです。Python には、必要なもののほぼすべてをカバーする 9 つのコア組み込みデータ型があります。
 
 | データ型                                                   | 例                                       | 説明                                         |
 | :--------------------------------------------------------- | :--------------------------------------- | :------------------------------------------- |
@@ -226,7 +273,7 @@ coordinates = (10, 20)     # tuple
 unique_ids = {1, 2, 3}     # set
 ```
 
-各型の使用方法について、視覚的な例と詳細な説明を含む包括的なガイドについては、以下を参照してください：<router-link to="/blog/python-data-types">Python データ型：初心者向けビジュアルガイド</router-link>。
+視覚的な例と、各型を使用すべき場合の詳細な説明については、以下を参照してください：<router-link to="/blog/python-data-types">Python データ型：初心者向けビジュアルガイド</router-link>。
 
 ## 連結と複製
 
@@ -254,9 +301,9 @@ unique_ids = {1, 2, 3}     # set
 
 ## 変数
 
-変数名は、次のルールに従う限り、任意の名前にできます。
+変数は Python の基本の基礎です。以下のルールに従う限り、変数は任意の名前を付けることができます。
 
-1. 1 語である必要があります。
+1. 1 語でなければならない。
 
 ```python
 # bad
@@ -266,7 +313,7 @@ my variable = 'Hello'
 var = 'Hello'
 ```
 
-2. 文字、数字、アンダースコア (`_`) の文字のみを使用できます。
+2. 英字、数字、アンダースコア（`_`）文字のみを使用できる。
 
 ```python
 # bad
@@ -279,19 +326,33 @@ my_var = 'Hello'
 my_var_2 = 'Hello'
 ```
 
-3. 数字で始めることはできません。
+3. 数字で始めることはできない。
 
 ```python
 # これは機能しません
 23_var = 'hello'
 ```
 
-4. アンダースコア (`_`) で始まる変数名は「未使用」と見なされます。
+4. アンダースコア（`_`）で始まる変数名は「未使用」と見なされます。
 
 ```python
-# _spam はコード内で再利用されるべきではありません
+# _spam はコード内で再利用されるべきではない
 _spam = 'Hello'
 ```
+
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+Python の基本において、次のうち有効な変数名はどれですか？
+</template>
+
+<base-quiz-option value="A">A. <code>3value</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>user-name</code></base-quiz-option>
+<base-quiz-option value="C" correct>C. <code>user_name</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>for</code></base-quiz-option>
+<base-quiz-answer value="C"><code>user_name</code>は、英字、数字、アンダースコアのみを使用し、数字で始まらないため、有効な変数名です。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## コメント
 
@@ -305,7 +366,7 @@ _spam = 'Hello'
 
 ```python
 # これは
-# 複数行のコメントです
+# 複数行コメントです
 ```
 
 コメント付きのコード：
@@ -316,20 +377,20 @@ a = 1  # 初期化
 
 コメントの前に 2 つのスペースがあることに注意してください。
 
-関数の docstring:
+関数の docstring：
 
 ```python
 def foo():
     """
     これは関数の docstring です
-    以下を使用することもできます：
+    次のように使用することもできます：
     ''' 関数の Docstring '''
     """
 ```
 
 ## print() 関数
 
-`print()` 関数は、引数として与えられた値を書き出します。[...] 複数の引数、浮動小数点数、および文字列を処理します。文字列は引用符なしで印刷され、項目間にはスペースが挿入されるため、きれいにフォーマットできます。
+`print()` 関数は、学習する最初の Python の基本事項の 1 つです。引数として与えられた値を書き出します。[...] 複数の引数、浮動小数点数、および文字列を処理します。文字列は引用符なしで印刷され、項目間にはスペースが挿入されるため、きれいに整形できます。
 
 ```python
 print('Hello world!')
@@ -365,7 +426,7 @@ printed-with-a-dash-in-between-
 
 ### sep キーワード
 
-キーワード `sep` は、複数の引数がある場合にオブジェクトをどのように区切るかを指定します。
+キーワード `sep` は、複数のオブジェクトがある場合に、それらを区切る方法を指定します。
 
 ```python
 # sep パラメータを使用して、複数の引数間の区切り文字を指定します
@@ -393,7 +454,7 @@ Martha
 Hi, Martha
 ```
 
-`input()` は `print()` を使用せずにデフォルトメッセージを設定することもできます。
+`input()` は `print()` を使用せずにデフォルトのメッセージを設定することもできます。
 
 ```python
 my_name = input('What is your name? ')  # プロンプトメッセージ
@@ -405,7 +466,7 @@ What is your name? Martha
 Hi, Martha
 ```
 
-.format を使用せずにフォーマット済み文字列を使用することも可能です。
+.format を使用せずに、フォーマット済み文字列を使用することも可能です。
 
 ```python
 # input() はプロンプトメッセージを直接表示できます
@@ -418,9 +479,23 @@ What is your name? Martha
 Hi, Martha
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Python の基本において、`input()` は何を返しますか？
+</template>
+
+<base-quiz-option value="A">A. int</base-quiz-option>
+<base-quiz-option value="B" correct>B. str</base-quiz-option>
+<base-quiz-option value="C">C. float</base-quiz-option>
+<base-quiz-option value="D">D. ユーザー入力による</base-quiz-option>
+<base-quiz-answer value="B"><code>input()</code>関数は、ユーザーが入力した内容に関わらず、常に文字列を返します。必要に応じて他の型に変換する必要があります。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## len() 関数
 
-文字列、リスト、辞書などの文字数（または要素数）の整数値を返します。
+文字列、リスト、辞書などの文字数または要素数を整数値で評価します。
 
 ```python
 # len() は文字列内の文字数を返します
@@ -443,7 +518,7 @@ len(['cat', 3, 'dog'])  # 3 を返します (3 つの要素)
 <base-warning>
   <base-warning-title>空のテスト</base-warning-title>
   <base-warning-content>
-    文字列、リスト、辞書などの空のテストには<code>len</code>を使用せず、直接的なブール評価を優先する必要があります。
+    文字列、リスト、辞書などの空のテストには、<code>len</code>を使用するのではなく、直接的なブール評価を優先すべきです。
   </base-warning-content>
 </base-warning>
 
@@ -452,7 +527,7 @@ len(['cat', 3, 'dog'])  # 3 を返します (3 つの要素)
 ```python
 a = [1, 2, 3]
 
-# bad: 不必要な len() チェック
+# bad: 不要な len() チェック
 if len(a) > 0:  # True と評価される
     print("the list is not empty!")
 ```
@@ -473,7 +548,7 @@ the list is not empty!
 
 ## str(), int(), float() 関数
 
-これらの関数を使用すると、変数の型を変更できます。たとえば、`integer` または `float` から `string` に変換できます。
+これらの関数を使用すると、変数の型を変更できます。例えば、`integer`や`float`から`string`に変換できます。
 
 ```python
 # 整数を文字列に変換
@@ -492,7 +567,7 @@ str(-3.14)
 '-3.14'
 ```
 
-または、`string` から `integer` または `float` に変換します。
+または、`string`から`integer`や`float`に変換します。
 
 ```python
 # 文字列を整数に変換
@@ -512,6 +587,26 @@ float('3.14')  # 3.14 を返します
 3.14
 ```
 
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+この Python コードの結果は何ですか？
+
+```python
+result = int('42')
+type(result)
+```
+
+</template>
+
+<base-quiz-option value="A">A. <code>str</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>float</code></base-quiz-option>
+<base-quiz-option value="C" correct>C. <code>int</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>NoneType</code></base-quiz-option>
+<base-quiz-answer value="C"><code>int()</code>関数は文字列を整数に変換します。したがって、<code>int('42')</code>は整数<code>42</code>を返し、<code>type(42)</code>は<code>int</code>を返します。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## 関連リンク
 
 - <router-link to="/blog/python-data-types">Python データ型：初心者向けビジュアルガイド</router-link>
@@ -521,4 +616,4 @@ float('3.14')  # 3.14 を返します
 - <router-link to="/cheatsheet/lists-and-tuples">リストとタプル</router-link>
 - <router-link to="/cheatsheet/dictionaries">辞書</router-link>
 - <router-link to="/cheatsheet/sets">セット</router-link>
-- <router-link to="/cheatsheet/string-formatting">文字列フォーマット</router-link>
+- <router-link to="/cheatsheet/string-formatting">文字列のフォーマット</router-link>
