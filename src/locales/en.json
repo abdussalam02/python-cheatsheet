@@ -143,7 +143,10 @@
     "label": "Quiz",
     "correct": "Correct",
     "wrong": "Wrong",
-    "correctAnswer": "Correct Answer"
+    "correctAnswer": "Correct Answer",
+    "completions": "completions",
+    "completion": "completion",
+    "totalCompletions": "Total completions"
   },
   "meta": {
     "title": "Python Cheat Sheet – Python Basics for Beginners",

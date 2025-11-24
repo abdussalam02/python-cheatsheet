@@ -143,7 +143,10 @@
     "label": "Quiz",
     "correct": "Correct",
     "wrong": "Incorrect",
-    "correctAnswer": "Bonne réponse"
+    "correctAnswer": "Bonne réponse",
+    "completions": "complétions",
+    "completion": "complétion",
+    "totalCompletions": "Total de complétions"
   },
   "meta": {
     "title": "Aide-mémoire Python – Bases de Python pour débutants",

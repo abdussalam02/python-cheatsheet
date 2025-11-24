@@ -143,7 +143,10 @@
     "label": "Quiz",
     "correct": "Richtig",
     "wrong": "Falsch",
-    "correctAnswer": "Richtige Antwort"
+    "correctAnswer": "Richtige Antwort",
+    "completions": "Abschlüsse",
+    "completion": "Abschluss",
+    "totalCompletions": "Gesamte Abschlüsse"
   },
   "meta": {
     "title": "Python Spickzettel – Python-Grundlagen für Anfänger",

@@ -143,7 +143,10 @@
     "label": "クイズ",
     "correct": "正解",
     "wrong": "不正解",
-    "correctAnswer": "正解"
+    "correctAnswer": "正解",
+    "completions": "回完了",
+    "completion": "回完了",
+    "totalCompletions": "総完了回数"
   },
   "meta": {
     "title": "Python チートシート – 初心者のための Python 基礎",

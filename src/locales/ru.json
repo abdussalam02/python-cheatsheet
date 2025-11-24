@@ -143,7 +143,10 @@
     "label": "Викторина",
     "correct": "Правильно",
     "wrong": "Неправильно",
-    "correctAnswer": "Правильный ответ"
+    "correctAnswer": "Правильный ответ",
+    "completions": "завершений",
+    "completion": "завершение",
+    "totalCompletions": "Всего завершений"
   },
   "meta": {
     "title": "Шпаргалка Python – Основы Python для начинающих",

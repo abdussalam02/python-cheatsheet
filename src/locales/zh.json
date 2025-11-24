@@ -143,7 +143,10 @@
     "label": "测验",
     "correct": "正确",
     "wrong": "错误",
-    "correctAnswer": "正确答案"
+    "correctAnswer": "正确答案",
+    "completions": "次完成",
+    "completion": "次完成",
+    "totalCompletions": "总完成次数"
   },
   "meta": {
     "title": "Python 速查表 – Python 初学者基础",

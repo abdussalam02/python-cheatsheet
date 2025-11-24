@@ -143,7 +143,10 @@
     "label": "Quiz",
     "correct": "Correto",
     "wrong": "Incorreto",
-    "correctAnswer": "Resposta correta"
+    "correctAnswer": "Resposta correta",
+    "completions": "conclusões",
+    "completion": "conclusão",
+    "totalCompletions": "Total de conclusões"
   },
   "meta": {
     "title": "Folha de referência Python – Fundamentos de Python para iniciantes",

@@ -3,7 +3,7 @@ import { useRoute } from 'vue-router'
 export function useQuizTracking() {
   const route = useRoute()
 
-  const recordQuizCompletion = async (quizId: string): Promise<void> => {
+  const recordQuizCompletion = async (quizId: string): Promise<number | null> => {
     try {
       const pagePath = route.path
       
@@ -20,9 +20,14 @@ export function useQuizTracking() {
 
       if (!response.ok) {
         console.error('Failed to record quiz completion:', response.statusText)
+        return null
       }
+
+      const data = await response.json()
+      return data.count || null
     } catch (error) {
       console.error('Error recording quiz completion:', error)
+      return null
     }
   }
 
