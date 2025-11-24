@@ -1,6 +1,6 @@
 ---
 title: 'Fluxo de Controle Python - Folha de Dicas Python'
-description: 'O fluxo de controle é a ordem em que instruções individuais, comandos ou chamadas de função são executados ou avaliados. O fluxo de controle de um programa Python é regulado por instruções condicionais, laços e chamadas de função.'
+description: 'O fluxo de controle é a ordem em que instruções individuais, comandos ou chamadas de função são executados ou avaliados. O fluxo de controle de um programa Python é regulado por instruções condicionais, loops e chamadas de função.'
 labUrl: 'https://labex.io/pt/labs/python-python-control-flow-633651?course=python-cheatsheet'
 ---
 
@@ -15,7 +15,7 @@ Fluxo de Controle em Python
     Fluxo de controle em Python
   </base-disclaimer-title>
   <base-disclaimer-content>
-  Fluxo de controle é a ordem em que instruções individuais, comandos ou chamadas de função são executados ou avaliados. O fluxo de controle de um programa Python é regulado por declarações condicionais, loops e chamadas de função.
+  O fluxo de controle é a ordem em que instruções individuais, comandos ou chamadas de função são executados ou avaliados. O fluxo de controle de um programa Python é regulado por instruções condicionais, loops e chamadas de função.
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -27,8 +27,8 @@ Fluxo de Controle em Python
 | `!=`     | Diferente de     |
 | `<`      | Menor que        |
 | `>`      | Maior que        |
-| `<=`     | Menor ou Igual a |
-| `>=`     | Maior ou Igual a |
+| `<=`     | Menor ou igual a |
+| `>=`     | Maior ou igual a |
 
 Estes operadores avaliam para True ou False dependendo dos valores que você lhes atribui.
 
@@ -90,12 +90,26 @@ True
 False
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+A que avalia <code>'hello' == 'Hello'</code>?
+</template>
+
+<base-quiz-option value="A">A. <code>True</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>False</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>None</code></base-quiz-option>
+<base-quiz-option value="D">D. Levanta um erro</base-quiz-option>
+<base-quiz-answer value="B">A comparação de strings em Python diferencia maiúsculas de minúsculas. <code>'hello'</code> e <code>'Hello'</code> são strings diferentes, então a comparação retorna <code>False</code>.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Operadores Booleanos
 
-Existem três operadores Booleanos: `and`, `or` e `not`.
+Existem três operadores booleanos: `and`, `or` e `not`.
 Na ordem de precedência, do mais alto para o mais baixo, eles são `not`, `and` e `or`.
 
-Tabela de _Verdade_ do Operador `and`:
+Tabela de Verdade do Operador `and`:
 
 | Expressão         | Avalia para |
 | ----------------- | ----------- |
@@ -104,7 +118,7 @@ Tabela de _Verdade_ do Operador `and`:
 | `False and True`  | `False`     |
 | `False and False` | `False`     |
 
-Tabela de _Verdade_ do Operador `or`:
+Tabela de Verdade do Operador `or`:
 
 | Expressão        | Avalia para |
 | ---------------- | ----------- |
@@ -113,7 +127,7 @@ Tabela de _Verdade_ do Operador `or`:
 | `False or True`  | `True`      |
 | `False or False` | `False`     |
 
-Tabela de _Verdade_ do Operador `not`:
+Tabela de Verdade do Operador `not`:
 
 | Expressão   | Avalia para |
 | ----------- | ----------- |
@@ -148,7 +162,7 @@ False
 True
 ```
 
-Além disso, você pode usar múltiplos operadores booleanos em uma expressão, juntamente com os operadores de comparação:
+Além disso, você pode misturar e usar múltiplos operadores booleanos em uma expressão, juntamente com os operadores de comparação:
 
 ```python
 2 + 2 == 4 and not 2 + 2 == 5 and 2 * 2 == 2 + 2
@@ -159,8 +173,8 @@ True
 ```
 
 ```python
-# Na declaração abaixo, 3 < 4 and 5 > 5 é executado primeiro avaliando para False
-# Então 5 > 4 retorna True, então o resultado após True or False é True
+# Na instrução abaixo, 3 < 4 and 5 > 5 é executado primeiro, avaliando para False
+# Então, 5 > 4 retorna True, então o resultado após True or False é True
 5 > 4 or 3 < 4 and 5 > 5
 ```
 
@@ -169,7 +183,7 @@ True
 ```
 
 ```python
-# Agora a declaração dentro dos parênteses é executada primeiro, então True and False retorna False.
+# Agora, a instrução entre parênteses é executada primeiro, então True and False retorna False.
 (5 > 4 or 3 < 4) and 5 > 5
 ```
 
@@ -177,12 +191,12 @@ True
 False
 ```
 
-## Declarações if
+## Instruções if
 
-A declaração `if` avalia uma expressão e, se essa expressão for `True`, executa o código indentado seguinte:
+A instrução `if` avalia uma expressão e, se essa expressão for `True`, executa o código indentado seguinte:
 
 ```python
-# declaração if: executa o bloco de código quando a condição é True
+# instrução if: execute o bloco de código quando a condição for True
 name = 'Debora'
 
 if name == 'Debora':  # Verifica se o nome é igual a 'Debora'
@@ -202,10 +216,10 @@ if name != 'George':
 You are not George
 ```
 
-A declaração `else` é executada somente se a avaliação da expressão `if` e de todas as expressões `elif` forem `False`:
+A instrução `else` é executada somente se a avaliação da expressão `if` e de todas as expressões `elif` forem `False`:
 
 ```python
-# if-else: executa código diferente com base na condição
+# if-else: execute código diferente com base na condição
 name = 'Debora'
 
 if name == 'George':
@@ -218,7 +232,21 @@ else:  # Executa se a condição if for False
 You are not George
 ```
 
-Somente após a expressão da declaração `if` ser `False`, a declaração `elif` é avaliada e executada:
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Quando o bloco <code>else</code> é executado em uma instrução if-else?
+</template>
+
+<base-quiz-option value="A">A. Sempre</base-quiz-option>
+<base-quiz-option value="B" correct>B. Somente quando a condição <code>if</code> (e todas as condições <code>elif</code>, se presentes) forem <code>False</code></base-quiz-option>
+<base-quiz-option value="C">C. Somente quando a condição <code>if</code> for <code>True</code></base-quiz-option>
+<base-quiz-option value="D">D. Nunca</base-quiz-option>
+<base-quiz-answer value="B">O bloco <code>else</code> é executado somente quando a condição <code>if</code> e todas as condições <code>elif</code> (se houver) avaliam para <code>False</code>.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+Somente depois que a expressão da instrução `if` for `False`, a instrução `elif` é avaliada e executada:
 
 ```python
 # if-elif: verifica múltiplas condições em sequência
@@ -234,7 +262,7 @@ elif name == 'George':  # Verificado somente se a condição anterior for False
 Hi George!
 ```
 
-As partes `elif` e `else` são opcionais.
+as partes `elif` e `else` são opcionais.
 
 ```python
 name = 'Antony'
@@ -253,7 +281,7 @@ Who are you?
 
 ## Operador Condicional Ternário
 
-Muitas linguagens de programação possuem um operador ternário, que define uma expressão condicional. O uso mais comum é para criar uma declaração de atribuição condicional concisa e simples. Em outras palavras, oferece código de uma linha para avaliar a primeira expressão se a condição for verdadeira e, caso contrário, avalia a segunda expressão.
+Muitas linguagens de programação possuem um operador ternário, que define uma expressão condicional. O uso mais comum é criar uma instrução de atribuição condicional simples e concisa. Em outras palavras, oferece código em uma linha para avaliar a primeira expressão se a condição for verdadeira e, caso contrário, avalia a segunda expressão.
 
 ```plaintext
 <expression1> if <condition> else <expression2>
@@ -264,7 +292,7 @@ Exemplo:
 ```python
 age = 15
 
-# esta declaração if:
+# esta instrução if:
 if age < 18:
    print('kid')
 else:
@@ -276,7 +304,7 @@ kid
 ```
 
 ```python
-# Operador ternário: expressão condicional de uma linha
+# Operador ternário: expressão condicional em uma linha
 # Sintaxe: valor_se_verdadeiro if condição else valor_se_falso
 print('kid' if age < 18 else 'adult')
 ```
@@ -299,7 +327,7 @@ teen
 ```
 
 ```python
-# é equivalente a esta declaração if:
+# é equivalente a esta instrução if:
 if age < 13:
     print('kid')
 else:
@@ -313,25 +341,25 @@ else:
 teen
 ```
 
-## Declaração Switch-Case
+## Instrução Switch-Case
 
 <base-disclaimer>
   <base-disclaimer-title>
-    Declarações Switch-Case
+    Instruções Switch-Case
   </base-disclaimer-title>
   <base-disclaimer-content>
-  Em linguagens de programação de computador, uma declaração switch é um tipo de mecanismo de controle de seleção usado para permitir que o valor de uma variável ou expressão mude o fluxo de controle da execução do programa através de pesquisa e mapeamento.
+  Em linguagens de programação de computador, uma instrução switch é um tipo de mecanismo de controle de seleção usado para permitir que o valor de uma variável ou expressão mude o fluxo de controle da execução do programa através de pesquisa e mapeamento.
   </base-disclaimer-content>
 </base-disclaimer>
 
-As declarações _Switch-Case_, ou **Correspondência Estrutural de Padrões** (Structural Pattern Matching), foram introduzidas pela primeira vez em 2020 através da [PEP 622](https://peps.python.org/pep-0622/), e depois oficialmente lançadas com o **Python 3.10** em setembro de 2022.
+As instruções _Switch-Case_, ou **Structural Pattern Matching**, foram introduzidas pela primeira vez em 2020 através da [PEP 622](https://peps.python.org/pep-0622/), e depois oficialmente lançadas com o **Python 3.10** em setembro de 2022.
 
 <base-disclaimer>
   <base-disclaimer-title>
     Tutorial Oficial
   </base-disclaimer-title>
   <base-disclaimer-content>
-  A <a href="https://peps.python.org/pep-0636/" target="_blank">PEP 636</a> fornece um tutorial oficial para a Correspondência de Padrões do Python ou declarações Switch-Case.
+  A <a href="https://peps.python.org/pep-0636/" target="_blank">PEP 636</a> fornece um tutorial oficial para o Pattern Matching do Python ou instruções Switch-Case.
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -421,7 +449,7 @@ match response_code:
 Invalid Code
 ```
 
-### Correspondência de Classes Built-in
+### Correspondência de Classes Nativas
 
 ```python
 response_code = "300"
@@ -438,7 +466,7 @@ match response_code:
 Code is a string
 ```
 
-### Protegendo Declarações Match-Case (Guarding)
+### Protegendo Instruções Match-Case
 
 ```python
 response_code = 300
@@ -453,9 +481,9 @@ match response_code:
 Code is a valid number
 ```
 
-## Declarações de Loop while
+## Instruções de Loop while
 
-A declaração while é usada para execução repetida enquanto uma expressão for `True`:
+A instrução while é usada para execução repetida enquanto uma expressão for `True`:
 
 ```python
 # loop while: repete o código enquanto a condição for True
@@ -473,12 +501,26 @@ Hello, world.
 Hello, world.
 ```
 
-## Declarações break
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+O que um loop <code>while</code> faz?
+</template>
 
-Se a execução atingir uma declaração `break`, ela sai imediatamente da cláusula do loop `while`:
+<base-quiz-option value="A" correct>A. Repete o código enquanto a condição for <code>True</code></base-quiz-option>
+<base-quiz-option value="B">B. Executa o código exatamente uma vez</base-quiz-option>
+<base-quiz-option value="C">C. Executa o código um número fixo de vezes</base-quiz-option>
+<base-quiz-option value="D">D. Pula a execução do código</base-quiz-option>
+<base-quiz-answer value="A">Um loop <code>while</code> executa repetidamente um bloco de código enquanto a condição for avaliada como <code>True</code>. Quando a condição se torna <code>False</code>, o loop para.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+## Instruções break
+
+Se a execução atingir uma instrução `break`, ela sai imediatamente da cláusula do loop `while`:
 
 ```python
-# declaração break: sai do loop imediatamente quando encontrada
+# instrução break: sai do loop imediatamente quando encontrada
 while True:  # Loop infinito
     name = input('Please type your name: ')
     if name == 'your name':
@@ -492,12 +534,12 @@ Please type your name: your name
 Thank you!
 ```
 
-## Declarações continue
+## Instruções continue
 
-Quando a execução do programa atinge uma declaração `continue`, a execução do programa salta imediatamente de volta para o início do loop.
+Quando a execução do programa atinge uma instrução `continue`, a execução do programa salta imediatamente de volta para o início do loop.
 
 ```python
-# declaração continue: pula o restante da iteração do loop e inicia a próxima iteração
+# instrução continue: pula o restante da iteração do loop e inicia a próxima iteração
 while True:
     name = input('Who are you? ')
     if name != 'Joe':
@@ -524,8 +566,8 @@ O loop `for` itera sobre uma `list`, `tuple`, `dictionary`, `set` ou `string`:
 ```python
 # loop for: itera sobre cada item em uma sequência
 pets = ['Bella', 'Milo', 'Loki']
-for pet in pets:  # Faz um loop por cada animal de estimação na lista
-    print(pet)  # Imprime cada nome de animal de estimação
+for pet in pets:  # Itera sobre cada pet na lista
+    print(pet)  # Imprime cada nome de pet
 ```
 
 ```output
@@ -534,9 +576,23 @@ Milo
 Loki
 ```
 
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+Sobre o que um loop <code>for</code> itera?
+</template>
+
+<base-quiz-option value="A">A. Apenas números</base-quiz-option>
+<base-quiz-option value="B">B. Apenas strings</base-quiz-option>
+<base-quiz-option value="C" correct>C. Qualquer sequência iterável (lista, tupla, dicionário, conjunto, string, etc.)</base-quiz-option>
+<base-quiz-option value="D">D. Apenas listas</base-quiz-option>
+<base-quiz-answer value="C">Um loop <code>for</code> pode iterar sobre qualquer sequência iterável, incluindo listas, tuplas, dicionários, conjuntos, strings e outros objetos iteráveis.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## A função range()
 
-A função `range()` retorna uma sequência de números. Ela começa em 0, incrementa de 1 em 1 e para antes de um número especificado:
+A função `range()` retorna uma sequência de números. Ela começa em 0, incrementa em 1 e para antes de um número especificado:
 
 ```python
 for i in range(5):
@@ -551,7 +607,21 @@ Will stop at 5! or 4? (3)
 Will stop at 5! or 4? (4)
 ```
 
-A função `range()` também pode modificar seus 3 argumentos padrão. Os dois primeiros serão os valores `start` e `stop`, e o terceiro será o argumento `step`. O passo é a quantidade pela qual a variável é aumentada após cada iteração.
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+O que <code>range(5)</code> gera?
+</template>
+
+<base-quiz-option value="A">A. Números de 1 a 5</base-quiz-option>
+<base-quiz-option value="B" correct>B. Números de 0 a 4</base-quiz-option>
+<base-quiz-option value="C">C. Números de 0 a 5</base-quiz-option>
+<base-quiz-option value="D">D. Cinco números aleatórios</base-quiz-option>
+<base-quiz-answer value="B">A função <code>range(5)</code> gera números de 0 a 4 (5 números no total). O valor de parada é exclusivo, então para antes de atingir 5.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+A função `range()` também pode modificar seus 3 argumentos padrão. Os dois primeiros serão os valores de `start` e `stop`, e o terceiro será o argumento `step`. O passo é a quantidade pela qual a variável é aumentada após cada iteração.
 
 ```python
 # range(start, stop, step)
@@ -567,7 +637,7 @@ for i in range(0, 10, 2):
 8
 ```
 
-Você pode até usar um número negativo para o argumento `step` para fazer o loop `for` contar regressivamente em vez de para cima.
+Você pode até usar um número negativo para o argumento step para fazer o loop for contar regressivamente em vez de progressivamente.
 
 ```python
 for i in range(5, -1, -1):
@@ -585,7 +655,7 @@ for i in range(5, -1, -1):
 
 ## Declaração For else
 
-Isso permite especificar uma instrução a ser executada caso o loop completo tenha sido executado. Só é útil quando uma condição `break` pode ocorrer no loop:
+Isso permite especificar uma instrução a ser executada no caso de o loop completo ter sido executado. Só é útil quando uma condição `break` pode ocorrer no loop:
 
 ```python
 for i in [1, 2, 3, 4, 5]:
@@ -622,6 +692,6 @@ You typed exit.
 - <router-link to="/cheatsheet/functions">Funções</router-link>
 - <router-link to="/cheatsheet/exception-handling">Tratamento de Exceções</router-link>
 - <router-link to="/cheatsheet/lists-and-tuples">Listas e Tuplas</router-link>
-- <router-link to="/cheatsheet/sets">Sets</router-link>
+- <router-link to="/cheatsheet/sets">Conjuntos</router-link>
 - <router-link to="/cheatsheet/dictionaries">Dicionários</router-link>
-- <router-link to="/cheatsheet/comprehensions">Comprehensions</router-link>
+- <router-link to="/cheatsheet/comprehensions">Compreensões</router-link>

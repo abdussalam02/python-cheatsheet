@@ -10,10 +10,10 @@ Listas de Python
 
 <base-lab-url :url="frontmatter.labUrl" />
 
-Las listas son uno de los 4 tipos de datos en Python utilizados para almacenar colecciones de datos.
+Las listas son uno de los 4 tipos de datos en Python que se utilizan para almacenar colecciones de datos.
 
 ```python
-# Lista: colección ordenada de elementos encerrados entre corchetes
+# List: colección ordenada de elementos encerrados entre corchetes
 ['John', 'Peter', 'Debora', 'Charles']
 ```
 
@@ -83,13 +83,27 @@ f'The {furniture[-1]} is bigger than the {furniture[-3]}'
 'The shelf is bigger than the chair'
 ```
 
-## Obtener sublistas con Slices (Rebanadas)
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+¿Qué devuelve <code>furniture[-1]</code> si <code>furniture = ['table', 'chair', 'rack', 'shelf']</code>?
+</template>
+
+<base-quiz-option value="A">A. <code>'table'</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>'shelf'</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>['shelf']</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>IndexError</code></base-quiz-option>
+<base-quiz-answer value="B">Los índices negativos acceden a los elementos desde el final de la lista. <code>-1</code> se refiere al último elemento, <code>-2</code> al penúltimo, y así sucesivamente.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+## Obtener sublistas con Slices
 
 ```python
 # Slicing: obtener sublista usando la sintaxis [inicio:fin] (el fin es exclusivo)
 furniture = ['table', 'chair', 'rack', 'shelf']
 
-furniture[0:4]  # Devuelve los elementos desde el índice 0 hasta el 3 (4 excluido)
+furniture[0:4]  # Devuelve los elementos desde el índice 0 hasta el 3 (el 4 excluido)
 ```
 
 ```output
@@ -113,7 +127,7 @@ furniture[0:-1]
 ```
 
 ```python
-# Rebanada desde el principio: omitir el índice de inicio (por defecto es 0)
+# Slice desde el principio: omitir el índice de inicio (por defecto es 0)
 furniture[:2]  # Devuelve los dos primeros elementos
 ```
 
@@ -122,7 +136,7 @@ furniture[:2]  # Devuelve los dos primeros elementos
 ```
 
 ```python
-# Rebanada hasta el final: omitir el índice final (por defecto es el final de la lista)
+# Slice hasta el final: omitir el índice final (por defecto es el final de la lista)
 furniture[1:]  # Devuelve todos los elementos desde el índice 1 hasta el final
 ```
 
@@ -138,7 +152,7 @@ furniture[:]
 ['table', 'chair', 'rack', 'shelf']
 ```
 
-Rebanar la lista completa realizará una copia:
+Dividir la lista completa realizará una copia:
 
 ```python
 # El slicing crea una copia: [:] crea una copia superficial de la lista
@@ -167,6 +181,20 @@ spam2
 ```output
 ['cat', 'bat', 'rat', 'elephant']
 ```
+
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+¿Qué crea <code>spam[:]</code> cuando <code>spam</code> es una lista?
+</template>
+
+<base-quiz-option value="A">A. Una referencia a la misma lista</base-quiz-option>
+<base-quiz-option value="B">B. Una lista vacía</base-quiz-option>
+<base-quiz-option value="C" correct>C. Una copia superficial de la lista</base-quiz-option>
+<base-quiz-option value="D">D. Una lista invertida</base-quiz-option>
+<base-quiz-answer value="C">Dividir la lista completa con <code>[:]</code> crea una copia superficial. Modificar la copia no afectará a la lista original.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Obtener la longitud de una lista con len()
 
@@ -248,7 +276,7 @@ my_list
 # Iterar sobre los elementos de la lista usando un bucle for
 furniture = ['table', 'chair', 'rack', 'shelf']
 
-for item in furniture:  # Recorrer cada elemento
+for item in furniture:  # Bucle a través de cada elemento
     print(item)
 ```
 
@@ -297,7 +325,7 @@ The shelf costs $40
 ## Los operadores in y not in
 
 ```python
-# Operador in: verificar si un elemento existe en una lista
+# Operador in: comprobar si un elemento existe en una lista
 'rack' in ['table', 'chair', 'rack', 'shelf']  # Devuelve True
 ```
 
@@ -330,7 +358,7 @@ True
 False
 ```
 
-## El truco de la Asignación Múltiple
+## El truco de la asignación múltiple
 
 El truco de la asignación múltiple es un atajo que le permite asignar múltiples variables con los valores de una lista en una sola línea de código. Así que en lugar de hacer esto:
 
@@ -342,7 +370,7 @@ rack = furniture[2]
 shelf = furniture[3]
 ```
 
-Podría escribir esta línea de código:
+Podrías escribir esta línea de código:
 
 ```python
 furniture = ['table', 'chair', 'rack', 'shelf']
@@ -379,7 +407,7 @@ shelf
 'shelf'
 ```
 
-El truco de la asignación múltiple también se puede usar para intercambiar los valores en dos variables:
+El truco de la asignación múltiple también se puede utilizar para intercambiar los valores en dos variables:
 
 ```python
 a, b = 'table', 'chair'
@@ -399,7 +427,7 @@ print(b)
 table
 ```
 
-## El Método index
+## El método index
 
 El método `index` le permite encontrar el índice de un valor pasando su nombre:
 
@@ -427,6 +455,20 @@ furniture
 ```output
 ['table', 'chair', 'rack', 'shelf', 'bed']
 ```
+
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+¿Qué hace el método <code>append()</code> a una lista?
+</template>
+
+<base-quiz-option value="A" correct>A. Añade un elemento al final de la lista</base-quiz-option>
+<base-quiz-option value="B">B. Añade un elemento al principio de la lista</base-quiz-option>
+<base-quiz-option value="C">C. Reemplaza el último elemento</base-quiz-option>
+<base-quiz-option value="D">D. Elimina el último elemento</base-quiz-option>
+<base-quiz-answer value="A">El método <code>append()</code> añade un único elemento al final de una lista. Para añadir un elemento en una posición específica, usa <code>insert()</code>.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ### insert()
 
@@ -492,7 +534,7 @@ furniture
 
 ### pop()
 
-Por defecto, `pop` eliminará y devolverá el último elemento de la lista. También puede pasar el índice del elemento como un parámetro opcional:
+Por defecto, `pop` eliminará y devolverá el último elemento de la lista. También puedes pasar el índice del elemento como parámetro opcional:
 
 ```python
 animals = ['cat', 'bat', 'rat', 'elephant']
@@ -528,6 +570,20 @@ animals
 ['bat', 'rat']
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+¿Qué hace <code>pop()</code> cuando se llama en una lista?
+</template>
+
+<base-quiz-option value="A">A. Solo elimina el último elemento</base-quiz-option>
+<base-quiz-option value="B" correct>B. Elimina y devuelve un elemento (el último por defecto, o el índice especificado)</base-quiz-option>
+<base-quiz-option value="C">C. Solo devuelve el último elemento sin eliminarlo</base-quiz-option>
+<base-quiz-option value="D">D. Elimina todos los elementos de la lista</base-quiz-option>
+<base-quiz-answer value="B">El método <code>pop()</code> elimina y devuelve un elemento. Por defecto elimina el último elemento, pero puedes pasar un índice para eliminar un elemento específico.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Ordenar valores con sort()
 
 ```python
@@ -550,7 +606,7 @@ furniture
 ['chair', 'rack', 'shelf', 'table']
 ```
 
-También puede pasar `True` para el argumento de palabra clave `reverse` para que `sort()` ordene los valores en orden inverso:
+También puedes pasar `True` para el argumento de palabra clave `reverse` para que `sort()` ordene los valores en orden inverso:
 
 ```python
 furniture.sort(reverse=True)
@@ -561,7 +617,7 @@ furniture
 ['table', 'shelf', 'rack', 'chair']
 ```
 
-Si necesita ordenar los valores en orden alfabético regular, pase `str.lower` para el argumento de palabra clave `key` en la llamada al método sort():
+Si necesitas ordenar los valores en orden alfabético normal, pasa `str.lower` para el argumento de palabra clave `key` en la llamada al método sort():
 
 ```python
 letters = ['a', 'z', 'A', 'Z']
@@ -573,7 +629,7 @@ letters
 ['a', 'A', 'z', 'Z']
 ```
 
-Puede usar la función incorporada `sorted` para devolver una nueva lista:
+Puedes usar la función incorporada `sorted` para devolver una nueva lista:
 
 ```python
 furniture = ['table', 'chair', 'rack', 'shelf']
@@ -584,7 +640,7 @@ sorted(furniture)
 ['chair', 'rack', 'shelf', 'table']
 ```
 
-## El tipo de dato Tuple (Tupla)
+## El tipo de dato Tuple
 
 <base-disclaimer>
   <base-disclaimer-title>
@@ -621,7 +677,7 @@ len(furniture)
 4
 ```
 
-La principal forma en que las tuplas difieren de las listas es que las tuplas, como las cadenas, son inmutables.
+La principal forma en que las tuplas difieren de las listas es que las tuplas, al igual que las cadenas, son inmutables.
 
 ## Conversión entre list() y tuple()
 
@@ -649,12 +705,26 @@ list('hello')
 ['h', 'e', 'l', 'l', 'o']
 ```
 
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+¿Cuál es la principal diferencia entre listas y tuplas en Python?
+</template>
+
+<base-quiz-option value="A">A. Las listas solo pueden contener números, las tuplas pueden contener cualquier cosa</base-quiz-option>
+<base-quiz-option value="B">B. Las tuplas son más rápidas de crear</base-quiz-option>
+<base-quiz-option value="C" correct>C. Las listas son mutables (se pueden cambiar), las tuplas son inmutables (no se pueden cambiar)</base-quiz-option>
+<base-quiz-option value="D">D. Las listas usan corchetes cuadrados, las tuplas usan llaves</base-quiz-option>
+<base-quiz-answer value="C">Las listas son mutables, lo que significa que puedes modificarlas después de la creación. Las tuplas son inmutables, lo que significa que una vez creadas, no se pueden cambiar. Ambas pueden contener cualquier tipo de dato.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Enlaces relevantes
 
-- <router-link to="/blog/python-data-types">Python Data Types: A Visual Guide for Beginners</router-link>
-- <router-link to="/blog/python-comprehensions-step-by-step">Python Comprehensions Step-by-Step</router-link>
-- <router-link to="/cheatsheet/comprehensions">Python Comprehensions</router-link>
-- <router-link to="/modules/itertools-module">The itertools Module</router-link>
+- <router-link to="/blog/python-data-types">Tipos de Datos de Python: Una Guía Visual para Principiantes</router-link>
+- <router-link to="/blog/python-comprehensions-step-by-step">Comprensiones de Python Paso a Paso</router-link>
+- <router-link to="/cheatsheet/comprehensions">Comprensiones de Python</router-link>
+- <router-link to="/modules/itertools-module">El Módulo itertools</router-link>
 - <router-link to="/builtin/list">list()</router-link>
 - <router-link to="/builtin/tuple">tuple()</router-link>
 - <router-link to="/builtin/len">len()</router-link>

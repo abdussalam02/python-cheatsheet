@@ -5,12 +5,12 @@ labUrl: 'https://labex.io/zh/labs/python-python-file-and-directory-path-manipula
 ---
 
 <base-title :title="frontmatter.title" :description="frontmatter.description">
-处理文件和目录路径 - Python 速查表
+处理文件和目录路径
 </base-title>
 
 <base-lab-url :url="frontmatter.labUrl" />
 
-有关实际文件系统操作的深入探讨，请参阅我们的博客文章：<router-link to="/blog/python-pathlib-essentials">每位开发者都应知道的 10 个基本文件系统操作</router-link>。
+有关实用文件系统操作的深入探讨，请参阅我们的博客文章：<router-link to="/blog/python-pathlib-essentials">每位开发者都应知道的 10 个基本文件系统操作</router-link>。
 
 Python 中有两个主要模块处理路径操作。
 一个是 <router-link to="/modules/os-module">os.path</router-link> 模块，另一个是 <router-link to="/modules/pathlib-module">pathlib</router-link> 模块。
@@ -20,7 +20,7 @@ Python 中有两个主要模块处理路径操作。
     Pathlib 与 OS 模块
   </base-disclaimer-title>
   <base-disclaimer-content>
-    <code>pathlib</code> 提供了比上面列出的更多的功能，例如获取文件名、获取文件扩展名、在不手动打开的情况下读/写文件等。如果您想了解更多信息，请参阅<a target="_blank" href="https://docs.python.org/3/library/pathlib.html">官方文档</a>。
+    <code>pathlib</code> 提供了比上面列出的更多的功能，例如获取文件名、获取文件扩展名、在不手动打开的情况下读取/写入文件等。如果您打算了解更多信息，请参阅<a target="_blank" href="https://docs.python.org/3/library/pathlib.html">官方文档</a>。
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -28,7 +28,7 @@ Python 中有两个主要模块处理路径操作。
 
 在 Windows 上，路径使用反斜杠 (`\`) 作为文件夹名称之间的分隔符。在基于 Unix 的操作系统（如 macOS、Linux 和 BSD）上，使用正斜杠 (`/`) 作为路径分隔符。如果您的代码需要在不同平台上运行，连接路径可能会很麻烦。
 
-幸运的是，Python 的 `pathlib` 模块提供了一种轻松处理这种情况的方法。
+幸运的是，Python 的 `pathlib` 模块提供了一种简单的方法来处理这个问题。
 
 在 \*nix 上使用 `pathlib`：
 
@@ -43,7 +43,7 @@ print(Path('usr').joinpath('bin').joinpath('spam'))  # 连接路径组件
 usr/bin/spam
 ```
 
-`pathlib` 还提供了一个使用 `/` 运算符连接路径的快捷方式：
+`pathlib` 还通过 `/` 运算符提供了 `joinpath` 的快捷方式：
 
 ```python
 # Path 运算符 (/): 连接路径的便捷方式（跨平台）
@@ -56,14 +56,28 @@ print(Path('usr') / 'bin' / 'spam')  # 使用 / 运算符代替 joinpath()
 usr/bin/spam
 ```
 
-请注意，路径分隔符在 Windows 和基于 Unix 的操作系统之间是不同的，这就是您希望使用 `pathlib` 而不是将字符串连接起来以连接路径的原因。
+请注意，路径分隔符在 Windows 和基于 Unix 的操作系统之间是不同的，这就是您想要使用 `pathlib` 而不是将字符串连接起来以连接路径的原因。
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+在 Python 中，使用 pathlib 连接路径的正确方法是什么？
+</template>
+
+<base-quiz-option value="A">A. <code>Path('usr') + 'bin' + 'spam'</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>Path('usr') / 'bin' / 'spam'</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>Path('usr').join('bin').join('spam')</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>Path('usr/bin/spam')</code></base-quiz-option>
+<base-quiz-answer value="B"><code>/</code> 运算符是使用 pathlib 连接路径的推荐方法。它具有跨平台性，并且比字符串连接更具可读性。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 连接路径在您需要在同一目录下创建不同文件路径时非常有用。
 
 在 \*nix 上使用 `pathlib`：
 
 ```python
-# Path.home(): 获取用户主目录，与文件名组合
+# Path.home(): 获取用户的主目录，与文件名组合
 my_files = ['accounts.txt', 'details.csv', 'invite.docx']
 home = Path.home()  # 获取主目录路径
 for filename in my_files:
@@ -78,12 +92,12 @@ for filename in my_files:
 
 ### 展开用户主目录
 
-使用 `os.path.expanduser()` 将 `~` 展开为用户主目录：
+使用 `os.path.expanduser()` 将 `~` 展开为用户的主目录：
 
 ```python
 import os.path
 
-# 将 ~ 展开为用户主目录
+# 将 ~ 展开为用户的主目录
 print(os.path.expanduser('~'))
 ```
 
@@ -92,7 +106,7 @@ print(os.path.expanduser('~'))
 ```
 
 ```python
-# 将 ~/Documents 展开为完整路径
+# 展开 ~/Documents 为完整路径
 print(os.path.expanduser('~/Documents'))
 ```
 
@@ -117,7 +131,7 @@ print(os.path.expanduser('~/myfile.txt'))
 # Path.cwd(): 获取当前工作目录
 from pathlib import Path
 
-print(Path.cwd())  # 将当前工作目录作为 Path 对象返回
+print(Path.cwd())  # 以 Path 对象形式返回当前工作目录
 ```
 
 ```output
@@ -144,7 +158,7 @@ Traceback (most recent call last):
 FileNotFoundError: [Errno 2] No such file or directory: '/home/labex/project/delicious/walnut/waffles'
 ```
 
-哦，不，我们遇到了一个棘手的错误！原因是 'delicious' 目录不存在，所以我们无法在它下面创建 'walnut' 和 'waffles' 目录。要修复此问题，请执行以下操作：
+哦，糟了，我们遇到了一个棘手的错误！原因是 'delicious' 目录不存在，所以我们无法在它下面创建 'walnut' 和 'waffles' 目录。要修复此问题，请执行以下操作：
 
 ```python
 # mkdir(parents=True): 如果需要，创建目录和所有父目录
@@ -153,16 +167,16 @@ cwd = Path.cwd()
 (cwd / 'delicious' / 'walnut' / 'waffles').mkdir(parents=True)  # 创建嵌套目录
 ```
 
-一切都好 :)
+一切就绪 :)
 
 ## 绝对路径与相对路径
 
-有两种方法可以指定文件路径。
+有两种指定文件路径的方式。
 
-- **绝对路径**，总是以根文件夹开头
-- **相对路径**，相对于程序的当前工作目录
+- **绝对路径**，它总是以根文件夹开头
+- **相对路径**，它相对于程序的当前工作目录
 
-还有点 (`.`) 和点点 (`..`) 文件夹。这些不是真正的文件夹，而是可用于路径的特殊名称。单个句点（“点”）表示“此目录”的简写。两个句点（“点点”）表示“父文件夹”。
+还有点 (`.`) 和点点 (`..`) 文件夹。它们不是真正的文件夹，而是可以在路径中使用的特殊名称。单个句点（“点”）表示“此目录”的简写。两个句点（“点点”）表示“父文件夹”。
 
 ### 处理绝对路径
 
@@ -185,6 +199,20 @@ Path('..').is_absolute()
 False
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+<code>Path('/').is_absolute()</code> 返回什么？
+</template>
+
+<base-quiz-option value="A" correct>A. <code>True</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>False</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>None</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>'/'</code></base-quiz-option>
+<base-quiz-answer value="A"><code>is_absolute()</code> 方法对绝对路径（在 Unix 上以 <code>/</code> 开头或在 Windows 上以驱动器号开头的路径）返回 <code>True</code>。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 您可以使用 `pathlib` 提取绝对路径：
 
 ```python
@@ -206,7 +234,7 @@ print(Path('..').resolve())
 
 ### 处理相对路径
 
-您可以使用 `pathlib` 从起始路径到另一个路径获取相对路径：
+您可以使用 `pathlib` 从起始路径获取到另一路径的相对路径：
 
 ```python
 from pathlib import Path
@@ -287,6 +315,20 @@ Path('nonexistentfile').is_file()
 False
 ```
 
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+如果 setup.py 存在，<code>Path('setup.py').is_file()</code> 将返回什么？
+</template>
+
+<base-quiz-option value="A">A. <code>'setup.py'</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>False</code></base-quiz-option>
+<base-quiz-option value="C" correct>C. <code>True</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>None</code></base-quiz-option>
+<base-quiz-answer value="C"><code>is_file()</code> 方法在路径存在且是文件时返回 <code>True</code>，否则返回 <code>False</code>。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ### 检查路径是否为目录
 
 在 \*nix 上使用 `pathlib`：
@@ -335,7 +377,7 @@ st_gid=0, st_size=10024, st_atime=1517725562, st_mtime=1515119809, st_ctime=1517
 ```
 
 ```python
-print(stat.st_size) # 大小（以字节为单位）
+print(stat.st_size) # 以字节为单位的大小
 ```
 
 ```output
@@ -374,7 +416,7 @@ for f in Path('/usr/bin').iterdir():
     警告
   </base-warning-title>
   <base-warning-content>
-    目录本身也有大小！因此，您可能希望使用上面讨论的方法中的方法检查路径是文件还是目录。
+    目录本身也有大小！因此，您可能需要使用上面讨论的方法中的方法来检查路径是文件还是目录。
   </base-warning-content>
 </base-warning>
 
@@ -396,7 +438,7 @@ print(total_size)
 
 ## 复制文件和文件夹
 
-`shutil` 模块提供用于复制文件以及整个文件夹的函数。
+`shutil` 模块提供了用于复制文件以及整个文件夹的函数。
 
 ```python
 import shutil
@@ -415,6 +457,20 @@ shutil.copy('/tmp/eggs.txt', '/tmp/delicious/eggs2.txt')
 ```output
 /tmp/delicious/eggs2.txt
 ```
+
+<base-quiz>
+<base-quiz-question correct="D">
+<template #question>
+您应该使用哪个函数来复制整个目录树，包括所有子目录和文件？
+</template>
+
+<base-quiz-option value="A">A. <code>shutil.copy()</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>Path.copy()</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>os.copy()</code></base-quiz-option>
+<base-quiz-option value="D" correct>D. <code>shutil.copytree()</code></base-quiz-option>
+<base-quiz-answer value="D"><code>shutil.copytree()</code> 函数递归地复制整个目录树，而 <code>shutil.copy()</code> 只复制单个文件。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 虽然 `shutil.copy()` 会复制单个文件，但 `shutil.copytree()` 会复制整个文件夹及其包含的所有文件夹和文件：
 
@@ -462,9 +518,23 @@ shutil.move('/tmp/bacon.txt', '/tmp/eggs')
 
 ## 删除文件和文件夹
 
-- 调用 `Path.unlink()` 将删除路径处的文件。
-- 调用 `Path.rmdir()` 将删除路径处的文件夹。该文件夹必须为空，不包含任何文件或文件夹。
-- 调用 `shutil.rmtree(path)` 将删除路径处的文件夹，以及其中包含的所有文件和文件夹也将被删除。
+- 调用 `Path.unlink()` 将删除路径处的**文件**。
+- 调用 `Path.rmdir()` 将删除路径处的**文件夹**。此文件夹必须为空，不包含任何文件或文件夹。
+- 调用 `shutil.rmtree(path)` 将删除路径处的**文件夹**，以及其中包含的所有文件和文件夹。
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+哪个方法可以删除非空目录及其所有内容？
+</template>
+
+<base-quiz-option value="A">A. <code>Path.rmdir()</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>shutil.rmtree()</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>Path.unlink()</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>os.remove()</code></base-quiz-option>
+<base-quiz-answer value="B"><code>shutil.rmtree()</code> 函数可以递归地删除目录及其所有内容。<code>Path.rmdir()</code> 仅适用于空目录。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## 遍历目录树
 
@@ -490,6 +560,6 @@ for i in p.rglob('*'):
 
 ## 相关链接
 
-- <router-link to="/cheatsheet/reading-and-writing-files">读写文件</router-link>
-- <router-link to="/blog/python-pathlib-essentials">10 个每位开发者都应知道的基本文件系统操作</router-link>
+- <router-link to="/cheatsheet/reading-and-writing-files">读取和写入文件</router-link>
+- <router-link to="/blog/python-pathlib-essentials">每位开发者都应知道的 10 个基本文件系统操作</router-link>
 - <router-link to="/builtin/open">open()</router-link>

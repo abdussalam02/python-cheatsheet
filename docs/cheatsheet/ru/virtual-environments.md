@@ -14,7 +14,7 @@ labUrl: 'https://labex.io/ru/labs/python-python-virtual-environments-633669?cour
 
 ## venv
 
-`venv` — это модуль стандартной библиотеки для создания виртуальных окружений в Python 3.3+. Он встроен в Python, поэтому установка не требуется.
+`venv` — это стандартный библиотечный модуль для создания виртуальных окружений в Python 3.3+. Он встроен в Python, поэтому установка не требуется.
 
 1. Создание виртуального окружения
 
@@ -29,6 +29,20 @@ python3 -m venv venv
 ```
 
 Это создает каталог `venv` в вашей текущей папке, содержащий виртуальное окружение.
+
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+Какая команда используется для создания виртуального окружения с помощью <code>venv</code>?
+</template>
+
+<base-quiz-option value="A" correct>A. <code>python -m venv venv</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>python create venv</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>venv create</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>python venv new</code></base-quiz-option>
+<base-quiz-answer value="A">Команда <code>python -m venv venv</code> создает виртуальное окружение. Флаг <code>-m</code> запускает модуль venv, а <code>venv</code> в конце — это имя каталога для создания.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 2. Активация виртуального окружения
 
@@ -46,9 +60,23 @@ venv\Scripts\activate
 
 После активации в начале вашей командной строки появится `(venv)`, указывающее на то, что виртуальное окружение активно.
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Как активировать виртуальное окружение в Linux/macOS?
+</template>
+
+<base-quiz-option value="A">A. <code>activate venv</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>source venv/bin/activate</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>venv activate</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>python venv activate</code></base-quiz-option>
+<base-quiz-answer value="B">В Linux/macOS вы активируете виртуальное окружение с помощью <code>source venv/bin/activate</code>. В Windows вы бы использовали <code>venv\Scripts\activate</code>.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 3. Установка пакетов
 
-При активном виртуальном окружении устанавливайте пакеты с помощью pip:
+При активированном виртуальном окружении устанавливайте пакеты с помощью pip:
 
 ```bash
 pip install package_name
@@ -65,6 +93,20 @@ deactivate
 ```
 
 Префикс `(venv)` исчезнет из вашей командной строки.
+
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+Какова основная цель использования виртуального окружения?
+</template>
+
+<base-quiz-option value="A" correct>A. Изолировать зависимости проекта и избежать заполнения базовой установки Python</base-quiz-option>
+<base-quiz-option value="B">B. Заставить Python работать быстрее</base-quiz-option>
+<base-quiz-option value="C">C. Шифровать код Python</base-quiz-option>
+<base-quiz-option value="D">D. Компилировать Python в машинный код</base-quiz-option>
+<base-quiz-answer value="A">Виртуальные окружения позволяют тестировать код Python в инкапсулированных средах и избегать заполнения базовой установки Python библиотеками, которые могут использоваться только для одного проекта. Это помогает управлять зависимостями для каждого проекта.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## virtualenv
 
@@ -92,7 +134,7 @@ mkvirtualenv HelloWorld
 
 1. Установка каталога проекта
 
-Чтобы связать наш virtualenv с текущим рабочим каталогом, мы просто вводим:
+Чтобы связать наше виртуальное окружение с текущим рабочим каталогом, мы просто вводим:
 
 ```bash
 setprojectdir .
@@ -123,7 +165,7 @@ workon HelloWorld
     С <a href="https://python-poetry.org/">веб-сайта Poetry</a>
   </base-disclaimer-title>
   <base-disclaimer-content>
-    Poetry — это инструмент для управления зависимостями и упаковки в Python. Он позволяет объявлять библиотеки, от которых зависит ваш проект, и будет управлять ими (устанавливать/обновлять) за вас.
+    Poetry — это инструмент для управления зависимостями и упаковки в Python. Он позволяет объявить библиотеки, от которых зависит ваш проект, и будет управлять ими (устанавливать/обновлять) за вас.
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -266,7 +308,7 @@ exit
 conda create -n HelloWorld
 ```
 
-2. Чтобы использовать виртуальное окружение, активируйте его с помощью:
+2. Чтобы использовать виртуальное окружение, активируйте его:
 
 ```bash
 conda activate HelloWorld
@@ -284,7 +326,7 @@ conda deactivate
 
 <base-disclaimer>
   <base-disclaimer-title>
-    Из <a target="_blank" href="https://docs.astral.sh/uv/">Документации UV</a>
+    Из <a target="_blank" href="https://docs.astral.sh/uv/">документации UV</a>
   </base-disclaimer-title>
   <base-disclaimer-content>
     UV — это чрезвычайно быстрый установщик и решатель пакетов Python, разработанный как прямая замена рабочим процессам pip и pip-tools. UV в 10-100 раз быстрее, чем pip, и обеспечивает унифицированное управление пакетами, создание виртуальных окружений и управление версиями Python.

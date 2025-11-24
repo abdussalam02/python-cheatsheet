@@ -15,7 +15,7 @@ Python Args und Kwargs
     <a href="https://docs.python.org/3/tutorial/index.html">Python args und kwargs leicht gemacht</a>
   </base-disclaimer-title>
   <base-disclaimer-content>
-    <code>*args</code> und <code>**kwargs</code> mögen beängstigend erscheinen, aber die Wahrheit ist, dass sie nicht schwer zu verstehen sind und die Macht haben, Ihren Funktionen viel Flexibilität zu verleihen.
+    <code>*args</code> und <code>**kwargs</code> mögen beängstigend erscheinen, aber die Wahrheit ist, dass sie nicht so schwer zu verstehen sind und die Macht haben, Ihren Funktionen viel Flexibilität zu verleihen.
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -69,6 +69,20 @@ some_function('arg1', 'arg2', 'arg3')
 Arguments passed: ('arg1', 'arg2', 'arg3') as <class 'tuple'>
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+In welchen Datentyp sammelt <code>*args</code> Argumente?
+</template>
+
+<base-quiz-option value="A">A. Eine Liste</base-quiz-option>
+<base-quiz-option value="B" correct>B. Ein Tupel</base-quiz-option>
+<base-quiz-option value="C">C. Ein Dictionary</base-quiz-option>
+<base-quiz-option value="D">D. Eine Menge</base-quiz-option>
+<base-quiz-answer value="B">Der Parameter <code>\*args</code> sammelt positionelle Argumente in einem Tupel. Dies ermöglicht es einer Funktion, eine beliebige Anzahl positioneller Argumente anzunehmen.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## kwargs
 
 Schlüsselwörter werden über die Variable `kwargs` aufgerufen:
@@ -85,6 +99,20 @@ some_function(key1='arg1', key2='arg2')
 ```output
 keywords: {'key1': 'arg1', 'key2': 'arg2'} as <class 'dict'>
 ```
+
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+In welchen Datentyp sammelt <code>**kwargs</code> Argumente?
+</template>
+
+<base-quiz-option value="A">A. Eine Liste</base-quiz-option>
+<base-quiz-option value="B">B. Ein Tupel</base-quiz-option>
+<base-quiz-option value="C" correct>C. Ein Dictionary</base-quiz-option>
+<base-quiz-option value="D">D. Eine Menge</base-quiz-option>
+<base-quiz-answer value="C">Der Parameter <code>\*\*kwargs</code> sammelt Schlüsselwortargumente in einem Dictionary. Dies ermöglicht es einer Funktion, eine beliebige Anzahl von Schlüsselwortargumenten anzunehmen.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Relevante Links
 

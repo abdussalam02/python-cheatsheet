@@ -1,6 +1,6 @@
 ---
 title: 'Python リストとタプル - Python チートシート'
-description: 'Python におけるリストは、データのコレクションを格納するために使用される 4 つのデータ型の一つです。'
+description: 'Python のリストは、データを格納するために使用される 4 つのデータ型の一つです。'
 labUrl: 'https://labex.io/ja/labs/python-python-lists-and-tuples-633660?course=python-cheatsheet'
 ---
 
@@ -10,7 +10,7 @@ Python リスト
 
 <base-lab-url :url="frontmatter.labUrl" />
 
-リストは、Python にある 4 つのデータ型のうちの 1 つで、データのコレクションを格納するために使用されます。
+リストは、Python にあるデータを格納するための 4 つのデータ型のうちの 1 つです。
 
 ```python
 # List: 角括弧で囲まれた順序付けられたアイテムのコレクション
@@ -20,7 +20,7 @@ Python リスト
 ## インデックスを使用した値の取得
 
 ```python
-# インデックスを使用してリスト要素にアクセス (0 から始まり、最初の要素はインデックス 0)
+# インデックスを使用してリスト要素にアクセス (0 から始まる、最初の要素はインデックス 0)
 furniture = ['table', 'chair', 'rack', 'shelf']
 
 furniture[0]  # 最初の要素を返します：'table'
@@ -83,13 +83,27 @@ f'The {furniture[-1]} is bigger than the {furniture[-3]}'
 'The shelf is bigger than the chair'
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+<code>furniture = ['table', 'chair', 'rack', 'shelf']</code> の場合、<code>furniture[-1]</code> は何を返しますか？
+</template>
+
+<base-quiz-option value="A">A. <code>'table'</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>'shelf'</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>['shelf']</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>IndexError</code></base-quiz-option>
+<base-quiz-answer value="B">負のインデックスはリストの末尾から要素にアクセスします。<code>-1</code> は最後の要素を指し、<code>-2</code> は最後から 2 番目の要素を指します。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## スライスを使用したサブリストの取得
 
 ```python
-# Slicing: [start:end] 構文を使用してサブリストを取得します (end は含まれません)
+# スライス：[start:end] 構文を使用してサブリストを取得します (end は排他的)
 furniture = ['table', 'chair', 'rack', 'shelf']
 
-furniture[0:4]  # インデックス 0 から 3 までの要素を返します (4 は含まれない)
+furniture[0:4]  # インデックス 0 から 3 までの要素を返します (4 は含まない)
 ```
 
 ```output
@@ -113,7 +127,7 @@ furniture[0:-1]
 ```
 
 ```python
-# 最初からのスライス：start インデックスを省略します (デフォルトは 0)
+# 先頭からのスライス：start インデックスを省略 (デフォルトは 0)
 furniture[:2]  # 最初の 2 つの要素を返します
 ```
 
@@ -122,8 +136,8 @@ furniture[:2]  # 最初の 2 つの要素を返します
 ```
 
 ```python
-# 最後までのスライス：end インデックスを省略します (デフォルトはリストの最後まで)
-furniture[1:]  # インデックス 1 から最後まで全ての要素を返します
+# 末尾までのスライス：end インデックスを省略 (デフォルトはリストの末尾)
+furniture[1:]  # インデックス 1 から末尾まですべての要素を返します
 ```
 
 ```output
@@ -138,7 +152,7 @@ furniture[:]
 ['table', 'chair', 'rack', 'shelf']
 ```
 
-リスト全体のスライスはコピーを作成します：
+リスト全体をスライスするとコピーが作成されます：
 
 ```python
 # スライスはコピーを作成します：[:] はリストのシャローコピーを作成します
@@ -168,10 +182,24 @@ spam2
 ['cat', 'bat', 'rat', 'elephant']
 ```
 
-## len() を使用したリスト長の取得
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+<code>spam</code> がリストである場合、<code>spam[:]</code> は何を作成しますか？
+</template>
+
+<base-quiz-option value="A">A. 同じリストへの参照</base-quiz-option>
+<base-quiz-option value="B">B. 空のリスト</base-quiz-option>
+<base-quiz-option value="C" correct>C. リストのシャローコピー</base-quiz-option>
+<base-quiz-option value="D">D. 逆順のリスト</base-quiz-option>
+<base-quiz-answer value="C">リスト全体を <code>[:]</code> でスライスするとシャローコピーが作成されます。コピーを変更しても元のリストには影響しません。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+## len() を使用したリストの長さの取得
 
 ```python
-# len() はリスト内のアイテム数を返します
+# len() はリスト内のアイテムの数を返します
 furniture = ['table', 'chair', 'rack', 'shelf']
 len(furniture)  # 4 を返します
 ```
@@ -183,7 +211,7 @@ len(furniture)  # 4 を返します
 ## インデックスを使用した値の変更
 
 ```python
-# インデックスに新しい値を割り当てることでリスト要素を変更します
+# インデックスに新しい値を代入してリスト要素を変更します
 furniture = ['table', 'chair', 'rack', 'shelf']
 
 furniture[0] = 'desk'  # 最初の要素を置き換えます
@@ -265,7 +293,7 @@ shelf
 # enumerate() はループ内でインデックスと値の両方を返します
 furniture = ['table', 'chair', 'rack', 'shelf']
 
-for index, item in enumerate(furniture):  # インデックスとアイテムを一緒に取得
+for index, item in enumerate(furniture):  # インデックスとアイテムを同時に取得
     print(f'index: {index} - item: {item}')
 ```
 
@@ -279,11 +307,11 @@ index: 3 - item: shelf
 ## zip() を使用した複数のリストのループ
 
 ```python
-# zip() は複数のリストを要素ごとにループで結合します
+# zip() は複数のリストを要素ごとに結合してループします
 furniture = ['table', 'chair', 'rack', 'shelf']
 price = [100, 50, 80, 40]
 
-for item, amount in zip(furniture, price):  # 両方のリストの要素をペアにします
+for item, amount in zip(furniture, price):  # 両方のリストから要素をペアにします
     print(f'The {item} costs ${amount}')
 ```
 
@@ -330,9 +358,9 @@ True
 False
 ```
 
-## Multiple Assignment Trick (複数代入のトリック)
+## 多重代入のトリック
 
-複数代入のトリックは、1 行のコードでリスト内の値に複数の変数を割り当てるショートカットです。したがって、次のようにする代わりに：
+多重代入のトリックは、1 行のコードでリスト内の複数の変数に値を代入するためのショートカットです。次のように行う代わりに：
 
 ```python
 furniture = ['table', 'chair', 'rack', 'shelf']
@@ -342,7 +370,7 @@ rack = furniture[2]
 shelf = furniture[3]
 ```
 
-次のコード行を入力できます：
+次のコードを記述できます：
 
 ```python
 furniture = ['table', 'chair', 'rack', 'shelf']
@@ -379,7 +407,7 @@ shelf
 'shelf'
 ```
 
-複数代入のトリックは、2 つの変数の値を交換するためにも使用できます：
+多重代入のトリックは、2 つの変数の値を交換するためにも使用できます：
 
 ```python
 a, b = 'table', 'chair'
@@ -401,7 +429,7 @@ table
 
 ## index メソッド
 
-`index` メソッドを使用すると、値の名前を渡すことでそのインデックスを見つけることができます：
+`index` メソッドを使用すると、値の名前を渡すことでその値のインデックスを見つけることができます：
 
 ```python
 furniture = ['table', 'chair', 'rack', 'shelf']
@@ -416,7 +444,7 @@ furniture.index('chair')
 
 ### append()
 
-`append` は要素を `list` の末尾に追加します：
+`append` はリストの末尾に要素を追加します：
 
 ```python
 furniture = ['table', 'chair', 'rack', 'shelf']
@@ -428,9 +456,23 @@ furniture
 ['table', 'chair', 'rack', 'shelf', 'bed']
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+<code>append()</code> メソッドはリストに対して何を行いますか？
+</template>
+
+<base-quiz-option value="A" correct>A. リストの末尾に要素を追加する</base-quiz-option>
+<base-quiz-option value="B">B. リストの先頭に要素を追加する</base-quiz-option>
+<base-quiz-option value="C">C. 最後の要素を置き換える</base-quiz-option>
+<base-quiz-option value="D">D. 最後の要素を削除する</base-quiz-option>
+<base-quiz-answer value="A"><code>append()</code> メソッドは単一の要素をリストの末尾に追加します。特定の位置に要素を追加するには、<code>insert()</code> を使用します。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ### insert()
 
-`insert` は指定された位置に要素を `list` に追加します：
+`insert` は指定された位置にリストに要素を追加します：
 
 ```python
 furniture = ['table', 'chair', 'rack', 'shelf']
@@ -486,7 +528,7 @@ furniture
     繰り返し出現するアイテムの削除
   </base-warning-title>
   <base-warning-content>
-    値がリスト内に複数回出現する場合、その値の最初のインスタンスのみが削除されます。
+    値がリスト内に複数回出現する場合、その値の最初の出現箇所のみが削除されます。
   </base-warning-content>
 </base-warning>
 
@@ -528,6 +570,20 @@ animals
 ['bat', 'rat']
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+リストに対して <code>pop()</code> を呼び出すと、何が起こりますか？
+</template>
+
+<base-quiz-option value="A">A. 最後のアイテムのみを削除する</base-quiz-option>
+<base-quiz-option value="B" correct>B. アイテムを削除して返す (デフォルトは最後のアイテム、または指定されたインデックス)</base-quiz-option>
+<base-quiz-option value="C">C. 最後のアイテムのみを返し、削除はしない</base-quiz-option>
+<base-quiz-option value="D">D. リストからすべてのアイテムを削除する</base-quiz-option>
+<base-quiz-answer value="B"><code>pop()</code> メソッドはアイテムを削除して返します。デフォルトでは最後のアイテムを削除しますが、インデックスを渡して特定のアイテムを削除することもできます。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## sort() を使用した値のソート
 
 ```python
@@ -550,7 +606,7 @@ furniture
 ['chair', 'rack', 'shelf', 'table']
 ```
 
-`reverse` キーワード引数に `True` を渡すことで、`sort()` に値を逆順にソートさせることもできます：
+`reverse` キーワード引数に `True` を渡すことで、値を逆順にソートすることもできます：
 
 ```python
 furniture.sort(reverse=True)
@@ -561,7 +617,7 @@ furniture
 ['table', 'shelf', 'rack', 'chair']
 ```
 
-通常のアルファベット順で値をソートする必要がある場合は、sort() メソッド呼び出しで key キーワード引数に `str.lower` を渡します：
+通常のアルファベット順に値をソートする必要がある場合は、sort() メソッド呼び出しで key キーワード引数に <code>str.lower</code> を渡します：
 
 ```python
 letters = ['a', 'z', 'A', 'Z']
@@ -573,7 +629,7 @@ letters
 ['a', 'A', 'z', 'Z']
 ```
 
-組み込み関数 `sorted` を使用して新しいリストを返すことができます：
+組み込み関数 `sorted` を使用すると、新しいリストを返すことができます：
 
 ```python
 furniture = ['table', 'chair', 'rack', 'shelf']
@@ -621,9 +677,9 @@ len(furniture)
 4
 ```
 
-タプルがリストと異なる主な点は、タプルは文字列と同様にイミュータブルであることです。
+タプルがリストと異なる主な点は、文字列と同様にタプルがイミュータブルであることです。
 
-## list() と tuple() の変換
+## list() および tuple() 間の変換
 
 ```python
 tuple(['cat', 'dog', 5])
@@ -649,12 +705,26 @@ list('hello')
 ['h', 'e', 'l', 'l', 'o']
 ```
 
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+Python のリストとタプルの主な違いは何ですか？
+</template>
+
+<base-quiz-option value="A">A. リストは数値のみを含むことができ、タプルは何でも含むことができる</base-quiz-option>
+<base-quiz-option value="B">B. タプルの方が作成が速い</base-quiz-option>
+<base-quiz-option value="C" correct>C. リストはミュータブル（変更可能）であり、タプルはイミュータブル（変更不可能）である</base-quiz-option>
+<base-quiz-option value="D">D. リストは角括弧を使い、タプルは波括弧を使う</base-quiz-option>
+<base-quiz-answer value="C">リストはミュータブルであり、作成後に変更できます。タプルはイミュータブルであり、作成後は変更できません。どちらも任意の型のデータを格納できます。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## 関連リンク
 
-- <router-link to="/blog/python-data-types">Python データ型：初心者向けビジュアルガイド</router-link>
-- <router-link to="/blog/python-comprehensions-step-by-step">Python 内包表記 ステップバイステップ</router-link>
-- <router-link to="/cheatsheet/comprehensions">Python 内包表記</router-link>
-- <router-link to="/modules/itertools-module">itertools モジュール</router-link>
+- <router-link to="/blog/python-data-types">Python Data Types: A Visual Guide for Beginners</router-link>
+- <router-link to="/blog/python-comprehensions-step-by-step">Python Comprehensions Step-by-Step</router-link>
+- <router-link to="/cheatsheet/comprehensions">Python Comprehensions</router-link>
+- <router-link to="/modules/itertools-module">The itertools Module</router-link>
 - <router-link to="/builtin/list">list()</router-link>
 - <router-link to="/builtin/tuple">tuple()</router-link>
 - <router-link to="/builtin/len">len()</router-link>

@@ -1,5 +1,5 @@
 ---
-title: 'Python チートシート：文字列操作'
+title: '文字列操作 - Python チートシート'
 description: "エスケープ文字は、バックスラッシュ（\\）の後に挿入したい文字を入力することで作成されます。"
 labUrl: 'https://labex.io/ja/labs/python-python-string-manipulation-633668?course=python-cheatsheet'
 ---
@@ -14,7 +14,7 @@ labUrl: 'https://labex.io/ja/labs/python-python-string-manipulation-633668?cours
 
 エスケープ文字は、バックスラッシュ `\` の後に挿入したい文字を入力することで作成されます。
 
-| エスケープ文字 | 表示内容           |
+| エスケープ文字 | 表示されるもの     |
 | :------------- | :----------------- |
 | `\'`           | シングルクォート   |
 | `\"`           | ダブルクォート     |
@@ -22,11 +22,11 @@ labUrl: 'https://labex.io/ja/labs/python-python-string-manipulation-633668?cours
 | `\n`           | 改行               |
 | `\\`           | バックスラッシュ   |
 | `\b`           | バックスペース     |
-| `\ooo`         | 8 進数表現         |
+| `\ooo`         | 8 進数値           |
 | `\r`           | キャリッジリターン |
 
 ```python
-# エスケープ文字：バックスラッシュを使用して特殊文字を挿入
+# エスケープ文字：バックスラッシュを使用して特殊文字を挿入します
 # \n = 改行，\' = シングルクォート
 print("Hello there!\nHow are you?\nI\'m doing fine.")
 ```
@@ -42,8 +42,8 @@ I'm doing fine.
 Raw 文字列は、すべてエスケープ文字を完全に無視し、文字列内に現れるバックスラッシュをそのまま出力します。
 
 ```python
-# Raw 文字列 (r プレフィックス): バックスラッシュをリテラル文字として扱う
-print(r"Hello there!\nHow are you?\nI\'m doing fine.")  # \n がそのまま出力される
+# Raw 文字列 (r プレフィックス): バックスラッシュをリテラル文字として扱います
+print(r"Hello there!\nHow are you?\nI\'m doing fine.")  # \n がリテラルとして出力されます
 ```
 
 ```output
@@ -51,6 +51,20 @@ Hello there!\nHow are you?\nI\'m doing fine.
 ```
 
 Raw 文字列は、主に <router-link to="/cheatsheet/regular-expressions">正規表現</router-link> の定義に使用されます。
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Python で<code>r</code>をプレフィックスとする Raw 文字列は何をしますか？
+</template>
+
+<base-quiz-option value="A">A. すべての文字を大文字に変換する</base-quiz-option>
+<base-quiz-option value="B" correct>B. バックスラッシュをリテラル文字として扱い、エスケープシーケンスを無視する</base-quiz-option>
+<base-quiz-option value="C">C. すべての空白を削除する</base-quiz-option>
+<base-quiz-option value="D">D. 文字列を反転させる</base-quiz-option>
+<base-quiz-answer value="B">Raw 文字列（<code>r</code>をプレフィックスとする）は、バックスラッシュをリテラル文字として扱うため、<code>\n</code>のようなエスケープシーケンスは解釈されません。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## 複数行文字列
 
@@ -84,10 +98,10 @@ Bob
 ### インデックス指定
 
 ```python
-# 文字列インデックス指定：位置 (0 から始まる) で文字にアクセス
+# 文字列のインデックス指定：位置 (0 から始まる) で文字にアクセスします
 spam = 'Hello world!'
 
-spam[0]  # 最初の文字を返す：'H'
+spam[0]  # 最初の文字を返します：'H'
 ```
 
 ```output
@@ -113,10 +127,10 @@ spam[-1]
 ### スライス
 
 ```python
-# 文字列スライス：[開始：終了] 構文を使用して部分文字列を抽出
+# 文字列のスライス：[開始：終了] 構文を使用して部分文字列を抽出します
 spam = 'Hello world!'
 
-spam[0:5]  # インデックス 0 から 4 までの文字を返す：'Hello'
+spam[0:5]  # インデックス 0 から 4 までの文字を返します：'Hello'
 ```
 
 ```output
@@ -162,6 +176,20 @@ spam[::-1]
 ```output
 '!dlrow olleH'
 ```
+
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+<code>spam[::-1]</code>は文字列に対して何を行いますか？
+</template>
+
+<base-quiz-option value="A">A. 最初の文字を返します</base-quiz-option>
+<base-quiz-option value="B">B. 最後の文字を返します</base-quiz-option>
+<base-quiz-option value="C" correct>C. 文字列を反転させます</base-quiz-option>
+<base-quiz-option value="D">D. すべての文字を削除します</base-quiz-option>
+<base-quiz-answer value="C">スライス <code>[::-1]</code> は、すべての文字を逆方向にステップすることで文字列を反転させます。ステップ値 <code>-1</code> は「逆行する」ことを意味します。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ```python
 fizz = spam[0:5]
@@ -245,7 +273,7 @@ greet.title()
 
 ## isupper() および islower() メソッド
 
-文字列が大文字または小文字であるかどうかを評価し、`True` または `False` を返します：
+文字列が大文字または小文字であるかどうかを評価した後、`True` または `False` を返します：
 
 ```python
 spam = 'Hello world!'
@@ -298,13 +326,13 @@ False
 
 ## isX 文字列メソッド
 
-| メソッド    | 説明                                                                                                 |
-| :---------- | :--------------------------------------------------------------------------------------------------- |
-| isalpha()   | 文字列が文字のみで構成されている場合に `True` を返します。                                           |
-| isalnum()   | 文字列が文字と数字のみで構成されている場合に `True` を返します。                                     |
-| isdecimal() | 文字列が数字のみで構成されている場合に `True` を返します。                                           |
-| isspace()   | 文字列がスペース、タブ、改行のみで構成されている場合に `True` を返します。                           |
-| istitle()   | 文字列が、大文字で始まり、その後に小文字のみが続く単語のみで構成されている場合に `True` を返します。 |
+| メソッド    | 説明                                                                                                           |
+| :---------- | :------------------------------------------------------------------------------------------------------------- |
+| isalpha()   | 文字列が文字のみで構成されている場合に `True` を返します。                                                     |
+| isalnum()   | 文字列が文字と数字のみで構成されている場合に `True` を返します。                                               |
+| isdecimal() | 文字列が数字のみで構成されている場合に `True` を返します。                                                     |
+| isspace()   | 文字列がスペース、タブ、改行のみで構成されている場合に `True` を返します。                                     |
+| istitle()   | 文字列が、大文字で始まり、それに続く文字がすべて小文字である単語のみで構成されている場合に `True` を返します。 |
 
 ## startswith() および endswith()
 
@@ -356,6 +384,20 @@ True
 True
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+<code>startswith()</code>は何を返しますか？
+</template>
+
+<base-quiz-option value="A" correct>A. 文字列が指定された部分文字列で始まる場合は<code>True</code>、そうでない場合は<code>False</code></base-quiz-option>
+<base-quiz-option value="B">B. 一致する部分文字列</base-quiz-option>
+<base-quiz-option value="C">C. 部分文字列が始まるインデックス</base-quiz-option>
+<base-quiz-option value="D">D. プレフィックスのない新しい文字列</base-quiz-option>
+<base-quiz-answer value="A"><code>startswith()</code>メソッドはブール値を返します：文字列が指定された部分文字列で始まる場合は<code>True</code>、そうでない場合は<code>False</code>です。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## join() および split()
 
 ### join()
@@ -396,7 +438,7 @@ True
 
 ### split()
 
-`split()` メソッドは、`string` を `list` に分割します。デフォルトでは空白文字を区切り文字として使用しますが、選択した別の文字を設定することもできます：
+`split()` メソッドは `string` を `list` に分割します。デフォルトでは空白文字を使用して要素を区切りますが、別の文字を選択して指定することもできます。
 
 ```python
 'My name is Simon'.split()
@@ -437,6 +479,20 @@ True
 ```output
 ['', 'My', '', 'name', 'is', '', 'Simon']
 ```
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+文字列に対して<code>split()</code>を呼び出すと、何が返されますか？
+</template>
+
+<base-quiz-option value="A">A. 文字列</base-quiz-option>
+<base-quiz-option value="B" correct>B. 文字列のリスト</base-quiz-option>
+<base-quiz-option value="C">C. 文字列のタプル</base-quiz-option>
+<base-quiz-option value="D">D. 辞書</base-quiz-option>
+<base-quiz-answer value="B"><code>split()</code>メソッドは、文字列を部分文字列のリストに分割します。デフォルトでは空白文字で分割しますが、別の区切り文字を指定できます。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## rjust(), ljust() および center() によるテキストの配置調整
 
@@ -480,7 +536,7 @@ True
 '       Hello       '
 ```
 
-`rjust()` および `ljust()` のオプションの 2 番目の引数は、スペース文字以外の埋め文字を指定できます：
+`rjust()` および `ljust()` のオプションの 2 番目の引数は、スペース文字以外の埋め文字を指定します：
 
 ```python
 'Hello'.rjust(20, '*')
@@ -506,7 +562,7 @@ True
 '=======Hello========'
 ```
 
-## strip(), rstrip(), および lstrip() による空白の削除
+## strip(), rstrip(), および lstrip() による空白文字の削除
 
 ```python
 spam = '    Hello World     '
@@ -544,7 +600,7 @@ spam.strip('ampS')
 
 ## Count メソッド
 
-適用された文字列内で、指定された文字または部分文字列の出現回数を数えます。オプションで開始インデックスと終了インデックスを指定できます。
+適用された文字列内の指定された文字または部分文字列の出現回数をカウントします。オプションで開始インデックスと終了インデックスを指定できます。
 
 ```python
 sentence = 'one sheep two sheep three sheep four'
@@ -564,7 +620,7 @@ sentence.count('e')
 ```
 
 ```python
-# 文字列の先頭から 6 文字以降の 'e' の数を返す
+# 文字列の先頭から 6 文字以降の e の数を返します
 sentence.count('e', 6)
 ```
 
@@ -610,6 +666,20 @@ sentence.replace("apples", "oranges")
 ```output
 'I like oranges, Apples are my favorite fruit'
 ```
+
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+<code>replace()</code>メソッドは何を返しますか？
+</template>
+
+<base-quiz-option value="A">A. 元の文字列を変更する</base-quiz-option>
+<base-quiz-option value="B">B. <code>None</code>を返す</base-quiz-option>
+<base-quiz-option value="C" correct>C. 置換が行われた新しい文字列を返す</base-quiz-option>
+<base-quiz-option value="D">D. 置換された文字列のリストを返す</base-quiz-option>
+<base-quiz-answer value="C"><code>replace()</code>メソッドは、古い部分文字列のすべての出現が新しい部分文字列に置き換えられた新しい文字列を返します。元の文字列は変更されません。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## 関連リンク
 

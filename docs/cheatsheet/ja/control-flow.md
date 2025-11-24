@@ -1,6 +1,6 @@
 ---
 title: 'Python 制御フロー - Python チートシート'
-description: '制御フローとは、個々のステートメント、命令、または関数呼び出しが実行または評価される順序のことです。Python プログラムの制御フローは、条件文、ループ、および関数呼び出しによって制御されます。'
+description: '制御フローとは、個々の文、命令、または関数呼び出しが実行または評価される順序です。Python プログラムの制御フローは、条件文、ループ、および関数呼び出しによって制御されます。'
 labUrl: 'https://labex.io/ja/labs/python-python-control-flow-633651?course=python-cheatsheet'
 ---
 
@@ -90,9 +90,23 @@ True
 False
 ```
 
-## 論理演算子
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+<code>'hello' == 'Hello'</code> は何と評価されますか？
+</template>
 
-論理演算子には `and`、`or`、`not` の 3 種類があります。
+<base-quiz-option value="A">A. <code>True</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>False</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>None</code></base-quiz-option>
+<base-quiz-option value="D">D. エラーを発生させる</base-quiz-option>
+<base-quiz-answer value="B">Python での文字列比較は大文字と小文字を区別します。<code>'hello'</code> と <code>'Hello'</code> は異なる文字列であるため、比較結果は <code>False</code> になります。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+## ブール演算子
+
+3 つのブール演算子があります：`and`、`or`、`not`。
 優先順位は、高い方から低い方へ `not`、`and`、`or` の順です。
 
 `and` 演算子の**真理値表**:
@@ -122,7 +136,7 @@ False
 
 ## 演算子の組み合わせ
 
-論理演算子と比較演算子を組み合わせることができます。
+ブール演算子と比較演算子を組み合わせることができます：
 
 ```python
 (4 < 5) and (5 < 6)
@@ -148,7 +162,7 @@ False
 True
 ```
 
-また、比較演算子とともに複数の論理演算子を式内で使用することもできます。
+また、比較演算子とともに複数のブール演算子を式内で使用することもできます：
 
 ```python
 2 + 2 == 4 and not 2 + 2 == 5 and 2 * 2 == 2 + 2
@@ -159,7 +173,7 @@ True
 ```
 
 ```python
-# 以下のステートメントでは、まず 3 < 4 and 5 > 5 が実行され False と評価されます。
+# 以下のステートメントでは、最初に 3 < 4 and 5 > 5 が実行され False と評価されます。
 # 次に 5 > 4 が True を返すため、True or False の結果は True になります。
 5 > 4 or 3 < 4 and 5 > 5
 ```
@@ -179,7 +193,7 @@ False
 
 ## if 文
 
-`if` 文は式を評価し、その式が `True` の場合に限り、それに続くインデントされたコードを実行します。
+`if` 文は式を評価し、その式が `True` の場合、それに続くインデントされたコードを実行します：
 
 ```python
 # if 文：条件が True の場合にコードブロックを実行
@@ -202,7 +216,7 @@ if name != 'George':
 You are not George
 ```
 
-`else` 文は、`if` およびすべての `elif` 式の評価が `False` の場合にのみ実行されます。
+`else` 文は、`if` およびすべての `elif` 式の評価が `False` の場合にのみ実行されます：
 
 ```python
 # if-else: 条件に基づいて異なるコードを実行
@@ -218,7 +232,21 @@ else:  # if 条件が False の場合に実行
 You are not George
 ```
 
-`if` 文の式の評価が `False` の場合にのみ、`elif` 文が評価され実行されます。
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+if-else ステートメントで <code>else</code> ブロックはいつ実行されますか？
+</template>
+
+<base-quiz-option value="A">A. 常に</base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>if</code> 条件（および存在するすべての <code>elif</code> 条件）が <code>False</code> の場合のみ</base-quiz-option>
+<base-quiz-option value="C">C. <code>if</code> 条件が <code>True</code> の場合のみ</base-quiz-option>
+<base-quiz-option value="D">D. 実行されない</base-quiz-option>
+<base-quiz-answer value="B"><code>else</code> ブロックは、<code>if</code> 条件および（存在するならば）すべての <code>elif</code> 条件が <code>False</code> と評価された場合にのみ実行されます。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+`if` 文の式が `False` になった後にのみ、`elif` 文が評価され実行されます：
 
 ```python
 # if-elif: 複数の条件を順番にチェック
@@ -253,7 +281,7 @@ Who are you?
 
 ## 三項条件演算子
 
-多くのプログラミング言語には、条件式を定義する三項演算子があります。最も一般的な使用法は、簡潔で単純な条件付き代入ステートメントを作成することです。言い換えれば、条件が真の場合は最初の式を評価し、そうでない場合は 2 番目の式を評価する一行コードを提供します。
+多くのプログラミング言語には、条件式を定義する三項演算子があります。最も一般的な使用法は、簡潔な単純な条件付き代入ステートメントを作成することです。言い換えると、条件が真の場合に最初の式を評価し、そうでない場合に 2 番目の式を評価する一行コードを提供します。
 
 ```plaintext
 <expression1> if <condition> else <expression2>
@@ -285,7 +313,7 @@ print('kid' if age < 18 else 'adult')
 kid
 ```
 
-三項演算子は連鎖させることができます。
+三項演算子は連鎖させることができます：
 
 ```python
 age = 15
@@ -320,18 +348,18 @@ teen
     Switch-Case ステートメント
   </base-disclaimer-title>
   <base-disclaimer-content>
-  プログラミング言語において、switch ステートメントは、検索とマッピングを通じてプログラム実行の制御フローを変更できるようにするために使用される選択制御メカニズムの一種です。
+  コンピュータプログラミング言語において、switch ステートメントは、検索とマッピングを通じてプログラム実行の制御フローを変更できるようにするために使用される、選択制御メカニズムの一種です。
   </base-disclaimer-content>
 </base-disclaimer>
 
-_Switch-Case ステートメント_、または**構造的パターンマッチング**は、[PEP 622](https://peps.python.org/pep-0622/) によって 2020 年に初めて導入され、2022 年 9 月に**Python 3.10** で正式にリリースされました。
+**構造的パターンマッチング**としての*Switch-Case ステートメント*は、2020 年に[PEP 622](https://peps.python.org/pep-0622/)を通じて初めて導入され、2022 年 9 月に**Python 3.10**で正式にリリースされました。
 
 <base-disclaimer>
   <base-disclaimer-title>
     公式チュートリアル
   </base-disclaimer-title>
   <base-disclaimer-content>
-  <a href="https://peps.python.org/pep-0636/" target="_blank">PEP 636</a> は、Python のパターンマッチングまたは Switch-Case ステートメントの公式チュートリアルを提供しています。
+  <a href="https://peps.python.org/pep-0636/" target="_blank">PEP 636</a>は、Python のパターンマッチングまたは Switch-Case ステートメントの公式チュートリアルを提供します。
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -381,7 +409,7 @@ match response_code:
 Internal Server Error
 ```
 
-### イテラブルの長さによるマッチング
+### イテラブル（反復可能オブジェクト）の長さによるマッチング
 
 ```python
 today_responses = [200, 300, 404, 500]
@@ -400,7 +428,7 @@ All responses: 200, 300, [404, 500]
 
 ### デフォルト値
 
-アンダースコア記号 (`_`) は、デフォルトケースを定義するために使用されます。
+アンダースコア記号 (`_`) は、デフォルトのケースを定義するために使用されます：
 
 ```python
 response_code = 800
@@ -421,7 +449,7 @@ match response_code:
 Invalid Code
 ```
 
-### ビルトインクラスによるマッチング
+### 組み込みクラスによるマッチング
 
 ```python
 response_code = "300"
@@ -455,10 +483,10 @@ Code is a valid number
 
 ## while ループ ステートメント
 
-while ステートメントは、式が `True` である限りコードを繰り返し実行するために使用されます。
+while ステートメントは、式が `True` である限りコードを繰り返し実行するために使用されます：
 
 ```python
-# while ループ：条件が True の間、コードを繰り返す
+# while ループ：条件が True である限りコードを繰り返す
 spam = 0
 while spam < 5:  # spam が 5 未満の間、継続
     print('Hello, world.')
@@ -473,16 +501,30 @@ Hello, world.
 Hello, world.
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+<code>while</code> ループは何をしますか？
+</template>
+
+<base-quiz-option value="A" correct>A. 条件が <code>True</code> である限りコードを繰り返す</base-quiz-option>
+<base-quiz-option value="B">B. コードを正確に 1 回実行する</base-quiz-option>
+<base-quiz-option value="C">C. コードを固定回数実行する</base-quiz-option>
+<base-quiz-option value="D">D. コードの実行をスキップする</base-quiz-option>
+<base-quiz-answer value="A"><code>while</code> ループは、条件が <code>True</code> と評価されている限り、コードブロックを繰り返し実行します。条件が <code>False</code> になると、ループは停止します。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## break ステートメント
 
-実行が `break` ステートメントに到達すると、`while` ループの句から直ちに抜けます。
+実行が `break` ステートメントに到達すると、`while` ループの句から直ちに抜けます：
 
 ```python
-# break ステートメント：出現した時点でループを直ちに終了
+# break ステートメント：発見されたらループを直ちに終了
 while True:  # 無限ループ
     name = input('Please type your name: ')
     if name == 'your name':
-        break  # ループを直ちに抜ける
+        break  # ループを直ちに終了
 
 print('Thank you!')
 ```
@@ -494,7 +536,7 @@ Thank you!
 
 ## continue ステートメント
 
-プログラムの実行が `continue` ステートメントに到達すると、プログラムの実行は直ちにループの先頭に戻ります。
+プログラムの実行が `continue` ステートメントに到達すると、プログラムの実行は直ちにループの先頭にジャンプします。
 
 ```python
 # continue ステートメント：ループイテレーションの残りをスキップし、次のイテレーションを開始
@@ -504,7 +546,7 @@ while True:
         continue  # 次のイテレーションにスキップし、パスワードを尋ねない
     password = input('Password? (It is a fish.): ')
     if password == 'swordfish':
-        break  # パスワードが正しい場合にループを抜ける
+        break  # パスワードが正しい場合にループを終了
 
 print('Access granted.')
 ```
@@ -519,7 +561,7 @@ Access granted.
 
 ## For ループ
 
-`for` ループは、`list`、`tuple`、`dictionary`、`set`、または `string` を反復処理します。
+`for` ループは、`list`、`tuple`、`dictionary`、`set`、または `string` を反復処理します：
 
 ```python
 # for ループ：シーケンス内の各アイテムを反復処理
@@ -534,9 +576,23 @@ Milo
 Loki
 ```
 
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+<code>for</code> ループは何を反復処理しますか？
+</template>
+
+<base-quiz-option value="A">A. 数値のみ</base-quiz-option>
+<base-quiz-option value="B">B. 文字列のみ</base-quiz-option>
+<base-quiz-option value="C" correct>C. すべての反復可能なシーケンス（リスト、タプル、辞書、セット、文字列など）</base-quiz-option>
+<base-quiz-option value="D">D. リストのみ</base-quiz-option>
+<base-quiz-answer value="C"><code>for</code> ループは、リスト、タプル、辞書、セット、文字列、その他の反復可能なオブジェクトを含む、あらゆる反復可能なシーケンスを反復処理できます。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## range() 関数
 
-`range()` 関数は数値のシーケンスを返します。0 から始まり、1 ずつ増加し、指定された数より前で停止します。
+`range()` 関数は数値のシーケンスを返します。0 から始まり、1 ずつ増加し、指定された数より前で停止します：
 
 ```python
 for i in range(5):
@@ -551,7 +607,21 @@ Will stop at 5! or 4? (3)
 Will stop at 5! or 4? (4)
 ```
 
-`range()` 関数は、その 3 つのデフォルト引数を変更することもできます。最初の 2 つが `start` と `stop` の値になり、3 番目が `step` 引数になります。ステップは、各イテレーション後に変数が増やされる量です。
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+<code>range(5)</code> は何を生成しますか？
+</template>
+
+<base-quiz-option value="A">A. 1 から 5 までの数値</base-quiz-option>
+<base-quiz-option value="B" correct>B. 0 から 4 までの数値</base-quiz-option>
+<base-quiz-option value="C">C. 0 から 5 までの数値</base-quiz-option>
+<base-quiz-option value="D">D. 5 つのランダムな数値</base-quiz-option>
+<base-quiz-answer value="B"><code>range(5)</code> 関数は、0 から 4 までの数値を生成します（合計 5 個の数値）。停止値は排他的であるため、5 に達する前に停止します。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+`range()` 関数は、3 つのデフォルト引数（`start`、`stop`、`step`）を変更することもできます。最初の 2 つが `start` と `stop` 値になり、3 番目が `step` 引数になります。ステップは、各イテレーション後に変数がどれだけ増加するかを示す量です。
 
 ```python
 # range(start, stop, step)
@@ -585,7 +655,7 @@ for i in range(5, -1, -1):
 
 ## For else ステートメント
 
-これにより、ループ全体が実行された場合に実行するステートメントを指定できます。これは、ループ内で `break` 条件が発生する可能性がある場合にのみ役立ちます。
+これにより、ループ全体が実行された場合に実行するステートメントを指定できます。ループ内で `break` 条件が発生する可能性がある場合にのみ便利です：
 
 ```python
 for i in [1, 2, 3, 4, 5]:
@@ -597,7 +667,7 @@ else:
 
 ## sys.exit() によるプログラムの終了
 
-`exit()` 関数により Python を終了できます。
+`exit()` 関数は Python を終了させることができます。
 
 ```python
 import sys

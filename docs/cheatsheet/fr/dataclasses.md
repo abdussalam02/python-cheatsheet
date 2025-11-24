@@ -1,5 +1,5 @@
 ---
-title: 'Classes de Données Python - Aide-mémoire Python'
+title: 'Classes de Données Python - Fiche de Référence Python'
 description: "Les classes de données (Dataclasses) sont des classes Python optimisées pour stocker des objets de données. Ce module fournit un décorateur et des fonctions pour ajouter automatiquement des méthodes spéciales générées comme __init__() et __repr__() aux classes définies par l'utilisateur."
 labUrl: 'https://labex.io/fr/labs/python-python-dataclasses-633652?course=python-cheatsheet'
 ---
@@ -10,7 +10,7 @@ Dataclasses Python
 
 <base-lab-url :url="frontmatter.labUrl" />
 
-Les `Dataclasses` sont des classes python, mais adaptées au stockage d'objets de données.
+Les `Dataclasses` sont des classes Python, mais adaptées au stockage d'objets de données.
 Ce module fournit un décorateur et des fonctions pour ajouter automatiquement des méthodes spéciales générées telles que `__init__()` et `__repr__()` aux classes définies par l'utilisateur.
 
 ## Fonctionnalités
@@ -37,7 +37,7 @@ obj.val
 avec dataclass
 
 ```python
-# Dataclass: génère automatiquement les méthodes __init__ et __repr__
+# Dataclass : génère automatiquement les méthodes __init__ et __repr__
 from dataclasses import dataclass
 
 @dataclass  # Le décorateur convertit la classe en dataclass
@@ -64,7 +64,7 @@ class Product:
     count: int = 0   # Champ optionnel avec valeur par défaut
     price: float = 0.0  # Champ optionnel avec valeur par défaut
 
-obj = Product("Python")  # Seul le nom est requis, les autres utilisent les valeurs par défaut
+obj = Product("Python")  # Seul name est requis, les autres utilisent les valeurs par défaut
 obj.name
 ```
 
@@ -88,7 +88,21 @@ obj.price
 0.0
 ```
 
-## Indications de type (Type hints)
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Dans une dataclass, où les champs avec des valeurs par défaut doivent-ils être placés ?
+</template>
+
+<base-quiz-option value="A">A. Avant les champs sans valeurs par défaut</base-quiz-option>
+<base-quiz-option value="B" correct>B. Après les champs sans valeurs par défaut</base-quiz-option>
+<base-quiz-option value="C">C. Cela n'a pas d'importance</base-quiz-option>
+<base-quiz-option value="D">D. Dans une section séparée</base-quiz-option>
+<base-quiz-answer value="B">Dans les dataclasses, les champs avec des valeurs par défaut doivent suivre les champs sans valeurs par défaut. Ceci est dû au fait que Python doit connaître l'ordre des paramètres requis par rapport aux paramètres optionnels pour la méthode <code>**init**</code> générée.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+## Annotations de type (Type hints)
 
 Il est obligatoire de définir le type de données dans la dataclass. Cependant, si vous préférez ne pas spécifier le type de données, utilisez `typing.Any`.
 

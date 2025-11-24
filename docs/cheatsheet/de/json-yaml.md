@@ -15,26 +15,40 @@ JSON und YAML
 JSON steht für JavaScript Object Notation und ist ein leichtgewichtiges Format zum Speichern und Übertragen von Daten. JSON wird häufig verwendet, wenn Daten von einem Server an eine Webseite gesendet werden.
 
 ```python
-# JSON-Datei lesen: json.load() analysiert JSON aus einem Datei-Objekt
+# Read JSON file: json.load() parses JSON from file object
 import json
-with open("filename.json", "r") as f:  # Datei im Lesemodus öffnen
-    content = json.load(f)  # JSON analysieren und Python dict/list zurückgeben
+with open("filename.json", "r") as f:  # Open file in read mode
+    content = json.load(f)  # Parse JSON and return Python dict/list
 ```
 
-Eine JSON-Datei schreiben mit:
+Schreiben Sie eine JSON-Datei mit:
 
 ```python
-# JSON-Datei schreiben: json.dump() schreibt Python-Objekt als JSON
+# Write JSON file: json.dump() writes Python object as JSON
 import json
 
 content = {"name": "Joe", "age": 20}
-with open("filename.json", "w") as f:  # Datei im Schreibmodus öffnen
-    json.dump(content, f, indent=2)  # JSON mit 2-Leerzeichen-Einrückung schreiben
+with open("filename.json", "w") as f:  # Open file in write mode
+    json.dump(content, f, indent=2)  # Write JSON with 2-space indentation
 ```
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Welche Funktion wird verwendet, um ein Python-Wörterbuch in eine JSON-Datei zu schreiben?
+</template>
+
+<base-quiz-option value="A">A. <code>json.write()</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>json.dump()</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>json.save()</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>json.export()</code></base-quiz-option>
+<base-quiz-answer value="B">Die Funktion <code>json.dump()</code> schreibt ein Python-Objekt (wie ein Wörterbuch) in eine JSON-Datei. <code>json.load()</code> wird zum Lesen von JSON-Dateien verwendet.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## YAML
 
-Im Vergleich zu JSON ermöglicht YAML eine wesentlich bessere menschliche Wartbarkeit und bietet die Möglichkeit, Kommentare hinzuzufügen. Es ist eine praktische Wahl für Konfigurationsdateien, die von einem Menschen bearbeitet werden müssen.
+Im Vergleich zu JSON ermöglicht YAML eine wesentlich bessere menschliche Wartbarkeit und bietet die Möglichkeit, Kommentare hinzuzufügen. Es ist eine bequeme Wahl für Konfigurationsdateien, die von Menschen bearbeitet werden müssen.
 
 Es gibt zwei Hauptbibliotheken, die den Zugriff auf YAML-Dateien ermöglichen:
 
@@ -43,18 +57,32 @@ Es gibt zwei Hauptbibliotheken, die den Zugriff auf YAML-Dateien ermöglichen:
 
 Installieren Sie diese mit `pip install` in Ihrer virtuellen Umgebung.
 
-Die erste ist einfacher zu bedienen, aber die zweite, Ruamel, implementiert die YAML-Spezifikation wesentlich besser und erlaubt es beispielsweise, einen YAML-Inhalt zu ändern, ohne Kommentare zu verändern.
+Die erste ist einfacher zu verwenden, aber die zweite, Ruamel, implementiert die YAML-Spezifikation wesentlich besser und erlaubt es beispielsweise, einen YAML-Inhalt zu ändern, ohne Kommentare zu verändern.
 
-Eine YAML-Datei öffnen mit:
+Öffnen Sie eine YAML-Datei mit:
 
 ```python
-# YAML-Datei mit der Bibliothek ruamel.yaml lesen
+# Read YAML file using ruamel.yaml library
 from ruamel.yaml import YAML
 
 with open("filename.yaml") as f:
-    yaml=YAML()  # YAML-Parser-Instanz erstellen
-    yaml.load(f)  # YAML analysieren und Python dict/list zurückgeben
+    yaml=YAML()  # Create YAML parser instance
+    yaml.load(f)  # Parse YAML and return Python dict/list
 ```
+
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+Was ist ein Vorteil von YAML gegenüber JSON?
+</template>
+
+<base-quiz-option value="A">A. YAML-Dateien sind kleiner</base-quiz-option>
+<base-quiz-option value="B">B. YAML wird schneller geparst</base-quiz-option>
+<base-quiz-option value="C" correct>C. YAML erlaubt Kommentare und ist besser lesbar für Menschen</base-quiz-option>
+<base-quiz-option value="D">D. YAML ist in Python integriert</base-quiz-option>
+<base-quiz-answer value="C">YAML erlaubt Kommentare und ist besser lesbar für Menschen als JSON, was es zu einer bequemen Wahl für Konfigurationsdateien macht, die von Menschen bearbeitet werden müssen.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Anyconfig
 
@@ -69,16 +97,30 @@ pip install anyconfig
 Verwendung:
 
 ```python
-# anyconfig: Konfigurationsdateien in verschiedenen Formaten laden (JSON, YAML, TOML, etc.)
+# anyconfig: load configuration files in various formats (JSON, YAML, TOML, etc.)
 import anyconfig
-conf1 = anyconfig.load("/path/to/foo/conf.d/a.yml")  # Format wird automatisch erkannt
+conf1 = anyconfig.load("/path/to/foo/conf.d/a.yml")  # Auto-detects format
 ```
+
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+Was ermöglicht Ihnen die anyconfig-Bibliothek?
+</template>
+
+<base-quiz-option value="A" correct>A. Konfigurationsdateien in verschiedenen Formaten (JSON, YAML, TOML) zu laden, ohne das Format angeben zu müssen</base-quiz-option>
+<base-quiz-option value="B">B. Zwischen verschiedenen Konfigurationsformaten zu konvertieren</base-quiz-option>
+<base-quiz-option value="C">C. Die Syntax von Konfigurationsdateien zu validieren</base-quiz-option>
+<base-quiz-option value="D">D. Konfigurationsdateien zu verschlüsseln</base-quiz-option>
+<base-quiz-answer value="A">Die anyconfig-Bibliothek abstrahiert das zugrunde liegende Konfigurationsdateiformat und ermöglicht es Ihnen, Python-Wörterbücher aus JSON, YAML, TOML und anderen Formaten zu laden, ohne wissen zu müssen, welches Format verwendet wird.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Relevante Links
 
 - <router-link to="/cheatsheet/reading-and-writing-files">Dateien lesen und schreiben</router-link>
-- <router-link to="/cheatsheet/dictionaries">Python Dictionaries</router-link>
-- <router-link to="/modules/json-module">Das json Modul</router-link>
-- <router-link to="/blog/python-pathlib-essentials">10 wesentliche Dateisystemoperationen, die jeder Entwickler kennen sollte</router-link>
+- <router-link to="/cheatsheet/dictionaries">Python-Wörterbücher</router-link>
+- <router-link to="/modules/json-module">Das json-Modul</router-link>
+- <router-link to="/blog/python-pathlib-essentials">10 wesentliche Dateioperationen, die jeder Entwickler kennen sollte</router-link>
 - <router-link to="/builtin/open">open()</router-link>
 - <router-link to="/builtin/dict">dict()</router-link>

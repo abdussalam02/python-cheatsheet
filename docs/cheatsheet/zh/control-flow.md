@@ -1,11 +1,11 @@
 ---
 title: 'Python 控制流 - Python 速查表'
-description: '控制流是单个语句、指令或函数调用执行或评估的顺序。Python 程序的控制流由条件语句、循环和函数调用控制。'
+description: '控制流是单个语句、指令或函数调用执行或评估的顺序。Python 程序的控制流由条件语句、循环和函数调用来调节。'
 labUrl: 'https://labex.io/zh/labs/python-python-control-flow-633651?course=python-cheatsheet'
 ---
 
 <base-title :title="frontmatter.title" :description="frontmatter.description">
-Python 控制流 - Python 速查表
+Python 控制流
 </base-title>
 
 <base-lab-url :url="frontmatter.labUrl" />
@@ -15,7 +15,7 @@ Python 控制流 - Python 速查表
     Python 控制流
   </base-disclaimer-title>
   <base-disclaimer-content>
-  控制流是单个语句、指令或函数调用被执行或评估的顺序。Python 程序的控制流由条件语句、循环和函数调用来调节。
+  控制流是单个语句、指令或函数调用被执行或求值的顺序。Python 程序的控制流由条件语句、循环和函数调用来调节。
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -30,7 +30,7 @@ Python 控制流 - Python 速查表
 | `<=`   | 小于或等于 |
 | `>=`   | 大于或等于 |
 
-这些运算符根据您提供的值评估为 True 或 False。
+这些运算符根据你给它们的值评估为 True 或 False。
 
 示例：
 
@@ -90,12 +90,26 @@ True
 False
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+<code>'hello' == 'Hello'</code> 的评估结果是什么？
+</template>
+
+<base-quiz-option value="A">A. <code>True</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>False</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>None</code></base-quiz-option>
+<base-quiz-option value="D">D. 抛出错误</base-quiz-option>
+<base-quiz-answer value="B">Python 中的字符串比较是区分大小写的。<code>'hello'</code> 和 <code>'Hello'</code> 是不同的字符串，因此比较结果为 <code>False</code>。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## 布尔运算符
 
 有三个布尔运算符：`and`、`or` 和 `not`。
 按优先级从高到低依次是 `not`、`and` 和 `or`。
 
-`and` 运算符的真值表：
+`and` 运算符的*真值表*：
 
 | 表达式            | 评估结果 |
 | ----------------- | -------- |
@@ -104,7 +118,7 @@ False
 | `False and True`  | `False`  |
 | `False and False` | `False`  |
 
-`or` 运算符的真值表：
+`or` 运算符的*真值表*：
 
 | 表达式           | 评估结果 |
 | ---------------- | -------- |
@@ -113,7 +127,7 @@ False
 | `False or True`  | `True`   |
 | `False or False` | `False`  |
 
-`not` 运算符的真值表：
+`not` 运算符的*真值表*：
 
 | 表达式      | 评估结果 |
 | ----------- | -------- |
@@ -122,7 +136,7 @@ False
 
 ## 混合运算符
 
-您可以混合使用布尔运算符和比较运算符：
+你可以混合使用布尔运算符和比较运算符：
 
 ```python
 (4 < 5) and (5 < 6)
@@ -148,7 +162,7 @@ False
 True
 ```
 
-此外，您可以在表达式中混合使用多个布尔运算符以及比较运算符：
+此外，你可以在一个表达式中混合使用多个布尔运算符以及比较运算符：
 
 ```python
 2 + 2 == 4 and not 2 + 2 == 5 and 2 * 2 == 2 + 2
@@ -218,7 +232,21 @@ else:  # 如果 if 条件为 False，则执行
 You are not George
 ```
 
-只有在 `if` 语句表达式为 `False` 之后，才会评估并执行 `elif` 语句：
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+在 if-else 语句中，<code>else</code> 块何时执行？
+</template>
+
+<base-quiz-option value="A">A. 总是</base-quiz-option>
+<base-quiz-option value="B" correct>B. 仅当 <code>if</code> 条件（以及所有 <code>elif</code> 条件（如果存在））为 <code>False</code> 时</base-quiz-option>
+<base-quiz-option value="C">C. 仅当 <code>if</code> 条件为 <code>True</code> 时</base-quiz-option>
+<base-quiz-option value="D">D. 从不</base-quiz-option>
+<base-quiz-answer value="B">只有当 <code>if</code> 条件和所有 <code>elif</code> 条件（如果存在）都评估为 <code>False</code> 时，<code>else</code> 块才会执行。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+只有在 `if` 语句的表达式为 `False` 之后，才会评估并执行 `elif` 语句：
 
 ```python
 # if-elif：按顺序检查多个条件
@@ -253,7 +281,7 @@ Who are you?
 
 ## 三元条件运算符
 
-许多编程语言都有一个三元运算符，用于定义一个条件表达式。最常见的用法是创建一个简洁的简单条件赋值语句。换句话说，如果条件为真，它提供单行代码来评估第一个表达式，否则评估第二个表达式。
+许多编程语言都有一个三元运算符，用于定义条件表达式。最常见的用法是创建一个简洁的简单条件赋值语句。换句话说，如果条件为真，它提供单行代码来评估第一个表达式，否则评估第二个表达式。
 
 ```plaintext
 <expression1> if <condition> else <expression2>
@@ -320,7 +348,7 @@ teen
     Switch-Case 语句
   </base-disclaimer-title>
   <base-disclaimer-content>
-  在计算机编程语言中，switch 语句是一种选择控制机制，用于通过搜索和映射允许变量或表达式的值改变程序的控制流。
+  在计算机编程语言中，switch 语句是一种选择控制机制，用于通过搜索和映射来允许变量或表达式的值改变程序的控制流执行。
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -331,7 +359,7 @@ _Switch-Case 语句_，或**结构化模式匹配**，首次通过 [PEP 622](htt
     官方教程
   </base-disclaimer-title>
   <base-disclaimer-content>
-  <a href="https://peps.python.org/pep-0636/" target="_blank">PEP 636</a> 提供了 Python 模式匹配或 Switch-Case 语句的官方教程。
+  <a href="https://peps.python.org/pep-0636/" target="_blank">PEP 636</a> 为 Python 模式匹配或 Switch-Case 语句提供了官方教程。
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -360,7 +388,7 @@ match response_code:
 Created
 ```
 
-### 使用或模式匹配
+### 使用 or 模式匹配
 
 在此示例中，管道字符 (`|` 或 `or`) 允许 Python 为两个或多个情况返回相同的响应。
 
@@ -455,12 +483,12 @@ Code is a valid number
 
 ## while 循环语句
 
-当一个表达式为 `True` 时，while 语句用于重复执行，直到该表达式为 `False`：
+while 语句用于重复执行，只要一个表达式为 `True`：
 
 ```python
 # while 循环：只要条件为 True，就重复执行代码
 spam = 0
-while spam < 5:  # 只要 spam 小于 5，就继续
+while spam < 5:  # 只要 spam 小于 5 就继续
     print('Hello, world.')
     spam = spam + 1  # 增加计数器以避免无限循环
 ```
@@ -472,6 +500,20 @@ Hello, world.
 Hello, world.
 Hello, world.
 ```
+
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+<code>while</code> 循环做什么？
+</template>
+
+<base-quiz-option value="A" correct>A. 只要条件为 <code>True</code> 就重复执行代码</base-quiz-option>
+<base-quiz-option value="B">B. 只执行代码一次</base-quiz-option>
+<base-quiz-option value="C">C. 执行固定次数的代码</base-quiz-option>
+<base-quiz-option value="D">D. 跳过代码执行</base-quiz-option>
+<base-quiz-answer value="A"><code>while</code> 循环只要条件评估为 <code>True</code> 就重复执行一段代码。当条件变为 <code>False</code> 时，循环停止。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## break 语句
 
@@ -494,7 +536,7 @@ Thank you!
 
 ## continue 语句
 
-当程序执行到达 `continue` 语句时，程序执行立即跳回到循环的开始。
+当程序执行到达 `continue` 语句时，程序执行立即跳回到循环的开头。
 
 ```python
 # continue 语句：跳过循环迭代的其余部分并开始下一次迭代
@@ -519,12 +561,12 @@ Access granted.
 
 ## For 循环
 
-`for` 循环遍历 `list`、`tuple`、`dictionary`、`set` 或 `string`：
+`for` 循环迭代 `list`、`tuple`、`dictionary`、`set` 或 `string`：
 
 ```python
-# for 循环：遍历序列中的每个项
+# for 循环：迭代序列中的每个项目
 pets = ['Bella', 'Milo', 'Loki']
-for pet in pets:  # 遍历列表中的每只宠物
+for pet in pets:  # 循环遍历列表中的每只宠物
     print(pet)  # 打印每只宠物的名字
 ```
 
@@ -533,6 +575,20 @@ Bella
 Milo
 Loki
 ```
+
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+<code>for</code> 循环迭代什么？
+</template>
+
+<base-quiz-option value="A">A. 仅数字</base-quiz-option>
+<base-quiz-option value="B">B. 仅字符串</base-quiz-option>
+<base-quiz-option value="C" correct>C. 任何可迭代序列（列表、元组、字典、集合、字符串等）</base-quiz-option>
+<base-quiz-option value="D">D. 仅列表</base-quiz-option>
+<base-quiz-answer value="C"><code>for</code> 循环可以迭代任何可迭代序列，包括列表、元组、字典、集合、字符串和其他可迭代对象。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## range() 函数
 
@@ -551,6 +607,20 @@ Will stop at 5! or 4? (3)
 Will stop at 5! or 4? (4)
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+<code>range(5)</code> 生成什么？
+</template>
+
+<base-quiz-option value="A">A. 从 1 到 5 的数字</base-quiz-option>
+<base-quiz-option value="B" correct>B. 从 0 到 4 的数字</base-quiz-option>
+<base-quiz-option value="C">C. 从 0 到 5 的数字</base-quiz-option>
+<base-quiz-option value="D">D. 五个随机数</base-quiz-option>
+<base-quiz-answer value="B"><code>range(5)</code> 函数生成从 0 到 4 的数字（共 5 个数字）。停止值是排他的，因此它在到达 5 之前停止。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 `range()` 函数也可以修改其 3 个默认参数。前两个是 `start` 和 `stop` 值，第三个是 `step` 参数。`step` 是每次迭代后变量增加的量。
 
 ```python
@@ -567,7 +637,7 @@ for i in range(0, 10, 2):
 8
 ```
 
-您甚至可以使用负数作为 step 参数，使 for 循环倒数而不是递增。
+你甚至可以使用负数作为 step 参数，使 for 循环倒数而不是递增。
 
 ```python
 for i in range(5, -1, -1):
@@ -585,7 +655,7 @@ for i in range(5, -1, -1):
 
 ## For else 语句
 
-这允许指定一个语句在循环完全执行时执行。仅在循环中可能发生 `break` 条件时才有用：
+这允许指定一个语句，在循环完全执行时执行。仅在循环中可能发生 `break` 条件时才有用：
 
 ```python
 for i in [1, 2, 3, 4, 5]:

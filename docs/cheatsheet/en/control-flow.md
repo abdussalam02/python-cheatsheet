@@ -90,6 +90,20 @@ True
 False
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+What does <code>'hello' == 'Hello'</code> evaluate to?
+</template>
+
+<base-quiz-option value="A">A. <code>True</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>False</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>None</code></base-quiz-option>
+<base-quiz-option value="D">D. Raises an error</base-quiz-option>
+<base-quiz-answer value="B">String comparison in Python is case-sensitive. <code>'hello'</code> and <code>'Hello'</code> are different strings, so the comparison returns <code>False</code>.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Boolean Operators
 
 There are three Boolean operators: `and`, `or`, and `not`.
@@ -217,6 +231,20 @@ else:  # Execute if if condition is False
 ```output
 You are not George
 ```
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+When does the <code>else</code> block execute in an if-else statement?
+</template>
+
+<base-quiz-option value="A">A. Always</base-quiz-option>
+<base-quiz-option value="B" correct>B. Only when the <code>if</code> condition (and all <code>elif</code> conditions if present) are <code>False</code></base-quiz-option>
+<base-quiz-option value="C">C. Only when the <code>if</code> condition is <code>True</code></base-quiz-option>
+<base-quiz-option value="D">D. Never</base-quiz-option>
+<base-quiz-answer value="B">The <code>else</code> block executes only when the <code>if</code> condition and all <code>elif</code> conditions (if any) evaluate to <code>False</code>.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 Only after the `if` statement expression is `False`, the `elif` statement is evaluated and executed:
 
@@ -473,6 +501,20 @@ Hello, world.
 Hello, world.
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+What does a <code>while</code> loop do?
+</template>
+
+<base-quiz-option value="A" correct>A. Repeats code as long as the condition is <code>True</code></base-quiz-option>
+<base-quiz-option value="B">B. Executes code exactly once</base-quiz-option>
+<base-quiz-option value="C">C. Executes code a fixed number of times</base-quiz-option>
+<base-quiz-option value="D">D. Skips code execution</base-quiz-option>
+<base-quiz-answer value="A">A <code>while</code> loop repeatedly executes a block of code as long as the condition evaluates to <code>True</code>. When the condition becomes <code>False</code>, the loop stops.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## break Statements
 
 If the execution reaches a `break` statement, it immediately exits the `while` loop's clause:
@@ -534,6 +576,20 @@ Milo
 Loki
 ```
 
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+What does a <code>for</code> loop iterate over?
+</template>
+
+<base-quiz-option value="A">A. Only numbers</base-quiz-option>
+<base-quiz-option value="B">B. Only strings</base-quiz-option>
+<base-quiz-option value="C" correct>C. Any iterable sequence (list, tuple, dictionary, set, string, etc.)</base-quiz-option>
+<base-quiz-option value="D">D. Only lists</base-quiz-option>
+<base-quiz-answer value="C">A <code>for</code> loop can iterate over any iterable sequence, including lists, tuples, dictionaries, sets, strings, and other iterable objects.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## The range() function
 
 The `range()` function returns a sequence of numbers. It starts from 0, increments by 1, and stops before a specified number:
@@ -550,6 +606,20 @@ Will stop at 5! or 4? (2)
 Will stop at 5! or 4? (3)
 Will stop at 5! or 4? (4)
 ```
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+What does <code>range(5)</code> generate?
+</template>
+
+<base-quiz-option value="A">A. Numbers from 1 to 5</base-quiz-option>
+<base-quiz-option value="B" correct>B. Numbers from 0 to 4</base-quiz-option>
+<base-quiz-option value="C">C. Numbers from 0 to 5</base-quiz-option>
+<base-quiz-option value="D">D. Five random numbers</base-quiz-option>
+<base-quiz-answer value="B">The <code>range(5)</code> function generates numbers from 0 to 4 (5 numbers total). The stop value is exclusive, so it stops before reaching 5.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 The `range()` function can also modify its 3 defaults arguments. The first two will be the `start` and `stop` values, and the third will be the `step` argument. The step is the amount that the variable is increased by after each iteration.
 

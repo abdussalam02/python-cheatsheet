@@ -80,13 +80,27 @@ say_hi(name='Anna', greeting='Hi')
 Hi Anna
 ```
 
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+What is the main advantage of using keyword arguments in Python functions?
+</template>
+
+<base-quiz-option value="A">A. They execute faster</base-quiz-option>
+<base-quiz-option value="B">B. They use less memory</base-quiz-option>
+<base-quiz-option value="C" correct>C. They improve code readability and order doesn't matter</base-quiz-option>
+<base-quiz-option value="D">D. They prevent errors</base-quiz-option>
+<base-quiz-answer value="C">Keyword arguments improve code readability by making it clear what each argument represents, and they allow you to pass arguments in any order.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Rückgabewerte
 
 Wenn Sie eine Funktion mit der `def`-Anweisung erstellen, können Sie mit einer `return`-Anweisung festlegen, was der Rückgabewert sein soll. Eine Rückgabeanweisung besteht aus Folgendem:
 
-- Dem Schlüsselwort `return`.
+- Das Schlüsselwort `return`.
 
-- Dem Wert oder Ausdruck, den die Funktion zurückgeben soll.
+- Der Wert oder Ausdruck, den die Funktion zurückgeben soll.
 
 ```python
 # Function that returns a value using return statement
@@ -101,6 +115,20 @@ print(result)
 ```output
 15
 ```
+
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+What keyword is used to return a value from a function in Python?
+</template>
+
+<base-quiz-option value="A" correct>A. <code>return</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>output</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>yield</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>exit</code></base-quiz-option>
+<base-quiz-answer value="A">The <code>return</code> keyword is used to return a value from a function. If no return statement is used, the function returns <code>None</code>.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Lokaler und globaler Gültigkeitsbereich (Scope)
 
@@ -151,6 +179,20 @@ print(eggs)  # Prints 'spam', not 'global'
 spam
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+What keyword must you use inside a function to modify a global variable?
+</template>
+
+<base-quiz-option value="A">A. <code>nonlocal</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>global</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>extern</code></base-quiz-option>
+<base-quiz-option value="D">D. No keyword needed</base-quiz-option>
+<base-quiz-answer value="B">The <code>global</code> keyword must be used inside a function to modify a global variable. Without it, Python will create a local variable instead.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 Es gibt vier Regeln, um festzustellen, ob sich eine Variable in einem lokalen oder globalen Gültigkeitsbereich befindet:
 
 1. Wenn eine Variable im globalen Gültigkeitsbereich verwendet wird (d. h. außerhalb aller Funktionen), ist sie immer eine globale Variable.
@@ -159,11 +201,11 @@ Es gibt vier Regeln, um festzustellen, ob sich eine Variable in einem lokalen od
 
 1. Andernfalls, wenn die Variable in einer Zuweisungsanweisung in der Funktion verwendet wird, ist sie eine lokale Variable.
 
-1. Wenn die Variable jedoch nicht in einer Zuweisungsanweisung verwendet wird, ist sie eine globale Variable.
+1. Aber wenn die Variable nicht in einer Zuweisungsanweisung verwendet wird, ist sie eine globale Variable.
 
 ## Lambda-Funktionen
 
-In Python ist eine Lambda-Funktion eine einzeilige, anonyme Funktion, die eine beliebige Anzahl von Argumenten haben kann, aber nur einen Ausdruck haben kann.
+In Python ist eine Lambda-Funktion eine einzeilige, anonyme Funktion, die eine beliebige Anzahl von Argumenten haben kann, aber nur einen Ausdruck enthalten darf.
 
 <base-disclaimer>
   <base-disclaimer-title>
@@ -210,7 +252,21 @@ add(5, 3)
 8
 ```
 
-Wie reguläre verschachtelte Funktionen funktionieren Lambdas auch als lexikalische Closures:
+<base-quiz>
+<base-quiz-question correct="D">
+<template #question>
+What is a lambda function in Python?
+</template>
+
+<base-quiz-option value="A">A. A function that can only be called once</base-quiz-option>
+<base-quiz-option value="B">B. A function that takes no arguments</base-quiz-option>
+<base-quiz-option value="C">C. A function that returns multiple values</base-quiz-option>
+<base-quiz-option value="D" correct>D. A single-line anonymous function that can have any number of arguments but only one expression</base-quiz-option>
+<base-quiz-answer value="D">A lambda function is an anonymous, single-line function defined using the <code>lambda</code> keyword. It can take any number of arguments but can only contain a single expression.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+Wie reguläre verschachtelte Funktionen funktionieren auch Lambdas als lexikalische Closures:
 
 ```python
 # Lambda closure: lambda function that captures variable from outer scope
@@ -236,11 +292,25 @@ plus_5(4)
 9
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+What does a lambda closure allow you to do?
+</template>
+
+<base-quiz-option value="A" correct>A. Capture variables from the outer scope</base-quiz-option>
+<base-quiz-option value="B">B. Modify global variables without the global keyword</base-quiz-option>
+<base-quiz-option value="C">C. Return multiple values</base-quiz-option>
+<base-quiz-option value="D">D. Execute code asynchronously</base-quiz-option>
+<base-quiz-answer value="A">Lambda closures allow lambda functions to capture and use variables from their enclosing scope, similar to regular nested functions.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Relevante Links
 
 - <router-link to="/blog/python-easy-args-kwargs">\*args and \*\*kwargs explained</router-link>
-- <router-link to="/cheatsheet/args-and-kwargs">Args and Kwargs</router-link>
-- <router-link to="/cheatsheet/decorators">Decorators</router-link>
-- <router-link to="/cheatsheet/control-flow">Control Flow</router-link>
-- <router-link to="/cheatsheet/basics">Basics</router-link>
-- <router-link to="/builtin">Built-in Functions</router-link>
+- <router-link to="/cheatsheet/args-and-kwargs">Args und Kwargs</router-link>
+- <router-link to="/cheatsheet/decorators">Dekoratoren</router-link>
+- <router-link to="/cheatsheet/control-flow">Kontrollfluss</router-link>
+- <router-link to="/cheatsheet/basics">Grundlagen</router-link>
+- <router-link to="/builtin">Eingebaute Funktionen</router-link>

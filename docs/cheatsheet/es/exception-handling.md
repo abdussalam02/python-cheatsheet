@@ -19,7 +19,7 @@ Manejo de Excepciones en Python
   </base-disclaimer-content>
 </base-disclaimer>
 
-Python tiene muchas [built-in exceptions](https://docs.python.org/3/library/exceptions.html) que se generan cuando un programa encuentra un error, y la mayoría de las bibliotecas externas, como la popular [Requests](https://requests.readthedocs.io/en/latest), incluyen sus propias [custom exceptions](https://requests.readthedocs.io/en/latest/user/quickstart/#errors-and-exceptions) con las que tendremos que lidiar.
+Python tiene muchas [excepciones incorporadas](https://docs.python.org/3/library/exceptions.html) que se generan cuando un programa encuentra un error, y la mayoría de las bibliotecas externas, como la popular [Requests](https://requests.readthedocs.io/en/latest), incluyen sus propias [excepciones personalizadas](https://requests.readthedocs.io/en/latest/user/quickstart/#errors-and-exceptions) con las que tendremos que lidiar.
 
 ## Manejo básico de excepciones
 
@@ -71,9 +71,23 @@ divide(dividend=10, divisor=0)
 No se puede dividir por 0
 ```
 
-## Manejo de múltiples excepciones usando un bloque de excepción
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+¿Qué palabras clave se utilizan para manejar excepciones en Python?
+</template>
 
-También puedes manejar múltiples excepciones en una sola línea como la siguiente sin necesidad de crear múltiples bloques de excepción.
+<base-quiz-option value="A" correct>A. <code>try</code> y <code>except</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>catch</code> y <code>handle</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>error</code> y <code>rescue</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>if</code> y <code>else</code></base-quiz-option>
+<base-quiz-answer value="A">Python usa <code>try</code> para marcar el código que podría generar una excepción, y <code>except</code> para manejar las excepciones específicas que ocurren.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+## Manejo de Múltiples excepciones usando un bloque de excepción
+
+También puedes manejar múltiples excepciones en una sola línea como la siguiente sin la necesidad de crear múltiples bloques de excepción.
 
 ```python
 # Manejar múltiples excepciones en un bloque except
@@ -83,8 +97,8 @@ def divide(dividend , divisor):
           var = 'str' + 1  # Esto generará TypeError
         else:
           print(dividend / divisor)
-    except (ZeroDivisionError, TypeError) as error:  # Captura múltiples tipos de excepción
-        print(error)  # Imprime el mensaje de error
+    except (ZeroDivisionError, TypeError) as error:  # Capturar múltiples tipos de excepción
+        print(error)  # Imprimir el mensaje de error
 
 divide(dividend=20, divisor=5)
 ```
@@ -108,6 +122,20 @@ divide(dividend=10, divisor=0)
 ```output
 division by zero
 ```
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+¿Se pueden manejar múltiples tipos de excepción en un solo bloque <code>except</code>?
+</template>
+
+<base-quiz-option value="A">A. No, debes usar bloques <code>except</code> separados para cada tipo de excepción</base-quiz-option>
+<base-quiz-option value="B" correct>B. Sí, poniéndolos en una tupla como <code>except (Exception1, Exception2)</code></base-quiz-option>
+<base-quiz-option value="C">C. Sí, pero solo si están relacionados</base-quiz-option>
+<base-quiz-option value="D">D. No, Python no soporta esto</base-quiz-option>
+<base-quiz-answer value="B">Puedes manejar múltiples tipos de excepción en un solo bloque <code>except</code> poniéndolos en una tupla: <code>except (ZeroDivisionError, TypeError) as error:</code></base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Código Finally en el manejo de excepciones
 
@@ -140,16 +168,30 @@ No se puede dividir por 0
 Ejecución finalizada
 ```
 
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+¿Cuándo se ejecuta el bloque <code>finally</code>?
+</template>
+
+<base-quiz-option value="A">A. Solo cuando ocurre una excepción</base-quiz-option>
+<base-quiz-option value="B">B. Solo cuando no ocurre ninguna excepción</base-quiz-option>
+<base-quiz-option value="C" correct>C. Siempre, independientemente de si ocurrió o no una excepción</base-quiz-option>
+<base-quiz-option value="D">D. Nunca</base-quiz-option>
+<base-quiz-answer value="C">El bloque <code>finally</code> siempre se ejecuta, haya ocurrido o no una excepción. Es útil para código de limpieza que debe ejecutarse independientemente del resultado.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Excepciones Personalizadas
 
 Las excepciones personalizadas se inicializan creando una `class` que hereda de la clase base `Exception` de Python, y se generan usando la palabra clave `raise`:
 
 ```python
-# Excepción personalizada: creada heredando de la clase Exception
+# Excepción personalizada: se crea heredando de la clase Exception
 class MyCustomException(Exception):
     pass
 
-raise MyCustomException  # Genera la excepción personalizada
+raise MyCustomException  # Generar la excepción personalizada
 ```
 
 ```output
@@ -179,16 +221,30 @@ Manejar una excepción personalizada es igual que cualquier otra:
 try:
     raise MyCustomException('Un mensaje personalizado para mi excepción personalizada')
 except MyCustomException:
-    print('Mi excepción personalizada fue generada')
+    print('Se generó mi excepción personalizada')
 ```
 
 ```output
-Mi excepción personalizada fue generada
+Se generó mi excepción personalizada
 ```
+
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+¿Cómo se crea una excepción personalizada en Python?
+</template>
+
+<base-quiz-option value="A" correct>A. Creando una clase que herede de la clase <code>Exception</code></base-quiz-option>
+<base-quiz-option value="B">B. Usando el decorador <code>@exception</code></base-quiz-option>
+<base-quiz-option value="C">C. Llamando a <code>Exception.create()</code></base-quiz-option>
+<base-quiz-option value="D">D. Importándola de un módulo especial</base-quiz-option>
+<base-quiz-answer value="A">Las excepciones personalizadas se crean definiendo una clase que hereda de la clase base <code>Exception</code>. Luego puedes generarlas y manejarlas igual que las excepciones incorporadas.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Enlaces relevantes
 
-- <router-link to="/cheatsheet/control-flow">Control Flow</router-link>
+- <router-link to="/cheatsheet/control-flow">Flujo de Control</router-link>
 - <router-link to="/builtin/breakpoint">breakpoint()</router-link>
 - <router-link to="/builtin/isinstance">isinstance()</router-link>
 - <router-link to="/builtin/issubclass">issubclass()</router-link>

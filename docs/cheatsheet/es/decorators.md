@@ -16,7 +16,7 @@ una función o una clase. Lea el artículo complementario <router-link to="/blog
 ## Decorador básico
 
 Un decorador en su forma más simple es una función que toma otra
-función como argumento y devuelve una función envolvente (_wrapper_). El siguiente ejemplo muestra la creación de un decorador y su uso.
+función como argumento y devuelve una función envolvente (wrapper). El siguiente ejemplo muestra la creación de un decorador y su uso.
 
 ```python
 # Decorador: una función que toma otra función y devuelve un envoltorio
@@ -24,10 +24,10 @@ def your_decorator(func):
   def wrapper():
     # Hacer cosas antes de func...
     print("Before func!")
-    func()  # Llamar a la función original
+    func()  # Llama a la función original
     # Hacer cosas después de func...
     print("After func!")
-  return wrapper  # Devolver la función envolvente
+  return wrapper  # Devuelve la función envolvente
 
 # @your_decorator es azúcar sintáctico para: foo = your_decorator(foo)
 @your_decorator
@@ -43,15 +43,29 @@ Hello World!
 After func!
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+¿Qué es un decorador en Python?
+</template>
+
+<base-quiz-option value="A" correct>A. Una función que toma otra función y devuelve una función envolvente</base-quiz-option>
+<base-quiz-option value="B">B. Un tipo especial de clase</base-quiz-option>
+<base-quiz-option value="C">C. Una palabra clave incorporada de Python</base-quiz-option>
+<base-quiz-option value="D">D. Una forma de eliminar funciones</base-quiz-option>
+<base-quiz-answer value="A">Un decorador es una función que toma otra función como argumento y devuelve una función envolvente. La sintaxis <code>@</code> es azúcar sintáctico que aplica el decorador a una función.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Decorador para una función con parámetros
 
 ```python
 # Decorador que funciona con funciones que tienen parámetros
 def your_decorator(func):
-  def wrapper(*args,**kwargs):  # Aceptar cualquier argumento
+  def wrapper(*args,**kwargs):  # Acepta cualquier argumento
     # Hacer cosas antes de func...
     print("Before func!")
-    func(*args,**kwargs)  # Pasar argumentos a la función original
+    func(*args,**kwargs)  # Pasa argumentos a la función original
     # Hacer cosas después de func...
     print("After func!")
   return wrapper
@@ -79,18 +93,32 @@ import functools
 
 # Plantilla de decorador de mejores prácticas: preserva los metadatos y el valor de retorno de la función
 def your_decorator(func):
-  @functools.wraps(func)  # Preserva el nombre de la función, docstring, etc.
+  @functools.wraps(func)  # Preserva el nombre de la función, la cadena de documentación, etc.
   def wrapper(*args,**kwargs):
     # Hacer cosas antes de func...
-    result = func(*args,**kwargs)  # Llamar a la función y capturar el valor de retorno
+    result = func(*args,**kwargs)  # Llama a la función y captura el valor de retorno
     # Hacer cosas después de func..
-    return result  # Devolver el valor de retorno de la función original
+    return result  # Devuelve el valor de retorno de la función original
   return wrapper
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+¿Qué hace <code>@functools.wraps(func)</code> en un decorador?
+</template>
+
+<base-quiz-option value="A">A. Hace que el decorador se ejecute más rápido</base-quiz-option>
+<base-quiz-option value="B" correct>B. Preserva los metadatos de la función original (nombre, cadena de documentación, etc.)</base-quiz-option>
+<base-quiz-option value="C">C. Evita que se llame a la función</base-quiz-option>
+<base-quiz-option value="D">D. Convierte la función en una clase</base-quiz-option>
+<base-quiz-answer value="B">El decorador <code>@functools.wraps(func)</code> preserva los metadatos de la función original (como su nombre y cadena de documentación) en la función envolvente. Esto se considera una mejor práctica al escribir decoradores.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Decorador con parámetros
 
-También puede definir parámetros para que los use el decorador.
+También puedes definir parámetros para que los use el decorador.
 
 ```python
 import functools
@@ -105,7 +133,7 @@ def your_decorator(arg):
       # Hacer cosas después de func posiblemente usando arg...
       return result
     return wrapper
-  return decorator  # Devolver la función decoradora real
+  return decorator  # Devuelve la función decoradora real
 ```
 
 Para usar este decorador:
@@ -120,8 +148,8 @@ def foo(bar):
 
 ## Decoradores basados en clases
 
-Para decorar un método de clase, debe definir el decorador dentro de la clase. Cuando
-solo se pasa el argumento implícito `self` al método, sin argumentos adicionales explícitos, debe crear un decorador separado solo para esos métodos sin argumentos adicionales. Un ejemplo de esto, que se muestra a continuación, es cuando se desea capturar e imprimir excepciones de cierta manera.
+Para decorar un método de clase, debes definir el decorador dentro de la clase. Cuando
+solo se pasa el argumento implícito `self` al método, sin argumentos adicionales explícitos, debes crear un decorador separado solo para esos métodos sin argumentos adicionales. Un ejemplo de esto, que se muestra a continuación, es cuando deseas capturar e imprimir excepciones de cierta manera.
 
 ```python
 # Decorador de método de clase: definido dentro de la clase
@@ -131,7 +159,7 @@ class DecorateMyMethod:
   def decorator_for_class_method_with_no_args(method):
     def wrapper_for_class_method(self):  # Solo toma self
       try:
-        return method(self)  # Llamar al método original
+        return method(self)  # Llama al método original
       except Exception as e:
         print("\nWARNING: Please make note of the following:\n")
         print(e)
@@ -172,13 +200,13 @@ para mantener y actualizar un estado, como en el siguiente ejemplo, donde contam
 class CountCallNumber:
 
   def __init__(self, func):
-    self.func = func  # Almacenar la función a decorar
-    self.call_number = 0  # Inicializar el contador de llamadas
+    self.func = func  # Almacena la función a decorar
+    self.call_number = 0  # Inicializa el contador de llamadas
 
   def __call__(self, *args, **kwargs):  # Hace que la instancia sea invocable
-    self.call_number += 1  # Incrementar contador
+    self.call_number += 1  # Incrementa el contador
     print("This is execution number " + str(self.call_number))
-    return self.func(*args, **kwargs)  # Llamar a la función original
+    return self.func(*args, **kwargs)  # Llama a la función original
 
 @CountCallNumber  # Crea una instancia de CountCallNumber
 def say_hi(name):
@@ -214,8 +242,8 @@ Hi! My name is James
 
 - <router-link to="/blog/python-decorators-for-beginners">Python Decorators: Simple Patterns to Level Up Your Code</router-link>
 - <router-link to="/blog/python-easy-args-kwargs">Python \*args and \*\*kwargs Made Easy</router-link>
-- <router-link to="/cheatsheet/functions">Functions</router-link>
-- <router-link to="/cheatsheet/args-and-kwargs">Args and Kwargs</router-link>
+- <router-link to="/cheatsheet/functions">Funciones</router-link>
+- <router-link to="/cheatsheet/args-and-kwargs">Args y Kwargs</router-link>
 - <router-link to="/builtin/classmethod">classmethod()</router-link>
 - <router-link to="/builtin/staticmethod">staticmethod()</router-link>
 - <router-link to="/builtin/property">property()</router-link>

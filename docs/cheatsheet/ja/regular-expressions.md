@@ -15,7 +15,7 @@ labUrl: 'https://labex.io/ja/labs/python-python-regular-expressions-633664?cours
     <a target="_blank" href="https://en.wikipedia.org/wiki/Regular_expression">正規表現</a>
   </base-disclaimer-title>
   <base-disclaimer-content>
-    正規表現（regex と略される）は、テキスト内の検索パターンを指定する一連の文字です。[...] 文字列に対する「検索」または「検索と置換」操作、あるいは入力検証のための文字列検索アルゴリズムによって使用されます。
+    正規表現（regex と略される）は、テキスト内の検索パターンを指定する文字のシーケンスです。[...] 文字列に対する「検索」または「検索と置換」操作、あるいは入力検証のために文字列検索アルゴリズムによって使用されます。
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -31,9 +31,9 @@ Python のすべての regex 関数は re モジュール内にあります。
 import re
 ```
 
-## Regex シンボル
+## Regex 記号
 
-| シンボル                         | 一致するもの                                       |
+| 記号                             | 一致するもの                                       |
 | :------------------------------- | :------------------------------------------------- |
 | `?`                              | 直前のグループの 0 回または 1 回。                 |
 | `*`                              | 直前のグループの 0 回以上。                        |
@@ -46,20 +46,20 @@ import re
 | `^spam`                          | 文字列が spam で始まる必要があることを意味します。 |
 | `spam$`                          | 文字列が spam で終わる必要があることを意味します。 |
 | `.`                              | 改行文字を除く任意の 1 文字。                      |
-| `\d`, `\w`, `\s`                 | それぞれ、数字、単語、またはスペース文字。         |
-| `\D`, `\W`, `\S`                 | それぞれ、数字、単語、またはスペース以外のすべて。 |
-| `[abc]`                          | ブラケット間にある任意の文字（a、b、など）。       |
+| `\d`, `\w`, および `\s`          | それぞれ、数字、単語、またはスペース文字。         |
+| `\D`, `\W`, および `\S`          | それぞれ、数字、単語、またはスペース以外のすべて。 |
+| `[abc]`                          | ブラケット間にある任意の文字（a、b、のような）。   |
 | `[^abc]`                         | ブラケット間にない任意の文字。                     |
 
-## Regex オブジェクトのマッチング
+## マッチング regex オブジェクト
 
 ```python
-# re.compile(): regex パターンオブジェクトを作成（エスケープを避けるために raw string r'' を使用）
+# re.compile(): regex パターンオブジェクトを作成します (エスケープを避けるために raw string r'' を使用)
 phone_num_regex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d')  # パターン：3 桁 -3 桁 -4 桁
 
 mo = phone_num_regex.search('My number is 415-555-4242.')  # パターンを検索
 
-print(f'Phone number found: {mo.group()}')  # group() は一致したテキストを返す
+print(f'Phone number found: {mo.group()}')  # group() は一致したテキストを返します
 ```
 
 ```output
@@ -69,11 +69,11 @@ Phone number found: 415-555-4242
 ## 丸括弧によるグループ化
 
 ```python
-# 丸括弧はグループを作成します：group(1) は最初のグループを返し、group(2) は 2 番目のグループを返します
-phone_num_regex = re.compile(r'(\d\d\d)-(\d\d\d-\d\d\d\d)')  # 丸括弧で 2 つのグループ
+# 丸括弧はグループを作成します：group(1) は最初のグループを返し、group(2) は 2 番目を返します
+phone_num_regex = re.compile(r'(\d\d\d)-(\d\d\d-\d\d\d\d)')  # 丸括弧内に 2 つのグループ
 mo = phone_num_regex.search('My number is 415-555-4242.')
 
-mo.group(1)  # 最初のグループを返す：'415'
+mo.group(1)  # 最初のグループを返します：'415'
 ```
 
 ```output
@@ -104,11 +104,25 @@ mo.group()
 '415-555-4242'
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+マッチオブジェクトに対して <code>group()</code> を呼び出すと、何が返されますか？
+</template>
+
+<base-quiz-option value="A" correct>A. 一致したテキスト全体</base-quiz-option>
+<base-quiz-option value="B">B. 最初のグループのみ</base-quiz-option>
+<base-quiz-option value="C">C. すべてのグループをリストとして</base-quiz-option>
+<base-quiz-option value="D">D. マッチのインデックス</base-quiz-option>
+<base-quiz-answer value="A"><code>group()</code> メソッド (または <code>group(0)</code>) は、一致したテキスト全体を返します。特定のグループを取得するには、<code>group(1)</code>、<code>group(2)</code> などを指定します。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 すべてのグループを一度に取得するには、`groups()` メソッドを使用します。
 
 ```python
-# groups(): すべてのグループのタプルを返す
-mo.groups()  # ('415', '555-4242') を返す
+# groups(): すべてのグループのタプルを返します
+mo.groups()  # ('415', '555-4242') を返します
 ```
 
 ```output
@@ -135,7 +149,7 @@ print(main_number)
 
 ## パイプによる複数グループ
 
-`|` 文字を使用して、一致させたい複数の式のいずれかを指定できます。
+`|` 文字を使用して、多くの式のいずれかに一致させたい場所を指定できます。
 
 ```python
 hero_regex = re.compile (r'Batman|Tina Fey')
@@ -202,9 +216,9 @@ mo2.group()
 'Batwoman'
 ```
 
-## スターによる 0 回以上のマッチング
+## アスタリスクによるゼロ回以上のマッチング
 
-`*`（スターまたはアスタリスク）は「0 回以上一致」を意味します。スターの直前のグループは、テキスト内で何回出現しても構いません。
+`*` (アスタリスク) は「ゼロ回以上一致」を意味します。アスタリスクの前のグループは、テキスト内で何度でも出現できます。
 
 ```python
 bat_regex = re.compile(r'Bat(wo)*man')
@@ -236,7 +250,7 @@ mo3.group()
 
 ## プラスによる 1 回以上のマッチング
 
-`+`（またはプラス）は「1 回以上一致」を意味します。プラスの直前のグループは、少なくとも 1 回出現する必要があります。
+`+` (プラス) は「1 回以上一致」を意味します。プラスの前のグループは少なくとも 1 回出現する必要があります。
 
 ```python
 bat_regex = re.compile(r'Bat(wo)+man')
@@ -269,7 +283,7 @@ True
 
 ## 波括弧による特定回数のマッチング
 
-グループを指定された回数だけ繰り返したい場合は、正規表現内のグループの直後に波括弧で囲んだ数値を続けます。
+グループを特定の回数繰り返したい場合は、正規表現内のグループの後に波括弧で囲んだ数値を続けます。
 
 ```python
 ha_regex = re.compile(r'(Ha){3}')
@@ -291,7 +305,7 @@ mo2 is None
 True
 ```
 
-1 つの数値の代わりに、波括弧の間に最小値と最大値を指定して範囲を指定できます。たとえば、正規表現 `(Ha){3,5}` は 'HaHaHa'、'HaHaHaHa'、および 'HaHaHaHaHa' に一致します。
+1 つの数値の代わりに、波括弧の間に最小値と最大値を指定して範囲を指定できます。たとえば、正規表現 (Ha){3,5} は 'HaHaHa'、'HaHaHaHa'、および 'HaHaHaHaHa' に一致します。
 
 ```python
 ha_regex = re.compile(r'(Ha){2,3}')
@@ -305,7 +319,7 @@ mo1.group()
 
 ## 貪欲マッチと非貪欲マッチ
 
-Python の正規表現はデフォルトで貪欲です。曖昧な状況では、可能な限り長い文字列に一致させようとします。波括弧の非貪欲バージョン（可能な限り短い文字列に一致）は、閉じ波括弧の後に疑問符を付けます。
+Python の正規表現はデフォルトで貪欲です。曖昧な状況では、可能な限り長い文字列に一致しようとします。波括弧の非貪欲バージョン（可能な限り短い文字列に一致）は、閉じ波括弧の後に疑問符を付けたものです。
 
 ```python
 greedy_ha_regex = re.compile(r'(Ha){3,5}')
@@ -328,12 +342,27 @@ mo2.group()
 'HaHaHa'
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+正規表現パターンを非貪欲にするものは何ですか？
+</template>
+
+<base-quiz-option value="A">A. <code>+</code> の代わりに <code>_</code> を使用する</base-quiz-option>
+<base-quiz-option value="B" correct>B. 量指定子 (例：<code>_?</code>、<code>+?</code>、<code>{3,5}?</code>) の後に <code>?</code> を追加する</base-quiz-option>
+<base-quiz-option value="C">C. 丸括弧を使用する</base-quiz-option>
+<base-quiz-option value="D">D. 角括弧を使用する</base-quiz-option>
+<base-quiz-answer value="B"><code>\*</code>、<code>+</code>、または <code>{n,m}</code> などの量指定子の後に <code>?</code> を追加すると、それらは非貪欲になり、最長の文字列ではなく最短の文字列に一致します。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## findall() メソッド
 
 `findall()` メソッドは、検索された文字列内のすべての一致の文字列を返します。
 
 ```python
 phone_num_regex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d') # グループなし
+
 phone_num_regex.findall('Cell: 415-555-9999 Work: 212-555-0000')
 ```
 
@@ -343,7 +372,7 @@ phone_num_regex.findall('Cell: 415-555-9999 Work: 212-555-0000')
 
 ## 独自の文字クラスの作成
 
-角括弧を使用して独自の文字クラスを定義できます。たとえば、文字クラス `[aeiouAEIOU]` は、小文字と大文字の母音のいずれかに一致します。
+角括弧を使用して独自の文字クラスを定義できます。たとえば、文字クラス _[aeiouAEIOU]_ は、小文字と大文字の両方の母音に一致します。
 
 ```python
 vowel_regex = re.compile(r'[aeiouAEIOU]')
@@ -354,7 +383,7 @@ vowel_regex.findall('Robocop eats baby food. BABY FOOD.')
 ['o', 'o', 'o', 'e', 'a', 'a', 'o', 'o', 'A', 'O', 'O']
 ```
 
-ハイフンを使用して文字または数字の範囲を含めることもできます。たとえば、文字クラス `[a-zA-Z0-9]` は、すべて小文字、大文字、および数字に一致します。
+ハイフンを使用して文字または数字の範囲を含めることもできます。たとえば、文字クラス _[a-zA-Z0-9]_ は、すべて小文字、すべて大文字、および数字に一致します。
 
 文字クラスの開始ブラケットの直後にキャレット文字 (`^`) を配置すると、文字クラスに含まれていないすべての文字に一致する否定文字クラスを作成できます。
 
@@ -369,11 +398,11 @@ consonant_regex.findall('Robocop eats baby food. BABY FOOD.')
 
 ## キャレットとドル記号の文字
 
-- 正規表現の先頭にキャレットシンボル `^` を使用して、検索テキストの先頭で一致が発生する必要があることを示すことができます。
+- 正規表現の先頭でキャレット記号 `^` を使用して、検索テキストの先頭で一致が発生する必要があることを示すことができます。
 
 - 同様に、正規表現の末尾にドル記号 `$` を配置すると、文字列がこの正規表現パターンで終了する必要があることを示します。
 
-- そして、`^` と `$` を一緒に使用して、文字列全体が正規表現に一致する必要があることを示します。
+- そして、`^` と `$` を一緒に使用して、文字列全体が正規表現に一致する必要があることを示すことができます。
 
 正規表現文字列 `r'^Hello'` は 'Hello' で始まる文字列に一致します。
 
@@ -394,7 +423,7 @@ begins_with_hello.search('He said hello.') is None
 True
 ```
 
-正規表現文字列 `r'\d\$'` は、0 から 9 までの数値で終わる文字列に一致します。
+正規表現文字列 `r'\d\$'` は、0 から 9 の数値で終わる文字列に一致します。
 
 ```python
 whole_string_is_num = re.compile(r'^\d+$')
@@ -424,7 +453,7 @@ True
 
 ## ワイルドカード文字
 
-正規表現の `.`（ドット）文字は、改行を除く任意の文字に一致します。
+正規表現の `.` (ドット) 文字は、改行を除く任意の文字に一致します。
 
 ```python
 at_regex = re.compile(r'.at')
@@ -457,7 +486,7 @@ mo.group(2)
 'Sweigart'
 ```
 
-`.*` は貪欲モードを使用します。常に可能な限り多くのテキストに一致させようとします。あらゆるテキストを非貪欲に一致させるには、ドット、スター、疑問符 (`.*?`) を使用します。疑問符は Python に非貪欲に一致させるように指示します。
+`.*` は貪欲モードを使用します。可能な限り多くのテキストに一致させようとします。あらゆるテキストを非貪欲に一致させるには、ドット、スター、疑問符 (`.*?`) を使用します。疑問符は Python に非貪欲に一致させるように指示します。
 
 ```python
 non_greedy_regex = re.compile(r'<.*?>')
@@ -479,7 +508,7 @@ mo.group()
 '<To serve man> for dinner.>'
 ```
 
-## ドット文字による改行のマッチング
+## ドット文字による改行の一致
 
 ドットスターは改行を除くすべてに一致します。`re.compile()` の 2 番目の引数として `re.DOTALL` を渡すことで、ドット文字が改行文字を含むすべての文字に一致するようにできます。
 
@@ -501,9 +530,9 @@ newline_regex.search('Serve the public trust.\nProtect the innocent.\nUphold the
 'Serve the public trust.\nProtect the innocent.\nUphold the law.'
 ```
 
-## 大文字と小文字を区別しないマッチング
+## 大文字・小文字を区別しないマッチング
 
-正規表現を大文字と小文字を区別しないようにするには、`re.compile()` の 2 番目の引数として `re.IGNORECASE` または `re.I` 変数を渡すことができます。
+正規表現を大文字・小文字を区別しないようにするには、`re.compile()` の 2 番目の引数として `re.IGNORECASE` または `re.I` を渡すことができます。
 
 ```python
 robocop = re.compile(r'robocop', re.I)
@@ -550,11 +579,25 @@ names_regex.sub('CENSORED', 'Agent Alice gave the secret documents to Agent Bob.
 'CENSORED gave the secret documents to CENSORED.'
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+<code>sub()</code> メソッドは何をしますか？
+</template>
+
+<base-quiz-option value="A">A. 文字列内のすべての一致を見つける</base-quiz-option>
+<base-quiz-option value="B" correct>B. すべての一致を指定された置換文字列に置き換える</base-quiz-option>
+<base-quiz-option value="C">C. 一致箇所で文字列を分割する</base-quiz-option>
+<base-quiz-option value="D">D. 文字列形式を検証する</base-quiz-option>
+<base-quiz-answer value="B"><code>sub()</code> メソッドは、パターンのすべての一致を指定された置換文字列に置き換えます。置換が適用された新しい文字列を返します。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## 複雑な Regex の管理
 
 `re.compile()` 関数に、正規表現文字列内の空白文字とコメントを無視するように指示するには、「verbose モード」を有効にできます。これは、`re.compile()` の 2 番目の引数として変数 `re.VERBOSE` を渡すことで実行できます。
 
-次のような読みにくい正規表現の代わりに。
+このとき、次のような読みにくい正規表現の代わりに：
 
 ```python
 phone_regex = re.compile(r'((\d{3}|\(\d{3}\))?(\s|-|\.)?\d{3}(\s|-|\.)\d{4}(\s*(ext|x|ext.)\s*\d{2,5})?)')
@@ -573,9 +616,23 @@ phone_regex = re.compile(r'''(
     )''', re.VERBOSE)
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+<code>re.compile()</code> に渡された <code>re.VERBOSE</code> は何を行いますか？
+</template>
+
+<base-quiz-option value="A" correct>A. 正規表現パターン内の空白文字とコメントを許可し、可読性を向上させる</base-quiz-option>
+<base-quiz-option value="B">B. 正規表現を大文字・小文字を区別しないようにする</base-quiz-option>
+<base-quiz-option value="C">C. ドット文字が改行文字に一致するようにする</base-quiz-option>
+<base-quiz-option value="D">D. 正規表現のマッチングを高速化する</base-quiz-option>
+<base-quiz-answer value="A"><code>re.VERBOSE</code> フラグを使用すると、正規表現パターンに空白文字とコメントを追加でき、複雑な正規表現の可読性が大幅に向上しますが、パターンマッチングには影響しません。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## 関連リンク
 
 - <router-link to="/cheatsheet/manipulating-strings">文字列の操作</router-link>
 - <router-link to="/cheatsheet/string-formatting">文字列のフォーマット</router-link>
-- <router-link to="/blog/python-data-types">Python データ型ブログ投稿</router-link>
+- <router-link to="/blog/python-data-types">Python データ型ブログ記事</router-link>
 - <router-link to="/builtin/compile">compile()</router-link>

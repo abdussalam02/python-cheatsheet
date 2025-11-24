@@ -14,21 +14,21 @@ Las Comprensiones de Listas son un tipo especial de sintaxis que nos permite cre
 
 <base-disclaimer>
   <base-disclaimer-title>
-    Del <a target="_blank" href="https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions">tutorial</a> de Python 3
+    Del tutorial de Python 3 <a target="_blank" href="https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions">aquí</a>
   </base-disclaimer-title>
   <base-disclaimer-content>
-    Las comprensiones de listas proporcionan una forma concisa de crear listas. [...] o para crear una subsecuencia de esos elementos que satisfacen una cierta condición.
+    Las comprensiones de listas proporcionan una forma concisa de crear listas. [...] o para crear una subsecuencia de aquellos elementos que satisfacen una cierta condición.
   </base-disclaimer-content>
 </base-disclaimer>
 
-Lea <router-link to="/blog/python-comprehensions-step-by-step">Python Comprehensions: A step by step Introduction</router-link> para una introducción más profunda.
+Lea <router-link to="/blog/python-comprehensions-step-by-step">Comprensiones de Python: Una introducción paso a paso</router-link> para una introducción más profunda.
 
 ## Comprensión de listas
 
 Así es como creamos una nueva lista a partir de una colección existente con un Bucle For:
 
 ```python
-# Traditional approach: create list using a for loop
+# Enfoque tradicional: crear lista usando un bucle for
 names = ['Charles', 'Susan', 'Patrick', 'George']
 
 new_list = []
@@ -45,11 +45,11 @@ new_list
 Y así es como hacemos lo mismo con una Comprensión de Listas:
 
 ```python
-# List comprehension: concise way to create a new list
-# Syntax: [expression for item in iterable]
+# Comprensión de listas: forma concisa de crear una nueva lista
+# Sintaxis: [expresión for elemento in iterable]
 names = ['Charles', 'Susan', 'Patrick', 'George']
 
-new_list = [n for n in names]  # Create list with all names
+new_list = [n for n in names]  # Crear lista con todos los nombres
 new_list
 ```
 
@@ -57,11 +57,25 @@ new_list
 ['Charles', 'Susan', 'Patrick', 'George']
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+¿Cuál es la sintaxis básica de una comprensión de listas?
+</template>
+
+<base-quiz-option value="A" correct>A. <code>[expresión for elemento in iterable]</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>(expresión for elemento in iterable)</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>{expresión for elemento in iterable}</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>expresión for elemento in iterable</code></base-quiz-option>
+<base-quiz-answer value="A">Las comprensiones de listas usan corchetes <code>[]</code> con la sintaxis <code>[expresión for elemento in iterable]</code>. Esto crea una nueva lista aplicando la expresión a cada elemento.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 Podemos hacer lo mismo con números:
 
 ```python
-# Nested list comprehension: create tuples from two ranges
-# Equivalent to nested for loops
+# Comprensión de lista anidada: crear tuplas a partir de dos rangos
+# Equivalente a bucles for anidados
 n = [(a, b) for a in range(1, 3) for b in range(1, 3)]
 n
 ```
@@ -72,15 +86,15 @@ n
 
 ## Añadir condicionales
 
-Si queremos que `new_list` contenga solo los nombres que comienzan con C, con un bucle for, lo haríamos de esta manera:
+Si queremos que `new_list` contenga solo los nombres que comienzan con C, con un bucle for, lo haríamos así:
 
 ```python
-# Traditional approach: filter with if condition
+# Enfoque tradicional: filtrar con condición if
 names = ['Charles', 'Susan', 'Patrick', 'George', 'Carol']
 
 new_list = []
 for n in names:
-    if n.startswith('C'):  # Filter names starting with 'C'
+    if n.startswith('C'):  # Filtrar nombres que comienzan con 'C'
         new_list.append(n)
 
 print(new_list)
@@ -90,11 +104,11 @@ print(new_list)
 ['Charles', 'Carol']
 ```
 
-En una Comprensión de Listas, añadimos la declaración `if` al final:
+En una Comprensión de Listas, añadimos la sentencia `if` al final:
 
 ```python
-# List comprehension with condition: filter items
-# Syntax: [expression for item in iterable if condition]
+# Comprensión de listas con condición: filtrar elementos
+# Sintaxis: [expresión for elemento in iterable if condición]
 new_list = [n for n in names if n.startswith('C')]
 print(new_list)
 ```
@@ -103,13 +117,27 @@ print(new_list)
 ['Charles', 'Carol']
 ```
 
-Para usar una declaración `if-else` en una Comprensión de Listas:
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+¿Dónde va la condición <code>if</code> en una comprensión de listas?
+</template>
+
+<base-quiz-option value="A">A. Antes de la palabra clave <code>for</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. Después de la cláusula <code>for</code></base-quiz-option>
+<base-quiz-option value="C">C. Dentro de la expresión</base-quiz-option>
+<base-quiz-option value="D">D. Antes de los corchetes</base-quiz-option>
+<base-quiz-answer value="B">En una comprensión de listas, la condición <code>if</code> viene después de la cláusula <code>for</code>: <code>[expresión for elemento in iterable if condición]</code>. Esto filtra elementos basándose en la condición.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+Para usar una sentencia `if-else` en una Comprensión de Listas:
 
 ```python
-# List comprehension with if-else: conditional expression
-# Syntax: [expression_if_true if condition else expression_if_false for item in iterable]
+# Comprensión de listas con if-else: expresión condicional
+# Sintaxis: [expresión_si_verdadero if condición else expresión_si_falso for elemento in iterable]
 nums = [1, 2, 3, 4, 5, 6]
-new_list = [num*2 if num % 2 == 0 else num for num in nums]  # Double even numbers
+new_list = [num*2 if num % 2 == 0 else num for num in nums]  # Duplicar números pares
 print(new_list)
 ```
 
@@ -122,42 +150,56 @@ print(new_list)
     Comprensiones de conjuntos y diccionarios
   </base-disclaimer-title>
   <base-disclaimer-content>
-    Los conceptos básicos de las comprensiones de `list` también se aplican a los <b>conjuntos</b> (sets) y a los <b>diccionarios</b> (dictionaries).
+    Los conceptos básicos de las comprensiones de `list` también se aplican a los <b>conjuntos</b> y <b>diccionarios</b>.
   </base-disclaimer-content>
 </base-disclaimer>
 
-## Comprensión de conjuntos (Set comprehension)
+## Comprensión de conjuntos
 
 ```python
-# Set comprehension: create a set using comprehension syntax
-# Syntax: {expression for item in iterable}
+# Comprensión de conjuntos: crear un conjunto usando sintaxis de comprensión
+# Sintaxis: {expresión for elemento in iterable}
 b = {"abc", "def"}
-{s.upper() for s in b}  # Convert all strings to uppercase
+{s.upper() for s in b}  # Convertir todas las cadenas a mayúsculas
 ```
 
 ```output
 {"ABC", "DEF"}
 ```
 
-## Comprensión de diccionarios (Dict comprehension)
+## Comprensión de diccionarios
 
 ```python
-# Dict comprehension: swap keys and values
-# Syntax: {key_expression: value_expression for item in iterable}
+# Comprensión de diccionarios: intercambiar claves y valores
+# Sintaxis: {expresión_clave: expresión_valor for elemento in iterable}
 c = {'name': 'Pooka', 'age': 5}
-{v: k for k, v in c.items()}  # Reverse key-value pairs
+{v: k for k, v in c.items()}  # Invertir pares clave-valor
 ```
 
 ```output
 {'Pooka': 'name', 5: 'age'}
 ```
 
-Una comprensión de listas puede generarse a partir de un diccionario:
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+¿Qué sintaxis se utiliza para las comprensiones de diccionarios?
+</template>
+
+<base-quiz-option value="A">A. <code>[clave: valor for elemento in iterable]</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>(clave: valor for elemento in iterable)</code></base-quiz-option>
+<base-quiz-option value="C" correct>C. <code>{expresión_clave: expresión_valor for elemento in iterable}</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>{clave, valor for elemento in iterable}</code></base-quiz-option>
+<base-quiz-answer value="C">Las comprensiones de diccionarios usan llaves <code>{}</code> con la sintaxis <code>{expresión_clave: expresión_valor for elemento in iterable}</code>, similar a las comprensiones de listas pero con pares clave-valor.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+Se puede generar una comprensión de listas a partir de un diccionario:
 
 ```python
-# List comprehension from dictionary: create formatted strings
+# Comprensión de listas a partir de un diccionario: crear cadenas formateadas
 c = {'name': 'Pooka', 'age': 5}
-["{}:{}".format(k.upper(), v) for k, v in c.items()]  # Format as "KEY:value"
+["{}:{}".format(k.upper(), v) for k, v in c.items()]  # Formatear como "CLAVE:valor"
 ```
 
 ```output
@@ -166,9 +208,9 @@ c = {'name': 'Pooka', 'age': 5}
 
 ## Enlaces relevantes
 
-- <router-link to="/blog/python-comprehensions-step-by-step">Python Comprehensions: A step by step Introduction</router-link>
-- <router-link to="/cheatsheet/lists-and-tuples">Python Lists and Tuples</router-link>
-- <router-link to="/cheatsheet/sets">Python Sets</router-link>
-- <router-link to="/cheatsheet/dictionaries">Python Dictionaries</router-link>
-- <router-link to="/blog/python-sets-what-why-how">Python Sets: What, Why and How</router-link>
-- <router-link to="/blog/python-data-types">Python Data Types Blog Post</router-link>
+- <router-link to="/blog/python-comprehensions-step-by-step">Comprensiones de Python: Una introducción paso a paso</router-link>
+- <router-link to="/cheatsheet/lists-and-tuples">Listas y Tuplas de Python</router-link>
+- <router-link to="/cheatsheet/sets">Conjuntos de Python</router-link>
+- <router-link to="/cheatsheet/dictionaries">Diccionarios de Python</router-link>
+- <router-link to="/blog/python-sets-what-why-how">Conjuntos de Python: Qué, Por qué y Cómo</router-link>
+- <router-link to="/blog/python-data-types">Publicación del Blog sobre Tipos de Datos de Python</router-link>

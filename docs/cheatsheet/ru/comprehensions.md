@@ -1,34 +1,34 @@
 ---
 title: 'Генераторы Python - Шпаргалка по Python'
-description: 'Генераторы списков обеспечивают краткий способ создания списков'
+description: 'Генераторы списков предоставляют краткий способ создания списков'
 labUrl: 'https://labex.io/ru/labs/python-python-comprehensions-633649?course=python-cheatsheet'
 ---
 
 <base-title :title="frontmatter.title" :description="frontmatter.description">
-Python Comprehensions
+Генераторы Python (Comprehensions)
 </base-title>
 
 <base-lab-url :url="frontmatter.labUrl" />
 
-List Comprehensions — это особый синтаксис, который позволяет нам создавать списки из других списков и невероятно полезен при работе с числами и одним или двумя уровнями вложенных циклов `for`.
+Генераторы списков (List Comprehensions) — это особый синтаксис, который позволяет создавать списки из других списков и невероятно полезен при работе с числами и одним или двумя уровнями вложенных циклов `for`.
 
 <base-disclaimer>
   <base-disclaimer-title>
     Из руководства Python 3 <a target="_blank" href="https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions">tutorial</a>
   </base-disclaimer-title>
   <base-disclaimer-content>
-    List comprehensions provide a concise way to create lists. [...] or to create a subsequence of those elements that satisfy a certain condition.
+    Генераторы списков предоставляют краткий способ создания списков. [...] или для создания подпоследовательности тех элементов, которые удовлетворяют определенному условию.
   </base-disclaimer-content>
 </base-disclaimer>
 
 Прочтите <router-link to="/blog/python-comprehensions-step-by-step">Python Comprehensions: A step by step Introduction</router-link> для более подробного введения.
 
-## List comprehension
+## Генератор списка (List comprehension)
 
-Вот как мы создаем новый список из существующей коллекции с помощью цикла For:
+Вот как мы создаем новый список из существующей коллекции с помощью цикла `For Loop`:
 
 ```python
-# Traditional approach: create list using a for loop
+# Традиционный подход: создание списка с помощью цикла for
 names = ['Charles', 'Susan', 'Patrick', 'George']
 
 new_list = []
@@ -42,14 +42,14 @@ new_list
 ['Charles', 'Susan', 'Patrick', 'George']
 ```
 
-А вот как мы делаем то же самое с помощью List Comprehension:
+А вот как мы делаем то же самое с помощью генератора списка (List Comprehension):
 
 ```python
-# List comprehension: concise way to create a new list
-# Syntax: [expression for item in iterable]
+# Генератор списка: краткий способ создания нового списка
+# Синтаксис: [expression for item in iterable]
 names = ['Charles', 'Susan', 'Patrick', 'George']
 
-new_list = [n for n in names]  # Create list with all names
+new_list = [n for n in names]  # Создать список со всеми именами
 new_list
 ```
 
@@ -57,11 +57,25 @@ new_list
 ['Charles', 'Susan', 'Patrick', 'George']
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+What is the basic syntax of a list comprehension?
+</template>
+
+<base-quiz-option value="A" correct>A. <code>[expression for item in iterable]</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>(expression for item in iterable)</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>{expression for item in iterable}</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>expression for item in iterable</code></base-quiz-option>
+<base-quiz-answer value="A">List comprehensions use square brackets <code>[]</code> with the syntax <code>[expression for item in iterable]</code>. This creates a new list by applying the expression to each item.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 Мы можем сделать то же самое с числами:
 
 ```python
-# Nested list comprehension: create tuples from two ranges
-# Equivalent to nested for loops
+# Вложенный генератор списка: создание кортежей из двух диапазонов
+# Эквивалентно вложенным циклам for
 n = [(a, b) for a in range(1, 3) for b in range(1, 3)]
 n
 ```
@@ -70,17 +84,17 @@ n
 [(1, 1), (1, 2), (2, 1), (2, 2)]
 ```
 
-## Adding conditionals
+## Добавление условий
 
-Если бы мы хотели, чтобы `new_list` содержал только имена, начинающиеся с C, с помощью цикла for, мы бы сделали это так:
+Если мы хотим, чтобы `new_list` содержал только имена, начинающиеся с 'C', с помощью цикла `for` мы бы сделали это так:
 
 ```python
-# Traditional approach: filter with if condition
+# Традиционный подход: фильтрация с условием if
 names = ['Charles', 'Susan', 'Patrick', 'George', 'Carol']
 
 new_list = []
 for n in names:
-    if n.startswith('C'):  # Filter names starting with 'C'
+    if n.startswith('C'):  # Фильтрация имен, начинающихся с 'C'
         new_list.append(n)
 
 print(new_list)
@@ -90,11 +104,11 @@ print(new_list)
 ['Charles', 'Carol']
 ```
 
-В List Comprehension мы добавляем оператор `if` в конце:
+В генераторе списка мы добавляем оператор `if` в конец:
 
 ```python
-# List comprehension with condition: filter items
-# Syntax: [expression for item in iterable if condition]
+# Генератор списка с условием: фильтрация элементов
+# Синтаксис: [expression for item in iterable if condition]
 new_list = [n for n in names if n.startswith('C')]
 print(new_list)
 ```
@@ -103,13 +117,27 @@ print(new_list)
 ['Charles', 'Carol']
 ```
 
-Чтобы использовать оператор `if-else` в List Comprehension:
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Where does the <code>if</code> condition go in a list comprehension?
+</template>
+
+<base-quiz-option value="A">A. Before the <code>for</code> keyword</base-quiz-option>
+<base-quiz-option value="B" correct>B. After the <code>for</code> clause</base-quiz-option>
+<base-quiz-option value="C">C. Inside the expression</base-quiz-option>
+<base-quiz-option value="D">D. Before the square brackets</base-quiz-option>
+<base-quiz-answer value="B">In a list comprehension, the <code>if</code> condition comes after the <code>for</code> clause: <code>[expression for item in iterable if condition]</code>. This filters items based on the condition.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+Чтобы использовать оператор `if-else` в генераторе списка:
 
 ```python
-# List comprehension with if-else: conditional expression
-# Syntax: [expression_if_true if condition else expression_if_false for item in iterable]
+# Генератор списка с if-else: условное выражение
+# Синтаксис: [expression_if_true if condition else expression_if_false for item in iterable]
 nums = [1, 2, 3, 4, 5, 6]
-new_list = [num*2 if num % 2 == 0 else num for num in nums]  # Double even numbers
+new_list = [num*2 if num % 2 == 0 else num for num in nums]  # Удвоить четные числа
 print(new_list)
 ```
 
@@ -119,52 +147,66 @@ print(new_list)
 
 <base-disclaimer>
   <base-disclaimer-title>
-    Set and Dict comprehensions
+    Генераторы множеств и словарей (Set and Dict comprehensions)
   </base-disclaimer-title>
   <base-disclaimer-content>
-    The basics of `list` comprehensions also apply to <b>sets</b> and <b>dictionaries</b>.
+    Основы генераторов списков также применимы к <b>множествам</b> (sets) и <b>словарям</b> (dictionaries).
   </base-disclaimer-content>
 </base-disclaimer>
 
-## Set comprehension
+## Генератор множества (Set comprehension)
 
 ```python
-# Set comprehension: create a set using comprehension syntax
-# Syntax: {expression for item in iterable}
+# Генератор множества: создание множества с использованием синтаксиса генератора
+# Синтаксис: {expression for item in iterable}
 b = {"abc", "def"}
-{s.upper() for s in b}  # Convert all strings to uppercase
+{s.upper() for s in b}  # Преобразовать все строки в верхний регистр
 ```
 
 ```output
 {"ABC", "DEF"}
 ```
 
-## Dict comprehension
+## Генератор словаря (Dict comprehension)
 
 ```python
-# Dict comprehension: swap keys and values
-# Syntax: {key_expression: value_expression for item in iterable}
+# Генератор словаря: поменять местами ключи и значения
+# Синтаксис: {key_expression: value_expression for item in iterable}
 c = {'name': 'Pooka', 'age': 5}
-{v: k for k, v in c.items()}  # Reverse key-value pairs
+{v: k for k, v in c.items()}  # Поменять местами пары ключ-значение
 ```
 
 ```output
 {'Pooka': 'name', 5: 'age'}
 ```
 
-List comprehension может быть сгенерирован из словаря:
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+What syntax is used for dictionary comprehensions?
+</template>
+
+<base-quiz-option value="A">A. <code>[key: value for item in iterable]</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>(key: value for item in iterable)</code></base-quiz-option>
+<base-quiz-option value="C" correct>C. <code>{key_expression: value_expression for item in iterable}</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>{key, value for item in iterable}</code></base-quiz-option>
+<base-quiz-answer value="C">Dictionary comprehensions use curly braces <code>{}</code> with the syntax <code>{key_expression: value_expression for item in iterable}</code>, similar to list comprehensions but with key-value pairs.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+Генератор списка может быть создан из словаря:
 
 ```python
-# List comprehension from dictionary: create formatted strings
+# Генератор списка из словаря: создание отформатированных строк
 c = {'name': 'Pooka', 'age': 5}
-["{}:{}".format(k.upper(), v) for k, v in c.items()]  # Format as "KEY:value"
+["{}:{}".format(k.upper(), v) for k, v in c.items()]  # Формат как "KEY:value"
 ```
 
 ```output
 ['NAME:Pooka', 'AGE:5']
 ```
 
-## Relevant links
+## Связанные ссылки
 
 - <router-link to="/blog/python-comprehensions-step-by-step">Python Comprehensions: A step by step Introduction</router-link>
 - <router-link to="/cheatsheet/lists-and-tuples">Python Lists and Tuples</router-link>

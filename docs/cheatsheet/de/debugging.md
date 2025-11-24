@@ -15,7 +15,7 @@ Python Debugging
     <a target="_blank" href="https://en.wikipedia.org/wiki/Debugging">Finden und Beheben von Fehlern</a>
   </base-disclaimer-title>
   <base-disclaimer-content>
-    In der Computerprogrammierung und Softwareentwicklung ist Debugging der Prozess des Findens und Behebens von Bugs (Fehlern oder Problemen, die eine korrekte Funktion verhindern) in Computerprogrammen, Software oder Systemen.
+    Beim Programmieren und in der Softwareentwicklung ist Debugging der Prozess des Findens und Behebens von Bugs (Fehlern oder Problemen, die eine korrekte Funktion verhindern) in Computerprogrammen, Software oder Systemen.
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -39,10 +39,24 @@ Traceback (most recent call last):
 Exception: This is the error message.
 ```
 
-Normalerweise ist es der Code, der die Funktion aufruft, und nicht die Funktion selbst, der weiß, wie eine Ausnahme zu behandeln ist. Daher werden Sie häufig eine `raise`-Anweisung innerhalb einer Funktion und die `try`- und `except`-Anweisungen im Code sehen, der die Funktion aufruft.
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Welches Schlüsselwort wird verwendet, um in Python manuell eine Ausnahme auszulösen?
+</template>
+
+<base-quiz-option value="A">A. <code>throw</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>raise</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>error</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>exception</code></base-quiz-option>
+<base-quiz-answer value="B">Das Schlüsselwort <code>raise</code> wird verwendet, um manuell eine Ausnahme in Python auszulösen. Sie können eingebaute Ausnahmen oder benutzerdefinierte Ausnahmen auslösen.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+Typischerweise ist es der Code, der die Funktion aufruft, und nicht die Funktion selbst, der weiß, wie eine Ausnahme zu behandeln ist. Daher werden Sie häufig eine `raise`-Anweisung innerhalb einer Funktion und die Anweisungen `try` und `except` im aufrufenden Code sehen.
 
 ```python
-# Ausnahmen in der Funktion auslösen, im aufrufenden Code behandeln
+# Raise exceptions in function, handle them in calling code
 def box_print(symbol, width, height):
     if len(symbol) != 1:
       raise Exception('Symbol must be a single character string.')
@@ -55,11 +69,11 @@ def box_print(symbol, width, height):
         print(symbol + (' ' * (width - 2)) + symbol)
     print(symbol * width)
 
-# Ausnahmen bei Funktionsaufruf behandeln
+# Handle exceptions when calling the function
 for sym, w, h in (('*', 4, 4), ('O', 20, 5), ('x', 1, 3), ('ZZ', 3, 3)):
     try:
         box_print(sym, w, h)
-    except Exception as err:  # Ausnahme abfangen und Fehlermeldung ausgeben
+    except Exception as err:  # Catch exception and print error message
         print('An exception happened: ' + str(err))
 ```
 
@@ -81,7 +95,7 @@ Lesen Sie mehr über [Exception Handling](/cheatsheet/exception-handling).
 
 ## Den Traceback als String erhalten
 
-Der `traceback` wird von Python angezeigt, wann immer eine ausgelöste Ausnahme unbehandelt bleibt. Sie können ihn aber auch als String erhalten, indem Sie `traceback.format_exc()` aufrufen. Diese Funktion ist nützlich, wenn Sie die Informationen aus dem Traceback einer Ausnahme benötigen, aber auch möchten, dass eine `except`-Anweisung die Ausnahme elegant behandelt. Sie müssen das `traceback`-Modul von Python importieren, bevor Sie diese Funktion aufrufen.
+Der `traceback` wird von Python angezeigt, wenn eine ausgelöste Ausnahme unbehandelt bleibt. Sie können ihn aber auch als String erhalten, indem Sie `traceback.format_exc()` aufrufen. Diese Funktion ist nützlich, wenn Sie die Informationen aus dem Traceback einer Ausnahme benötigen, aber trotzdem eine `except`-Anweisung verwenden möchten, um die Ausnahme elegant zu behandeln. Sie müssen das `traceback`-Modul von Python importieren, bevor Sie diese Funktion aufrufen.
 
 ```python
 # traceback.format_exc(): Traceback als String für Logging/Debugging erhalten
@@ -106,9 +120,9 @@ Die 116 ist der Rückgabewert der `write()`-Methode, da 116 Zeichen in die Datei
       File "<pyshell#28>", line 2, in <module>
     Exception: This is the error message.
 
-## Assertions
+## Assertions (Zusicherungen)
 
-Eine Assertion ist eine Plausibilitätsprüfung, um sicherzustellen, dass Ihr Code nichts offensichtlich Falsches tut. Diese Plausibilitätsprüfungen werden durch `assert`-Anweisungen durchgeführt. Wenn die Plausibilitätsprüfung fehlschlägt, wird eine `AssertionError`-Ausnahme ausgelöst. Im Code besteht eine `assert`-Anweisung aus Folgendem:
+Eine Assertion ist eine Plausibilitätsprüfung, um sicherzustellen, dass Ihr Code nichts offensichtlich Falsches tut. Diese Plausibilitätsprüfungen werden durch `assert`-Anweisungen durchgeführt. Wenn die Plausibilitätsprüfung fehlschlägt, wird eine Ausnahme vom Typ `AssertionError` ausgelöst. Im Code besteht eine `assert`-Anweisung aus Folgendem:
 
 - Das Schlüsselwort `assert`
 - Eine Bedingung (d. h. ein Ausdruck, der zu `True` oder `False` ausgewertet wird)
@@ -131,22 +145,50 @@ Traceback (most recent call last):
 AssertionError: The pod bay doors need to be "open".
 ```
 
-In einfachem Deutsch besagt eine `assert`-Anweisung: „Ich behaupte, dass diese Bedingung wahr ist, und wenn nicht, gibt es irgendwo im Programm einen Fehler.“ Im Gegensatz zu Ausnahmen sollte Ihr Code `assert`-Anweisungen nicht mit `try` und `except` behandeln; wenn ein `assert` fehlschlägt, sollte Ihr Programm abstürzen. Durch dieses schnelle Scheitern verkürzen Sie die Zeit zwischen der ursprünglichen Ursache des Fehlers und dem ersten Auftreten des Fehlers. Dies reduziert die Menge an Code, die Sie überprüfen müssen, bevor Sie den fehlerverursachenden Code finden.
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+Was passiert, wenn eine <code>assert</code>-Anweisung fehlschlägt?
+</template>
+
+<base-quiz-option value="A">A. Das Programm läuft weiter</base-quiz-option>
+<base-quiz-option value="B">B. Eine Warnung wird ausgegeben</base-quiz-option>
+<base-quiz-option value="C" correct>C. Ein <code>AssertionError</code> wird ausgelöst und das Programm sollte abstürzen</base-quiz-option>
+<base-quiz-option value="D">D. Die Bedingung wird automatisch korrigiert</base-quiz-option>
+<base-quiz-answer value="C">Wenn eine <code>assert</code>-Anweisung fehlschlägt, löst sie einen <code>AssertionError</code> aus. Im Gegensatz zu Ausnahmen sollten Assert-Anweisungen nicht mit try-except abgefangen werden; wenn ein Assert fehlschlägt, sollte Ihr Programm abstürzen, um Ihnen zu helfen, Fehler schnell zu finden.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+Vereinfacht ausgedrückt besagt eine Assert-Anweisung: „Ich versichere, dass diese Bedingung wahr ist, und wenn nicht, liegt irgendwo im Programm ein Fehler vor.“ Im Gegensatz zu Ausnahmen sollte Ihr Code Assert-Anweisungen nicht mit try und except behandeln; wenn ein Assert fehlschlägt, sollte Ihr Programm abstürzen. Durch dieses schnelle Scheitern verkürzen Sie die Zeit zwischen der ursprünglichen Ursache des Fehlers und dem ersten Auftreten des Fehlers. Dies reduziert die Menge an Code, die Sie überprüfen müssen, bevor Sie den fehlerverursachenden Code finden.
 
 ### Deaktivieren von Assertions
 
-Assertions können deaktiviert werden, indem die Option `-O` übergeben wird, wenn Python ausgeführt wird.
+Assertions können deaktiviert werden, indem die Option `-O` beim Ausführen von Python übergeben wird.
 
-## Logging
+## Logging (Protokollierung)
 
-Um das `logging`-Modul so zu aktivieren, dass Log-Meldungen auf Ihrem Bildschirm angezeigt werden, während Ihr Programm läuft, kopieren Sie Folgendes an den Anfang Ihres Programms:
+Um das `logging`-Modul so zu aktivieren, dass Log-Meldungen während der Programmausführung auf Ihrem Bildschirm angezeigt werden, kopieren Sie Folgendes an den Anfang Ihres Programms:
 
 ```python
 import logging
 logging.basicConfig(level=logging.DEBUG, format=' %(asctime)s - %(levelname)s- %(message)s')
 ```
 
-Angenommen, Sie haben eine Funktion geschrieben, um die Fakultät einer Zahl zu berechnen. In der Mathematik ist Fakultät 4 gleich 1 × 2 × 3 × 4, oder 24. Fakultät 7 ist 1 × 2 × 3 × 4 × 5 × 6 × 7, oder 5.040. Öffnen Sie ein neues Dateieditorfenster und geben Sie den folgenden Code ein. Er enthält einen Fehler, aber Sie werden auch mehrere Log-Meldungen eingeben, um sich selbst bei der Fehlersuche zu helfen. Speichern Sie das Programm als factorialLog.py.
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+Was ist der Zweck des <code>logging</code>-Moduls in Python?
+</template>
+
+<base-quiz-option value="A" correct>A. Aufzeichnung von Informationen über die Programmausführung zur Fehlerbehebung und Überwachung</base-quiz-option>
+<base-quiz-option value="B">B. Verhindern, dass Fehler auftreten</base-quiz-option>
+<base-quiz-option value="C">C. Beschleunigung der Programmausführung</base-quiz-option>
+<base-quiz-option value="D">D. Verschlüsseln von Log-Meldungen</base-quiz-option>
+<base-quiz-answer value="A">Das <code>logging</code>-Modul ermöglicht es Ihnen, Informationen über die Ausführung Ihres Programms auf verschiedenen Ebenen (DEBUG, INFO, WARNING, ERROR, CRITICAL) aufzuzeichnen, was zur Fehlerbehebung und Überwachung nützlich ist.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+Angenommen, Sie haben eine Funktion zur Berechnung der Fakultät einer Zahl geschrieben. In der Mathematik ist die Fakultät von 4 gleich 1 × 2 × 3 × 4, also 24. Die Fakultät von 7 ist 1 × 2 × 3 × 4 × 5 × 6 × 7, also 5.040. Öffnen Sie ein neues Dateieditorfenster und geben Sie den folgenden Code ein. Er enthält einen Fehler, aber Sie werden auch mehrere Log-Meldungen einfügen, um sich bei der Fehlersuche zu helfen. Speichern Sie das Programm als factorialLog.py.
 
 ```python
 import logging
@@ -180,17 +222,31 @@ logging.debug('End of program')
 2015-05-23 16:20:12,684 - DEBUG - End of program
 ```
 
-## Logging Levels
+## Logging Levels (Protokollierungsebenen)
 
-Logging-Level bieten eine Möglichkeit, Ihre Log-Meldungen nach Wichtigkeit zu kategorisieren. Es gibt fünf Logging-Level, die in Tabelle 10-1 von der geringsten zur höchsten Wichtigkeit beschrieben werden. Meldungen können mit einer anderen Logging-Funktion auf jeder Stufe protokolliert werden.
+Logging-Level bieten eine Möglichkeit, Ihre Log-Meldungen nach Wichtigkeit zu kategorisieren. Es gibt fünf Logging-Level, die in Tabelle 10-1 von der geringsten zur höchsten Wichtigkeit beschrieben werden. Meldungen können auf jeder Ebene mit einer anderen Logging-Funktion protokolliert werden.
 
-| Level      | Logging Function     | Beschreibung                                                                                                                                                          |
+| Level      | Logging Function     | Description                                                                                                                                                           |
 | ---------- | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `DEBUG`    | `logging.debug()`    | Die niedrigste Stufe. Wird für kleine Details verwendet. Normalerweise interessieren Sie sich nur für diese Meldungen bei der Diagnose von Problemen.                 |
 | `INFO`     | `logging.info()`     | Wird verwendet, um Informationen über allgemeine Ereignisse in Ihrem Programm aufzuzeichnen oder zu bestätigen, dass Dinge an ihrer Stelle im Programm funktionieren. |
-| `WARNING`  | `logging.warning()`  | Wird verwendet, um auf ein potenzielles Problem hinzuweisen, das das Programm nicht daran hindert zu funktionieren, aber dies in Zukunft tun könnte.                  |
+| `WARNING`  | `logging.warning()`  | Wird verwendet, um auf ein potenzielles Problem hinzuweisen, das die Funktion des Programms nicht verhindert, aber in Zukunft tun könnte.                             |
 | `ERROR`    | `logging.error()`    | Wird verwendet, um einen Fehler aufzuzeichnen, der dazu führte, dass das Programm etwas nicht tun konnte.                                                             |
 | `CRITICAL` | `logging.critical()` | Die höchste Stufe. Wird verwendet, um einen fatalen Fehler anzuzeigen, der dazu geführt hat oder kurz davor steht, dass das Programm vollständig beendet wird.        |
+
+<base-quiz>
+<base-quiz-question correct="D">
+<template #question>
+Was ist die niedrigste Logging-Stufe in Python?
+</template>
+
+<base-quiz-option value="A">A. <code>INFO</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>WARNING</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>ERROR</code></base-quiz-option>
+<base-quiz-option value="D" correct>D. <code>DEBUG</code></base-quiz-option>
+<base-quiz-answer value="D">Die Logging-Level von niedrig nach hoch sind: <code>DEBUG</code>, <code>INFO</code>, <code>WARNING</code>, <code>ERROR</code>, <code>CRITICAL</code>. <code>DEBUG</code> ist die niedrigste Stufe und wird für detaillierte Diagnoseinformationen verwendet.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Deaktivieren des Loggings
 
@@ -221,6 +277,20 @@ Anstatt die Log-Meldungen auf dem Bildschirm anzuzeigen, können Sie sie in eine
 import logging
 logging.basicConfig(filename='myProgramLog.txt', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 ```
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Wie schreiben Sie Log-Meldungen in eine Datei, anstatt sie auf dem Bildschirm anzuzeigen?
+</template>
+
+<base-quiz-option value="A">A. Verwenden Sie <code>logging.file()</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. Übergeben Sie den Parameter <code>filename</code> an <code>logging.basicConfig()</code></base-quiz-option>
+<base-quiz-option value="C">C. Verwenden Sie <code>logging.write()</code></base-quiz-option>
+<base-quiz-option value="D">D. Logs werden immer automatisch in Dateien geschrieben</base-quiz-option>
+<base-quiz-answer value="B">Um Log-Meldungen in eine Datei zu schreiben, übergeben Sie den Parameter <code>filename</code> an <code>logging.basicConfig()</code>. Dadurch werden alle Log-Meldungen in die angegebene Datei geschrieben, anstatt sie auf dem Bildschirm anzuzeigen.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Relevante Links
 

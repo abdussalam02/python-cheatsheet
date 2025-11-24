@@ -1,6 +1,6 @@
 ---
 title: 'Lecture et écriture de fichiers - Aide-mémoire Python'
-description: "Pour lire ou écrire dans un fichier en Python, utilisez l'instruction 'with', qui fermera le fichier automatiquement après usage, gérant ainsi les ressources disponibles."
+description: "Pour lire ou écrire dans un fichier en Python, utilisez l'instruction 'with', qui fermera le fichier automatiquement, gérant ainsi les ressources pour vous."
 labUrl: 'https://labex.io/fr/labs/python-python-reading-and-writing-files-633663?course=python-cheatsheet'
 ---
 
@@ -32,10 +32,24 @@ hello_content
 'Hello World!'
 ```
 
-Alternativement, vous pouvez utiliser la méthode _readlines()_ pour obtenir une liste de valeurs de chaînes à partir du fichier, une chaîne pour chaque ligne de texte :
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+Quel est l'avantage principal d'utiliser l'instruction <code>with</code> lors de l'ouverture de fichiers ?
+</template>
+
+<base-quiz-option value="A" correct>A. Le fichier est automatiquement fermé une fois terminé, même si une erreur se produit</base-quiz-option>
+<base-quiz-option value="B">B. Les fichiers s'ouvrent plus rapidement</base-quiz-option>
+<base-quiz-option value="C">C. Les fichiers peuvent être ouverts en mode lecture et écriture simultanément</base-quiz-option>
+<base-quiz-option value="D">D. Les fichiers sont automatiquement compressés</base-quiz-option>
+<base-quiz-answer value="A">L'instruction <code>with</code> garantit que le fichier est automatiquement fermé lorsque le bloc se termine, même si une exception se produit. Cela aide à gérer correctement les ressources.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+Alternativement, vous pouvez utiliser la méthode _readlines()_ pour obtenir une liste de valeurs de chaînes de caractères à partir du fichier, une chaîne pour chaque ligne de texte :
 
 ```python
-# Méthode readlines(): retourne une liste de chaînes, une par ligne
+# readlines() méthode: retourne une liste de chaînes, une par ligne
 with open('sonnet29.txt') as sonnet_file:
     sonnet_file.readlines()  # Retourne une liste avec chaque ligne comme une chaîne
 ```
@@ -97,10 +111,24 @@ Hello world!
 Bacon is not a vegetable.
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Quelle est la différence entre ouvrir un fichier avec le mode <code>'w'</code> et le mode <code>'a'</code> ?
+</template>
+
+<base-quiz-option value="A">A. <code>'w'</code> est pour la lecture, <code>'a'</code> est pour l'écriture</base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>'w'</code> écrase le fichier, <code>'a'</code> ajoute au fichier</base-quiz-option>
+<base-quiz-option value="C">C. <code>'w'</code> est pour Windows, <code>'a'</code> est pour Apple</base-quiz-option>
+<base-quiz-option value="D">D. Il n'y a pas de différence</base-quiz-option>
+<base-quiz-answer value="B">Le mode <code>'w'</code> ouvre le fichier en écriture et écrase tout contenu existant. Le mode <code>'a'</code> ouvre le fichier pour l'ajout, ajoutant du nouveau contenu à la fin du fichier.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Liens pertinents
 
 - <router-link to="/cheatsheet/file-directory-path">Chemins de Fichiers et de Répertoires</router-link>
 - <router-link to="/cheatsheet/json-yaml">JSON et YAML</router-link>
-- <router-link to="/blog/python-pathlib-essentials">10 Opérations Essentielles du Système de Fichiers Que Tout Développeur Devrait Connaître</router-link>
+- <router-link to="/blog/python-pathlib-essentials">10 Opérations Essentielles du Système de Fichiers que Tout Développeur Devrait Connaître</router-link>
 - <router-link to="/builtin/open">open()</router-link>
 - <router-link to="/builtin/print">print()</router-link>

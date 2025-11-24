@@ -90,9 +90,23 @@ True
 False
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+¿A qué se evalúa <code>'hello' == 'Hello'</code>?
+</template>
+
+<base-quiz-option value="A">A. <code>True</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>False</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>None</code></base-quiz-option>
+<base-quiz-option value="D">D. Lanza un error</base-quiz-option>
+<base-quiz-answer value="B">La comparación de cadenas en Python distingue entre mayúsculas y minúsculas. <code>'hello'</code> y <code>'Hello'</code> son cadenas diferentes, por lo que la comparación devuelve <code>False</code>.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Operadores Booleanos
 
-Hay tres operadores Booleanos: `and`, `or`, y `not`.
+Hay tres operadores booleanos: `and`, `or` y `not`.
 En orden de precedencia, de mayor a menor son `not`, `and` y `or`.
 
 Tabla de Verdad del Operador `and`:
@@ -148,7 +162,7 @@ False
 True
 ```
 
-Además, puedes usar múltiples operadores booleanos en una expresión, junto con los operadores de comparación:
+También puedes usar múltiples operadores booleanos en una expresión, junto con los operadores de comparación:
 
 ```python
 2 + 2 == 4 and not 2 + 2 == 5 and 2 * 2 == 2 + 2
@@ -159,7 +173,7 @@ True
 ```
 
 ```python
-# En la sentencia de abajo, 3 < 4 and 5 > 5 se ejecuta primero evaluando a False
+# En la siguiente sentencia, 3 < 4 and 5 > 5 se ejecuta primero evaluando a False
 # Luego 5 > 4 devuelve True, por lo que el resultado después de True or False es True
 5 > 4 or 3 < 4 and 5 > 5
 ```
@@ -169,7 +183,7 @@ True
 ```
 
 ```python
-# Ahora la sentencia entre paréntesis se ejecuta primero, por lo que True and False devuelve False.
+# Ahora, la sentencia entre paréntesis se ejecuta primero, por lo que True and False devuelve False.
 (5 > 4 or 3 < 4) and 5 > 5
 ```
 
@@ -179,13 +193,13 @@ False
 
 ## Sentencias if
 
-La sentencia `if` evalúa una expresión, y si esa expresión es `True`, entonces ejecuta el siguiente código indentado:
+La sentencia `if` evalúa una expresión, y si esa expresión es `True`, ejecuta el siguiente código indentado:
 
 ```python
 # sentencia if: ejecuta el bloque de código cuando la condición es True
 name = 'Debora'
 
-if name == 'Debora':  # Comprueba si el nombre es igual a 'Debora'
+if name == 'Debora':  # Comprueba si name es igual a 'Debora'
    print('Hi, Debora')  # Esta línea se ejecuta si la condición es True
 ```
 
@@ -202,7 +216,7 @@ if name != 'George':
 You are not George
 ```
 
-La sentencia `else` se ejecuta solo si la evaluación de la expresión `if` y todas las expresiones `elif` son `False`:
+La sentencia `else` se ejecuta solo si la evaluación de las expresiones `if` y todas las expresiones `elif` son `False`:
 
 ```python
 # if-else: ejecuta código diferente basado en la condición
@@ -218,7 +232,21 @@ else:  # Se ejecuta si la condición if es False
 You are not George
 ```
 
-Solo después de que la expresión de la sentencia `if` sea `False`, la sentencia `elif` se evalúa y ejecuta:
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+¿Cuándo se ejecuta el bloque <code>else</code> en una sentencia if-else?
+</template>
+
+<base-quiz-option value="A">A. Siempre</base-quiz-option>
+<base-quiz-option value="B" correct>B. Solo cuando la condición <code>if</code> (y todas las condiciones <code>elif</code> si están presentes) son <code>False</code></base-quiz-option>
+<base-quiz-option value="C">C. Solo cuando la condición <code>if</code> es <code>True</code></base-quiz-option>
+<base-quiz-option value="D">D. Nunca</base-quiz-option>
+<base-quiz-answer value="B">El bloque <code>else</code> se ejecuta solo cuando la condición <code>if</code> y todas las condiciones <code>elif</code> (si las hay) se evalúan como <code>False</code>.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+Solo después de que la expresión de la sentencia `if` sea `False`, se evalúa y ejecuta la sentencia `elif`:
 
 ```python
 # if-elif: comprueba múltiples condiciones en secuencia
@@ -253,10 +281,10 @@ Who are you?
 
 ## Operador Condicional Ternario
 
-Muchos lenguajes de programación tienen un operador ternario, que define una expresión condicional. El uso más común es hacer una sentencia de asignación condicional simple y concisa. En otras palabras, ofrece código de una sola línea para evaluar la primera expresión si la condición es verdadera, y de lo contrario evalúa la segunda expresión.
+Muchos lenguajes de programación tienen un operador ternario, que define una expresión condicional. El uso más común es crear una sentencia de asignación condicional simple y concisa. En otras palabras, ofrece código en una sola línea para evaluar la primera expresión si la condición es verdadera, y si no, evalúa la segunda expresión.
 
 ```plaintext
-<expression1> if <condition> else <expression2>
+<expresión1> if <condición> else <expresión2>
 ```
 
 Ejemplo:
@@ -276,7 +304,7 @@ kid
 ```
 
 ```python
-# Operador ternario: expresión condicional de una línea
+# Operador ternario: expresión condicional en una sola línea
 # Sintaxis: valor_si_verdadero if condición else valor_si_falso
 print('kid' if age < 18 else 'adult')
 ```
@@ -324,14 +352,14 @@ teen
   </base-disclaimer-content>
 </base-disclaimer>
 
-Las _Sentencias Switch-Case_, o **Coincidencia de Patrones Estructurales** (Structural Pattern Matching), se introdujeron por primera vez en 2020 a través de [PEP 622](https://peps.python.org/pep-0622/), y luego se lanzaron oficialmente con **Python 3.10** en septiembre de 2022.
+Las sentencias _Switch-Case_, o **Coincidencia Estructural de Patrones** (Structural Pattern Matching), se introdujeron por primera vez en 2020 a través de [PEP 622](https://peps.python.org/pep-0622/), y luego se lanzaron oficialmente con **Python 3.10** en septiembre de 2022.
 
 <base-disclaimer>
   <base-disclaimer-title>
     Tutorial Oficial
   </base-disclaimer-title>
   <base-disclaimer-content>
-  El <a href="https://peps.python.org/pep-0636/" target="_blank">PEP 636</a> proporciona un tutorial oficial para la Coincidencia de Patrones de Python o sentencias Switch-Case.
+  El <a href="https://peps.python.org/pep-0636/" target="_blank">PEP 636</a> proporciona un tutorial oficial para la coincidencia de patrones de Python o sentencias Switch-Case.
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -362,7 +390,7 @@ Created
 
 ### Coincidencia con el Patrón or
 
-En este ejemplo, el carácter de barra vertical (`|` u `or`) permite a python devolver la misma respuesta para dos o más casos.
+En este ejemplo, el carácter de barra vertical (`|` u `or`) permite a Python devolver la misma respuesta para dos o más casos.
 
 ```python
 response_code = 502
@@ -473,12 +501,26 @@ Hello, world.
 Hello, world.
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+¿Qué hace un bucle <code>while</code>?
+</template>
+
+<base-quiz-option value="A" correct>A. Repite código mientras la condición sea <code>True</code></base-quiz-option>
+<base-quiz-option value="B">B. Ejecuta el código exactamente una vez</base-quiz-option>
+<base-quiz-option value="C">C. Ejecuta el código un número fijo de veces</base-quiz-option>
+<base-quiz-option value="D">D. Omite la ejecución del código</base-quiz-option>
+<base-quiz-answer value="A">Un bucle <code>while</code> ejecuta repetidamente un bloque de código mientras la condición se evalúe como <code>True</code>. Cuando la condición se vuelve <code>False</code>, el bucle se detiene.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Sentencias break
 
 Si la ejecución alcanza una sentencia `break`, sale inmediatamente de la cláusula del bucle `while`:
 
 ```python
-# sentencia break: sale del bucle inmediatamente al ser encontrada
+# sentencia break: sale del bucle inmediatamente cuando se encuentra
 while True:  # Bucle infinito
     name = input('Please type your name: ')
     if name == 'your name':
@@ -525,7 +567,7 @@ El bucle `for` itera sobre una `list`, `tuple`, `dictionary`, `set` o `string`:
 # bucle for: itera sobre cada elemento en una secuencia
 pets = ['Bella', 'Milo', 'Loki']
 for pet in pets:  # Itera sobre cada mascota en la lista
-    print(pet)  # Imprime el nombre de cada mascota
+    print(pet)  # Imprime cada nombre de mascota
 ```
 
 ```output
@@ -534,9 +576,23 @@ Milo
 Loki
 ```
 
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+¿Sobre qué itera un bucle <code>for</code>?
+</template>
+
+<base-quiz-option value="A">A. Solo números</base-quiz-option>
+<base-quiz-option value="B">B. Solo cadenas</base-quiz-option>
+<base-quiz-option value="C" correct>C. Cualquier secuencia iterable (lista, tupla, diccionario, conjunto, cadena, etc.)</base-quiz-option>
+<base-quiz-option value="D">D. Solo listas</base-quiz-option>
+<base-quiz-answer value="C">Un bucle <code>for</code> puede iterar sobre cualquier secuencia iterable, incluyendo listas, tuplas, diccionarios, conjuntos, cadenas y otros objetos iterables.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## La función range()
 
-La función `range()` devuelve una secuencia de números. Comienza en 0, incrementa en 1 y se detiene antes de un número especificado:
+La función `range()` devuelve una secuencia de números. Comienza desde 0, incrementa en 1 y se detiene antes de un número especificado:
 
 ```python
 for i in range(5):
@@ -551,10 +607,24 @@ Will stop at 5! or 4? (3)
 Will stop at 5! or 4? (4)
 ```
 
-La función `range()` también puede modificar sus 3 argumentos predeterminados. Los dos primeros serán los valores `start` y `stop`, y el tercero será el argumento `step`. El paso es la cantidad en que se incrementa la variable después de cada iteración.
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+¿Qué genera <code>range(5)</code>?
+</template>
+
+<base-quiz-option value="A">A. Números del 1 al 5</base-quiz-option>
+<base-quiz-option value="B" correct>B. Números del 0 al 4</base-quiz-option>
+<base-quiz-option value="C">C. Números del 0 al 5</base-quiz-option>
+<base-quiz-option value="D">D. Cinco números aleatorios</base-quiz-option>
+<base-quiz-answer value="B">La función <code>range(5)</code> genera números del 0 al 4 (5 números en total). El valor de parada es exclusivo, por lo que se detiene antes de llegar a 5.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+La función `range()` también puede modificar sus 3 argumentos predeterminados. Los dos primeros serán los valores de `start` (inicio) y `stop` (parada), y el tercero será el argumento `step` (paso). El paso es la cantidad en que se incrementa la variable después de cada iteración.
 
 ```python
-# range(start, stop, step)
+# range(inicio, parada, paso)
 for i in range(0, 10, 2):
    print(i)
 ```
@@ -567,7 +637,7 @@ for i in range(0, 10, 2):
 8
 ```
 
-Incluso puedes usar un número negativo para el argumento `step` para hacer que el bucle for cuente hacia atrás en lugar de hacia adelante.
+Incluso puedes usar un número negativo para el argumento `step` para hacer que el bucle `for` cuente hacia atrás en lugar de hacia adelante.
 
 ```python
 for i in range(5, -1, -1):
@@ -622,6 +692,6 @@ You typed exit.
 - <router-link to="/cheatsheet/functions">Funciones</router-link>
 - <router-link to="/cheatsheet/exception-handling">Manejo de Excepciones</router-link>
 - <router-link to="/cheatsheet/lists-and-tuples">Listas y Tuplas</router-link>
-- <router-link to="/cheatsheet/sets">Conjuntos (Sets)</router-link>
+- <router-link to="/cheatsheet/sets">Conjuntos</router-link>
 - <router-link to="/cheatsheet/dictionaries">Diccionarios</router-link>
 - <router-link to="/cheatsheet/comprehensions">Comprensiones</router-link>

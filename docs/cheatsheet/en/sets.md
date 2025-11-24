@@ -64,6 +64,20 @@ s  # Returns {1, 2, 3, 4}
 {1, 2, 3, 4}
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+What happens when you create a set with duplicate values?
+</template>
+
+<base-quiz-option value="A" correct>A. Duplicates are automatically removed</base-quiz-option>
+<base-quiz-option value="B">B. An error is raised</base-quiz-option>
+<base-quiz-option value="C">C. The set keeps all duplicates</base-quiz-option>
+<base-quiz-option value="D">D. Only the first occurrence is kept</base-quiz-option>
+<base-quiz-answer value="A">Sets automatically remove duplicate values. A set is an unordered collection with no duplicate elements.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 And as an unordered data type, they can't be indexed.
 
 ```python
@@ -147,6 +161,20 @@ s
 s.discard(3)
 ```
 
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+What is the difference between <code>remove()</code> and <code>discard()</code> methods for sets?
+</template>
+
+<base-quiz-option value="A">A. <code>remove()</code> removes one element, <code>discard()</code> removes all</base-quiz-option>
+<base-quiz-option value="B">B. There is no difference</base-quiz-option>
+<base-quiz-option value="C" correct>C. <code>remove()</code> raises an error if element doesn't exist, <code>discard()</code> does not</base-quiz-option>
+<base-quiz-option value="D">D. <code>remove()</code> is faster</base-quiz-option>
+<base-quiz-answer value="C">Both methods remove an element from a set, but <code>remove()</code> raises a <code>KeyError</code> if the element doesn't exist, while <code>discard()</code> does nothing if the element is missing.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## set union
 
 `union()` or `|` will create a new set with all the elements from the sets provided.
@@ -177,6 +205,20 @@ s1.intersection(s2, s3)  # or 's1 & s2 & s3' - returns {3}
 ```output
 {3}
 ```
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+What does <code>intersection()</code> return for sets?
+</template>
+
+<base-quiz-option value="A">A. All elements from all sets</base-quiz-option>
+<base-quiz-option value="B" correct>B. Only elements that are common to all sets</base-quiz-option>
+<base-quiz-option value="C">C. Elements in the first set but not in others</base-quiz-option>
+<base-quiz-option value="D">D. Elements in either set but not both</base-quiz-option>
+<base-quiz-answer value="B">The <code>intersection()</code> method returns a set containing only elements that are present in all the sets being compared.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## set difference
 
@@ -216,6 +258,20 @@ s1.symmetric_difference(s2)  # or 's1 ^ s2' - returns {1, 4}
 ```output
 {1, 4}
 ```
+
+<base-quiz>
+<base-quiz-question correct="D">
+<template #question>
+What does <code>symmetric_difference()</code> return for two sets?
+</template>
+
+<base-quiz-option value="A">A. All elements from both sets</base-quiz-option>
+<base-quiz-option value="B">B. Only elements common to both sets</base-quiz-option>
+<base-quiz-option value="C">C. Elements in the first set but not in the second</base-quiz-option>
+<base-quiz-option value="D" correct>D. Elements in either set, but not in both</base-quiz-option>
+<base-quiz-answer value="D">The <code>symmetric_difference()</code> method returns a set containing elements that are in either set, but not in both sets.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Relevant links
 

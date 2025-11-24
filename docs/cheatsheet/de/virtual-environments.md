@@ -1,6 +1,6 @@
 ---
 title: 'Python Virtuelle Umgebungen - Python Spickzettel'
-description: 'Virtuelle Umgebungen dienen dazu, Python-Code in gekapselten Umgebungen zu testen und die Basis-Python-Installation nicht mit Bibliotheken zu füllen, die nur für ein Projekt benötigt werden.'
+description: 'Virtuelle Umgebungen dienen dazu, Python-Code in gekapselten Umgebungen zu testen und die Basis-Python-Installation nicht mit Bibliotheken zu füllen, die nur für ein einziges Projekt benötigt werden.'
 labUrl: 'https://labex.io/de/labs/python-python-virtual-environments-633669?course=python-cheatsheet'
 ---
 
@@ -14,7 +14,7 @@ Die Verwendung einer virtuellen Umgebung dient dazu, Python-Code in gekapselten 
 
 ## venv
 
-`venv` ist das Standardmodul der Standardbibliothek zur Erstellung virtueller Umgebungen in Python 3.3+. Es ist in Python integriert, sodass keine Installation erforderlich ist.
+`venv` ist das Standardbibliotheksmodul zur Erstellung virtueller Umgebungen in Python 3.3+. Es ist in Python integriert, sodass keine Installation erforderlich ist.
 
 1. Virtuelle Umgebung erstellen
 
@@ -29,6 +29,20 @@ python3 -m venv venv
 ```
 
 Dadurch wird ein `venv`-Verzeichnis in Ihrem aktuellen Ordner erstellt, das die virtuelle Umgebung enthält.
+
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+Welcher Befehl wird verwendet, um eine virtuelle Umgebung mit <code>venv</code> zu erstellen?
+</template>
+
+<base-quiz-option value="A" correct>A. <code>python -m venv venv</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>python create venv</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>venv create</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>python venv new</code></base-quiz-option>
+<base-quiz-answer value="A">Der Befehl <code>python -m venv venv</code> erstellt eine virtuelle Umgebung. Das Flag <code>-m</code> führt das venv-Modul aus, und <code>venv</code> am Ende ist der Name des zu erstellenden Verzeichnisses.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 2. Virtuelle Umgebung aktivieren
 
@@ -46,9 +60,23 @@ venv\Scripts\activate
 
 Sobald sie aktiviert ist, sehen Sie `(venv)` am Anfang Ihrer Eingabeaufforderung, was anzeigt, dass die virtuelle Umgebung aktiv ist.
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Wie aktivieren Sie eine virtuelle Umgebung unter Linux/macOS?
+</template>
+
+<base-quiz-option value="A">A. <code>activate venv</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>source venv/bin/activate</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>venv activate</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>python venv activate</code></base-quiz-option>
+<base-quiz-answer value="B">Unter Linux/macOS aktivieren Sie eine virtuelle Umgebung mit <code>source venv/bin/activate</code>. Unter Windows würden Sie <code>venv\Scripts\activate</code> verwenden.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 3. Pakete installieren
 
-Installieren Sie Pakete mit pip, während die virtuelle Umgebung aktiviert ist:
+Installieren Sie mit aktivierter virtueller Umgebung Pakete mit pip:
 
 ```bash
 pip install package_name
@@ -65,6 +93,20 @@ deactivate
 ```
 
 Das Präfix `(venv)` verschwindet aus Ihrer Eingabeaufforderung.
+
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+Was ist der Hauptzweck der Verwendung einer virtuellen Umgebung?
+</template>
+
+<base-quiz-option value="A" correct>A. Zur Isolierung von Projektabhängigkeiten und Vermeidung der Füllung der Basis-Python-Installation</base-quiz-option>
+<base-quiz-option value="B">B. Um Python schneller laufen zu lassen</base-quiz-option>
+<base-quiz-option value="C">C. Zum Verschlüsseln von Python-Code</base-quiz-option>
+<base-quiz-option value="D">D. Zum Kompilieren von Python in Maschinencode</base-quiz-option>
+<base-quiz-answer value="A">Virtuelle Umgebungen ermöglichen es Ihnen, Python-Code in gekapselten Umgebungen zu testen und zu vermeiden, dass die Basis-Python-Installation mit Bibliotheken gefüllt wird, die möglicherweise nur für ein Projekt verwendet werden. Dies hilft bei der Verwaltung von Abhängigkeiten pro Projekt.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## virtualenv
 
@@ -88,11 +130,11 @@ Verwendung:
 mkvirtualenv HelloWorld
 ```
 
-Alles, was wir jetzt installieren, ist spezifisch für dieses Projekt. Und für die Projekte verfügbar, die wir mit dieser Umgebung verbinden.
+Alles, was wir jetzt installieren, ist spezifisch für dieses Projekt. Und verfügbar für die Projekte, die wir mit dieser Umgebung verbinden.
 
 1. Projektverzeichnis festlegen
 
-Um unsere virtuelle Umgebung mit unserem aktuellen Arbeitsverzeichnis zu verknüpfen, geben wir einfach Folgendes ein:
+Um unsere virtuelle Umgebung an unser aktuelles Arbeitsverzeichnis zu binden, geben wir einfach Folgendes ein:
 
 ```bash
 setprojectdir .
@@ -120,7 +162,7 @@ workon HelloWorld
 
 <base-disclaimer>
   <base-disclaimer-title>
-    Von der <a href="https://python-poetry.org/">Poetry-Website</a>
+    Von der <a href="https://python-poetry.org/">Poetry Website</a>
   </base-disclaimer-title>
   <base-disclaimer-content>
     Poetry ist ein Werkzeug für das Abhängigkeitsmanagement und die Paketierung in Python. Es ermöglicht Ihnen, die Bibliotheken zu deklarieren, von denen Ihr Projekt abhängt, und es wird diese für Sie verwalten (installieren/aktualisieren).
@@ -152,7 +194,7 @@ my-project
     └── test_poetry_demo.py
 ```
 
-Die Datei `pyproject.toml` orchestriert Ihr Projekt und seine Abhängigkeiten:
+Die Datei `pyproject.toml` wird Ihr Projekt und seine Abhängigkeiten orchestrieren:
 
 ```toml
 [tool.poetry]
@@ -205,14 +247,14 @@ Weitere Informationen finden Sie in der [Dokumentation](https://poetry.eustace.i
 
 <base-disclaimer>
   <base-disclaimer-title>
-    Von der <a target="_blank" href="https://pipenv.pypa.io/en/latest/">Pipenv-Website</a>
+    Von der <a target="_blank" href="https://pipenv.pypa.io/en/latest/">Pipenv Website</a>
   </base-disclaimer-title>
   <base-disclaimer-content>
-    Pipenv ist ein Werkzeug, das darauf abzielt, das Beste aus allen Paketierungs-Welten (bundler, composer, npm, cargo, yarn, etc.) in die Python-Welt zu bringen. Windows ist in unserer Welt ein erstklassiger Bürger.
+    Pipenv ist ein Werkzeug, das das Beste aus allen Paketierungswelten (bundler, composer, npm, cargo, yarn, etc.) in die Python-Welt bringen soll. Windows ist in unserer Welt ein erstklassiger Bürger.
   </base-disclaimer-content>
 </base-disclaimer>
 
-1. pipenv installieren
+1. Pipenv installieren
 
 ```bash
 pip install pipenv
@@ -233,7 +275,7 @@ Pipenv installiert Ihr Paket und erstellt eine `Pipfile` für Sie im Verzeichnis
 pipenv uninstall <package>
 ```
 
-4. Die mit Ihrem Python-Projekt verbundene virtuelle Umgebung aktivieren
+4. Die virtuelle Umgebung aktivieren, die mit Ihrem Python-Projekt verknüpft ist
 
 ```bash
 pipenv shell
@@ -266,7 +308,7 @@ Verwendung:
 conda create -n HelloWorld
 ```
 
-2. Um die virtuelle Umgebung zu verwenden, aktivieren Sie sie mit:
+2. Um die virtuelle Umgebung zu verwenden, aktivieren Sie sie durch:
 
 ```bash
 conda activate HelloWorld
@@ -284,10 +326,10 @@ conda deactivate
 
 <base-disclaimer>
   <base-disclaimer-title>
-    Aus der <a target="_blank" href="https://docs.astral.sh/uv/">UV-Dokumentation</a>
+    Aus der <a target="_blank" href="https://docs.astral.sh/uv/">UV Dokumentation</a>
   </base-disclaimer-title>
   <base-disclaimer-content>
-    UV ist ein extrem schneller Python-Paketinstallations- und Resolver, der als direkter Ersatz für Pip- und Pip-Tools-Workflows konzipiert ist. UV ist 10-100x schneller als Pip und bietet einheitliches Paketmanagement, Erstellung virtueller Umgebungen und Verwaltung von Python-Versionen.
+    UV ist ein extrem schneller Python-Paketinstallations- und Resolver, der als direkter Ersatz für Pip- und Pip-Tools-Workflows konzipiert ist. UV ist 10-100x schneller als pip und bietet einheitliches Paketmanagement, Erstellung virtueller Umgebungen und Verwaltung von Python-Versionen.
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -327,13 +369,13 @@ source .venv/bin/activate  # Linux/macOS
 .venv\Scripts\activate     # Windows
 ```
 
-UV verwaltet virtuelle Umgebungen, Python-Versionen und Abhängigkeiten automatisch mit außergewöhnlicher Geschwindigkeit und Bequemlichkeit.
+UV verwaltet virtuelle Umgebungen, Python-Versionen und Abhängigkeiten automatisch mit außergewöhnlicher Geschwindigkeit und Komfort.
 
 ## Relevante Links
 
-- <router-link to="/cheatsheet/packaging">Paketierung</router-link>
+- <router-link to="/cheatsheet/packaging">Packaging</router-link>
 - <router-link to="/blog/python-projects-with-poetry-and-vscode-part-1">Python-Projekte mit Poetry und VSCode. Teil 1</router-link>
 - <router-link to="/blog/python-projects-with-poetry-and-vscode-part-2">Python-Projekte mit Poetry und VSCode. Teil 2</router-link>
 - <router-link to="/blog/python-projects-with-poetry-and-vscode-part-3">Python-Projekte mit Poetry und VSCode. Teil 3</router-link>
-- <router-link to="/blog/python-uv-package-manager">UV: Der blitzschnelle Python-Paketmanager</router-link>
+- <router-link to="/blog/python-uv-package-manager">UV: Der blitzschnelle Python Paketmanager</router-link>
 - <router-link to="/builtin/import">import()</router-link>

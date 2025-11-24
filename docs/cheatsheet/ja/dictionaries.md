@@ -10,14 +10,14 @@ Python 辞書
 
 <base-lab-url :url="frontmatter.labUrl" />
 
-Python では、辞書は`key`: `value`ペアの**順序付けられた**（Python > 3.7 以降）コレクションです。
+Python において、辞書（dictionary）は、_順序付けられた_（Python > 3.7 以降）`key`: `value` ペアのコレクションです。
 
 <base-disclaimer>
   <base-disclaimer-title>
-    Python 3 の<a target="_blank" href="https://docs.python.org/3/tutorial/datastructures.html#dictionaries">ドキュメント</a>より
+    Python 3 の <a target="_blank" href="https://docs.python.org/3/tutorial/datastructures.html#dictionaries">ドキュメント</a>より
   </base-disclaimer-title>
   <base-disclaimer-content>
-    辞書に対する主な操作は、あるキーに関連付けられた値を格納することと、キーが与えられたときにその値を取り出すことです。また、<code>del</code>を使ってキー:値のペアを削除することも可能です。
+    辞書に対する主な操作は、あるキーに関連付けられた値を格納することと、キーが与えられたときにその値を取り出すことです。また、<code>del</code> を使ってキー:値のペアを削除することも可能です。
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -35,7 +35,7 @@ my_cat = {
 ## サブスクリプト演算子 `[]` を使用したキーと値の設定
 
 ```python
-# サブスクリプト演算子を使用した辞書エントリの追加または更新
+# サブスクリプト演算子を使用して辞書のエントリを追加または更新
 my_cat = {
  'size': 'fat',
  'color': 'gray',
@@ -51,7 +51,7 @@ print(my_cat)
 
 ## サブスクリプト演算子 `[]` を使用した値の取得
 
-キーが辞書内に存在しない場合、<a target="_blank" href="https://docs.python.org/3/library/exceptions.html#KeyError">`KeyError`</a>が発生します。
+キーが辞書内に存在しない場合、<a target="_blank" href="https://docs.python.org/3/library/exceptions.html#KeyError">`KeyError`</a> が発生します。
 
 ```python
 my_cat = {
@@ -78,10 +78,10 @@ KeyError: 'eye_color'
 
 ## values()
 
-`values()`メソッドは辞書の**値**を取得します。
+`values()` メソッドは、辞書の**値**を取得します。
 
 ```python
-# .values() メソッドを使用した辞書の値の反復処理
+# .values() メソッドを使用して辞書の値のイテレーション
 pet = {'color': 'red', 'age': 42}
 for value in pet.values():  # すべての値に対してループ
     print(value)
@@ -94,10 +94,10 @@ red
 
 ## keys()
 
-`keys()`メソッドは辞書の**キー**を取得します。
+`keys()` メソッドは、辞書の**キー**を取得します。
 
 ```python
-# .keys() メソッドを使用した辞書のキーの反復処理
+# .keys() メソッドを使用して辞書のキーのイテレーション
 pet = {'color': 'red', 'age': 42}
 for key in pet.keys():  # すべてのキーに対してループ
     print(key)
@@ -108,10 +108,10 @@ color
 age
 ```
 
-デフォルトではキーをループするため、**.keys()**を使用する必要はありません。
+デフォルトではキーをループするため、**.keys()** を使用する必要はありません。
 
 ```python
-# 辞書を直接反復処理するとキーがループされる (デフォルトの動作)
+# 辞書を直接イテレートするとキーがループされる (デフォルトの動作)
 pet = {'color': 'red', 'age': 42}
 for key in pet:  # for key in pet.keys() と同等
     print(key)
@@ -124,7 +124,7 @@ age
 
 ## items()
 
-`items()`メソッドは辞書の**アイテム**を取得し、それらを<router-link to=/cheatsheet/lists-and-tuples#the-tuple-data-type>タプル</router-link>として返します。
+`items()` メソッドは、辞書の**アイテム**を取得し、それらを <router-link to=/cheatsheet/lists-and-tuples#the-tuple-data-type>タプル</router-link> として返します。
 
 ```python
 pet = {'color': 'red', 'age': 42}
@@ -137,12 +137,12 @@ for item in pet.items():
 ('age', 42)
 ```
 
-`keys()`、`values()`、`items()`メソッドを使用すると、for ループはそれぞれキー、値、またはキーと値のペアを辞書内で反復処理できます。
+`keys()`, `values()`, および `items()` メソッドを使用すると、for ループでそれぞれキー、値、またはキーと値のペアを辞書内でイテレートできます。
 
 ```python
-# .items() メソッドを使用したキーと値のペアの反復処理
+# .items() メソッドを使用してキーと値のペアのイテレーション
 pet = {'color': 'red', 'age': 42}
-for key, value in pet.items():  # タプルをキーと値にアンパック
+for key, value in pet.items():  # タプルを key と value にアンパック
     print(f'Key: {key} Value: {value}')
 ```
 
@@ -153,13 +153,13 @@ Key: age Value: 42
 
 ## get()
 
-`get()`メソッドは、指定されたキーを持つアイテムの値を返します。キーが存在しない場合は、`None`を返します。
+`get()` メソッドは、指定されたキーを持つアイテムの値を返します。キーが存在しない場合は、`None` を返します。
 
 ```python
 # .get() メソッド：値を安全に取得し、キーが存在しない場合は None を返す
 wife = {'name': 'Rose', 'age': 33}
 
-f'My wife name is {wife.get("name")}'  # 'Rose'を返す
+f'My wife name is {wife.get("name")}'  # 'Rose' を返す
 ```
 
 ```output
@@ -182,7 +182,7 @@ f'She is deeply in love with {wife.get("husband")}'
 'She is deeply in love with None'
 ```
 
-デフォルトの`None`値を任意の指定した値に変更することもできます。
+デフォルトの `None` 値を任意のデフォルト値に変更することもできます。
 
 ```python
 wife = {'name': 'Rose', 'age': 33}
@@ -196,7 +196,7 @@ f'She is deeply in love with {wife.get("husband", "lover")}'
 
 ## setdefault() を使用したアイテムの追加
 
-このようにして辞書にアイテムを追加することが可能です。
+次のような方法で辞書にアイテムを追加できます。
 
 ```python
 wife = {'name': 'Rose', 'age': 33}
@@ -204,7 +204,7 @@ if 'has_hair' not in wife:
     wife['has_hair'] = True
 ```
 
-`setdefault`メソッドを使用すると、同じコードをより短く記述できます。
+`setdefault` メソッドを使用すると、同じコードをより短く記述できます。
 
 ```python
 wife = {'name': 'Rose', 'age': 33}
@@ -220,7 +220,7 @@ wife
 
 ### pop()
 
-`pop()`メソッドは、指定されたキーに基づいてアイテムを削除し、その値を返します。
+`pop()` メソッドは、指定されたキーに基づいてアイテムを削除し、その値を返します。
 
 ```python
 wife = {'name': 'Rose', 'age': 33, 'hair': 'brown'}
@@ -239,9 +239,23 @@ wife
 {'name': 'Rose', 'hair': 'brown'}
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+辞書に対して <code>pop()</code> が呼び出された場合、何が起こりますか？
+</template>
+
+<base-quiz-option value="A">A. キーと値のペアのみが削除される</base-quiz-option>
+<base-quiz-option value="B" correct>B. 指定されたキーの値が削除され、その値が返される</base-quiz-option>
+<base-quiz-option value="C">C. 値が返されるだけで、削除はされない</base-quiz-option>
+<base-quiz-option value="D">D. 辞書内のすべてのアイテムが削除される</base-quiz-option>
+<base-quiz-answer value="B"><code>pop()</code> メソッドは、指定されたキーのキーと値のペアを削除し、その値を返します。キーが存在しない場合は、<code>KeyError</code> が発生します (デフォルト値が指定されていない限り)。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ### popitem()
 
-`popitem()`メソッドは、辞書内の最後のアイテムを削除し、それを返します。
+`popitem()` メソッドは、辞書内の最後のアイテムを削除し、それを返します。
 
 ```python
 wife = {'name': 'Rose', 'age': 33, 'hair': 'brown'}
@@ -262,7 +276,7 @@ wife
 
 ### del()
 
-`del()`メソッドは、指定されたキーに基づいてアイテムを削除します。
+`del()` メソッドは、指定されたキーに基づいてアイテムを削除します。
 
 ```python
 wife = {'name': 'Rose', 'age': 33, 'hair': 'brown'}
@@ -276,7 +290,7 @@ wife
 
 ### clear()
 
-`clear()`メソッドは、辞書内のすべてのアイテムを削除します。
+`clear()` メソッドは、辞書内のすべてのアイテムを削除します。
 
 ```python
 wife = {'name': 'Rose', 'age': 33, 'hair': 'brown'}
@@ -356,12 +370,12 @@ pprint.pprint(wife)
 
 ## 2 つの辞書の結合
 
-Python 3.5 以降：
+Python 3.5 以降の場合：
 
 ```python
 dict_a = {'a': 1, 'b': 2}
 dict_b = {'b': 3, 'c': 4}
-dict_c = {**dict_a, **dict_b}
+dict_c = {**dict_b, **dict_a}
 dict_c
 ```
 
@@ -369,13 +383,27 @@ dict_c
 {'a': 1, 'b': 3, 'c': 4}
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+<code>{**dict_b, **dict_a}</code> を使用して 2 つの辞書を結合する場合、両方の辞書に同じキーがある場合、どうなりますか？
+</template>
+
+<base-quiz-option value="A">A. <code>dict_b</code> の値が <code>dict_a</code> の値を上書きする</base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>dict_a</code> の値が <code>dict_b</code> の値を上書きする</base-quiz-option>
+<base-quiz-option value="C">C. 両方の値がリストに保持される</base-quiz-option>
+<base-quiz-option value="D">D. エラーが発生する</base-quiz-option>
+<base-quiz-answer value="B"><code>\*\*</code> アンパッキング演算子を使用して辞書を結合する場合、両方の辞書に同じキーがある場合、後に出てくる辞書 (この場合は <code>dict_a</code>) の値が、先に出てくる辞書の値よりも優先されます (上書きされます)。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## 関連リンク
 
-- <router-link to="/blog/python-data-types">Python データ型ブログ投稿</router-link>
-- <router-link to="/blog/python-easy-args-kwargs">Python \*args と\*\*kwargs の簡単な使い方</router-link>
+- <router-link to="/blog/python-data-types">Python データ型ブログ記事</router-link>
+- <router-link to="/blog/python-easy-args-kwargs">Python \*args と \*\*kwargs の簡単な使い方</router-link>
 - <router-link to="/cheatsheet/comprehensions">内包表記</router-link>
 - <router-link to="/cheatsheet/args-and-kwargs">Args と Kwargs</router-link>
-- <router-link to="/blog/python-comprehensions-step-by-step">Python 内包表記のステップバイステップ</router-link>
+- <router-link to="/blog/python-comprehensions-step-by-step">Python 内包表記 ステップバイステップ</router-link>
 - <router-link to="/builtin/dict">dict()</router-link>
 - <router-link to="/builtin/len">len()</router-link>
 - <router-link to="/builtin/iter">iter()</router-link>

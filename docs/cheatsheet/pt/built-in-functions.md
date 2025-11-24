@@ -21,7 +21,7 @@ O interpretador Python possui um número de funções e tipos embutidos que est�
 | <router-link to='/builtin/all'>all()</router-link>                   | Retorna True se todos os elementos do iterável forem verdadeiros.             |
 | <router-link to='/builtin/any'>any()</router-link>                   | Retorna True se qualquer elemento do iterável for verdadeiro.                 |
 | <router-link to='/builtin/ascii'>ascii()</router-link>               | Retorna uma string com uma representação imprimível de um objeto.             |
-| <router-link to='/builtin/bin'>bin()</router-link>                   | Converte um número inteiro para uma string binária.                           |
+| <router-link to='/builtin/bin'>bin()</router-link>                   | Converte um número inteiro em uma string binária.                             |
 | <router-link to='/builtin/bool'>bool()</router-link>                 | Retorna um valor Booleano.                                                    |
 | <router-link to='/builtin/breakpoint'>breakpoint()</router-link>     | Coloca você no depurador no ponto de chamada.                                 |
 | <router-link to='/builtin/bytearray'>bytearray()</router-link>       | Retorna um novo array de bytes.                                               |
@@ -29,7 +29,7 @@ O interpretador Python possui um número de funções e tipos embutidos que est�
 | <router-link to='/builtin/callable'>callable()</router-link>         | Retorna True se o argumento do objeto for chamável, False caso contrário.     |
 | <router-link to='/builtin/chr'>chr()</router-link>                   | Retorna a string que representa um caractere.                                 |
 | <router-link to='/builtin/classmethod'>classmethod()</router-link>   | Transforma um método em um método de classe.                                  |
-| <router-link to='/builtin/compile'>compile()</router-link>           | Compila a origem em um objeto de código ou AST.                               |
+| <router-link to='/builtin/compile'>compile()</router-link>           | Compila o código-fonte em um objeto de código ou AST.                         |
 | <router-link to='/builtin/complex'>complex()</router-link>           | Retorna um número complexo com o valor real + imag\*1j.                       |
 | <router-link to='/builtin/delattr'>delattr()</router-link>           | Exclui o atributo nomeado, desde que o objeto o permita.                      |
 | <router-link to='/builtin/dict'>dict()</router-link>                 | Cria um novo dicionário.                                                      |
@@ -47,7 +47,7 @@ O interpretador Python possui um número de funções e tipos embutidos que est�
 | <router-link to='/builtin/hasattr'>hasattr()</router-link>           | Retorna True se o objeto tiver o atributo nomeado.                            |
 | <router-link to='/builtin/hash'>hash()</router-link>                 | Retorna o valor hash do objeto.                                               |
 | <router-link to='/builtin/help'>help()</router-link>                 | Invoca o sistema de ajuda embutido.                                           |
-| <router-link to='/builtin/hex'>hex()</router-link>                   | Converte um número inteiro para uma string hexadecimal em minúsculas.         |
+| <router-link to='/builtin/hex'>hex()</router-link>                   | Converte um número inteiro em uma string hexadecimal em minúsculas.           |
 | <router-link to='/builtin/id'>id()</router-link>                     | Retorna a “identidade” de um objeto.                                          |
 | <router-link to='/builtin/input'>input()</router-link>               | Esta função recebe uma entrada e a converte em uma string.                    |
 | <router-link to='/builtin/int'>int()</router-link>                   | Retorna um objeto inteiro construído a partir de um número ou string.         |
@@ -61,8 +61,8 @@ O interpretador Python possui um número de funções e tipos embutidos que est�
 | <router-link to='/builtin/max'>max()</router-link>                   | Retorna o maior item em um iterável.                                          |
 | <router-link to='/builtin/min'>min()</router-link>                   | Retorna o menor item em um iterável.                                          |
 | <router-link to='/builtin/next'>next()</router-link>                 | Recupera o próximo item do iterador.                                          |
-| <router-link to='/builtin/object'>object()</router-link>             | Retorna um novo objeto sem recursos.                                          |
-| <router-link to='/builtin/oct'>oct()</router-link>                   | Converte um número inteiro para uma string octal em minúsculas.               |
+| <router-link to='/builtin/object'>object()</router-link>             | Retorna um novo objeto sem características.                                   |
+| <router-link to='/builtin/oct'>oct()</router-link>                   | Converte um número inteiro em uma string octal.                               |
 | <router-link to='/builtin/open'>open()</router-link>                 | Abre um arquivo e retorna um objeto de arquivo correspondente.                |
 | <router-link to='/builtin/ord'>ord()</router-link>                   | Retorna um inteiro que representa o ponto de código Unicode de um caractere.  |
 | <router-link to='/builtin/pow'>pow()</router-link>                   | Retorna base elevado à potência exp.                                          |

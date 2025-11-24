@@ -1,5 +1,5 @@
 ---
-title: 'Python Listen und Tupel – Python Spickzettel'
+title: 'Python Listen und Tupel - Python Spickzettel'
 description: 'In Python sind Listen einer der 4 Datentypen, die zur Speicherung von Datensammlungen verwendet werden.'
 labUrl: 'https://labex.io/de/labs/python-python-lists-and-tuples-633660?course=python-cheatsheet'
 ---
@@ -20,7 +20,7 @@ Listen sind einer der 4 Datentypen in Python, die zur Speicherung von Datensamml
 ## Werte mit Indizes abrufen
 
 ```python
-# Auf Listenelemente mit Index zugreifen (0-basiert, erstes Element ist Index 0)
+# Auf Listenelemente mit Index zugreifen (0-basiert, das erste Element hat Index 0)
 furniture = ['table', 'chair', 'rack', 'shelf']
 
 furniture[0]  # Gibt das erste Element zurück: 'table'
@@ -83,6 +83,20 @@ f'The {furniture[-1]} is bigger than the {furniture[-3]}'
 'The shelf is bigger than the chair'
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Was gibt <code>furniture[-1]</code> zurück, wenn <code>furniture = ['table', 'chair', 'rack', 'shelf']</code>?
+</template>
+
+<base-quiz-option value="A">A. <code>'table'</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>'shelf'</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>['shelf']</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>IndexError</code></base-quiz-option>
+<base-quiz-answer value="B">Negative Indizes greifen auf Elemente vom Ende der Liste zu. <code>-1</code> bezieht sich auf das letzte Element, <code>-2</code> auf das vorletzte und so weiter.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Unterlisten mit Slices abrufen
 
 ```python
@@ -138,7 +152,7 @@ furniture[:]
 ['table', 'chair', 'rack', 'shelf']
 ```
 
-Das Slicing der vollständigen Liste erstellt eine Kopie:
+Das Slicen der gesamten Liste führt zu einer Kopie:
 
 ```python
 # Slicing erstellt eine Kopie: [:] erstellt eine flache Kopie der Liste
@@ -168,6 +182,20 @@ spam2
 ['cat', 'bat', 'rat', 'elephant']
 ```
 
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+Was erstellt <code>spam[:]</code>, wenn <code>spam</code> eine Liste ist?
+</template>
+
+<base-quiz-option value="A">A. Eine Referenz auf dieselbe Liste</base-quiz-option>
+<base-quiz-option value="B">B. Eine leere Liste</base-quiz-option>
+<base-quiz-option value="C" correct>C. Eine flache Kopie der Liste</base-quiz-option>
+<base-quiz-option value="D">D. Eine umgekehrte Liste</base-quiz-option>
+<base-quiz-answer value="C">Das Slicen der gesamten Liste mit <code>[:]</code> erstellt eine flache Kopie. Das Ändern der Kopie wirkt sich nicht auf die ursprüngliche Liste aus.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Die Länge einer Liste mit len() ermitteln
 
 ```python
@@ -183,7 +211,7 @@ len(furniture)  # Gibt 4 zurück
 ## Werte mit Indizes ändern
 
 ```python
-# Listenelemente ändern, indem neue Werte Indizes zugewiesen werden
+# Listenelemente ändern, indem neuen Werten Indizes zugewiesen werden
 furniture = ['table', 'chair', 'rack', 'shelf']
 
 furniture[0] = 'desk'  # Erstes Element ersetzen
@@ -297,7 +325,7 @@ The shelf costs $40
 ## Die Operatoren in und not in
 
 ```python
-# in Operator: Prüfen, ob ein Element in einer Liste existiert
+# in Operator: Prüfen, ob ein Element in einer Liste vorhanden ist
 'rack' in ['table', 'chair', 'rack', 'shelf']  # Gibt True zurück
 ```
 
@@ -428,9 +456,23 @@ furniture
 ['table', 'chair', 'rack', 'shelf', 'bed']
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+Was bewirkt die Methode <code>append()</code> bei einer Liste?
+</template>
+
+<base-quiz-option value="A" correct>A. Fügt ein Element am Ende der Liste hinzu</base-quiz-option>
+<base-quiz-option value="B">B. Fügt ein Element am Anfang der Liste hinzu</base-quiz-option>
+<base-quiz-option value="C">C. Ersetzt das letzte Element</base-quiz-option>
+<base-quiz-option value="D">D. Entfernt das letzte Element</base-quiz-option>
+<base-quiz-answer value="A">Die Methode <code>append()</code> fügt ein einzelnes Element am Ende einer Liste hinzu. Um ein Element an einer bestimmten Position hinzuzufügen, verwenden Sie <code>insert()</code>.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ### insert()
 
-`insert` fügt ein Element an einer bestimmten Position in eine `list` ein:
+`insert` fügt ein Element an einer gegebenen Position zu einer `list` hinzu:
 
 ```python
 furniture = ['table', 'chair', 'rack', 'shelf']
@@ -446,7 +488,7 @@ furniture
 
 ### del()
 
-`del` entfernt ein Element mithilfe des Index:
+`del` entfernt ein Element anhand des Index:
 
 ```python
 furniture = ['table', 'chair', 'rack', 'shelf']
@@ -469,7 +511,7 @@ furniture
 
 ### remove()
 
-`remove` entfernt ein Element mithilfe seines tatsächlichen Wertes:
+`remove` entfernt ein Element anhand seines tatsächlichen Wertes:
 
 ```python
 furniture = ['table', 'chair', 'rack', 'shelf']
@@ -483,10 +525,10 @@ furniture
 
 <base-warning>
   <base-warning-title>
-    Wiederholte Elemente entfernen
+    Entfernen wiederholter Elemente
   </base-warning-title>
   <base-warning-content>
-    Wenn der Wert mehrmals in der Liste vorkommt, wird nur das erste Vorkommen des Wertes entfernt.
+    Wenn der Wert mehrmals in der Liste vorkommt, wird nur die erste Instanz des Wertes entfernt.
   </base-warning-content>
 </base-warning>
 
@@ -527,6 +569,20 @@ animals
 ```output
 ['bat', 'rat']
 ```
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Was bewirkt <code>pop()</code>, wenn es für eine Liste aufgerufen wird?
+</template>
+
+<base-quiz-option value="A">A. Entfernt nur das letzte Element</base-quiz-option>
+<base-quiz-option value="B" correct>B. Entfernt und gibt ein Element zurück (standardmäßig das letzte Element oder der angegebene Index)</base-quiz-option>
+<base-quiz-option value="C">C. Gibt nur das letzte Element zurück, ohne es zu entfernen</base-quiz-option>
+<base-quiz-option value="D">D. Entfernt alle Elemente aus der Liste</base-quiz-option>
+<base-quiz-answer value="B">Die Methode <code>pop()</code> entfernt und gibt ein Element zurück. Standardmäßig entfernt sie das letzte Element, aber Sie können einen Index übergeben, um ein bestimmtes Element zu entfernen.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Werte mit sort() sortieren
 
@@ -591,7 +647,7 @@ sorted(furniture)
     <a target="_blank" href="https://stackoverflow.com/questions/1708510/list-vs-tuple-when-to-use-each">Tupel vs Listen</a>
   </base-disclaimer-title>
   <base-disclaimer-content>
-    Der Hauptunterschied zwischen Tupeln und Listen besteht darin, dass <code>Tupel</code> <i>unveränderliche</i> Objekte sind, während <code>Listen</code> <i>veränderlich</i> sind. Das bedeutet, dass Tupel nicht geändert werden können, während Listen modifiziert werden können. Tupel sind speichereffizienter als Listen.
+    Der Hauptunterschied zwischen Tupeln und Listen besteht darin, dass <code>Tupel</code> <i>unveränderliche</i> Objekte sind, während <code>Listen</code> <i>veränderliche</i> Objekte sind. Das bedeutet, dass Tupel nicht geändert werden können, während Listen modifiziert werden können. Tupel sind speichereffizienter als Listen.
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -648,6 +704,20 @@ list('hello')
 ```output
 ['h', 'e', 'l', 'l', 'o']
 ```
+
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+Was ist der Hauptunterschied zwischen Listen und Tupeln in Python?
+</template>
+
+<base-quiz-option value="A">A. Listen können nur Zahlen enthalten, Tupel können alles enthalten</base-quiz-option>
+<base-quiz-option value="B">B. Tupel sind schneller zu erstellen</base-quiz-option>
+<base-quiz-option value="C" correct>C. Listen sind veränderlich (können geändert werden), Tupel sind unveränderlich (können nicht geändert werden)</base-quiz-option>
+<base-quiz-option value="D">D. Listen verwenden eckige Klammern, Tupel verwenden geschweifte Klammern</base-quiz-option>
+<base-quiz-answer value="C">Listen sind veränderlich, was bedeutet, dass Sie sie nach der Erstellung ändern können. Tupel sind unveränderlich, was bedeutet, dass sie nach der Erstellung nicht geändert werden können. Beide können beliebige Datentypen enthalten.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Relevante Links
 

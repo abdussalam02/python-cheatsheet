@@ -5,22 +5,22 @@ labUrl: 'https://labex.io/zh/labs/python-python-lists-and-tuples-633660?course=p
 ---
 
 <base-title :title="frontmatter.title" :description="frontmatter.description">
-Python 列表和元组 - Python 速查表
+Python 列表
 </base-title>
 
 <base-lab-url :url="frontmatter.labUrl" />
 
-列表是 Python 中的 4 种数据类型之一，用于存储数据集合。
+列表是 Python 中用于存储数据集合的 4 种数据类型之一。
 
 ```python
-# 列表：用方括号括起来的有序项目集合
+# List: 有序的项目集合，用方括号括起来
 ['John', 'Peter', 'Debora', 'Charles']
 ```
 
 ## 使用索引获取值
 
 ```python
-# 使用索引（从 0 开始，第一个元素是索引 0）访问列表元素
+# 使用索引访问列表元素（从 0 开始，第一个元素是索引 0）
 furniture = ['table', 'chair', 'rack', 'shelf']
 
 furniture[0]  # 返回第一个元素：'table'
@@ -83,10 +83,24 @@ f'The {furniture[-1]} is bigger than the {furniture[-3]}'
 'The shelf is bigger than the chair'
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+如果 <code>furniture = ['table', 'chair', 'rack', 'shelf']</code>，那么 <code>furniture[-1]</code> 返回什么？
+</template>
+
+<base-quiz-option value="A">A. <code>'table'</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>'shelf'</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>['shelf']</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>IndexError</code></base-quiz-option>
+<base-quiz-answer value="B">负数索引从列表末尾访问元素。<code>-1</code> 指向最后一个元素，<code>-2</code> 指向倒数第二个，依此类推。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## 使用切片获取子列表
 
 ```python
-# 切片：使用 [start:end] 语法获取子列表（end 不包含）
+# 切片：使用 [start:end] 语法获取子列表（end 是不包含的）
 furniture = ['table', 'chair', 'rack', 'shelf']
 
 furniture[0:4]  # 返回索引 0 到 3 的元素（不包含 4）
@@ -113,7 +127,7 @@ furniture[0:-1]
 ```
 
 ```python
-# 从开头切片：省略起始索引（默认为 0）
+# 从开头切片：省略 start 索引（默认为 0）
 furniture[:2]  # 返回前两个元素
 ```
 
@@ -122,7 +136,7 @@ furniture[:2]  # 返回前两个元素
 ```
 
 ```python
-# 切片到末尾：省略结束索引（默认为列表末尾）
+# 切片到末尾：省略 end 索引（默认为列表末尾）
 furniture[1:]  # 返回从索引 1 到末尾的所有元素
 ```
 
@@ -168,6 +182,20 @@ spam2
 ['cat', 'bat', 'rat', 'elephant']
 ```
 
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+当 <code>spam</code> 是一个列表时，<code>spam[:]</code> 创建什么？
+</template>
+
+<base-quiz-option value="A">A. 对同一列表的引用</base-quiz-option>
+<base-quiz-option value="B">B. 一个空列表</base-quiz-option>
+<base-quiz-option value="C" correct>C. 列表的浅拷贝</base-quiz-option>
+<base-quiz-option value="D">D. 一个反转的列表</base-quiz-option>
+<base-quiz-answer value="C">使用 <code>[:]</code> 对整个列表进行切片会创建一个浅拷贝。修改副本不会影响原始列表。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## 使用 len() 获取列表长度
 
 ```python
@@ -212,10 +240,10 @@ furniture
 ['desk', 'chair', 'chair', 'bed']
 ```
 
-## 连接和复制
+## 拼接和复制
 
 ```python
-# 列表连接：使用 + 运算符组合两个列表
+# 列表拼接：使用 + 运算符组合两个列表
 [1, 2, 3] + ['A', 'B', 'C']  # 返回 [1, 2, 3, 'A', 'B', 'C']
 ```
 
@@ -265,7 +293,7 @@ shelf
 # enumerate() 在循环中同时返回索引和值
 furniture = ['table', 'chair', 'rack', 'shelf']
 
-for index, item in enumerate(furniture):  # 同时获取索引和项目
+for index, item in enumerate(furniture):  # 一起获取索引和项目
     print(f'index: {index} - item: {item}')
 ```
 
@@ -279,11 +307,11 @@ index: 3 - item: shelf
 ## 使用 zip() 在多个列表中循环
 
 ```python
-# zip() 按元素组合多个列表
+# zip() 按元素将多个列表组合在一起进行循环
 furniture = ['table', 'chair', 'rack', 'shelf']
 price = [100, 50, 80, 40]
 
-for item, amount in zip(furniture, price):  # 配对两个列表的元素
+for item, amount in zip(furniture, price):  # 配对两个列表中的元素
     print(f'The {item} costs ${amount}')
 ```
 
@@ -297,7 +325,7 @@ The shelf costs $40
 ## in 和 not in 运算符
 
 ```python
-# in 运算符：检查项目是否存在于列表中
+# in 运算符：检查一个项目是否存在于列表中
 'rack' in ['table', 'chair', 'rack', 'shelf']  # 返回 True
 ```
 
@@ -332,7 +360,7 @@ False
 
 ## 多重赋值技巧
 
-多重赋值技巧是一种快捷方式，它允许您在一行代码中用列表中的值给多个变量赋值。所以，而不是这样做：
+多重赋值技巧是一种快捷方式，允许您在一行代码中用列表中的值给多个变量赋值。所以，与其这样做：
 
 ```python
 furniture = ['table', 'chair', 'rack', 'shelf']
@@ -379,7 +407,7 @@ shelf
 'shelf'
 ```
 
-多重赋值技巧也可用于交换两个变量的值：
+多重赋值技巧也可以用来交换两个变量的值：
 
 ```python
 a, b = 'table', 'chair'
@@ -428,6 +456,20 @@ furniture
 ['table', 'chair', 'rack', 'shelf', 'bed']
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+<code>append()</code> 方法对列表做什么？
+</template>
+
+<base-quiz-option value="A" correct>A. 将一个元素添加到列表的末尾</base-quiz-option>
+<base-quiz-option value="B">B. 将一个元素添加到列表的开头</base-quiz-option>
+<base-quiz-option value="C">C. 替换最后一个元素</base-quiz-option>
+<base-quiz-option value="D">D. 移除最后一个元素</base-quiz-option>
+<base-quiz-answer value="A"><code>append()</code> 方法将单个元素添加到列表的末尾。要将元素添加到特定位置，请使用 <code>insert()</code>。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ### insert()
 
 `insert` 在给定位置向 `list` 添加一个元素：
@@ -446,7 +488,7 @@ furniture
 
 ### del()
 
-`del` 使用索引删除一个项：
+`del` 使用索引移除一个项：
 
 ```python
 furniture = ['table', 'chair', 'rack', 'shelf']
@@ -469,7 +511,7 @@ furniture
 
 ### remove()
 
-`remove` 使用其实际值删除一个项：
+`remove` 使用其实际值移除一个项：
 
 ```python
 furniture = ['table', 'chair', 'rack', 'shelf']
@@ -486,13 +528,13 @@ furniture
     移除重复项
   </base-warning-title>
   <base-warning-content>
-    如果该值在列表中出现多次，则只删除该值的第一个实例。
+    如果该值在列表中出现多次，则只移除该值的第一个实例。
   </base-warning-content>
 </base-warning>
 
 ### pop()
 
-默认情况下，`pop` 将删除并返回列表的最后一个项目。您也可以将元素的索引作为可选参数传递：
+默认情况下，`pop` 将移除并返回列表的最后一个项。您也可以将元素的索引作为可选参数传递：
 
 ```python
 animals = ['cat', 'bat', 'rat', 'elephant']
@@ -528,6 +570,20 @@ animals
 ['bat', 'rat']
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+调用列表上的 <code>pop()</code> 会做什么？
+</template>
+
+<base-quiz-option value="A">A. 只移除最后一项</base-quiz-option>
+<base-quiz-option value="B" correct>B. 移除并返回一项（默认最后一个，或指定的索引）</base-quiz-option>
+<base-quiz-option value="C">C. 只返回最后一项而不移除它</base-quiz-option>
+<base-quiz-option value="D">D. 移除列表中的所有项</base-quiz-option>
+<base-quiz-answer value="B"><code>pop()</code> 方法会移除并返回一项。默认情况下它移除最后一项，但您可以传递一个索引来移除特定项。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## 使用 sort() 对值进行排序
 
 ```python
@@ -550,7 +606,7 @@ furniture
 ['chair', 'rack', 'shelf', 'table']
 ```
 
-您还可以为 `reverse` 关键字参数传递 `True`，以便 `sort()` 以相反的顺序对值进行排序：
+您也可以为 `reverse` 关键字参数传递 `True`，以便 `sort()` 以相反的顺序对值进行排序：
 
 ```python
 furniture.sort(reverse=True)
@@ -561,7 +617,7 @@ furniture
 ['table', 'shelf', 'rack', 'chair']
 ```
 
-如果您需要按常规字母顺序对值进行排序，请在 `sort()` 方法调用中为 `key` 关键字参数传递 `str.lower`：
+如果您需要按常规字母顺序对值进行排序，请在 sort() 方法调用中为 key 关键字参数传递 `str.lower`：
 
 ```python
 letters = ['a', 'z', 'A', 'Z']
@@ -573,7 +629,7 @@ letters
 ['a', 'A', 'z', 'Z']
 ```
 
-您可以使用内置函数 `sorted` 返回一个新列表：
+您可以使用内置函数 `sorted` 来返回一个新列表：
 
 ```python
 furniture = ['table', 'chair', 'rack', 'shelf']
@@ -584,11 +640,11 @@ sorted(furniture)
 ['chair', 'rack', 'shelf', 'table']
 ```
 
-## 元组数据类型
+## Tuple 数据类型
 
 <base-disclaimer>
   <base-disclaimer-title>
-    <a target="_blank" href="https://stackoverflow.com/questions/1708510/list-vs-tuple-when-to-use-each">元组 vs 列表</a>
+    <a target="_blank" href="https://stackoverflow.com/questions/1708510/list-vs-tuple-when-to-use-each">元组与列表</a>
   </base-disclaimer-title>
   <base-disclaimer-content>
     元组和列表之间的关键区别在于，<code>元组</code>是<i>不可变</i>对象，而<code>列表</code>是<i>可变</i>对象。这意味着元组不能被更改，而列表可以被修改。元组比列表更节省内存。
@@ -649,9 +705,23 @@ list('hello')
 ['h', 'e', 'l', 'l', 'o']
 ```
 
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+Python 中列表和元组的主要区别是什么？
+</template>
+
+<base-quiz-option value="A">A. 列表只能包含数字，元组可以包含任何内容</base-quiz-option>
+<base-quiz-option value="B">B. 元组创建速度更快</base-quiz-option>
+<base-quiz-option value="C" correct>C. 列表是可变的（可以更改），元组是不可变的（不能更改）</base-quiz-option>
+<base-quiz-option value="D">D. 列表使用方括号，元组使用花括号</base-quiz-option>
+<base-quiz-answer value="C">列表是可变的，意味着您可以在创建后修改它们。元组是不可变的，意味着一旦创建就不能更改。两者都可以包含任何类型的数据。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## 相关链接
 
-- <router-link to="/blog/python-data-types">Python 数据类型：初学者的视觉指南</router-link>
+- <router-link to="/blog/python-data-types">Python 数据类型：初学者视觉指南</router-link>
 - <router-link to="/blog/python-comprehensions-step-by-step">Python 推导式分步指南</router-link>
 - <router-link to="/cheatsheet/comprehensions">Python 推导式</router-link>
 - <router-link to="/modules/itertools-module">itertools 模块</router-link>

@@ -1,6 +1,6 @@
 ---
-title: 'Expresiones Regulares de Python - Hoja de Trucos'
-description: 'Una expresión regular (regex) es una secuencia de caracteres que especifica un patrón de búsqueda en texto y es utilizada por algoritmos de búsqueda de cadenas.'
+title: 'Expresiones Regulares en Python - Hoja de Trucos de Python'
+description: 'Una expresión regular (abreviada como regex) es una secuencia de caracteres que especifica un patrón de búsqueda en texto y es utilizada por algoritmos de búsqueda de cadenas.'
 labUrl: 'https://labex.io/es/labs/python-python-regular-expressions-633664?course=python-cheatsheet'
 ---
 
@@ -33,33 +33,33 @@ import re
 
 ## Símbolos Regex
 
-| Símbolo                | Coincide                                                                      |
-| :--------------------- | :---------------------------------------------------------------------------- |
-| `?`                    | cero o una de la agrupación anterior.                                         |
-| `*`                    | cero o más de la agrupación anterior.                                         |
-| `+`                    | una o más de la agrupación anterior.                                          |
-| `{n}`                  | exactamente n de la agrupación anterior.                                      |
-| `{n,}`                 | n o más de la agrupación anterior.                                            |
-| `{,m}`                 | 0 a m de la agrupación anterior.                                              |
-| `{n,m}`                | al menos n y como máximo m de la agrupación anterior.                         |
-| `{n,m}?` o `*?` o `+?` | realiza una coincidencia no codiciosa (non-greedy) de la agrupación anterior. |
-| `^spam`                | significa que la cadena debe comenzar con spam.                               |
-| `spam$`                | significa que la cadena debe terminar con spam.                               |
-| `.`                    | cualquier carácter, excepto los caracteres de nueva línea.                    |
-| `\d`, `\w`, y `\s`     | un dígito, palabra o carácter de espacio, respectivamente.                    |
-| `\D`, `\W`, y `\S`     | cualquier cosa excepto un dígito, palabra o espacio, respectivamente.         |
-| `[abc]`                | cualquier carácter entre los corchetes (como a, b, ).                         |
-| `[^abc]`               | cualquier carácter que no esté entre los corchetes.                           |
+| Símbolo                | Coincide                                                              |
+| :--------------------- | :-------------------------------------------------------------------- |
+| `?`                    | cero o una vez del grupo precedente.                                  |
+| `*`                    | cero o más veces del grupo precedente.                                |
+| `+`                    | una o más veces del grupo precedente.                                 |
+| `{n}`                  | exactamente n veces del grupo precedente.                             |
+| `{n,}`                 | n o más veces del grupo precedente.                                   |
+| `{,m}`                 | 0 a m veces del grupo precedente.                                     |
+| `{n,m}`                | al menos n y como máximo m veces del p precedente.                    |
+| `{n,m}?` o `*?` o `+?` | realiza una coincidencia no codiciosa (non-greedy) del p precedente.  |
+| `^spam`                | significa que la cadena debe comenzar con spam.                       |
+| `spam$`                | significa que la cadena debe terminar con spam.                       |
+| `.`                    | cualquier carácter, excepto los caracteres de nueva línea.            |
+| `\d`, `\w`, y `\s`     | un dígito, palabra o carácter de espacio, respectivamente.            |
+| `\D`, `\W`, y `\S`     | cualquier cosa excepto un dígito, palabra o espacio, respectivamente. |
+| `[abc]`                | cualquier carácter entre los corchetes (como a, b, ).                 |
+| `[^abc]`               | cualquier carácter que no esté entre los corchetes.                   |
 
-## Objetos Regex de Coincidencia
+## Objetos Regex Coincidentes
 
 ```python
-# re.compile(): crear objeto de patrón regex (usar cadena sin formato r'' para evitar escapar)
+# re.compile(): crear objeto de patrón regex (usar cadena sin formato r'' para evitar el escape)
 phone_num_regex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d')  # Patrón: 3 dígitos-3 dígitos-4 dígitos
 
-mo = phone_num_regex.search('My number is 415-555-4242.')  # Buscar patrón
+mo = phone_num_regex.search('Mi número es 415-555-4242.')  # Buscar patrón
 
-print(f'Phone number found: {mo.group()}')  # group() devuelve el texto coincidente
+print(f'Número de teléfono encontrado: {mo.group()}')  # group() devuelve el texto coincidente
 ```
 
 ```output
@@ -71,7 +71,7 @@ Phone number found: 415-555-4242
 ```python
 # Los paréntesis crean grupos: group(1) devuelve el primer grupo, group(2) devuelve el segundo
 phone_num_regex = re.compile(r'(\d\d\d)-(\d\d\d-\d\d\d\d)')  # Dos grupos entre paréntesis
-mo = phone_num_regex.search('My number is 415-555-4242.')
+mo = phone_num_regex.search('Mi número es 415-555-4242.')
 
 mo.group(1)  # Devuelve el primer grupo: '415'
 ```
@@ -103,6 +103,20 @@ mo.group()
 ```output
 '415-555-4242'
 ```
+
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+¿Qué devuelve <code>group()</code> cuando se llama en un objeto de coincidencia?
+</template>
+
+<base-quiz-option value="A" correct>A. El texto completo coincidente</base-quiz-option>
+<base-quiz-option value="B">B. Solo el primer grupo</base-quiz-option>
+<base-quiz-option value="C">C. Todos los grupos como una lista</base-quiz-option>
+<base-quiz-option value="D">D. El índice de la coincidencia</base-quiz-option>
+<base-quiz-answer value="A">El método <code>group()</code> (o <code>group(0)</code>) devuelve el texto completo coincidente. Para obtener grupos específicos, use <code>group(1)</code>, <code>group(2)</code>, etc.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 Para recuperar todos los grupos a la vez, use el método `groups()`:
 
@@ -140,7 +154,7 @@ Puede usar el carácter `|` donde quiera hacer coincidir una de muchas expresion
 ```python
 hero_regex = re.compile (r'Batman|Tina Fey')
 
-mo1 = hero_regex.search('Batman and Tina Fey.')
+mo1 = hero_regex.search('Batman y Tina Fey.')
 mo1.group()
 ```
 
@@ -149,7 +163,7 @@ mo1.group()
 ```
 
 ```python
-mo2 = hero_regex.search('Tina Fey and Batman.')
+mo2 = hero_regex.search('Tina Fey y Batman.')
 mo2.group()
 ```
 
@@ -157,11 +171,11 @@ mo2.group()
 'Tina Fey'
 ```
 
-También puede usar el pipe para hacer coincidir una de varias expresiones como parte de su regex:
+También puede usar el pipe para hacer coincidir uno de varios patrones como parte de su regex:
 
 ```python
 bat_regex = re.compile(r'Bat(man|mobile|copter|bat)')
-mo = bat_regex.search('Batmobile lost a wheel')
+mo = bat_regex.search('Batmobile perdió una rueda')
 
 mo.group()
 ```
@@ -178,14 +192,14 @@ mo.group(1)
 'mobile'
 ```
 
-## Coincidencia opcional con el signo de interrogación
+## Coincidencia opcional con el signo de Interrogación
 
 El carácter `?` marca el grupo que lo precede como una parte opcional del patrón.
 
 ```python
 bat_regex = re.compile(r'Bat(wo)?man')
 
-mo1 = bat_regex.search('The Adventures of Batman')
+mo1 = bat_regex.search('Las Aventuras de Batman')
 mo1.group()
 ```
 
@@ -194,7 +208,7 @@ mo1.group()
 ```
 
 ```python
-mo2 = bat_regex.search('The Adventures of Batwoman')
+mo2 = bat_regex.search('Las Aventuras de Batwoman')
 mo2.group()
 ```
 
@@ -204,11 +218,11 @@ mo2.group()
 
 ## Coincidencia de cero o más con el Asterisco
 
-El `*` (asterisco) significa "coincidir cero o más". El grupo que precede al asterisco puede aparecer cualquier número de veces en el texto.
+El `*` (asterisco) significa "coincidir cero o más veces". El grupo que precede al asterisco puede aparecer cualquier número de veces en el texto.
 
 ```python
 bat_regex = re.compile(r'Bat(wo)*man')
-mo1 = bat_regex.search('The Adventures of Batman')
+mo1 = bat_regex.search('Las Aventuras de Batman')
 mo1.group()
 ```
 
@@ -217,7 +231,7 @@ mo1.group()
 ```
 
 ```python
-mo2 = bat_regex.search('The Adventures of Batwoman')
+mo2 = bat_regex.search('Las Aventuras de Batwoman')
 mo2.group()
 ```
 
@@ -226,7 +240,7 @@ mo2.group()
 ```
 
 ```python
-mo3 = bat_regex.search('The Adventures of Batwowowowoman')
+mo3 = bat_regex.search('Las Aventuras de Batwowowowoman')
 mo3.group()
 ```
 
@@ -236,12 +250,12 @@ mo3.group()
 
 ## Coincidencia de uno o más con el Plus
 
-El `+` (o plus) significa _coincidir uno o más_. El grupo que precede a un plus debe aparecer al menos una vez:
+El `+` (o plus) _significa coincidir uno o más veces_. El grupo que precede a un plus debe aparecer al menos una vez:
 
 ```python
 bat_regex = re.compile(r'Bat(wo)+man')
 
-mo1 = bat_regex.search('The Adventures of Batwoman')
+mo1 = bat_regex.search('Las Aventuras de Batwoman')
 mo1.group()
 ```
 
@@ -250,7 +264,7 @@ mo1.group()
 ```
 
 ```python
-mo2 = bat_regex.search('The Adventures of Batwowowowoman')
+mo2 = bat_regex.search('Las Aventuras de Batwowowowoman')
 mo2.group()
 ```
 
@@ -259,7 +273,7 @@ mo2.group()
 ```
 
 ```python
-mo3 = bat_regex.search('The Adventures of Batman')
+mo3 = bat_regex.search('Las Aventuras de Batman')
 mo3 is None
 ```
 
@@ -267,7 +281,7 @@ mo3 is None
 True
 ```
 
-## Coincidencia de repeticiones específicas con llaves
+## Coincidencia de repeticiones específicas con Llaves
 
 Si tiene un grupo que desea repetir un número específico de veces, siga el grupo en su regex con un número entre llaves:
 
@@ -305,7 +319,7 @@ mo1.group()
 
 ## Coincidencia codiciosa (Greedy) y no codiciosa (Non-greedy)
 
-Las expresiones regulares de Python son codiciosas por defecto: en situaciones ambiguas coincidirán con la cadena más larga posible. La versión no codiciosa de las llaves, que coincide con la cadena más corta posible, tiene la llave de cierre seguida de un signo de interrogación.
+Las expresiones regulares de Python son codiciosas por defecto: en situaciones ambiguas intentarán hacer coincidir la cadena más larga posible. La versión no codiciosa de las llaves, que coincide con la cadena más corta posible, tiene la llave de cierre seguida de un signo de interrogación.
 
 ```python
 greedy_ha_regex = re.compile(r'(Ha){3,5}')
@@ -328,6 +342,20 @@ mo2.group()
 'HaHaHa'
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+¿Qué hace que un patrón regex no sea codicioso (non-greedy)?
+</template>
+
+<base-quiz-option value="A">A. Usar <code>_</code> en lugar de <code>+</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. Añadir un <code>?</code> después del cuantificador (ej. <code>_?</code>, <code>+?</code>, <code>{3,5}?</code>)</base-quiz-option>
+<base-quiz-option value="C">C. Usar paréntesis</base-quiz-option>
+<base-quiz-option value="D">D. Usar corchetes</base-quiz-option>
+<base-quiz-answer value="B">Añadir un <code>?</code> después de cuantificadores como <code>\*</code>, <code>+</code>, o <code>{n,m}</code> los hace no codiciosos, haciendo coincidir la cadena más corta posible en lugar de la más larga.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## El método findall()
 
 El método `findall()` devolverá las cadenas de cada coincidencia en la cadena buscada.
@@ -335,20 +363,20 @@ El método `findall()` devolverá las cadenas de cada coincidencia en la cadena 
 ```python
 phone_num_regex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d') # no tiene grupos
 
-phone_num_regex.findall('Cell: 415-555-9999 Work: 212-555-0000')
+phone_num_regex.findall('Celular: 415-555-9999 Trabajo: 212-555-0000')
 ```
 
 ```output
 ['415-555-9999', '212-555-0000']
 ```
 
-## Creación de sus propias clases de caracteres
+## Creando sus propias clases de caracteres
 
 Puede definir su propia clase de caracteres usando corchetes. Por ejemplo, la clase de caracteres _[aeiouAEIOU]_ coincidirá con cualquier vocal, tanto minúscula como mayúscula.
 
 ```python
 vowel_regex = re.compile(r'[aeiouAEIOU]')
-vowel_regex.findall('Robocop eats baby food. BABY FOOD.')
+vowel_regex.findall('Robocop come comida de bebé. COMIDA DE BEBÉ.')
 ```
 
 ```output
@@ -357,11 +385,11 @@ vowel_regex.findall('Robocop eats baby food. BABY FOOD.')
 
 También puede incluir rangos de letras o números usando un guion. Por ejemplo, la clase de caracteres _[a-zA-Z0-9]_ coincidirá con todas las letras minúsculas, letras mayúsculas y números.
 
-Al colocar un acento circunflejo (`^`) justo después del corchete de apertura de la clase de caracteres, puede crear una clase de caracteres negativa que coincidirá con todos los caracteres que no están en la clase de caracteres:
+Al colocar un carácter circunflejo (`^`) justo después del corchete de apertura de la clase de caracteres, puede crear una clase de caracteres negativa que coincidirá con todos los caracteres que no están en la clase de caracteres:
 
 ```python
 consonant_regex = re.compile(r'[^aeiouAEIOU]')
-consonant_regex.findall('Robocop eats baby food. BABY FOOD.')
+consonant_regex.findall('Robocop come comida de bebé. COMIDA DE BEBÉ.')
 ```
 
 ```output
@@ -370,17 +398,17 @@ consonant_regex.findall('Robocop eats baby food. BABY FOOD.')
 
 ## Los caracteres Caret y Dollar sign
 
-- También puede usar el símbolo de acento circunflejo `^` al principio de un regex para indicar que una coincidencia debe ocurrir al comienzo del texto buscado.
+- También puede usar el símbolo de circunflejo `^` al comienzo de una regex para indicar que una coincidencia debe ocurrir al principio del texto buscado.
 
-- De manera similar, puede colocar un signo de dólar `$` al final del regex para indicar que la cadena debe terminar con este patrón regex.
+- De manera similar, puede colocar un signo de dólar `$` al final de la regex para indicar que la cadena debe terminar con este patrón regex.
 
-- Y puede usar el `^` y el `$` juntos para indicar que toda la cadena debe coincidir con el regex.
+- Y puede usar el `^` y el `$` juntos para indicar que toda la cadena debe coincidir con la regex.
 
-La cadena de expresión regular `r'^Hello'` coincide con cadenas que comienzan con 'Hello':
+La cadena de expresión regular `r'^Hello'` coincide con las cadenas que comienzan con 'Hello':
 
 ```python
 begins_with_hello = re.compile(r'^Hello')
-begins_with_hello.search('Hello world!')
+begins_with_hello.search('Hello mundo!')
 ```
 
 ```output
@@ -388,7 +416,7 @@ begins_with_hello.search('Hello world!')
 ```
 
 ```python
-begins_with_hello.search('He said hello.') is None
+begins_with_hello.search('Él dijo hola.') is None
 ```
 
 ```output
@@ -423,14 +451,14 @@ whole_string_is_num.search('12 34567890') is None
 True
 ```
 
-## El carácter comodín
+## El carácter Comodín
 
-El carácter `.` (o punto) en una expresión regular coincidirá con cualquier carácter excepto una nueva línea.
+El carácter `.` (o punto) en una expresión regular coincidirá con cualquier carácter excepto una nueva línea:
 
 ```python
 at_regex = re.compile(r'.at')
 
-at_regex.findall('The cat in the hat sat on the flat mat.')
+at_regex.findall('El gato en el sombrero se sentó en la alfombra plana.')
 ```
 
 ```output
@@ -458,11 +486,11 @@ mo.group(2)
 'Sweigart'
 ```
 
-El `.*` utiliza el modo codicioso (greedy): Siempre intentará hacer coincidir la mayor cantidad de texto posible. Para hacer coincidir cualquier texto de forma no codiciosa, use el punto, el asterisco y el signo de interrogación (`.*?`). El signo de interrogación le indica a Python que coincida de forma no codiciosa:
+El `.*` usa el modo codicioso (greedy): Siempre intentará hacer coincidir la mayor cantidad de texto posible. Para hacer coincidir cualquier y todo el texto de manera no codiciosa, use el punto, el asterisco y el signo de interrogación (`.*?`). El signo de interrogación le dice a Python que coincida de manera no codiciosa:
 
 ```python
 non_greedy_regex = re.compile(r'<.*?>')
-mo = non_greedy_regex.search('<To serve man> for dinner.>')
+mo = non_greedy_regex.search('<Servir al hombre> para la cena.>')
 mo.group()
 ```
 
@@ -472,7 +500,7 @@ mo.group()
 
 ```python
 greedy_regex = re.compile(r'<.*>')
-mo = greedy_regex.search('<To serve man> for dinner.>')
+mo = greedy_regex.search('<Servir al hombre> para la cena.>')
 mo.group()
 ```
 
@@ -486,7 +514,7 @@ El punto-asterisco coincide con todo excepto una nueva línea. Al pasar `re.DOTA
 
 ```python
 no_newline_regex = re.compile('.*')
-no_newline_regex.search('Serve the public trust.\nProtect the innocent.\nUphold the law.').group()
+no_newline_regex.search('Sirva la confianza pública.\nProteja al inocente.\nMantenga la ley.').group()
 ```
 
 ```output
@@ -495,7 +523,7 @@ no_newline_regex.search('Serve the public trust.\nProtect the innocent.\nUphold 
 
 ```python
 newline_regex = re.compile('.*', re.DOTALL)
-newline_regex.search('Serve the public trust.\nProtect the innocent.\nUphold the law.').group()
+newline_regex.search('Sirva la confianza pública.\nProteja al inocente.\nMantenga la ley.').group()
 ```
 
 ```output
@@ -509,7 +537,7 @@ Para hacer que su regex no distinga entre mayúsculas y minúsculas, puede pasar
 ```python
 robocop = re.compile(r'robocop', re.I)
 
-robocop.search('Robocop is part man, part machine, all cop.').group()
+robocop.search('Robocop es parte hombre, parte máquina, todo policía.').group()
 ```
 
 ```output
@@ -517,7 +545,7 @@ robocop.search('Robocop is part man, part machine, all cop.').group()
 ```
 
 ```python
-robocop.search('ROBOCOP protects the innocent.').group()
+robocop.search('ROBOCOP protege a los inocentes.').group()
 ```
 
 ```output
@@ -525,7 +553,7 @@ robocop.search('ROBOCOP protects the innocent.').group()
 ```
 
 ```python
-robocop.search('Al, why does your programming book talk about robocop so much?').group()
+robocop.search('Al, ¿por qué tu libro de programación habla tanto de robocop?').group()
 ```
 
 ```output
@@ -544,14 +572,28 @@ El método `sub()` devuelve una cadena con las sustituciones aplicadas:
 ```python
 names_regex = re.compile(r'Agent \w+')
 
-names_regex.sub('CENSORED', 'Agent Alice gave the secret documents to Agent Bob.')
+names_regex.sub('CENSURADO', 'El Agente Alice dio los documentos secretos al Agente Bob.')
 ```
 
 ```output
 'CENSORED gave the secret documents to CENSORED.'
 ```
 
-## Gestión de Regexes complejos
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+¿Qué hace el método <code>sub()</code>?
+</template>
+
+<base-quiz-option value="A">A. Encuentra todas las coincidencias en una cadena</base-quiz-option>
+<base-quiz-option value="B" correct>B. Reemplaza todas las coincidencias con una cadena de reemplazo</base-quiz-option>
+<base-quiz-option value="C">C. Divide una cadena en las coincidencias</base-quiz-option>
+<base-quiz-option value="D">D. Valida el formato de una cadena</base-quiz-option>
+<base-quiz-answer value="B">El método <code>sub()</code> sustituye todas las coincidencias del patrón con una cadena de reemplazo. Devuelve una nueva cadena con las sustituciones aplicadas.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+## Gestión de Regexes complejas
 
 Para indicarle a la función `re.compile()` que ignore los espacios en blanco y los comentarios dentro de la cadena de expresión regular, se puede habilitar el "modo detallado" (verbose mode) pasando la variable `re.VERBOSE` como segundo argumento a `re.compile()`.
 
@@ -574,9 +616,23 @@ phone_regex = re.compile(r'''(
     )''', re.VERBOSE)
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+¿Qué hace <code>re.VERBOSE</code> cuando se pasa a <code>re.compile()</code>?
+</template>
+
+<base-quiz-option value="A" correct>A. Permite espacios en blanco y comentarios en el patrón regex para una mejor legibilidad</base-quiz-option>
+<base-quiz-option value="B">B. Hace que la regex no distinga entre mayúsculas y minúsculas</base-quiz-option>
+<base-quiz-option value="C">C. Hace que el punto coincida con los caracteres de nueva línea</base-quiz-option>
+<base-quiz-option value="D">D. Acelera la coincidencia de regex</base-quiz-option>
+<base-quiz-answer value="A">La bandera <code>re.VERBOSE</code> le permite agregar espacios en blanco y comentarios a su patrón regex, haciendo que las regex complejas sean mucho más legibles sin afectar la coincidencia del patrón.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Enlaces relevantes
 
 - <router-link to="/cheatsheet/manipulating-strings">Manipulación de Cadenas</router-link>
 - <router-link to="/cheatsheet/string-formatting">Formato de Cadenas</router-link>
-- <router-link to="/blog/python-data-types">Publicación del Blog Tipos de Datos de Python</router-link>
+- <router-link to="/blog/python-data-types">Publicación del Blog sobre Tipos de Datos de Python</router-link>
 - <router-link to="/builtin/compile">compile()</router-link>

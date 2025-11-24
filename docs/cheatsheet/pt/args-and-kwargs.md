@@ -69,6 +69,20 @@ some_function('arg1', 'arg2', 'arg3')
 Arguments passed: ('arg1', 'arg2', 'arg3') as <class 'tuple'>
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Em que tipo de dado o <code>*args</code> coleta os argumentos?
+</template>
+
+<base-quiz-option value="A">A. Uma lista</base-quiz-option>
+<base-quiz-option value="B" correct>B. Uma tupla</base-quiz-option>
+<base-quiz-option value="C">C. Um dicionário</base-quiz-option>
+<base-quiz-option value="D">D. Um conjunto (set)</base-quiz-option>
+<base-quiz-answer value="B">O parâmetro <code>\*args</code> coleta argumentos posicionais em uma tupla. Isso permite que uma função aceite qualquer número de argumentos posicionais.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Kwargs
 
 Palavras-chave são acessadas através da variável `kwargs`:
@@ -76,7 +90,7 @@ Palavras-chave são acessadas através da variável `kwargs`:
 ```python
 # **kwargs coleta argumentos de palavra-chave em um dicionário
 def some_function(**kwargs):
-    print(f'palavras-chave: {kwargs} como {type(kwargs)}')
+    print(f'Palavras-chave: {kwargs} como {type(kwargs)}')
 
 # Passa argumentos de palavra-chave - eles serão coletados no dicionário kwargs
 some_function(key1='arg1', key2='arg2')
@@ -85,6 +99,20 @@ some_function(key1='arg1', key2='arg2')
 ```output
 keywords: {'key1': 'arg1', 'key2': 'arg2'} as <class 'dict'>
 ```
+
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+Em que tipo de dado o <code>**kwargs</code> coleta os argumentos?
+</template>
+
+<base-quiz-option value="A">A. Uma lista</base-quiz-option>
+<base-quiz-option value="B">B. Uma tupla</base-quiz-option>
+<base-quiz-option value="C" correct>C. Um dicionário</base-quiz-option>
+<base-quiz-option value="D">D. Um conjunto (set)</base-quiz-option>
+<base-quiz-answer value="C">O parâmetro <code>\*\*kwargs</code> coleta argumentos de palavra-chave em um dicionário. Isso permite que uma função aceite qualquer número de argumentos de palavra-chave.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Links relevantes
 

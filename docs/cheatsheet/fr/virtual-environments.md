@@ -10,7 +10,7 @@ Environnement Virtuel
 
 <base-lab-url :url="frontmatter.labUrl" />
 
-L'utilisation d'un Environnement Virtuel sert à tester du code python dans des environnements encapsulés, et également à éviter de remplir l'installation Python de base avec des bibliothèques que nous pourrions n'utiliser que pour un seul projet.
+L'utilisation d'un Environnement Virtuel sert à tester du code Python dans des environnements encapsulés, et également à éviter de remplir l'installation Python de base avec des bibliothèques que nous pourrions n'utiliser que pour un seul projet.
 
 ## venv
 
@@ -30,6 +30,20 @@ python3 -m venv venv
 
 Ceci crée un répertoire `venv` dans votre dossier actuel contenant l'environnement virtuel.
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+Quelle commande est utilisée pour créer un environnement virtuel avec <code>venv</code> ?
+</template>
+
+<base-quiz-option value="A" correct>A. <code>python -m venv venv</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>python create venv</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>venv create</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>python venv new</code></base-quiz-option>
+<base-quiz-answer value="A">La commande <code>python -m venv venv</code> crée un environnement virtuel. L'indicateur <code>-m</code> exécute le module venv, et <code>venv</code> à la fin est le nom du répertoire à créer.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 2. Activer l'environnement virtuel
 
 Sur Linux/macOS :
@@ -45,6 +59,20 @@ venv\Scripts\activate
 ```
 
 Une fois activé, vous verrez `(venv)` au début de votre invite de commande, indiquant que l'environnement virtuel est actif.
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Comment activer un environnement virtuel sur Linux/macOS ?
+</template>
+
+<base-quiz-option value="A">A. <code>activate venv</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>source venv/bin/activate</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>venv activate</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>python venv activate</code></base-quiz-option>
+<base-quiz-answer value="B">Sur Linux/macOS, vous activez un environnement virtuel en utilisant <code>source venv/bin/activate</code>. Sur Windows, vous utiliseriez <code>venv\Scripts\activate</code>.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 3. Installer des paquets
 
@@ -65,6 +93,20 @@ deactivate
 ```
 
 Le préfixe `(venv)` disparaîtra de votre invite de commande.
+
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+Quel est l'objectif principal de l'utilisation d'un environnement virtuel ?
+</template>
+
+<base-quiz-option value="A" correct>A. Isoler les dépendances du projet et éviter de remplir l'installation Python de base</base-quiz-option>
+<base-quiz-option value="B">B. Rendre Python plus rapide</base-quiz-option>
+<base-quiz-option value="C">C. Crypter le code Python</base-quiz-option>
+<base-quiz-option value="D">D. Compiler Python en code machine</base-quiz-option>
+<base-quiz-answer value="A">Les environnements virtuels vous permettent de tester du code Python dans des environnements encapsulés et d'éviter de remplir l'installation Python de base avec des bibliothèques qui pourraient n'être utilisées que pour un seul projet. Cela aide à gérer les dépendances par projet.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## virtualenv
 
@@ -110,7 +152,7 @@ Remarquez comment les parenthèses disparaissent.
 
 1. Travailler sur (Workon)
 
-Ouvrez l'invite de commande et tapez `workon HelloWorld` pour activer l'environnement et vous déplacer dans le dossier racine de votre projet
+Ouvrez l'invite de commande et tapez `workon HelloWorld` pour activer l'environnement et vous déplacer vers le dossier racine de votre projet
 
 ```bash
 workon HelloWorld
@@ -177,7 +219,7 @@ Pour ajouter des dépendances à votre projet, vous pouvez les spécifier dans l
 pendulum = "^1.4"
 ```
 
-Aussi, au lieu de modifier le fichier pyproject.toml à la main, vous pouvez utiliser la commande `add` et elle trouvera automatiquement une contrainte de version appropriée.
+Aussi, au lieu de modifier le fichier pyproject.toml à la main, vous pouvez utiliser la commande add et elle trouvera automatiquement une contrainte de version appropriée.
 
 ```bash
 poetry add pendulum
@@ -208,7 +250,7 @@ Pour plus d'informations, consultez la [documentation](https://poetry.eustace.io
     Du site web de <a target="_blank" href="https://pipenv.pypa.io/en/latest/">Pipenv</a>
   </base-disclaimer-title>
   <base-disclaimer-content>
-    Pipenv est un outil qui vise à apporter le meilleur de tous les mondes de packaging (bundler, composer, npm, cargo, yarn, etc.) au monde Python. Windows est un citoyen de première classe, dans notre monde.
+    Pipenv est un outil qui vise à apporter le meilleur de tous les mondes du packaging (bundler, composer, npm, cargo, yarn, etc.) au monde Python. Windows est un citoyen de première classe, dans notre monde.
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -251,7 +293,7 @@ Trouvez plus d'informations et une vidéo sur [docs.pipenv.org](https://docs.pip
 
 <base-disclaimer>
   <base-disclaimer-title>
-    <a target="k" href="https://anaconda.com/">Anaconda</a> est un autre outil populaire pour gérer les paquets python.
+    <a target="k" href="https://anaconda.com/">Anaconda</a> est un autre outil populaire pour gérer les paquets Python.
   </base-disclaimer-title>
   <base-disclaimer-content>
     Où les paquets, les notebooks, les projets et les environnements sont partagés. Votre lieu pour l'hébergement public gratuit de paquets conda.
@@ -320,7 +362,7 @@ uv add requests
 uv run python script.py
 ```
 
-5. Activer manuellement l'environnement virtuel (optionnel)
+5. Activer l'environnement virtuel manuellement (optionnel)
 
 ```bash
 source .venv/bin/activate  # Linux/macOS

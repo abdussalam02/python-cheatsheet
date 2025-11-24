@@ -1,6 +1,6 @@
 ---
 title: 'Python 字符串格式化 - Python 速查表'
-description: '如果您使用 Python 3.6+，推荐使用字符串 f-string 来格式化字符串。'
+description: '如果您使用 Python 3.6+，f-string 是推荐的字符串格式化方法。'
 labUrl: 'https://labex.io/zh/labs/python-python-string-formatting-633667?course=python-cheatsheet'
 ---
 
@@ -15,11 +15,11 @@ Python 字符串格式化
     来自 <a href="https://docs.python.org/3/library/stdtypes.html?highlight=sprintf#printf-style-string-formatting">Python 3 文档</a>
   </base-disclaimer-title>
   <base-disclaimer-content>
-    这里描述的格式化操作（<b>% 运算符</b>）表现出各种怪癖，导致许多常见错误 [...]。使用较新的 <a href="#formatted-string-literals-or-f-strings">格式化字符串字面量</a> [...] 有助于避免这些错误。这些替代方案还为文本格式化提供了更强大、更灵活和可扩展的方法。
+    这里描述的格式化操作（<b>% 运算符</b>）表现出各种怪癖，导致许多常见错误 […]。使用较新的 <a href="#formatted-string-literals-or-f-strings">格式化字符串字面量</a> […] 有助于避免这些错误。这些替代方案还为文本格式化提供了更强大、更灵活和可扩展的方法。
   </base-disclaimer-content>
 </base-disclaimer>
 
-## % 运算符
+## % operator
 
 <base-warning>
   <base-warning-title>
@@ -31,7 +31,7 @@ Python 字符串格式化
 </base-warning>
 
 ```python
-# % 运算符：旧式字符串格式化（新代码不推荐）
+# % operator: 旧式字符串格式化（不推荐用于新代码）
 name = 'Pete'
 'Hello %s' % name  # %s = 字符串占位符
 ```
@@ -75,21 +75,21 @@ age = 20
 "Hello I'm John, my age is 20"
 ```
 
-## 格式化字符串字面量或 f-Strings
+## Formatted String Literals or f-Strings
 
-如果使用 Python 3.6+，字符串 `f-Strings` 是格式化字符串的推荐方法。
+如果使用 Python 3.6+，字符串 `f-Strings` 是格式化字符串的推荐方式。
 
 <base-disclaimer>
   <base-disclaimer-title>
     来自 <a href="https://docs.python.org/3/reference/lexical_analysis.html#f-strings">Python 3 文档</a>
   </base-disclaimer-title>
   <base-disclaimer-content>
-    格式化字符串字面量或 f 字符串是以 <code>f</code> 或 <code>F</code> 为前缀的字符串字面量。这些字符串可能包含替换字段，即由花括号 {} 分隔的表达式。虽然其他字符串字面量总是具有恒定值，但格式化字符串实际上是在运行时求值的表达式。
+    格式化字符串字面量或 f 字符串是前缀为 <code>f</code> 或 <code>F</code> 的字符串字面量。这些字符串可以包含替换字段，即由花括号 {} 分隔的表达式。虽然其他字符串字面量总是具有恒定值，但格式化字符串实际上是在运行时求值的表达式。
   </base-disclaimer-content>
 </base-disclaimer>
 
 ```python
-# f-string：格式化字符串的推荐方法 (Python 3.6+)
+# f-string: 格式化字符串的推荐方式 (Python 3.6+)
 name = 'Elizabeth'
 f'Hello {name}!'  # f 前缀允许在 {} 中使用表达式
 ```
@@ -98,10 +98,24 @@ f'Hello {name}!'  # f 前缀允许在 {} 中使用表达式
 'Hello Elizabeth!'
 ```
 
-甚至可以在其中进行内联算术运算：
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Python 中 f-string 使用的前缀是什么？
+</template>
+
+<base-quiz-option value="A">A. <code>fmt</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>f</code> 或 <code>F</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>format</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>str</code></base-quiz-option>
+<base-quiz-answer value="B">f-string 前面有 <code>f</code> 或 <code>F</code> 后跟引号。它们允许您在花括号 <code>{}</code> 中嵌入表达式。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+它甚至可以在其中进行内联算术运算：
 
 ```python
-# f-strings 支持表达式：可以在 {} 中包含计算
+# f-strings 支持表达式：可以在 {} 内部包含计算
 a = 5
 b = 10
 f'Five plus ten is {a + b} and not {2 * (a + b)}.'  # 评估表达式
@@ -192,6 +206,20 @@ f"{a:.2f}"
 '3.14'
 ```
 
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+<code>f"{a:.2f}"</code> 的作用是什么？
+</template>
+
+<base-quiz-option value="A">A. 将数字四舍五入到最接近的整数</base-quiz-option>
+<base-quiz-option value="B">B. 格式化为百分比</base-quiz-option>
+<base-quiz-option value="C" correct>C. 将数字格式化为带有 2 位小数的浮点数</base-quiz-option>
+<base-quiz-option value="D">D. 转换为科学记数法</base-quiz-option>
+<base-quiz-answer value="C">格式说明符 <code>:.2f</code> 将数字格式化为具有精确 2 位小数的浮点数。<code>.2</code> 指定精度，<code>f</code> 表示浮点格式。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 显示为百分比
 
 ```python
@@ -221,7 +249,7 @@ f"{a:.2%}"
 | 11         | {:<11d} | 11        | 左对齐（宽度为 10）                   |
 | 11         | {:^11d} | 11        | 居中对齐（宽度为 10）                 |
 
-## 模板字符串
+## Template Strings
 
 一种更简单、功能较弱的机制，但在处理用户生成的字符串时推荐使用。由于其复杂性较低，模板字符串是更安全的选择。
 

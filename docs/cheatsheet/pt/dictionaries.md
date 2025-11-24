@@ -10,7 +10,7 @@ Dicionários Python
 
 <base-lab-url :url="frontmatter.labUrl" />
 
-Em Python, um dicionário é uma coleção _ordenada_ (a partir do Python > 3.7) de pares `chave`: `valor`.
+Em Python, um dicionário é uma coleção _ordenada_ (a partir do Python > 3.7) de pares de `chave`: `valor`.
 
 <base-disclaimer>
   <base-disclaimer-title>
@@ -35,7 +35,7 @@ meu_gato = {
 ## Definir chave, valor usando o operador de subscrito `[]`
 
 ```python
-# Adicionar ou atualizar entrada de dicionário usando o operador de subscrito
+# Adicionar ou atualizar entrada do dicionário usando o operador de subscrito
 meu_gato = {
  'tamanho': 'gordo',
  'cor': 'cinza',
@@ -51,7 +51,7 @@ print(meu_gato)
 
 ## Obter valor usando o operador de subscrito `[]`
 
-Caso a chave não esteja presente no dicionário, um <a target="_blank" href="https://docs.python.org/3/library/exceptions.html#KeyError">`KeyError`</a> é levantado.
+Caso a chave não esteja presente no dicionário, é levantada uma <a target="_blank" href="https://docs.python.org/3/library/exceptions.html#KeyError">`KeyError`</a>.
 
 ```python
 meu_gato = {
@@ -216,7 +216,7 @@ esposa
 {'nome': 'Rose', 'idade': 33, 'tem_cabelo': True}
 ```
 
-## Removendo Itens
+## Remover Itens
 
 ### pop()
 
@@ -238,6 +238,20 @@ esposa
 ```output
 {'nome': 'Rose', 'cabelo': 'castanho'}
 ```
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+O que <code>pop()</code> faz quando chamado em um dicionário?
+</template>
+
+<base-quiz-option value="A">A. Apenas remove o par chave-valor</base-quiz-option>
+<base-quiz-option value="B" correct>B. Remove e retorna o valor para a chave especificada</base-quiz-option>
+<base-quiz-option value="C">C. Apenas retorna o valor sem removê-lo</base-quiz-option>
+<base-quiz-option value="D">D. Remove todos os itens do dicionário</base-quiz-option>
+<base-quiz-answer value="B">O método <code>pop()</code> remove o par chave-valor para a chave especificada e retorna o valor. Se a chave não existir, ele levanta um <code>KeyError</code> (a menos que você forneça um valor padrão).</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ### popitem()
 
@@ -361,13 +375,27 @@ Para Python 3.5+:
 ```python
 dict_a = {'a': 1, 'b': 2}
 dict_b = {'b': 3, 'c': 4}
-dict_c = {**dict_a, **dict_b}
+dict_c = {**dict_b, **dict_a}
 dict_c
 ```
 
 ```output
 {'a': 1, 'b': 3, 'c': 4}
 ```
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Ao mesclar dois dicionários usando <code>{**dict_b, **dict_a}</code>, o que acontece se ambos os dicionários tiverem a mesma chave?
+</template>
+
+<base-quiz-option value="A">A. O valor de <code>dict_b</code> sobrescreve o valor de <code>dict_a</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. O valor de <code>dict_a</code> sobrescreve o valor de <code>dict_b</code></base-quiz-option>
+<base-quiz-option value="C">C. Ambos os valores são mantidos em uma lista</base-quiz-option>
+<base-quiz-option value="D">D. Um erro é levantado</base-quiz-option>
+<base-quiz-answer value="B">Ao mesclar dicionários com o operador de desempacotamento <code>\*\*</code>, se ambos os dicionários tiverem a mesma chave, o valor do dicionário que vem por último (neste caso <code>dict_a</code>) sobrescreve o valor do dicionário anterior.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Links relevantes
 

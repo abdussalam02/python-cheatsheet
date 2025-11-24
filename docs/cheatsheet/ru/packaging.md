@@ -1,11 +1,11 @@
 ---
-title: 'Python Packaging - Справочник по Python'
-description: 'Узнайте, как упаковывать проекты Python с помощью setup.py и pyproject.toml. Поймите современный подход к упаковке Python со спецификациями PEP-517, PEP-518 и PEP-660.'
+title: 'Упаковка Python - Шпаргалка по Python'
+description: 'Узнайте, как упаковывать проекты Python с помощью setup.py и pyproject.toml. Поймите современный подход к упаковке Python с использованием спецификаций PEP-517, PEP-518 и PEP-660.'
 labUrl: 'https://labex.io/ru/labs/python-python-setup-py-633666?course=python-cheatsheet'
 ---
 
 <base-title :title="frontmatter.title" :description="frontmatter.description">
-Python Packaging
+Упаковка Python
 </base-title>
 
 <base-lab-url :url="frontmatter.labUrl" />
@@ -15,7 +15,7 @@ Python Packaging
     «Спорное» мнение
   </base-warning-title>
   <base-warning-content>
-    Использование `setup.py` для упаковки и распространения ваших пакетов Python может быть довольно сложным время от времени. Современные инструменты, такие как <a target="_blank" href="https://python-poetry.org/">Poetry</a> и <a target="_blank" href="https://docs.astral.sh/uv/">UV</a>, не только делают упаковку **намного проще**, но и помогают очень удобно управлять зависимостями. UV особенно примечателен тем, что он в 10-100 раз быстрее традиционных инструментов.
+    Использование `setup.py` для упаковки и распространения ваших пакетов Python иногда может быть довольно сложным. Современные инструменты, такие как <a target="_blank" href="https://python-poetry.org/">Poetry</a> и <a target="_blank" href="https://docs.astral.sh/uv/">UV</a>, не только делают упаковку <b>намного проще</b>, но и помогают очень удобно управлять зависимостями. UV особенно примечателен тем, что он в 10-100 раз быстрее традиционных инструментов.
   </base-warning-content>
 </base-warning>
 
@@ -29,13 +29,13 @@ Python Packaging
 
 ## Введение
 
-Упаковка Python — это процесс подготовки вашего проекта Python к распространению и установке. Существует два основных подхода: традиционный метод `setup.py` и современный подход `pyproject.toml` (определен в PEP-517, PEP-518 и PEP-660).
+Упаковка Python — это процесс подготовки вашего проекта Python к распространению и установке. Существует два основных подхода: традиционный метод с использованием `setup.py` и современный подход с `pyproject.toml` (определенный в PEP-517, PEP-518 и PEP-660).
 
 Для получения исчерпывающего руководства по работе с путями к файлам и каталогам, что важно для управления структурой проекта, см. страницу <router-link to="/cheatsheet/file-directory-path">Пути к файлам и каталогам</router-link>.
 
 ## Традиционный подход: setup.py
 
-Файл `setup.py` находится в основе традиционного проекта Python. Он описывает все метаданные о вашем проекте. Вы можете добавить в проект довольно много полей, чтобы придать ему богатый набор метаданных, описывающих проект. Однако есть только три обязательных поля: `name`, `version` и `packages`. Поле `name` должно быть уникальным, если вы хотите опубликовать свой пакет в Python Package Index (PyPI). Поле `version` отслеживает различные выпуски проекта. Поле `packages` описывает, где вы разместили исходный код Python в вашем проекте.
+Файл `setup.py` находится в центре традиционного проекта Python. Он описывает все метаданные о вашем проекте. Вы можете добавить в проект довольно много полей, чтобы придать ему богатый набор метаданных, описывающих проект. Однако есть только три обязательных поля: `name`, `version` и `packages`. Поле `name` должно быть уникальным, если вы хотите опубликовать свой пакет в Python Package Index (PyPI). Поле `version` отслеживает различные выпуски проекта. Поле `packages` описывает, где вы разместили исходный код Python в вашем проекте.
 
 Это позволяет легко устанавливать пакеты Python. Часто достаточно написать:
 
@@ -43,7 +43,7 @@ Python Packaging
 python setup.py install
 ```
 
-и модуль установит себя сам.
+и модуль установит себя.
 
 ### Пример: setup.py
 
@@ -61,16 +61,30 @@ setup(
 )
 ```
 
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+Какие три поля являются обязательными в файле <code>setup.py</code>?
+</template>
+
+<base-quiz-option value="A">A. name, author, license</base-quiz-option>
+<base-quiz-option value="B">B. name, description, packages</base-quiz-option>
+<base-quiz-option value="C" correct>C. name, version, packages</base-quiz-option>
+<base-quiz-option value="D">D. name, version, license</base-quiz-option>
+<base-quiz-answer value="C">Три обязательных поля в <code>setup.py</code> это <code>name</code> (имя пакета, должно быть уникальным на PyPI), <code>version</code> (отслеживает выпуски) и <code>packages</code> (описывает, где расположен исходный код Python).</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Современный подход: pyproject.toml
 
-Файл `pyproject.toml` — это современный стандарт для конфигурации проектов Python (PEP-517, PEP-518, PEP-660). Он предоставляет единый способ указания требований системы сборки и метаданных проекта в едином декларативном формате файла.
+Файл `pyproject.toml` является современным стандартом для конфигурации проектов Python (PEP-517, PEP-518, PEP-660). Он предоставляет унифицированный способ указания требований к системе сборки и метаданных проекта в едином декларативном формате файла.
 
 ### Преимущества pyproject.toml
 
 - **Декларативный**: Все метаданные проекта в одном месте
 - **Независимый от системы сборки**: Работает с setuptools, poetry, flit и другими бэкендами сборки
 - **Без выполнения кода**: Безопаснее и предсказуемее, чем setup.py
-- **Стандартизированный**: Следует стандартам PEP для лучшей поддержки инструментов
+- **Стандартизированный**: Соответствует стандартам PEP для лучшей поддержки инструментов
 
 ### Пример: pyproject.toml
 
@@ -84,12 +98,12 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "pythonCheatsheet"
 version = "0.1"
-description = "Пакет справочника Python"
+description = "A Python cheatsheet package"
 readme = "README.txt"
 requires-python = ">=3.8"
 license = {text = "MIT"}
 authors = [
-    {name = "Ваше Имя", email = "your.email@example.com"}
+    {name = "Your Name", email = "your.email@example.com"}
 ]
 classifiers = [
     "Programming Language :: Python :: 3",
@@ -111,20 +125,34 @@ dev = [
 pip install .
 ```
 
-Или в режиме редактирования:
+Или в редактируемом режиме:
 
 ```bash
 pip install -e .
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Каково основное преимущество <code>pyproject.toml</code> перед <code>setup.py</code>?
+</template>
+
+<base-quiz-option value="A">A. Он быстрее выполняется</base-quiz-option>
+<base-quiz-option value="B" correct>B. Он декларативный, безопаснее (без выполнения кода) и соответствует стандартам PEP</base-quiz-option>
+<base-quiz-option value="C">C. Он требует меньше конфигурации</base-quiz-option>
+<base-quiz-option value="D">D. Он работает только с Python 3.10+</base-quiz-option>
+<base-quiz-answer value="B">Подход <code>pyproject.toml</code> является декларативным (все метаданные в одном месте), более безопасным, поскольку он не выполняет код, как <code>setup.py</code>, и соответствует стандартам PEP (PEP-517, PEP-518, PEP-660) для лучшей поддержки инструментов.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Выбор правильного подхода
 
-- **Используйте `setup.py`**: Если вы работаете с устаревшими проектами или вам нужен детальный контроль
-- **Используйте `pyproject.toml`**: Для новых проектов (рекомендуется), так как это современный стандарт и обеспечивает лучшую поддержку инструментов
+- **Использовать `setup.py`**: Если вы работаете с устаревшими проектами или вам нужен детальный контроль
+- **Использовать `pyproject.toml`**: Для новых проектов (рекомендуется), так как это современный стандарт и он обеспечивает лучшую поддержку инструментов
 
 Больше информации можно найти в [официальной документации](http://docs.python.org/3.11/install/index.html).
 
-## Соответствующие ссылки
+## Связанные ссылки
 
 - <router-link to="/cheatsheet/virtual-environments">Виртуальные окружения</router-link>
 - <router-link to="/cheatsheet/file-directory-path">Пути к файлам и каталогам</router-link>
@@ -133,4 +161,3 @@ pip install -e .
 - <router-link to="/blog/python-projects-with-poetry-and-vscode-part-2">Проекты Python с Poetry и VSCode. Часть 2</router-link>
 - <router-link to="/blog/python-projects-with-poetry-and-vscode-part-3">Проекты Python с Poetry и VSCode. Часть 3</router-link>
 - <router-link to="/builtin/import">import()</router-link>
-

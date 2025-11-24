@@ -5,7 +5,7 @@ labUrl: 'https://labex.io/de/labs/python-python-string-manipulation-633668?cours
 ---
 
 <base-title :title="frontmatter.title" :description="frontmatter.description">
-Bearbeiten von Strings
+Bearbeiten von Zeichenketten
 </base-title>
 
 <base-lab-url :url="frontmatter.labUrl" />
@@ -14,8 +14,8 @@ Bearbeiten von Strings
 
 Ein Escape-Zeichen wird erzeugt, indem man einen Backslash `\` gefolgt von dem Zeichen eingibt, das eingefügt werden soll.
 
-| Escape-Zeichen | Ausgabe als                 |
-| :------------- | :-------------------------- |
+| Escape-Zeichen | Wird ausgegeben als         |
+| -------------- | --------------------------- |
 | `\'`           | Einfaches Anführungszeichen |
 | `\"`           | Doppeltes Anführungszeichen |
 | `\t`           | Tabulator                   |
@@ -37,9 +37,9 @@ How are you?
 I'm doing fine.
 ```
 
-## Raw Strings (Rohe Strings)
+## Raw Strings (Rohe Zeichenketten)
 
-Ein Raw String ignoriert alle Escape-Zeichen vollständig und gibt jeden Backslash aus, der im String vorkommt.
+Ein Raw String ignoriert alle Escape-Zeichen vollständig und gibt jeden Backslash aus, der in der Zeichenkette vorkommt.
 
 ```python
 # Raw String (r-Präfix): behandelt Backslashes als literale Zeichen
@@ -52,7 +52,21 @@ Hello there!\nHow are you?\nI\'m doing fine.
 
 Raw Strings werden hauptsächlich für die Definition von <router-link to="/cheatsheet/regular-expressions">Regulären Ausdrücken</router-link> verwendet.
 
-## Mehrzeilige Strings
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Was bewirkt ein Raw String (mit <code>r</code> präfixiert) in Python?
+</template>
+
+<base-quiz-option value="A">A. Wandelt alle Zeichen in Großbuchstaben um</base-quiz-option>
+<base-quiz-option value="B" correct>B. Behandelt Backslashes als literale Zeichen und ignoriert Escape-Sequenzen</base-quiz-option>
+<base-quiz-option value="C">C. Entfernt alle Leerzeichen</base-quiz-option>
+<base-quiz-option value="D">D. Kehrt die Zeichenkette um</base-quiz-option>
+<base-quiz-answer value="B">Raw Strings (mit <code>r</code> präfixiert) behandeln Backslashes als literale Zeichen, sodass Escape-Sequenzen wie <code>\n</code> nicht interpretiert werden.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+## Mehrzeilige Zeichenketten
 
 ```python
 print(
@@ -76,7 +90,7 @@ Sincerely,
 Bob
 ```
 
-## Indizierung und Slicing von Strings
+## Indizierung und Slicing von Zeichenketten
 
     H   e   l   l   o       w   o   r   l   d    !
     0   1   2   3   4   5   6   7   8   9   10   11
@@ -113,10 +127,10 @@ spam[-1]
 ### Slicing
 
 ```python
-# String-Slicing: Teilstring extrahieren mit der [start:ende]-Syntax
+# String-Slicing: Teilzeichenkette mit der Syntax [start:ende] extrahieren
 spam = 'Hello world!'
 
-spam[0:5]  # Gibt die Zeichen von Index 0 bis 4 zurück: 'Hello'
+spam[0:5]  # Gibt Zeichen von Index 0 bis 4 zurück: 'Hello'
 ```
 
 ```output
@@ -162,6 +176,20 @@ spam[::-1]
 ```output
 '!dlrow olleH'
 ```
+
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+Was bewirkt <code>spam[::-1]</code> mit einer Zeichenkette?
+</template>
+
+<base-quiz-option value="A">A. Gibt das erste Zeichen zurück</base-quiz-option>
+<base-quiz-option value="B">B. Gibt das letzte Zeichen zurück</base-quiz-option>
+<base-quiz-option value="C" correct>C. Kehrt die Zeichenkette um</base-quiz-option>
+<base-quiz-option value="D">D. Entfernt alle Zeichen</base-quiz-option>
+<base-quiz-answer value="C">Der Slice <code>[::-1]</code> kehrt eine Zeichenkette um, indem er rückwärts durch alle Zeichen geht. Der Schrittwert <code>-1</code> bedeutet "gehe rückwärts".</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ```python
 fizz = spam[0:5]
@@ -216,7 +244,7 @@ False
 
 ## upper(), lower() und title()
 
-Wandelt einen String in Großbuchstaben, Kleinbuchstaben und Titel-Case um:
+Wandelt eine Zeichenkette in Groß-, Klein- oder Titel-Schreibweise um:
 
 ```python
 greet = 'Hello world!'
@@ -245,7 +273,7 @@ greet.title()
 
 ## isupper() und islower() Methoden
 
-Gibt `True` oder `False` zurück, nachdem ausgewertet wurde, ob ein String in Groß- oder Kleinbuchstaben vorliegt:
+Gibt `True` oder `False` zurück, nachdem ausgewertet wurde, ob eine Zeichenkette in Groß- oder Kleinschreibung vorliegt:
 
 ```python
 spam = 'Hello world!'
@@ -298,13 +326,13 @@ False
 
 ## Die isX String-Methoden
 
-| Methode     | Beschreibung                                                                                                                         |
-| :---------- | :----------------------------------------------------------------------------------------------------------------------------------- |
-| isalpha()   | gibt `True` zurück, wenn der String nur aus Buchstaben besteht.                                                                      |
-| isalnum()   | gibt `True` zurück, wenn der String nur aus Buchstaben und Zahlen besteht.                                                           |
-| isdecimal() | gibt `True` zurück, wenn der String nur aus Zahlen besteht.                                                                          |
-| isspace()   | gibt `True` zurück, wenn der String nur aus Leerzeichen, Tabs und Zeilenumbrüchen besteht.                                           |
-| istitle()   | gibt `True` zurück, wenn der String nur aus Wörtern besteht, die mit einem Großbuchstaben beginnen, gefolgt von nur Kleinbuchstaben. |
+| Methode     | Beschreibung                                                                                                                               |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| isalpha()   | gibt `True` zurück, wenn die Zeichenkette nur aus Buchstaben besteht.                                                                      |
+| isalnum()   | gibt `True` zurück, wenn die Zeichenkette nur aus Buchstaben und Zahlen besteht.                                                           |
+| isdecimal() | gibt `True` zurück, wenn die Zeichenkette nur aus Zahlen besteht.                                                                          |
+| isspace()   | gibt `True` zurück, wenn die Zeichenkette nur aus Leerzeichen, Tabs und Zeilenumbrüchen besteht.                                           |
+| istitle()   | gibt `True` zurück, wenn die Zeichenkette nur aus Wörtern besteht, die mit einem Großbuchstaben beginnen, gefolgt von nur Kleinbuchstaben. |
 
 ## startswith() und endswith()
 
@@ -356,11 +384,25 @@ True
 True
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+Was gibt <code>startswith()</code> zurück?
+</template>
+
+<base-quiz-option value="A" correct>A. <code>True</code>, wenn die Zeichenkette mit dem angegebenen Teilstring beginnt, andernfalls <code>False</code></base-quiz-option>
+<base-quiz-option value="B">B. Den Teilstring, der übereinstimmt</base-quiz-option>
+<base-quiz-option value="C">C. Den Index, an dem der Teilstring beginnt</base-quiz-option>
+<base-quiz-option value="D">D. Eine neue Zeichenkette ohne das Präfix</base-quiz-option>
+<base-quiz-answer value="A">Die Methode <code>startswith()</code> gibt einen booleschen Wert zurück: <code>True</code>, wenn die Zeichenkette mit dem angegebenen Teilstring beginnt, andernfalls <code>False</code>.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## join() und split()
 
 ### join()
 
-Die Methode `join()` nimmt alle Elemente eines Iterierbaren, wie einer <router-link to="/cheatsheet/lists-and-tuples">Liste</router-link>, <router-link to="/cheatsheet/dictionaries">Dictionary</router-link>, <router-link to="/cheatsheet/lists-and-tuples#the-tuple-data-type">Tupel</router-link> oder <router-link to="/cheatsheet/sets">Set</router-link>, und fügt sie zu einem String zusammen. Sie können auch ein Trennzeichen angeben.
+Die Methode `join()` nimmt alle Elemente eines Iterierbaren, wie einer <router-link to="/cheatsheet/lists-and-tuples">Liste</router-link>, <router-link to="/cheatsheet/dictionaries">Dictionary</router-link>, <router-link to="/cheatsheet/lists-and-tuples#the-tuple-data-type">Tupel</router-link> oder <router-link to="/cheatsheet/sets">Set</router-link>, und fügt sie zu einer Zeichenkette zusammen. Sie können auch einen Trennwert angeben.
 
 ```python
 ''.join(['My', 'name', 'is', 'Simon'])
@@ -396,7 +438,7 @@ Die Methode `join()` nimmt alle Elemente eines Iterierbaren, wie einer <router-l
 
 ### split()
 
-Die Methode `split()` teilt einen `String` in eine `Liste`. Standardmäßig verwendet sie Leerzeichen, um die Elemente zu trennen, aber Sie können auch ein anderes Zeichen Ihrer Wahl festlegen:
+Die Methode `split()` teilt eine `string` in eine `list` auf. Standardmäßig verwendet sie Leerzeichen, um die Elemente zu trennen, aber Sie können auch ein anderes Zeichen Ihrer Wahl festlegen:
 
 ```python
 'My name is Simon'.split()
@@ -437,6 +479,20 @@ Die Methode `split()` teilt einen `String` in eine `Liste`. Standardmäßig verw
 ```output
 ['', 'My', '', 'name', 'is', '', 'Simon']
 ```
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Was gibt <code>split()</code> zurück, wenn es auf eine Zeichenkette angewendet wird?
+</template>
+
+<base-quiz-option value="A">A. Eine Zeichenkette</base-quiz-option>
+<base-quiz-option value="B" correct>B. Eine Liste von Zeichenketten</base-quiz-option>
+<base-quiz-option value="C">C. Ein Tupel von Zeichenketten</base-quiz-option>
+<base-quiz-option value="D">D. Ein Dictionary</base-quiz-option>
+<base-quiz-answer value="B">Die Methode <code>split()</code> teilt eine Zeichenkette in eine Liste von Teilzeichenketten auf. Standardmäßig wird nach Leerzeichen geteilt, aber Sie können einen anderen Trennwert angeben.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Textausrichtung mit rjust(), ljust() und center()
 
@@ -480,7 +536,7 @@ Die Methode `split()` teilt einen `String` in eine `Liste`. Standardmäßig verw
 '       Hello       '
 ```
 
-Ein optionales zweites Argument für `rjust()` und `ljust()` legt ein Füllzeichen außer dem Leerzeichen fest:
+Ein optionales zweites Argument für `rjust()` und `ljust()` legt ein Füllzeichen fest, das vom Leerzeichen abweicht:
 
 ```python
 'Hello'.rjust(20, '*')
@@ -544,7 +600,7 @@ spam.strip('ampS')
 
 ## Die Count-Methode
 
-Zählt die Anzahl der Vorkommen eines gegebenen Zeichens oder Substrings in dem String, auf den sie angewendet wird. Optional können Start- und Endindex angegeben werden.
+Zählt die Anzahl der Vorkommen eines gegebenen Zeichens oder Teilstrings in der Zeichenkette, auf die sie angewendet wird. Optional können Start- und Endindex angegeben werden.
 
 ```python
 sentence = 'one sheep two sheep three sheep four'
@@ -564,7 +620,7 @@ sentence.count('e')
 ```
 
 ```python
-# zählt das Vorkommen von e nach 'one sh' d.h. 6 Zeichen vom Stringanfang
+# zählt die Anzahl von e nach 'one sh' d.h. 6 Zeichen seit Beginn der Zeichenkette
 sentence.count('e', 6)
 ```
 
@@ -582,7 +638,7 @@ sentence.count('e', 7)
 
 ## Replace-Methode
 
-Ersetzt alle Vorkommen eines gegebenen Substrings durch einen anderen Substring. Optional kann ein drittes Argument angegeben werden, um die Anzahl der Ersetzungen zu begrenzen. Gibt einen neuen String zurück.
+Ersetzt alle Vorkommen eines gegebenen Teilstrings durch einen anderen Teilstring. Optional kann ein drittes Argument angegeben werden, um die Anzahl der Ersetzungen zu begrenzen. Gibt eine neue Zeichenkette zurück.
 
 ```python
 text = "Hello, world!"
@@ -610,6 +666,20 @@ sentence.replace("apples", "oranges")
 ```output
 'I like oranges, Apples are my favorite fruit'
 ```
+
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+Was gibt die <code>replace()</code> Methode zurück?
+</template>
+
+<base-quiz-option value="A">A. Modifiziert die ursprüngliche Zeichenkette</base-quiz-option>
+<base-quiz-option value="B">B. Gibt <code>None</code> zurück</base-quiz-option>
+<base-quiz-option value="C" correct>C. Gibt eine neue Zeichenkette mit den vorgenommenen Ersetzungen zurück</base-quiz-option>
+<base-quiz-option value="D">D. Gibt eine Liste der ersetzten Zeichenketten zurück</base-quiz-option>
+<base-quiz-answer value="C">Die Methode <code>replace()</code> gibt eine neue Zeichenkette zurück, in der alle Vorkommen des alten Teilstrings durch den neuen Teilstring ersetzt wurden. Die ursprüngliche Zeichenkette wird nicht geändert.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Relevante Links
 

@@ -13,14 +13,14 @@ Listes Python
 Les listes sont l'un des 4 types de données en Python utilisés pour stocker des collections de données.
 
 ```python
-# Liste : collection ordonnée d'éléments enfermés entre crochets
+# List: collection ordonnée d'éléments entre crochets
 ['John', 'Peter', 'Debora', 'Charles']
 ```
 
 ## Obtenir des valeurs avec des index
 
 ```python
-# Accéder aux éléments de la liste en utilisant l'index (base 0, le premier élément est l'index 0)
+# Accéder aux éléments de la liste en utilisant l'index (base 0, le premier élément est à l'index 0)
 furniture = ['table', 'chair', 'rack', 'shelf']
 
 furniture[0]  # Retourne le premier élément : 'table'
@@ -76,12 +76,26 @@ furniture[-3]
 ```
 
 ```python
-f'La {furniture[-1]} est plus grande que la {furniture[-3]}'
+f'The {furniture[-1]} is bigger than the {furniture[-3]}'
 ```
 
 ```output
-'La shelf est plus grande que la chair'
+'The shelf is bigger than the chair'
 ```
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Que retourne <code>furniture[-1]</code> si <code>furniture = ['table', 'chair', 'rack', 'shelf']</code> ?
+</template>
+
+<base-quiz-option value="A">A. <code>'table'</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>'shelf'</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>['shelf']</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>IndexError</code></base-quiz-option>
+<base-quiz-answer value="B">Les index négatifs accèdent aux éléments depuis la fin de la liste. <code>-1</code> fait référence au dernier élément, <code>-2</code> à l'avant-dernier, et ainsi de suite.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Obtenir des sous-listes avec des Slices
 
@@ -138,12 +152,12 @@ furniture[:]
 ['table', 'chair', 'rack', 'shelf']
 ```
 
-Le découpage de la liste complète effectuera une copie :
+Le slicing de la liste complète effectuera une copie :
 
 ```python
-# Le slicing crée une copie : [:] crée une copie superficielle de la liste
+# Le slicing crée une copie : [:] crée une copie superficielle (shallow copy) de la liste
 spam = ['cat', 'bat', 'rat', 'elephant']
-spam2 = spam[:]  # Crée une copie, pas une référence
+spam2 = spam[:]  # Créer une copie, pas une référence
 spam2
 ```
 
@@ -168,6 +182,20 @@ spam2
 ['cat', 'bat', 'rat', 'elephant']
 ```
 
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+Que crée <code>spam[:]</code> lorsqu'il est appliqué à une liste <code>spam</code> ?
+</template>
+
+<base-quiz-option value="A">A. Une référence à la même liste</base-quiz-option>
+<base-quiz-option value="B">B. Une liste vide</base-quiz-option>
+<base-quiz-option value="C" correct>C. Une copie superficielle de la liste</base-quiz-option>
+<base-quiz-option value="D">D. Une liste inversée</base-quiz-option>
+<base-quiz-answer value="C">Le slicing de la liste complète avec <code>[:]</code> crée une copie superficielle. Modifier la copie n'affectera pas la liste originale.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Obtenir la longueur d'une liste avec len()
 
 ```python
@@ -186,7 +214,7 @@ len(furniture)  # Retourne 4
 # Modifier les éléments de la liste en assignant de nouvelles valeurs aux index
 furniture = ['table', 'chair', 'rack', 'shelf']
 
-furniture[0] = 'desk'  # Remplace le premier élément
+furniture[0] = 'desk'  # Remplacer le premier élément
 furniture
 ```
 
@@ -212,7 +240,7 @@ furniture
 ['desk', 'chair', 'chair', 'bed']
 ```
 
-## Concaténation et Réplication
+## Concaténation et Répétition
 
 ```python
 # Concaténation de listes : combiner deux listes en utilisant l'opérateur +
@@ -224,7 +252,7 @@ furniture
 ```
 
 ```python
-# Réplication de liste : répéter la liste plusieurs fois en utilisant l'opérateur *
+# Répétition de liste : répéter la liste plusieurs fois en utilisant l'opérateur *
 ['X', 'Y', 'Z'] * 3  # Retourne ['X', 'Y', 'Z', 'X', 'Y', 'Z', 'X', 'Y', 'Z']
 ```
 
@@ -248,7 +276,7 @@ my_list
 # Itérer sur les éléments de la liste en utilisant une boucle for
 furniture = ['table', 'chair', 'rack', 'shelf']
 
-for item in furniture:  # Boucle sur chaque élément
+for item in furniture:  # Boucler sur chaque élément
     print(item)
 ```
 
@@ -284,14 +312,14 @@ furniture = ['table', 'chair', 'rack', 'shelf']
 price = [100, 50, 80, 40]
 
 for item, amount in zip(furniture, price):  # Associer les éléments des deux listes
-    print(f'Le {item} coûte ${amount}')
+    print(f'The {item} costs ${amount}')
 ```
 
 ```output
-Le table coûte $100
-Le chair coûte $50
-Le rack coûte $80
-Le shelf coûte $40
+The table costs $100
+The chair costs $50
+The rack costs $80
+The shelf costs $40
 ```
 
 ## Les opérateurs in et not in
@@ -428,6 +456,20 @@ furniture
 ['table', 'chair', 'rack', 'shelf', 'bed']
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+Que fait la méthode <code>append()</code> sur une liste ?
+</template>
+
+<base-quiz-option value="A" correct>A. Ajoute un élément à la fin de la liste</base-quiz-option>
+<base-quiz-option value="B">B. Ajoute un élément au début de la liste</base-quiz-option>
+<base-quiz-option value="C">C. Remplace le dernier élément</base-quiz-option>
+<base-quiz-option value="D">D. Supprime le dernier élément</base-quiz-option>
+<base-quiz-answer value="A">La méthode <code>append()</code> ajoute un seul élément à la fin d'une liste. Pour ajouter un élément à une position spécifique, utilisez <code>insert()</code>.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ### insert()
 
 `insert` ajoute un élément à une `list` à une position donnée :
@@ -483,7 +525,7 @@ furniture
 
 <base-warning>
   <base-warning-title>
-    Suppression des éléments répétés
+    Supprimer des éléments répétés
   </base-warning-title>
   <base-warning-content>
     Si la valeur apparaît plusieurs fois dans la liste, seule la première occurrence de la valeur sera supprimée.
@@ -492,7 +534,7 @@ furniture
 
 ### pop()
 
-Par défaut, `pop` supprimera et retournera le dernier élément de la liste. Vous pouvez également passer l'index de l'élément comme paramètre optionnel :
+Par défaut, `pop` supprime et retourne le dernier élément de la liste. Vous pouvez également passer l'index de l'élément comme paramètre optionnel :
 
 ```python
 animals = ['cat', 'bat', 'rat', 'elephant']
@@ -528,6 +570,20 @@ animals
 ['bat', 'rat']
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Que fait <code>pop()</code> lorsqu'il est appelé sur une liste ?
+</template>
+
+<base-quiz-option value="A">A. Supprime uniquement le dernier élément</base-quiz-option>
+<base-quiz-option value="B" correct>B. Supprime et retourne un élément (le dernier élément par défaut, ou l'index spécifié)</base-quiz-option>
+<base-quiz-option value="C">C. Retourne uniquement le dernier élément sans le supprimer</base-quiz-option>
+<base-quiz-option value="D">D. Supprime tous les éléments de la liste</base-quiz-option>
+<base-quiz-answer value="B">La méthode <code>pop()</code> supprime et retourne un élément. Par défaut, elle supprime le dernier élément, mais vous pouvez passer un index pour supprimer un élément spécifique.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Trier les valeurs avec sort()
 
 ```python
@@ -550,7 +606,7 @@ furniture
 ['chair', 'rack', 'shelf', 'table']
 ```
 
-Vous pouvez également passer `True` pour l'argument mot-clé `reverse` afin que `sort()` trie les valeurs dans l'ordre inverse :
+Vous pouvez également passer `True` pour l'argument mot-clé `reverse` pour que `sort()` trie les valeurs dans l'ordre inverse :
 
 ```python
 furniture.sort(reverse=True)
@@ -581,7 +637,7 @@ sorted(furniture)
 ```
 
 ```output
-['chair', 'rack', 'shelf', 'table']
+['chair', 'rack', 'shelf', 'base-title']
 ```
 
 ## Le type de données Tuple
@@ -591,7 +647,7 @@ sorted(furniture)
     <a target="_blank" href="https://stackoverflow.com/questions/1708510/list-vs-tuple-when-to-use-each">Tuples vs Listes</a>
   </base-disclaimer-title>
   <base-disclaimer-content>
-    La différence clé entre les tuples et les listes est que, alors que les <code>tuples</code> sont des objets <i>immuables</i>, les <code>listes</code> sont <i>mutables</i>. Cela signifie que les tuples ne peuvent pas être modifiés alors que les listes peuvent être modifiées. Les tuples sont plus économes en mémoire que les listes.
+    La différence clé entre les tuples et les listes est que, tandis que les <code>tuples</code> sont des objets <i>immuables</i>, les <code>listes</code> sont <i>mutables</i>. Cela signifie que les tuples ne peuvent pas être modifiés alors que les listes peuvent être modifiées. Les tuples sont plus économes en mémoire que les listes.
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -648,6 +704,20 @@ list('hello')
 ```output
 ['h', 'e', 'l', 'l', 'o']
 ```
+
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+Quelle est la principale différence entre les listes et les tuples en Python ?
+</template>
+
+<base-quiz-option value="A">A. Les listes ne peuvent contenir que des nombres, les tuples peuvent contenir n'importe quoi</base-quiz-option>
+<base-quiz-option value="B">B. Les tuples sont plus rapides à créer</base-quiz-option>
+<base-quiz-option value="C" correct>C. Les listes sont mutables (peuvent être modifiées), les tuples sont immuables (ne peuvent pas être modifiés)</base-quiz-option>
+<base-quiz-option value="D">D. Les listes utilisent des crochets, les tuples utilisent des accolades</base-quiz-option>
+<base-quiz-answer value="C">Les listes sont mutables, ce qui signifie que vous pouvez les modifier après leur création. Les tuples sont immuables, ce qui signifie qu'une fois créés, ils ne peuvent pas être modifiés. Les deux peuvent contenir n'importe quel type de données.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Liens pertinents
 

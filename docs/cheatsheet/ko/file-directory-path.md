@@ -1,5 +1,5 @@
 ---
-title: '파일 및 디렉토리 경로 - Python 치트 시트'
+title: '파일 및 디렉터리 경로 - Python 치트 시트'
 description: 'Python 에는 경로 조작을 다루는 두 가지 주요 모듈이 있습니다. 하나는 os.path 모듈이고 다른 하나는 pathlib 모듈입니다.'
 labUrl: 'https://labex.io/ko/labs/python-python-file-and-directory-path-manipulation-633657?course=python-cheatsheet'
 ---
@@ -10,7 +10,7 @@ labUrl: 'https://labex.io/ko/labs/python-python-file-and-directory-path-manipula
 
 <base-lab-url :url="frontmatter.labUrl" />
 
-실제 파일 시스템 작업에 대한 심층적인 내용은 블로그 게시물을 확인하세요: <router-link to="/blog/python-pathlib-essentials">모든 개발자가 알아야 할 10 가지 필수 파일 시스템 작업</router-link>.
+실용적인 파일 시스템 작업에 대한 심층적인 내용은 블로그 게시물을 확인하세요: <router-link to="/blog/python-pathlib-essentials">모든 개발자가 알아야 할 10 가지 필수 파일 시스템 작업</router-link>.
 
 Python 에서 경로 조작을 다루는 두 가지 주요 모듈이 있습니다.
 하나는 <router-link to="/modules/os-module">os.path</router-link> 모듈이고 다른 하나는 <router-link to="/modules/pathlib-module">pathlib</router-link> 모듈입니다.
@@ -20,13 +20,13 @@ Python 에서 경로 조작을 다루는 두 가지 주요 모듈이 있습니�
     Pathlib 대 OS 모듈
   </base-disclaimer-title>
   <base-disclaimer-content>
-    <code>pathlib</code>은 파일 이름 가져오기, 파일 확장자 가져오기, 파일을 수동으로 열지 않고 읽기/쓰기 등 위에 나열된 것보다 훨씬 더 많은 기능을 제공합니다. 더 자세히 알고 싶다면 <a target="_blank" href="https://docs.python.org/3/library/pathlib.html">공식 문서</a>를 참조하세요.
+    <code>pathlib</code>은 파일 이름 가져오기, 파일 확장자 가져오기, 파일을 수동으로 열지 않고 읽기/쓰기와 같이 위에 나열된 것보다 훨씬 더 많은 기능을 제공합니다. 더 자세히 알고 싶다면 <a target="_blank" href="https://docs.python.org/3/library/pathlib.html">공식 문서</a>를 참조하십시오.
   </base-disclaimer-content>
 </base-disclaimer>
 
 ## Linux 및 Windows 경로
 
-Windows 에서는 경로가 백슬래시 (`\`) 를 폴더 이름 사이의 구분 기호로 사용하여 작성됩니다. macOS, Linux 및 BSD 와 같은 Unix 기반 운영 체제에서는 슬래시 (`/`) 가 경로 구분 기호로 사용됩니다. 코드가 다른 플랫폼에서 작동해야 하는 경우 경로를 연결하는 것이 까다로울 수 있습니다.
+Windows 에서는 폴더 이름 구분 기호로 백슬래시 (`\`) 를 사용하여 경로를 작성합니다. macOS, Linux 및 BSD 와 같은 Unix 기반 운영 체제에서는 경로 구분 기호로 슬래시 (`/`) 를 사용합니다. 코드가 다른 플랫폼에서 작동해야 하는 경우 경로를 연결하는 것이 까다로울 수 있습니다.
 
 다행히도 Python 의 `pathlib` 모듈은 이를 처리하는 쉬운 방법을 제공합니다.
 
@@ -43,7 +43,7 @@ print(Path('usr').joinpath('bin').joinpath('spam'))  # 경로 구성 요소 결�
 usr/bin/spam
 ```
 
-`pathlib`은 `/` 연산자를 사용하여 joinpath 에 대한 바로 가기도 제공합니다:
+`pathlib`은 `/` 연산자를 사용하여 joinpath 에 대한 바로 가기를 제공합니다:
 
 ```python
 # Path 연산자 (/): 경로를 결합하는 편리한 방법 (크로스 플랫폼)
@@ -56,14 +56,28 @@ print(Path('usr') / 'bin' / 'spam')  # joinpath() 대신 / 연산자 사용
 usr/bin/spam
 ```
 
-경로 구분 기호가 Windows 와 Unix 기반 운영 체제 간에 다르다는 점에 유의하세요. 이것이 바로 문자열을 연결하여 경로를 결합하는 대신 `pathlib`을 사용하려는 이유입니다.
+경로 구분 기호가 Windows 와 Unix 기반 운영 체제 간에 다르다는 점에 유의하십시오. 이것이 바로 문자열을 연결하여 경로를 결합하는 대신 `pathlib`을 사용하려는 이유입니다.
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Python 에서 pathlib 를 사용하여 경로를 결합하는 올바른 방법은 무엇입니까?
+</template>
+
+<base-quiz-option value="A">A. <code>Path('usr') + 'bin' + 'spam'</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>Path('usr') / 'bin' / 'spam'</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>Path('usr').join('bin').join('spam')</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>Path('usr/bin/spam')</code></base-quiz-option>
+<base-quiz-answer value="B"><code>/</code> 연산자는 pathlib 로 경로를 결합하는 권장되는 방법입니다. 크로스 플랫폼으로 작동하며 문자열 연결보다 가독성이 좋습니다.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 경로를 결합하는 것은 동일한 디렉터리 아래에 다른 파일 경로를 생성해야 할 때 유용합니다.
 
 \*nix 에서 `pathlib` 사용:
 
 ```python
-# Path.home(): 사용자의 홈 디렉터리 가져오기, 파일 이름과 결합
+# Path.home(): 사용자의 홈 디렉터리를 가져와 파일 이름과 결합
 my_files = ['accounts.txt', 'details.csv', 'invite.docx']
 home = Path.home()  # 홈 디렉터리 경로 가져오기
 for filename in my_files:
@@ -78,12 +92,12 @@ for filename in my_files:
 
 ### 사용자 홈 디렉터리 확장
 
-`os.path.expanduser()`를 사용하여 `~`를 사용자 홈 디렉터리로 확장:
+`os.path.expanduser()`를 사용하여 `~`를 사용자의 홈 디렉터리로 확장:
 
 ```python
 import os.path
 
-# ~를 사용자 홈 디렉터리로 확장
+# ~를 사용자의 홈 디렉터리로 확장
 print(os.path.expanduser('~'))
 ```
 
@@ -92,7 +106,7 @@ print(os.path.expanduser('~'))
 ```
 
 ```python
-# ~/Documents를 전체 경로로 확장
+# ~/Documents 를 전체 경로로 확장
 print(os.path.expanduser('~/Documents'))
 ```
 
@@ -101,7 +115,7 @@ print(os.path.expanduser('~/Documents'))
 ```
 
 ```python
-# ~를 포함하는 경로에서 작동
+# ~가 포함된 경로에서 작동
 print(os.path.expanduser('~/myfile.txt'))
 ```
 
@@ -144,7 +158,7 @@ Traceback (most recent call last):
 FileNotFoundError: [Errno 2] No such file or directory: '/home/labex/project/delicious/walnut/waffles'
 ```
 
-이런, 심각한 오류가 발생했습니다! 'delicious' 디렉터리가 존재하지 않기 때문에 그 아래에 'walnut' 및 'waffles' 디렉터리를 만들 수 없습니다. 이를 수정하려면 다음을 수행하세요:
+이런, 오류가 발생했습니다! 'delicious' 디렉터리가 존재하지 않기 때문에 그 아래에 'walnut' 및 'waffles' 디렉터리를 만들 수 없습니다. 이를 수정하려면 다음을 수행하십시오.
 
 ```python
 # mkdir(parents=True): 필요한 경우 디렉터리와 모든 상위 디렉터리 생성
@@ -153,7 +167,7 @@ cwd = Path.cwd()
 (cwd / 'delicious' / 'walnut' / 'waffles').mkdir(parents=True)  # 중첩된 디렉터리 생성
 ```
 
-그러면 모든 것이 잘 됩니다 :)
+이제 모든 것이 잘 작동합니다 :)
 
 ## 절대 경로 대 상대 경로
 
@@ -162,11 +176,11 @@ cwd = Path.cwd()
 - **절대 경로**: 항상 루트 폴더로 시작합니다.
 - **상대 경로**: 프로그램의 현재 작업 디렉터리에 상대적입니다.
 
-점 (`.`) 및 점두개 (`..`) 폴더도 있습니다. 이들은 실제 폴더는 아니지만 경로에서 사용할 수 있는 특수 이름입니다. 폴더 이름에 대한 단일 마침표 ("점") 는 "현재 디렉터리"의 약어입니다. 두 개의 마침표 ("점두개") 는 "상위 폴더"를 의미합니다.
+점 (`.`) 및 점 - 점 (`..`) 폴더도 있습니다. 이들은 실제 폴더가 아니라 경로에서 사용할 수 있는 특수 이름입니다. 폴더 이름에 대한 단일 마침표 ("점") 는 "이 디렉터리"의 약어입니다. 두 개의 마침표 ("점 - 점") 는 "상위 폴더"를 의미합니다.
 
 ### 절대 경로 처리
 
-`pathlib`을 사용하여 경로가 절대 경로인지 확인하려면:
+`pathlib`을 사용하여 경로가 절대 경로인지 확인하는 방법:
 
 ```python
 from pathlib import Path
@@ -184,6 +198,20 @@ Path('..').is_absolute()
 ```output
 False
 ```
+
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+<code>Path('/').is_absolute()</code>는 무엇을 반환합니까?
+</template>
+
+<base-quiz-option value="A" correct>A. <code>True</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>False</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>None</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>'/'</code></base-quiz-option>
+<base-quiz-answer value="A"><code>is_absolute()</code> 메서드는 절대 경로 (Unix 에서는 <code>/</code>로 시작하거나 Windows 에서는 드라이브 문자로 시작하는 경로) 에 대해 <code>True</code>를 반환합니다.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 `pathlib`을 사용하여 절대 경로를 추출할 수 있습니다:
 
@@ -287,6 +315,20 @@ Path('nonexistentfile').is_file()
 False
 ```
 
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+setup.py 가 존재하는 경우 <code>Path('setup.py').is_file()</code>은 무엇을 반환합니까?
+</template>
+
+<base-quiz-option value="A">A. <code>'setup.py'</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>False</code></base-quiz-option>
+<base-quiz-option value="C" correct>C. <code>True</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>None</code></base-quiz-option>
+<base-quiz-answer value="C"><code>is_file()</code> 메서드는 경로가 존재하고 파일인 경우 <code>True</code>를 반환하고 그렇지 않으면 <code>False</code>를 반환합니다.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ### 경로가 디렉터리인지 확인
 
 \*nix 에서 `pathlib` 사용:
@@ -325,7 +367,7 @@ False
 from pathlib import Path
 
 stat = Path('/bin/python3.6').stat()
-print(stat) # stat 에는 파일에 대한 다른 정보도 포함되어 있습니다
+print(stat) # stat 은 파일에 대한 다른 정보도 포함합니다
 ```
 
 ```output
@@ -344,7 +386,7 @@ print(stat.st_size) # 바이트 단위 크기
 
 ## 디렉터리 나열
 
-\*nix 에서 `pathlib`을 사용하여 디렉터리 내용 나열:
+\*nix 에서 `pathlib`을 사용하여 디렉터리 내용을 나열:
 
 ```python
 from pathlib import Path
@@ -396,7 +438,7 @@ print(total_size)
 
 ## 파일 및 폴더 복사
 
-`shutil` 모듈은 파일을 복사하는 함수와 전체 폴더를 복사하는 함수를 제공합니다.
+`shutil` 모듈은 파일 복사뿐만 아니라 전체 폴더 복사를 위한 함수를 제공합니다.
 
 ```python
 import shutil
@@ -416,7 +458,21 @@ shutil.copy('/tmp/eggs.txt', '/tmp/delicious/eggs2.txt')
 /tmp/delicious/eggs2.txt
 ```
 
-`shutil.copy()`는 단일 파일을 복사하는 반면, `shutil.copytree()`는 전체 폴더와 그 안에 포함된 모든 폴더 및 파일을 복사합니다:
+<base-quiz>
+<base-quiz-question correct="D">
+<template #question>
+모든 하위 디렉터리와 파일을 포함하여 전체 디렉터리 트리를 복사하려면 어떤 함수를 사용해야 합니까?
+</template>
+
+<base-quiz-option value="A">A. <code>shutil.copy()</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>Path.copy()</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>os.copy()</code></base-quiz-option>
+<base-quiz-option value="D" correct>D. <code>shutil.copytree()</code></base-quiz-option>
+<base-quiz-answer value="D"><code>shutil.copytree()</code> 함수는 전체 디렉터리 트리를 재귀적으로 복사하는 반면 <code>shutil.copy()</code>는 단일 파일만 복사합니다.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+`shutil.copy()`는 단일 파일을 복사하지만 `shutil.copytree()`는 전체 폴더와 그 안에 포함된 모든 폴더 및 파일을 복사합니다:
 
 ```python
 import shutil
@@ -440,7 +496,7 @@ shutil.move('/tmp/bacon.txt', '/tmp/eggs')
 /tmp/eggs/bacon.txt
 ```
 
-대상 경로에 파일 이름도 지정할 수 있습니다. 다음 예제에서는 소스 파일이 이동되고 이름이 바뀝니다:
+대상 경로에 파일 이름을 지정할 수도 있습니다. 다음 예제에서는 소스 파일이 이동되고 이름이 바뀝니다:
 
 ```python
 shutil.move('/tmp/bacon.txt', '/tmp/eggs/new_bacon.txt')
@@ -464,11 +520,25 @@ shutil.move('/tmp/bacon.txt', '/tmp/eggs')
 
 - `Path.unlink()`을 호출하면 해당 경로의 파일이 삭제됩니다.
 - `Path.rmdir()`을 호출하면 해당 경로의 폴더가 삭제됩니다. 이 폴더에는 파일이나 폴더가 없어야 합니다.
-- `shutil.rmtree(path)`를 호출하면 해당 경로의 폴더가 제거되고 포함된 모든 파일 및 폴더도 삭제됩니다.
+- `shutil.rmtree(path)`를 호출하면 해당 경로의 폴더가 제거되고 포함된 모든 파일과 폴더도 삭제됩니다.
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+비어 있지 않은 디렉터리와 그 내용을 모두 삭제할 수 있는 메서드는 무엇입니까?
+</template>
+
+<base-quiz-option value="A">A. <code>Path.rmdir()</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>shutil.rmtree()</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>Path.unlink()</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>os.remove()</code></base-quiz-option>
+<base-quiz-answer value="B"><code>shutil.rmtree()</code> 함수는 디렉터리와 그 내용을 재귀적으로 삭제할 수 있습니다. <code>Path.rmdir()</code>은 비어 있는 디렉터리에서만 작동합니다.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## 디렉터리 트리 순회
 
-`Path` 객체에는 파일을 재귀적으로 반복하는 `rglob()` 메서드가 있습니다.
+`Path` 객체에는 파일을 재귀적으로 반복하기 위한 `rglob()` 메서드가 있습니다.
 
 ```python
 from pathlib import Path

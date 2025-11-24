@@ -1,6 +1,6 @@
 ---
-title: 'Bases de la POO en Python - Fiche de référence Python'
-description: 'La Programmation Orientée Objet (POO) est un paradigme centré sur les objets, instances de classes. Les principes de la POO sont fondamentaux pour la conception logicielle. Python supporte la POO via les classes et les objets. Voici les principes de base de la POO en Python.'
+title: "Bases de l'OOP en Python - Fiche Mémo Python"
+description: 'La Programmation Orientée Objet (POO) est un paradigme centré sur les objets, instances de classes. Les principes de la POO sont fondamentaux pour la conception logicielle. En Python, la POO est supportée par les classes et les objets. Voici les principes de base de la POO en Python.'
 labUrl: 'https://labex.io/fr/labs/python-python-oop-basics-633662?course=python-cheatsheet'
 ---
 
@@ -21,13 +21,13 @@ Bases de la POO en Python
 
 ## Encapsulation
 
-L'encapsulation est l'un des concepts fondamentaux de la programmation orientée objet, qui aide à protéger les données et les méthodes d'un objet contre tout accès et modification non autorisés. C'est une manière d'atteindre l'abstraction des données, ce qui signifie que les détails d'implémentation d'un objet sont cachés du monde extérieur, et seule l'information essentielle est exposée.
+L'encapsulation est l'un des concepts fondamentaux de la programmation orientée objet, qui aide à protéger les données et les méthodes d'un objet contre tout accès ou modification non autorisé. C'est une manière d'atteindre l'abstraction des données, ce qui signifie que les détails d'implémentation d'un objet sont cachés du monde extérieur, et seule l'information essentielle est exposée.
 
 En Python, l'encapsulation peut être réalisée en utilisant des modificateurs d'accès. Les modificateurs d'accès sont des mots-clés qui définissent l'accessibilité des attributs et des méthodes dans une classe. Les trois modificateurs d'accès disponibles en Python sont public, private et protected. Cependant, Python n'a pas de manière explicite de définir des modificateurs d'accès comme certains autres langages de programmation tels que Java et C++. Au lieu de cela, il utilise une convention consistant à utiliser des préfixes de soulignement pour indiquer le niveau d'accès.
 
-Dans l'exemple de code donné, la classe `MyClass` possède deux attributs, `_protected_var` et `__private_var`. Le `_protected_var` est marqué comme protégé en utilisant un préfixe de soulignement simple. Cela signifie que l'attribut peut être accédé au sein de la classe et de ses sous-classes, mais pas à l'extérieur de la classe. Le `__private_var` est marqué comme privé en utilisant deux préfixes de soulignement. Cela signifie que l'attribut ne peut être accédé qu'à l'intérieur de la classe et non à l'extérieur de la classe, pas même dans ses sous-classes.
+Dans l'exemple de code donné, la classe `MyClass` possède deux attributs, `_protected_var` et `__private_var`. Le `_protected_var` est marqué comme protégé en utilisant un préfixe de soulignement unique. Cela signifie que l'attribut peut être accédé au sein de la classe et de ses sous-classes, mais pas à l'extérieur de la classe. Le `__private_var` est marqué comme privé en utilisant deux préfixes de soulignement. Cela signifie que l'attribut ne peut être accédé qu'à l'intérieur de la classe et non à l'extérieur de la classe, pas même dans ses sous-classes.
 
-Lorsque nous créons un objet de la classe `MyClass`, nous pouvons accéder à l'attribut `_protected_var` en utilisant le nom de l'objet avec un préfixe de soulignement simple. Cependant, nous ne pouvons pas accéder à l'attribut `__private_var` en utilisant le nom de l'objet, car il est caché du monde extérieur. Si nous essayons d'accéder à l'attribut `__private_var`, nous obtiendrons une `AttributeError` comme indiqué dans le code.
+Lorsque nous créons un objet de la classe `MyClass`, nous pouvons accéder à l'attribut `_protected_var` en utilisant le nom de l'objet avec un préfixe de soulignement unique. Cependant, nous ne pouvons pas accéder à l'attribut `__private_var` en utilisant le nom de l'objet, car il est caché du monde extérieur. Si nous essayons d'accéder à l'attribut `__private_var`, nous obtiendrons une `AttributeError` comme indiqué dans le code.
 
 En résumé, l'encapsulation est un concept important en programmation orientée objet qui aide à protéger les détails d'implémentation d'un objet. En Python, nous pouvons réaliser l'encapsulation en utilisant des modificateurs d'accès et en utilisant des préfixes de soulignement pour indiquer le niveau d'accès.
 
@@ -56,20 +56,34 @@ print(obj._protected_var)   # sortie : 10
 
 # Essayer d'accéder à la variable privée en utilisant le nom de l'objet et afficher sa valeur
 # La variable privée ne peut pas être accédée à l'extérieur de la classe, même par ses sous-classes
-# Cela lèvera une AttributeError car la variable n'est pas accessible à l'extérieur de la classe
+# Ceci lèvera une AttributeError car la variable n'est pas accessible à l'extérieur de la classe
 print(obj.__private_var)    # AttributeError: 'MyClass' object has no attribute '__private_var'
 
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Comment indiquez-vous une variable protégée en Python ?
+</template>
+
+<base-quiz-option value="A">A. Préfixe de deux traits de soulignement : <code>**variable</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. Préfixe de trait de soulignement unique : <code>_variable</code></base-quiz-option>
+<base-quiz-option value="C">C. Aucun trait de soulignement nécessaire</base-quiz-option>
+<base-quiz-option value="D">D. Préfixe de trois traits de soulignement : <code>_**variable</code></base-quiz-option>
+<base-quiz-answer value="B">En Python, un préfixe de trait de soulignement unique (<code>\_variable</code>) indique une variable protégée, ce qui est une convention signifiant qu'elle doit être utilisée à l'intérieur de la classe ou de ses sous-classes. Deux traits de soulignement (<code>\_\_variable</code>) indiquent une variable privée.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Héritage
 
-L'héritage favorise la réutilisation du code et vous permet de créer une hiérarchie de classes qui partagent des attributs et des méthodes communs. Il aide à créer un code propre et organisé en gardant les fonctionnalités liées au même endroit et en promouvant le concept de modularité. La classe de base à partir de laquelle une nouvelle classe est dérivée est également connue sous le nom de classe parente, et la nouvelle classe est connue sous le nom de classe enfant ou sous-classe.
+L'héritage favorise la réutilisation du code et permet de créer une hiérarchie de classes qui partagent des attributs et des méthodes communs. Il aide à créer un code propre et organisé en gardant les fonctionnalités liées au même endroit et en promouvant le concept de modularité. La classe de base à partir de laquelle une nouvelle classe est dérivée est également connue sous le nom de classe parente, et la nouvelle classe est connue sous le nom de classe enfant ou sous-classe.
 
 Dans le code, nous définissons une classe nommée `Animal` qui possède une méthode constructeur qui initialise l'objet de la classe avec un attribut de nom et une méthode nommée `speak`. La méthode `speak` est définie dans la classe `Animal` mais n'a pas de corps.
 
-Nous définissons ensuite deux sous-classes nommées `Dog` et `Cat` qui héritent de la classe `Animal`. Ces sous-classes remplacent la méthode `speak` de la classe `Animal`.
+Nous définissons ensuite deux sous-classes nommées `Dog` et `Cat` qui héritent de la classe `Animal`. Ces sous-classes écrasent la méthode `speak` de la classe `Animal`.
 
-Nous créons un objet `Dog` avec un attribut de nom "Rover" et un objet `Cat` avec un attribut de nom "Whiskers". Nous appelons la méthode `speak` de l'objet `Dog` en utilisant `dog.speak()`, et elle imprime "Woof!" car la méthode `speak` de la classe `Dog` surcharge la méthode `speak` de la classe `Animal`. De même, nous appelons la méthode `speak` de l'objet `Cat` en utilisant `cat.speak()`, et elle imprime "Meow!" car la méthode `speak` de la classe `Cat` surcharge la méthode `speak` de la classe `Animal`.
+Nous créons un objet `Dog` avec un attribut de nom "Rover" et un objet `Cat` avec un attribut de nom "Whiskers". Nous appelons la méthode `speak` de l'objet `Dog` en utilisant `dog.speak()`, et elle imprime "Woof!" car la méthode `speak` de la classe `Dog` écrase la méthode `speak` de la classe `Animal`. De même, nous appelons la méthode `speak` de l'objet `Cat` en utilisant `cat.speak()`, et elle imprime "Meow!" car la méthode `speak` de la classe `Cat` écrase la méthode `speak` de la classe `Animal`.
 
 ```python
 # Définir une classe nommée Animal
@@ -80,21 +94,21 @@ class Animal:
         self.name = name
 
     # Méthode qui est définie dans la classe Animal mais n'a pas de corps
-    # Cette méthode sera remplacée dans les sous-classes d'Animal
+    # Cette méthode sera écrasée dans les sous-classes d'Animal
     def speak(self):
         print("")
 
 # Définir une sous-classe nommée Dog qui hérite de la classe Animal
 class Dog(Animal):
 
-    # Remplacer la méthode speak de la classe Animal
+    # Écraser la méthode speak de la classe Animal
     def speak(self):
         print("Woof!")
 
 # Définir une sous-classe nommée Cat qui hérite de la classe Animal
 class Cat(Animal):
 
-    # Remplacer la méthode speak de la classe Animal
+    # Écraser la méthode speak de la classe Animal
     def speak(self):
         print("Meow!")
 
@@ -104,30 +118,44 @@ dog = Dog("Rover")
 # Créer un objet Cat avec un attribut de nom "Whiskers"
 cat = Cat("Whiskers")
 
-# Appeler la méthode speak de la classe Dog et afficher la sortie
-# La méthode speak de la classe Dog surcharge la méthode speak de la classe Animal
+# Appeler la méthode speak de la classe Dog et imprimer la sortie
+# La méthode speak de la classe Dog écrase la méthode speak de la classe Animal
 # Par conséquent, lorsque nous appelons la méthode speak de l'objet Dog, elle affichera "Woof!"
 dog.speak()   # sortie : Woof!
 
-# Appeler la méthode speak de la classe Cat et afficher la sortie
-# La méthode speak de la classe Cat surcharge la méthode speak de la classe Animal
+# Appeler la méthode speak de la classe Cat et imprimer la sortie
+# La méthode speak de la classe Cat écrase la méthode speak de la classe Animal
 # Par conséquent, lorsque nous appelons la méthode speak de l'objet Cat, elle affichera "Meow!"
 cat.speak()   # sortie : Meow!
 
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+Qu'est-ce que l'héritage en POO Python ?
+</template>
+
+<base-quiz-option value="A" correct>A. Un mécanisme par lequel une classe peut hériter des attributs et des méthodes d'une autre classe</base-quiz-option>
+<base-quiz-option value="B">B. Une façon de copier des objets</base-quiz-option>
+<base-quiz-option value="C">C. Une méthode pour supprimer des classes</base-quiz-option>
+<base-quiz-option value="D">D. Une fonction intégrée</base-quiz-option>
+<base-quiz-answer value="A">L'héritage permet à une classe (enfant/sous-classe) d'hériter des attributs et des méthodes d'une autre classe (parent/classe de base). Cela favorise la réutilisation du code et permet de créer une hiérarchie de classes.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Polymorphisme
 
 Le polymorphisme est un concept important en programmation orientée objet qui vous permet d'écrire du code pouvant fonctionner avec des objets de différentes classes d'une manière uniforme. En Python, le polymorphisme est réalisé en utilisant la surcharge de méthode (method overriding) ou la surcharge de fonction (method overloading).
 
-La surcharge de méthode est lorsqu'une sous-classe fournit sa propre implémentation d'une méthode déjà définie dans sa classe parente. Cela permet à la sous-classe de modifier le comportement de la méthode sans changer son nom ou sa signature.
+La surcharge de méthode (method overriding) est lorsqu'une sous-classe fournit sa propre implémentation d'une méthode déjà définie dans sa classe parente. Cela permet à la sous-classe de modifier le comportement de la méthode sans changer son nom ou sa signature.
 
-La surcharge de fonction est lorsque plusieurs méthodes ont le même nom mais des paramètres différents. Python ne prend pas en charge la surcharge de fonction directement, mais elle peut être réalisée en utilisant des arguments par défaut ou des arguments de longueur variable.
+La surcharge de fonction (method overloading) est lorsque plusieurs méthodes ont le même nom mais des paramètres différents. Python ne prend pas en charge la surcharge de fonction directement, mais elle peut être réalisée en utilisant des arguments par défaut ou des arguments de longueur variable.
 
-Le polymorphisme facilite l'écriture de code flexible et réutilisable. Il vous permet d'écrire du code qui peut fonctionner avec différents objets sans avoir besoin de connaître leurs types spécifiques.
+Le polymorphisme facilite l'écriture de code flexible et réutilisable. Il vous permet d'écrire du code qui peut fonctionner avec différents objets sans avoir besoin de connaître leur type spécifique.
 
 ```python
-# La classe Shape est définie avec une méthode area abstraite, destinée à être remplacée par les sous-classes.
+# La classe Shape est définie avec une méthode area abstraite, destinée à être écrasée par les sous-classes.
 class Shape:
     def area(self):
         pass
@@ -165,11 +193,25 @@ for shape in shapes:
 
 ```
 
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+Qu'est-ce que le polymorphisme en POO Python ?
+</template>
+
+<base-quiz-option value="A">A. Créer plusieurs classes portant le même nom</base-quiz-option>
+<base-quiz-option value="B">B. Cacher les détails d'implémentation</base-quiz-option>
+<base-quiz-option value="C" correct>C. La capacité d'utiliser des objets de différentes classes d'une manière uniforme via une interface commune</base-quiz-option>
+<base-quiz-option value="D">D. Copier des objets</base-quiz-option>
+<base-quiz-answer value="C">Le polymorphisme vous permet d'écrire du code qui peut fonctionner avec des objets de différentes classes d'une manière uniforme. Différentes classes peuvent implémenter le même nom de méthode, et Python appellera l'implémentation appropriée en fonction du type de l'objet.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Abstraction
 
-L'abstraction est un concept important en programmation orientée objet (POO) car elle vous permet de vous concentrer sur les caractéristiques essentielles d'un objet ou d'un système tout en ignorant les détails qui ne sont pas pertinents pour le contexte actuel. En réduisant la complexité et en masquant les détails inutiles, l'abstraction peut rendre le code plus modulaire, plus facile à lire et plus facile à maintenir.
+L'abstraction est un concept important en programmation orientée objet (POO) car il vous permet de vous concentrer sur les caractéristiques essentielles d'un objet ou d'un système tout en ignorant les détails qui ne sont pas pertinents pour le contexte actuel. En réduisant la complexité et en masquant les détails inutiles, l'abstraction peut rendre le code plus modulaire, plus facile à lire et plus facile à maintenir.
 
-En Python, l'abstraction peut être réalisée en utilisant des classes abstraites ou des interfaces. Une classe abstraite est une classe qui ne peut pas être instanciée directement, mais qui est destinée à être sous-classée par d'autres classes. Elle inclut souvent des méthodes abstraites qui n'ont pas d'implémentation, mais fournissent un modèle sur la manière dont la sous-classe doit être implémentée. Cela permet au programmeur de définir une interface commune pour un groupe de classes connexes, tout en permettant à chaque classe d'avoir son propre comportement spécifique.
+En Python, l'abstraction peut être réalisée en utilisant des classes abstraites ou des interfaces. Une classe abstraite est une classe qui ne peut pas être instanciée directement, mais qui est destinée à être sous-classée par d'autres classes. Elle comprend souvent des méthodes abstraites qui n'ont pas d'implémentation, mais fournissent un modèle sur la manière dont la sous-classe doit être implémentée. Cela permet au programmeur de définir une interface commune pour un groupe de classes connexes, tout en permettant à chaque classe d'avoir son propre comportement spécifique.
 
 Une interface, en revanche, est une collection de signatures de méthodes qu'une classe doit implémenter pour être considérée comme « compatible » avec l'interface. Les interfaces sont souvent utilisées pour définir un ensemble commun de méthodes que plusieurs classes peuvent implémenter, leur permettant d'être utilisées de manière interchangeable dans certains contextes.
 

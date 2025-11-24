@@ -1,6 +1,6 @@
 ---
 title: 'Leitura e Escrita de Arquivos - Guia Rápido Python'
-description: "Para ler/escrever em um arquivo no Python, use a instrução 'with', que fechará o arquivo automaticamente, gerenciando os recursos disponíveis para você."
+description: "Para ler/escrever em um arquivo no Python, utilize a instrução 'with', que fechará o arquivo automaticamente após o uso, gerenciando os recursos disponíveis."
 labUrl: 'https://labex.io/pt/labs/python-python-reading-and-writing-files-633663?course=python-cheatsheet'
 ---
 
@@ -14,16 +14,16 @@ Para um olhar mais aprofundado sobre a manipulação de caminhos de arquivos e d
 
 ## O processo de Leitura/Escrita de arquivos
 
-Para ler/escrever em um arquivo em Python, você desejará usar a instrução `with`, que fechará o arquivo para você após terminar, gerenciando os recursos disponíveis.
+Para ler/escrever em um arquivo em Python, você desejará usar a instrução `with`, que fechará o arquivo para você depois de terminar, gerenciando os recursos disponíveis.
 
 ## Abrindo e lendo arquivos
 
 A função `open` abre um arquivo e retorna um objeto de arquivo correspondente.
 
 ```python
-# Ler arquivo usando a instrução 'with': fecha automaticamente o arquivo ao terminar
+# Read file using 'with' statement: automatically closes file when done
 with open('/home/labex/project/hi.txt') as hello_file:
-    hello_content = hello_file.read()  # Lê o conteúdo inteiro do arquivo
+    hello_content = hello_file.read()  # Read entire file content
 
 hello_content
 ```
@@ -32,12 +32,26 @@ hello_content
 'Hello World!'
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+What is the main advantage of using the <code>with</code> statement when opening files?
+</template>
+
+<base-quiz-option value="A" correct>A. O arquivo é fechado automaticamente quando terminado, mesmo que ocorra um erro</base-quiz-option>
+<base-quiz-option value="B">B. Arquivos abrem mais rápido</base-quiz-option>
+<base-quiz-option value="C">C. Arquivos podem ser abertos em modo de leitura e escrita simultaneamente</base-quiz-option>
+<base-quiz-option value="D">D. Arquivos são automaticamente compactados</base-quiz-option>
+<base-quiz-answer value="A">A instrução <code>with</code> garante que o arquivo seja fechado automaticamente quando o bloco for encerrado, mesmo que ocorra uma exceção. Isso ajuda a gerenciar os recursos adequadamente.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 Alternativamente, você pode usar o método _readlines()_ para obter uma lista de valores de string do arquivo, uma string para cada linha de texto:
 
 ```python
-# Método readlines(): retorna lista de strings, uma por linha
+# readlines() method: returns list of strings, one per line
 with open('sonnet29.txt') as sonnet_file:
-    sonnet_file.readlines()  # Retorna lista com cada linha como uma string
+    sonnet_file.readlines()  # Returns list with each line as a string
 ```
 
 ```output
@@ -47,13 +61,13 @@ with open('sonnet29.txt') as sonnet_file:
  "And look upon myself and curse my fate,']
 ```
 
-Você também pode iterar pelo arquivo linha por linha:
+Você também pode iterar sobre o arquivo linha por linha:
 
 ```python
-# Iterar pelo arquivo linha por linha (eficiente em memória para arquivos grandes)
+# Iterate through file line by line (memory efficient for large files)
 with open('sonnet29.txt') as sonnet_file:
-    for line in sonnet_file:  # O objeto de arquivo é iterável
-        print(line, end='')  # Imprime sem nova linha extra
+    for line in sonnet_file:  # File object is iterable
+        print(line, end='')  # Print without extra newline
 ```
 
 ```output
@@ -66,9 +80,9 @@ And look upon myself and curse my fate,
 ## Escrevendo em arquivos
 
 ```python
-# Escrever no arquivo: o modo 'w' sobrescreve o arquivo existente
-with open('bacon.txt', 'w') as bacon_file:  # 'w' = modo de escrita
-    bacon_file.write('Hello world!\n')  # Retorna o número de caracteres escritos
+# Write to file: 'w' mode overwrites existing file
+with open('bacon.txt', 'w') as bacon_file:  # 'w' = write mode
+    bacon_file.write('Hello world!\n')  # Returns number of characters written
 ```
 
 ```output
@@ -76,8 +90,8 @@ with open('bacon.txt', 'w') as bacon_file:  # 'w' = modo de escrita
 ```
 
 ```python
-# Anexar ao arquivo: o modo 'a' anexa ao arquivo existente
-with open('bacon.txt', 'a') as bacon_file:  # 'a' = modo de anexar
+# Append to file: 'a' mode appends to existing file
+with open('bacon.txt', 'a') as bacon_file:  # 'a' = append mode
     bacon_file.write('Bacon is not a vegetable.')
 ```
 
@@ -96,6 +110,20 @@ print(content)
 Hello world!
 Bacon is not a vegetable.
 ```
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+What is the difference between opening a file with mode <code>'w'</code> and mode <code>'a'</code>?
+</template>
+
+<base-quiz-option value="A">A. <code>'w'</code> é para leitura, <code>'a'</code> é para escrita</base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>'w'</code> sobrescreve o arquivo, <code>'a'</code> anexa ao arquivo</base-quiz-option>
+<base-quiz-option value="C">C. <code>'w'</code> é para Windows, <code>'a'</code> é para Apple</base-quiz-option>
+<base-quiz-option value="D">D. Não há diferença</base-quiz-option>
+<base-quiz-answer value="B">O modo <code>'w'</code> abre o arquivo para escrita e sobrescreve qualquer conteúdo existente. O modo <code>'a'</code> abre o arquivo para anexar, adicionando novo conteúdo ao final do arquivo.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Links relevantes
 

@@ -30,6 +30,20 @@ python3 -m venv venv
 
 Esto crea un directorio `venv` en tu carpeta actual que contiene el entorno virtual.
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+¿Qué comando se utiliza para crear un entorno virtual usando <code>venv</code>?
+</template>
+
+<base-quiz-option value="A" correct>A. <code>python -m venv venv</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>python create venv</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>venv create</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>python venv new</code></base-quiz-option>
+<base-quiz-answer value="A">El comando <code>python -m venv venv</code> crea un entorno virtual. El flag <code>-m</code> ejecuta el módulo venv, y <code>venv</code> al final es el nombre del directorio a crear.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 2. Activar el entorno virtual
 
 En Linux/macOS:
@@ -45,6 +59,20 @@ venv\Scripts\activate
 ```
 
 Una vez activado, verás `(venv)` al principio de tu símbolo del sistema, indicando que el entorno virtual está activo.
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+¿Cómo se activa un entorno virtual en Linux/macOS?
+</template>
+
+<base-quiz-option value="A">A. <code>activate venv</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>source venv/bin/activate</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>venv activate</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>python venv activate</code></base-quiz-option>
+<base-quiz-answer value="B">En Linux/macOS, se activa un entorno virtual usando <code>source venv/bin/activate</code>. En Windows, se usaría <code>venv\Scripts\activate</code>.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 3. Instalar paquetes
 
@@ -65,6 +93,20 @@ deactivate
 ```
 
 El prefijo `(venv)` desaparecerá de tu símbolo del sistema.
+
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+¿Cuál es el propósito principal de usar un entorno virtual?
+</template>
+
+<base-quiz-option value="A" correct>A. Aislar las dependencias del proyecto y evitar llenar la instalación base de Python</base-quiz-option>
+<base-quiz-option value="B">B. Hacer que Python se ejecute más rápido</base-quiz-option>
+<base-quiz-option value="C">C. Cifrar código Python</base-quiz-option>
+<base-quiz-option value="D">D. Compilar Python a código máquina</base-quiz-option>
+<base-quiz-answer value="A">Los entornos virtuales te permiten probar código Python en entornos encapsulados y evitar llenar la instalación base de Python con librerías que podrían usarse solo para un proyecto. Esto ayuda a gestionar dependencias por proyecto.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## virtualenv
 
@@ -92,7 +134,7 @@ Cualquier cosa que instalemos ahora será específica para este proyecto. Y esta
 
 1. Establecer Directorio del Proyecto
 
-Para vincular nuestro virtualenv con nuestro directorio de trabajo actual, simplemente escribimos:
+Para vincular nuestro virtualenv con nuestro directorio de trabajo actual, simplemente ingresamos:
 
 ```bash
 setprojectdir .
@@ -106,7 +148,7 @@ Para pasar a otra cosa en la línea de comandos, escribe `deactivate` para desac
 deactivate
 ```
 
-Observa cómo desaparecen los paréntesis.
+Nota cómo desaparecen los paréntesis.
 
 1. Workon
 
@@ -177,7 +219,7 @@ Para añadir dependencias a tu proyecto, puedes especificarlas en la sección to
 pendulum = "^1.4"
 ```
 
-Además, en lugar de modificar el archivo pyproject.toml a mano, puedes usar el comando add y automáticamente encontrará una restricción de versión adecuada.
+Además, en lugar de modificar el archivo pyproject.toml manualmente, puedes usar el comando add y automáticamente encontrará una restricción de versión adecuada.
 
 ```bash
 poetry add pendulum
@@ -208,7 +250,7 @@ Para más información, consulta la [documentación](https://poetry.eustace.io/d
     Desde <a target="_blank" href="https://pipenv.pypa.io/en/latest/">sitio web de Pipenv</a>
   </base-disclaimer-title>
   <base-disclaimer-content>
-    Pipenv es una herramienta que tiene como objetivo traer lo mejor de todos los mundos de empaquetado (bundler, composer, npm, cargo, yarn, etc.) al mundo de Python. Windows es un ciudadano de primera clase en nuestro mundo.
+    Pipenv es una herramienta que tiene como objetivo traer lo mejor de todos los mundos de empaquetado (bundler, composer, npm, cargo, yarn, etc.) al mundo de Python. Windows es un ciudadano de primera clase, en nuestro mundo.
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -327,7 +369,7 @@ source .venv/bin/activate  # Linux/macOS
 .venv\Scripts\activate     # Windows
 ```
 
-UV gestiona automáticamente los entornos virtuales, las versiones de Python y las dependencias con una velocidad y comodidad excepcionales.
+UV gestiona automáticamente los entornos virtuales, las versiones de Python y las dependencias con una velocidad y conveniencia excepcionales.
 
 ## Enlaces relevantes
 

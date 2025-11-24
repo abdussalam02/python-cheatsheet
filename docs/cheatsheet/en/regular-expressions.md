@@ -104,6 +104,20 @@ mo.group()
 '415-555-4242'
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+What does <code>group()</code> return when called on a match object?
+</template>
+
+<base-quiz-option value="A" correct>A. The entire matched text</base-quiz-option>
+<base-quiz-option value="B">B. The first group only</base-quiz-option>
+<base-quiz-option value="C">C. All groups as a list</base-quiz-option>
+<base-quiz-option value="D">D. The index of the match</base-quiz-option>
+<base-quiz-answer value="A">The <code>group()</code> method (or <code>group(0)</code>) returns the entire matched text. To get specific groups, use <code>group(1)</code>, <code>group(2)</code>, etc.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 To retrieve all the groups at once use the `groups()` method:
 
 ```python
@@ -328,6 +342,20 @@ mo2.group()
 'HaHaHa'
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+What makes a regex pattern non-greedy?
+</template>
+
+<base-quiz-option value="A">A. Using <code>_</code> instead of <code>+</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. Adding a <code>?</code> after the quantifier (e.g., <code>_?</code>, <code>+?</code>, <code>{3,5}?</code>)</base-quiz-option>
+<base-quiz-option value="C">C. Using parentheses</base-quiz-option>
+<base-quiz-option value="D">D. Using square brackets</base-quiz-option>
+<base-quiz-answer value="B">Adding a <code>?</code> after quantifiers like <code>\*</code>, <code>+</code>, or <code>{n,m}</code> makes them non-greedy, matching the shortest possible string instead of the longest.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## The findall() method
 
 The `findall()` method will return the strings of every match in the searched string.
@@ -551,6 +579,20 @@ names_regex.sub('CENSORED', 'Agent Alice gave the secret documents to Agent Bob.
 'CENSORED gave the secret documents to CENSORED.'
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+What does the <code>sub()</code> method do?
+</template>
+
+<base-quiz-option value="A">A. Finds all matches in a string</base-quiz-option>
+<base-quiz-option value="B" correct>B. Replaces all matches with a replacement string</base-quiz-option>
+<base-quiz-option value="C">C. Splits a string at matches</base-quiz-option>
+<base-quiz-option value="D">D. Validates a string format</base-quiz-option>
+<base-quiz-answer value="B">The <code>sub()</code> method substitutes all matches of the pattern with a replacement string. It returns a new string with the substitutions applied.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Managing complex Regexes
 
 To tell the `re.compile()` function to ignore whitespace and comments inside the regular expression string, “verbose mode” can be enabled by passing the variable `re.VERBOSE` as the second argument to `re.compile()`.
@@ -573,6 +615,20 @@ phone_regex = re.compile(r'''(
     (\s*(ext|x|ext.)\s*\d{2,5})?  # extension
     )''', re.VERBOSE)
 ```
+
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+What does <code>re.VERBOSE</code> do when passed to <code>re.compile()</code>?
+</template>
+
+<base-quiz-option value="A" correct>A. Allows whitespace and comments in the regex pattern for better readability</base-quiz-option>
+<base-quiz-option value="B">B. Makes the regex case-insensitive</base-quiz-option>
+<base-quiz-option value="C">C. Makes the dot match newline characters</base-quiz-option>
+<base-quiz-option value="D">D. Speeds up regex matching</base-quiz-option>
+<base-quiz-answer value="A">The <code>re.VERBOSE</code> flag allows you to add whitespace and comments to your regex pattern, making complex regexes much more readable without affecting the pattern matching.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Relevant links
 

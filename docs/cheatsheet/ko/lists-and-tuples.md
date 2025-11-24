@@ -1,5 +1,5 @@
 ---
-title: '파이썬 리스트 및 튜플 - 파이썬 치트 시트'
+title: '파이썬 리스트와 튜플 - 파이썬 치트 시트'
 description: '파이썬에서 리스트는 데이터를 저장하는 4 가지 자료형 중 하나입니다.'
 labUrl: 'https://labex.io/ko/labs/python-python-lists-and-tuples-633660?course=python-cheatsheet'
 ---
@@ -10,10 +10,10 @@ Python 리스트
 
 <base-lab-url :url="frontmatter.labUrl" />
 
-리스트는 Python 의 4 가지 데이터 타입 중 하나로, 데이터 모음을 저장하는 데 사용됩니다.
+리스트는 파이썬에서 데이터를 저장하는 4 가지 자료형 중 하나입니다.
 
 ```python
-# List: 대괄호로 묶인 항목들의 순서가 있는 모음
+# List: 대괄호로 묶인 항목들의 순서가 있는 컬렉션
 ['John', 'Peter', 'Debora', 'Charles']
 ```
 
@@ -83,10 +83,24 @@ f'The {furniture[-1]} is bigger than the {furniture[-3]}'
 'The shelf is bigger than the chair'
 ```
 
-## 슬라이싱으로 하위 리스트 가져오기
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+<code>furniture = ['table', 'chair', 'rack', 'shelf']</code>일 때 <code>furniture[-1]</code>은 무엇을 반환합니까?
+</template>
+
+<base-quiz-option value="A">A. <code>'table'</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>'shelf'</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>['shelf']</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>IndexError</code></base-quiz-option>
+<base-quiz-answer value="B">음수 인덱스는 리스트 끝에서부터 요소에 접근합니다. <code>-1</code>은 마지막 요소를, <code>-2</code>는 끝에서 두 번째 요소를 나타냅니다.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+## 슬라이싱으로 부분 리스트 가져오기
 
 ```python
-# Slicing: [start:end] 구문을 사용하여 하위 리스트 가져오기 (end 는 미포함)
+# Slicing: [start:end] 구문을 사용하여 부분 리스트 가져오기 (end 는 포함되지 않음)
 furniture = ['table', 'chair', 'rack', 'shelf']
 
 furniture[0:4]  # 인덱스 0 부터 3 까지의 요소 반환 (4 는 제외)
@@ -168,7 +182,21 @@ spam2
 ['cat', 'bat', 'rat', 'elephant']
 ```
 
-## len() 으로 리스트 길이 가져오기
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+<code>spam</code>이 리스트일 때 <code>spam[:]</code>은 무엇을 생성합니까?
+</template>
+
+<base-quiz-option value="A">A. 동일한 리스트에 대한 참조</base-quiz-option>
+<base-quiz-option value="B">B. 빈 리스트</base-quiz-option>
+<base-quiz-option value="C" correct>C. 리스트의 얕은 복사본</base-quiz-option>
+<base-quiz-option value="D">D. 뒤집힌 리스트</base-quiz-option>
+<base-quiz-answer value="C">전체 리스트를 <code>[:]</code>로 슬라이싱하면 얕은 복사본이 생성됩니다. 복사본을 수정해도 원본 리스트에는 영향을 미치지 않습니다.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+## len() 으로 리스트 길이 얻기
 
 ```python
 # len() 은 리스트의 항목 수를 반환합니다
@@ -180,7 +208,7 @@ len(furniture)  # 4 반환
 4
 ```
 
-## 인덱스를 사용하여 값 변경하기
+## 인덱스로 값 변경하기
 
 ```python
 # 인덱스에 새 값을 할당하여 리스트 요소 수정
@@ -259,13 +287,13 @@ rack
 shelf
 ```
 
-## enumerate() 로 루프에서 인덱스 가져오기
+## enumerate() 로 루프에서 인덱스 얻기
 
 ```python
 # enumerate() 는 루프에서 인덱스와 값을 모두 반환합니다
 furniture = ['table', 'chair', 'rack', 'shelf']
 
-for index, item in enumerate(furniture):  # 인덱스와 항목을 함께 가져옴
+for index, item in enumerate(furniture):  # 인덱스와 항목을 함께 가져오기
     print(f'index: {index} - item: {item}')
 ```
 
@@ -279,11 +307,11 @@ index: 3 - item: shelf
 ## zip() 으로 여러 리스트 루프 돌기
 
 ```python
-# zip() 은 여러 리스트의 요소를 요소별로 결합합니다
+# zip() 은 여러 리스트를 요소별로 결합하여 루프를 돕습니다
 furniture = ['table', 'chair', 'rack', 'shelf']
 price = [100, 50, 80, 40]
 
-for item, amount in zip(furniture, price):  # 두 리스트의 요소를 쌍으로 묶음
+for item, amount in zip(furniture, price):  # 두 리스트의 요소를 쌍으로 묶기
     print(f'The {item} costs ${amount}')
 ```
 
@@ -342,7 +370,7 @@ rack = furniture[2]
 shelf = furniture[3]
 ```
 
-다음과 같이 코드를 입력할 수 있습니다:
+다음과 같이 한 줄을 입력할 수 있습니다:
 
 ```python
 furniture = ['table', 'chair', 'rack', 'shelf']
@@ -401,7 +429,7 @@ table
 
 ## index 메서드
 
-`index` 메서드는 값의 이름을 전달하여 해당 값의 인덱스를 찾을 수 있게 해줍니다:
+`index` 메서드를 사용하면 값을 이름으로 전달하여 해당 값의 인덱스를 찾을 수 있습니다:
 
 ```python
 furniture = ['table', 'chair', 'rack', 'shelf']
@@ -428,9 +456,23 @@ furniture
 ['table', 'chair', 'rack', 'shelf', 'bed']
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+<code>append()</code> 메서드는 리스트에 대해 어떤 작업을 수행합니까?
+</template>
+
+<base-quiz-option value="A" correct>A. 리스트 끝에 요소를 추가합니다</base-quiz-option>
+<base-quiz-option value="B">B. 리스트 시작 부분에 요소를 추가합니다</base-quiz-option>
+<base-quiz-option value="C">C. 마지막 요소를 대체합니다</base-quiz-option>
+<base-quiz-option value="D">D. 마지막 요소를 제거합니다</base-quiz-option>
+<base-quiz-answer value="A"><code>append()</code> 메서드는 단일 요소를 리스트 끝에 추가합니다. 특정 위치에 요소를 추가하려면 <code>insert()</code>를 사용합니다.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ### insert()
 
-`insert`는 주어진 위치에 요소를 `list`에 추가합니다:
+`insert`는 주어진 위치의 `list`에 요소를 추가합니다:
 
 ```python
 furniture = ['table', 'chair', 'rack', 'shelf']
@@ -486,13 +528,13 @@ furniture
     반복되는 항목 제거
   </base-warning-title>
   <base-warning-content>
-    값이 리스트에 여러 번 나타나면 해당 값의 첫 번째 인스턴스만 제거됩니다.
+    값이 리스트에 여러 번 나타나는 경우, 해당 값의 첫 번째 인스턴스만 제거됩니다.
   </base-warning-content>
 </base-warning>
 
 ### pop()
 
-기본적으로 `pop`은 리스트의 마지막 항목을 제거하고 반환합니다. 선택적 매개변수로 제거할 요소의 인덱스를 전달할 수도 있습니다:
+기본적으로 `pop`은 리스트의 마지막 항목을 제거하고 반환합니다. 선택적 매개변수로 요소의 인덱스를 전달할 수도 있습니다:
 
 ```python
 animals = ['cat', 'bat', 'rat', 'elephant']
@@ -528,6 +570,20 @@ animals
 ['bat', 'rat']
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+리스트에서 <code>pop()</code>을 호출하면 어떤 작업이 수행됩니까?
+</template>
+
+<base-quiz-option value="A">A. 마지막 항목만 제거합니다</base-quiz-option>
+<base-quiz-option value="B" correct>B. 항목을 제거하고 반환합니다 (기본적으로 마지막 항목, 또는 지정된 인덱스)</base-quiz-option>
+<base-quiz-option value="C">C. 마지막 항목만 반환하고 제거하지 않습니다</base-quiz-option>
+<base-quiz-option value="D">D. 리스트의 모든 항목을 제거합니다</base-quiz-option>
+<base-quiz-answer value="B"><code>pop()</code> 메서드는 항목을 제거하고 반환합니다. 기본적으로 마지막 항목을 제거하지만, 인덱스를 전달하여 특정 항목을 제거할 수 있습니다.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## sort() 로 값 정렬하기
 
 ```python
@@ -561,7 +617,7 @@ furniture
 ['table', 'shelf', 'rack', 'chair']
 ```
 
-정규 알파벳 순서로 값을 정렬해야 하는 경우, sort() 메서드 호출에서 key 키워드 인수에 `str.lower`를 전달합니다:
+일반적인 알파벳 순서로 값을 정렬해야 하는 경우, sort() 메서드 호출에서 key 키워드 인수에 `str.lower`를 전달하여 정렬할 수 있습니다:
 
 ```python
 letters = ['a', 'z', 'A', 'Z']
@@ -584,7 +640,7 @@ sorted(furniture)
 ['chair', 'rack', 'shelf', 'table']
 ```
 
-## 튜플 데이터 타입
+## Tuple 자료형
 
 <base-disclaimer>
   <base-disclaimer-title>
@@ -649,12 +705,26 @@ list('hello')
 ['h', 'e', 'l', 'l', 'o']
 ```
 
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+파이썬에서 리스트와 튜플의 주요 차이점은 무엇입니까?
+</template>
+
+<base-quiz-option value="A">A. 리스트는 숫자만 포함할 수 있고, 튜플은 모든 것을 포함할 수 있습니다</base-quiz-option>
+<base-quiz-option value="B">B. 튜플이 생성 속도가 더 빠릅니다</base-quiz-option>
+<base-quiz-option value="C" correct>C. 리스트는 가변 (변경 가능) 이고, 튜플은 불변 (변경 불가능) 입니다</base-quiz-option>
+<base-quiz-option value="D">D. 리스트는 대괄호를 사용하고, 튜플은 중괄호를 사용합니다</base-quiz-option>
+<base-quiz-answer value="C">리스트는 생성 후 수정할 수 있는 가변 객체입니다. 튜플은 생성 후 변경할 수 없는 불변 객체입니다. 둘 다 모든 유형의 데이터를 포함할 수 있습니다.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## 관련 링크
 
-- <router-link to="/blog/python-data-types">Python 데이터 타입: 초보자를 위한 시각적 가이드</router-link>
-- <router-link to="/blog/python-comprehensions-step-by-step">Python Comprehensions 단계별 가이드</router-link>
+- <router-link to="/blog/python-data-types">Python Data Types: A Visual Guide for Beginners</router-link>
+- <router-link to="/blog/python-comprehensions-step-by-step">Python Comprehensions Step-by-Step</router-link>
 - <router-link to="/cheatsheet/comprehensions">Python Comprehensions</router-link>
-- <router-link to="/modules/itertools-module">itertools 모듈</router-link>
+- <router-link to="/modules/itertools-module">The itertools Module</router-link>
 - <router-link to="/builtin/list">list()</router-link>
 - <router-link to="/builtin/tuple">tuple()</router-link>
 - <router-link to="/builtin/len">len()</router-link>

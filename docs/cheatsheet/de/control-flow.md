@@ -30,7 +30,7 @@ Python Kontrollfluss
 | `<=`     | Kleiner oder gleich |
 | `>=`     | Größer oder gleich  |
 
-Diese Operatoren ergeben je nach den zugewiesenen Werten `True` oder `False`.
+Diese Operatoren ergeben je nach den gegebenen Werten `True` oder `False`.
 
 Beispiele:
 
@@ -90,10 +90,24 @@ True
 False
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Was ergibt <code>'hello' == 'Hello'</code>?
+</template>
+
+<base-quiz-option value="A">A. <code>True</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>False</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>None</code></base-quiz-option>
+<base-quiz-option value="D">D. Löst einen Fehler aus</base-quiz-option>
+<base-quiz-answer value="B">Der String-Vergleich in Python ist case-sensitiv. <code>'hello'</code> und <code>'Hello'</code> sind unterschiedliche Strings, daher gibt der Vergleich <code>False</code> zurück.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Boolesche Operatoren
 
-Es gibt drei boolesche Operatoren: `and`, `or` und `not`.
-In der Reihenfolge der Priorität, von höchster zu niedrigster, sind dies `not`, `and` und `or`.
+Es gibt drei Boolesche Operatoren: `and`, `or` und `not`.
+In der Reihenfolge der Präzedenz, von höchster zu niedrigster, sind dies `not`, `and` und `or`.
 
 Die _Wahrheitstabelle_ des `and`-Operators:
 
@@ -120,9 +134,9 @@ Die _Wahrheitstabelle_ des `not`-Operators:
 | `not True`  | `False` |
 | `not False` | `True`  |
 
-## Mischen von Operatoren
+## Vermischung von Operatoren
 
-Sie können boolesche und Vergleichsoperatoren mischen:
+Sie können Boolesche und Vergleichsoperatoren mischen:
 
 ```python
 (4 < 5) and (5 < 6)
@@ -148,7 +162,7 @@ False
 True
 ```
 
-Sie können auch mehrere boolesche Operatoren zusammen mit den Vergleichsoperatoren in einem Ausdruck verwenden:
+Sie können auch mehrere Boolesche Operatoren in einem Ausdruck zusammen mit den Vergleichsoperatoren verwenden:
 
 ```python
 2 + 2 == 4 and not 2 + 2 == 5 and 2 * 2 == 2 + 2
@@ -210,13 +224,27 @@ name = 'Debora'
 
 if name == 'George':
    print('Hi, George.')
-else:  # Ausführen, wenn if-Bedingung False ist
+else:  # Wird ausgeführt, wenn die if-Bedingung False ist
    print('You are not George')
 ```
 
 ```output
 You are not George
 ```
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Wann wird der <code>else</code>-Block in einer if-else-Anweisung ausgeführt?
+</template>
+
+<base-quiz-option value="A">A. Immer</base-quiz-option>
+<base-quiz-option value="B" correct>B. Nur wenn die <code>if</code>-Bedingung (und alle <code>elif</code>-Bedingungen, falls vorhanden) <code>False</code> sind</base-quiz-option>
+<base-quiz-option value="C">C. Nur wenn die <code>if</code>-Bedingung <code>True</code> ist</base-quiz-option>
+<base-quiz-option value="D">D. Nie</base-quiz-option>
+<base-quiz-answer value="B">Der <code>else</code>-Block wird nur ausgeführt, wenn die <code>if</code>-Bedingung und alle <code>elif</code>-Bedingungen (falls vorhanden) zu <code>False</code> ausgewertet werden.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 Erst nachdem der Ausdruck der `if`-Anweisung `False` ist, wird die `elif`-Anweisung ausgewertet und ausgeführt:
 
@@ -226,7 +254,7 @@ name = 'George'
 
 if name == 'Debora':
    print('Hi Debora!')
-elif name == 'George':  # Nur geprüft, wenn vorherige Bedingung False ist
+elif name == 'George':  # Nur geprüft, wenn die vorherige Bedingung False ist
    print('Hi George!')
 ```
 
@@ -253,10 +281,10 @@ Who are you?
 
 ## Ternärer Bedingungsoperator
 
-Viele Programmiersprachen verfügen über einen ternären Operator, der einen bedingten Ausdruck definiert. Die häufigste Verwendung ist die Erstellung einer knappen, einfachen bedingten Zuweisungsanweisung. Mit anderen Worten, er bietet einzeiligen Code, um den ersten Ausdruck auszuwerten, wenn die Bedingung wahr ist, und andernfalls den zweiten Ausdruck auszuwerten.
+Viele Programmiersprachen verfügen über einen ternären Operator, der einen bedingten Ausdruck definiert. Die häufigste Verwendung ist die Erstellung einer knappen, einfachen bedingten Zuweisungsanweisung. Mit anderen Worten, er bietet Code in einer Zeile, um den ersten Ausdruck auszuwerten, wenn die Bedingung wahr ist, und andernfalls den zweiten Ausdruck auszuwerten.
 
 ```plaintext
-<expression1> if <condition> else <expression2>
+<Ausdruck1> if <Bedingung> else <Ausdruck2>
 ```
 
 Beispiel:
@@ -264,7 +292,7 @@ Beispiel:
 ```python
 age = 15
 
-# diese if Anweisung:
+# diese if-Anweisung:
 if age < 18:
    print('kid')
 else:
@@ -276,8 +304,8 @@ kid
 ```
 
 ```python
-# Ternärer Operator: einzeiliger bedingter Ausdruck
-# Syntax: value_if_true if condition else value_if_false
+# Ternärer Operator: bedingter Ausdruck in einer Zeile
+# Syntax: Wert_wenn_wahr if Bedingung else Wert_wenn_falsch
 print('kid' if age < 18 else 'adult')
 ```
 
@@ -299,7 +327,7 @@ teen
 ```
 
 ```python
-# entspricht dieser if Anweisung:
+# entspricht dieser if-Anweisung:
 if age < 13:
     print('kid')
 else:
@@ -320,18 +348,18 @@ teen
     Switch-Case-Anweisungen
   </base-disclaimer-title>
   <base-disclaimer-content>
-  In Programmiersprachen ist eine Switch-Anweisung eine Art von Auswahlsteuerungsmechanismus, der verwendet wird, um den Wert einer Variablen oder eines Ausdrucks durch Suche und Zuordnung den Programmablauf zu ändern.
+  In Programmiersprachen ist eine Switch-Anweisung eine Art von Auswahlsteuerungsmechanismus, der verwendet wird, um den Wert einer Variablen oder eines Ausdrucks durch Suche und Abbildung den Programmablauf zu ändern.
   </base-disclaimer-content>
 </base-disclaimer>
 
-Die _Switch-Case-Anweisungen_ oder **Strukturelle Mustererkennung (Structural Pattern Matching)** wurden erstmals 2020 über [PEP 622](https://peps.python.org/pep-0622/) eingeführt und dann offiziell mit **Python 3.10** im September 2022 veröffentlicht.
+Die _Switch-Case-Anweisungen_ oder **Strukturelle Mustererkennung** (Structural Pattern Matching) wurden erstmals 2020 über [PEP 622](https://peps.python.org/pep-0622/) eingeführt und dann offiziell mit **Python 3.10** im September 2022 veröffentlicht.
 
 <base-disclaimer>
   <base-disclaimer-title>
     Offizielles Tutorial
   </base-disclaimer-title>
   <base-disclaimer-content>
-  Das <a href="https://peps.python.org/pep-0636/" target="_blank">PEP 636</a> bietet ein offizielles Tutorial für die Python Pattern Matching oder Switch-Case-Anweisungen.
+  Die <a href="https://peps.python.org/pep-0636/" target="_blank">PEP 636</a> bietet ein offizielles Tutorial für die Python-Mustererkennung oder Switch-Case-Anweisungen.
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -360,9 +388,9 @@ match response_code:
 Created
 ```
 
-### Abgleich mit dem or Muster
+### Abgleich mit dem or-Muster
 
-In diesem Beispiel erlaubt das Pipe-Zeichen (`|` oder `or`) Python, für zwei oder mehr Fälle die gleiche Antwort zurückzugeben.
+In diesem Beispiel erlaubt das Pipe-Zeichen (`|` oder `or`), dass Python dieselbe Antwort für zwei oder mehr Fälle zurückgibt.
 
 ```python
 response_code = 502
@@ -473,16 +501,30 @@ Hello, world.
 Hello, world.
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+Was macht eine <code>while</code>-Schleife?
+</template>
+
+<base-quiz-option value="A" correct>A. Wiederholt Code, solange die Bedingung <code>True</code> ist</base-quiz-option>
+<base-quiz-option value="B">B. Führt Code genau einmal aus</base-quiz-option>
+<base-quiz-option value="C">C. Führt Code eine festgelegte Anzahl von Malen aus</base-quiz-option>
+<base-quiz-option value="D">D. Überspringt die Codeausführung</base-quiz-option>
+<base-quiz-answer value="A">Eine <code>while</code>-Schleife führt einen Codeblock wiederholt aus, solange die Bedingung zu <code>True</code> ausgewertet wird. Wenn die Bedingung zu <code>False</code> wird, stoppt die Schleife.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## break Anweisungen
 
 Wenn die Ausführung auf eine `break`-Anweisung trifft, wird die `while`-Schleifenklausel sofort verlassen:
 
 ```python
-# break Anweisung: Schleife sofort verlassen, wenn sie angetroffen wird
+# break Anweisung: Schleife sofort beenden, wenn sie angetroffen wird
 while True:  # Endlosschleife
     name = input('Please type your name: ')
     if name == 'your name':
-        break  # Die Schleife sofort verlassen
+        break  # Schleife sofort verlassen
 
 print('Thank you!')
 ```
@@ -534,6 +576,20 @@ Milo
 Loki
 ```
 
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+Worüber iteriert eine <code>for</code>-Schleife?
+</template>
+
+<base-quiz-option value="A">A. Nur Zahlen</base-quiz-option>
+<base-quiz-option value="B">B. Nur Strings</base-quiz-option>
+<base-quiz-option value="C" correct>C. Jede iterierbare Sequenz (Liste, Tupel, Dictionary, Set, String usw.)</base-quiz-option>
+<base-quiz-option value="D">D. Nur Listen</base-quiz-option>
+<base-quiz-answer value="C">Eine <code>for</code>-Schleife kann über jede iterierbare Sequenz iterieren, einschließlich Listen, Tupeln, Dictionaries, Sets, Strings und anderen iterierbaren Objekten.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Die range() Funktion
 
 Die `range()`-Funktion gibt eine Zahlenfolge zurück. Sie beginnt bei 0, wird um 1 erhöht und stoppt vor einer angegebenen Zahl:
@@ -551,7 +607,21 @@ Will stop at 5! or 4? (3)
 Will stop at 5! or 4? (4)
 ```
 
-Die `range()`-Funktion kann auch ihre 3 Standardargumente modifizieren. Die ersten beiden sind die `start`- und `stop`-Werte, und das dritte ist das `step`-Argument. Der Schritt ist die Menge, um die die Variable nach jeder Iteration erhöht wird.
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Was erzeugt <code>range(5)</code>?
+</template>
+
+<base-quiz-option value="A">A. Zahlen von 1 bis 5</base-quiz-option>
+<base-quiz-option value="B" correct>B. Zahlen von 0 bis 4</base-quiz-option>
+<base-quiz-option value="C">C. Zahlen von 0 bis 5</base-quiz-option>
+<base-quiz-option value="D">D. Fünf Zufallszahlen</base-quiz-option>
+<base-quiz-answer value="B">Die Funktion <code>range(5)</code> erzeugt Zahlen von 0 bis 4 (insgesamt 5 Zahlen). Der Stoppwert ist exklusiv, sodass sie stoppt, bevor sie 5 erreicht.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+Die `range()`-Funktion kann auch ihre 3 Standardargumente modifizieren. Die ersten beiden sind die `start`- und `stop`-Werte, und der dritte ist das `step`-Argument. Der Schritt ist die Menge, um die die Variable nach jeder Iteration erhöht wird.
 
 ```python
 # range(start, stop, step)
@@ -567,7 +637,7 @@ for i in range(0, 10, 2):
 8
 ```
 
-Sie können sogar eine negative Zahl für das Schrittargument verwenden, damit die for-Schleife rückwärts zählt.
+Sie können sogar eine negative Zahl für das `step`-Argument verwenden, damit die for-Schleife rückwärts zählt statt vorwärts.
 
 ```python
 for i in range(5, -1, -1):
@@ -595,7 +665,7 @@ else:
    print("only executed when no item is equal to 3")
 ```
 
-## Beenden eines Programms mit sys.exit()
+## Programm beenden mit sys.exit()
 
 Die `exit()`-Funktion ermöglicht das Beenden von Python.
 

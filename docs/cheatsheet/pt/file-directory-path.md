@@ -1,5 +1,5 @@
 ---
-title: 'Caminhos de Arquivos e Diretórios - Guia Rápido Python'
+title: 'Caminhos de Arquivos e Diretórios - Folha de Dicas Python'
 description: 'Existem dois módulos principais em Python que lidam com a manipulação de caminhos: o módulo os.path e o módulo pathlib.'
 labUrl: 'https://labex.io/pt/labs/python-python-file-and-directory-path-manipulation-633657?course=python-cheatsheet'
 ---
@@ -60,14 +60,28 @@ usr/bin/spam
 ```
 
 Note que o separador de caminho é diferente entre Windows e sistemas operacionais baseados em Unix, é por isso que você deseja usar `pathlib` em vez de
-adicionar strings para juntar caminhos.
+adicionar strings juntas para juntar caminhos.
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Qual é a maneira correta de juntar caminhos usando pathlib em Python?
+</template>
+
+<base-quiz-option value="A">A. <code>Path('usr') + 'bin' + 'spam'</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>Path('usr') / 'bin' / 'spam'</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>Path('usr').join('bin').join('spam')</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>Path('usr/bin/spam')</code></base-quiz-option>
+<base-quiz-answer value="B">O operador <code>/</code> é a maneira recomendada de juntar caminhos com pathlib. Funciona em várias plataformas e é mais legível do que a concatenação de strings.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 Juntar caminhos é útil se você precisar criar caminhos de arquivo diferentes sob o mesmo diretório.
 
 Usando `pathlib` em \*nix:
 
 ```python
-# Path.home(): obtém o diretório inicial do usuário, combina com nomes de arquivos
+# Path.home(): obter o diretório inicial do usuário, combinar com nomes de arquivos
 my_files = ['accounts.txt', 'details.csv', 'invite.docx']
 home = Path.home()  # Obtém o caminho do diretório inicial
 for filename in my_files:
@@ -80,14 +94,14 @@ for filename in my_files:
 /home/labex/project/invite.docx
 ```
 
-### Expandir o diretório inicial do usuário
+### Expandindo o diretório inicial do usuário
 
-Usar `os.path.expanduser()` para expandir `~` para o diretório inicial do usuário:
+Usando `os.path.expanduser()` para expandir `~` para o diretório inicial do usuário:
 
 ```python
 import os.path
 
-# Expandir ~ para o diretório inicial do usuário
+# Expande ~ para o diretório inicial do usuário
 print(os.path.expanduser('~'))
 ```
 
@@ -96,7 +110,7 @@ print(os.path.expanduser('~'))
 ```
 
 ```python
-# Expandir ~/Documents para o caminho completo
+# Expande ~/Documents para o caminho completo
 print(os.path.expanduser('~/Documents'))
 ```
 
@@ -105,7 +119,7 @@ print(os.path.expanduser('~/Documents'))
 ```
 
 ```python
-# Funciona com caminhos que contêm ~
+# Funciona com caminhos contendo ~
 print(os.path.expanduser('~/myfile.txt'))
 ```
 
@@ -118,7 +132,7 @@ print(os.path.expanduser('~/myfile.txt'))
 Você pode obter o diretório de trabalho atual usando `pathlib`:
 
 ```python
-# Path.cwd(): obtém o diretório de trabalho atual
+# Path.cwd(): obter o diretório de trabalho atual
 from pathlib import Path
 
 print(Path.cwd())  # Retorna o diretório de trabalho atual como um objeto Path
@@ -148,8 +162,7 @@ Traceback (most recent call last):
 FileNotFoundError: [Errno 2] No such file or directory: '/home/labex/project/delicious/walnut/waffles'
 ```
 
-Oh não, recebemos um erro desagradável! O motivo é que o diretório 'delicious' não
-existe, então não podemos criar os diretórios 'walnut' e 'waffles' sob ele. Para corrigir isso, faça:
+Oh não, recebemos um erro chato! O motivo é que o diretório 'delicious' não existe, então não podemos criar os diretórios 'walnut' e 'waffles' sob ele. Para corrigir isso, faça:
 
 ```python
 # mkdir(parents=True): cria o diretório e todos os diretórios pais, se necessário
@@ -167,7 +180,7 @@ Existem duas maneiras de especificar um caminho de arquivo.
 - Um **caminho absoluto**, que sempre começa com a pasta raiz
 - Um **caminho relativo**, que é relativo ao diretório de trabalho atual do programa
 
-Existem também as pastas ponto (`.`) e ponto-ponto (`..`). Estes não são pastas reais, mas nomes especiais que podem ser usados em um caminho. Um único ponto (“ponto”) para um nome de pasta é um atalho para “este diretório”. Dois pontos (“ponto-ponto”) significam “a pasta pai”.
+Existem também as pastas ponto (`.`) e ponto-ponto (`..`). Estas não são pastas reais, mas nomes especiais que podem ser usados em um caminho. Um único ponto (“ponto”) para um nome de pasta é um atalho para “este diretório”. Dois pontos (“ponto-ponto”) significam “a pasta pai”.
 
 ### Manipulação de caminhos absolutos
 
@@ -189,6 +202,20 @@ Path('..').is_absolute()
 ```output
 False
 ```
+
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+O que <code>Path('/').is_absolute()</code> retorna?
+</template>
+
+<base-quiz-option value="A" correct>A. <code>True</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>False</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>None</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>'/'</code></base-quiz-option>
+<base-quiz-answer value="A">O método <code>is_absolute()</code> retorna <code>True</code> para caminhos absolutos (aqueles que começam com <code>/</code> no Unix ou uma letra de unidade no Windows).</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 Você pode extrair um caminho absoluto com `pathlib`:
 
@@ -222,7 +249,7 @@ print(Path('/etc/passwd').relative_to('/'))
 etc/passwd
 ```
 
-## Validade do Caminho e do Arquivo
+## Validade de Caminho e Arquivo
 
 ### Verificando se um arquivo/diretório existe
 
@@ -291,6 +318,20 @@ Path('nonexistentfile').is_file()
 ```output
 False
 ```
+
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+O que <code>Path('setup.py').is_file()</code> retornará se setup.py existir?
+</template>
+
+<base-quiz-option value="A">A. <code>'setup.py'</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>False</code></base-quiz-option>
+<base-quiz-option value="C" correct>C. <code>True</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>None</code></base-quiz-option>
+<base-quiz-answer value="C">O método <code>is_file()</code> retorna <code>True</code> se o caminho existir e for um arquivo, <code>False</code> caso contrário.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ### Verificando se um caminho é um diretório
 
@@ -379,7 +420,7 @@ for f in Path('/usr/bin').iterdir():
     AVISO
   </base-warning-title>
   <base-warning-content>
-    Os diretórios em si também têm um tamanho! Portanto, você pode querer verificar se um caminho é um arquivo ou diretório usando os métodos nas seções discutidas acima.
+    Diretórios também têm um tamanho! Portanto, você pode querer verificar se um caminho é um arquivo ou diretório usando os métodos discutidos na seção acima.
   </base-warning-content>
 </base-warning>
 
@@ -420,6 +461,20 @@ shutil.copy('/tmp/eggs.txt', '/tmp/delicious/eggs2.txt')
 ```output
 /tmp/delicious/eggs2.txt
 ```
+
+<base-quiz>
+<base-quiz-question correct="D">
+<template #question>
+Qual função você deve usar para copiar uma árvore de diretórios inteira, incluindo todos os subdiretórios e arquivos?
+</template>
+
+<base-quiz-option value="A">A. <code>shutil.copy()</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>Path.copy()</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>os.copy()</code></base-quiz-option>
+<base-quiz-option value="D" correct>D. <code>shutil.copytree()</code></base-quiz-option>
+<base-quiz-answer value="D">A função <code>shutil.copytree()</code> copia uma árvore de diretórios inteira recursivamente, enquanto <code>shutil.copy()</code> copia apenas um único arquivo.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 Enquanto `shutil.copy()` copiará um único arquivo, `shutil.copytree()` copiará uma pasta inteira e todas as pastas e arquivos contidos nela:
 
@@ -470,6 +525,20 @@ shutil.move('/tmp/bacon.txt', '/tmp/eggs')
 - Chamar `Path.unlink()` excluirá o arquivo no caminho.
 - Chamar `Path.rmdir()` excluirá a pasta no caminho. Esta pasta deve estar vazia de quaisquer arquivos ou pastas.
 - Chamar `shutil.rmtree(path)` removerá a pasta no caminho, e todos os arquivos e pastas que ela contém também serão excluídos.
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Qual método pode excluir um diretório não vazio e todo o seu conteúdo?
+</template>
+
+<base-quiz-option value="A">A. <code>Path.rmdir()</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>shutil.rmtree()</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>Path.unlink()</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>os.remove()</code></base-quiz-option>
+<base-quiz-answer value="B">A função <code>shutil.rmtree()</code> pode excluir um diretório e todo o seu conteúdo recursivamente. <code>Path.rmdir()</code> só funciona em diretórios vazios.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Percorrendo uma Árvore de Diretórios
 

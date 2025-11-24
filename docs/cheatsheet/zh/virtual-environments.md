@@ -10,7 +10,7 @@ labUrl: 'https://labex.io/zh/labs/python-python-virtual-environments-633669?cour
 
 <base-lab-url :url="frontmatter.labUrl" />
 
-使用虚拟环境是为了在隔离的环境中测试 Python 代码，同时避免用仅为一个项目使用的库填满基础 Python 安装。
+使用虚拟环境的目的是在封装的环境中测试 Python 代码，并避免用仅用于一个项目的库填充基础 Python 安装。
 
 ## venv
 
@@ -28,7 +28,21 @@ python -m venv venv
 python3 -m venv venv
 ```
 
-这会在你当前文件夹中创建一个包含虚拟环境的 `venv` 目录。
+这将在当前文件夹中创建一个包含虚拟环境的 `venv` 目录。
+
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+使用 <code>venv</code> 创建虚拟环境的命令是什么？
+</template>
+
+<base-quiz-option value="A" correct>A. <code>python -m venv venv</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>python create venv</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>venv create</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>python venv new</code></base-quiz-option>
+<base-quiz-answer value="A">命令 <code>python -m venv venv</code> 创建一个虚拟环境。<code>-m</code> 标志运行 venv 模块，末尾的 <code>venv</code> 是要创建的目录的名称。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 2. 激活虚拟环境
 
@@ -44,11 +58,25 @@ source venv/bin/activate
 venv\Scripts\activate
 ```
 
-激活后，你的命令提示符开头会显示 `(venv)`，表示虚拟环境已激活。
+激活后，您将在命令提示符的开头看到 `(venv)`，表示虚拟环境已激活。
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+如何在 Linux/macOS 上激活虚拟环境？
+</template>
+
+<base-quiz-option value="A">A. <code>activate venv</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>source venv/bin/activate</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>venv activate</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>python venv activate</code></base-quiz-option>
+<base-quiz-answer value="B">在 Linux/macOS 上，使用 <code>source venv/bin/activate</code> 激活虚拟环境。在 Windows 上，您将使用 <code>venv\Scripts\activate</code>。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 3. 安装包
 
-在虚拟环境激活的情况下，使用 pip 安装包：
+激活虚拟环境后，使用 pip 安装包：
 
 ```bash
 pip install package_name
@@ -64,7 +92,21 @@ pip install package_name
 deactivate
 ```
 
-`(venv)` 前缀将从你的命令提示符中消失。
+命令提示符中的 `(venv)` 前缀将消失。
+
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+使用虚拟环境的主要目的是什么？
+</template>
+
+<base-quiz-option value="A" correct>A. 隔离项目依赖项并避免填充基础 Python 安装</base-quiz-option>
+<base-quiz-option value="B">B. 使 Python 运行得更快</base-quiz-option>
+<base-quiz-option value="C">C. 加密 Python 代码</base-quiz-option>
+<base-quiz-option value="D">D. 将 Python 编译成机器码</base-quiz-option>
+<base-quiz-answer value="A">虚拟环境允许您在封装的环境中测试 Python 代码，并避免用可能仅用于一个项目的库填充基础 Python 安装。这有助于按项目管理依赖项。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## virtualenv
 
@@ -100,17 +142,17 @@ setprojectdir .
 
 1. 停用
 
-要切换到命令行中的其他操作，输入 `deactivate` 来停用你的环境。
+要在命令行中进行其他操作，请键入 `deactivate` 以停用您的环境。
 
 ```bash
 deactivate
 ```
 
-注意括号是如何消失的。
+注意括号如何消失。
 
 1. Workon
 
-打开命令提示符并输入 `workon HelloWorld` 来激活环境并进入你的根项目文件夹
+打开命令提示符并键入 `workon HelloWorld` 以激活环境并进入项目根文件夹
 
 ```bash
 workon HelloWorld
@@ -123,7 +165,7 @@ workon HelloWorld
     来自 <a href="https://python-poetry.org/">Poetry 网站</a>
   </base-disclaimer-title>
   <base-disclaimer-content>
-    Poetry 是一个用于 Python 中依赖管理和打包的工具。它允许你声明项目所依赖的库，然后它会为你管理（安装/更新）它们。
+    Poetry 是一个用于 Python 中依赖管理和打包的工具。它允许您声明项目所依赖的库，它将为您管理（安装/更新）它们。
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -152,7 +194,7 @@ my-project
     └── test_poetry_demo.py
 ```
 
-pyproject.toml 文件将协调你的项目及其依赖项：
+pyproject.toml 文件将协调您的项目及其依赖项：
 
 ```toml
 [tool.poetry]
@@ -170,14 +212,14 @@ pytest = "^3.4"
 
 3. 包
 
-要向项目中添加依赖项，可以在 tool.poetry.dependencies 部分指定它们：
+要向项目中添加依赖项，您可以在 tool.poetry.dependencies 部分指定它们：
 
 ```toml
 [tool.poetry.dependencies]
 pendulum = "^1.4"
 ```
 
-此外，你可以使用 add 命令而不是手动修改 pyproject.toml 文件，它会自动找到合适的版本约束。
+此外，您可以不手动修改 pyproject.toml 文件，而是使用 add 命令，它会自动找到合适的版本约束。
 
 ```bash
 poetry add pendulum
@@ -208,7 +250,7 @@ poetry remove pendulum
     来自 <a target="_blank" href="https://pipenv.pypa.io/en/latest/">Pipenv 网站</a>
   </base-disclaimer-title>
   <base-disclaimer-content>
-    Pipenv 旨在将所有打包世界（bundler、composer、npm、cargo、yarn 等）中最好的部分带到 Python 世界。Windows 在我们的世界中是首等公民。
+    Pipenv 是一个旨在将所有打包世界（bundler、composer、npm、cargo、yarn 等）中最好的部分带到 Python 世界的工具。Windows 在我们的世界中是首等公民。
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -218,14 +260,14 @@ poetry remove pendulum
 pip install pipenv
 ```
 
-2. 进入你的项目目录并安装项目的包
+2. 进入您的项目目录并安装项目的包
 
 ```bash
 cd my_project
 pipenv install <package>
 ```
 
-Pipenv 将安装你的包并在项目目录中为你创建一个 Pipfile。Pipfile 用于跟踪项目所需的依赖项，以防你需要重新安装它们。
+Pipenv 将安装您的包并在项目目录中为您创建一个 Pipfile。Pipfile 用于跟踪项目所需的依赖项，以防您需要重新安装它们。
 
 3. 卸载包
 
@@ -233,7 +275,7 @@ Pipenv 将安装你的包并在项目目录中为你创建一个 Pipfile。Pipfi
 pipenv uninstall <package>
 ```
 
-4. 激活与你的 Python 项目关联的虚拟环境
+4. 激活与您的 Python 项目关联的虚拟环境
 
 ```bash
 pipenv shell
@@ -251,10 +293,10 @@ exit
 
 <base-disclaimer>
   <base-disclaimer-title>
-    <a target="k" href="https://anaconda.com/">Anaconda</a> 是另一个流行的管理 Python 包的工具。
+    <a target="k" href="https://anaconda.com/">Anaconda</a> 是另一个流行的 Python 包管理工具。
   </base-disclaimer-title>
   <base-disclaimer-content>
-    在这里共享包、Notebook、项目和环境。您免费公开 conda 包托管的地方。
+    在这里共享包、notebook、项目和环境。您免费公开托管 conda 包的地方。
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -301,7 +343,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 pip install uv
 ```
 
-2. 创建带有虚拟环境的新项目
+2. 创建一个带有虚拟环境的新项目
 
 ```bash
 uv init my-project

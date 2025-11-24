@@ -27,7 +27,7 @@ def your_decorator(func):
     print("After func!")
   return wrapper  # 래퍼 함수 반환
 
-# @your_decorator 는 your_decorator(foo) 를 위한 구문 설탕입니다
+# @your_decorator 는 다음의 구문 설탕 (syntactic sugar) 입니다: foo = your_decorator(foo)
 @your_decorator
 def foo():
   print("Hello World!")
@@ -40,6 +40,20 @@ Before func!
 Hello World!
 After func!
 ```
+
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+Python 에서 데코레이터란 무엇입니까?
+</template>
+
+<base-quiz-option value="A" correct>A. 다른 함수를 인수로 받아 래퍼 함수를 반환하는 함수</base-quiz-option>
+<base-quiz-option value="B">B. 특수한 유형의 클래스</base-quiz-option>
+<base-quiz-option value="C">C. 내장된 Python 키워드</base-quiz-option>
+<base-quiz-option value="D">D. 함수를 삭제하는 방법</base-quiz-option>
+<base-quiz-answer value="A">데코레이터는 다른 함수를 인수로 받아 래퍼 함수를 반환하는 함수입니다. <code>@</code> 구문은 데코레이터를 함수에 적용하는 구문 설탕입니다.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## 매개변수가 있는 함수를 위한 데코레이터
 
@@ -69,21 +83,35 @@ After func!
 
 ## 기본 데코레이터 템플릿
 
-이 템플릿은 대부분의 데코레이터 사용 사례에 유용합니다. 매개변수 유무와 반환 값 유무에 관계없이 모든 함수에 대해 유효합니다.
+이 템플릿은 대부분의 데코레이터 사용 사례에 유용합니다. 매개변수가 있거나 없는 함수, 반환 값이 있거나 없는 함수 모두에 유효합니다.
 
 ```python
 import functools
 
 # 모범 사례 데코레이터 템플릿: 함수 메타데이터 및 반환 값 보존
 def your_decorator(func):
-  @functools.wraps(func)  # 함수 이름, docstring 등을 보존
+  @functools.wraps(func)  # 함수 이름, docstring 등 보존
   def wrapper(*args,**kwargs):
     # func 이전에 수행할 작업...
-    result = func(*args,**kwargs)  # 함수를 호출하고 반환 값을 캡처
+    result = func(*args,**kwargs)  # 함수를 호출하고 반환 값 캡처
     # func 이후에 수행할 작업..
-    return result  # 원본 함수의 반환 값을 반환
+    return result  # 원본 함수의 반환 값 반환
   return wrapper
 ```
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+데코레이터에서 <code>@functools.wraps(func)</code>는 무엇을 합니까?
+</template>
+
+<base-quiz-option value="A">A. 데코레이터 실행 속도를 높입니다</base-quiz-option>
+<base-quiz-option value="B" correct>B. 원본 함수의 메타데이터 (이름, docstring 등) 를 보존합니다</base-quiz-option>
+<base-quiz-option value="C">C. 함수 호출을 방지합니다</base-quiz-option>
+<base-quiz-option value="D">D. 함수를 클래스로 변환합니다</base-quiz-option>
+<base-quiz-answer value="B"><code>@functools.wraps(func)</code> 데코레이터는 원본 함수의 메타데이터 (이름 및 docstring 등) 를 래퍼 함수에 보존합니다. 이는 데코레이터를 작성할 때 모범 사례로 간주됩니다.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## 매개변수가 있는 데코레이터
 
@@ -97,9 +125,9 @@ def your_decorator(arg):
   def decorator(func):
     @functools.wraps(func)  # 함수 메타데이터 보존
     def wrapper(*args,**kwargs):
-      # func 이전에 수행할 작업 (arg 를 사용할 수 있음)...
+      # func 이전에 수행할 작업 (arg 사용 가능)...
       result = func(*args,**kwargs)
-      # func 이후에 수행할 작업 (arg 를 사용할 수 있음)...
+      # func 이후에 수행할 작업 (arg 사용 가능)...
       return result
     return wrapper
   return decorator  # 실제 데코레이터 함수 반환
@@ -117,13 +145,13 @@ def foo(bar):
 
 ## 클래스 기반 데코레이터
 
-클래스 메서드를 데코레이트하려면 데코레이터를 클래스 내부에 정의해야 합니다. 암시적인 인수인 `self`만 메서드에 전달되고 추가적인 명시적 인수가 없는 경우, 추가 인수가 없는 메서드에 대해서는 별도의 데코레이터를 만들어야 합니다. 아래 예시는 특정 방식으로 예외를 포착하고 출력하려는 경우입니다.
+클래스 메서드를 데코레이트하려면 클래스 내부에 데코레이터를 정의해야 합니다. 메서드에 암시적인 인수인 `self`만 전달되고 추가적인 명시적 인수가 없는 경우, 추가 인수가 없는 메서드에 대해서는 별도의 데코레이터를 만들어야 합니다. 아래 예제는 특정 방식으로 예외를 포착하고 출력하려는 경우입니다.
 
 ```python
 # 클래스 메서드 데코레이터: 클래스 내부에 정의됨
 class DecorateMyMethod:
 
-  # 'self' 매개변수만 있는 메서드를 위한 정적 메서드 데코레이터
+  # 'self' 매개변수만 있는 클래스 메서드를 위한 정적 메서드 데코레이터
   def decorator_for_class_method_with_no_args(method):
     def wrapper_for_class_method(self):  # self 만 받음
       try:
@@ -157,12 +185,10 @@ test_fail.class_action()
 ```
 
 ```output
-WARNING: Please make note of the following:
-
-Epic fail of your own creation.
+Exception: Epic fail of your own creation.
 ```
 
-데코레이터는 메서드 대신 클래스로도 정의될 수 있습니다. 이는 호출 횟수를 세는 다음 예시와 같이 상태를 유지하고 업데이트하는 데 유용합니다.
+데코레이터는 메서드 대신 클래스로도 정의될 수 있습니다. 이는 호출 횟수를 세는 것과 같이 상태를 유지하고 업데이트하는 경우 유용합니다.
 
 ```python
 # 클래스 기반 데코레이터: 호출 간 상태 유지
@@ -170,7 +196,7 @@ class CountCallNumber:
 
   def __init__(self, func):
     self.func = func  # 데코레이트할 함수 저장
-    self.call_number = 0  # 호출 카운터 초기화
+    self.call_number = 0  # 호출 횟수 초기화
 
   def __call__(self, *args, **kwargs):  # 인스턴스를 호출 가능하게 만듦
     self.call_number += 1  # 카운터 증가

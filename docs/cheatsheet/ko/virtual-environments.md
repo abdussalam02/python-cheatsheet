@@ -10,7 +10,7 @@ labUrl: 'https://labex.io/ko/labs/python-python-virtual-environments-633669?cour
 
 <base-lab-url :url="frontmatter.labUrl" />
 
-가상 환경의 사용 목적은 캡슐화된 환경에서 python 코드를 테스트하고, 단 하나의 프로젝트에만 사용할 수 있는 라이브러리로 기본 Python 설치를 채우는 것을 방지하기 위함입니다.
+가상 환경의 사용 목적은 캡슐화된 환경에서 python 코드를 테스트하고, 단 하나의 프로젝트에만 사용할 수 있는 라이브러리로 기본 Python 설치를 채우는 것을 피하기 위함입니다.
 
 ## venv
 
@@ -28,17 +28,31 @@ python -m venv venv
 python3 -m venv venv
 ```
 
-이는 현재 폴더에 가상 환경을 포함하는 `venv` 디렉토리를 생성합니다.
+이것은 현재 폴더에 가상 환경을 포함하는 `venv` 디렉토리를 생성합니다.
+
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+<code>venv</code>를 사용하여 가상 환경을 만드는 데 사용되는 명령어는 무엇입니까?
+</template>
+
+<base-quiz-option value="A" correct>A. <code>python -m venv venv</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>python create venv</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>venv create</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>python venv new</code></base-quiz-option>
+<base-quiz-answer value="A"><code>python -m venv venv</code> 명령어는 가상 환경을 생성합니다. <code>-m</code> 플래그는 venv 모듈을 실행하며, 마지막의 <code>venv</code>는 생성할 디렉토리 이름입니다.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 2. 가상 환경 활성화
 
-Linux/macOS:
+Linux/macOS의 경우:
 
 ```bash
 source venv/bin/activate
 ```
 
-Windows:
+Windows 의 경우:
 
 ```bash
 venv\Scripts\activate
@@ -46,9 +60,23 @@ venv\Scripts\activate
 
 활성화되면 명령 프롬프트 시작 부분에 `(venv)`가 표시되어 가상 환경이 활성화되었음을 나타냅니다.
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Linux/macOS에서 가상 환경을 활성화하는 방법은 무엇입니까?
+</template>
+
+<base-quiz-option value="A">A. <code>activate venv</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>source venv/bin/activate</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>venv activate</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>python venv activate</code></base-quiz-option>
+<base-quiz-answer value="B">Linux/macOS에서는 <code>source venv/bin/activate</code>를 사용하여 가상 환경을 활성화합니다. Windows 에서는 <code>venv\Scripts\activate</code>를 사용합니다.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 3. 패키지 설치
 
-가상 환경이 활성화된 상태에서 pip 를 사용하여 패키지를 설치합니다:
+가상 환경이 활성화된 상태에서 pip 을 사용하여 패키지를 설치합니다:
 
 ```bash
 pip install package_name
@@ -66,6 +94,20 @@ deactivate
 
 명령 프롬프트에서 `(venv)` 접두사가 사라집니다.
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+가상 환경을 사용하는 주된 목적은 무엇입니까?
+</template>
+
+<base-quiz-option value="A" correct>A. 프로젝트 종속성을 격리하고 기본 Python 설치가 채워지는 것을 방지하기 위함</base-quiz-option>
+<base-quiz-option value="B">B. Python 실행 속도를 높이기 위함</base-quiz-option>
+<base-quiz-option value="C">C. Python 코드를 암호화하기 위함</base-quiz-option>
+<base-quiz-option value="D">D. Python 을 기계어 코드로 컴파일하기 위함</base-quiz-option>
+<base-quiz-answer value="A">가상 환경을 사용하면 캡슐화된 환경에서 Python 코드를 테스트하고, 단 하나의 프로젝트에만 사용될 수 있는 라이브러리로 기본 Python 설치를 채우는 것을 방지할 수 있습니다. 이는 프로젝트별 종속성 관리에 도움이 됩니다.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## virtualenv
 
 1. virtualenv 설치
@@ -82,7 +124,7 @@ pip install virtualenvwrapper-win
 
 사용법:
 
-1. `HelloWorld`라는 이름의 가상 환경 생성
+1. `HelloWorld`라는 가상 환경 생성
 
 ```bash
 mkvirtualenv HelloWorld
@@ -92,7 +134,7 @@ mkvirtualenv HelloWorld
 
 1. 프로젝트 디렉토리 설정
 
-현재 작업 디렉토리와 virtualenv 를 연결하려면 단순히 다음을 입력합니다:
+가상 환경을 현재 작업 디렉토리와 연결하려면 단순히 다음을 입력합니다:
 
 ```bash
 setprojectdir .
@@ -100,7 +142,7 @@ setprojectdir .
 
 1. 비활성화
 
-명령줄에서 다른 작업을 수행하려면 `deactivate`를 입력하여 환경을 비활성화합니다.
+명령줄에서 다른 작업으로 이동하려면 `deactivate`를 입력하여 환경을 비활성화합니다.
 
 ```bash
 deactivate
@@ -110,7 +152,7 @@ deactivate
 
 1. Workon
 
-명령 프롬프트를 열고 `workon HelloWorld`를 입력하여 환경을 활성화하고 프로젝트의 루트 폴더로 이동합니다.
+명령 프롬프트를 열고 `workon HelloWorld`를 입력하여 환경을 활성화하고 프로젝트 루트 폴더로 이동합니다.
 
 ```bash
 workon HelloWorld
@@ -120,10 +162,10 @@ workon HelloWorld
 
 <base-disclaimer>
   <base-disclaimer-title>
-    <a href="https://python-poetry.org/">Poetry 웹사이트</a>에서 가져옴
+    <a href="https://python-poetry.org/">Poetry 웹사이트</a>에서 발췌
   </base-disclaimer-title>
   <base-disclaimer-content>
-    Poetry 는 Python 에서 종속성 관리 및 패키징을 위한 도구입니다. 프로젝트가 의존하는 라이브러리를 선언할 수 있게 해주며, Poetry 가 해당 라이브러리들을 관리 (설치/업데이트) 해 줍니다.
+    Poetry 는 Python 에서 종속성 관리 및 패키징을 위한 도구입니다. 프로젝트가 의존하는 라이브러리를 선언할 수 있게 해주며, 이를 관리 (설치/업데이트) 해 줍니다.
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -139,7 +181,7 @@ pip install --user poetry
 poetry new my-project
 ```
 
-이는 다음과 같은 my-project 디렉토리를 생성합니다:
+이것은 my-project 디렉토리를 생성합니다:
 
 ```plaintext
 my-project
@@ -177,7 +219,7 @@ pytest = "^3.4"
 pendulum = "^1.4"
 ```
 
-또한, pyproject.toml 파일을 수동으로 수정하는 대신, add 명령을 사용하여 적절한 버전 제약 조건을 자동으로 찾도록 할 수 있습니다.
+또한, pyproject.toml 파일을 수동으로 수정하는 대신, add 명령을 사용하여 적절한 버전 제약 조건을 자동으로 찾을 수 있습니다.
 
 ```bash
 poetry add pendulum
@@ -205,10 +247,10 @@ poetry remove pendulum
 
 <base-disclaimer>
   <base-disclaimer-title>
-    <a target="_blank" href="https://pipenv.pypa.io/en/latest/">Pipenv 웹사이트</a>에서 가져옴
+    <a target="_blank" href="https://pipenv.pypa.io/en/latest/">Pipenv 웹사이트</a>에서 발췌
   </base-disclaimer-title>
   <base-disclaimer-content>
-    Pipenv 는 모든 패키징 세계 (bundler, composer, npm, cargo, yarn 등) 의 장점을 Python 세계로 가져오는 것을 목표로 하는 도구입니다. Windows 는 우리 세계에서 일급 시민입니다.
+    Pipenv 는 모든 패키징 세계 (bundler, composer, npm, cargo, yarn 등) 의 최고를 Python 세계로 가져오는 것을 목표로 하는 도구입니다. Windows 는 우리 세계에서 일류 시민입니다.
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -225,7 +267,7 @@ cd my_project
 pipenv install <package>
 ```
 
-Pipenv 는 패키지를 설치하고 프로젝트 디렉토리에 Pipfile 을 생성합니다. Pipfile 은 프로젝트에 필요한 종속성을 추적하는 데 사용되므로 다시 설치해야 할 경우 유용합니다.
+Pipenv 는 패키지를 설치하고 프로젝트 디렉토리에 Pipfile 을 생성합니다. Pipfile 은 프로젝트에 필요한 종속성을 추적하는 데 사용되므로 다시 설치해야 할 경우 사용할 수 있습니다.
 
 3. 패키지 제거
 
@@ -254,7 +296,7 @@ exit
     <a target="k" href="https://anaconda.com/">Anaconda</a>는 Python 패키지를 관리하는 또 다른 인기 있는 도구입니다.
   </base-disclaimer-title>
   <base-disclaimer-content>
-    패키지, 노트북, 프로젝트 및 환경이 공유되는 곳입니다. 무료 공개 conda 패키지 호스팅을 위한 공간입니다.
+    패키지, 노트북, 프로젝트 및 환경이 공유되는 곳입니다. 무료 공개 conda 패키지 호스팅을 위한 귀하의 장소입니다.
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -284,10 +326,10 @@ conda deactivate
 
 <base-disclaimer>
   <base-disclaimer-title>
-    <a target="_blank" href="https://docs.astral.sh/uv/">UV 문서</a>에서 가져옴
+    <a target="_blank" href="https://docs.astral.sh/uv/">UV 문서</a>에서 발췌
   </base-disclaimer-title>
   <base-disclaimer-content>
-    UV 는 pip 및 pip-tools 워크플로우를 위한 드롭인 대체품으로 설계된 매우 빠른 Python 패키지 설치 및 해결 도구입니다. UV 는 pip 보다 10~100 배 빠르며 통합된 패키지 관리, 가상 환경 생성 및 Python 버전 관리를 제공합니다.
+    UV 는 매우 빠른 Python 패키지 설치 및 해결 도구로, pip 및 pip-tools 워크플로우를 대체하기 위해 설계되었습니다. UV 는 pip 보다 10~100 배 빠르며 통합된 패키지 관리, 가상 환경 생성 및 Python 버전 관리를 제공합니다.
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -314,7 +356,7 @@ cd my-project
 uv add requests
 ```
 
-4. 프로젝트 환경에서 명령 실행
+4. 프로젝트 환경에서 명령어 실행
 
 ```bash
 uv run python script.py

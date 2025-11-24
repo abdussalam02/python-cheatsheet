@@ -1,6 +1,6 @@
 ---
 title: '파이썬 정규 표현식 - 파이썬 치트 시트'
-description: '정규 표현식 (regex) 은 텍스트 내 검색 패턴을 지정하는 문자열 시퀀스로, 문자열 검색 알고리즘에 사용됩니다.'
+description: '정규 표현식 (regex) 은 텍스트에서 검색 패턴을 지정하는 문자 시퀀스로, 문자열 검색 알고리즘에 사용됩니다.'
 labUrl: 'https://labex.io/ko/labs/python-python-regular-expressions-633664?course=python-cheatsheet'
 ---
 
@@ -33,25 +33,25 @@ import re
 
 ## Regex 기호
 
-| 기호                         | 일치하는 항목                                |
-| :--------------------------- | :------------------------------------------- |
-| `?`                          | 앞선 그룹의 0 개 또는 1 개.                  |
-| `*`                          | 앞선 그룹의 0 개 이상.                       |
-| `+`                          | 앞선 그룹의 1 개 이상.                       |
-| `{n}`                        | 앞선 그룹의 정확히 n 개.                     |
-| `{n,}`                       | 앞선 그룹의 n 개 이상.                       |
-| `{,m}`                       | 앞선 그룹의 0 개에서 m 개.                   |
-| `{n,m}`                      | 앞선 그룹의 최소 n 개에서 최대 m 개.         |
-| `{n,m}?` 또는 `*?` 또는 `+?` | 앞선 패턴의 비탐욕적 (non-greedy) 일치 수행. |
-| `^spam`                      | 문자열이 spam 으로 시작해야 함을 의미합니다. |
-| `spam$`                      | 문자열이 spam 으로 끝나야 함을 의미합니다.   |
-| `.`                          | 줄 바꿈 문자를 제외한 모든 문자.             |
-| `\d`, `\w`, 및 `\s`          | 각각 숫자, 단어 또는 공백 문자.              |
-| `\D`, `\W`, 및 `\S`          | 각각 숫자, 단어 또는 공백이 아닌 모든 것.    |
-| `[abc]`                      | 대괄호 사이의 모든 문자 (예: a, b, ).        |
-| `[^abc]`                     | 대괄호 사이에 없는 모든 문자.                |
+| 기호                         | 일치하는 항목                                            |
+| :--------------------------- | :------------------------------------------------------- |
+| `?`                          | 앞선 그룹의 0 개 또는 1 개.                              |
+| `*`                          | 앞선 그룹의 0 개 이상.                                   |
+| `+`                          | 앞선 그룹의 1 개 이상.                                   |
+| `{n}`                        | 앞선 그룹의 정확히 n 개.                                 |
+| `{n,}`                       | 앞선 그룹의 n 개 이상.                                   |
+| `{,m}`                       | 앞선 그룹의 0 개에서 m 개.                               |
+| `{n,m}`                      | 앞선 그룹의 최소 n 개에서 최대 m 개.                     |
+| `{n,m}?` 또는 `*?` 또는 `+?` | 앞선 패턴의 비탐욕적 (non-greedy) 일치를 수행합니다.     |
+| `^spam`                      | 문자열이 spam 으로 시작해야 함을 의미합니다.             |
+| `spam$`                      | 문자열이 spam 으로 끝나야 함을 의미합니다.               |
+| `.`                          | 줄 바꿈 문자를 제외한 모든 문자.                         |
+| `\d`, `\w`, 및 `\s`          | 각각 숫자, 단어 또는 공백 문자입니다.                    |
+| `\D`, `\W`, 및 `\S`          | 각각 숫자가 아닌 것, 단어가 아닌 것 또는 공백이 아닌 것. |
+| `[abc]`                      | 대괄호 사이의 모든 문자 (예: a, b, ).                    |
+| `[^abc]`                     | 대괄호 사이에 없는 모든 문자.                            |
 
-## 일치하는 regex 객체
+## Regex 객체 일치
 
 ```python
 # re.compile(): 정규 표현식 패턴 객체 생성 (이스케이프를 피하기 위해 raw string r'' 사용)
@@ -104,6 +104,20 @@ mo.group()
 '415-555-4242'
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+일치 객체에서 <code>group()</code>을 호출하면 무엇이 반환됩니까?
+</template>
+
+<base-quiz-option value="A" correct>A. 전체 일치 텍스트</base-quiz-option>
+<base-quiz-option value="B">B. 첫 번째 그룹만</base-quiz-option>
+<base-quiz-option value="C">C. 모든 그룹을 리스트로</base-quiz-option>
+<base-quiz-option value="D">D. 일치의 인덱스</base-quiz-option>
+<base-quiz-answer value="A"><code>group()</code> 메서드 (또는 <code>group(0)</code>) 는 전체 일치 텍스트를 반환합니다. 특정 그룹을 얻으려면 <code>group(1)</code>, <code>group(2)</code> 등을 사용합니다.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 한 번에 모든 그룹을 검색하려면 `groups()` 메서드를 사용합니다:
 
 ```python
@@ -133,9 +147,9 @@ print(main_number)
 555-4242
 ```
 
-## 파이프를 사용한 여러 그룹
+## 파이프 (|) 를 사용한 다중 그룹
 
-`|` 문자를 사용하여 여러 표현식 중 하나와 일치시키고 싶은 곳 어디에나 사용할 수 있습니다.
+여러 표현식 중 하나와 일치시키고 싶은 곳 어디에나 `|` 문자를 사용할 수 있습니다.
 
 ```python
 hero_regex = re.compile (r'Batman|Tina Fey')
@@ -157,7 +171,7 @@ mo2.group()
 'Tina Fey'
 ```
 
-파이프를 사용하여 정규 표현식의 일부로 여러 패턴 중 하나와 일치시킬 수도 있습니다:
+파이프를 사용하여 정규식의 일부로 여러 패턴 중 하나와 일치시킬 수도 있습니다:
 
 ```python
 bat_regex = re.compile(r'Bat(man|mobile|copter|bat)')
@@ -178,9 +192,9 @@ mo.group(1)
 'mobile'
 ```
 
-## 물음표를 사용한 선택적 일치
+## 물음표 (?) 를 사용한 선택적 일치
 
-`?` 문자는 앞에 오는 그룹을 패턴의 선택적 부분으로 표시합니다.
+`?` 문자는 바로 앞의 그룹을 패턴의 선택적 부분으로 표시합니다.
 
 ```python
 bat_regex = re.compile(r'Bat(wo)?man')
@@ -202,9 +216,9 @@ mo2.group()
 'Batwoman'
 ```
 
-## 별표를 사용한 0 개 이상 일치
+## 별표 (\*) 를 사용한 0 개 이상 일치
 
-`*` (별표 또는 애스터리스크) 는 "0 개 이상 일치"를 의미합니다. 별표 앞에 오는 그룹은 텍스트에서 몇 번이든 나타날 수 있습니다.
+`*` (별표 또는 애스터리스크) 는 "0 개 이상 일치"를 의미합니다. 별표 앞에 있는 그룹은 텍스트에 몇 번이고 나타날 수 있습니다.
 
 ```python
 bat_regex = re.compile(r'Bat(wo)*man')
@@ -234,9 +248,9 @@ mo3.group()
 'Batwowowowoman'
 ```
 
-## 더하기를 사용한 1 개 이상 일치
+## 더하기 (+) 를 사용한 1 개 이상 일치
 
-`+` (또는 더하기) 는 *1 개 이상 일치*를 의미합니다. 더하기 앞에 오는 그룹은 최소한 한 번 이상 나타나야 합니다:
+`+` (또는 플러스) 는 *1 개 이상 일치*를 의미합니다. 플러스 앞에 있는 그룹은 최소한 한 번 이상 나타나야 합니다:
 
 ```python
 bat_regex = re.compile(r'Bat(wo)+man')
@@ -267,9 +281,9 @@ mo3 is None
 True
 ```
 
-## 중괄호를 사용한 특정 반복 일치
+## 중괄호{}를 사용한 특정 반복 일치
 
-정규식에서 그룹을 특정 횟수만큼 반복하고 싶다면, 정규식에서 해당 그룹 뒤에 중괄호 안에 숫자를 붙입니다.
+그룹을 특정 횟수만큼 반복하고 싶다면, 정규식에서 해당 그룹 뒤에 중괄호 안에 숫자를 붙입니다.
 
 ```python
 ha_regex = re.compile(r'(Ha){3}')
@@ -291,7 +305,7 @@ mo2 is None
 True
 ```
 
-숫자 하나 대신, 중괄호 사이에 최소값과 최대값을 지정하여 범위를 지정할 수 있습니다. 예를 들어, 정규식 (Ha){3,5}는 'HaHaHa', 'HaHaHaHa', 'HaHaHaHaHa'와 일치합니다.
+숫자 하나 대신, 중괄호 사이에 최소값과 최대값을 지정할 수 있습니다. 예를 들어, 정규식 (Ha){3,5}는 'HaHaHa', 'HaHaHaHa', 'HaHaHaHaHa'와 일치합니다.
 
 ```python
 ha_regex = re.compile(r'(Ha){2,3}')
@@ -305,7 +319,7 @@ mo1.group()
 
 ## 탐욕적 (Greedy) 및 비탐욕적 (Non-greedy) 일치
 
-Python 의 정규 표현식은 기본적으로 탐욕적입니다. 모호한 상황에서 가능한 가장 긴 문자열과 일치하려고 합니다. 중괄호의 비탐욕적 버전 (가능한 가장 짧은 문자열과 일치) 은 닫는 중괄호 뒤에 물음표가 붙습니다.
+Python 의 정규 표현식은 기본적으로 탐욕적입니다. 모호한 상황에서는 가능한 가장 긴 문자열과 일치하려고 합니다. 중괄호의 비탐욕적 버전 (가능한 가장 짧은 문자열과 일치) 은 닫는 중괄호 뒤에 물음표를 붙입니다.
 
 ```python
 greedy_ha_regex = re.compile(r'(Ha){3,5}')
@@ -328,12 +342,26 @@ mo2.group()
 'HaHaHa'
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+정규 표현식 패턴을 비탐욕적으로 만드는 것은 무엇입니까?
+</template>
+
+<base-quiz-option value="A">A. <code>+</code> 대신 <code>_</code> 사용</base-quiz-option>
+<base-quiz-option value="B" correct>B. 한정자 뒤에 <code>?</code> 추가 (예: <code>_?</code>, <code>+?</code>, <code>{3,5}?</code>)</base-quiz-option>
+<base-quiz-option value="C">C. 괄호 사용</base-quiz-option>
+<base-quiz-option value="D">D. 대괄호 사용</base-quiz-option>
+<base-quiz-answer value="B"><code>\*</code>, <code>+</code> 또는 <code>{n,m}</code>과 같은 한정자 뒤에 <code>?</code>를 추가하면 비탐욕적이 되어 가장 긴 문자열 대신 가장 짧은 문자열과 일치하게 됩니다.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## findall() 메서드
 
-`findall()` 메서드는 검색된 문자열에서 일치하는 모든 항목의 문자열 목록을 반환합니다.
+`findall()` 메서드는 검색된 문자열에서 일치하는 모든 문자열을 반환합니다.
 
 ```python
-phone_num_regex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d') # 그룹 없음
+phone_num_regex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d') # 그룹이 없음
 
 phone_num_regex.findall('Cell: 415-555-9999 Work: 212-555-0000')
 ```
@@ -357,7 +385,7 @@ vowel_regex.findall('Robocop eats baby food. BABY FOOD.')
 
 하이픈 (-) 을 사용하여 문자 또는 숫자의 범위를 포함할 수도 있습니다. 예를 들어, 문자 클래스 *[a-zA-Z0-9]*는 모든 소문자, 대문자 및 숫자와 일치합니다.
 
-문자 클래스의 여는 대괄호 바로 뒤에 캐럿 문자 (`^`) 를 배치하면, 문자 클래스에 포함되지 않은 모든 문자와 일치하는 음수 문자 클래스를 만들 수 있습니다:
+문자 클래스의 여는 대괄호 바로 뒤에 캐럿 문자 (`^`) 를 배치하면 해당 문자 클래스에 없는 모든 문자와 일치하는 음수 문자 클래스를 만들 수 있습니다:
 
 ```python
 consonant_regex = re.compile(r'[^aeiouAEIOU]')
@@ -368,9 +396,9 @@ consonant_regex.findall('Robocop eats baby food. BABY FOOD.')
 ['R', 'b', 'c', 'p', ' ', 't', 's', ' ', 'b', 'b', 'y', ' ', 'f', 'd', '.', ' ', 'B', 'B', 'Y', ' ', 'F', 'D', '.']
 ```
 
-## 캐럿 및 달러 기호 문자
+## 캐럿 (^) 및 달러 ($) 문자
 
-- 정규식 시작 부분에 캐럿 기호 `^`를 사용하여 검색 텍스트의 시작 부분에서 일치가 발생해야 함을 나타낼 수 있습니다.
+- 정규식 시작 부분에 캐럿 기호 `^`를 사용하여 일치가 검색 텍스트의 시작 부분에서 발생해야 함을 나타낼 수 있습니다.
 
 - 마찬가지로, 정규식 끝에 달러 기호 `$`를 두어 문자열이 이 정규식 패턴으로 끝나야 함을 나타낼 수 있습니다.
 
@@ -425,7 +453,7 @@ True
 
 ## 와일드카드 문자
 
-정규 표현식의 `.` (또는 점) 문자는 줄 바꿈을 제외한 모든 문자와 일치합니다:
+정규 표현식의 `.` (또는 점) 문자는 줄 바꿈 문자를 제외한 모든 문자와 일치합니다:
 
 ```python
 at_regex = re.compile(r'.at')
@@ -437,7 +465,7 @@ at_regex.findall('The cat in the hat sat on the flat mat.')
 ['cat', 'hat', 'sat', 'lat', 'mat']
 ```
 
-## 점 - 별표를 사용한 모든 것 일치
+## 점 - 별표 (.\*) 를 사용한 모든 것 일치
 
 ```python
 name_regex = re.compile(r'First Name: (.*) Last Name: (.*)')
@@ -458,7 +486,7 @@ mo.group(2)
 'Sweigart'
 ```
 
-`.*`는 탐욕적 모드를 사용합니다: 가능한 한 많은 텍스트와 일치하려고 항상 시도합니다. 비탐욕적으로 모든 텍스트와 일치시키려면 점, 별표, 물음표 (`.*?`) 를 사용합니다. 물음표는 Python 에게 비탐욕적으로 일치하도록 지시합니다:
+`.*`는 탐욕적 모드를 사용합니다. 가능한 한 많은 텍스트와 일치하려고 시도합니다. 비탐욕적인 방식으로 모든 텍스트와 일치시키려면 점, 별표, 물음표 (`.*?`) 를 사용합니다. 물음표는 Python 에게 비탐욕적으로 일치하도록 지시합니다:
 
 ```python
 non_greedy_regex = re.compile(r'<.*?>')
@@ -551,17 +579,31 @@ names_regex.sub('CENSORED', 'Agent Alice gave the secret documents to Agent Bob.
 'CENSORED gave the secret documents to CENSORED.'
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+<code>sub()</code> 메서드는 무엇을 합니까?
+</template>
+
+<base-quiz-option value="A">A. 문자열에서 모든 일치 항목을 찾습니다</base-quiz-option>
+<base-quiz-option value="B" correct>B. 모든 일치 항목을 대체 문자열로 바꿉니다</base-quiz-option>
+<base-quiz-option value="C">C. 일치 항목에서 문자열을 분할합니다</base-quiz-option>
+<base-quiz-option value="D">D. 문자열 형식을 검증합니다</base-quiz-option>
+<base-quiz-answer value="B"><code>sub()</code> 메서드는 패턴의 모든 일치 항목을 대체 문자열로 치환합니다. 치환이 적용된 새 문자열을 반환합니다.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## 복잡한 Regex 관리
 
-`re.compile()` 함수에 정규 표현식 문자열 내의 공백과 주석을 무시하도록 지시하려면, `re.VERBOSE` 변수를 `re.compile()`에 두 번째 인수로 전달하여 "자세한 모드 (verbose mode)"를 활성화할 수 있습니다.
+`re.compile()` 함수에 정규 표현식 문자열 내부의 공백과 주석을 무시하도록 지시하려면, `re.VERBOSE` 변수를 `re.compile()`에 대한 두 번째 인수로 전달하여 "자세한 모드 (verbose mode)"를 활성화할 수 있습니다.
 
-이제 다음과 같은 읽기 어려운 정규 표현식 대신:
+이러한 하드 투 리드 (hard-to-read) 정규 표현식 대신:
 
 ```python
 phone_regex = re.compile(r'((\d{3}|\(\d{3}\))?(\s|-|\.)?\d{3}(\s|-|\.)\d{4}(\s*(ext|x|ext.)\s*\d{2,5})?)')
 ```
 
-주석이 포함된 여러 줄에 걸쳐 정규 표현식을 다음과 같이 작성할 수 있습니다:
+다음과 같이 여러 줄에 걸쳐 주석과 함께 정규 표현식을 분산시킬 수 있습니다:
 
 ```python
 phone_regex = re.compile(r'''(
@@ -573,6 +615,20 @@ phone_regex = re.compile(r'''(
     (\s*(ext|x|ext.)\s*\d{2,5})?  # 확장 번호
     )''', re.VERBOSE)
 ```
+
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+<code>re.compile()</code>에 전달될 때 <code>re.VERBOSE</code>는 무엇을 합니까?
+</template>
+
+<base-quiz-option value="A" correct>A. 가독성 향상을 위해 정규식 패턴에 공백과 주석을 허용합니다</base-quiz-option>
+<base-quiz-option value="B">B. 정규식을 대소문자 구분 없이 만듭니다</base-quiz-option>
+<base-quiz-option value="C">C. 점이 줄 바꿈 문자와 일치하도록 만듭니다</base-quiz-option>
+<base-quiz-option value="D">D. 정규식 일치를 가속화합니다</base-quiz-option>
+<base-quiz-answer value="A"><code>re.VERBOSE</code> 플래그를 사용하면 정규식 패턴에 공백과 주석을 추가할 수 있어 복잡한 정규식을 훨씬 더 읽기 쉽게 만들 수 있으며 패턴 일치에는 영향을 주지 않습니다.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## 관련 링크
 

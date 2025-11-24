@@ -1,6 +1,6 @@
 ---
 title: 'Python デバッグ - Python チートシート'
-description: 'コンピュータープログラミングおよびソフトウェア開発において、デバッグとは、プログラム、ソフトウェア、またはシステム内のバグ（誤りや誤動作の原因となる欠陥）を見つけ、修正するプロセスです。'
+description: 'コンピュータプログラミングおよびソフトウェア開発において、デバッグとは、プログラム、ソフトウェア、またはシステムが正しく動作するのを妨げるバグ（欠陥や問題）を見つけ、解決するプロセスです。'
 labUrl: 'https://labex.io/ja/labs/python-python-debugging-633653?course=python-cheatsheet'
 ---
 
@@ -39,7 +39,21 @@ Traceback (most recent call last):
 Exception: This is the error message.
 ```
 
-通常、例外を処理する方法を知っているのは、関数自体ではなく、その関数を呼び出すコードです。そのため、関数内で `raise` ステートメントを見かけ、関数を呼び出すコードで `try` および `except` ステートメントを見かけることが一般的です。
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Python で例外を手動で発生させるために使用されるキーワードは何ですか？
+</template>
+
+<base-quiz-option value="A">A. <code>throw</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>raise</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>error</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>exception</code></base-quiz-option>
+<base-quiz-answer value="B">Python で例外を手動で発生させるには、<code>raise</code> キーワードが使用されます。組み込みの例外またはカスタム例外を発生させることができます。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+通常、例外を処理する方法を知っているのは、関数を呼び出すコードであり、関数自体ではありません。そのため、関数内で `raise` ステートメントを、関数を呼び出すコード内で `try` および `except` ステートメントをよく見かけることになります。
 
 ```python
 # 関数内で例外を発生させ、呼び出し元のコードで処理する
@@ -77,7 +91,7 @@ An exception happened: Width must be greater than 2.
 An exception happened: Symbol must be a single character string.
 ```
 
-[Exception Handling](/cheatsheet/exception-handling) についてさらに読む。
+[例外処理](/cheatsheet/exception-handling)についてさらに読む。
 
 ## トレースバックを文字列として取得する
 
@@ -100,7 +114,7 @@ except:
 The traceback info was written to errorInfo.txt.
 ```
 
-116 は `write()` メソッドの戻り値です。これは、ファイルに 116 文字が書き込まれたためです。`traceback` テキストは errorInfo.txt に書き込まれました。
+116 は `write()` メソッドの戻り値であり、ファイルに 116 文字が書き込まれたことを示します。`traceback` テキストは errorInfo.txt に書き込まれました。
 
     Traceback (most recent call last):
       File "<pyshell#28>", line 2, in <module>
@@ -131,7 +145,21 @@ Traceback (most recent call last):
 AssertionError: The pod bay doors need to be "open".
 ```
 
-平たく言えば、アサーションステートメントは「この条件が真であることを主張する。そうでない場合は、プログラムのどこかにバグがある」という意味です。例外とは異なり、コードは try や except でアサーションステートメントを処理すべきではありません。アサーションが失敗した場合、プログラムはクラッシュすべきです。このように早く失敗することで、バグの元の原因と、最初にバグに気づくまでの時間を短縮できます。これにより、バグの原因となっているコードを見つける前に確認する必要のあるコードの量を減らすことができます。
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+<code>assert</code> ステートメントが失敗するとどうなりますか？
+</template>
+
+<base-quiz-option value="A">A. プログラムの実行が継続される</base-quiz-option>
+<base-quiz-option value="B">B. 警告が出力される</base-quiz-option>
+<base-quiz-option value="C" correct>C. <code>AssertionError</code> が発生し、プログラムはクラッシュするはずである</base-quiz-option>
+<base-quiz-option value="D">D. 条件が自動的に修正される</base-quiz-option>
+<base-quiz-answer value="C"><code>assert</code> ステートメントが失敗すると、<code>AssertionError</code> が発生します。例外とは異なり、アサートステートメントは try-except で処理されるべきではありません。アサートが失敗した場合、バグを迅速に見つけるためにプログラムはクラッシュする必要があります。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+平たく言えば、アサートステートメントは「この条件が真であると主張する。そうでなければ、プログラムのどこかにバグがある」という意味です。例外とは異なり、コードはアサートステートメントを try や except で処理すべきではありません。アサートが失敗した場合、プログラムはクラッシュする必要があります。このようにすぐに失敗させることで、バグの元の原因と、最初にバグに気づくまでの時間を短縮できます。これにより、バグの原因となっているコードを見つける前に確認しなければならないコードの量が少なくなります。
 
 ### アサーションの無効化
 
@@ -139,14 +167,28 @@ Python を実行する際に `-O` オプションを渡すことで、アサー�
 
 ## ロギング (Logging)
 
-プログラムの実行中にログメッセージが画面に表示されるように `logging` モジュールを有効にするには、プログラムの先頭に以下をコピーします。
+プログラムの実行中にログメッセージを画面に表示できるように `logging` モジュールを有効にするには、プログラムの先頭に以下をコピーします。
 
 ```python
 import logging
 logging.basicConfig(level=logging.DEBUG, format=' %(asctime)s - %(levelname)s- %(message)s')
 ```
 
-ある数の階乗を計算する関数を作成したとします。数学では、階乗 4 は 1 × 2 × 3 × 4、つまり 24 です。階乗 7 は 1 × 2 × 3 × 4 × 5 × 6 × 7、つまり 5,040 です。新しいファイルエディタウィンドウを開き、以下のコードを入力してください。これにはバグが含まれていますが、何が問題なのかを把握するのに役立つように、いくつかのログメッセージも入力します。プログラムを factorialLog.py として保存します。
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+Python における<code>logging</code>モジュールの目的は何ですか？
+</template>
+
+<base-quiz-option value="A" correct>A. デバッグと監視のためにプログラム実行に関する情報を記録すること</base-quiz-option>
+<base-quiz-option value="B">B. エラーの発生を防ぐこと</base-quiz-option>
+<base-quiz-option value="C">C. プログラムの実行速度を向上させること</base-quiz-option>
+<base-quiz-option value="D">D. ログメッセージを暗号化すること</base-quiz-option>
+<base-quiz-answer value="A"><code>logging</code>モジュールを使用すると、プログラムの実行に関する情報を異なるレベル（DEBUG、INFO、WARNING、ERROR、CRITICAL）で記録でき、デバッグや監視に役立ちます。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+例えば、数値の階乗を計算する関数を作成したとします。数学では、階乗 4 は 1 × 2 × 3 × 4、つまり 24 です。階乗 7 は 1 × 2 × 3 × 4 × 5 × 6 × 7、つまり 5,040 です。新しいファイルエディタウィンドウを開き、以下のコードを入力してください。これにはバグがありますが、何が問題なのかを把握するのに役立つように、いくつかのログメッセージも入力します。プログラムを factorialLog.py として保存します。
 
 ```python
 import logging
@@ -182,19 +224,33 @@ logging.debug('End of program')
 
 ## ロギングレベル (Logging Levels)
 
-ロギングレベルは、ログメッセージを重要度によって分類する方法を提供します。重要度が最も低いものから高いものまで、表 10-1 に説明されている 5 つのロギングレベルがあります。各レベルでメッセージをログに記録するには、異なるロギング関数を使用できます。
+ロギングレベルは、ログメッセージを重要度によって分類する方法を提供します。重要度が最も低いものから高いものまで、5 つのロギングレベルがあり、表 10-1 に説明されています。各レベルでメッセージをログに記録するには、異なるロギング関数を使用できます。
 
-| レベル     | ロギング関数         | 説明                                                                                                                                   |
-| :--------- | :------------------- | :------------------------------------------------------------------------------------------------------------------------------------- |
-| `DEBUG`    | `logging.debug()`    | 最も低いレベル。細かい詳細に使用されます。通常、これらのメッセージは問題の診断時のみに関心があります。                                 |
-| `INFO`     | `logging.info()`     | プログラム内の一般的なイベントに関する情報を記録したり、プログラム内のその時点での動作が正しいことを確認したりするために使用されます。 |
-| `WARNING`  | `logging.warning()`  | プログラムの動作を妨げないが、将来的に妨げる可能性のある潜在的な問題を示すために使用されます。                                         |
-| `ERROR`    | `logging.error()`    | プログラムが何らかの処理に失敗したことを記録するために使用されます。                                                                   |
-| `CRITICAL` | `logging.critical()` | 最も高いレベル。プログラムの実行が完全に停止した、または停止しようとしている致命的なエラーを示すために使用されます。                   |
+| Level      | Logging Function     | Description                                                                                                        |
+| ---------- | -------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| `DEBUG`    | `logging.debug()`    | 最低レベル。細かい詳細に使用されます。通常、これらのメッセージは問題の診断時のみに関心があります。                 |
+| `INFO`     | `logging.info()`     | プログラム内の一般的なイベントに関する情報や、プログラムのその時点での動作が正しいことの確認に使用されます。       |
+| `WARNING`  | `logging.warning()`  | プログラムの動作を妨げないが、将来的に妨げる可能性のある潜在的な問題を示すために使用されます。                     |
+| `ERROR`    | `logging.error()`    | プログラムが何らかの処理に失敗したことを記録するために使用されます。                                               |
+| `CRITICAL` | `logging.critical()` | 最高レベル。プログラムの実行全体を停止させた、または停止させようとしている致命的なエラーを示すために使用されます。 |
 
-## ロギングの無効化 (Disabling Logging)
+<base-quiz>
+<base-quiz-question correct="D">
+<template #question>
+Python における最も低いロギングレベルは何ですか？
+</template>
 
-プログラムのデバッグが完了した後、画面がすべてのログメッセージで煩雑になることを望まないでしょう。`logging.disable()` 関数は、すべてのロギング呼び出しを手動で削除するためにプログラム内に移動する必要がないように、これらを無効にします。
+<base-quiz-option value="A">A. <code>INFO</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>WARNING</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>ERROR</code></base-quiz-option>
+<base-quiz-option value="D" correct>D. <code>DEBUG</code></base-quiz-option>
+<base-quiz-answer value="D">ロギングレベルは、低い方から高い方へ、<code>DEBUG</code>、<code>INFO</code>、<code>WARNING</code>、<code>ERROR</code>、<code>CRITICAL</code> の順です。<code>DEBUG</code> が最も低いレベルで、詳細な診断情報に使用されます。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+## ロギングの無効化
+
+プログラムのデバッグが完了した後、おそらくすべてのログメッセージが画面を占有するのを望まないでしょう。`logging.disable()` 関数は、プログラムに入ってすべてのロギング呼び出しを手動で削除する必要がないように、これらを無効にします。
 
 ```python
 import logging
@@ -213,7 +269,7 @@ logging.critical('Critical error! Critical error!')
 logging.error('Error! Error!')
 ```
 
-## ファイルへのロギング (Logging to a File)
+## ファイルへのロギング
 
 ログメッセージを画面に表示する代わりに、テキストファイルに書き込むことができます。`logging.basicConfig()` 関数は、以下のように `filename` キーワード引数を取ります。
 
@@ -222,7 +278,21 @@ import logging
 logging.basicConfig(filename='myProgramLog.txt', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+ログメッセージを画面に表示する代わりにファイルに書き込むにはどうすればよいですか？
+</template>
+
+<base-quiz-option value="A">A. <code>logging.file()</code> を使用する</base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>logging.basicConfig()</code> に <code>filename</code> パラメータを渡す</base-quiz-option>
+<base-quiz-option value="C">C. <code>logging.write()</code> を使用する</base-quiz-option>
+<base-quiz-option value="D">D. ログは常に自動的にファイルに書き込まれる</base-quiz-option>
+<base-quiz-answer value="B">ログメッセージをファイルに書き込むには、<code>logging.basicConfig()</code> に <code>filename</code> パラメータを渡します。これにより、すべてのログメッセージが画面に表示される代わりに、指定されたファイルに書き込まれます。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## 関連リンク
 
-- <router-link to="/cheatsheet/exception-handling">Exception Handling</router-link>
+- <router-link to="/cheatsheet/exception-handling">例外処理</router-link>
 - <router-link to="/builtin/breakpoint">breakpoint()</router-link>

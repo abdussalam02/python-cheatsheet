@@ -1,6 +1,6 @@
 ---
-title: 'Flux de Contrôle Python - Fiche Récapitulative Python'
-description: "Le flux de contrôle est l'ordre d'exécution des instructions, commandes ou appels de fonction. Il est régulé par les instructions conditionnelles, les boucles et les appels de fonction en Python."
+title: 'Flux de Contrôle Python - Aide-Mémoire Python'
+description: "Le flux de contrôle est l'ordre dans lequel les instructions, commandes ou appels de fonction individuels sont exécutés ou évalués. Le flux de contrôle d'un programme Python est régi par des instructions conditionnelles, des boucles et des appels de fonction."
 labUrl: 'https://labex.io/fr/labs/python-python-control-flow-633651?course=python-cheatsheet'
 ---
 
@@ -15,7 +15,7 @@ Flux de Contrôle Python
     Flux de contrôle Python
   </base-disclaimer-title>
   <base-disclaimer-content>
-  Le flux de contrôle est l'ordre dans lequel les instructions individuelles, les commandes ou les appels de fonction sont exécutés ou évalués. Le flux de contrôle d'un programme Python est régi par des instructions conditionnelles, des boucles et des appels de fonction.
+  Le flux de contrôle est l'ordre dans lequel les instructions individuelles, les commandes ou les appels de fonction sont exécutés ou évalués. Le flux de contrôle d'un programme Python est régulé par des instructions conditionnelles, des boucles et des appels de fonction.
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -30,7 +30,7 @@ Flux de Contrôle Python
 | `<=`      | Inférieur ou égal à |
 | `>=`      | Supérieur ou égal à |
 
-Ces opérateurs s'évaluent à True ou False en fonction des valeurs qui leur sont données.
+Ces opérateurs s'évaluent à True ou False selon les valeurs qui leur sont données.
 
 Exemples :
 
@@ -90,6 +90,20 @@ True
 False
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+À quoi s'évalue <code>'hello' == 'Hello'</code> ?
+</template>
+
+<base-quiz-option value="A">A. <code>True</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>False</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>None</code></base-quiz-option>
+<base-quiz-option value="D">D. Lève une erreur</base-quiz-option>
+<base-quiz-answer value="B">La comparaison de chaînes de caractères en Python est sensible à la casse. <code>'hello'</code> et <code>'Hello'</code> sont des chaînes différentes, donc la comparaison retourne <code>False</code>.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Opérateurs Booléens
 
 Il existe trois opérateurs booléens : `and`, `or`, et `not`.
@@ -97,28 +111,28 @@ Dans l'ordre de précédence, du plus élevé au plus bas, ils sont `not`, `and`
 
 Table de vérité de l'opérateur `and` :
 
-| Expression        | Évaluation |
-| ----------------- | ---------- |
-| `True and True`   | `True`     |
-| `True and False`  | `False`    |
-| `False and True`  | `False`    |
-| `False and False` | `False`    |
+| Expression        | Évalué à |
+| ----------------- | -------- |
+| `True and True`   | `True`   |
+| `True and False`  | `False`  |
+| `False and True`  | `False`  |
+| `False and False` | `False`  |
 
 Table de vérité de l'opérateur `or` :
 
-| Expression       | Évaluation |
-| ---------------- | ---------- |
-| `True or True`   | `True`     |
-| `True or False`  | `True`     |
-| `False or True`  | `True`     |
-| `False or False` | `False`    |
+| Expression       | Évalué à |
+| ---------------- | -------- |
+| `True or True`   | `True`   |
+| `True or False`  | `True`   |
+| `False or True`  | `True`   |
+| `False or False` | `False`  |
 
 Table de vérité de l'opérateur `not` :
 
-| Expression  | Évaluation |
-| ----------- | ---------- |
-| `not True`  | `False`    |
-| `not False` | `True`     |
+| Expression  | Évalué à |
+| ----------- | -------- |
+| `not True`  | `False`  |
+| `not False` | `True`   |
 
 ## Mélange d'Opérateurs
 
@@ -169,7 +183,7 @@ True
 ```
 
 ```python
-# Maintenant, l'expression entre parenthèses est exécutée en premier, donc True and False retourne False.
+# Maintenant, l'instruction entre parenthèses est exécutée en premier, donc True and False retourne False.
 (5 > 4 or 3 < 4) and 5 > 5
 ```
 
@@ -182,11 +196,11 @@ False
 L'instruction `if` évalue une expression, et si cette expression est `True`, elle exécute ensuite le code indenté suivant :
 
 ```python
-# instruction if : exécute un bloc de code lorsque la condition est Vraie
+# instruction if : exécute un bloc de code lorsque la condition est True
 name = 'Debora'
 
 if name == 'Debora':  # Vérifie si name est égal à 'Debora'
-   print('Hi, Debora')  # Cette ligne s'exécute si la condition est Vraie
+   print('Hi, Debora')  # Cette ligne s'exécute si la condition est True
 ```
 
 ```output
@@ -202,7 +216,7 @@ if name != 'George':
 You are not George
 ```
 
-L'instruction `else` s'exécute uniquement si l'évaluation de l'expression `if` et de toutes les expressions `elif` sont `False` :
+L'instruction `else` ne s'exécute que si l'évaluation de l'`if` et de toutes les expressions `elif` sont `False` :
 
 ```python
 # if-else : exécute un code différent en fonction de la condition
@@ -210,13 +224,27 @@ name = 'Debora'
 
 if name == 'George':
    print('Hi, George.')
-else:  # S'exécute si la condition if est Fausse
+else:  # S'exécute si la condition if est False
    print('You are not George')
 ```
 
 ```output
 You are not George
 ```
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Quand le bloc <code>else</code> s'exécute-t-il dans une instruction if-else ?
+</template>
+
+<base-quiz-option value="A">A. Toujours</base-quiz-option>
+<base-quiz-option value="B" correct>B. Seulement lorsque la condition <code>if</code> (et toutes les conditions <code>elif</code> si présentes) sont <code>False</code></base-quiz-option>
+<base-quiz-option value="C">C. Seulement lorsque la condition <code>if</code> est <code>True</code></base-quiz-option>
+<base-quiz-option value="D">D. Jamais</base-quiz-option>
+<base-quiz-answer value="B">Le bloc <code>else</code> s'exécute uniquement lorsque la condition <code>if</code> et toutes les conditions <code>elif</code> (le cas échéant) s'évaluent à <code>False</code>.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 Ce n'est qu'après que l'expression de l'instruction `if` soit `False` que l'instruction `elif` est évaluée et exécutée :
 
@@ -226,7 +254,7 @@ name = 'George'
 
 if name == 'Debora':
    print('Hi Debora!')
-elif name == 'George':  # Vérifié uniquement si la condition précédente est Fausse
+elif name == 'George':  # Vérifié seulement si la condition précédente est False
    print('Hi George!')
 ```
 
@@ -234,7 +262,7 @@ elif name == 'George':  # Vérifié uniquement si la condition précédente est 
 Hi George!
 ```
 
-Les parties `elif` et `else` sont facultatives.
+les parties `elif` et `else` sont facultatives.
 
 ```python
 name = 'Antony'
@@ -253,7 +281,7 @@ Who are you?
 
 ## Opérateur Conditionnel Ternaire
 
-De nombreux langages de programmation possèdent un opérateur ternaire, qui définit une expression conditionnelle. L'utilisation la plus courante est de créer une instruction d'affectation conditionnelle simple et concise. En d'autres termes, il offre un code sur une seule ligne pour évaluer la première expression si la condition est vraie, et sinon, il évalue la seconde expression.
+De nombreux langages de programmation disposent d'un opérateur ternaire, qui définit une expression conditionnelle. L'utilisation la plus courante est de créer une instruction d'affectation conditionnelle simple et concise. En d'autres termes, il offre une ligne de code pour évaluer la première expression si la condition est vraie, et sinon, il évalue la seconde expression.
 
 ```plaintext
 <expression1> if <condition> else <expression2>
@@ -320,7 +348,7 @@ teen
     Instructions Switch-Case
   </base-disclaimer-title>
   <base-disclaimer-content>
-  Dans les langages de programmation informatique, une instruction switch est un type de mécanisme de contrôle de sélection utilisé pour permettre à la valeur d'une variable ou d'une expression de modifier le flux de contrôle de l'exécution du programme par recherche et mappage.
+  Dans les langages de programmation informatique, une instruction switch est un type de mécanisme de contrôle de sélection utilisé pour permettre à la valeur d'une variable ou d'une expression de modifier le flux de contrôle de l'exécution du programme via la recherche et la correspondance.
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -360,9 +388,9 @@ match response_code:
 Created
 ```
 
-### Correspondance avec le motif or
+### Correspondance avec le motif or ( | )
 
-Dans cet exemple, le caractère pipe (`|` ou `or`) permet à Python de renvoyer la même réponse pour deux cas ou plus.
+Dans cet exemple, le caractère pipe (`|` ou `or`) permet à python de retourner la même réponse pour deux cas ou plus.
 
 ```python
 response_code = 502
@@ -398,7 +426,7 @@ match today_responses:
 All responses: 200, 300, [404, 500]
 ```
 
-### Valeur par Défaut
+### Valeur par défaut
 
 Le symbole underscore (`_`) est utilisé pour définir un cas par défaut :
 
@@ -438,7 +466,7 @@ match response_code:
 Code is a string
 ```
 
-### Protection des Instructions Match-Case
+### Garde des Instructions Match-Case
 
 ```python
 response_code = 300
@@ -458,7 +486,7 @@ Code is a valid number
 L'instruction while est utilisée pour l'exécution répétée tant qu'une expression est `True` :
 
 ```python
-# boucle while : répéter le code tant que la condition est Vraie
+# boucle while : répéter le code tant que la condition est True
 spam = 0
 while spam < 5:  # Continuer tant que spam est inférieur à 5
     print('Hello, world.')
@@ -473,16 +501,30 @@ Hello, world.
 Hello, world.
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+Que fait une boucle <code>while</code> ?
+</template>
+
+<base-quiz-option value="A" correct>A. Répète le code tant que la condition est <code>True</code></base-quiz-option>
+<base-quiz-option value="B">B. Exécute le code exactement une fois</base-quiz-option>
+<base-quiz-option value="C">C. Exécute le code un nombre fixe de fois</base-quiz-option>
+<base-quiz-option value="D">D. Ignore l'exécution du code</base-quiz-option>
+<base-quiz-answer value="A">Une boucle <code>while</code> exécute de manière répétée un bloc de code tant que la condition s'évalue à <code>True</code>. Lorsque la condition devient <code>False</code>, la boucle s'arrête.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Instructions break
 
-Si l'exécution atteint une instruction `break`, elle quitte immédiatement la clause de la boucle `while` :
+Si l'exécution atteint une instruction `break`, elle sort immédiatement de la clause de la boucle `while` :
 
 ```python
 # instruction break : sortir immédiatement de la boucle lorsqu'elle est rencontrée
 while True:  # Boucle infinie
     name = input('Please type your name: ')
     if name == 'your name':
-        break  # Quitter la boucle immédiatement
+        break  # Sortir immédiatement de la boucle
 
 print('Thank you!')
 ```
@@ -504,7 +546,7 @@ while True:
         continue  # Passer à l'itération suivante, ne pas demander le mot de passe
     password = input('Password? (It is a fish.): ')
     if password == 'swordfish':
-        break  # Quitter la boucle lorsque le mot de passe est correct
+        break  # Sortir de la boucle lorsque le mot de passe est correct
 
 print('Access granted.')
 ```
@@ -524,7 +566,7 @@ La boucle `for` itère sur une `list`, `tuple`, `dictionary`, `set` ou `string` 
 ```python
 # boucle for : itérer sur chaque élément d'une séquence
 pets = ['Bella', 'Milo', 'Loki']
-for pet in pets:  # Boucler sur chaque animal de compagnie dans la liste
+for pet in pets:  # Parcourir chaque animal de compagnie dans la liste
     print(pet)  # Afficher chaque nom d'animal de compagnie
 ```
 
@@ -534,9 +576,23 @@ Milo
 Loki
 ```
 
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+Sur quoi itère une boucle <code>for</code> ?
+</template>
+
+<base-quiz-option value="A">A. Seulement les nombres</base-quiz-option>
+<base-quiz-option value="B">B. Seulement les chaînes de caractères</base-quiz-option>
+<base-quiz-option value="C" correct>C. Toute séquence itérable (liste, tuple, dictionnaire, ensemble, chaîne, etc.)</base-quiz-option>
+<base-quiz-option value="D">D. Seulement les listes</base-quiz-option>
+<base-quiz-answer value="C">Une boucle <code>for</code> peut itérer sur n'importe quelle séquence itérable, y compris les listes, les tuples, les dictionnaires, les ensembles, les chaînes de caractères et d'autres objets itérables.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## La fonction range()
 
-La fonction `range()` renvoie une séquence de nombres. Elle commence à 0, s'incrémente de 1 et s'arrête avant un nombre spécifié :
+La fonction `range()` retourne une séquence de nombres. Elle commence à 0, s'incrémente de 1 et s'arrête avant un nombre spécifié :
 
 ```python
 for i in range(5):
@@ -551,10 +607,24 @@ Will stop at 5! or 4? (3)
 Will stop at 5! or 4? (4)
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Que génère <code>range(5)</code> ?
+</template>
+
+<base-quiz-option value="A">A. Nombres de 1 à 5</base-quiz-option>
+<base-quiz-option value="B" correct>B. Nombres de 0 à 4</base-quiz-option>
+<base-quiz-option value="C">C. Nombres de 0 à 5</base-quiz-option>
+<base-quiz-option value="D">D. Cinq nombres aléatoires</base-quiz-option>
+<base-quiz-answer value="B">La fonction <code>range(5)</code> génère des nombres de 0 à 4 (5 nombres au total). La valeur d'arrêt est exclusive, elle s'arrête donc avant d'atteindre 5.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 La fonction `range()` peut également modifier ses 3 arguments par défaut. Les deux premiers seront les valeurs `start` et `stop`, et le troisième sera l'argument `step`. Le pas est le montant par lequel la variable est augmentée après chaque itération.
 
 ```python
-# range(start, stop, step)
+# range(début, arrêt, pas)
 for i in range(0, 10, 2):
    print(i)
 ```
@@ -567,7 +637,7 @@ for i in range(0, 10, 2):
 8
 ```
 
-Vous pouvez même utiliser un nombre négatif pour l'argument step afin que la boucle for compte à rebours au lieu de compter à rebours.
+Vous pouvez même utiliser un nombre négatif pour l'argument `step` afin que la boucle `for` compte à rebours au lieu de compter à rebours.
 
 ```python
 for i in range(5, -1, -1):
@@ -585,7 +655,7 @@ for i in range(5, -1, -1):
 
 ## Instruction For else
 
-Ceci permet de spécifier une instruction à exécuter si la boucle complète a été exécutée. Uniquement utile lorsqu'une condition `break` peut se produire dans la boucle :
+Ceci permet de spécifier une instruction à exécuter si la boucle entière a été exécutée. Uniquement utile lorsqu'une condition `break` peut se produire dans la boucle :
 
 ```python
 for i in [1, 2, 3, 4, 5]:
@@ -622,6 +692,6 @@ You typed exit.
 - <router-link to="/cheatsheet/functions">Fonctions</router-link>
 - <router-link to="/cheatsheet/exception-handling">Gestion des Exceptions</router-link>
 - <router-link to="/cheatsheet/lists-and-tuples">Listes et Tuples</router-link>
-- <router-link to="/cheatsheet/sets">Ensembles</router-link>
+- <router-link to="/cheatsheet/sets">Ensembles (Sets)</router-link>
 - <router-link to="/cheatsheet/dictionaries">Dictionnaires</router-link>
 - <router-link to="/cheatsheet/comprehensions">Compréhensions</router-link>

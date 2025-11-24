@@ -26,11 +26,11 @@ Python 関数
 次の例では、関数 **say_hello** は引数 "name" を受け取り、挨拶を出力します。
 
 ```python
-# 1 つの引数を受け取る関数を定義
+# Define a function that takes one argument
 def say_hello(name):
    print(f'Hello {name}')
 
-# 文字列引数で関数を呼び出す
+# Call the function with a string argument
 say_hello('Carlos')
 ```
 
@@ -56,14 +56,14 @@ Hello Rose
 
 ## Keyword Arguments
 
-コードの可読性を向上させるために、できる限り明示的であるべきです。これは、関数で `Keyword Arguments` を使用することで実現できます。
+コードの可読性を向上させるために、できる限り明示的であるべきです。これは、関数内で `Keyword Arguments` を使用することで実現できます。
 
 ```python
-# 複数のパラメータを持つ関数
+# Function with multiple parameters
 def say_hi(name, greeting):
    print(f"{greeting} {name}")
 
-# 位置引数：順序が重要
+# Positional arguments: order matters
 say_hi('John', 'Hello')
 ```
 
@@ -72,7 +72,7 @@ Hello John
 ```
 
 ```python
-# キーワード引数：順序は重要ではなく、より読みやすい
+# Keyword arguments: order doesn't matter, more readable
 say_hi(name='Anna', greeting='Hi')
 ```
 
@@ -80,20 +80,34 @@ say_hi(name='Anna', greeting='Hi')
 Hi Anna
 ```
 
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+What is the main advantage of using keyword arguments in Python functions?
+</template>
+
+<base-quiz-option value="A">A. They execute faster</base-quiz-option>
+<base-quiz-option value="B">B. They use less memory</base-quiz-option>
+<base-quiz-option value="C" correct>C. They improve code readability and order doesn't matter</base-quiz-option>
+<base-quiz-option value="D">D. They prevent errors</base-quiz-option>
+<base-quiz-answer value="C">Keyword arguments improve code readability by making it clear what each argument represents, and they allow you to pass arguments in any order.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Return Values
 
-`def` ステートメントを使用して関数を作成する場合、`return` ステートメントで返される値を指定できます。return ステートメントは以下で構成されます。
+`def` ステートメントを使用して関数を作成する場合、`return` ステートメントで返り値を指定できます。return ステートメントは以下で構成されます。
 
 - `return` キーワード。
 
 - 関数が返す値または式。
 
 ```python
-# return ステートメントを使用して値を返す関数
+# Function that returns a value using return statement
 def sum_two_numbers(number_1, number_2):
    return number_1 + number_2
 
-# 関数を呼び出し、返された値を格納する
+# Call function and store the returned value
 result = sum_two_numbers(7, 8)
 print(result)
 ```
@@ -101,6 +115,20 @@ print(result)
 ```output
 15
 ```
+
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+What keyword is used to return a value from a function in Python?
+</template>
+
+<base-quiz-option value="A" correct>A. <code>return</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>output</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>yield</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>exit</code></base-quiz-option>
+<base-quiz-answer value="A">The <code>return</code> keyword is used to return a value from a function. If no return statement is used, the function returns <code>None</code>.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Local and Global Scope
 
@@ -110,19 +138,19 @@ print(result)
 
 - 関数のローカルスコープ内のコードは、他のローカルスコープの変数を使用できません。
 
-- 異なるスコープにある場合、異なる変数に同じ名前を使用できます。つまり、spam という名前のローカル変数と、同じく spam という名前のグローバル変数が存在できます。
+- 異なるスコープにある場合、異なる変数に同じ名前を使用できます。つまり、spam という名前のローカル変数と、同じく spam という名前のグローバル変数が存在し得ます。
 
 ```python
-# グローバル変数：どこからでもアクセス可能
+# Global variable: accessible everywhere
 global_variable = 'I am available everywhere'
 
 def some_function():
-    print(global_variable)  # グローバル変数にアクセス可能
-    # ローカル変数：この関数内でのみ存在する
+    print(global_variable)  # Can access global variable
+    # Local variable: only exists within this function
     local_variable = "only available within this function"
     print(local_variable)
 
-# これは NameError を発生させます：local_variable はグローバルスコープに存在しません
+# This will raise NameError: local_variable doesn't exist in global scope
 print(local_variable)
 ```
 
@@ -134,28 +162,42 @@ NameError: name 'local_variable' is not defined
 
 ## The global Statement
 
-関数内でグローバル変数を変更する必要がある場合は、global ステートメントを使用します。
+関数内からグローバル変数を変更する必要がある場合は、global ステートメントを使用します。
 
 ```python
-# 関数内からグローバル変数を変更するために 'global' キーワードを使用
+# Use 'global' keyword to modify global variable from inside function
 def spam():
-    global eggs  # グローバル変数を変更することを宣言
-    eggs = 'spam'  # これによりグローバル変数が変更される
+    global eggs  # Declare that we're modifying the global variable
+    eggs = 'spam'  # This changes the global variable
 
 eggs = 'global'
-spam()  # 関数がグローバル変数を変更する
-print(eggs)  # 'spam' と出力され、'global' ではない
+spam()  # Function modifies global variable
+print(eggs)  # Prints 'spam', not 'global'
 ```
 
 ```output
 spam
 ```
 
-変数がローカルスコープにあるかグローバルスコープにあるかを判断するには、4 つのルールがあります。
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+What keyword must you use inside a function to modify a global variable?
+</template>
+
+<base-quiz-option value="A">A. <code>nonlocal</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>global</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>extern</code></base-quiz-option>
+<base-quiz-option value="D">D. No keyword needed</base-quiz-option>
+<base-quiz-answer value="B">The <code>global</code> keyword must be used inside a function to modify a global variable. Without it, Python will create a local variable instead.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+変数がローカルスコープにあるかグローバルスコープにあるかを判断するには、次の 4 つのルールがあります。
 
 1. 変数がグローバルスコープ（つまり、すべての関数の外側）で使用されている場合、それは常にグローバル変数です。
 
-1. 関数内でその変数に対して global ステートメントがある場合、それはグローバル変数です。
+1. 関数内にその変数に関するグローバルステートメントがある場合、それはグローバル変数です。
 
 1. それ以外の場合、関数内でその変数が代入ステートメントで使用されている場合、それはローカル変数です。
 
@@ -163,11 +205,11 @@ spam
 
 ## Lambda Functions
 
-Python では、ラムダ関数は単一行の無名関数であり、任意の数の引数を取ることができますが、式は 1 つしか持つことができません。
+Python において、ラムダ関数は単一行の無名関数であり、任意の数の引数を取ることができますが、式は 1 つしか持つことができません。
 
 <base-disclaimer>
   <base-disclaimer-title>
-    <a target="_blank" href="https://docs.python.org/3/library/ast.html?highlight=lambda#function-and-class-definitions">Python 3 チュートリアル</a>より
+    From the <a target="_blank" href="https://docs.python.org/3/library/ast.html?highlight=lambda#function-and-class-definitions">Python 3 Tutorial</a>
   </base-disclaimer-title>
   <base-disclaimer-content>
     lambda は、式の中で使用できる最小限の関数定義です。FunctionDef とは異なり、body は単一のノードを保持します。
@@ -176,7 +218,7 @@ Python では、ラムダ関数は単一行の無名関数であり、任意の�
 
 <base-warning>
   <base-warning-title>
-    単一行の式
+    Single line expression
   </base-warning-title>
   <base-warning-content>
     ラムダ関数は、単一行のコードのような式のみを評価できます。
@@ -186,7 +228,7 @@ Python では、ラムダ関数は単一行の無名関数であり、任意の�
 この関数：
 
 ```python
-# 通常の関数定義
+# Regular function definition
 def add(x, y):
     return x + y
 
@@ -197,11 +239,11 @@ add(5, 3)
 8
 ```
 
-は、_lambda_ 関数と等価です。
+は、_ラムダ_ 関数：
 
 ```python
-# ラムダ関数：1 行で定義される無名関数
-# 構文：lambda 引数：式
+# Lambda function: anonymous function defined in one line
+# Syntax: lambda arguments: expression
 add = lambda x, y: x + y
 add(5, 3)
 ```
@@ -210,18 +252,34 @@ add(5, 3)
 8
 ```
 
-通常のネストされた関数と同様に、ラムダも辞書的クロージャとして機能します。
+と同等です。
+
+<base-quiz>
+<base-quiz-question correct="D">
+<template #question>
+What is a lambda function in Python?
+</template>
+
+<base-quiz-option value="A">A. A function that can only be called once</base-quiz-option>
+<base-quiz-option value="B">B. A function that takes no arguments</base-quiz-option>
+<base-quiz-option value="C">C. A function that returns multiple values</base-quiz-option>
+<base-quiz-option value="D" correct>D. A single-line anonymous function that can have any number of arguments but only one expression</base-quiz-option>
+<base-quiz-answer value="D">A lambda function is an anonymous, single-line function defined using the <code>lambda</code> keyword. It can take any number of arguments but can only contain a single expression.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+通常のネストされた関数と同様に、ラムダも辞書式クロージャとして機能します。
 
 ```python
-# ラムダクロージャ：外部スコープから変数をキャプチャするラムダ関数
+# Lambda closure: lambda function that captures variable from outer scope
 def make_adder(n):
-    return lambda x: x + n  # ラムダは外部関数から 'n' をキャプチャする
+    return lambda x: x + n  # Lambda captures 'n' from outer function
 
-# 異なる量の加算を行う関数を作成
-plus_3 = make_adder(3)  # 3 を加算するラムダを返す
-plus_5 = make_adder(5)  # 5 を加算するラムダを返す
+# Create functions that add different amounts
+plus_3 = make_adder(3)  # Returns lambda that adds 3
+plus_5 = make_adder(5)  # Returns lambda that adds 5
 
-plus_3(4)  # 4 + 3 = 7 を返す
+plus_3(4)  # Returns 4 + 3 = 7
 ```
 
 ```output
@@ -236,11 +294,25 @@ plus_5(4)
 9
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+What does a lambda closure allow you to do?
+</template>
+
+<base-quiz-option value="A" correct>A. Capture variables from the outer scope</base-quiz-option>
+<base-quiz-option value="B">B. Modify global variables without the global keyword</base-quiz-option>
+<base-quiz-option value="C">C. Return multiple values</base-quiz-option>
+<base-quiz-option value="D">D. Execute code asynchronously</base-quiz-option>
+<base-quiz-answer value="A">Lambda closures allow lambda functions to capture and use variables from their enclosing scope, similar to regular nested functions.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Relevant links
 
-- <router-link to="/blog/python-easy-args-kwargs">\*args と \*\*kwargs の解説</router-link>
-- <router-link to="/cheatsheet/args-and-kwargs">Args と Kwargs</router-link>
-- <router-link to="/cheatsheet/decorators">デコレータ</router-link>
-- <router-link to="/cheatsheet/control-flow">制御フロー</router-link>
-- <router-link to="/cheatsheet/basics">基本</router-link>
-- <router-link to="/builtin">組み込み関数</router-link>
+- <router-link to="/blog/python-easy-args-kwargs">\*args and \*\*kwargs explained</router-link>
+- <router-link to="/cheatsheet/args-and-kwargs">Args and Kwargs</router-link>
+- <router-link to="/cheatsheet/decorators">Decorators</router-link>
+- <router-link to="/cheatsheet/control-flow">Control Flow</router-link>
+- <router-link to="/cheatsheet/basics">Basics</router-link>
+- <router-link to="/builtin">Built-in Functions</router-link>

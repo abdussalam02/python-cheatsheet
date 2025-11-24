@@ -1,6 +1,6 @@
 ---
-title: 'Аргументы и Ключевые Аргументы Python – Шпаргалка'
-description: 'Args и Kwargs могут показаться сложными, но на самом деле их легко понять. Они придают функциям гибкость и улучшают читаемость кода.'
+title: 'Python Args и Kwargs – Шпаргалка по Python'
+description: 'Args и kwargs могут показаться сложными, но на самом деле их легко понять. Они придают функциям гибкость и улучшают читаемость кода.'
 labUrl: 'https://labex.io/ru/labs/python-python-args-and-kwargs-633646?course=python-cheatsheet'
 ---
 
@@ -69,6 +69,20 @@ some_function('arg1', 'arg2', 'arg3')
 Arguments passed: ('arg1', 'arg2', 'arg3') as <class 'tuple'>
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+В какой тип данных собираются аргументы <code>*args</code>?
+</template>
+
+<base-quiz-option value="A">A. Список</base-quiz-option>
+<base-quiz-option value="B" correct>B. Кортеж (tuple)</base-quiz-option>
+<base-quiz-option value="C">C. Словарь</base-quiz-option>
+<base-quiz-option value="D">D. Множество (set)</base-quiz-option>
+<base-quiz-answer value="B">Параметр <code>\*args</code> собирает позиционные аргументы в кортеж. Это позволяет функции принимать любое количество позиционных аргументов.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## kwargs
 
 Именованные аргументы (keywords) доступны через переменную `kwargs`:
@@ -86,11 +100,25 @@ some_function(key1='arg1', key2='arg2')
 keywords: {'key1': 'arg1', 'key2': 'arg2'} as <class 'dict'>
 ```
 
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+В какой тип данных собираются аргументы <code>**kwargs</code>?
+</template>
+
+<base-quiz-option value="A">A. Список</base-quiz-option>
+<base-quiz-option value="B">B. Кортеж (tuple)</base-quiz-option>
+<base-quiz-option value="C" correct>C. Словарь</base-quiz-option>
+<base-quiz-option value="D">D. Множество (set)</base-quiz-option>
+<base-quiz-answer value="C">Параметр <code>\*\*kwargs</code> собирает именованные аргументы в словарь. Это позволяет функции принимать любое количество именованных аргументов.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Relevant links
 
-- <router-link to="/cheatsheet/functions">Functions</router-link>
-- <router-link to="/cheatsheet/lists-and-tuples">Lists and Tuples</router-link>
-- <router-link to="/cheatsheet/dictionaries">Python Dictionaries</router-link>
+- <router-link to="/cheatsheet/functions">Функции</router-link>
+- <router-link to="/cheatsheet/lists-and-tuples">Списки и Кортежи</router-link>
+- <router-link to="/cheatsheet/dictionaries">Словари Python</router-link>
 - <router-link to="/blog/python-easy-args-kwargs">Python \*args и \*\*kwargs Made Easy</router-link>
 - <router-link to="/builtin/tuple">tuple()</router-link>
 - <router-link to="/builtin/dict">dict()</router-link>

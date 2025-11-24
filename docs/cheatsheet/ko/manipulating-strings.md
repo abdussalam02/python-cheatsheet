@@ -12,7 +12,7 @@ labUrl: 'https://labex.io/ko/labs/python-python-string-manipulation-633668?cours
 
 ## 이스케이프 문자
 
-이스케이프 문자는 백슬래시 `\` 다음에 삽입하려는 문자를 입력하여 만듭니다.
+이스케이프 문자는 백슬래시 `\` 뒤에 삽입하려는 문자를 입력하여 생성됩니다.
 
 | 이스케이프 문자 | 출력 결과       |
 | :-------------- | :-------------- |
@@ -43,7 +43,7 @@ I'm doing fine.
 
 ```python
 # 원시 문자열 (r 접두사): 백슬래시를 리터럴 문자로 취급
-print(r"Hello there!\nHow are you?\nI\'m doing fine.")  # \n이 그대로 출력됨
+print(r"Hello there!\nHow are you?\nI\'m doing fine.")  # \n이 문자 그대로 출력됨
 ```
 
 ```output
@@ -52,7 +52,21 @@ Hello there!\nHow are you?\nI\'m doing fine.
 
 원시 문자열은 주로 <router-link to="/cheatsheet/regular-expressions">정규 표현식</router-link> 정의에 사용됩니다.
 
-## 여러 줄 문자열
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Python 에서 원시 문자열 (<code>r</code>로 접두사가 붙은 문자열) 은 어떤 역할을 합니까?
+</template>
+
+<base-quiz-option value="A">A. 모든 문자를 대문자로 변환합니다</base-quiz-option>
+<base-quiz-option value="B" correct>B. 백슬래시를 리터럴 문자로 취급하여 이스케이프 시퀀스를 무시합니다</base-quiz-option>
+<base-quiz-option value="C">C. 모든 공백을 제거합니다</base-quiz-option>
+<base-quiz-option value="D">D. 문자열을 뒤집습니다</base-quiz-option>
+<base-quiz-answer value="B">원시 문자열 (<code>r</code> 접두사) 은 백슬래시를 리터럴 문자로 취급하므로 <code>\n</code>과 같은 이스케이프 시퀀스를 해석하지 않습니다.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+## 여러 줄 문자열 (Multiline Strings)
 
 ```python
 print(
@@ -81,7 +95,7 @@ Bob
     H   e   l   l   o       w   o   r   l   d    !
     0   1   2   3   4   5   6   7   8   9   10   11
 
-### 인덱싱
+### 인덱싱 (Indexing)
 
 ```python
 # 문자열 인덱싱: 위치 (0 부터 시작) 로 문자에 접근
@@ -110,10 +124,10 @@ spam[-1]
 '!'
 ```
 
-### 슬라이싱
+### 슬라이싱 (Slicing)
 
 ```python
-# 문자열 슬라이싱: [start:end] 구문을 사용하여 부분 문자열 추출
+# 문자열 슬라이싱: [시작:끝] 구문을 사용하여 부분 문자열 추출
 spam = 'Hello world!'
 
 spam[0:5]  # 인덱스 0 부터 4 까지의 문자 반환: 'Hello'
@@ -162,6 +176,20 @@ spam[::-1]
 ```output
 '!dlrow olleH'
 ```
+
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+<code>spam[::-1]</code>은 문자열에 대해 어떤 작업을 수행합니까?
+</template>
+
+<base-quiz-option value="A">A. 첫 번째 문자를 반환합니다</base-quiz-option>
+<base-quiz-option value="B">B. 마지막 문자를 반환합니다</base-quiz-option>
+<base-quiz-option value="C" correct>C. 문자열을 뒤집습니다</base-quiz-option>
+<base-quiz-option value="D">D. 모든 문자를 제거합니다</base-quiz-option>
+<base-quiz-answer value="C">슬라이스 <code>[::-1]</code>은 <code>-1</code>의 스텝 값 (뒤로 이동) 을 사용하여 모든 문자를 역순으로 탐색하여 문자열을 뒤집습니다.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ```python
 fizz = spam[0:5]
@@ -245,7 +273,7 @@ greet.title()
 
 ## isupper() 및 islower() 메서드
 
-문자열이 대문자인지 또는 소문자인지 평가한 후 `True` 또는 `False`를 반환합니다:
+문자열이 대문자 또는 소문자인지 평가한 후 `True` 또는 `False`를 반환합니다:
 
 ```python
 spam = 'Hello world!'
@@ -298,13 +326,13 @@ False
 
 ## isX 문자열 메서드
 
-| 메서드      | 설명                                                                                           |
-| :---------- | :--------------------------------------------------------------------------------------------- |
-| isalpha()   | 문자열이 오직 문자로만 구성되어 있으면 `True`를 반환합니다.                                    |
-| isalnum()   | 문자열이 오직 문자와 숫자로만 구성되어 있으면 `True`를 반환합니다.                             |
-| isdecimal() | 문자열이 오직 숫자로만 구성되어 있으면 `True`를 반환합니다.                                    |
-| isspace()   | 문자열이 오직 공백, 탭, 줄 바꿈으로만 구성되어 있으면 `True`를 반환합니다.                     |
-| istitle()   | 문자열이 대문자로 시작하고 그 뒤에 소문자만 오는 단어로만 구성되어 있으면 `True`를 반환합니다. |
+| 메서드      | 설명                                                                                                 |
+| :---------- | :--------------------------------------------------------------------------------------------------- |
+| isalpha()   | 문자열이 오직 문자로만 구성되어 있으면 `True`를 반환합니다.                                          |
+| isalnum()   | 문자열이 오직 문자와 숫자로만 구성되어 있으면 `True`를 반환합니다.                                   |
+| isdecimal() | 문자열이 오직 숫자로만 구성되어 있으면 `True`를 반환합니다.                                          |
+| isspace()   | 문자열이 오직 공백, 탭, 줄 바꿈 문자로만 구성되어 있으면 `True`를 반환합니다.                        |
+| istitle()   | 문자열이 오직 첫 글자는 대문자이고 나머지는 소문자인 단어들로만 구성되어 있으면 `True`를 반환합니다. |
 
 ## startswith() 및 endswith()
 
@@ -356,11 +384,25 @@ True
 True
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+<code>startswith()</code>은 무엇을 반환합니까?
+</template>
+
+<base-quiz-option value="A" correct>A. 문자열이 지정된 부분 문자열로 시작하면 <code>True</code>를 반환하고, 그렇지 않으면 <code>False</code>를 반환합니다</base-quiz-option>
+<base-quiz-option value="B">B. 시작 부분과 일치하는 부분 문자열</base-quiz-option>
+<base-quiz-option value="C">C. 부분 문자열이 시작되는 인덱스</base-quiz-option>
+<base-quiz-option value="D">D. 접두사가 없는 새 문자열</base-quiz-option>
+<base-quiz-answer value="A"><code>startswith()</code> 메서드는 부울 값 (boolean value) 을 반환합니다: 문자열이 지정된 부분 문자열로 시작하면 <code>True</code>를, 그렇지 않으면 <code>False</code>를 반환합니다.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## join() 및 split()
 
 ### join()
 
-`join()` 메서드는 <router-link to="/cheatsheet/lists-and-tuples">리스트</router-link>, <router-link to="/cheatsheet/dictionaries">딕셔너리</router-link>, <router-link to="/cheatsheet/lists-and-tuples#the-tuple-data-type">튜플</router-link> 또는 <router-link to="/cheatsheet/sets">집합</router-link>과 같은 반복 가능한 객체의 모든 항목을 가져와 문자열로 결합합니다. 구분자를 지정할 수도 있습니다.
+`join()` 메서드는 <router-link to="/cheatsheet/lists-and-tuples">리스트</router-link>, <router-link to="/cheatsheet/dictionaries">딕셔너리</router-link>, <router-link to="/cheatsheet/lists-and-tuples#the-tuple-data-type">튜플</router-link> 또는 <router-link to="/cheatsheet/sets">집합</router-link>과 같은 반복 가능한 (iterable) 객체의 모든 항목을 가져와 문자열로 결합합니다. 구분자를 지정할 수도 있습니다.
 
 ```python
 ''.join(['My', 'name', 'is', 'Simon'])
@@ -438,6 +480,20 @@ True
 ['', 'My', '', 'name', 'is', '', 'Simon']
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+문자열에서 <code>split()</code>을 호출하면 무엇이 반환됩니까?
+</template>
+
+<base-quiz-option value="A">A. 문자열</base-quiz-option>
+<base-quiz-option value="B" correct>B. 문자열 리스트</base-quiz-option>
+<base-quiz-option value="C">C. 문자열 튜플</base-quiz-option>
+<base-quiz-option value="D">D. 딕셔너리</base-quiz-option>
+<base-quiz-answer value="B"><code>split()</code> 메서드는 문자열을 부분 문자열 리스트로 분할합니다. 기본적으로 공백을 기준으로 분할하지만, 다른 구분자를 지정할 수 있습니다.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## rjust(), ljust() 및 center() 를 사용한 텍스트 정렬
 
 ```python
@@ -480,7 +536,7 @@ True
 '       Hello       '
 ```
 
-`rjust()` 및 `ljust()`의 두 번째 선택적 인수는 공백 문자 외에 채울 문자를 지정합니다:
+`rjust()` 및 `ljust()`의 선택적 두 번째 인수는 공백 문자 외에 채울 문자를 지정합니다:
 
 ```python
 'Hello'.rjust(20, '*')
@@ -544,7 +600,7 @@ spam.strip('ampS')
 
 ## Count 메서드
 
-적용된 문자열에서 주어진 문자 또는 부분 문자열의 발생 횟수를 계산합니다. 선택적으로 시작 및 끝 인덱스를 제공할 수 있습니다.
+적용되는 문자열에서 주어진 문자 또는 부분 문자열의 발생 횟수를 셉니다. 선택적으로 시작 및 끝 인덱스를 제공할 수 있습니다.
 
 ```python
 sentence = 'one sheep two sheep three sheep four'
@@ -564,7 +620,7 @@ sentence.count('e')
 ```
 
 ```python
-# 문자열 시작부터 6 번째 문자 이후의 e 개수 반환 (즉, 6 자 이후)
+# 문자열 시작부터 6 번째 문자 이후의 e 개수를 반환
 sentence.count('e', 6)
 ```
 
@@ -582,7 +638,7 @@ sentence.count('e', 7)
 
 ## Replace 메서드
 
-주어진 부분 문자열의 모든 발생을 다른 부분 문자열로 바꿉니다. 선택적으로 세 번째 인수를 제공하여 교체 횟수를 제한할 수 있습니다. 새 문자열을 반환합니다.
+주어진 부분 문자열의 모든 발생을 다른 부분 문자열로 대체합니다. 교체 횟수를 제한하기 위해 선택적으로 세 번째 인수를 제공할 수 있습니다. 새 문자열을 반환합니다.
 
 ```python
 text = "Hello, world!"
@@ -610,6 +666,20 @@ sentence.replace("apples", "oranges")
 ```output
 'I like oranges, Apples are my favorite fruit'
 ```
+
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+<code>replace()</code> 메서드는 무엇을 반환합니까?
+</template>
+
+<base-quiz-option value="A">A. 원본 문자열을 수정합니다</base-quiz-option>
+<base-quiz-option value="B">B. <code>None</code>을 반환합니다</base-quiz-option>
+<base-quiz-option value="C" correct>C. 대체가 이루어진 새 문자열을 반환합니다</base-quiz-option>
+<base-quiz-option value="D">D. 대체된 문자열 리스트를 반환합니다</base-quiz-option>
+<base-quiz-answer value="C"><code>replace()</code> 메서드는 오래된 부분 문자열의 모든 발생이 새 부분 문자열로 대체된 새 문자열을 반환합니다. 원본 문자열은 수정되지 않습니다.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## 관련 링크
 

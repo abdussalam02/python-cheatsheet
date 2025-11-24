@@ -1,6 +1,6 @@
 ---
-title: 'Lectura y Escritura de Archivos - Hoja de Trucos de Python'
-description: "Para leer/escribir en un archivo en Python, use la declaración 'with', que cerrará el archivo automáticamente, gestionando los recursos por usted."
+title: 'Lectura y escritura de archivos - Hoja de trucos de Python'
+description: "Para leer/escribir en un archivo en Python, querrás usar la declaración 'with', que cerrará el archivo automáticamente, gestionando los recursos disponibles."
 labUrl: 'https://labex.io/es/labs/python-python-reading-and-writing-files-633663?course=python-cheatsheet'
 ---
 
@@ -10,18 +10,18 @@ Lectura y Escritura de Archivos
 
 <base-lab-url :url="frontmatter.labUrl" />
 
-Para una mirada más profunda a la manipulación de rutas de archivos y directorios, consulte la página <router-link to="/cheatsheet/file-directory-path">Rutas de Archivos y Directorios</router-link>.
+Para obtener una mirada más profunda a la manipulación de rutas de archivos y directorios, consulte la página <router-link to="/cheatsheet/file-directory-path">Rutas de Archivos y Directorios</router-link>.
 
-## El proceso de Lectura/Escritura de archivos
+## El proceso de lectura/escritura de archivos
 
-Para leer/escribir en un archivo en Python, querrá usar la declaración `with`, que cerrará el archivo por usted una vez que haya terminado, gestionando los recursos disponibles.
+Para leer/escribir en un archivo en Python, querrá usar la declaración `with`, que cerrará el archivo por usted cuando haya terminado, administrando los recursos disponibles.
 
 ## Abrir y leer archivos
 
 La función `open` abre un archivo y devuelve un objeto de archivo correspondiente.
 
 ```python
-# Leer archivo usando la declaración 'with': cierra automáticamente el archivo al finalizar
+# Leer archivo usando la declaración 'with': cierra automáticamente el archivo cuando termina
 with open('/home/labex/project/hi.txt') as hello_file:
     hello_content = hello_file.read()  # Leer todo el contenido del archivo
 
@@ -32,10 +32,24 @@ hello_content
 'Hello World!'
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+¿Cuál es la principal ventaja de usar la declaración <code>with</code> al abrir archivos?
+</template>
+
+<base-quiz-option value="A" correct>A. El archivo se cierra automáticamente cuando termina, incluso si ocurre un error</base-quiz-option>
+<base-quiz-option value="B">B. Los archivos se abren más rápido</base-quiz-option>
+<base-quiz-option value="C">C. Los archivos se pueden abrir en modo lectura y escritura simultáneamente</base-quiz-option>
+<base-quiz-option value="D">D. Los archivos se comprimen automáticamente</base-quiz-option>
+<base-quiz-answer value="A">La declaración <code>with</code> asegura que el archivo se cierre automáticamente cuando el bloque finaliza, incluso si ocurre una excepción. Esto ayuda a administrar los recursos adecuadamente.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 Alternativamente, puede usar el método _readlines()_ para obtener una lista de valores de cadena del archivo, una cadena por cada línea de texto:
 
 ```python
-# Método readlines(): devuelve una lista de cadenas, una por línea
+# método readlines(): devuelve una lista de cadenas, una por línea
 with open('sonnet29.txt') as sonnet_file:
     sonnet_file.readlines()  # Devuelve una lista con cada línea como una cadena
 ```
@@ -52,7 +66,7 @@ También puede iterar a través del archivo línea por línea:
 ```python
 # Iterar a través del archivo línea por línea (eficiente en memoria para archivos grandes)
 with open('sonnet29.txt') as sonnet_file:
-    for line in sonnet_file:  # El objeto de archivo es iterable
+    for line in sonnet_file:  # El objeto archivo es iterable
         print(line, end='')  # Imprimir sin nueva línea extra
 ```
 
@@ -76,7 +90,7 @@ with open('bacon.txt', 'w') as bacon_file:  # 'w' = modo escritura
 ```
 
 ```python
-# Añadir a archivo: el modo 'a' añade al archivo existente
+# Añadir al archivo: el modo 'a' añade al archivo existente
 with open('bacon.txt', 'a') as bacon_file:  # 'a' = modo añadir
     bacon_file.write('Bacon is not a vegetable.')
 ```
@@ -96,6 +110,20 @@ print(content)
 Hello world!
 Bacon is not a vegetable.
 ```
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+¿Cuál es la diferencia entre abrir un archivo con el modo <code>'w'</code> y el modo <code>'a'</code>?
+</template>
+
+<base-quiz-option value="A">A. <code>'w'</code> es para leer, <code>'a'</code> es para escribir</base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>'w'</code> sobrescribe el archivo, <code>'a'</code> añade contenido al archivo</base-quiz-option>
+<base-quiz-option value="C">C. <code>'w'</code> es para Windows, <code>'a'</code> es para Apple</base-quiz-option>
+<base-quiz-option value="D">D. No hay diferencia</base-quiz-option>
+<base-quiz-answer value="B">El modo <code>'w'</code> abre el archivo para escritura y sobrescribe cualquier contenido existente. El modo <code>'a'</code> abre el archivo para añadir, agregando nuevo contenido al final del archivo.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Enlaces relevantes
 

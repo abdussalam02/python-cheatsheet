@@ -1,6 +1,6 @@
 ---
 title: '파이썬 제어 흐름 - 파이썬 치트 시트'
-description: '제어 흐름은 개별 문장, 명령어 또는 함수 호출이 실행되거나 평가되는 순서입니다. 파이썬 프로그램의 제어 흐름은 조건문, 반복문 및 함수 호출에 의해 규제됩니다.'
+description: '제어 흐름은 개별 명령문, 지침 또는 함수 호출이 실행되거나 평가되는 순서입니다. 파이썬 프로그램의 제어 흐름은 조건문, 루프 및 함수 호출에 의해 규제됩니다.'
 labUrl: 'https://labex.io/ko/labs/python-python-control-flow-633651?course=python-cheatsheet'
 ---
 
@@ -30,7 +30,7 @@ Python 제어 흐름
 | `<=`   | 작거나 같다 |
 | `>=`   | 크거나 같다 |
 
-이 연산자들은 주어진 값에 따라 True 또는 False 를 평가합니다.
+이 연산자들은 주어진 값에 따라 True 또는 False 로 평가됩니다.
 
 예시:
 
@@ -90,10 +90,24 @@ True
 False
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+<code>'hello' == 'Hello'</code>는 무엇으로 평가됩니까?
+</template>
+
+<base-quiz-option value="A">A. <code>True</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>False</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>None</code></base-quiz-option>
+<base-quiz-option value="D">D. 오류 발생</base-quiz-option>
+<base-quiz-answer value="B">Python 에서 문자열 비교는 대소문자를 구분합니다. <code>'hello'</code>와 <code>'Hello'</code>는 다른 문자열이므로 비교 결과는 <code>False</code>를 반환합니다.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## 불리언 연산자
 
 세 가지 불리언 연산자가 있습니다: `and`, `or`, `not`.
-우선순위는 높음에서 낮음 순으로 `not`, `and`, `or` 입니다.
+우선순위는 높음에서 낮음 순으로 `not`, `and`, `or`입니다.
 
 `and` 연산자의 _진리표_:
 
@@ -159,8 +173,8 @@ True
 ```
 
 ```python
-# 아래 문장에서 3 < 4 and 5 > 5 가 먼저 실행되어 False 를 반환합니다.
-# 그 다음 5 > 4 는 True 를 반환하므로 True or False 의 결과는 True 가 됩니다.
+# 아래 문장에서 3 < 4 and 5 > 5 가 먼저 실행되어 False 로 평가됩니다.
+# 그 다음 5 > 4 가 True 를 반환하므로 True or False 의 결과는 True 가 됩니다.
 5 > 4 or 3 < 4 and 5 > 5
 ```
 
@@ -169,7 +183,7 @@ True
 ```
 
 ```python
-# 이제 괄호 안의 문장이 먼저 실행되어 True and False 는 False 를 반환합니다.
+# 이제 괄호 안의 문장이 먼저 실행되어 True and False 가 False 를 반환합니다.
 (5 > 4 or 3 < 4) and 5 > 5
 ```
 
@@ -179,14 +193,14 @@ False
 
 ## if 문
 
-`if` 문은 표현식을 평가하며, 그 표현식이 `True`이면 뒤따르는 들여쓰기된 코드를 실행합니다:
+`if` 문은 표현식을 평가하고, 그 표현식이 `True`이면 다음 들여쓰기된 코드를 실행합니다:
 
 ```python
 # if 문: 조건이 True 일 때 코드 블록 실행
 name = 'Debora'
 
-if name == 'Debora':  # 이름이 'Debora'와 같은지 확인
-   print('Hi, Debora')  # 조건이 True 이면 이 줄이 실행됩니다
+if name == 'Debora':  # name 이 'Debora'와 같은지 확인
+   print('Hi, Debora')  # 조건이 True 이면 이 줄이 실행됨
 ```
 
 ```output
@@ -218,7 +232,21 @@ else:  # if 조건이 False 일 때 실행
 You are not George
 ```
 
-`if` 표현식이 `False`인 경우에만 `elif` 문이 평가되고 실행됩니다:
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+if-else 문에서 <code>else</code> 블록은 언제 실행됩니까?
+</template>
+
+<base-quiz-option value="A">A. 항상</base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>if</code> 조건 (및 존재하는 경우 모든 <code>elif</code> 조건) 이 <code>False</code>일 때만</base-quiz-option>
+<base-quiz-option value="C">C. <code>if</code> 조건이 <code>True</code>일 때만</base-quiz-option>
+<base-quiz-option value="D">D. 실행되지 않음</base-quiz-option>
+<base-quiz-answer value="B"><code>else</code> 블록은 <code>if</code> 조건과 모든 <code>elif</code> 조건 (있는 경우) 이 <code>False</code>로 평가될 때만 실행됩니다.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+`if` 문 표현식이 `False`인 경우에만 `elif` 문이 평가되고 실행됩니다:
 
 ```python
 # if-elif: 여러 조건을 순차적으로 확인
@@ -256,7 +284,7 @@ Who are you?
 많은 프로그래밍 언어에는 조건부 표현식을 정의하는 삼항 연산자가 있습니다. 가장 일반적인 용도는 간결하고 간단한 조건부 할당 문장을 만드는 것입니다. 즉, 조건이 참이면 첫 번째 표현식을 평가하고 그렇지 않으면 두 번째 표현식을 평가하는 한 줄 코드를 제공합니다.
 
 ```plaintext
-<expression1> if <condition> else <expression2>
+<표현식1> if <조건> else <표현식2>
 ```
 
 예시:
@@ -277,7 +305,7 @@ kid
 
 ```python
 # 삼항 연산자: 한 줄 조건부 표현식
-# 구문: value_if_true if condition else value_if_false
+# 구문: 조건이 참일 때 값 if 조건 else 조건이 거짓일 때 값
 print('kid' if age < 18 else 'adult')
 ```
 
@@ -285,7 +313,7 @@ print('kid' if age < 18 else 'adult')
 kid
 ```
 
-삼항 연산자는 연결될 수 있습니다:
+삼항 연산자는 연결할 수 있습니다:
 
 ```python
 age = 15
@@ -299,7 +327,7 @@ teen
 ```
 
 ```python
-# 다음 if 문과 동일합니다:
+# 이 if 문과 동일합니다:
 if age < 13:
     print('kid')
 else:
@@ -320,7 +348,7 @@ teen
     Switch-Case 문
   </base-disclaimer-title>
   <base-disclaimer-content>
-  컴퓨터 프로그래밍 언어에서 switch 문은 검색 및 매핑을 통해 프로그램 실행의 제어 흐름을 변경할 수 있도록 하는 선택 제어 메커니즘의 한 유형입니다.
+  컴퓨터 프로그래밍 언어에서 switch 문은 검색 및 매핑을 통해 프로그램 실행의 제어 흐름을 변경하는 데 사용되는 일종의 선택 제어 메커니즘입니다.
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -473,12 +501,26 @@ Hello, world.
 Hello, world.
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+<code>while</code> 루프는 무엇을 합니까?
+</template>
+
+<base-quiz-option value="A" correct>A. 조건이 <code>True</code>인 동안 코드를 반복합니다</base-quiz-option>
+<base-quiz-option value="B">B. 코드를 정확히 한 번 실행합니다</base-quiz-option>
+<base-quiz-option value="C">C. 코드를 고정된 횟수만큼 실행합니다</base-quiz-option>
+<base-quiz-option value="D">D. 코드 실행을 건너뜁니다</base-quiz-option>
+<base-quiz-answer value="A"><code>while</code> 루프는 조건이 <code>True</code>로 평가되는 동안 코드 블록을 반복적으로 실행합니다. 조건이 <code>False</code>가 되면 루프가 중지됩니다.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## break 문
 
-실행이 `break` 문에 도달하면 즉시 `while` 루프 절을 종료합니다:
+실행이 `break` 문에 도달하면 즉시 `while` 루프의 절을 종료합니다:
 
 ```python
-# break 문: 발견 즉시 루프 종료
+# break 문: 발견되면 즉시 루프 종료
 while True:  # 무한 루프
     name = input('Please type your name: ')
     if name == 'your name':
@@ -494,17 +536,17 @@ Thank you!
 
 ## continue 문
 
-프로그램 실행이 `continue` 문에 도달하면 프로그램 실행은 즉시 루프 시작 부분으로 이동합니다.
+프로그램 실행이 `continue` 문에 도달하면 프로그램 실행은 즉시 루프 시작 부분으로 점프합니다.
 
 ```python
-# continue 문: 루프 반복의 나머지 부분을 건너뛰고 다음 반복 시작
+# continue 문: 현재 루프 반복의 나머지 부분을 건너뛰고 다음 반복 시작
 while True:
     name = input('Who are you? ')
     if name != 'Joe':
-        continue  # 다음 반복으로 건너뛰기, 비밀번호 요청 안 함
+        continue  # 다음 반복으로 건너뛰고 암호를 묻지 않음
     password = input('Password? (It is a fish.): ')
     if password == 'swordfish':
-        break  # 비밀번호가 올바르면 루프 종료
+        break  # 암호가 올바르면 루프 종료
 
 print('Access granted.')
 ```
@@ -524,8 +566,8 @@ Access granted.
 ```python
 # for 루프: 시퀀스의 각 항목 반복
 pets = ['Bella', 'Milo', 'Loki']
-for pet in pets:  # 리스트의 각 반려동물에 대해 루프 실행
-    print(pet)  # 각 반려동물 이름 출력
+for pet in pets:  # 리스트의 각 애완동물에 대해 반복
+    print(pet)  # 각 애완동물 이름 출력
 ```
 
 ```output
@@ -533,6 +575,20 @@ Bella
 Milo
 Loki
 ```
+
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+<code>for</code> 루프는 무엇을 반복합니까?
+</template>
+
+<base-quiz-option value="A">A. 숫자만</base-quiz-option>
+<base-quiz-option value="B">B. 문자열만</base-quiz-option>
+<base-quiz-option value="C" correct>C. 모든 이터러블 시퀀스 (리스트, 튜플, 딕셔너리, 세트 등)</base-quiz-option>
+<base-quiz-option value="D">D. 리스트만</base-quiz-option>
+<base-quiz-answer value="C"><code>for</code> 루프는 리스트, 튜플, 딕셔너리, 세트, 문자열 및 기타 이터러블 객체를 포함하여 모든 이터러블 시퀀스를 반복할 수 있습니다.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## range() 함수
 
@@ -551,10 +607,24 @@ Will stop at 5! or 4? (3)
 Will stop at 5! or 4? (4)
 ```
 
-`range()` 함수는 3 개의 기본 인수를 수정할 수도 있습니다. 처음 두 개는 `start` 및 `stop` 값이 되고 세 번째는 `step` 인수가 됩니다. 단계는 각 반복 후 변수가 증가하는 양입니다.
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+<code>range(5)</code>는 무엇을 생성합니까?
+</template>
+
+<base-quiz-option value="A">A. 1 부터 5 까지의 숫자</base-quiz-option>
+<base-quiz-option value="B" correct>B. 0 부터 4 까지의 숫자</base-quiz-option>
+<base-quiz-option value="C">C. 0 부터 5 까지의 숫자</base-quiz-option>
+<base-quiz-option value="D">D. 다섯 개의 무작위 숫자</base-quiz-option>
+<base-quiz-answer value="B"><code>range(5)</code> 함수는 0 부터 4 까지의 숫자를 생성합니다 (총 5 개). 중지 값은 배타적이므로 5 에 도달하기 전에 멈춥니다.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+`range()` 함수는 3 가지 기본 인수를 수정할 수도 있습니다. 처음 두 개는 `start` 및 `stop` 값이 되고 세 번째는 `step` 인수가 됩니다. step 은 각 반복 후 변수가 증가하는 양입니다.
 
 ```python
-# range(start, stop, step)
+# range(시작, 중지, 단계)
 for i in range(0, 10, 2):
    print(i)
 ```
@@ -567,7 +637,7 @@ for i in range(0, 10, 2):
 8
 ```
 
-심지어 단계 인수에 음수를 사용하여 for 루프가 위로 세는 대신 아래로 세도록 할 수도 있습니다.
+step 인수에 음수를 사용하여 for 루프가 위로가 아닌 아래로 카운트하도록 할 수도 있습니다.
 
 ```python
 for i in range(5, -1, -1):
@@ -585,7 +655,7 @@ for i in range(5, -1, -1):
 
 ## For else 문
 
-이는 루프 전체가 실행된 경우에 실행할 명령문을 지정할 수 있게 합니다. 루프 내에서 `break` 조건이 발생할 수 있는 경우에만 유용합니다:
+이는 루프 전체가 실행된 경우에 실행할 문을 지정할 수 있게 합니다. 루프 내에서 `break` 조건이 발생할 수 있는 경우에만 유용합니다:
 
 ```python
 for i in [1, 2, 3, 4, 5]:
@@ -618,10 +688,10 @@ You typed exit.
 
 ## 관련 링크
 
-- <router-link to="/cheatsheet/basics">기본</router-link>
+- <router-link to="/cheatsheet/basics">기초</router-link>
 - <router-link to="/cheatsheet/functions">함수</router-link>
 - <router-link to="/cheatsheet/exception-handling">예외 처리</router-link>
 - <router-link to="/cheatsheet/lists-and-tuples">리스트와 튜플</router-link>
-- <router-link to="/cheatsheet/sets">집합</router-link>
+- <router-link to="/cheatsheet/sets">세트</router-link>
 - <router-link to="/cheatsheet/dictionaries">딕셔너리</router-link>
 - <router-link to="/cheatsheet/comprehensions">컴프리헨션</router-link>

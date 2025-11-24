@@ -1,6 +1,6 @@
 ---
 title: 'Python コンテキストマネージャ - Python チートシート'
-description: 'Python のコンテキストマネージャは広く使われていますが、その使用目的を理解している人は少ないです。ファイル読み書きで一般的に使用されるこれらのステートメントは、特定のプロセスでのみリソースが使用されることを保証し、システムメモリの節約とリソース管理の改善に役立ちます。'
+description: 'Python のコンテキストマネージャは広く使われていますが、その使用目的を理解している人は少ないです。ファイル読み書きで一般的に使用されるこれらのステートメントは、特定のプロセスでのみリソースが使用されることを保証し、システムメモリの節約とリソース管理の改善を支援します。'
 labUrl: 'https://labex.io/ja/labs/python-python-context-manager-633650?course=python-cheatsheet'
 ---
 
@@ -27,7 +27,21 @@ with open(filename) as f:  # 'f' はファイルオブジェクト
 # エラーが発生した場合でも、ここでファイルは自動的に閉じられる
 ```
 
-ブロックの実行を終了させるものはすべて、コンテキストマネージャの終了メソッドを呼び出します。これには例外処理が含まれ、エラーによって開いているファイルや接続から予期せず終了する場合に役立ちます。ファイルを適切に閉じずにスクリプトを終了させるのは悪い習慣であり、データ損失やその他の問題を引き起こす可能性があります。コンテキストマネージャを使用することで、このようにして損害や損失を防ぐための予防措置が常に取られることを保証できます。
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+コンテキストマネージャ（<code>with</code>ステートメント）を使用する主な利点は何ですか？
+</template>
+
+<base-quiz-option value="A" correct>A. エラーが発生した場合でも、リソースのクリーンアップを自動的に処理する</base-quiz-option>
+<base-quiz-option value="B">B. コードの実行速度を向上させる</base-quiz-option>
+<base-quiz-option value="C">C. 複数のファイルを同時に開くことができる</base-quiz-option>
+<base-quiz-option value="D">D. すべてのエラーを防ぐ</base-quiz-option>
+<base-quiz-answer value="A">コンテキストマネージャは、例外が発生した場合でも、リソース（ファイルなど）がブロックを終了するときに適切にクリーンアップされることを保証します。これにより、リソースリークやデータ損失を防ぎます。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+ブロックの実行が終了するものは何でも、コンテキストマネージャの終了メソッドが呼び出されます。これには例外が含まれ、エラーによって開いているファイルや接続から予期せず終了する場合に役立ちます。ファイルを閉じたり接続を切断したりせずにスクリプトを終了するのは悪い考えであり、データ損失やその他の問題を引き起こす可能性があります。コンテキストマネージャを使用することで、このようにして損害や損失を防ぐための予防措置が常に取られることを保証できます。
 
 ## 独自のコンテキストマネージャの記述
 
@@ -38,9 +52,9 @@ with open(filename) as f:  # 'f' はファイルオブジェクト
 import contextlib
 @contextlib.contextmanager
 def context_manager(num):
-    print('Enter')  # yield より前のコードは__enter__で実行される
+    print('Enter')  # yield の前のコードは__enter__で実行される
     yield num + 1   # yield された値が'cm'変数になる
-    print('Exit')    # yield 以降のコードは__exit__で実行される
+    print('Exit')    # yield の後のコードは__exit__で実行される
 
 with context_manager(2) as cm:  # cm は yield された値 (3) を受け取る
     print('Right in the middle with cm = {}'.format(cm))
@@ -66,7 +80,7 @@ class ContextManager:
     def __exit__(self, *args):  # 'with'ブロックを抜けるときに呼び出される
         print("--exit--")
 
-with ContextManager():  # 完了すると__enter__が呼び出され、次に__exit__が呼び出される
+with ContextManager():  # 終了時に__enter__が呼び出され、次に__exit__が呼び出される
     print("test")
 ```
 
@@ -75,6 +89,20 @@ with ContextManager():  # 完了すると__enter__が呼び出され、次に__e
 test
 --exit--
 ```
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+クラスがコンテキストマネージャとして使用されるために実装しなければならないメソッドは何ですか？
+</template>
+
+<base-quiz-option value="A">A. <code>**init**</code> および <code>**del**</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>**enter**</code> および <code>**exit**</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>open</code> および <code>close</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>start</code> および <code>stop</code></base-quiz-option>
+<base-quiz-answer value="B">クラスベースのコンテキストマネージャは、<code>**enter**</code>（<code>with</code>ブロックに入るときに呼び出される）と<code>**exit**</code>（ブロックを抜けるときに呼び出される）を実装する必要があります。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## 関連リンク
 

@@ -10,14 +10,14 @@ Python 列表推导式
 
 <base-lab-url :url="frontmatter.labUrl" />
 
-列表推导式是一种特殊的语法，它允许我们从其他列表中创建新列表，在处理数字和包含一两个嵌套 for 循环时非常有用。
+列表推导式 (List Comprehensions) 是一种特殊的语法，它允许我们从其他列表中创建列表，在处理数字和包含一到两个嵌套 for 循环时非常有用。
 
 <base-disclaimer>
   <base-disclaimer-title>
-    来自 Python 3 <a target="_blank" href="https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions">教程</a>
+    摘自 Python 3 <a target="_blank" href="https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions">教程</a>
   </base-disclaimer-title>
   <base-disclaimer-content>
-    列表推导式提供了一种简洁的创建列表的方式。[...] 或者创建满足特定条件的那些元素的子序列。
+    列表推导式提供了一种简洁的方式来创建列表。 [...] 或者创建满足特定条件的数据子序列。
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -45,8 +45,8 @@ new_list
 这是我们使用列表推导式完成相同操作的方式：
 
 ```python
-# 列表推导式：创建新列表的简洁方法
-# 语法：[表达式 for 元素 in 可迭代对象]
+# 列表推导式：创建新列表的简洁方式
+# 语法：[expression for item in iterable]
 names = ['Charles', 'Susan', 'Patrick', 'George']
 
 new_list = [n for n in names]  # 创建包含所有名字的列表
@@ -57,7 +57,21 @@ new_list
 ['Charles', 'Susan', 'Patrick', 'George']
 ```
 
-我们也可以对数字做同样的事情：
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+列表推导式的基本语法是什么？
+</template>
+
+<base-quiz-option value="A" correct>A. <code>[expression for item in iterable]</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>(expression for item in iterable)</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>{expression for item in iterable}</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>expression for item in iterable</code></base-quiz-option>
+<base-quiz-answer value="A">列表推导式使用方括号 <code>[]</code> 和语法 <code>[expression for item in iterable]</code>。它通过对每个项目应用表达式来创建一个新列表。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+我们可以对数字做同样的事情：
 
 ```python
 # 嵌套列表推导式：从两个范围创建元组
@@ -72,10 +86,10 @@ n
 
 ## 添加条件判断
 
-如果我们希望 `new_list` 只包含以 C 开头的名字，使用 for 循环，我们会这样做：
+如果我们想让 `new_list` 只包含以 C 开头的名字，使用 for 循环，我们会这样做：
 
 ```python
-# 传统方法：使用 if 条件过滤
+# 传统方法：使用 if 条件进行过滤
 names = ['Charles', 'Susan', 'Patrick', 'George', 'Carol']
 
 new_list = []
@@ -90,11 +104,11 @@ print(new_list)
 ['Charles', 'Carol']
 ```
 
-在列表推导式中，我们将 `if` 语句添加到末尾：
+在列表推导式中，我们将 `if` 语句放在末尾：
 
 ```python
-# 带条件的列表推导式：过滤元素
-# 语法：[表达式 for 元素 in 可迭代对象 if 条件]
+# 带条件的列表推导式：过滤项目
+# 语法：[expression for item in iterable if condition]
 new_list = [n for n in names if n.startswith('C')]
 print(new_list)
 ```
@@ -103,11 +117,25 @@ print(new_list)
 ['Charles', 'Carol']
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+列表推导式中的 <code>if</code> 条件放在哪里？
+</template>
+
+<base-quiz-option value="A">A. 在 <code>for</code> 关键字之前</base-quiz-option>
+<base-quiz-option value="B" correct>B. 在 <code>for</code> 子句之后</base-quiz-option>
+<base-quiz-option value="C">C. 在表达式内部</base-quiz-option>
+<base-quiz-option value="D">D. 在方括号之前</base-quiz-option>
+<base-quiz-answer value="B">在列表推导式中，<code>if</code> 条件位于 <code>for</code> 子句之后：<code>[expression for item in iterable if condition]</code>。这会根据条件过滤项目。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 要在列表推导式中使用 `if-else` 语句：
 
 ```python
 # 带 if-else 的列表推导式：条件表达式
-# 语法：[如果为真时的表达式 if 条件 else 如果为假时的表达式 for 元素 in 可迭代对象]
+# 语法：[expression_if_true if condition else expression_if_false for item in iterable]
 nums = [1, 2, 3, 4, 5, 6]
 new_list = [num*2 if num % 2 == 0 else num for num in nums]  # 将偶数翻倍
 print(new_list)
@@ -122,7 +150,7 @@ print(new_list)
     集合和字典推导式
   </base-disclaimer-title>
   <base-disclaimer-content>
-    `列表` 推导式的基础知识也适用于 **集合** 和 **字典**。
+    `list` 推导式的基础知识也适用于 <b>集合</b> (sets) 和 <b>字典</b> (dictionaries)。
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -130,7 +158,7 @@ print(new_list)
 
 ```python
 # 集合推导式：使用推导式语法创建集合
-# 语法：{表达式 for 元素 in 可迭代对象}
+# 语法：{expression for item in iterable}
 b = {"abc", "def"}
 {s.upper() for s in b}  # 将所有字符串转换为大写
 ```
@@ -143,7 +171,7 @@ b = {"abc", "def"}
 
 ```python
 # 字典推导式：交换键和值
-# 语法：{键表达式：值表达式 for 元素 in 可迭代对象}
+# 语法：{key_expression: value_expression for item in iterable}
 c = {'name': 'Pooka', 'age': 5}
 {v: k for k, v in c.items()}  # 反转键值对
 ```
@@ -152,12 +180,26 @@ c = {'name': 'Pooka', 'age': 5}
 {'Pooka': 'name', 5: 'age'}
 ```
 
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+字典推导式使用什么语法？
+</template>
+
+<base-quiz-option value="A">A. <code>[key: value for item in iterable]</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>(key: value for item in iterable)</code></base-quiz-option>
+<base-quiz-option value="C" correct>C. <code>{key_expression: value_expression for item in iterable}</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>{key, value for item in iterable}</code></base-quiz-option>
+<base-quiz-answer value="C">字典推导式使用花括号 <code>{}</code> 和语法 <code>{key_expression: value_expression for item in iterable}</code>，类似于列表推导式，但包含键值对。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 列表推导式可以从字典生成：
 
 ```python
-# 从字典生成的列表推导式：创建格式化字符串
+# 从字典创建列表推导式：创建格式化的字符串
 c = {'name': 'Pooka', 'age': 5}
-["{}:{}".format(k.upper(), v) for k, v in c.items()]  # 格式化为 "键：值"
+["{}:{}".format(k.upper(), v) for k, v in c.items()]  # 格式化为 "KEY:value"
 ```
 
 ```output

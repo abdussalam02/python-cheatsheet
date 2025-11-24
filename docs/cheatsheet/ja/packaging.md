@@ -1,41 +1,41 @@
 ---
-title: 'Python Packaging - Python チートシート'
-description: 'setup.py と pyproject.toml を使用して Python プロジェクトをパッケージ化する方法を学びます。PEP-517、PEP-518、PEP-660 仕様を使用した Python パッケージングの現代的なアプローチを理解します。'
+title: 'Python パッケージング - Python チートシート'
+description: 'setup.py と pyproject.toml を使用した Python プロジェクトのパッケージング方法を学習します。PEP-517、PEP-518、PEP-660 仕様に基づく最新の Python パッケージングアプローチを理解します。'
 labUrl: 'https://labex.io/ja/labs/python-python-setup-py-633666?course=python-cheatsheet'
 ---
 
 <base-title :title="frontmatter.title" :description="frontmatter.description">
-Python Packaging
+Python パッケージング
 </base-title>
 
 <base-lab-url :url="frontmatter.labUrl" />
 
 <base-warning>
   <base-warning-title>
-    物議を醸す意見
+    「物議を醸す」意見
   </base-warning-title>
   <base-warning-content>
-    `setup.py` を使用して Python パッケージのビルドと配布を行うことは、時として非常に困難になることがあります。<a target="_blank" href="https://python-poetry.org/">Poetry</a> や <a target="_blank" href="https://docs.astral.sh/uv/">UV</a> のような最新のツールは、パッケージングを**ずっと簡単に**するだけでなく、依存関係を非常に便利に管理するのにも役立ちます。特に UV は、従来のツールよりも 10～100 倍高速である点で注目に値します。
+    Python パッケージをパッケージ化および配布するために<code>setup.py</code>を使用することは、時々非常に困難になることがあります。 <a target="_blank" href="https://python-poetry.org/">Poetry</a>や<a target="_blank" href="https://docs.astral.sh/uv/">UV</a>のような最新のツールは、パッケージングを<b>ずっと簡単に</b>するだけでなく、依存関係を非常に便利に管理するのにも役立ちます。特に UV は、従来のツールよりも 10〜100 倍高速である点で注目に値します。
   </base-warning-content>
 </base-warning>
 
-Poetry に関する詳細情報が必要な場合は、次の記事をお読みください。
+Poetry に関する詳細情報が必要な場合は、次の記事を読むことができます。
 
-- <router-link to="/blog/python-projects-with-poetry-and-vscode-part-1">Poetry と VSCode を使用した Python プロジェクト。パート 1</router-link>
-- <router-link to="/blog/python-projects-with-poetry-and-vscode-part-2">Poetry と VSCode を使用した Python プロジェクト。パート 2</router-link>
-- <router-link to="/blog/python-projects-with-poetry-and-vscode-part-3">Poetry と VSCode を使用した Python プロジェクト。パート 3</router-link>
+- <router-link to="/blog/python-projects-with-poetry-and-vscode-part-1">Poetry と VSCode を使った Python プロジェクト。パート 1</router-link>
+- <router-link to="/blog/python-projects-with-poetry-and-vscode-part-2">Poetry と VSCode を使った Python プロジェクト。パート 2</router-link>
+- <router-link to="/blog/python-projects-with-poetry-and-vscode-part-3">Poetry と VSCode を使った Python プロジェクト。パート 3</router-link>
 
-超高速 Python パッケージマネージャーである UV の包括的なガイドについては、<router-link to="/blog/python-uv-package-manager">UV: 超高速 Python パッケージマネージャー</router-link> をお読みください。
+超高速 Python パッケージマネージャーである UV の包括的なガイドについては、<router-link to="/blog/python-uv-package-manager">UV: 超高速 Python パッケージマネージャー</router-link>をお読みください。
 
-## 導入
+## はじめに
 
-Python パッケージングは、Python プロジェクトを配布およびインストール用に準備するプロセスです。主に 2 つのアプローチがあります：従来の `setup.py` メソッドと、現代的な `pyproject.toml` アプローチ（PEP-517、PEP-518、PEP-660 で定義）です。
+Python パッケージングとは、Python プロジェクトを配布およびインストールできるように準備するプロセスです。主なアプローチは 2 つあります。従来の<code>setup.py</code>メソッドと、PEP-517、PEP-518、および PEP-660 で定義されている最新の<code>pyproject.toml</code>アプローチです。
 
-プロジェクト構造の管理に不可欠な、ファイルおよびディレクトリパスの処理に関する包括的なガイドについては、<router-link to="/cheatsheet/file-directory-path">ファイルとディレクトリのパス</router-link> ページを参照してください。
+プロジェクト構造を管理するために不可欠なファイルおよびディレクトリパスの処理に関する包括的なガイドについては、<router-link to="/cheatsheet/file-directory-path">ファイルとディレクトリのパス</router-link>ページを参照してください。
 
-## 従来のアプローチ: setup.py
+## 従来の アプローチ：setup.py
 
-`setup.py` ファイルは従来の Python プロジェクトの核となります。これはプロジェクトに関するすべてのメタデータを記述します。プロジェクトにリッチなメタデータセットを与えるために追加できるフィールドはかなりありますが、必須のフィールドは name、version、packages の 3 つだけです。name フィールドは、パッケージを Python Package Index (PyPI) で公開したい場合、一意である必要があります。version フィールドは、プロジェクトの異なるリリースを追跡します。package のフィールドは、プロジェクト内のどこに Python ソースコードを配置したかを記述します。
+<code>setup.py</code>ファイルは、従来の Python プロジェクトの中心です。プロジェクトに関するすべてのメタデータを記述します。プロジェクトにリッチなメタデータセットを与えるために追加できるフィールドはかなりありますが、必須フィールドは名前、バージョン、パッケージの 3 つだけです。名前フィールドは、パッケージを Python Package Index (PyPI) で公開したい場合、一意である必要があります。バージョンフィールドは、プロジェクトの異なるリリースを追跡します。パッケージのフィールドは、プロジェクト内のどこに Python ソースコードを配置したかを記述します。
 
 これにより、Python パッケージを簡単にインストールできます。多くの場合、次のように記述するだけで十分です。
 
@@ -43,11 +43,11 @@ Python パッケージングは、Python プロジェクトを配布およびイ
 python setup.py install
 ```
 
-そしてモジュールは自己インストールされます。
+そしてモジュールが自己インストールされます。
 
-### 例: setup.py
+### 例：setup.py
 
-最初の setup.py は、ライセンスに関する情報も含め、`long_description` フィールドに README.txt ファイルを再利用します。これは次のようになります。
+最初の setup.py にはライセンスに関する情報も含まれ、<code>long_description</code>フィールドに README.txt ファイルを再利用します。これは次のように表示されます。
 
 ```python
 # setup.py: define package metadata for distribution
@@ -61,20 +61,34 @@ setup(
 )
 ```
 
-## 現代的なアプローチ: pyproject.toml
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+<code>setup.py</code>ファイルにおける 3 つの必須フィールドは何ですか？
+</template>
 
-`pyproject.toml` ファイルは、Python プロジェクト設定の現代的な標準（PEP-517、PEP-518、PEP-660）です。単一の宣言型ファイル形式で、ビルドシステム要件とプロジェクトメタデータを指定する統一された方法を提供します。
+<base-quiz-option value="A">A. name, author, license</base-quiz-option>
+<base-quiz-option value="B">B. name, description, packages</base-quiz-option>
+<base-quiz-option value="C" correct>C. name, version, packages</base-quiz-option>
+<base-quiz-option value="D">D. name, version, license</base-quiz-option>
+<base-quiz-answer value="C"><code>setup.py</code>の 3 つの必須フィールドは、<code>name</code>（パッケージ名、PyPI で一意である必要があります）、<code>version</code>（リリースを追跡）、および<code>packages</code>（Python ソースコードの場所を記述）です。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+## 最新の アプローチ：pyproject.toml
+
+<code>pyproject.toml</code>ファイルは、Python プロジェクト構成の最新の標準です（PEP-517、PEP-518、PEP-660）。ビルドシステムの要件とプロジェクトのメタデータを単一の宣言的なファイル形式で指定するための統一された方法を提供します。
 
 ### pyproject.toml の利点
 
-- **宣言型**: すべてのプロジェクトメタデータを 1 か所に配置
-- **ビルドシステムに依存しない**: setuptools、poetry、flit およびその他のビルドバックエンドで動作
+- **宣言的**: すべてのプロジェクトメタデータが一箇所に
+- **ビルドシステムに依存しない**: setuptools、poetry、flit、その他のビルドバックエンドと連携
 - **コード実行なし**: setup.py よりも安全で予測可能
-- **標準化**: PEP 標準に準拠し、より優れたツールサポートを提供
+- **標準化**: より良いツールサポートのために PEP 標準に従う
 
-### 例: pyproject.toml
+### 例：pyproject.toml
 
-setuptools を使用した基本的な `pyproject.toml` の例を次に示します：
+setuptools を使用した基本的な<code>pyproject.toml</code>の例を次に示します。
 
 ```toml
 [build-system]
@@ -84,12 +98,12 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "pythonCheatsheet"
 version = "0.1"
-description = "Python チートシートパッケージ"
+description = "A Python cheatsheet package"
 readme = "README.txt"
 requires-python = ">=3.8"
 license = {text = "MIT"}
 authors = [
-    {name = "あなたの名前", email = "your.email@example.com"}
+    {name = "Your Name", email = "your.email@example.com"}
 ]
 classifiers = [
     "Programming Language :: Python :: 3",
@@ -105,7 +119,7 @@ dev = [
 
 ### pyproject.toml からのインストール
 
-`pyproject.toml` を使用すると、pip を使用してパッケージをインストールできます：
+<code>pyproject.toml</code>を使用すると、pip を使用してパッケージをインストールできます。
 
 ```bash
 pip install .
@@ -117,10 +131,24 @@ pip install .
 pip install -e .
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+<code>pyproject.toml</code>が<code>setup.py</code>よりも優れている主な利点は何ですか？
+</template>
+
+<base-quiz-option value="A">A. 実行が速いこと</base-quiz-option>
+<base-quiz-option value="B" correct>B. 宣言的であり、安全（コード実行なし）、PEP 標準に従っていること</base-quiz-option>
+<base-quiz-option value="C">C. 設定が少なくて済むこと</base-quiz-option>
+<base-quiz-option value="D">D. Python 3.10+ でのみ動作すること</base-quiz-option>
+<base-quiz-answer value="B"><code>pyproject.toml</code>アプローチは宣言的（すべてのメタデータが一箇所）、<code>setup.py</code>のようにコードを実行しないため安全であり、より良いツールサポートのために PEP 標準（PEP-517、PEP-518、PEP-660）に従っています。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## 適切なアプローチの選択
 
-- **`setup.py` を使用**: レガシープロジェクトを扱っている場合、または細かい制御が必要な場合
-- **`pyproject.toml` を使用**: 新しいプロジェクト（推奨）の場合、現代的な標準であり、より優れたツールサポートを提供します
+- **<code>setup.py</code>を使用する**: レガシープロジェクトを扱っている場合、または細かい制御が必要な場合
+- **<code>pyproject.toml</code>を使用する**: 新しいプロジェクトの場合（推奨）、最新の標準であり、より良いツールサポートを提供するため
 
 詳細については、[公式ドキュメント](http://docs.python.org/3.11/install/index.html)をご覧ください。
 
@@ -129,8 +157,7 @@ pip install -e .
 - <router-link to="/cheatsheet/virtual-environments">仮想環境</router-link>
 - <router-link to="/cheatsheet/file-directory-path">ファイルとディレクトリのパス</router-link>
 - <router-link to="/blog/python-uv-package-manager">UV: 超高速 Python パッケージマネージャー</router-link>
-- <router-link to="/blog/python-projects-with-poetry-and-vscode-part-1">Poetry と VSCode を使用した Python プロジェクト。パート 1</router-link>
-- <router-link to="/blog/python-projects-with-poetry-and-vscode-part-2">Poetry と VSCode を使用した Python プロジェクト。パート 2</router-link>
-- <router-link to="/blog/python-projects-with-poetry-and-vscode-part-3">Poetry と VSCode を使用した Python プロジェクト。パート 3</router-link>
+- <router-link to="/blog/python-projects-with-poetry-and-vscode-part-1">Poetry と VSCode を使った Python プロジェクト。パート 1</router-link>
+- <router-link to="/blog/python-projects-with-poetry-and-vscode-part-2">Poetry と VSCode を使った Python プロジェクト。パート 2</router-link>
+- <router-link to="/blog/python-projects-with-poetry-and-vscode-part-3">Poetry と VSCode を使った Python プロジェクト。パート 3</router-link>
 - <router-link to="/builtin/import">import()</router-link>
-

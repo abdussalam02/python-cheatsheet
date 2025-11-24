@@ -12,7 +12,7 @@ JSON と YAML
 
 ## JSON
 
-JSON は JavaScript Object Notation の略で、データの保存と転送のための軽量なフォーマットです。JSON は、サーバーから Web ページにデータが送信される際によく使用されます。
+JSON は JavaScript Object Notation の略で、データを保存および転送するための軽量なフォーマットです。JSON は、サーバーから Web ページにデータが送信される際によく使用されます。
 
 ```python
 # JSON ファイルを読み込む：json.load() はファイルオブジェクトから JSON を解析する
@@ -32,6 +32,20 @@ with open("filename.json", "w") as f:  # ファイルを書き込みモードで
     json.dump(content, f, indent=2)  # 2 スペースのインデントで JSON を書き出す
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Python の辞書を JSON ファイルに書き込むために使用される関数はどれですか？
+</template>
+
+<base-quiz-option value="A">A. <code>json.write()</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>json.dump()</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>json.save()</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>json.export()</code></base-quiz-option>
+<base-quiz-answer value="B"><code>json.dump()</code>関数は、Python オブジェクト（辞書など）を JSON ファイルに書き込みます。<code>json.load()</code>は JSON ファイルを読み取るために使用されます。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## YAML
 
 JSON と比較して、YAML は人間による保守性がはるかに高く、コメントを追加する機能を提供します。人間が編集する必要がある設定ファイルにとって便利な選択肢です。
@@ -43,7 +57,7 @@ YAML ファイルにアクセスするための主要なライブラリは 2 つ
 
 これらを仮想環境で`pip install`を使用してインストールします。
 
-前者は使いやすいですが、後者の Ruamel は YAML 仕様をはるかに良く実装しており、例えばコメントを変更せずに YAML の内容を変更することができます。
+前者は使いやすいですが、後者の Ruamel は YAML 仕様をはるかにうまく実装しており、例えばコメントを変更せずに YAML の内容を変更することができます。
 
 次の方法で YAML ファイルを開きます：
 
@@ -56,9 +70,23 @@ with open("filename.yaml") as f:
     yaml.load(f)  # YAML を解析し、Python の dict/list を返す
 ```
 
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+JSON に対する YAML の利点は何ですか？
+</template>
+
+<base-quiz-option value="A">A. YAML ファイルはより小さい</base-quiz-option>
+<base-quiz-option value="B">B. YAML は解析が速い</base-quiz-option>
+<base-quiz-option value="C" correct>C. YAML はコメントを許可し、人間にとってより読みやすい</base-quiz-option>
+<base-quiz-option value="D">D. YAML は Python に組み込まれている</base-quiz-option>
+<base-quiz-answer value="C">YAML はコメントを許可し、JSON よりも人間にとって読みやすいため、人間が編集する必要のある設定ファイルにとって便利な選択肢となります。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Anyconfig
 
-[Anyconfig](https://pypi.python.org/pypi/anyconfig) は非常に便利なパッケージで、基盤となる設定ファイル形式を完全に抽象化できます。JSON、YAML、TOML などから Python 辞書をロードできます。
+[Anyconfig](https://pypi.python.org/pypi/anyconfig)は非常に便利なパッケージで、基盤となる設定ファイル形式を完全に抽象化できます。JSON、YAML、TOML などから Python 辞書をロードできます。
 
 次のようにインストールします：
 
@@ -69,10 +97,24 @@ pip install anyconfig
 使用法：
 
 ```python
-# anyconfig: 様々な形式（JSON、YAML、TOML など）の設定ファイルをロードする
+# anyconfig: 様々な形式（JSON, YAML, TOML など）の設定ファイルをロードする
 import anyconfig
 conf1 = anyconfig.load("/path/to/foo/conf.d/a.yml")  # 形式を自動検出
 ```
+
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+anyconfig ライブラリは何を可能にしますか？
+</template>
+
+<base-quiz-option value="A" correct>A. 形式を指定せずに様々な形式（JSON、YAML、TOML）の設定ファイルをロードすること</base-quiz-option>
+<base-quiz-option value="B">B. 異なる設定形式間で変換すること</base-quiz-option>
+<base-quiz-option value="C">C. 設定ファイルの構文を検証すること</base-quiz-option>
+<base-quiz-option value="D">D. 設定ファイルを暗号化すること</base-quiz-option>
+<base-quiz-answer value="A">anyconfig ライブラリは基盤となる設定ファイル形式を抽象化し、どの形式が使用されているかを知る必要なく、JSON、YAML、TOML などから Python 辞書をロードできるようにします。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## 関連リンク
 

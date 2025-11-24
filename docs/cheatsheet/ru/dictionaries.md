@@ -51,7 +51,7 @@ print(my_cat)
 
 ## Получение значения с помощью оператора подстроки `[]`
 
-Если ключ не найден в словаре, возникает <a target="_blank" href="https://docs.python.org/3/library/exceptions.html#KeyError">`KeyError`</a>.
+В случае, если ключ не присутствует в словаре, вызывается исключение <a target="_blank" href="https://docs.python.org/3/library/exceptions.html#KeyError">`KeyError`</a>.
 
 ```python
 my_cat = {
@@ -137,7 +137,7 @@ for item in pet.items():
 ('age', 42)
 ```
 
-Используя методы `keys()`, `values()` и `items()`, цикл `for` может перебирать ключи, значения или пары ключ-значение в словаре соответственно.
+Используя методы `keys()`, `values()` и `items()`, цикл for может перебирать ключи, значения или пары ключ-значение в словаре соответственно.
 
 ```python
 # Iterate over key-value pairs using .items() method
@@ -182,7 +182,7 @@ f'She is deeply in love with {wife.get("husband")}'
 'She is deeply in love with None'
 ```
 
-Вы также можете изменить значение по умолчанию `None` на то, которое вы выберете:
+Вы также можете изменить значение по умолчанию `None` на то, которое выберете:
 
 ```python
 wife = {'name': 'Rose', 'age': 33}
@@ -238,6 +238,20 @@ wife
 ```output
 {'name': 'Rose', 'hair': 'brown'}
 ```
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Что делает <code>pop()</code> при вызове на словаре?
+</template>
+
+<base-quiz-option value="A">A. Только удаляет пару ключ-значение</base-quiz-option>
+<base-quiz-option value="B" correct>B. Удаляет и возвращает значение для указанного ключа</base-quiz-option>
+<base-quiz-option value="C">C. Только возвращает значение, не удаляя его</base-quiz-option>
+<base-quiz-option value="D">D. Удаляет все элементы из словаря</base-quiz-option>
+<base-quiz-answer value="B">Метод <code>pop()</code> удаляет пару ключ-значение для указанного ключа и возвращает значение. Если ключ не существует, он вызывает <code>KeyError</code> (если не предоставлено значение по умолчанию).</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ### popitem()
 
@@ -361,7 +375,7 @@ pprint.pprint(wife)
 ```python
 dict_a = {'a': 1, 'b': 2}
 dict_b = {'b': 3, 'c': 4}
-dict_c = {**dict_a, **dict_b}
+dict_c = {**dict_b, **dict_a}
 dict_c
 ```
 
@@ -369,10 +383,24 @@ dict_c
 {'a': 1, 'b': 3, 'c': 4}
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+При объединении двух словарей с помощью <code>{**dict_b, **dict_a}</code>, что произойдет, если у обоих словарей есть один и тот же ключ?
+</template>
+
+<base-quiz-option value="A">A. Значение из <code>dict_b</code> перезаписывает значение из <code>dict_a</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. Значение из <code>dict_a</code> перезаписывает значение из <code>dict_b</code></base-quiz-option>
+<base-quiz-option value="C">C. Оба значения сохраняются в списке</base-quiz-option>
+<base-quiz-option value="D">D. Вызывается ошибка</base-quiz-option>
+<base-quiz-answer value="B">При объединении словарей с помощью оператора распаковки <code>\*\*</code>, если у обоих словарей есть один и тот же ключ, значение из словаря, который идет позже (в данном случае <code>dict_a</code>), перезаписывает значение из предыдущего словаря.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Связанные ссылки
 
 - <router-link to="/blog/python-data-types">Блог-пост о типах данных Python</router-link>
-- <router-link to="/blog/python-easy-args-kwargs">Python \*args и \*\*kwargs Просто</router-link>
+- <router-link to="/blog/python-easy-args-kwargs">Python \*args и \*\*kwargs: Простое объяснение</router-link>
 - <router-link to="/cheatsheet/comprehensions">Генераторы (Comprehensions)</router-link>
 - <router-link to="/cheatsheet/args-and-kwargs">Args и Kwargs</router-link>
 - <router-link to="/blog/python-comprehensions-step-by-step">Генераторы Python по шагам</router-link>

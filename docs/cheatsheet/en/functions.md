@@ -80,6 +80,20 @@ say_hi(name='Anna', greeting='Hi')
 Hi Anna
 ```
 
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+What is the main advantage of using keyword arguments in Python functions?
+</template>
+
+<base-quiz-option value="A">A. They execute faster</base-quiz-option>
+<base-quiz-option value="B">B. They use less memory</base-quiz-option>
+<base-quiz-option value="C" correct>C. They improve code readability and order doesn't matter</base-quiz-option>
+<base-quiz-option value="D">D. They prevent errors</base-quiz-option>
+<base-quiz-answer value="C">Keyword arguments improve code readability by making it clear what each argument represents, and they allow you to pass arguments in any order.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Return Values
 
 When creating a function using the `def` statement, you can specify what the return value should be with a `return` statement. A return statement consists of the following:
@@ -101,6 +115,20 @@ print(result)
 ```output
 15
 ```
+
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+What keyword is used to return a value from a function in Python?
+</template>
+
+<base-quiz-option value="A" correct>A. <code>return</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>output</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>yield</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>exit</code></base-quiz-option>
+<base-quiz-answer value="A">The <code>return</code> keyword is used to return a value from a function. If no return statement is used, the function returns <code>None</code>.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Local and Global Scope
 
@@ -150,6 +178,20 @@ print(eggs)  # Prints 'spam', not 'global'
 ```output
 spam
 ```
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+What keyword must you use inside a function to modify a global variable?
+</template>
+
+<base-quiz-option value="A">A. <code>nonlocal</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>global</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>extern</code></base-quiz-option>
+<base-quiz-option value="D">D. No keyword needed</base-quiz-option>
+<base-quiz-answer value="B">The <code>global</code> keyword must be used inside a function to modify a global variable. Without it, Python will create a local variable instead.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 There are four rules to tell whether a variable is in a local scope or global scope:
 
@@ -210,6 +252,20 @@ add(5, 3)
 8
 ```
 
+<base-quiz>
+<base-quiz-question correct="D">
+<template #question>
+What is a lambda function in Python?
+</template>
+
+<base-quiz-option value="A">A. A function that can only be called once</base-quiz-option>
+<base-quiz-option value="B">B. A function that takes no arguments</base-quiz-option>
+<base-quiz-option value="C">C. A function that returns multiple values</base-quiz-option>
+<base-quiz-option value="D" correct>D. A single-line anonymous function that can have any number of arguments but only one expression</base-quiz-option>
+<base-quiz-answer value="D">A lambda function is an anonymous, single-line function defined using the <code>lambda</code> keyword. It can take any number of arguments but can only contain a single expression.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 Like regular nested functions, lambdas also work as lexical closures:
 
 ```python
@@ -235,6 +291,20 @@ plus_5(4)
 ```output
 9
 ```
+
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+What does a lambda closure allow you to do?
+</template>
+
+<base-quiz-option value="A" correct>A. Capture variables from the outer scope</base-quiz-option>
+<base-quiz-option value="B">B. Modify global variables without the global keyword</base-quiz-option>
+<base-quiz-option value="C">C. Return multiple values</base-quiz-option>
+<base-quiz-option value="D">D. Execute code asynchronously</base-quiz-option>
+<base-quiz-answer value="A">Lambda closures allow lambda functions to capture and use variables from their enclosing scope, similar to regular nested functions.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Relevant links
 

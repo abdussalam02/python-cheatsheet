@@ -1,6 +1,6 @@
 ---
 title: 'Python Args 및 Kwargs - Python 치트 시트'
-description: 'args 와 kwargs 는 어려워 보일 수 있지만, 사실 이해하기 어렵지 않으며 함수에 유연성과 가독성을 부여하는 강력한 기능입니다.'
+description: 'args 와 kwargs 는 어려워 보일 수 있지만, 사실 이해하기 어렵지 않으며 함수에 유연성과 가독성을 부여하는 강력한 기능을 제공합니다.'
 labUrl: 'https://labex.io/ko/labs/python-python-args-and-kwargs-633646?course=python-cheatsheet'
 ---
 
@@ -15,7 +15,7 @@ Python Args 및 Kwargs
     <a href="https://docs.python.org/3/tutorial/index.html">Python args and kwargs Made Easy</a>
   </base-disclaimer-title>
   <base-disclaimer-content>
-    <code>*args</code>와 <code>**kwargs</code>는 무섭게 보일 수 있지만, 사실 이해하기 어렵지 않으며 함수에 많은 유연성을 부여할 수 있는 힘을 가지고 있습니다.
+    <code>*args</code> 및 <code>**kwargs</code>는 무서울 수 있지만, 사실 이해하기 어렵지 않으며 함수에 많은 유연성을 부여할 수 있는 힘을 가지고 있습니다.
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -23,7 +23,7 @@ Python Args 및 Kwargs
 
 ## Args 및 Kwargs
 
-`*args`와 `**kwargs`를 사용하면 함수를 호출할 때 정의되지 않은 수의 인자 (arguments) 와 키워드 인자 (keywords) 를 전달할 수 있습니다.
+`*args`와 `**kwargs`를 사용하면 함수를 호출할 때 정의되지 않은 수의 인자 및 키워드를 전달할 수 있습니다.
 
 ```python
 # 임의의 수의 위치 인수 및 키워드 인수를 허용하는 함수 정의
@@ -48,13 +48,13 @@ some_function()
     Python 관례
   </base-warning-title>
   <base-warning-content>
-    <code>*args</code>와 <code>**kwargs</code>라는 단어는 관례입니다. 인터프리터에 의해 강제되는 것은 아니지만, Python 커뮤니티에서는 좋은 습관으로 간주됩니다.
+    <code>*args</code>와 <code>**kwargs</code>라는 단어는 관례입니다. 인터프리터에 의해 강제되는 것은 아니지만 Python 커뮤니티에서는 좋은 습관으로 간주됩니다.
   </base-warning-content>
 </base-warning>
 
 ## args
 
-`args` 변수를 통해 *인수 (arguments)*에 접근할 수 있습니다.
+`args` 변수를 통해 *인수*에 접근할 수 있습니다.
 
 ```python
 # *args 는 위치 인수를 튜플로 수집합니다
@@ -69,9 +69,23 @@ some_function('arg1', 'arg2', 'arg3')
 Arguments passed: ('arg1', 'arg2', 'arg3') as <class 'tuple'>
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+<code>*args</code>는 인수를 어떤 데이터 타입으로 수집합니까?
+</template>
+
+<base-quiz-option value="A">A. 리스트</base-quiz-option>
+<base-quiz-option value="B" correct>B. 튜플</base-quiz-option>
+<base-quiz-option value="C">C. 딕셔너리</base-quiz-option>
+<base-quiz-option value="D">D. 집합</base-quiz-option>
+<base-quiz-answer value="B"><code>\*args</code> 매개변수는 위치 인수를 튜플로 수집합니다. 이를 통해 함수는 임의의 수의 위치 인수를 허용할 수 있습니다.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## kwargs
 
-키워드는 `kwargs` 변수를 통해 접근할 수 있습니다.
+`kwargs` 변수를 통해 키워드에 접근할 수 있습니다.
 
 ```python
 # **kwargs 는 키워드 인수를 딕셔너리로 수집합니다
@@ -86,11 +100,25 @@ some_function(key1='arg1', key2='arg2')
 keywords: {'key1': 'arg1', 'key2': 'arg2'} as <class 'dict'>
 ```
 
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+<code>**kwargs</code>는 인수를 어떤 데이터 타입으로 수집합니까?
+</template>
+
+<base-quiz-option value="A">A. 리스트</base-quiz-option>
+<base-quiz-option value="B">B. 튜플</base-quiz-option>
+<base-quiz-option value="C" correct>C. 딕셔너리</base-quiz-option>
+<base-quiz-option value="D">D. 집합</base-quiz-option>
+<base-quiz-answer value="C"><code>\*\*kwargs</code> 매개변수는 키워드 인수를 딕셔너리로 수집합니다. 이를 통해 함수는 임의의 수의 키워드 인수를 허용할 수 있습니다.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## 관련 링크
 
-- <router-link to="/cheatsheet/functions">함수 (Functions)</router-link>
-- <router-link to="/cheatsheet/lists-and-tuples">리스트와 튜플 (Lists and Tuples)</router-link>
-- <router-link to="/cheatsheet/dictionaries">Python 딕셔너리 (Python Dictionaries)</router-link>
+- <router-link to="/cheatsheet/functions">함수</router-link>
+- <router-link to="/cheatsheet/lists-and-tuples">리스트 및 튜플</router-link>
+- <router-link to="/cheatsheet/dictionaries">Python 딕셔너리</router-link>
 - <router-link to="/blog/python-easy-args-kwargs">Python \*args 및 \*\*kwargs 쉽게 사용하기</router-link>
 - <router-link to="/builtin/tuple">tuple()</router-link>
 - <router-link to="/builtin/dict">dict()</router-link>

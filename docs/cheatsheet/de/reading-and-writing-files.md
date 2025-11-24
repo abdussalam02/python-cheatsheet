@@ -1,6 +1,6 @@
 ---
 title: 'Dateien lesen und schreiben - Python Spickzettel'
-description: "Zum Lesen/Schreiben in eine Datei in Python verwenden Sie die 'with'-Anweisung, die die Datei nach Gebrauch automatisch schließt und die Ressourcenverwaltung übernimmt."
+description: 'Zum Lesen/Schreiben in eine Datei in Python verwenden Sie die with-Anweisung, die die Datei nach Gebrauch automatisch schließt und die Ressourcen verwaltet.'
 labUrl: 'https://labex.io/de/labs/python-python-reading-and-writing-files-633663?course=python-cheatsheet'
 ---
 
@@ -32,10 +32,24 @@ hello_content
 'Hello World!'
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+Was ist der Hauptvorteil der Verwendung der <code>with</code>-Anweisung beim Öffnen von Dateien?
+</template>
+
+<base-quiz-option value="A" correct>A. Die Datei wird automatisch geschlossen, wenn sie fertig ist, auch wenn ein Fehler auftritt</base-quiz-option>
+<base-quiz-option value="B">B. Dateien öffnen schneller</base-quiz-option>
+<base-quiz-option value="C">C. Dateien können gleichzeitig im Lese- und Schreibmodus geöffnet werden</base-quiz-option>
+<base-quiz-option value="D">D. Dateien werden automatisch komprimiert</base-quiz-option>
+<base-quiz-answer value="A">Die <code>with</code>-Anweisung stellt sicher, dass die Datei automatisch geschlossen wird, wenn der Block verlassen wird, auch wenn eine Ausnahme auftritt. Dies hilft bei der ordnungsgemäßen Verwaltung der Ressourcen.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 Alternativ können Sie die Methode _readlines()_ verwenden, um eine Liste von String-Werten aus der Datei zu erhalten, einen String für jede Textzeile:
 
 ```python
-# readlines()-Methode: gibt Liste von Strings zurück, einen pro Zeile
+# readlines()-Methode: gibt eine Liste von Strings zurück, einen pro Zeile
 with open('sonnet29.txt') as sonnet_file:
     sonnet_file.readlines()  # Gibt Liste mit jeder Zeile als String zurück
 ```
@@ -66,7 +80,7 @@ And look upon myself and curse my fate,
 ## In Dateien schreiben
 
 ```python
-# In Datei schreiben: 'w'-Modus überschreibt vorhandene Datei
+# In Datei schreiben: 'w'-Modus überschreibt die vorhandene Datei
 with open('bacon.txt', 'w') as bacon_file:  # 'w' = Schreibmodus
     bacon_file.write('Hello world!\n')  # Gibt die Anzahl der geschriebenen Zeichen zurück
 ```
@@ -76,7 +90,7 @@ with open('bacon.txt', 'w') as bacon_file:  # 'w' = Schreibmodus
 ```
 
 ```python
-# An Datei anhängen: 'a'-Modus hängt an vorhandene Datei an
+# An Datei anhängen: 'a'-Modus hängt an die vorhandene Datei an
 with open('bacon.txt', 'a') as bacon_file:  # 'a' = Anhängemodus
     bacon_file.write('Bacon is not a vegetable.')
 ```
@@ -96,6 +110,20 @@ print(content)
 Hello world!
 Bacon is not a vegetable.
 ```
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Was ist der Unterschied zwischen dem Öffnen einer Datei mit dem Modus <code>'w'</code> und dem Modus <code>'a'</code>?
+</template>
+
+<base-quiz-option value="A">A. <code>'w'</code> ist zum Lesen, <code>'a'</code> ist zum Schreiben</base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>'w'</code> überschreibt die Datei, <code>'a'</code> hängt an die Datei an</base-quiz-option>
+<base-quiz-option value="C">C. <code>'w'</code> ist für Windows, <code>'a'</code> ist für Apple</base-quiz-option>
+<base-quiz-option value="D">D. Es gibt keinen Unterschied</base-quiz-option>
+<base-quiz-answer value="B">Modus <code>'w'</code> öffnet die Datei zum Schreiben und überschreibt vorhandene Inhalte. Modus <code>'a'</code> öffnet die Datei zum Anhängen und fügt neue Inhalte am Ende der Datei hinzu.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Relevante Links
 

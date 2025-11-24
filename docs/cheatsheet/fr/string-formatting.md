@@ -1,5 +1,5 @@
 ---
-title: 'Formatage de Chaînes Python - Aide-mémoire Python'
+title: 'Formatage de Chaînes Python - Fiche de Référence Python'
 description: 'Si vous utilisez Python 3.6+, les f-strings sont la méthode recommandée pour formater des chaînes.'
 labUrl: 'https://labex.io/fr/labs/python-python-string-formatting-633667?course=python-cheatsheet'
 ---
@@ -15,7 +15,7 @@ Formatage de Chaînes Python
     Extrait de la <a href="https://docs.python.org/3/library/stdtypes.html?highlight=sprintf#printf-style-string-formatting">documentation Python 3</a>
   </base-disclaimer-title>
   <base-disclaimer-content>
-    Les opérations de formatage décrites ici (<b>opérateur %</b>) présentent diverses particularités qui entraînent un certain nombre d'erreurs courantes [...]. L'utilisation des <a href="#formatted-string-literals-or-f-strings">littéraux de chaîne formatés</a> plus récents [...] aide à éviter ces erreurs. Ces alternatives offrent également des approches plus puissantes, flexibles et extensibles pour formater du texte.
+    Les opérations de formatage décrites ici (<b>opérateur %</b>) présentent diverses particularités qui entraînent un certain nombre d'erreurs courantes [...]. L'utilisation des littéraux de chaîne formatés <a href="#formatted-string-literals-or-f-strings">plus récents</a> [...] aide à éviter ces erreurs. Ces alternatives offrent également des approches plus puissantes, flexibles et extensibles pour le formatage de texte.
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -31,9 +31,9 @@ Formatage de Chaînes Python
 </base-warning>
 
 ```python
-# opérateur % : formatage de chaîne à l'ancienne (non recommandé pour le nouveau code)
+# opérateur % : formatage de chaîne de style ancien (non recommandé pour le nouveau code)
 name = 'Pete'
-'Hello %s' % name  # %s = espace réservé pour chaîne
+'Hello %s' % name  # %s = placeholder de chaîne
 ```
 
 ```output
@@ -60,7 +60,7 @@ Python 3 a introduit une nouvelle façon de formater les chaînes, qui a ensuite
 name = 'John'
 age = 20
 
-"Hello I'm {}, my age is {}".format(name, age)  # {} = espace réservé
+"Hello I'm {}, my age is {}".format(name, age)  # {} = placeholder
 ```
 
 ```output
@@ -75,16 +75,16 @@ age = 20
 "Hello I'm John, my age is 20"
 ```
 
-## Littéraux de chaîne formatés ou f-Strings
+## Littéraux de Chaîne Formatés ou f-Strings
 
-Si vous utilisez Python 3.6+, les `f-Strings` sont la méthode recommandée pour formater les chaînes.
+Si vous utilisez Python 3.6+, les `f-Strings` de chaîne sont la méthode recommandée pour formater les chaînes.
 
 <base-disclaimer>
   <base-disclaimer-title>
     Extrait de la <a href="https://docs.python.org/3/reference/lexical_analysis.html#f-strings">documentation Python 3</a>
   </base-disclaimer-title>
   <base-disclaimer-content>
-    Un littéral de chaîne formaté ou f-string est un littéral de chaîne préfixé par `f` ou `F`. Ces chaînes peuvent contenir des champs de remplacement, qui sont des expressions délimitées par des accolades {}. Alors que les autres littéraux de chaîne ont toujours une valeur constante, les chaînes formatées sont de véritables expressions évaluées à l'exécution.
+    Un littéral de chaîne formaté ou f-string est un littéral de chaîne préfixé par <code>f</code> ou <code>F</code>. Ces chaînes peuvent contenir des champs de remplacement, qui sont des expressions délimitées par des accolades {}. Alors que les autres littéraux de chaîne ont toujours une valeur constante, les chaînes formatées sont de véritables expressions évaluées à l'exécution.
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -98,10 +98,24 @@ f'Hello {name}!'  # Le préfixe f permet les expressions dans {}
 'Hello Elizabeth!'
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Quel préfixe est utilisé pour les f-strings en Python ?
+</template>
+
+<base-quiz-option value="A">A. <code>fmt</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>f</code> ou <code>F</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>format</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>str</code></base-quiz-option>
+<base-quiz-answer value="B">Les f-strings sont préfixées par <code>f</code> ou <code>F</code> avant la guillemet d'ouverture. Elles vous permettent d'intégrer des expressions entre accolades <code>{}</code>.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 Il est même possible d'effectuer des calculs en ligne avec :
 
 ```python
-# Les f-strings prennent en charge les expressions : peuvent inclure des calculs à l'intérieur de {}
+# Les f-strings supportent les expressions : peuvent inclure des calculs à l'intérieur de {}
 a = 5
 b = 10
 f'Five plus ten is {a + b} and not {2 * (a + b)}.'  # Évalue les expressions
@@ -111,7 +125,7 @@ f'Five plus ten is {a + b} and not {2 * (a + b)}.'  # Évalue les expressions
 'Five plus ten is 15 and not 30.'
 ```
 
-### f-Strings multilignes
+### f-Strings sur Plusieurs Lignes
 
 ```python
 name = 'Robert'
@@ -168,7 +182,7 @@ f"{name.upper() = :20}"
 'name.upper() = ROBERT              '
 ```
 
-## Formatage des chiffres
+## Formatage des Chiffres
 
 Ajout du séparateur de milliers
 
@@ -192,7 +206,21 @@ f"{a:.2f}"
 '3.14'
 ```
 
-Affichage en pourcentage
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+Que fait <code>f"{a:.2f}"</code> ?
+</template>
+
+<base-quiz-option value="A">A. Arrondit le nombre à l'entier le plus proche</base-quiz-option>
+<base-quiz-option value="B">B. Formate en pourcentage</base-quiz-option>
+<base-quiz-option value="C" correct>C. Formate le nombre en flottant avec 2 décimales</base-quiz-option>
+<base-quiz-option value="D">D. Convertit en notation scientifique</base-quiz-option>
+<base-quiz-answer value="C">Le spécificateur de format <code>:.2f</code> formate un nombre en flottant avec exactement 2 décimales. Le <code>.2</code> spécifie la précision, et <code>f</code> signifie format flottant.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+Affichage en Pourcentage
 
 ```python
 a = 0.816562
@@ -221,9 +249,9 @@ f"{a:.2%}"
 | 11         | {:<11d} | 11        | Alignement à gauche (largeur 10)                                 |
 | 11         | {:^11d} | 11        | Alignement centré (largeur 10)                                   |
 
-## Template Strings
+## Chaînes de Modèles (Template Strings)
 
-Un mécanisme plus simple et moins puissant, mais il est recommandé lors du traitement de chaînes générées par l'utilisateur. En raison de leur complexité réduite, les chaînes de modèle sont un choix plus sûr.
+Un mécanisme plus simple et moins puissant, mais il est recommandé lors du traitement de chaînes générées par l'utilisateur. En raison de leur complexité réduite, les chaînes de modèles sont un choix plus sûr.
 
 ```python
 from string import Template

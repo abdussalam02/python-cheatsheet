@@ -10,8 +10,7 @@ Python 装饰器
 
 <base-lab-url :url="frontmatter.labUrl" />
 
-Python 装饰器提供了一种简洁且可重用的方式来扩展
-函数或类。阅读配套文章 <router-link to="/blog/python-decorators-for-beginners">Python 装饰器：提升代码水平的简单模式</router-link> 以获取实用的示例和模式。
+Python 装饰器提供了一种简洁且可重用的方式来扩展函数或类。阅读配套文章 <router-link to="/blog/python-decorators-for-beginners">Python 装饰器：提升代码水平的简单模式</router-link> 以获取实用的示例和模式。
 
 ## 基础装饰器
 
@@ -28,12 +27,12 @@ def your_decorator(func):
     print("After func!")
   return wrapper  # 返回包装器函数
 
-# @your_decorator 是 @foo = your_decorator(foo) 的语法糖
+# @your_decorator 是以下语法的简写：foo = your_decorator(foo)
 @your_decorator
 def foo():
   print("Hello World!")
 
-foo()  # 调用 wrapper，它会调用带有额外行为的 foo
+foo()  # 调用 wrapper，它会调用 foo 并添加额外行为
 ```
 
 ```output
@@ -42,7 +41,21 @@ Hello World!
 After func!
 ```
 
-## 带有参数的函数的装饰器
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+Python 中的装饰器是什么？
+</template>
+
+<base-quiz-option value="A" correct>A. 一个接受另一个函数并返回一个包装器函数的函数</base-quiz-option>
+<base-quiz-option value="B">B. 一种特殊的类</base-quiz-option>
+<base-quiz-option value="C">C. 一个内置的 Python 关键字</base-quiz-option>
+<base-quiz-option value="D">D. 一种删除函数的方法</base-quiz-option>
+<base-quiz-answer value="A">装饰器是一个接受另一个函数作为参数并返回一个包装器函数的函数。<code>@</code> 语法是应用于函数的装饰器的简写。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+## 带有参数的函数装饰器
 
 ```python
 # 适用于带有参数的函数的装饰器
@@ -86,6 +99,20 @@ def your_decorator(func):
   return wrapper
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+<code>@functools.wraps(func)</code> 在装饰器中做什么？
+</template>
+
+<base-quiz-option value="A">A. 使装饰器执行得更快</base-quiz-option>
+<base-quiz-option value="B" correct>B. 保留原始函数的元数据（名称、文档字符串等）</base-quiz-option>
+<base-quiz-option value="C">C. 阻止函数被调用</base-quiz-option>
+<base-quiz-option value="D">D. 将函数转换为类</base-quiz-option>
+<base-quiz-answer value="B"><code>@functools.wraps(func)</code> 装饰器将原始函数的元数据（如其名称和文档字符串）保留在包装器函数中。在编写装饰器时，这被认为是一种最佳实践。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## 带参数的装饰器
 
 您也可以为装饰器定义参数。
@@ -106,7 +133,7 @@ def your_decorator(arg):
   return decorator  # 返回实际的装饰器函数
 ```
 
-使用此装饰器的方法如下：
+要使用此装饰器：
 
 ```python
 # 使用带参数的装饰器：@your_decorator(arg='x') 调用 your_decorator('x')
@@ -118,7 +145,7 @@ def foo(bar):
 
 ## 基于类的装饰器
 
-要装饰类方法，必须在类内部定义装饰器。当只向方法传递隐式参数 `self` 而没有其他显式参数时，您必须为那些没有其他附加参数的方法单独定义一个装饰器。如下例所示，当您想以某种特定方式捕获和打印异常时，就会出现这种情况。
+要装饰类方法，必须在类内部定义装饰器。当只将隐式参数 `self` 传递给方法，而没有其他显式参数时，必须为仅具有这些参数的方法创建单独的装饰器。下面的示例展示了这种情况，例如当您想以某种方式捕获和打印异常时。
 
 ```python
 # 类方法装饰器：在类内部定义
@@ -126,7 +153,7 @@ class DecorateMyMethod:
 
   # 仅包含 'self' 参数的类方法的静态方法装饰器
   def decorator_for_class_method_with_no_args(method):
-    def wrapper_for_class_method(self):  # 只接受 self
+    def wrapper_for_class_method(self):  # 只接收 self
       try:
         return method(self)  # 调用原始方法
       except Exception as e:

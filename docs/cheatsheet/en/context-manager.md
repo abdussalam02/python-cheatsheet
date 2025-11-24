@@ -27,6 +27,20 @@ with open(filename) as f:  # 'f' is the file object
 # File is automatically closed here, even if an error occurred
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+What is the main benefit of using a context manager (the <code>with</code> statement)?
+</template>
+
+<base-quiz-option value="A" correct>A. Automatically handles resource cleanup, even if an error occurs</base-quiz-option>
+<base-quiz-option value="B">B. Makes code execute faster</base-quiz-option>
+<base-quiz-option value="C">C. Allows multiple files to be opened simultaneously</base-quiz-option>
+<base-quiz-option value="D">D. Prevents all errors</base-quiz-option>
+<base-quiz-answer value="A">Context managers ensure that resources (like files) are properly cleaned up when exiting the block, even if an exception occurs. This prevents resource leaks and data loss.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 Anything that ends execution of the block causes the context manager's exit method to be called. This includes exceptions, and can be useful when an error causes you to prematurely exit an open file or connection. Exiting a script without properly closing files/connections is a bad idea, that may cause data loss or other problems. By using a context manager, you can ensure that precautions are always taken to prevent damage or loss in this way.
 
 ## Writing your own context manager
@@ -75,6 +89,20 @@ with ContextManager():  # Calls __enter__, then __exit__ when done
 test
 --exit--
 ```
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+What methods must a class implement to be used as a context manager?
+</template>
+
+<base-quiz-option value="A">A. <code>**init**</code> and <code>**del**</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>**enter**</code> and <code>**exit**</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>open</code> and <code>close</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>start</code> and <code>stop</code></base-quiz-option>
+<base-quiz-answer value="B">A class-based context manager must implement <code>**enter**</code> (called when entering the <code>with</code> block) and <code>**exit**</code> (called when exiting the block).</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Relevant links
 

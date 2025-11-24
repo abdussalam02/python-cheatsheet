@@ -1,29 +1,29 @@
 ---
-title: '操作字符串 - Python 速查表'
-description: "转义字符是通过输入反斜杠 \ 后面跟着你想要插入的字符来创建的。"
+title: 'Python 字符串操作速查表'
+description: "转义字符通过输入反斜杠 \ 后跟要插入的字符来创建。"
 labUrl: 'https://labex.io/zh/labs/python-python-string-manipulation-633668?course=python-cheatsheet'
 ---
 
 <base-title :title="frontmatter.title" :description="frontmatter.description">
-字符串操作
+操作字符串
 </base-title>
 
 <base-lab-url :url="frontmatter.labUrl" />
 
 ## 转义字符
 
-通过键入反斜杠 `\`，后跟要插入的字符来创建转义字符。
+转义字符是通过键入反斜杠 `\` 后跟要插入的字符来创建的。
 
-| 转义字符 | 打印为   |
-| :------- | :------- |
-| `\'`     | 单引号   |
-| `\"`     | 双引号   |
-| `\t`     | 制表符   |
-| `\n`     | 换行符   |
-| `\\`     | 反斜杠   |
-| `\b`     | 退格     |
-| `\ooo`   | 八进制值 |
-| `\r`     | 回车     |
+| 转义字符 | 打印为         |
+| :------- | :------------- |
+| `\'`     | 单引号         |
+| `\"`     | 双引号         |
+| `\t`     | 制表符         |
+| `\n`     | 换行符（换行） |
+| `\\`     | 反斜杠         |
+| `\b`     | 退格键         |
+| `\ooo`   | 八进制值       |
+| `\r`     | 回车           |
 
 ```python
 # 转义字符：使用反斜杠插入特殊字符
@@ -42,7 +42,7 @@ I'm doing fine.
 原始字符串完全忽略所有转义字符，并打印字符串中出现的任何反斜杠。
 
 ```python
-# 原始字符串 (r 前缀)：将反斜杠视为字面字符
+# 原始字符串（r 前缀）：将反斜杠视为字面字符
 print(r"Hello there!\nHow are you?\nI\'m doing fine.")  # \n 按字面意思打印
 ```
 
@@ -51,6 +51,20 @@ Hello there!\nHow are you?\nI\'m doing fine.
 ```
 
 原始字符串主要用于 <router-link to="/cheatsheet/regular-expressions">正则表达式</router-link> 定义。
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Python 中以 <code>r</code> 为前缀的原始字符串的作用是什么？
+</template>
+
+<base-quiz-option value="A">A. 将所有字符转换为大写</base-quiz-option>
+<base-quiz-option value="B" correct>B. 将反斜杠视为字面字符，忽略转义序列</base-quiz-option>
+<base-quiz-option value="C">C. 移除所有空格</base-quiz-option>
+<base-quiz-option value="D">D. 反转字符串</base-quiz-option>
+<base-quiz-answer value="B">以 <code>r</code> 为前缀的原始字符串将反斜杠视为字面字符，因此 <code>\n</code> 等转义序列不会被解释。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## 多行字符串
 
@@ -84,7 +98,7 @@ Bob
 ### 索引
 
 ```python
-# 字符串索引：按位置（从 0 开始）访问字符
+# 字符串索引：通过位置（从 0 开始）访问字符
 spam = 'Hello world!'
 
 spam[0]  # 返回第一个字符：'H'
@@ -162,6 +176,20 @@ spam[::-1]
 ```output
 '!dlrow olleH'
 ```
+
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+<code>spam[::-1]</code> 对字符串做什么？
+</template>
+
+<base-quiz-option value="A">A. 返回第一个字符</base-quiz-option>
+<base-quiz-option value="B">B. 返回最后一个字符</base-quiz-option>
+<base-quiz-option value="C" correct>C. 反转字符串</base-quiz-option>
+<base-quiz-option value="D">D. 移除所有字符</base-quiz-option>
+<base-quiz-answer value="C">切片 <code>[::-1]</code> 通过向后遍历所有字符来反转字符串。<code>-1</code> 的步长值表示“向后移动”。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ```python
 fizz = spam[0:5]
@@ -245,7 +273,7 @@ greet.title()
 
 ## isupper() 和 islower() 方法
 
-评估字符串是否为大写或小写后返回 `True` 或 `False`：
+评估字符串是大写还是小写后返回 `True` 或 `False`：
 
 ```python
 spam = 'Hello world!'
@@ -298,13 +326,13 @@ False
 
 ## isX 字符串方法
 
-| 方法        | 描述                                                            |
-| :---------- | :-------------------------------------------------------------- |
-| isalpha()   | 如果字符串仅由字母组成，则返回 `True`。                         |
-| isalnum()   | 如果字符串仅由字母和数字组成，则返回 `True`。                   |
-| isdecimal() | 如果字符串仅由数字组成，则返回 `True`。                         |
-| isspace()   | 如果字符串仅由空格、制表符和换行符组成，则返回 `True`。         |
-| istitle()   | 如果字符串仅由首字母大写后跟小写字符的单词组成，则返回 `True`。 |
+| 方法        | 描述                                                                  |
+| :---------- | :-------------------------------------------------------------------- |
+| isalpha()   | 如果字符串仅由字母组成，则返回 `True`。                               |
+| isalnum()   | 如果字符串仅由字母和数字组成，则返回 `True`。                         |
+| isdecimal() | 如果字符串仅由数字组成，则返回 `True`。                               |
+| isspace()   | 如果字符串仅由空格、制表符和换行符组成，则返回 `True`。               |
+| istitle()   | 如果字符串仅由以大写字母开头后跟仅小写字符的单词组成，则返回 `True`。 |
 
 ## startswith() 和 endswith()
 
@@ -356,6 +384,20 @@ True
 True
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+<code>startswith()</code> 返回什么？
+</template>
+
+<base-quiz-option value="A" correct>A. 如果字符串以指定的子字符串开头，则返回 <code>True</code>，否则返回 <code>False</code></base-quiz-option>
+<base-quiz-option value="B">B. 匹配开头的子字符串</base-quiz-option>
+<base-quiz-option value="C">C. 子字符串开始的索引</base-quiz-option>
+<base-quiz-option value="D">D. 一个不带前缀的新字符串</base-quiz-option>
+<base-quiz-answer value="A"><code>startswith()</code> 方法返回一个布尔值：如果字符串以指定的子字符串开头，则返回 <code>True</code>，否则返回 <code>False</code>。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## join() 和 split()
 
 ### join()
@@ -396,7 +438,7 @@ True
 
 ### split()
 
-`split()` 方法将一个 `string` 分割成一个 `list`。默认情况下，它使用空格来分隔项，但您也可以设置另一个选择的分隔符：
+`split()` 方法将一个 `string` 分割成一个 `list`。默认情况下，它使用空格来分隔各项，但您也可以设置另一个选择的字符：
 
 ```python
 'My name is Simon'.split()
@@ -438,7 +480,21 @@ True
 ['', 'My', '', 'name', 'is', '', 'Simon']
 ```
 
-## 使用 rjust(), ljust() 和 center() 调整文本对齐
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+对字符串调用 <code>split()</code> 会返回什么？
+</template>
+
+<base-quiz-option value="A">A. 一个字符串</base-quiz-option>
+<base-quiz-option value="B" correct>B. 一个字符串列表</base-quiz-option>
+<base-quiz-option value="C">C. 一个字符串元组</base-quiz-option>
+<base-quiz-option value="D">D. 一个字典</base-quiz-option>
+<base-quiz-answer value="B"><code>split()</code> 方法将一个字符串分割成一个子字符串列表。默认情况下，它按空格分割，但您可以指定不同的分隔符。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+## 使用 rjust(), ljust() 和 center() 进行文本对齐
 
 ```python
 'Hello'.rjust(10)
@@ -480,7 +536,7 @@ True
 '       Hello       '
 ```
 
-`rjust()` 和 `ljust()` 的第二个可选参数将指定一个除空格字符以外的填充字符：
+`rjust()` 和 `ljust()` 的可选第二个参数将指定一个除空格字符外的填充字符：
 
 ```python
 'Hello'.rjust(20, '*')
@@ -506,7 +562,7 @@ True
 '=======Hello========'
 ```
 
-## 使用 strip(), rstrip() 和 lstrip() 移除空白字符
+## 使用 strip(), rstrip() 和 lstrip() 移除空格
 
 ```python
 spam = '    Hello World     '
@@ -564,7 +620,7 @@ sentence.count('e')
 ```
 
 ```python
-# 返回 'one sh' 之后的 e 的计数，即从字符串开头算起的第 6 个字符之后
+# 返回 'one sh' 之后 e 的计数，即从字符串开头算起的第 6 个字符之后
 sentence.count('e', 6)
 ```
 
@@ -582,7 +638,7 @@ sentence.count('e', 7)
 
 ## Replace 方法
 
-替换给定子字符串的所有出现，用另一个子字符串替换。可以可选地提供第三个参数来限制替换次数。返回一个新字符串。
+替换给定子字符串的所有出现，替换为另一个子字符串。可以可选地提供第三个参数来限制替换次数。返回一个新字符串。
 
 ```python
 text = "Hello, world!"
@@ -610,6 +666,20 @@ sentence.replace("apples", "oranges")
 ```output
 'I like oranges, Apples are my favorite fruit'
 ```
+
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+<code>replace()</code> 方法返回什么？
+</template>
+
+<base-quiz-option value="A">A. 修改原始字符串</base-quiz-option>
+<base-quiz-option value="B">B. 返回 <code>None</code></base-quiz-option>
+<base-quiz-option value="C" correct>C. 返回一个已进行替换的新字符串</base-quiz-option>
+<base-quiz-option value="D">D. 返回一个被替换字符串的列表</base-quiz-option>
+<base-quiz-answer value="C"><code>replace()</code> 方法返回一个新字符串，其中旧子字符串的所有出现都替换为新子字符串。原始字符串不会被修改。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## 相关链接
 

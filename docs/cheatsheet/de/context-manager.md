@@ -1,6 +1,6 @@
 ---
 title: 'Python Context Manager - Python Spickzettel'
-description: 'Obwohl Python-Kontextmanager weit verbreitet sind, verstehen nur wenige den Zweck dahinter. Diese Anweisungen, die häufig beim Lesen und Schreiben von Dateien verwendet werden, helfen der Anwendung, Systemspeicher zu schonen und die Ressourcenverwaltung zu verbessern, indem sichergestellt wird, dass bestimmte Ressourcen nur für bestimmte Prozesse genutzt werden.'
+description: 'Obwohl Python-Kontextmanager weit verbreitet sind, verstehen nur wenige den Zweck hinter ihrer Verwendung. Diese Anweisungen, die häufig beim Lesen und Schreiben von Dateien verwendet werden, helfen der Anwendung, Systemressourcen zu schonen und die Ressourcenverwaltung zu verbessern, indem sichergestellt wird, dass bestimmte Ressourcen nur für bestimmte Prozesse genutzt werden.'
 labUrl: 'https://labex.io/de/labs/python-python-context-manager-633650?course=python-cheatsheet'
 ---
 
@@ -10,16 +10,16 @@ Python Context Manager
 
 <base-lab-url :url="frontmatter.labUrl" />
 
-Obwohl Pythons Context Manager weit verbreitet sind, verstehen nur wenige den Zweck hinter ihrer Verwendung. Diese Anweisungen, die üblicherweise beim Lesen und Schreiben von Dateien verwendet werden, helfen der Anwendung, Systemspeicher zu schonen und die Ressourcenverwaltung zu verbessern, indem sichergestellt wird, dass bestimmte Ressourcen nur für bestimmte Prozesse verwendet werden.
+Obwohl Python-Kontextmanager weit verbreitet sind, verstehen nur wenige den Zweck hinter ihrer Verwendung. Diese Anweisungen, die üblicherweise beim Lesen und Schreiben von Dateien verwendet werden, helfen der Anwendung, Systemspeicher zu schonen und die Ressourcenverwaltung zu verbessern, indem sichergestellt wird, dass bestimmte Ressourcen nur für bestimmte Prozesse verwendet werden.
 
 ## Die with-Anweisung
 
-Ein Context Manager ist ein Objekt, das benachrichtigt wird, wenn ein Kontext (ein Codeblock) beginnt und endet. Man verwendet ihn üblicherweise mit der `with`-Anweisung. Sie kümmert sich um die Benachrichtigung.
+Ein Kontextmanager ist ein Objekt, das benachrichtigt wird, wenn ein Kontext (ein Codeblock) beginnt und endet. Man verwendet ihn üblicherweise mit der `with`-Anweisung. Diese kümmert sich um die Benachrichtigung.
 
-Zum Beispiel sind Datei-Objekte Context Manager. Wenn ein Kontext endet, wird das Datei-Objekt automatisch geschlossen:
+Zum Beispiel sind Datei-Objekte Kontextmanager. Wenn ein Kontext endet, wird das Datei-Objekt automatisch geschlossen:
 
 ```python
-# Context Manager: kümmert sich automatisch um die Ressourcenbereinigung
+# Kontextmanager: kümmert sich automatisch um die Ressourcenbereinigung
 # Die Datei wird automatisch geschlossen, wenn der 'with'-Block verlassen wird
 with open(filename) as f:  # 'f' ist das Datei-Objekt
     file_contents = f.read()
@@ -27,19 +27,33 @@ with open(filename) as f:  # 'f' ist das Datei-Objekt
 # Die Datei ist hier automatisch geschlossen, auch wenn ein Fehler aufgetreten ist
 ```
 
-Alles, was die Ausführung des Blocks beendet, bewirkt, dass die Exit-Methode des Context Managers aufgerufen wird. Dies schließt Ausnahmen ein und kann nützlich sein, wenn ein Fehler dazu führt, dass Sie vorzeitig eine geöffnete Datei oder Verbindung verlassen. Das Skript zu beenden, ohne Dateien/Verbindungen ordnungsgemäß zu schließen, ist eine schlechte Idee, die zu Datenverlust oder anderen Problemen führen kann. Durch die Verwendung eines Context Managers können Sie sicherstellen, dass Vorkehrungen getroffen werden, um Schäden oder Verluste auf diese Weise zu verhindern.
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+Was ist der Hauptvorteil der Verwendung eines Kontextmanagers (der <code>with</code>-Anweisung)?
+</template>
 
-## Schreiben Ihres eigenen Context Managers
+<base-quiz-option value="A" correct>A. Automatische Bereinigung von Ressourcen, auch wenn ein Fehler auftritt</base-quiz-option>
+<base-quiz-option value="B">B. Lässt Code schneller ausführen</base-quiz-option>
+<base-quiz-option value="C">C. Ermöglicht das gleichzeitige Öffnen mehrerer Dateien</base-quiz-option>
+<base-quiz-option value="D">D. Verhindert alle Fehler</base-quiz-option>
+<base-quiz-answer value="A">Kontextmanager stellen sicher, dass Ressourcen (wie Dateien) ordnungsgemäß bereinigt werden, wenn der Block verlassen wird, auch wenn eine Ausnahme auftritt. Dies verhindert Ressourcenlecks und Datenverlust.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
-Es ist auch möglich, einen Context Manager mithilfe der Generator-Syntax dank des Decorators `contextlib.contextmanager` zu schreiben:
+Alles, was die Ausführung des Blocks beendet, führt dazu, dass die Exit-Methode des Kontextmanagers aufgerufen wird. Dies schließt Ausnahmen ein und kann nützlich sein, wenn ein Fehler dazu führt, dass Sie vorzeitig eine geöffnete Datei oder Verbindung verlassen. Ein Skript zu beenden, ohne Dateien/Verbindungen ordnungsgemäß zu schließen, ist eine schlechte Idee, die zu Datenverlust oder anderen Problemen führen kann. Durch die Verwendung eines Kontextmanagers können Sie sicherstellen, dass Vorkehrungen immer getroffen werden, um auf diese Weise Schäden oder Verluste zu verhindern.
+
+## Schreiben Ihres eigenen Kontextmanagers
+
+Es ist auch möglich, einen Kontextmanager mithilfe der Generator-Syntax dank des Decorators `contextlib.contextmanager` zu schreiben:
 
 ```python
-# Funktionsbasierter Context Manager unter Verwendung des contextlib Decorators
+# Funktionsbasierter Kontextmanager unter Verwendung des contextlib-Decorators
 import contextlib
 @contextlib.contextmanager
 def context_manager(num):
     print('Enter')  # Code vor yield wird bei __enter__ ausgeführt
-    yield num + 1   # Der übergebene Wert wird zur 'cm' Variable
+    yield num + 1   # Der übergebene Wert wird zur 'cm'-Variable
     print('Exit')    # Code nach yield wird bei __exit__ ausgeführt
 
 with context_manager(2) as cm:  # cm empfängt den übergebenen Wert (3)
@@ -52,12 +66,12 @@ Right in the middle with cm = 3
 Exit
 ```
 
-## Klassenbasierter Context Manager
+## Klassenbasierter Kontextmanager
 
-Sie können einen klassenbasierten Context Manager definieren. Die Schlüsselmethoden sind `__enter__` und `__exit__`
+Sie können einen klassenbasierten Kontextmanager definieren. Die Schlüsselmethoden sind `__enter__` und `__exit__`
 
 ```python
-# Klassenbasierter Context Manager: Implementieren Sie die Methoden __enter__ und __exit__
+# Klassenbasierter Kontextmanager: Implementieren Sie die Methoden __enter__ und __exit__
 class ContextManager:
     def __enter__(self, *args, **kwargs):  # Wird beim Betreten des 'with'-Blocks aufgerufen
         print("--enter--")
@@ -76,10 +90,24 @@ test
 --exit--
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Welche Methoden muss eine Klasse implementieren, um als Kontextmanager verwendet werden zu können?
+</template>
+
+<base-quiz-option value="A">A. <code>**init**</code> und <code>**del**</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>**enter**</code> und <code>**exit**</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>open</code> und <code>close</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>start</code> und <code>stop</code></base-quiz-option>
+<base-quiz-answer value="B">Ein klassenbasierter Kontextmanager muss <code>**enter**</code> (aufgerufen beim Betreten des <code>with</code>-Blocks) und <code>**exit**</code> (aufgerufen beim Verlassen des Blocks) implementieren.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Relevante Links
 
-- <router-link to="/cheatsheet/reading-and-writing-files">Reading and Writing Files</router-link>
-- <router-link to="/cheatsheet/exception-handling">Exception Handling</router-link>
+- <router-link to="/cheatsheet/reading-and-writing-files">Lesen und Schreiben von Dateien</router-link>
+- <router-link to="/cheatsheet/exception-handling">Fehlerbehandlung</router-link>
 - <router-link to="/cheatsheet/decorators">Decorators</router-link>
-- <router-link to="/blog/python-pathlib-essentials">10 Essential File System Operations Every Developer Should Know</router-link>
+- <router-link to="/blog/python-pathlib-essentials">10 wesentliche Dateisystemoperationen, die jeder Entwickler kennen sollte</router-link>
 - <router-link to="/builtin/open">open()</router-link>

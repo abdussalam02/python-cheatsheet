@@ -15,7 +15,7 @@ Python 함수
     <a target="_blank" href="https://en.wikiversity.org/wiki/Programming_Fundamentals/Functions">프로그래밍 함수</a>
   </base-disclaimer-title>
   <base-disclaimer-content>
-    함수는 단일 작업을 수행하는 데 사용되는 구성된 코드 블록입니다. 이는 애플리케이션에 더 나은 모듈성과 재사용성을 제공합니다.
+    함수는 단일 작업을 수행하기 위해 사용되는 구성된 코드 블록입니다. 함수는 애플리케이션에 더 나은 모듈성과 재사용성을 제공합니다.
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -80,9 +80,23 @@ say_hi(name='Anna', greeting='Hi')
 Hi Anna
 ```
 
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+Python 함수에서 키워드 인수를 사용하는 주된 이점은 무엇입니까?
+</template>
+
+<base-quiz-option value="A">A. 더 빠르게 실행됩니다</base-quiz-option>
+<base-quiz-option value="B">B. 메모리를 덜 사용합니다</base-quiz-option>
+<base-quiz-option value="C" correct>C. 코드 가독성을 높이고 순서가 중요하지 않습니다</base-quiz-option>
+<base-quiz-option value="D">D. 오류를 방지합니다</base-quiz-option>
+<base-quiz-answer value="C">키워드 인수는 각 인수가 무엇을 나타내는지 명확하게 하여 코드 가독성을 높이고 인수를 어떤 순서로든 전달할 수 있게 해줍니다.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## 반환 값 (Return Values)
 
-`def` 문을 사용하여 함수를 만들 때, `return` 문으로 반환 값을 지정할 수 있습니다. 반환 문은 다음으로 구성됩니다.
+`def` 문을 사용하여 함수를 만들 때, `return` 문으로 반환 값이 무엇이 되어야 하는지 지정할 수 있습니다. 반환문은 다음으로 구성됩니다.
 
 - `return` 키워드.
 
@@ -102,15 +116,29 @@ print(result)
 15
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+Python 에서 함수로부터 값을 반환하기 위해 사용되는 키워드는 무엇입니까?
+</template>
+
+<base-quiz-option value="A" correct>A. <code>return</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>output</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>yield</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>exit</code></base-quiz-option>
+<base-quiz-answer value="A"><code>return</code> 키워드는 함수에서 값을 반환하는 데 사용됩니다. return 문을 사용하지 않으면 함수는 <code>None</code>을 반환합니다.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## 지역 및 전역 범위 (Local and Global Scope)
 
 - 전역 범위의 코드는 지역 변수를 사용할 수 없습니다.
 
 - 그러나 지역 범위는 전역 변수에 접근할 수 있습니다.
 
-- 함수의 지역 범위 내 코드는 다른 지역 범위의 변수를 사용할 수 없습니다.
+- 함수 지역 범위 내의 코드는 다른 지역 범위의 변수를 사용할 수 없습니다.
 
-- 서로 다른 범위에 있다면 서로 다른 변수에 대해 동일한 이름을 사용할 수 있습니다. 즉, spam 이라는 지역 변수와 spam 이라는 전역 변수가 모두 존재할 수 있습니다.
+- 서로 다른 범위에 있는 경우 동일한 이름을 가진 여러 변수를 사용할 수 있습니다. 즉, spam 이라는 지역 변수와 spam 이라는 전역 변수가 모두 존재할 수 있습니다.
 
 ```python
 # 전역 변수: 어디서든 접근 가능
@@ -151,35 +179,49 @@ print(eggs)  # 'spam'을 출력함, 'global'이 아님
 spam
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+전역 변수를 수정하기 위해 함수 내에서 반드시 사용해야 하는 키워드는 무엇입니까?
+</template>
+
+<base-quiz-option value="A">A. <code>nonlocal</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>global</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>extern</code></base-quiz-option>
+<base-quiz-option value="D">D. 키워드가 필요 없음</base-quiz-option>
+<base-quiz-answer value="B">전역 변수를 수정하려면 함수 내에서 <code>global</code> 키워드를 사용해야 합니다. 이것이 없으면 Python 은 대신 지역 변수를 생성합니다.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 변수가 지역 범위에 있는지 전역 범위에 있는지 판단하는 네 가지 규칙이 있습니다.
 
 1. 변수가 전역 범위 (즉, 모든 함수 외부) 에서 사용되는 경우, 항상 전역 변수입니다.
 
-1. 함수 내에 해당 변수에 대한 global 문이 있는 경우, 전역 변수입니다.
+1. 함수 내에 해당 변수에 대한 전역 문이 있는 경우, 전역 변수입니다.
 
-1. 그렇지 않고, 함수 내에서 할당문 (assignment statement) 에서 변수가 사용되는 경우, 지역 변수입니다.
+1. 그렇지 않고, 함수 내에서 할당문에서 변수가 사용되는 경우, 지역 변수입니다.
 
 1. 하지만 변수가 할당문에서 사용되지 않는 경우, 전역 변수입니다.
 
 ## 람다 함수 (Lambda Functions)
 
-Python 에서 람다 함수는 단일 표현식만 가질 수 있지만 여러 개의 인수를 가질 수 있는 한 줄짜리 익명 함수입니다.
+Python 에서 람다 함수는 단일 표현식만 가질 수 있지만, 임의의 수의 인수를 가질 수 있는 한 줄짜리 익명 함수입니다.
 
 <base-disclaimer>
   <base-disclaimer-title>
     <a target="_blank" href="https://docs.python.org/3/library/ast.html?highlight=lambda#function-and-class-definitions">Python 3 튜토리얼</a>에서 발췌
   </base-disclaimer-title>
   <base-disclaimer-content>
-    lambda 는 표현식 내에서 사용할 수 있는 최소한의 함수 정의입니다. FunctionDef 와 달리 body 는 단일 노드를 포함합니다.
+    lambda 는 표현식 내에서 사용될 수 있는 최소한의 함수 정의입니다. FunctionDef 와 달리 body 는 단일 노드를 포함합니다.
   </base-disclaimer-content>
 </base-disclaimer>
 
 <base-warning>
   <base-warning-title>
-    단일 표현식
+    단일 라인 표현식
   </base-warning-title>
   <base-warning-content>
-    람다 함수는 단일 코드 줄과 같은 표현식만 평가할 수 있습니다.
+    람다 함수는 단일 라인의 코드와 같은 표현식만 평가할 수 있습니다.
   </base-warning-content>
 </base-warning>
 
@@ -197,7 +239,7 @@ add(5, 3)
 8
 ```
 
-다음 _람다_ 함수와 동일합니다.
+다음 _람다_ 함수와 동등합니다.
 
 ```python
 # 람다 함수: 한 줄로 정의된 익명 함수
@@ -210,12 +252,26 @@ add(5, 3)
 8
 ```
 
-일반 중첩 함수와 마찬가지로 람다도 렉시컬 클로저 (lexical closures) 로 작동합니다.
+<base-quiz>
+<base-quiz-question correct="D">
+<template #question>
+Python 에서 람다 함수란 무엇입니까?
+</template>
+
+<base-quiz-option value="A">A. 한 번만 호출할 수 있는 함수</base-quiz-option>
+<base-quiz-option value="B">B. 인수를 받지 않는 함수</base-quiz-option>
+<base-quiz-option value="C">C. 여러 값을 반환하는 함수</base-quiz-option>
+<base-quiz-option value="D" correct>D. 임의의 수의 인수를 가질 수 있지만 단 하나의 표현식만 가질 수 있는 단일 라인 익명 함수</base-quiz-option>
+<base-quiz-answer value="D">람다 함수는 <code>lambda</code> 키워드를 사용하여 정의된 익명, 단일 라인 함수입니다. 여러 인수를 가질 수 있지만 단일 표현식만 포함할 수 있습니다.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+일반 중첩 함수와 마찬가지로 람다도 렉시컬 클로저로 작동합니다.
 
 ```python
-# 람다 클로저: 외부 범위에서 변수를 캡처하는 람다 함수
+# 람다 클로저: 외부 범위의 변수를 캡처하는 람다 함수
 def make_adder(n):
-    return lambda x: x + n  # 람다가 외부 함수에서 'n'을 캡처함
+    return lambda x: x + n  # 람다가 외부 함수로부터 'n'을 캡처함
 
 # 다른 양을 더하는 함수 생성
 plus_3 = make_adder(3)  # 3 을 더하는 람다를 반환
@@ -235,6 +291,20 @@ plus_5(4)
 ```output
 9
 ```
+
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+람다 클로저는 무엇을 가능하게 합니까?
+</template>
+
+<base-quiz-option value="A" correct>A. 외부 범위의 변수 캡처</base-quiz-option>
+<base-quiz-option value="B">B. global 키워드 없이 전역 변수 수정</base-quiz-option>
+<base-quiz-option value="C">C. 여러 값 반환</base-quiz-option>
+<base-quiz-option value="D">D. 코드를 비동기적으로 실행</base-quiz-option>
+<base-quiz-answer value="A">람다 클로저는 람다 함수가 일반 중첩 함수와 유사하게 포함된 범위의 변수를 캡처하고 사용할 수 있도록 합니다.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## 관련 링크
 

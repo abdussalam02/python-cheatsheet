@@ -15,7 +15,7 @@ Python 문자열 포매팅
     <a href="https://docs.python.org/3/library/stdtypes.html?highlight=sprintf#printf-style-string-formatting">Python 3 설명서</a>에서 발췌
   </base-disclaimer-title>
   <base-disclaimer-content>
-    여기에 설명된 포매팅 작업 (<b>% 연산자</b>) 은 일반적인 오류를 유발하는 다양한 특이점을 보입니다 [...]. 더 새로운 <a href="#formatted-string-literals-or-f-strings">포맷된 문자열 리터럴</a> [...]을 사용하면 이러한 오류를 피할 수 있습니다. 이러한 대안은 텍스트 포매팅에 대해 더 강력하고 유연하며 확장 가능한 접근 방식을 제공합니다.
+    여기에 설명된 포매팅 작업 (<b>% 연산자</b>) 은 일반적인 오류를 유발하는 다양한 특이점을 보입니다 [...]. 더 새로운 <a href="#formatted-string-literals-or-f-strings">포맷된 문자열 리터럴</a> [...]을 사용하면 이러한 오류를 피할 수 있습니다. 이러한 대안들은 텍스트 포매팅을 위한 더 강력하고 유연하며 확장 가능한 접근 방식을 제공합니다.
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -40,7 +40,7 @@ name = 'Pete'
 "Hello Pete"
 ```
 
-`%d` 포맷 지정자를 사용하여 int 값을 문자열로 변환할 수 있습니다.
+`%d` 포맷 지정자를 사용하여 int 값을 문자열로 변환할 수 있습니다:
 
 ```python
 num = 5
@@ -53,7 +53,7 @@ num = 5
 
 ## str.format
 
-Python 3 는 문자열 포매팅을 위한 새로운 방식을 도입했으며, 이는 나중에 Python 2.7 로 역이식되었습니다. 이로 인해 문자열 포매팅 구문이 더 규칙적으로 변합니다.
+Python 3 는 문자열 포매팅을 위한 새로운 방식을 도입했으며, 이는 나중에 Python 2.7 로 역이식되었습니다. 이로 인해 문자열 포매팅 구문이 더 규칙적으로 변했습니다.
 
 ```python
 # str.format() 메서드: 최신 문자열 포매팅 (Python 2.7 이상)
@@ -77,19 +77,19 @@ age = 20
 
 ## Formatted String Literals or f-Strings
 
-Python 3.6 이상을 사용 중이라면, 문자열 `f-String`이 문자열을 포매팅하는 권장 방식입니다.
+Python 3.6 이상을 사용 중이라면, 문자열 `f-Strings`가 문자열을 포매팅하는 권장되는 방법입니다.
 
 <base-disclaimer>
   <base-disclaimer-title>
     <a href="https://docs.python.org/3/reference/lexical_analysis.html#f-strings">Python 3 설명서</a>에서 발췌
   </base-disclaimer-title>
   <base-disclaimer-content>
-    포맷된 문자열 리터럴 또는 f-문자열은 <code>f</code> 또는 <code>F</code>로 접두사가 붙은 문자열 리터럴입니다. 이러한 문자열에는 중괄호 {}로 구분된 표현식인 대체 필드가 포함될 수 있습니다. 다른 문자열 리터럴은 항상 상수 값을 갖는 반면, 포맷된 문자열은 런타임에 평가되는 실제 표현식입니다.
+    포맷된 문자열 리터럴 또는 f-문자열은 <code>f</code> 또는 <code>F</code>로 접두사가 붙은 문자열 리터럴입니다. 이러한 문자열에는 중괄호 {}로 구분된 표현식인 대체 필드가 포함될 수 있습니다. 다른 문자열 리터럴은 항상 상수 값을 갖는 반면, 포맷된 문자열은 실제로 런타임에 평가되는 표현식입니다.
   </base-disclaimer-content>
 </base-disclaimer>
 
 ```python
-# f-string: 문자열 포매팅의 권장 방식 (Python 3.6 이상)
+# f-string: 문자열 포매팅을 위한 권장 방식 (Python 3.6 이상)
 name = 'Elizabeth'
 f'Hello {name}!'  # f 접두사는 {} 내의 표현식을 허용합니다
 ```
@@ -98,20 +98,34 @@ f'Hello {name}!'  # f 접두사는 {} 내의 표현식을 허용합니다
 'Hello Elizabeth!'
 ```
 
-인라인 연산을 수행하는 것도 가능합니다.
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Python 에서 f-문자열에 사용되는 접두사는 무엇입니까?
+</template>
+
+<base-quiz-option value="A">A. <code>fmt</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>f</code> 또는 <code>F</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>format</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>str</code></base-quiz-option>
+<base-quiz-answer value="B">f-문자열은 여는 따옴표 앞에 <code>f</code> 또는 <code>F</code>로 접두사가 붙습니다. 중괄호 <code>{}</code> 안에 표현식을 포함할 수 있습니다.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+인라인 산술 연산도 가능합니다:
 
 ```python
-# f-strings 는 표현식을 지원합니다: {} 내에 계산을 포함할 수 있습니다
+# f-strings 는 표현식을 지원합니다: {} 내에 계산 포함 가능
 a = 5
 b = 10
-f'Five plus ten is {a + b} and not {2 * (a + b)}.'  # 표현식을 평가합니다
+f'Five plus ten is {a + b} and not {2 * (a + b)}.'  # 표현식 평가
 ```
 
 ```output
 'Five plus ten is 15 and not 30.'
 ```
 
-### 다중 행 f-Strings
+### 여러 줄 f-문자열
 
 ```python
 name = 'Robert'
@@ -128,13 +142,13 @@ f'You have {messages} unread messages'
 
 ### = 지정자
 
-이것은 표현식과 그 값을 출력합니다.
+이것은 표현식과 그 값을 출력합니다:
 
 ```python
 # = 지정자: 변수 이름과 값 모두 출력 (Python 3.8 이상)
 from datetime import datetime
 now = datetime.now().strftime("%b/%d/%Y - %H:%M:%S")
-f'date and time: {now=}'  # "now='Nov/14/2022 - 20:50:01'"을 출력합니다
+f'date and time: {now=}'  # "now='Nov/14/2022 - 20:50:01'" 출력
 ```
 
 ```output
@@ -192,6 +206,20 @@ f"{a:.2f}"
 '3.14'
 ```
 
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+<code>f"{a:.2f}"</code>는 무엇을 수행합니까?
+</template>
+
+<base-quiz-option value="A">A. 숫자를 가장 가까운 정수로 반올림합니다</base-quiz-option>
+<base-quiz-option value="B">B. 백분율로 포맷합니다</base-quiz-option>
+<base-quiz-option value="C" correct>C. 숫자를 소수점 이하 2 자리 부동 소수점으로 포맷합니다</base-quiz-option>
+<base-quiz-option value="D">D. 과학적 표기법으로 변환합니다</base-quiz-option>
+<base-quiz-answer value="C">포맷 지정자 <code>:.2f</code>는 숫자를 소수점 이하 2 자리 부동 소수점으로 포맷합니다. <code>.2</code>는 정밀도를, <code>f</code>는 부동 소수점 형식을 나타냅니다.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 백분율로 표시
 
 ```python
@@ -205,25 +233,25 @@ f"{a:.2%}"
 
 ### 숫자 포매팅 표
 
-| 숫자       | 포맷    | 출력      | 설명                                       |
-| ---------- | ------- | --------- | ------------------------------------------ |
-| 3.1415926  | {:.2f}  | 3.14      | 소수점 이하 2 자리로 실수 포맷             |
-| 3.1415926  | {:+.2f} | +3.14     | 부호와 함께 소수점 이하 2 자리로 실수 포맷 |
-| -1         | {:+.2f} | -1.00     | 부호와 함께 소수점 이하 2 자리로 실수 포맷 |
-| 2.71828    | {:.0f}  | 3         | 소수점 없이 실수 포맷                      |
-| 4          | {:0>2d} | 04        | 0 으로 채우기 (왼쪽 채우기, 너비 2)        |
-| 4          | {:x<4d} | 4xxx      | x 로 채우기 (오른쪽 채우기, 너비 4)        |
-| 10         | {:x<4d} | 10xx      | x 로 채우기 (오른쪽 채우기, 너비 4)        |
-| 1000000    | {:,}    | 1,000,000 | 쉼표 구분 기호가 있는 숫자 포맷            |
-| 0.35       | {:.2%}  | 35.00%    | 백분율 포맷                                |
-| 1000000000 | {:.2e}  | 1.00e+09  | 지수 표기법                                |
-| 11         | {:11d}  | 11        | 오른쪽 정렬 (기본값, 너비 10)              |
-| 11         | {:<11d} | 11        | 왼쪽 정렬 (너비 10)                        |
-| 11         | {:^11d} | 11        | 가운데 정렬 (너비 10)                      |
+| 숫자       | 포맷    | 출력      | 설명                                                |
+| ---------- | ------- | --------- | --------------------------------------------------- |
+| 3.1415926  | {:.2f}  | 3.14      | 소수점 이하 2 자리 부동 소수점으로 포맷             |
+| 3.1415926  | {:+.2f} | +3.14     | 부호와 함께 소수점 이하 2 자리 부동 소수점으로 포맷 |
+| -1         | {:+.2f} | -1.00     | 부호와 함께 소수점 이하 2 자리 부동 소수점으로 포맷 |
+| 2.71828    | {:.0f}  | 3         | 소수점 자리 없이 부동 소수점으로 포맷               |
+| 4          | {:0>2d} | 04        | 0 으로 채우기 (왼쪽 채우기, 너비 2)                 |
+| 4          | {:x<4d} | 4xxx      | x 로 채우기 (오른쪽 채우기, 너비 4)                 |
+| 10         | {:x<4d} | 10xx      | x 로 채우기 (오른쪽 채우기, 너비 4)                 |
+| 1000000    | {:,}    | 1,000,000 | 쉼표 구분 기호가 있는 숫자 포맷                     |
+| 0.35       | {:.2%}  | 35.00%    | 백분율 포맷                                         |
+| 1000000000 | {:.2e}  | 1.00e+09  | 지수 표기법                                         |
+| 11         | {:11d}  | 11        | 오른쪽 정렬 (기본값, 너비 10)                       |
+| 11         | {:<11d} | 11        | 왼쪽 정렬 (너비 10)                                 |
+| 11         | {:^11d} | 11        | 가운데 정렬 (너비 10)                               |
 
 ## Template Strings
 
-템플릿 문자열은 덜 강력하지만 더 단순한 메커니즘이며, 사용자로부터 생성된 문자열을 처리할 때 권장됩니다. 복잡성이 감소하여 템플릿 문자열이 더 안전한 선택이 됩니다.
+템플릿 문자열은 덜 강력하지만 더 단순한 메커니즘이며, 사용자로부터 생성된 문자열을 처리할 때 권장됩니다. 복잡성이 줄어들어 템플릿 문자열이 더 안전한 선택이 됩니다.
 
 ```python
 from string import Template

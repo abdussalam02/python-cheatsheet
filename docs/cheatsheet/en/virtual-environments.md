@@ -30,6 +30,20 @@ python3 -m venv venv
 
 This creates a `venv` directory in your current folder containing the virtual environment.
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+What command is used to create a virtual environment using <code>venv</code>?
+</template>
+
+<base-quiz-option value="A" correct>A. <code>python -m venv venv</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>python create venv</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>venv create</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>python venv new</code></base-quiz-option>
+<base-quiz-answer value="A">The command <code>python -m venv venv</code> creates a virtual environment. The <code>-m</code> flag runs the venv module, and <code>venv</code> at the end is the name of the directory to create.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 2. Activate the virtual environment
 
 On Linux/macOS:
@@ -45,6 +59,20 @@ venv\Scripts\activate
 ```
 
 Once activated, you'll see `(venv)` at the beginning of your command prompt, indicating the virtual environment is active.
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+How do you activate a virtual environment on Linux/macOS?
+</template>
+
+<base-quiz-option value="A">A. <code>activate venv</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>source venv/bin/activate</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>venv activate</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>python venv activate</code></base-quiz-option>
+<base-quiz-answer value="B">On Linux/macOS, you activate a virtual environment using <code>source venv/bin/activate</code>. On Windows, you would use <code>venv\Scripts\activate</code>.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 3. Install packages
 
@@ -65,6 +93,20 @@ deactivate
 ```
 
 The `(venv)` prefix will disappear from your command prompt.
+
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+What is the main purpose of using a virtual environment?
+</template>
+
+<base-quiz-option value="A" correct>A. To isolate project dependencies and avoid filling the base Python installation</base-quiz-option>
+<base-quiz-option value="B">B. To make Python run faster</base-quiz-option>
+<base-quiz-option value="C">C. To encrypt Python code</base-quiz-option>
+<base-quiz-option value="D">D. To compile Python to machine code</base-quiz-option>
+<base-quiz-answer value="A">Virtual environments allow you to test Python code in encapsulated environments and avoid filling the base Python installation with libraries that might only be used for one project. This helps manage dependencies per project.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## virtualenv
 

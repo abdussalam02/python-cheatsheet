@@ -1,6 +1,6 @@
 ---
 title: 'Python 上下文管理器 - Python 速查表'
-description: 'Python 上下文管理器用途广泛，但很少有人理解其背后的目的。这些语句常用于文件读写，通过确保特定资源仅在特定进程中使用，帮助应用程序节省系统内存并改善资源管理。'
+description: 'Python 上下文管理器用途广泛，但很少有人真正理解其背后的目的。这些语句常用于文件读写，通过确保特定资源仅在特定进程中使用，帮助应用程序节省系统内存并改善资源管理。'
 labUrl: 'https://labex.io/zh/labs/python-python-context-manager-633650?course=python-cheatsheet'
 ---
 
@@ -14,24 +14,38 @@ Python 上下文管理器
 
 ## with 语句
 
-上下文管理器是一个对象，在上下文（一段代码块）开始和结束时会收到通知。你通常会将其与 `with` 语句一起使用。它负责处理通知。
+上下文管理器是一个对象，它在上下文（一段代码块）开始和结束时会收到通知。你通常使用 `with` 语句来使用它。它负责处理通知。
 
 例如，文件对象就是上下文管理器。当上下文结束时，文件对象会自动关闭：
 
 ```python
 # 上下文管理器：自动处理资源清理
-# 退出 'with' 块时文件会自动关闭
+# 退出 'with' 块时文件自动关闭
 with open(filename) as f:  # 'f' 是文件对象
     file_contents = f.read()
 
 # 即使发生错误，文件也会在此处自动关闭
 ```
 
-任何导致代码块执行结束的操作都会导致调用上下文管理器的退出方法。这包括异常，当错误导致你过早退出一个打开的文件或连接时，这会很有用。在没有正确关闭文件/连接的情况下退出脚本是个坏主意，可能会导致数据丢失或其他问题。通过使用上下文管理器，你可以确保始终采取预防措施以防止此类损坏或丢失。
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+使用上下文管理器（<code>with</code> 语句）的主要好处是什么？
+</template>
+
+<base-quiz-option value="A" correct>A. 自动处理资源清理，即使发生错误</base-quiz-option>
+<base-quiz-option value="B">B. 使代码执行速度更快</base-quiz-option>
+<base-quiz-option value="C">C. 允许多个文件同时打开</base-quiz-option>
+<base-quiz-option value="D">D. 阻止所有错误</base-quiz-option>
+<base-quiz-answer value="A">上下文管理器确保资源（如文件）在退出代码块时得到妥善清理，即使发生异常也是如此。这可以防止资源泄漏和数据丢失。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+任何导致代码块执行结束的操作都会导致调用上下文管理器的退出方法。这包括异常，当错误导致你过早地退出一个打开的文件或连接时，这会很有用。在没有正确关闭文件/连接的情况下退出脚本是个坏主意，可能会导致数据丢失或其他问题。通过使用上下文管理器，你可以确保始终采取预防措施以防止以这种方式造成损害或损失。
 
 ## 编写你自己的上下文管理器
 
-由于 `contextlib.contextmanager` 装饰器，也可以使用生成器语法编写上下文管理器：
+也可以使用生成器语法来编写上下文管理器，这要归功于 `contextlib.contextmanager` 装饰器：
 
 ```python
 # 使用 contextlib 装饰器的基于函数的上下文管理器
@@ -40,7 +54,7 @@ import contextlib
 def context_manager(num):
     print('Enter')  # yield 之前的代码在 __enter__ 上运行
     yield num + 1   # yield 的值成为 'cm' 变量
-    print('Exit')    # yield 之后的代码在 __exit__ 上运行
+    print('Exit')    # yield 之后代码在 __exit__ 上运行
 
 with context_manager(2) as cm:  # cm 接收 yield 的值 (3)
     print('Right in the middle with cm = {}'.format(cm))
@@ -75,6 +89,20 @@ with ContextManager():  # 调用 __enter__，完成后调用 __exit__
 test
 --exit--
 ```
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+一个类要用作上下文管理器，必须实现哪些方法？
+</template>
+
+<base-quiz-option value="A">A. <code>**init**</code> 和 <code>**del**</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>**enter**</code> 和 <code>**exit**</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>open</code> 和 <code>close</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>start</code> 和 <code>stop</code></base-quiz-option>
+<base-quiz-answer value="B">基于类的上下文管理器必须实现 <code>**enter**</code>（在进入 <code>with</code> 块时调用）和 <code>**exit**</code>（在退出该块时调用）。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## 相关链接
 

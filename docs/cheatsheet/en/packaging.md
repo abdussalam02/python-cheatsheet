@@ -61,6 +61,20 @@ setup(
 )
 ```
 
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+What are the three required fields in a <code>setup.py</code> file?
+</template>
+
+<base-quiz-option value="A">A. name, author, license</base-quiz-option>
+<base-quiz-option value="B">B. name, description, packages</base-quiz-option>
+<base-quiz-option value="C" correct>C. name, version, packages</base-quiz-option>
+<base-quiz-option value="D">D. name, version, license</base-quiz-option>
+<base-quiz-answer value="C">The three required fields in <code>setup.py</code> are <code>name</code> (package name, must be unique on PyPI), <code>version</code> (tracks releases), and <code>packages</code> (describes where Python source code is located).</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Modern Approach: pyproject.toml
 
 The `pyproject.toml` file is the modern standard for Python project configuration (PEP-517, PEP-518, PEP-660). It provides a unified way to specify build system requirements and project metadata in a single, declarative file format.
@@ -116,6 +130,20 @@ Or in editable mode:
 ```bash
 pip install -e .
 ```
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+What is the main advantage of <code>pyproject.toml</code> over <code>setup.py</code>?
+</template>
+
+<base-quiz-option value="A">A. It's faster to execute</base-quiz-option>
+<base-quiz-option value="B" correct>B. It's declarative, safer (no code execution), and follows PEP standards</base-quiz-option>
+<base-quiz-option value="C">C. It requires less configuration</base-quiz-option>
+<base-quiz-option value="D">D. It only works with Python 3.10+</base-quiz-option>
+<base-quiz-answer value="B">The <code>pyproject.toml</code> approach is declarative (all metadata in one place), safer because it doesn't execute code like <code>setup.py</code> does, and follows PEP standards (PEP-517, PEP-518, PEP-660) for better tooling support.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Choosing the Right Approach
 

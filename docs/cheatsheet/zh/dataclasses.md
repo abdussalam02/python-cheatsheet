@@ -15,11 +15,11 @@ Python 数据类
 
 ## 特性
 
-1. 它们存储数据并代表某种数据类型。例如：一个数字。对于熟悉 ORM 的人来说，模型实例是一个数据对象。它代表一种特定类型的实体。它包含定义或表示该实体的属性。
+1. 它们存储数据并代表某种数据类型。例如：一个数字。对于熟悉 ORM 的人来说，模型实例是一个数据对象。它代表特定类型的实体。它包含定义或表示该实体的属性。
 
 2. 它们可以与相同类型的其他对象进行比较。例如：一个数字可以大于、小于或等于另一个数字。
 
-Python 3.7 提供了一个装饰器 `dataclass`，用于将一个类转换为数据类。
+Python 3.7 提供了一个装饰器 `dataclass`，用于将类转换为数据类。
 
 ```python
 class Number:
@@ -44,7 +44,7 @@ from dataclasses import dataclass
 class Number:
     val: int  # 必须提供类型注解
 
-obj = Number(2)  # 自动创建 __init__
+obj = Number(2)  # __init__ 自动创建
 obj.val
 ```
 
@@ -54,10 +54,10 @@ obj.val
 
 ## 默认值
 
-可以很容易地为数据类的字段添加默认值。
+可以轻松地为数据类的字段添加默认值。
 
 ```python
-# 带有默认值的数据类：带有默认值的字段必须出现在必需字段之后
+# 带有默认值的数据类：带有默认值的字段必须放在没有默认值的字段之后
 @dataclass
 class Product:
     name: str        # 必需字段
@@ -87,6 +87,20 @@ obj.price
 ```output
 0.0
 ```
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+在数据类中，带有默认值的字段必须放在哪里？
+</template>
+
+<base-quiz-option value="A">A. 放在没有默认值的字段之前</base-quiz-option>
+<base-quiz-option value="B" correct>B. 放在没有默认值的字段之后</base-quiz-option>
+<base-quiz-option value="C">C. 哪里都行</base-quiz-option>
+<base-quiz-option value="D">D. 在一个单独的部分</base-quiz-option>
+<base-quiz-answer value="B">在数据类中，带有默认值的字段必须放在没有默认值的字段之后。这是因为 Python 需要知道生成的 <code>**init**</code> 方法中必需参数和可选参数的顺序。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## 类型提示
 

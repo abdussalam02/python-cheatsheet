@@ -64,6 +64,20 @@ s  # Returns {1, 2, 3, 4}
 {1, 2, 3, 4}
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+Que se passe-t-il lorsque vous créez un ensemble avec des valeurs dupliquées ?
+</template>
+
+<base-quiz-option value="A" correct>A. Les doublons sont automatiquement supprimés</base-quiz-option>
+<base-quiz-option value="B">B. Une erreur est levée</base-quiz-option>
+<base-quiz-option value="C">C. L'ensemble conserve tous les doublons</base-quiz-option>
+<base-quiz-option value="D">D. Seule la première occurrence est conservée</base-quiz-option>
+<base-quiz-answer value="A">Les ensembles suppriment automatiquement les valeurs dupliquées. Un ensemble est une collection non ordonnée sans éléments dupliqués.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 Et en tant que type de données non ordonné, ils ne peuvent pas être indexés.
 
 ```python
@@ -147,9 +161,23 @@ s
 s.discard(3)
 ```
 
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+Quelle est la différence entre les méthodes <code>remove()</code> et <code>discard()</code> pour les ensembles ?
+</template>
+
+<base-quiz-option value="A">A. <code>remove()</code> supprime un élément, <code>discard()</code> supprime tout</base-quiz-option>
+<base-quiz-option value="B">B. Il n'y a aucune différence</base-quiz-option>
+<base-quiz-option value="C" correct>C. <code>remove()</code> lève une erreur si l'élément n'existe pas, <code>discard()</code> non</base-quiz-option>
+<base-quiz-option value="D">D. <code>remove()</code> est plus rapide</base-quiz-option>
+<base-quiz-answer value="C">Les deux méthodes suppriment un élément d'un ensemble, mais <code>remove()</code> lève une <code>KeyError</code> si l'élément n'existe pas, tandis que <code>discard()</code> ne fait rien si l'élément est manquant.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## set union
 
-`union()` ou `|` créera un nouvel ensemble contenant tous les éléments des ensembles fournis.
+`union()` ou `|` créeront un nouvel ensemble contenant tous les éléments des ensembles fournis.
 
 ```python
 # union(): combine all elements from multiple sets (no duplicates)
@@ -164,7 +192,7 @@ s1.union(s2)  # or 's1 | s2' - returns {1, 2, 3, 4, 5}
 
 ## set intersection
 
-`intersection()` ou `&` retournera un ensemble contenant uniquement les éléments communs à tous.
+`intersection()` ou `&` renverront un ensemble contenant uniquement les éléments communs à tous.
 
 ```python
 # intersection(): return elements common to all sets
@@ -178,9 +206,23 @@ s1.intersection(s2, s3)  # or 's1 & s2 & s3' - returns {3}
 {3}
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Que retourne <code>intersection()</code> pour les ensembles ?
+</template>
+
+<base-quiz-option value="A">A. Tous les éléments de tous les ensembles</base-quiz-option>
+<base-quiz-option value="B" correct>B. Uniquement les éléments communs à tous les ensembles</base-quiz-option>
+<base-quiz-option value="C">C. Les éléments du premier ensemble mais pas des autres</base-quiz-option>
+<base-quiz-option value="D">D. Les éléments dans l'un ou l'autre ensemble mais pas les deux</base-quiz-option>
+<base-quiz-answer value="B">La méthode <code>intersection()</code> retourne un ensemble contenant uniquement les éléments présents dans tous les ensembles comparés.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## set difference
 
-`difference()` ou `-` retournera uniquement les éléments qui sont uniques au premier ensemble (ensemble invoqué).
+`difference()` ou `-` ne renverront que les éléments uniques au premier ensemble (l'ensemble invoqué).
 
 ```python
 # difference(): return elements in first set but not in others
@@ -204,7 +246,7 @@ s2.difference(s1) # or 's2 - s1'
 
 ## set symmetric_difference
 
-`symmetric_difference()` ou `^` retournera tous les éléments qui ne sont pas communs entre eux.
+`symmetric_difference()` ou `^` renverront tous les éléments qui ne sont pas communs entre eux.
 
 ```python
 # symmetric_difference(): return elements in either set, but not both
@@ -217,9 +259,23 @@ s1.symmetric_difference(s2)  # or 's1 ^ s2' - returns {1, 4}
 {1, 4}
 ```
 
+<base-quiz>
+<base-quiz-question correct="D">
+<template #question>
+Que retourne <code>symmetric_difference()</code> pour deux ensembles ?
+</template>
+
+<base-quiz-option value="A">A. Tous les éléments des deux ensembles</base-quiz-option>
+<base-quiz-option value="B">B. Uniquement les éléments communs aux deux ensembles</base-quiz-option>
+<base-quiz-option value="C">C. Les éléments du premier ensemble mais pas du second</base-quiz-option>
+<base-quiz-option value="D" correct>D. Les éléments dans l'un ou l'autre ensemble, mais pas dans les deux</base-quiz-option>
+<base-quiz-answer value="D">La méthode <code>symmetric_difference()</code> retourne un ensemble contenant les éléments qui sont dans l'un ou l'autre ensemble, mais pas dans les deux ensembles.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Liens pertinents
 
-- <router-link to="/blog/python-data-types">Python Data Types Blog Post</router-link>
+- <router-link to="/blog/python-data-types">Article de blog sur les types de données Python</router-link>
 - <router-link to="/blog/python-sets-what-why-how">Python Sets: What, Why and How</router-link>
-- <router-link to="/cheatsheet/dictionaries">Python Dictionaries</router-link>
-- <router-link to="/cheatsheet/lists-and-tuples">Python Lists and Tuples</router-link>
+- <router-link to="/cheatsheet/dictionaries">Dictionnaires Python</router-link>
+- <router-link to="/cheatsheet/lists-and-tuples">Listes et Tuples Python</router-link>

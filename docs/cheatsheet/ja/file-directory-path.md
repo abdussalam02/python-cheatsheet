@@ -10,7 +10,7 @@ labUrl: 'https://labex.io/ja/labs/python-python-file-and-directory-path-manipula
 
 <base-lab-url :url="frontmatter.labUrl" />
 
-実践的なファイルシステム操作の詳細については、ブログ記事をご覧ください：<router-link to="/blog/python-pathlib-essentials">開発者が知っておくべき 10 の必須ファイルシステム操作</router-link>。
+実用的なファイルシステム操作の詳細については、ブログ記事をご覧ください：<router-link to="/blog/python-pathlib-essentials">すべての開発者が知っておくべき 10 の必須ファイルシステム操作</router-link>。
 
 Python でパス操作を扱う主要なモジュールは 2 つあります。
 1 つは <router-link to="/modules/os-module">os.path</router-link> モジュール、もう 1 つは <router-link to="/modules/pathlib-module">pathlib</router-link> モジュールです。
@@ -26,7 +26,7 @@ Python でパス操作を扱う主要なモジュールは 2 つあります。
 
 ## Linux と Windows のパス
 
-Windows では、パスはフォルダー名の区切り文字としてバックスラッシュ (`\`) を使用して記述されます。macOS、Linux、BSD などの Unix ベースのオペレーティングシステムでは、パスの区切り文字としてフォワードスラッシュ (`/`) が使用されます。コードが異なるプラットフォームで動作する必要がある場合、パスの結合は頭痛の種になることがあります。
+Windows では、パスはフォルダ名の区切り文字としてバックスラッシュ (`\`) を使用して記述されます。macOS、Linux、BSD などの Unix ベースのオペレーティングシステムでは、パスの区切り文字としてフォワードスラッシュ (`/`) が使用されます。コードが異なるプラットフォームで動作する必要がある場合、パスの結合は頭痛の種になることがあります。
 
 幸いなことに、Python の `pathlib` モジュールはこれを処理する簡単な方法を提供します。
 
@@ -43,7 +43,7 @@ print(Path('usr').joinpath('bin').joinpath('spam'))  # パスコンポーネン�
 usr/bin/spam
 ```
 
-`pathlib` は、`/` 演算子を使用して `joinpath` のショートカットも提供します：
+`pathlib` は、`/` 演算子を使用して joinpath のショートカットも提供します：
 
 ```python
 # Path 演算子 (/): パスを結合する便利な方法 (クロスプラットフォーム)
@@ -58,14 +58,28 @@ usr/bin/spam
 
 パス区切り文字が Windows と Unix ベースのオペレーティングシステムで異なることに注意してください。これが、パスを結合するために文字列を結合する代わりに `pathlib` を使用したい理由です。
 
-パスの結合は、同じディレクトリの下に異なるファイルパスを作成する必要がある場合に役立ちます。
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Python で pathlib を使用してパスを結合する正しい方法はどれですか？
+</template>
+
+<base-quiz-option value="A">A. <code>Path('usr') + 'bin' + 'spam'</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>Path('usr') / 'bin' / 'spam'</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>Path('usr').join('bin').join('spam')</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>Path('usr/bin/spam')</code></base-quiz-option>
+<base-quiz-answer value="B"><code>/</code> 演算子は、pathlib でパスを結合するための推奨される方法です。クロスプラットフォームで動作し、文字列連結よりも読みやすいです。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+同じディレクトリの下に異なるファイルパスを作成する必要がある場合、パスの結合は役立ちます。
 
 \*nix での `pathlib` の使用：
 
 ```python
 # Path.home(): ユーザーのホームディレクトリを取得し、ファイル名と結合
 my_files = ['accounts.txt', 'details.csv', 'invite.docx']
-home = Path.home()  # ホームディレクトリパスを取得
+home = Path.home()  # ホームディレクトリのパスを取得
 for filename in my_files:
     print(home / filename)  # ホームパスと各ファイル名を結合
 ```
@@ -76,9 +90,9 @@ for filename in my_files:
 /home/labex/project/invite.docx
 ```
 
-### ユーザーのホームディレクトリを展開
+### ユーザーホームディレクトリの展開
 
-`os.path.expanduser()` を使用して `~` をユーザーのホームディレクトリに展開：
+`os.path.expanduser()` を使用して `~` をユーザーのホームディレクトリに展開します：
 
 ```python
 import os.path
@@ -101,7 +115,7 @@ print(os.path.expanduser('~/Documents'))
 ```
 
 ```python
-# ~ を含むパスで動作
+# ~ を含むパスでも機能する
 print(os.path.expanduser('~/myfile.txt'))
 ```
 
@@ -117,14 +131,14 @@ print(os.path.expanduser('~/myfile.txt'))
 # Path.cwd(): 現在の作業ディレクトリを取得
 from pathlib import Path
 
-print(Path.cwd())  # Path オブジェクトとして現在の作業ディレクトリを返します
+print(Path.cwd())  # Path オブジェクトとして現在の作業ディレクトリを返す
 ```
 
 ```output
 /home/labex/project
 ```
 
-## 新しいフォルダーの作成
+## 新しいフォルダの作成
 
 \*nix での `pathlib` の使用：
 
@@ -144,7 +158,7 @@ Traceback (most recent call last):
 FileNotFoundError: [Errno 2] No such file or directory: '/home/labex/project/delicious/walnut/waffles'
 ```
 
-おっと、厄介なエラーが発生しました！理由は、「delicious」ディレクトリが存在しないため、「walnut」と「waffles」ディレクトリをその下に作成できないためです。これを修正するには、次のようにします：
+おっと、厄介なエラーが発生しました！理由は、'delicious' ディレクトリが存在しないため、その下に 'walnut' や 'waffles' ディレクトリを作成できないからです。これを修正するには、次のようにします：
 
 ```python
 # mkdir(parents=True): 必要に応じてディレクトリとすべての親ディレクトリを作成
@@ -159,10 +173,10 @@ cwd = Path.cwd()
 
 ファイルパスを指定するには 2 つの方法があります。
 
-- **絶対パス**: 常にルートフォルダーから始まるパス
+- **絶対パス**: 常にルートフォルダから始まるパス
 - **相対パス**: プログラムの現在の作業ディレクトリに対して相対的なパス
 
-また、ドット (`.`) とドットドット (`..`) のフォルダーもあります。これらは実際のフォルダーではなく、パスで使用できる特別な名前です。単一のピリオド（「ドット」）をフォルダー名に使用することは、「このディレクトリ」の短縮形です。2 つのピリオド（「ドットドット」）は「親フォルダー」を意味します。
+また、ドット (`.`) とドットドット (`..`) フォルダもあります。これらは実際のフォルダではなく、パスで使用できる特別な名前です。単一のピリオド（ドット）は「このディレクトリ」の短縮形です。2 つのピリオド（ドットドット）は「親フォルダ」を意味します。
 
 ### 絶対パスの処理
 
@@ -185,6 +199,20 @@ Path('..').is_absolute()
 False
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+<code>Path('/').is_absolute()</code> は何を返しますか？
+</template>
+
+<base-quiz-option value="A" correct>A. <code>True</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>False</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>None</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>'/'</code></base-quiz-option>
+<base-quiz-answer value="A"><code>is_absolute()</code> メソッドは、絶対パス（Unix では <code>/</code> で始まるパス、Windows ではドライブ文字で始まるパス）に対して <code>True</code> を返します。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 `pathlib` を使用して絶対パスを抽出できます：
 
 ```python
@@ -206,7 +234,7 @@ print(Path('..').resolve())
 
 ### 相対パスの処理
 
-開始パスから別のパスへの相対パスを `pathlib` を使用して取得できます：
+`pathlib` を使用して、開始パスから別のパスへの相対パスを取得できます：
 
 ```python
 from pathlib import Path
@@ -257,7 +285,7 @@ Path('nonexistentfile').exists()
 False
 ```
 
-### パスがファイルであるかどうかの確認
+### パスがファイルであることの確認
 
 \*nix での `pathlib` の使用：
 
@@ -287,7 +315,21 @@ Path('nonexistentfile').is_file()
 False
 ```
 
-### パスがディレクトリであるかどうかの確認
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+setup.py が存在する場合、<code>Path('setup.py').is_file()</code> は何を返しますか？
+</template>
+
+<base-quiz-option value="A">A. <code>'setup.py'</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>False</code></base-quiz-option>
+<base-quiz-option value="C" correct>C. <code>True</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>None</code></base-quiz-option>
+<base-quiz-answer value="C"><code>is_file()</code> メソッドは、パスが存在しファイルである場合に <code>True</code> を返し、そうでない場合は <code>False</code> を返します。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+### パスがディレクトリであることの確認
 
 \*nix での `pathlib` の使用：
 
@@ -317,7 +359,7 @@ Path('/spam').is_dir()
 False
 ```
 
-## ファイルサイズをバイト単位で取得
+## ファイルサイズをバイト単位で取得する
 
 \*nix での `pathlib` の使用：
 
@@ -374,7 +416,7 @@ for f in Path('/usr/bin').iterdir():
     警告
   </base-warning-title>
   <base-warning-content>
-    ディレクトリ自体にもサイズがあります！したがって、上記のセクションで説明したメソッドを使用して、パスがファイルかディレクトリかを確認することをお勧めします。
+    ディレクトリ自体にもサイズがあります！したがって、上記セクションで説明したメソッドを使用して、パスがファイルかディレクトリかをチェックすることをお勧めします。
   </base-warning-content>
 </base-warning>
 
@@ -394,9 +436,9 @@ print(total_size)
 1903178911
 ```
 
-## ファイルとフォルダーのコピー
+## ファイルとフォルダのコピー
 
-`shutil` モジュールは、ファイルのコピー、およびフォルダー全体のコピーのための関数を提供します。
+`shutil` モジュールは、ファイルのコピー、およびフォルダ全体のコピーのための関数を提供します。
 
 ```python
 import shutil
@@ -416,7 +458,21 @@ shutil.copy('/tmp/eggs.txt', '/tmp/delicious/eggs2.txt')
 /tmp/delicious/eggs2.txt
 ```
 
-`shutil.copy()` は単一のファイルをコピーしますが、`shutil.copytree()` はフォルダー全体とそれに含まれるすべてのフォルダーとファイルをコピーします：
+<base-quiz>
+<base-quiz-question correct="D">
+<template #question>
+サブディレクトリとファイルをすべて含むディレクトリツリー全体をコピーするには、どの関数を使用する必要がありますか？
+</template>
+
+<base-quiz-option value="A">A. <code>shutil.copy()</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>Path.copy()</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>os.copy()</code></base-quiz-option>
+<base-quiz-option value="D" correct>D. <code>shutil.copytree()</code></base-quiz-option>
+<base-quiz-answer value="D"><code>shutil.copytree()</code> 関数はディレクトリツリー全体を再帰的にコピーしますが、<code>shutil.copy()</code> は単一のファイルをコピーするだけです。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+`shutil.copy()` は単一のファイルをコピーしますが、`shutil.copytree()` はフォルダ全体と、それに含まれるすべてのフォルダとファイルをコピーします：
 
 ```python
 import shutil
@@ -450,7 +506,7 @@ shutil.move('/tmp/bacon.txt', '/tmp/eggs/new_bacon.txt')
 /tmp/eggs/new_bacon.txt
 ```
 
-eggs フォルダーが存在しない場合、`move()` は bacon.txt を eggs という名前のファイルに名前変更します：
+eggs フォルダが存在しない場合、`move()` は bacon.txt を eggs という名前のファイルに名前変更します：
 
 ```python
 shutil.move('/tmp/bacon.txt', '/tmp/eggs')
@@ -460,11 +516,25 @@ shutil.move('/tmp/bacon.txt', '/tmp/eggs')
 /tmp/eggs
 ```
 
-## ファイルとフォルダーの削除
+## ファイルとフォルダの削除
 
 - `Path.unlink()` を呼び出すと、パス上のファイルが削除されます。
-- `Path.rmdir()` を呼び出すと、パス上のフォルダーが削除されます。このフォルダーには、ファイルやフォルダーが含まれていてはなりません。
-- `shutil.rmtree(path)` を呼び出すと、パス上のフォルダーが削除され、含まれるすべてのファイルとフォルダーも削除されます。
+- `Path.rmdir()` を呼び出すと、パス上のフォルダが削除されます。このフォルダはファイルやフォルダを含んでいてはいけません。
+- `shutil.rmtree(path)` を呼び出すと、パス上のフォルダが削除され、含まれるすべてのファイルとフォルダも削除されます。
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+空でないディレクトリとそのすべてのコンテンツを削除できるメソッドはどれですか？
+</template>
+
+<base-quiz-option value="A">A. <code>Path.rmdir()</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>shutil.rmtree()</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>Path.unlink()</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>os.remove()</code></base-quiz-option>
+<base-quiz-answer value="B"><code>shutil.rmtree()</code> 関数は、ディレクトリとそのすべてのコンテンツを再帰的に削除できます。<code>Path.rmdir()</code> は空のディレクトリでのみ機能します。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## ディレクトリツリーのウォーク
 
@@ -491,5 +561,5 @@ for i in p.rglob('*'):
 ## 関連リンク
 
 - <router-link to="/cheatsheet/reading-and-writing-files">ファイルの読み書き</router-link>
-- <router-link to="/blog/python-pathlib-essentials">開発者が知っておくべき 10 の必須ファイルシステム操作</router-link>
+- <router-link to="/blog/python-pathlib-essentials">すべての開発者が知っておくべき 10 の必須ファイルシステム操作</router-link>
 - <router-link to="/builtin/open">open()</router-link>

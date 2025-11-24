@@ -1,6 +1,6 @@
 ---
-title: 'Ambientes Virtuais Python - Guia Rápido Python'
-description: 'O uso de um Ambiente Virtual é testar código Python em ambientes encapsulados e evitar preencher a instalação base do Python com bibliotecas que usaremos apenas para um projeto.'
+title: 'Ambientes Virtuais Python - Folha de Dicas Python'
+description: 'O uso de um Ambiente Virtual é testar código Python em ambientes encapsulados e também evitar preencher a instalação base do Python com bibliotecas que podemos usar para apenas um projeto.'
 labUrl: 'https://labex.io/pt/labs/python-python-virtual-environments-633669?course=python-cheatsheet'
 ---
 
@@ -10,7 +10,7 @@ Ambiente Virtual
 
 <base-lab-url :url="frontmatter.labUrl" />
 
-O uso de um Ambiente Virtual serve para testar código Python em ambientes encapsulados e também para evitar preencher a instalação base do Python com bibliotecas que podemos usar para apenas um projeto.
+O uso de um Ambiente Virtual é para testar código python em ambientes encapsulados e também para evitar preencher a instalação base do Python com bibliotecas que podemos usar para apenas um projeto.
 
 ## venv
 
@@ -30,6 +30,20 @@ python3 -m venv venv
 
 Isso cria um diretório `venv` na sua pasta atual contendo o ambiente virtual.
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+Qual comando é usado para criar um ambiente virtual usando <code>venv</code>?
+</template>
+
+<base-quiz-option value="A" correct>A. <code>python -m venv venv</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>python create venv</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>venv create</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>python venv new</code></base-quiz-option>
+<base-quiz-answer value="A">O comando <code>python -m venv venv</code> cria um ambiente virtual. O flag <code>-m</code> executa o módulo venv, e <code>venv</code> no final é o nome do diretório a ser criado.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 2. Ativar o ambiente virtual
 
 No Linux/macOS:
@@ -46,6 +60,20 @@ venv\Scripts\activate
 
 Uma vez ativado, você verá `(venv)` no início do seu prompt de comando, indicando que o ambiente virtual está ativo.
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Como você ativa um ambiente virtual no Linux/macOS?
+</template>
+
+<base-quiz-option value="A">A. <code>activate venv</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>source venv/bin/activate</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>venv activate</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>python venv activate</code></base-quiz-option>
+<base-quiz-answer value="B">No Linux/macOS, você ativa um ambiente virtual usando <code>source venv/bin/activate</code>. No Windows, você usaria <code>venv\Scripts\activate</code>.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 3. Instalar pacotes
 
 Com o ambiente virtual ativado, instale pacotes usando pip:
@@ -54,7 +82,7 @@ Com o ambiente virtual ativado, instale pacotes usando pip:
 pip install package_name
 ```
 
-Os pacotes instalados serão específicos para este ambiente virtual.
+Pacotes instalados serão específicos para este ambiente virtual.
 
 4. Desativar o ambiente virtual
 
@@ -65,6 +93,20 @@ deactivate
 ```
 
 O prefixo `(venv)` desaparecerá do seu prompt de comando.
+
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+Qual é o principal propósito de usar um ambiente virtual?
+</template>
+
+<base-quiz-option value="A" correct>A. Isolar as dependências do projeto e evitar preencher a instalação base do Python</base-quiz-option>
+<base-quiz-option value="B">B. Fazer o Python rodar mais rápido</base-quiz-option>
+<base-quiz-option value="C">C. Criptografar código Python</base-quiz-option>
+<base-quiz-option value="D">D. Compilar Python para código de máquina</base-quiz-option>
+<base-quiz-answer value="A">Ambientes virtuais permitem que você teste código Python em ambientes encapsulados e evite preencher a instalação base do Python com bibliotecas que podem ser usadas apenas para um projeto. Isso ajuda a gerenciar dependências por projeto.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## virtualenv
 
@@ -100,7 +142,7 @@ setprojectdir .
 
 1. Desativar
 
-Para passar para outra coisa na linha de comando, digite `deactivate` para desativar seu ambiente.
+Para mudar para outra coisa na linha de comando, digite `deactivate` para desativar seu ambiente.
 
 ```bash
 deactivate
@@ -123,7 +165,7 @@ workon HelloWorld
     Do <a href="https://python-poetry.org/">site do Poetry</a>
   </base-disclaimer-title>
   <base-disclaimer-content>
-    Poetry é uma ferramenta para gerenciamento de dependências e empacotamento em Python. Ele permite que você declare as bibliotecas das quais seu projeto depende e ele as gerenciará (instalará/atualizará) para você.
+    Poetry é uma ferramenta para gerenciamento de dependências e empacotamento em Python. Ele permite que você declare as bibliotecas das quais seu projeto depende e as gerenciará (instalará/atualizará) para você.
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -251,7 +293,7 @@ Encontre mais informações e um vídeo em [docs.pipenv.org](https://docs.pipenv
 
 <base-disclaimer>
   <base-disclaimer-title>
-    <a target="k" href="https://anaconda.com/">Anaconda</a> é outra ferramenta popular para gerenciar pacotes Python.
+    <a target="k" href="https://anaconda.com/">Anaconda</a> é outra ferramenta popular para gerenciar pacotes python.
   </base-disclaimer-title>
   <base-disclaimer-content>
     Onde pacotes, notebooks, projetos e ambientes são compartilhados. Seu lugar para hospedagem pública gratuita de pacotes conda.

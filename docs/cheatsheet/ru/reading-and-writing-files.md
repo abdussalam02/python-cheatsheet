@@ -14,7 +14,7 @@ labUrl: 'https://labex.io/ru/labs/python-python-reading-and-writing-files-633663
 
 ## Процесс чтения/записи файлов
 
-Для чтения/записи в файл в Python следует использовать оператор `with`, который автоматически закроет файл после завершения работы, управляя доступными ресурсами.
+Для чтения/записи в файл в Python рекомендуется использовать оператор `with`, который автоматически закроет файл после завершения работы, управляя доступными ресурсами.
 
 ## Открытие и чтение файлов
 
@@ -32,7 +32,21 @@ hello_content
 'Hello World!'
 ```
 
-В качестве альтернативы можно использовать метод _readlines()_, чтобы получить список строковых значений из файла, по одной строке для каждой строки текста:
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+Каково основное преимущество использования оператора <code>with</code> при открытии файлов?
+</template>
+
+<base-quiz-option value="A" correct>A. Файл автоматически закрывается по завершении, даже если возникает ошибка</base-quiz-option>
+<base-quiz-option value="B">B. Файлы открываются быстрее</base-quiz-option>
+<base-quiz-option value="C">C. Файлы можно открывать одновременно в режиме чтения и записи</base-quiz-option>
+<base-quiz-option value="D">D. Файлы автоматически сжимаются</base-quiz-option>
+<base-quiz-answer value="A">Оператор <code>with</code> гарантирует, что файл будет автоматически закрыт при выходе из блока, даже если возникает исключение. Это помогает правильно управлять ресурсами.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+Альтернативно, вы можете использовать метод _readlines()_, чтобы получить список строковых значений из файла, по одной строке для каждой строки текста:
 
 ```python
 # Метод readlines(): возвращает список строк, по одной на строку
@@ -76,7 +90,7 @@ with open('bacon.txt', 'w') as bacon_file:  # 'w' = режим записи
 ```
 
 ```python
-# Добавление в файл: режим 'a' добавляет в конец существующего файла
+# Добавление в файл: режим 'a' добавляет содержимое в конец существующего файла
 with open('bacon.txt', 'a') as bacon_file:  # 'a' = режим добавления
     bacon_file.write('Bacon is not a vegetable.')
 ```
@@ -96,6 +110,20 @@ print(content)
 Hello world!
 Bacon is not a vegetable.
 ```
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+В чем разница между открытием файла в режиме <code>'w'</code> и режиме <code>'a'</code>?
+</template>
+
+<base-quiz-option value="A">A. <code>'w'</code> для чтения, <code>'a'</code> для записи</base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>'w'</code> перезаписывает файл, <code>'a'</code> добавляет в конец файла</base-quiz-option>
+<base-quiz-option value="C">C. <code>'w'</code> для Windows, <code>'a'</code> для Apple</base-quiz-option>
+<base-quiz-option value="D">D. Разницы нет</base-quiz-option>
+<base-quiz-answer value="B">Режим <code>'w'</code> открывает файл для записи и перезаписывает любое существующее содержимое. Режим <code>'a'</code> открывает файл для добавления, добавляя новое содержимое в конец файла.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Связанные ссылки
 

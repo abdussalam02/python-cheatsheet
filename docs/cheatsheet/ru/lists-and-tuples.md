@@ -10,10 +10,10 @@ labUrl: 'https://labex.io/ru/labs/python-python-lists-and-tuples-633660?course=p
 
 <base-lab-url :url="frontmatter.labUrl" />
 
-Списки — это один из 4 типов данных в Python, используемый для хранения коллекций данных.
+Списки — это один из 4 типов данных в Python, используемых для хранения коллекций данных.
 
 ```python
-# List: упорядоченная коллекция элементов, заключенных в квадратные скобки
+# Список: упорядоченная коллекция элементов, заключенных в квадратные скобки
 ['John', 'Peter', 'Debora', 'Charles']
 ```
 
@@ -83,13 +83,27 @@ f'The {furniture[-1]} is bigger than the {furniture[-3]}'
 'The shelf is bigger than the chair'
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Что вернет <code>furniture[-1]</code>, если <code>furniture = ['table', 'chair', 'rack', 'shelf']</code>?
+</template>
+
+<base-quiz-option value="A">A. <code>'table'</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>'shelf'</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>['shelf']</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>IndexError</code></base-quiz-option>
+<base-quiz-answer value="B">Отрицательные индексы обращаются к элементам с конца списка. <code>-1</code> относится к последнему элементу, <code>-2</code> — к предпоследнему и так далее.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Получение подсписков с помощью срезов (Slices)
 
 ```python
-# Slicing: получение подсписка с использованием синтаксиса [start:end] (end не включается)
+# Срез: получение подсписка с использованием синтаксиса [start:end] (end не включается)
 furniture = ['table', 'chair', 'rack', 'shelf']
 
-furniture[0:4]  # Возвращает элементы с индекса 0 по 3 (4 не включается)
+furniture[0:4]  # Возвращает элементы с индекса 0 по 3 (4 исключается)
 ```
 
 ```output
@@ -138,10 +152,10 @@ furniture[:]
 ['table', 'chair', 'rack', 'shelf']
 ```
 
-Срез всего списка создаст копию:
+Создание среза всего списка выполнит копирование:
 
 ```python
-# Срез создает копию: [:] создает поверхностную копию списка
+# Срез создает копию: [:] создает неглубокую копию списка
 spam = ['cat', 'bat', 'rat', 'elephant']
 spam2 = spam[:]  # Создать копию, а не ссылку
 spam2
@@ -167,6 +181,20 @@ spam2
 ```output
 ['cat', 'bat', 'rat', 'elephant']
 ```
+
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+Что создает <code>spam[:]</code>, когда <code>spam</code> — это список?
+</template>
+
+<base-quiz-option value="A">A. Ссылка на тот же список</base-quiz-option>
+<base-quiz-option value="B">B. Пустой список</base-quiz-option>
+<base-quiz-option value="C" correct>C. Неглубокая копия списка</base-quiz-option>
+<base-quiz-option value="D">D. Перевернутый список</base-quiz-option>
+<base-quiz-answer value="C">Создание среза всего списка с помощью <code>[:]</code> создает неглубокую копию. Изменение копии не повлияет на исходный список.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Получение длины списка с помощью len()
 
@@ -212,10 +240,10 @@ furniture
 ['desk', 'chair', 'chair', 'bed']
 ```
 
-## Конкатенация и Повторение
+## Объединение и повторение
 
 ```python
-# Конкатенация списков: объединение двух списков с помощью оператора +
+# Объединение списков: объединение двух списков с помощью оператора +
 [1, 2, 3] + ['A', 'B', 'C']  # Возвращает [1, 2, 3, 'A', 'B', 'C']
 ```
 
@@ -279,7 +307,7 @@ index: 3 - item: shelf
 ## Цикл по нескольким спискам с помощью zip()
 
 ```python
-# zip() объединяет несколько списков по элементам в цикле
+# zip() объединяет несколько списков попарно в цикле
 furniture = ['table', 'chair', 'rack', 'shelf']
 price = [100, 50, 80, 40]
 
@@ -330,9 +358,9 @@ True
 False
 ```
 
-## Трюк с множественным присваиванием (Multiple Assignment Trick)
+## Трюк с множественным присваиванием
 
-Трюк с множественным присваиванием — это сокращение, которое позволяет присвоить несколько переменных значениям из списка в одной строке кода. Вместо того чтобы делать так:
+Трюк с множественным присваиванием — это ярлык, который позволяет присвоить несколько переменных значениям из списка в одной строке кода. Вместо того чтобы делать так:
 
 ```python
 furniture = ['table', 'chair', 'rack', 'shelf']
@@ -428,9 +456,23 @@ furniture
 ['table', 'chair', 'rack', 'shelf', 'bed']
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+Что делает метод <code>append()</code> со списком?
+</template>
+
+<base-quiz-option value="A" correct>A. Добавляет элемент в конец списка</base-quiz-option>
+<base-quiz-option value="B">B. Добавляет элемент в начало списка</base-quiz-option>
+<base-quiz-option value="C">C. Заменяет последний элемент</base-quiz-option>
+<base-quiz-option value="D">D. Удаляет последний элемент</base-quiz-option>
+<base-quiz-answer value="A">Метод <code>append()</code> добавляет один элемент в конец списка. Чтобы добавить элемент в определенную позицию, используйте <code>insert()</code>.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ### insert()
 
-`insert` добавляет элемент в `list` по указанной позиции:
+`insert` добавляет элемент в `list` в заданную позицию:
 
 ```python
 furniture = ['table', 'chair', 'rack', 'shelf']
@@ -528,6 +570,20 @@ animals
 ['bat', 'rat']
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Что делает <code>pop()</code> при вызове для списка?
+</template>
+
+<base-quiz-option value="A">A. Только удаляет последний элемент</base-quiz-option>
+<base-quiz-option value="B" correct>B. Удаляет и возвращает элемент (по умолчанию последний элемент или указанный индекс)</base-quiz-option>
+<base-quiz-option value="C">C. Только возвращает последний элемент, не удаляя его</base-quiz-option>
+<base-quiz-option value="D">D. Удаляет все элементы из списка</base-quiz-option>
+<base-quiz-answer value="B">Метод <code>pop()</code> удаляет и возвращает элемент. По умолчанию он удаляет последний элемент, но вы можете передать индекс, чтобы удалить определенный элемент.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Сортировка значений с помощью sort()
 
 ```python
@@ -561,7 +617,7 @@ furniture
 ['table', 'shelf', 'rack', 'chair']
 ```
 
-Если вам нужно отсортировать значения в обычном алфавитном порядке, передайте `str.lower` в качестве значения для именованного аргумента `key` при вызове метода `sort()`:
+Если вам нужно отсортировать значения в обычном алфавитном порядке, передайте `str.lower` для именованного аргумента `key` в вызове метода `sort()`:
 
 ```python
 letters = ['a', 'z', 'A', 'Z']
@@ -584,14 +640,14 @@ sorted(furniture)
 ['chair', 'rack', 'shelf', 'table']
 ```
 
-## Тип данных Кортеж (Tuple)
+## Тип данных Tuple
 
 <base-disclaimer>
   <base-disclaimer-title>
     <a target="_blank" href="https://stackoverflow.com/questions/1708510/list-vs-tuple-when-to-use-each">Кортежи против Списков</a>
   </base-disclaimer-title>
   <base-disclaimer-content>
-    Ключевое различие между кортежами и списками заключается в том, что <code>кортежи</code> являются <i>неизменяемыми</i> (immutable) объектами, а <code>списки</code> — <i>изменяемыми</i> (mutable). Это означает, что кортежи нельзя изменять, в то время как списки можно модифицировать. Кортежи более эффективны по памяти, чем списки.
+    Ключевое различие между кортежами и списками заключается в том, что, хотя <code>кортежи</code> являются <i>неизменяемыми</i> объектами, <code>списки</code> являются <i>изменяемыми</i>. Это означает, что кортежи нельзя изменять, в то время как списки можно изменять. Кортежи более эффективны по памяти, чем списки.
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -621,7 +677,7 @@ len(furniture)
 4
 ```
 
-Основное отличие кортежей от списков заключается в том, что кортежи, как и строки, являются неизменяемыми.
+Основное отличие кортежей от списков заключается в том, что кортежи, как и строки, неизменяемы.
 
 ## Преобразование между list() и tuple()
 
@@ -648,6 +704,20 @@ list('hello')
 ```output
 ['h', 'e', 'l', 'l', 'o']
 ```
+
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+Каково основное различие между списками и кортежами в Python?
+</template>
+
+<base-quiz-option value="A">A. Списки могут содержать только числа, кортежи могут содержать что угодно</base-quiz-option>
+<base-quiz-option value="B">B. Кортежи создаются быстрее</base-quiz-option>
+<base-quiz-option value="C" correct>C. Списки изменяемы (могут быть изменены), кортежи неизменяемы (не могут быть изменены)</base-quiz-option>
+<base-quiz-option value="D">D. Списки используют квадратные скобки, кортежи используют фигурные скобки</base-quiz-option>
+<base-quiz-answer value="C">Списки изменяемы, что означает, что вы можете изменять их после создания. Кортежи неизменяемы, что означает, что после создания их нельзя изменить. Оба могут содержать любые типы данных.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Связанные ссылки
 

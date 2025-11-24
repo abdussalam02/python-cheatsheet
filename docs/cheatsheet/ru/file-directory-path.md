@@ -1,5 +1,5 @@
 ---
-title: 'Пути к файлам и каталогам - Шпаргалка по Python'
+title: 'Пути к файлам и каталогам - Шпаргалка Python'
 description: 'В Python есть два основных модуля для работы с путями: os.path и pathlib.'
 labUrl: 'https://labex.io/ru/labs/python-python-file-and-directory-path-manipulation-633657?course=python-cheatsheet'
 ---
@@ -12,26 +12,23 @@ labUrl: 'https://labex.io/ru/labs/python-python-file-and-directory-path-manipula
 
 Для глубокого погружения в практические операции с файловой системой ознакомьтесь с нашей статьей в блоге: <router-link to="/blog/python-pathlib-essentials">10 основных операций с файловой системой, которые должен знать каждый разработчик</router-link>.
 
-В Python есть два основных модуля, которые занимаются манипулированием путями.
-Один из них — модуль <router-link to="/modules/os-module">os.path</router-link>, а другой — модуль <router-link to="/modules/pathlib-module">pathlib</router-link>.
+В Python есть два основных модуля для работы с путями.
+Один — это модуль <router-link to="/modules/os-module">os.path</router-link>, а другой — модуль <router-link to="/modules/pathlib-module">pathlib</router-link>.
 
 <base-disclaimer>
   <base-disclaimer-title>
     Pathlib против модуля OS
   </base-disclaimer-title>
   <base-disclaimer-content>
-    <code>pathlib</code> предоставляет гораздо больше функциональных возможностей, чем перечислено выше, например, получение имени файла, получение расширения файла, чтение/запись файла без его ручного открытия и т. д. См. <a target="_blank" href="https://docs.python.org/3/library/pathlib.html">официальную документацию</a>, если хотите узнать больше.
+    <code>pathlib</code> предоставляет гораздо больше функций, чем перечислено выше, например, получение имени файла, получение расширения файла, чтение/запись файла без его ручного открытия и т. д. См. <a target="_blank" href="https://docs.python.org/3/library/pathlib.html">официальную документацию</a>, если хотите узнать больше.
   </base-disclaimer-content>
 </base-disclaimer>
 
 ## Пути в Linux и Windows
 
-В Windows пути записываются с использованием обратных слешей (`\`) в качестве разделителя между
-именами папок. В операционных системах на базе Unix, таких как macOS, Linux и BSD,
-в качестве разделителя путей используется прямая косая черта (`/`). Объединение путей может
-быть головной болью, если ваш код должен работать на разных платформах.
+В Windows пути записываются с использованием обратных слешей (`\`) в качестве разделителя между именами папок. В операционных системах на базе Unix, таких как macOS, Linux и BSD, в качестве разделителя путей используется прямая косая черта (`/`). Объединение путей может стать головной болью, если ваш код должен работать на разных платформах.
 
-К счастью, модуль `pathlib` в Python предоставляет простой способ справиться с этим.
+К счастью, модуль Python `pathlib` предоставляет простой способ справиться с этим.
 
 Использование `pathlib` в \*nix:
 
@@ -59,8 +56,21 @@ print(Path('usr') / 'bin' / 'spam')  # Использовать оператор
 usr/bin/spam
 ```
 
-Обратите внимание, что разделитель путей отличается между Windows и операционными системами на базе Unix, поэтому вам следует использовать `pathlib` вместо
-склеивания строк для объединения путей.
+Обратите внимание, что разделитель путей отличается между Windows и операционными системами на базе Unix, поэтому вам следует использовать `pathlib` вместо конкатенации строк для объединения путей.
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Какой правильный способ объединить пути с помощью pathlib в Python?
+</template>
+
+<base-quiz-option value="A">A. <code>Path('usr') + 'bin' + 'spam'</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>Path('usr') / 'bin' / 'spam'</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>Path('usr').join('bin').join('spam')</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>Path('usr/bin/spam')</code></base-quiz-option>
+<base-quiz-answer value="B">Оператор <code>/</code> является рекомендуемым способом объединения путей с помощью pathlib. Он работает кроссплатформенно и более читабелен, чем конкатенация строк.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 Объединение путей полезно, если вам нужно создать разные пути к файлам в одном и том же каталоге.
 
@@ -71,7 +81,7 @@ usr/bin/spam
 my_files = ['accounts.txt', 'details.csv', 'invite.docx']
 home = Path.home()  # Получить путь к домашнему каталогу
 for filename in my_files:
-    print(home / filename)  # Объединить домашний путь с каждым именем файла
+    print(home / filename)  # Объединить путь к дому с каждым именем файла
 ```
 
 ```output
@@ -82,7 +92,7 @@ for filename in my_files:
 
 ### Развертывание домашнего каталога пользователя
 
-Использовать `os.path.expanduser()` для развертывания `~` в домашний каталог пользователя:
+Использование `os.path.expanduser()` для развертывания `~` в домашний каталог пользователя:
 
 ```python
 import os.path
@@ -148,7 +158,7 @@ Traceback (most recent call last):
 FileNotFoundError: [Errno 2] No such file or directory: '/home/labex/project/delicious/walnut/waffles'
 ```
 
-О нет, мы получили досадную ошибку! Причина в том, что каталог 'delicious' не существует, поэтому мы не можем создать каталоги 'walnut' и 'waffles' внутри него. Чтобы исправить это, сделайте следующее:
+О нет, мы получили досадную ошибку! Причина в том, что каталога 'delicious' не существует, поэтому мы не можем создать каталоги 'walnut' и 'waffles' внутри него. Чтобы это исправить, сделайте следующее:
 
 ```python
 # mkdir(parents=True): создать каталог и все родительские каталоги, если необходимо
@@ -166,7 +176,7 @@ cwd = Path.cwd()
 - **Абсолютный путь**, который всегда начинается с корневой папки
 - **Относительный путь**, который относителен к текущему рабочему каталогу программы
 
-Также существуют папки с точкой (`.`) и двумя точками (`..`). Это не настоящие папки, а специальные имена, которые можно использовать в пути. Одна точка («точка») для имени папки является сокращением для «этот каталог». Две точки («две точки») означают «родительский каталог».
+Также существуют папки с точкой (`.`) и двумя точками (`..`). Это не настоящие папки, а специальные имена, которые можно использовать в пути. Одна точка (“точка”) для имени папки является сокращением для “текущий каталог”. Две точки (“точка-точка”) означают “родительский каталог”.
 
 ### Обработка абсолютных путей
 
@@ -189,6 +199,20 @@ Path('..').is_absolute()
 False
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+Что вернет <code>Path('/').is_absolute()</code>?
+</template>
+
+<base-quiz-option value="A" correct>A. <code>True</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>False</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>None</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>'/'</code></base-quiz-option>
+<base-quiz-answer value="A">Метод <code>is_absolute()</code> возвращает <code>True</code> для абсолютных путей (тех, которые начинаются с <code>/</code> в Unix или буквы диска в Windows).</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 Вы можете извлечь абсолютный путь с помощью `pathlib`:
 
 ```python
@@ -210,7 +234,7 @@ print(Path('..').resolve())
 
 ### Обработка относительных путей
 
-Вы можете получить относительный путь от начального пути к другому пути, используя `pathlib`:
+Вы можете получить относительный путь от начального пути к другому пути с помощью `pathlib`:
 
 ```python
 from pathlib import Path
@@ -290,6 +314,20 @@ Path('nonexistentfile').is_file()
 ```output
 False
 ```
+
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+Что вернет <code>Path('setup.py').is_file()</code>, если setup.py существует?
+</template>
+
+<base-quiz-option value="A">A. <code>'setup.py'</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>False</code></base-quiz-option>
+<base-quiz-option value="C" correct>C. <code>True</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>None</code></base-quiz-option>
+<base-quiz-answer value="C">Метод <code>is_file()</code> возвращает <code>True</code>, если путь существует и является файлом, и <code>False</code> в противном случае.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ### Проверка, является ли путь каталогом
 
@@ -371,14 +409,14 @@ for f in Path('/usr/bin').iterdir():
 ...
 ```
 
-## Размеры файлов каталогов
+## Размеры файлов в каталоге
 
 <base-warning>
   <base-warning-title>
     ПРЕДУПРЕЖДЕНИЕ
   </base-warning-title>
   <base-warning-content>
-    Сами каталоги также имеют размер! Поэтому вам может понадобиться проверить, является ли путь файлом или каталогом, используя методы, обсуждавшиеся в предыдущем разделе.
+    Сами каталоги также имеют размер! Поэтому вам может понадобиться проверить, является ли путь файлом или каталогом, используя методы, описанные в предыдущем разделе.
   </base-warning-content>
 </base-warning>
 
@@ -420,7 +458,21 @@ shutil.copy('/tmp/eggs.txt', '/tmp/delicious/eggs2.txt')
 /tmp/delicious/eggs2.txt
 ```
 
-В то время как `shutil.copy()` скопирует один файл, `shutil.copytree()` скопирует всю папку и все папки и файлы, содержащиеся в ней:
+<base-quiz>
+<base-quiz-question correct="D">
+<template #question>
+Какую функцию следует использовать для копирования всего дерева каталогов, включая все подкаталоги и файлы?
+</template>
+
+<base-quiz-option value="A">A. <code>shutil.copy()</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>Path.copy()</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>os.copy()</code></base-quiz-option>
+<base-quiz-option value="D" correct>D. <code>shutil.copytree()</code></base-quiz-option>
+<base-quiz-answer value="D">Функция <code>shutil.copytree()</code> рекурсивно копирует все дерево каталогов, в то время как <code>shutil.copy()</code> копирует только один файл.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+В то время как `shutil.copy()` скопирует один файл, `shutil.copytree()` скопирует всю папку и каждый содержащийся в ней каталог и файл:
 
 ```python
 import shutil
@@ -444,7 +496,7 @@ shutil.move('/tmp/bacon.txt', '/tmp/eggs')
 /tmp/eggs/bacon.txt
 ```
 
-В целевом пути также может быть указано имя файла. В следующем примере исходный файл перемещается и переименовывается:
+В пути назначения также может быть указано имя файла. В следующем примере исходный файл перемещается и переименовывается:
 
 ```python
 shutil.move('/tmp/bacon.txt', '/tmp/eggs/new_bacon.txt')
@@ -467,8 +519,22 @@ shutil.move('/tmp/bacon.txt', '/tmp/eggs')
 ## Удаление файлов и папок
 
 - Вызов `Path.unlink()` удалит файл по указанному пути.
-- Вызов `Path.rmdir()` удалит папку по указанному пути. Эта папка должна быть пуста от любых файлов или папок.
+- Вызов `Path.rmdir()` удалит папку по указанному пути. Эта папка должна быть пуста от каких-либо файлов или папок.
 - Вызов `shutil.rmtree(path)` удалит папку по указанному пути, а также все содержащиеся в ней файлы и папки.
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Какой метод может удалить непустой каталог и все его содержимое?
+</template>
+
+<base-quiz-option value="A">A. <code>Path.rmdir()</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>shutil.rmtree()</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>Path.unlink()</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>os.remove()</code></base-quiz-option>
+<base-quiz-answer value="B">Функция <code>shutil.rmtree()</code> может рекурсивно удалять каталог и все его содержимое. <code>Path.rmdir()</code> работает только с пустыми каталогами.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Обход дерева каталогов
 

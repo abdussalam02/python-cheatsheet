@@ -111,7 +111,7 @@ age
 No hay necesidad de usar **.keys()** ya que por defecto se iterará sobre las claves:
 
 ```python
-# Iterar directamente sobre el diccionario itera sobre las claves (comportamiento por defecto)
+# Iterar sobre el diccionario directamente itera sobre las claves (comportamiento por defecto)
 mascota = {'color': 'red', 'age': 42}
 for key in mascota:  # Equivalente a for key in mascota.keys()
     print(key)
@@ -239,6 +239,20 @@ esposa
 {'name': 'Rose', 'hair': 'brown'}
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+¿Qué hace <code>pop()</code> cuando se llama en un diccionario?
+</template>
+
+<base-quiz-option value="A">A. Solo elimina el par clave-valor</base-quiz-option>
+<base-quiz-option value="B" correct>B. Elimina y devuelve el valor para la clave especificada</base-quiz-option>
+<base-quiz-option value="C">C. Solo devuelve el valor sin eliminarlo</base-quiz-option>
+<base-quiz-option value="D">D. Elimina todos los elementos del diccionario</base-quiz-option>
+<base-quiz-answer value="B">El método <code>pop()</code> elimina el par clave-valor para la clave especificada y devuelve el valor. Si la clave no existe, genera un <code>KeyError</code> (a menos que proporciones un valor predeterminado).</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ### popitem()
 
 El método `popitem()` elimina el último elemento en un diccionario y lo devuelve.
@@ -361,7 +375,7 @@ Para Python 3.5+:
 ```python
 dict_a = {'a': 1, 'b': 2}
 dict_b = {'b': 3, 'c': 4}
-dict_c = {**dict_a, **dict_b}
+dict_c = {**dict_b, **dict_a}
 dict_c
 ```
 
@@ -369,9 +383,23 @@ dict_c
 {'a': 1, 'b': 3, 'c': 4}
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Al fusionar dos diccionarios usando <code>{**dict_b, **dict_a}</code>, ¿qué sucede si ambos diccionarios tienen la misma clave?
+</template>
+
+<base-quiz-option value="A">A. El valor de <code>dict_b</code> sobrescribe el valor de <code>dict_a</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. El valor de <code>dict_a</code> sobrescribe el valor de <code>dict_b</code></base-quiz-option>
+<base-quiz-option value="C">C. Ambos valores se mantienen en una lista</base-quiz-option>
+<base-quiz-option value="D">D. Se genera un error</base-quiz-option>
+<base-quiz-answer value="B">Al fusionar diccionarios con el operador de desempaquetado <code>\*\*</code>, si ambos diccionarios tienen la misma clave, el valor del diccionario que aparece más tarde (en este caso <code>dict_a</code>) sobrescribe el valor del diccionario anterior.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Enlaces relevantes
 
-- <router-link to="/blog/python-data-types">Publicación de Blog Tipos de Datos de Python</router-link>
+- <router-link to="/blog/python-data-types">Entrada de Blog Tipos de Datos de Python</router-link>
 - <router-link to="/blog/python-easy-args-kwargs">Python \*args y \*\*kwargs Hechos Fáciles</router-link>
 - <router-link to="/cheatsheet/comprehensions">Comprensiones</router-link>
 - <router-link to="/cheatsheet/args-and-kwargs">Args y Kwargs</router-link>

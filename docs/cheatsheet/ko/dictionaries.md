@@ -17,7 +17,7 @@ Python 에서 딕셔너리는 _순서가 있는_ (Python > 3.7 부터) `key`: `v
     Python 3 <a target="_blank" href="https://docs.python.org/3/tutorial/datastructures.html#dictionaries">문서</a>에서 발췌
   </base-disclaimer-title>
   <base-disclaimer-content>
-    딕셔너리의 주요 작업은 특정 키로 값을 저장하고 주어진 키로 값을 추출하는 것입니다. 또한 <code>del</code>을 사용하여 키:값 쌍을 삭제하는 것도 가능합니다.
+    딕셔너리의 주요 작업은 특정 키로 값을 저장하고 키를 주어 값을 추출하는 것입니다. 또한 <code>del</code>을 사용하여 키:값 쌍을 삭제하는 것도 가능합니다.
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -26,9 +26,9 @@ Python 에서 딕셔너리는 _순서가 있는_ (Python > 3.7 부터) `key`: `v
 ```python
 # 딕셔너리: 키 - 값 쌍의 모음
 my_cat = {
-    'size': 'fat',          # 키: 'size', 값: 'fat'
-    'color': 'gray',         # 키: 'color', 값: 'gray'
-    'disposition': 'loud'    # 키: 'disposition', 값: 'loud'
+    'size': 'fat',          # key: 'size', value: 'fat'
+    'color': 'gray',         # key: 'color', value: 'gray'
+    'disposition': 'loud'    # key: 'disposition', value: 'loud'
 }
 ```
 
@@ -83,7 +83,7 @@ KeyError: 'eye_color'
 ```python
 # .values() 메서드를 사용하여 딕셔너리 값 반복
 pet = {'color': 'red', 'age': 42}
-for value in pet.values():  # 모든 값 반복
+for value in pet.values():  # 모든 값을 순회
     print(value)
 ```
 
@@ -99,7 +99,7 @@ red
 ```python
 # .keys() 메서드를 사용하여 딕셔너리 키 반복
 pet = {'color': 'red', 'age': 42}
-for key in pet.keys():  # 모든 키 반복
+for key in pet.keys():  # 모든 키를 순회
     print(key)
 ```
 
@@ -108,10 +108,10 @@ color
 age
 ```
 
-기본적으로 키를 반복하므로 **.keys()**를 사용할 필요가 없습니다:
+기본적으로 키를 순회하므로 **.keys()**를 사용할 필요가 없습니다:
 
 ```python
-# 딕셔너리 직접 반복은 키를 반복합니다 (기본 동작)
+# 딕셔너리를 직접 순회하면 키를 순회합니다 (기본 동작)
 pet = {'color': 'red', 'age': 42}
 for key in pet:  # for key in pet.keys() 와 동일
     print(key)
@@ -137,7 +137,7 @@ for item in pet.items():
 ('age', 42)
 ```
 
-`keys()`, `values()`, `items()` 메서드를 사용하면 for 루프가 각각 키, 값 또는 키 - 값 쌍을 딕셔너리에서 반복할 수 있습니다.
+`keys()`, `values()`, `items()` 메서드를 사용하면 for 루프를 통해 각각 딕셔너리의 키, 값 또는 키 - 값 쌍을 반복할 수 있습니다.
 
 ```python
 # .items() 메서드를 사용하여 키 - 값 쌍 반복
@@ -239,6 +239,20 @@ wife
 {'name': 'Rose', 'hair': 'brown'}
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+딕셔너리에서 <code>pop()</code>을 호출하면 어떻게 되나요?
+</template>
+
+<base-quiz-option value="A">A. 키 - 값 쌍만 제거합니다</base-quiz-option>
+<base-quiz-option value="B" correct>B. 지정된 키에 대한 값을 제거하고 반환합니다</base-quiz-option>
+<base-quiz-option value="C">C. 값을 반환하기만 하고 제거하지는 않습니다</base-quiz-option>
+<base-quiz-option value="D">D. 딕셔너리의 모든 항목을 제거합니다</base-quiz-option>
+<base-quiz-answer value="B"><code>pop()</code> 메서드는 지정된 키에 대한 키 - 값 쌍을 제거하고 해당 값을 반환합니다. 키가 존재하지 않으면 (기본값을 제공하지 않는 한) <code>KeyError</code>를 발생시킵니다.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ### popitem()
 
 `popitem()` 메서드는 딕셔너리의 마지막 항목을 제거하고 반환합니다.
@@ -288,7 +302,7 @@ wife
 {}
 ```
 
-## 딕셔너리에서 키 확인
+## 딕셔너리에서 키 확인하기
 
 ```python
 person = {'name': 'Rose', 'age': 33}
@@ -316,7 +330,7 @@ False
 False
 ```
 
-## 딕셔너리에서 값 확인
+## 딕셔너리에서 값 확인하기
 
 ```python
 person = {'name': 'Rose', 'age': 33}
@@ -361,13 +375,27 @@ Python 3.5 이상:
 ```python
 dict_a = {'a': 1, 'b': 2}
 dict_b = {'b': 3, 'c': 4}
-dict_c = {**dict_a, **dict_b}
+dict_c = {**dict_b, **dict_a}
 dict_c
 ```
 
 ```output
 {'a': 1, 'b': 3, 'c': 4}
 ```
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+<code>{**dict_b, **dict_a}</code>를 사용하여 두 딕셔너리를 병합할 때, 두 딕셔너리에 동일한 키가 있으면 어떻게 되나요?
+</template>
+
+<base-quiz-option value="A">A. <code>dict_b</code>의 값이 <code>dict_a</code>의 값을 덮어씁니다</base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>dict_a</code>의 값이 <code>dict_b</code>의 값을 덮어씁니다</base-quiz-option>
+<base-quiz-option value="C">C. 두 값이 리스트로 유지됩니다</base-quiz-option>
+<base-quiz-option value="D">D. 오류가 발생합니다</base-quiz-option>
+<base-quiz-answer value="B"><code>\*\*</code> 언패킹 연산자를 사용하여 딕셔너리를 병합할 때, 두 딕셔너리에 동일한 키가 있으면 나중에 오는 딕셔너리 (이 경우 <code>dict_a</code>) 의 값이 이전 딕셔너리의 값을 덮어씁니다.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## 관련 링크
 

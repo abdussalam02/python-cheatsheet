@@ -54,9 +54,9 @@ say_hello('Rose')
 Hello Rose
 ```
 
-## Именованные аргументы
+## Именованные аргументы (Keyword Arguments)
 
-Для повышения читаемости кода мы должны быть максимально явными. Мы можем достичь этого в наших функциях, используя `Keyword Arguments` (Именованные аргументы):
+Чтобы улучшить читаемость кода, мы должны быть максимально явными. Мы можем добиться этого в наших функциях, используя `Keyword Arguments`:
 
 ```python
 # Function with multiple parameters
@@ -80,9 +80,23 @@ say_hi(name='Anna', greeting='Hi')
 Hi Anna
 ```
 
-## Возвращаемые значения
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+What is the main advantage of using keyword arguments in Python functions?
+</template>
 
-При создании функции с помощью оператора `def` вы можете указать, каким должно быть возвращаемое значение, с помощью оператора `return`. Оператор возврата состоит из следующего:
+<base-quiz-option value="A">A. They execute faster</base-quiz-option>
+<base-quiz-option value="B">B. They use less memory</base-quiz-option>
+<base-quiz-option value="C" correct>C. They improve code readability and order doesn't matter</base-quiz-option>
+<base-quiz-option value="D">D. They prevent errors</base-quiz-option>
+<base-quiz-answer value="C">Keyword arguments improve code readability by making it clear what each argument represents, and they allow you to pass arguments in any order.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+## Возвращаемые значения (Return Values)
+
+При создании функции с помощью оператора `def` вы можете указать, какое должно быть возвращаемое значение, с помощью оператора `return`. Оператор возврата состоит из следующего:
 
 - Ключевое слово `return`.
 
@@ -102,7 +116,21 @@ print(result)
 15
 ```
 
-## Локальная и глобальная области видимости
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+What keyword is used to return a value from a function in Python?
+</template>
+
+<base-quiz-option value="A" correct>A. <code>return</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>output</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>yield</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>exit</code></base-quiz-option>
+<base-quiz-answer value="A">The <code>return</code> keyword is used to return a value from a function. If no return statement is used, the function returns <code>None</code>.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+## Локальная и глобальная области видимости (Local and Global Scope)
 
 - Код в глобальной области видимости не может использовать локальные переменные.
 
@@ -151,19 +179,33 @@ print(eggs)  # Prints 'spam', not 'global'
 spam
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+What keyword must you use inside a function to modify a global variable?
+</template>
+
+<base-quiz-option value="A">A. <code>nonlocal</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>global</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>extern</code></base-quiz-option>
+<base-quiz-option value="D">D. No keyword needed</base-quiz-option>
+<base-quiz-answer value="B">The <code>global</code> keyword must be used inside a function to modify a global variable. Without it, Python will create a local variable instead.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 Существуют четыре правила, определяющие, находится ли переменная в локальной или глобальной области видимости:
 
 1. Если переменная используется в глобальной области видимости (то есть вне всех функций), то это всегда глобальная переменная.
 
 1. Если в функции есть оператор `global` для этой переменной, это глобальная переменная.
 
-1. В противном случае, если переменная используется в операторе присваивания в функции, это локальная переменная.
+1. В противном случае, если переменная используется в операторе присваивания внутри функции, это локальная переменная.
 
 1. Но если переменная не используется в операторе присваивания, это глобальная переменная.
 
-## Lambda-функции
+## Функции Lambda
 
-В Python лямбда-функция — это однострочная анонимная функция, которая может иметь любое количество аргументов, но только одно выражение.
+В Python функция lambda — это однострочная анонимная функция, которая может иметь любое количество аргументов, но только одно выражение.
 
 <base-disclaimer>
   <base-disclaimer-title>
@@ -176,10 +218,10 @@ spam
 
 <base-warning>
   <base-warning-title>
-    Однострочное выражение
+    Single line expression
   </base-warning-title>
   <base-warning-content>
-    Лямбда-функции могут вычислять только выражение, например, одну строку кода.
+    Lambda functions can only evaluate an expression, like a single line of code.
   </base-warning-content>
 </base-warning>
 
@@ -197,7 +239,7 @@ add(5, 3)
 8
 ```
 
-Эквивалентна _лямбда_-функции:
+Эквивалентна функции _lambda_:
 
 ```python
 # Lambda function: anonymous function defined in one line
@@ -210,7 +252,21 @@ add(5, 3)
 8
 ```
 
-Как и обычные вложенные функции, лямбды также работают как лексические замыкания:
+<base-quiz>
+<base-quiz-question correct="D">
+<template #question>
+What is a lambda function in Python?
+</template>
+
+<base-quiz-option value="A">A. A function that can only be called once</base-quiz-option>
+<base-quiz-option value="B">B. A function that takes no arguments</base-quiz-option>
+<base-quiz-option value="C">C. A function that returns multiple values</base-quiz-option>
+<base-quiz-option value="D" correct>D. A single-line anonymous function that can have any number of arguments but only one expression</base-quiz-option>
+<base-quiz-answer value="D">A lambda function is an anonymous, single-line function defined using the <code>lambda</code> keyword. It can take any number of arguments but can only contain a single expression.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+Как и обычные вложенные функции, лямбда-функции также работают как лексические замыкания:
 
 ```python
 # Lambda closure: lambda function that captures variable from outer scope
@@ -236,7 +292,21 @@ plus_5(4)
 9
 ```
 
-## Связанные ссылки
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+What does a lambda closure allow you to do?
+</template>
+
+<base-quiz-option value="A" correct>A. Capture variables from the outer scope</base-quiz-option>
+<base-quiz-option value="B">B. Modify global variables without the global keyword</base-quiz-option>
+<base-quiz-option value="C">C. Return multiple values</base-quiz-option>
+<base-quiz-option value="D">D. Execute code asynchronously</base-quiz-option>
+<base-quiz-answer value="A">Lambda closures allow lambda functions to capture and use variables from their enclosing scope, similar to regular nested functions.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+## Соответствующие ссылки
 
 - <router-link to="/blog/python-easy-args-kwargs">\*args и \*\*kwargs объяснены</router-link>
 - <router-link to="/cheatsheet/args-and-kwargs">Args и Kwargs</router-link>

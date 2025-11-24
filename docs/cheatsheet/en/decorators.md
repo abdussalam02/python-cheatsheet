@@ -44,6 +44,20 @@ Hello World!
 After func!
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+What is a decorator in Python?
+</template>
+
+<base-quiz-option value="A" correct>A. A function that takes another function and returns a wrapper function</base-quiz-option>
+<base-quiz-option value="B">B. A special type of class</base-quiz-option>
+<base-quiz-option value="C">C. A built-in Python keyword</base-quiz-option>
+<base-quiz-option value="D">D. A way to delete functions</base-quiz-option>
+<base-quiz-answer value="A">A decorator is a function that takes another function as an argument and returns a wrapper function. The <code>@</code> syntax is syntactic sugar that applies the decorator to a function.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Decorator for a function with parameters
 
 ```python
@@ -88,6 +102,20 @@ def your_decorator(func):
     return result  # Return the original function's return value
   return wrapper
 ```
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+What does <code>@functools.wraps(func)</code> do in a decorator?
+</template>
+
+<base-quiz-option value="A">A. Makes the decorator execute faster</base-quiz-option>
+<base-quiz-option value="B" correct>B. Preserves the original function's metadata (name, docstring, etc.)</base-quiz-option>
+<base-quiz-option value="C">C. Prevents the function from being called</base-quiz-option>
+<base-quiz-option value="D">D. Converts the function to a class</base-quiz-option>
+<base-quiz-answer value="B">The <code>@functools.wraps(func)</code> decorator preserves the original function's metadata (like its name and docstring) in the wrapper function. This is considered a best practice when writing decorators.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Decorator with parameters
 

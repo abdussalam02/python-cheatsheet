@@ -1,6 +1,6 @@
 ---
-title: 'Expressions Régulières Python - Aide-Mémoire Python'
-description: 'Une expression régulière (regex) est une séquence de caractères qui spécifie un modèle de recherche dans un texte et est utilisée par les algorithmes de recherche de chaînes.'
+title: 'Expressions Régulières Python - Aide-mémoire Python'
+description: 'Une expression régulière (abrégée regex) est une séquence de caractères qui spécifie un modèle de recherche dans un texte et est utilisée par les algorithmes de recherche de chaînes.'
 labUrl: 'https://labex.io/fr/labs/python-python-regular-expressions-633664?course=python-cheatsheet'
 ---
 
@@ -15,43 +15,43 @@ Expressions Régulières
     <a target="_blank" href="https://en.wikipedia.org/wiki/Regular_expression">Expressions régulières</a>
   </base-disclaimer-title>
   <base-disclaimer-content>
-    Une expression régulière (raccourcie en regex [...]) est une séquence de caractères qui spécifie un modèle de recherche dans un texte. [...] utilisée par les algorithmes de recherche de chaînes pour des opérations de "trouver" ou de "trouver et remplacer" sur des chaînes, ou pour la validation des entrées.
+    Une expression régulière (raccourcie en regex [...]) est une séquence de caractères qui spécifie un modèle de recherche dans un texte. [...] utilisée par les algorithmes de recherche de chaînes pour les opérations de "trouver" ou de "trouver et remplacer" sur des chaînes, ou pour la validation des entrées.
   </base-disclaimer-content>
 </base-disclaimer>
 
 1. Importez le module regex avec `import re`.
-2. Créez un objet Regex avec la fonction `re.compile()`. (N'oubliez pas d'utiliser une chaîne brute (raw string).)
+2. Créez un objet Regex avec la fonction `re.compile()`. (N'oubliez pas d'utiliser une chaîne brute.)
 3. Passez la chaîne que vous souhaitez rechercher à la méthode `search()` de l'objet Regex. Cela renvoie un objet `Match`.
 4. Appelez la méthode `group()` de l'objet Match pour renvoyer une chaîne du texte réellement correspondant.
 
 Toutes les fonctions regex en Python se trouvent dans le module re :
 
 ```python
-# Importez le module re pour les opérations d'expressions régulières
+# Importez le module re pour les opérations d'expression régulière
 import re
 ```
 
 ## Symboles Regex
 
-| Symbole                  | Correspond à                                                     |
-| ------------------------ | ---------------------------------------------------------------- |
-| `?`                      | zéro ou une fois du groupe précédent.                            |
-| `*`                      | zéro ou plusieurs fois du groupe précédent.                      |
-| `+`                      | une ou plusieurs fois du groupe précédent.                       |
-| `{n}`                    | exactement n fois du groupe précédent.                           |
-| `{n,}`                   | n fois ou plus du groupe précédent.                              |
-| `{,m}`                   | 0 à m fois du groupe précédent.                                  |
-| `{n,m}`                  | au moins n et au plus m fois du groupe précédent.                |
-| `{n,m}?` ou `*?` ou `+?` | effectue une correspondance non gourmande du groupe précédent.   |
-| `^spam`                  | signifie que la chaîne doit commencer par spam.                  |
-| `spam$`                  | signifie que la chaîne doit se terminer par spam.                |
-| `.`                      | n'importe quel caractère, sauf les caractères de nouvelle ligne. |
-| `\d`, `\w`, et `\s`      | respectivement un chiffre, un mot, ou un caractère d'espace.     |
-| `\D`, `\W`, et `\S`      | respectivement tout sauf un chiffre, un mot, ou un espace.       |
-| `[abc]`                  | n'importe quel caractère entre les crochets (comme a, b, ).      |
-| `[^abc]`                 | n'importe quel caractère qui n'est pas entre les crochets.       |
+| Symbole                  | Correspond à                                                  |
+| :----------------------- | :------------------------------------------------------------ |
+| `?`                      | zéro ou une fois du groupe précédent.                         |
+| `*`                      | zéro ou plusieurs fois du groupe précédent.                   |
+| `+`                      | une ou plusieurs fois du groupe précédent.                    |
+| `{n}`                    | exactement n fois du groupe précédent.                        |
+| `{n,}`                   | n fois ou plus du groupe précédent.                           |
+| `{,m}`                   | 0 à m fois du groupe précédent.                               |
+| `{n,m}`                  | au moins n et au plus m fois du p précédent.                  |
+| `{n,m}?` ou `*?` ou `+?` | effectue une correspondance non gourmande du p précédent.     |
+| `^spam`                  | signifie que la chaîne doit commencer par spam.               |
+| `spam$`                  | signifie que la chaîne doit se terminer par spam.             |
+| `.`                      | tout caractère, sauf les caractères de nouvelle ligne.        |
+| `\d`, `\w`, et `\s`      | un chiffre, un mot, ou un caractère d'espace, respectivement. |
+| `\D`, `\W`, et `\S`      | tout sauf un chiffre, un mot, ou un espace, respectivement.   |
+| `[abc]`                  | tout caractère entre les crochets (comme a, b, ).             |
+| `[^abc]`                 | tout caractère qui n'est pas entre les crochets.              |
 
-## Objets de correspondance Regex
+## Objets regex correspondants
 
 ```python
 # re.compile(): créer un objet de motif regex (utiliser une chaîne brute r'' pour éviter l'échappement)
@@ -69,7 +69,7 @@ Phone number found: 415-555-4242
 ## Groupement avec parenthèses
 
 ```python
-# Les parenthèses créent des groupes : group(1) renvoie le premier groupe, group(2) renvoie le second
+# Les parenthèses créent des groupes : group(1) renvoie le premier groupe, group(2) renvoie le deuxième
 phone_num_regex = re.compile(r'(\d\d\d)-(\d\d\d-\d\d\d\d)')  # Deux groupes entre parenthèses
 mo = phone_num_regex.search('My number is 415-555-4242.')
 
@@ -104,7 +104,21 @@ mo.group()
 '415-555-4242'
 ```
 
-Pour récupérer tous les groupes à la fois, utilisez la méthode `groups()` :
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+Que renvoie <code>group()</code> lorsqu'il est appelé sur un objet match ?
+</template>
+
+<base-quiz-option value="A" correct>A. Le texte correspondant entier</base-quiz-option>
+<base-quiz-option value="B">B. Le premier groupe uniquement</base-quiz-option>
+<base-quiz-option value="C">C. Tous les groupes sous forme de liste</base-quiz-option>
+<base-quiz-option value="D">D. L'index de la correspondance</base-quiz-option>
+<base-quiz-answer value="A">La méthode <code>group()</code> (ou <code>group(0)</code>) renvoie le texte correspondant entier. Pour obtenir des groupes spécifiques, utilisez <code>group(1)</code>, <code>group(2)</code>, etc.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+Pour récupérer tous les groupes en une seule fois, utilisez la méthode `groups()` :
 
 ```python
 # groups(): renvoie un tuple de tous les groupes
@@ -178,9 +192,9 @@ mo.group(1)
 'mobile'
 ```
 
-## Correspondance optionnelle avec le Point d'Interrogation
+## Correspondance optionnelle avec le point d'interrogation
 
-Le caractère `?` marque le groupe qui le précède comme étant une partie optionnelle du motif.
+Le caractère `?` signale le groupe qui le précède comme étant une partie optionnelle du motif.
 
 ```python
 bat_regex = re.compile(r'Bat(wo)?man')
@@ -202,9 +216,9 @@ mo2.group()
 'Batwoman'
 ```
 
-## Correspondance de zéro ou plus avec l'Étoile
+## Correspondance zéro ou plusieurs fois avec l'étoile
 
-Le `*` (étoile ou astérisque) signifie "faire correspondre zéro ou plusieurs fois". Le groupe précédant une étoile peut apparaître n'importe quel nombre de fois dans le texte.
+Le `*` (étoile ou astérisque) signifie "faire correspondre zéro ou plusieurs fois". Le groupe précédant l'étoile peut apparaître n'importe quel nombre de fois dans le texte.
 
 ```python
 bat_regex = re.compile(r'Bat(wo)*man')
@@ -234,7 +248,7 @@ mo3.group()
 'Batwowowowoman'
 ```
 
-## Correspondance d'une ou plusieurs fois avec le Plus
+## Correspondance une ou plusieurs fois avec le Plus
 
 Le `+` (ou plus) signifie _faire correspondre une ou plusieurs fois_. Le groupe précédant un plus doit apparaître au moins une fois :
 
@@ -267,7 +281,7 @@ mo3 is None
 True
 ```
 
-## Correspondance de répétitions spécifiques avec les Accolades
+## Correspondance de répétitions spécifiques avec les accolades
 
 Si vous avez un groupe que vous souhaitez répéter un nombre spécifique de fois, suivez le groupe dans votre regex avec un nombre entre accolades :
 
@@ -291,7 +305,7 @@ mo2 is None
 True
 ```
 
-Au lieu d'un seul nombre, vous pouvez spécifier une plage avec un minimum et un maximum entre les accolades. Par exemple, la regex (Ha){3,5} correspondra à 'HaHaHa', 'HaHaHaHa', et 'HaHaHaHaHa'.
+Au lieu d'un seul nombre, vous pouvez spécifier une plage avec un minimum et un maximum entre les accolades. Par exemple, la regex (Ha){3,5} correspondra à 'HaHaHa', 'HaHaHaHa' et 'HaHaHaHaHa'.
 
 ```python
 ha_regex = re.compile(r'(Ha){2,3}')
@@ -328,6 +342,20 @@ mo2.group()
 'HaHaHa'
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Qu'est-ce qui rend un motif regex non gourmand ?
+</template>
+
+<base-quiz-option value="A">A. Utiliser <code>_</code> au lieu de <code>+</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. Ajouter un <code>?</code> après le quantificateur (ex : <code>_?</code>, <code>+?</code>, <code>{3,5}?</code>)</base-quiz-option>
+<base-quiz-option value="C">C. Utiliser des parenthèses</base-quiz-option>
+<base-quiz-option value="D">D. Utiliser des crochets</base-quiz-option>
+<base-quiz-answer value="B">L'ajout d'un <code>?</code> après les quantificateurs comme <code>\*</code>, <code>+</code>, ou <code>{n,m}</code> les rend non gourmands, faisant correspondre la chaîne la plus courte possible au lieu de la plus longue.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## La méthode findall()
 
 La méthode `findall()` renverra les chaînes de chaque correspondance dans la chaîne recherchée.
@@ -357,7 +385,7 @@ vowel_regex.findall('Robocop eats baby food. BABY FOOD.')
 
 Vous pouvez également inclure des plages de lettres ou de chiffres en utilisant un trait d'union. Par exemple, la classe de caractères _[a-zA-Z0-9]_ correspondra à toutes les lettres minuscules, majuscules et aux chiffres.
 
-En plaçant un accent circonflexe (`^`) juste après le crochet ouvrant de la classe de caractères, vous pouvez créer une classe de caractères négative qui correspondra à tous les caractères qui ne sont pas dans la classe de caractères :
+En plaçant un caractère circonflexe (`^`) juste après le crochet ouvrant de la classe de caractères, vous pouvez créer une classe de caractères négative qui correspondra à tous les caractères qui ne sont pas dans la classe de caractères :
 
 ```python
 consonant_regex = re.compile(r'[^aeiouAEIOU]')
@@ -370,11 +398,11 @@ consonant_regex.findall('Robocop eats baby food. BABY FOOD.')
 
 ## Les caractères Caret et Dollar sign
 
-- Vous pouvez également utiliser le symbole caret `^` au début d'une regex pour indiquer qu'une correspondance doit se produire au début du texte recherché.
+- Vous pouvez également utiliser le symbole circonflexe `^` au début d'une regex pour indiquer qu'une correspondance doit se produire au début du texte recherché.
 
 - De même, vous pouvez placer un signe dollar `$` à la fin de la regex pour indiquer que la chaîne doit se terminer par ce motif regex.
 
-- Et vous pouvez utiliser le `^` et le `$` ensemble pour indiquer que toute la chaîne doit correspondre à la regex.
+- Et vous pouvez utiliser le `^` et le `$` ensemble pour indiquer que la chaîne entière doit correspondre à la regex.
 
 La chaîne d'expression régulière `r'^Hello'` correspond aux chaînes qui commencent par 'Hello' :
 
@@ -423,9 +451,9 @@ whole_string_is_num.search('12 34567890') is None
 True
 ```
 
-## Le caractère Joker (Wildcard)
+## Le caractère Joker
 
-Le caractère `.` (ou point) dans une expression régulière correspondra à n'importe quel caractère sauf une nouvelle ligne :
+Le caractère `.` (ou point) dans une expression régulière correspondra à tout caractère sauf une nouvelle ligne :
 
 ```python
 at_regex = re.compile(r'.at')
@@ -458,7 +486,7 @@ mo.group(2)
 'Sweigart'
 ```
 
-Le `.*` utilise le mode gourmand : il essaiera toujours de faire correspondre le plus de texte possible. Pour faire correspondre n'importe quel texte de manière non gourmande, utilisez le point, l'étoile et le point d'interrogation (`.*?`). Le point d'interrogation indique à Python de faire correspondre de manière non gourmande :
+Le `.*` utilise le mode gourmand : il essaiera toujours de correspondre au texte le plus long possible. Pour faire correspondre n'importe quel texte de manière non gourmande, utilisez le point, l'étoile et le point d'interrogation (`.*?`). Le point d'interrogation indique à Python de faire correspondre de manière non gourmande :
 
 ```python
 non_greedy_regex = re.compile(r'<.*?>')
@@ -480,9 +508,9 @@ mo.group()
 '<To serve man> for dinner.>'
 ```
 
-## Correspondance des nouvelles lignes avec le caractère Dot
+## Correspondance des nouvelles lignes avec le caractère Point
 
-Le dot-star correspond à tout sauf une nouvelle ligne. En passant `re.DOTALL` comme deuxième argument à `re.compile()`, vous pouvez faire en sorte que le caractère point corresponde à tous les caractères, y compris le caractère de nouvelle ligne :
+Le point-étoile correspond à tout sauf une nouvelle ligne. En passant `re.DOTALL` comme deuxième argument à `re.compile()`, vous pouvez faire en sorte que le caractère point corresponde à tous les caractères, y compris le caractère de nouvelle ligne :
 
 ```python
 no_newline_regex = re.compile('.*')
@@ -551,9 +579,23 @@ names_regex.sub('CENSORED', 'Agent Alice gave the secret documents to Agent Bob.
 'CENSORED gave the secret documents to CENSORED.'
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Que fait la méthode <code>sub()</code> ?
+</template>
+
+<base-quiz-option value="A">A. Trouve toutes les correspondances dans une chaîne</base-quiz-option>
+<base-quiz-option value="B" correct>B. Remplace toutes les correspondances par une chaîne de remplacement</base-quiz-option>
+<base-quiz-option value="C">C. Divise une chaîne aux correspondances</base-quiz-option>
+<base-quiz-option value="D">D. Valide le format d'une chaîne</base-quiz-option>
+<base-quiz-answer value="B">La méthode <code>sub()</code> substitue toutes les correspondances du motif par une chaîne de remplacement. Elle renvoie une nouvelle chaîne avec les substitutions appliquées.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Gestion des Regex complexes
 
-Pour indiquer à la fonction `re.compile()` d'ignorer les espaces blancs et les commentaires à l'intérieur de la chaîne d'expression régulière, le « mode verbeux » peut être activé en passant la variable `re.VERBOSE` comme deuxième argument à `re.compile()`.
+Pour indiquer à la fonction `re.compile()` d'ignorer les espaces et les commentaires à l'intérieur de la chaîne d'expression régulière, le "mode verbeux" peut être activé en passant la variable `re.VERBOSE` comme deuxième argument à `re.compile()`.
 
 Maintenant, au lieu d'une expression régulière difficile à lire comme celle-ci :
 
@@ -567,12 +609,26 @@ vous pouvez répartir l'expression régulière sur plusieurs lignes avec des com
 phone_regex = re.compile(r'''(
     (\d{3}|\(\d{3}\))?            # indicatif régional
     (\s|-|\.)?                    # séparateur
-    \d{3}                         # premiers 3 chiffres
+    \d{3}                         # 3 premiers chiffres
     (\s|-|\.)                     # séparateur
-    \d{4}                         # derniers 4 chiffres
+    \d{4}                         # 4 derniers chiffres
     (\s*(ext|x|ext.)\s*\d{2,5})?  # extension
     )''', re.VERBOSE)
 ```
+
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+Que fait <code>re.VERBOSE</code> lorsqu'il est passé à <code>re.compile()</code> ?
+</template>
+
+<base-quiz-option value="A" correct>A. Permet les espaces et les commentaires dans le motif regex pour une meilleure lisibilité</base-quiz-option>
+<base-quiz-option value="B">B. Rend le regex insensible à la casse</base-quiz-option>
+<base-quiz-option value="C">C. Fait correspondre le point aux caractères de nouvelle ligne</base-quiz-option>
+<base-quiz-option value="D">D. Accélère la correspondance regex</base-quiz-option>
+<base-quiz-answer value="A">Le drapeau <code>re.VERBOSE</code> vous permet d'ajouter des espaces et des commentaires à votre motif regex, rendant les regex complexes beaucoup plus lisibles sans affecter la correspondance du motif.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Liens pertinents
 

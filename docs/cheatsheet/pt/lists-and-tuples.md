@@ -13,7 +13,7 @@ Listas Python
 Listas são um dos 4 tipos de dados em Python usados para armazenar coleções de dados.
 
 ```python
-# Lista: coleção ordenada de itens entre colchetes
+# List: coleção ordenada de itens entre colchetes
 ['John', 'Peter', 'Debora', 'Charles']
 ```
 
@@ -83,10 +83,24 @@ f'The {furniture[-1]} is bigger than the {furniture[-3]}'
 'The shelf is bigger than the chair'
 ```
 
-## Obtendo sublistas com Fatias (Slices)
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+O que <code>furniture[-1]</code> retorna se <code>furniture = ['table', 'chair', 'rack', 'shelf']</code>?
+</template>
+
+<base-quiz-option value="A">A. <code>'table'</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>'shelf'</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>['shelf']</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>IndexError</code></base-quiz-option>
+<base-quiz-answer value="B">Índices negativos acessam elementos do final da lista. <code>-1</code> refere-se ao último elemento, <code>-2</code> ao penúltimo, e assim por diante.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+## Obtendo sublistas com Slices (Fatiamento)
 
 ```python
-# Fatiamento (Slicing): obter sublista usando a sintaxe [início:fim] (fim é exclusivo)
+# Slicing: obter sublista usando a sintaxe [start:end] (end é exclusivo)
 furniture = ['table', 'chair', 'rack', 'shelf']
 
 furniture[0:4]  # Retorna elementos do índice 0 ao 3 (4 excluído)
@@ -113,7 +127,7 @@ furniture[0:-1]
 ```
 
 ```python
-# Fatiar do início: omitir o índice de início (padrão é 0)
+# Slice do início: omita o índice de início (padrão é 0)
 furniture[:2]  # Retorna os dois primeiros elementos
 ```
 
@@ -122,7 +136,7 @@ furniture[:2]  # Retorna os dois primeiros elementos
 ```
 
 ```python
-# Fatiar até o fim: omitir o índice final (padrão é o final da lista)
+# Slice até o final: omita o índice final (padrão é o final da lista)
 furniture[1:]  # Retorna todos os elementos do índice 1 até o final
 ```
 
@@ -138,7 +152,7 @@ furniture[:]
 ['table', 'chair', 'rack', 'shelf']
 ```
 
-Fatiar a lista completa fará uma cópia:
+O fatiamento da lista completa fará uma cópia:
 
 ```python
 # O fatiamento cria uma cópia: [:] cria uma cópia superficial da lista
@@ -167,6 +181,20 @@ spam2
 ```output
 ['cat', 'bat', 'rat', 'elephant']
 ```
+
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+O que <code>spam[:]</code> cria quando <code>spam</code> é uma lista?
+</template>
+
+<base-quiz-option value="A">A. Uma referência para a mesma lista</base-quiz-option>
+<base-quiz-option value="B">B. Uma lista vazia</base-quiz-option>
+<base-quiz-option value="C" correct>C. Uma cópia superficial da lista</base-quiz-option>
+<base-quiz-option value="D">D. Uma lista invertida</base-quiz-option>
+<base-quiz-answer value="C">O fatiamento da lista completa com <code>[:]</code> cria uma cópia superficial. Modificar a cópia não afetará a lista original.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Obtendo o comprimento de uma lista com len()
 
@@ -428,6 +456,20 @@ furniture
 ['table', 'chair', 'rack', 'shelf', 'bed']
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+O que o método <code>append()</code> faz com uma lista?
+</template>
+
+<base-quiz-option value="A" correct>A. Adiciona um elemento ao final da lista</base-quiz-option>
+<base-quiz-option value="B">B. Adiciona um elemento ao início da lista</base-quiz-option>
+<base-quiz-option value="C">C. Substitui o último elemento</base-quiz-option>
+<base-quiz-option value="D">D. Remove o último elemento</base-quiz-option>
+<base-quiz-answer value="A">O método <code>append()</code> adiciona um único elemento ao final de uma lista. Para adicionar um elemento em uma posição específica, use <code>insert()</code>.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ### insert()
 
 `insert` adiciona um elemento a uma `list` em uma posição dada:
@@ -528,6 +570,20 @@ animals
 ['bat', 'rat']
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+O que <code>pop()</code> faz quando chamado em uma lista?
+</template>
+
+<base-quiz-option value="A">A. Apenas remove o último item</base-quiz-option>
+<base-quiz-option value="B" correct>B. Remove e retorna um item (o último item por padrão, ou o índice especificado)</base-quiz-option>
+<base-quiz-option value="C">C. Apenas retorna o último item sem removê-lo</base-quiz-option>
+<base-quiz-option value="D">D. Remove todos os itens da lista</base-quiz-option>
+<base-quiz-answer value="B">O método <code>pop()</code> remove e retorna um item. Por padrão, ele remove o último item, mas você pode passar um índice para remover um item específico.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Ordenando valores com sort()
 
 ```python
@@ -584,14 +640,14 @@ sorted(furniture)
 ['chair', 'rack', 'shelf', 'table']
 ```
 
-## O tipo de dado Tuple (Tupla)
+## O tipo de dado Tuple
 
 <base-disclaimer>
   <base-disclaimer-title>
     <a target="_blank" href="https://stackoverflow.com/questions/1708510/list-vs-tuple-when-to-use-each">Tuplas vs Listas</a>
   </base-disclaimer-title>
   <base-disclaimer-content>
-    A principal diferença entre tuplas e listas é que, enquanto as <code>tuplas</code> são objetos <i>imutáveis</i>, as <code>listas</code> são <i>mutáveis</i>. Isso significa que as tuplas não podem ser alteradas, enquanto as listas podem ser modificadas. Tuplas são mais eficientes em termos de memória do que as listas.
+    A principal diferença entre tuplas e listas é que, enquanto as <code>tuplas</code> são objetos <i>imutáveis</i>, as <code>listas</code> são <i>mutáveis</i>. Isso significa que tuplas não podem ser alteradas enquanto as listas podem ser modificadas. Tuplas são mais eficientes em termos de memória do que as listas.
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -648,6 +704,20 @@ list('hello')
 ```output
 ['h', 'e', 'l', 'l', 'o']
 ```
+
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+Qual é a principal diferença entre listas e tuplas em Python?
+</template>
+
+<base-quiz-option value="A">A. Listas só podem conter números, tuplas podem conter qualquer coisa</base-quiz-option>
+<base-quiz-option value="B">B. Tuplas são mais rápidas de criar</base-quiz-option>
+<base-quiz-option value="C" correct>C. Listas são mutáveis (podem ser alteradas), tuplas são imutáveis (não podem ser alteradas)</base-quiz-option>
+<base-quiz-option value="D">D. Listas usam colchetes, tuplas usam chaves</base-quiz-option>
+<base-quiz-answer value="C">Listas são mutáveis, o que significa que você pode modificá-las após a criação. Tuplas são imutáveis, o que significa que uma vez criadas, não podem ser alteradas. Ambas podem conter qualquer tipo de dado.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Links relevantes
 

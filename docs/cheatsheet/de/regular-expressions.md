@@ -1,6 +1,6 @@
 ---
 title: 'Python Reguläre Ausdrücke - Python Spickzettel'
-description: 'Ein regulärer Ausdruck (kurz Regex) ist eine Zeichenfolge, die ein Suchmuster in Text definiert und von String-Suchalgorithmen verwendet wird.'
+description: 'Ein regulärer Ausdruck (Regex) ist eine Zeichenfolge, die ein Suchmuster in Text definiert und von String-Suchalgorithmen verwendet wird.'
 labUrl: 'https://labex.io/de/labs/python-python-regular-expressions-633664?course=python-cheatsheet'
 ---
 
@@ -15,7 +15,7 @@ Reguläre Ausdrücke
     <a target="_blank" href="https://en.wikipedia.org/wiki/Regular_expression">Reguläre Ausdrücke</a>
   </base-disclaimer-title>
   <base-disclaimer-content>
-    Ein regulärer Ausdruck (kurz Regex [...]) ist eine Zeichenfolge, die ein Suchmuster in Text definiert. [...] wird von String-Suchalgorithmen für "Suchen" oder "Suchen und Ersetzen"-Operationen an Zeichenfolgen oder zur Eingabevalidierung verwendet.
+    Ein regulärer Ausdruck (kurz Regex [...]) ist eine Zeichenfolge, die ein Suchmuster in Text definiert. [...] wird von String-Suchalgorithmen für "Suchen" oder "Suchen und Ersetzen"-Operationen an Strings oder zur Eingabevalidierung verwendet.
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -33,28 +33,28 @@ import re
 
 ## Regex-Symbole
 
-| Symbol                       | Entspricht                                                                |
-| ---------------------------- | ------------------------------------------------------------------------- |
-| `?`                          | Null oder eine der vorhergehenden Gruppe.                                 |
-| `*`                          | Null oder mehr der vorhergehenden Gruppe.                                 |
-| `+`                          | Eine oder mehr der vorhergehenden Gruppe.                                 |
-| `{n}`                        | Genau n der vorhergehenden Gruppe.                                        |
-| `{n,}`                       | n oder mehr der vorhergehenden Gruppe.                                    |
-| `{,m}`                       | 0 bis m der vorhergehenden Gruppe.                                        |
-| `{n,m}`                      | Mindestens n und höchstens m der vorhergehenden Gruppe.                   |
-| `{n,m}?` oder `*?` oder `+?` | Führt eine nicht-gierige Übereinstimmung der vorhergehenden Gruppe durch. |
-| `^spam`                      | Bedeutet, dass der String mit spam beginnen muss.                         |
-| `spam$`                      | Bedeutet, dass der String mit spam enden muss.                            |
-| `.`                          | Jedes Zeichen außer Zeilenumbruchzeichen.                                 |
-| `\d`, `\w`, und `\s`         | Eine Ziffer, ein Wort- bzw. ein Leerzeichen-Zeichen.                      |
-| `\D`, `\W`, und `\S`         | Alles außer einer Ziffer, einem Wort bzw. einem Leerzeichen.              |
-| `[abc]`                      | Jedes Zeichen zwischen den Klammern (wie a, b, ).                         |
-| `[^abc]`                     | Jedes Zeichen, das nicht zwischen den Klammern liegt.                     |
+| Symbol                       | Entspricht                                                               |
+| ---------------------------- | ------------------------------------------------------------------------ |
+| `?`                          | Null oder eine Wiederholung der vorangehenden Gruppe.                    |
+| `*`                          | Null oder mehr Wiederholungen der vorangehenden Gruppe.                  |
+| `+`                          | Eine oder mehr Wiederholungen der vorangehenden Gruppe.                  |
+| `{n}`                        | Genau n Wiederholungen der vorangehenden Gruppe.                         |
+| `{n,}`                       | n oder mehr Wiederholungen der vorangehenden Gruppe.                     |
+| `{,m}`                       | 0 bis m Wiederholungen der vorangehenden Gruppe.                         |
+| `{n,m}`                      | Mindestens n und höchstens m Wiederholungen der vorangehenden Gruppe.    |
+| `{n,m}?` oder `*?` oder `+?` | Führt eine nicht-gierige Übereinstimmung der vorangehenden Gruppe durch. |
+| `^spam`                      | Bedeutet, der String muss mit spam beginnen.                             |
+| `spam$`                      | Bedeutet, der String muss mit spam enden.                                |
+| `.`                          | Beliebiges Zeichen, außer Zeilenumbruchzeichen.                          |
+| `\d`, `\w`, und `\s`         | Eine Ziffer, ein Wortzeichen bzw. ein Leerzeichen.                       |
+| `\D`, `\W`, und `\S`         | Alles außer einer Ziffer, einem Wortzeichen bzw. einem Leerzeichen.      |
+| `[abc]`                      | Ein beliebiges Zeichen zwischen den Klammern (wie a, b, ).               |
+| `[^abc]`                     | Ein beliebiges Zeichen, das nicht zwischen den Klammern steht.           |
 
 ## Matching Regex-Objekte
 
 ```python
-# re.compile(): Regex-Musterobjekt erstellen (Raw String r'' verwenden, um das Escapen zu vermeiden)
+# re.compile(): Regex-Musterobjekt erstellen (Raw String r'' verwenden, um Escaping zu vermeiden)
 phone_num_regex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d')  # Muster: 3 Ziffern-3 Ziffern-4 Ziffern
 
 mo = phone_num_regex.search('Meine Nummer ist 415-555-4242.')  # Nach Muster suchen
@@ -104,6 +104,20 @@ mo.group()
 '415-555-4242'
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+Was gibt <code>group()</code> zurück, wenn es auf ein Match-Objekt aufgerufen wird?
+</template>
+
+<base-quiz-option value="A" correct>A. Der gesamte gefundene Text</base-quiz-option>
+<base-quiz-option value="B">B. Nur die erste Gruppe</base-quiz-option>
+<base-quiz-option value="C">C. Alle Gruppen als Liste</base-quiz-option>
+<base-quiz-option value="D">D. Der Index des Treffers</base-quiz-option>
+<base-quiz-answer value="A">Die Methode <code>group()</code> (oder <code>group(0)</code>) gibt den gesamten gefundenen Text zurück. Um spezifische Gruppen zu erhalten, verwenden Sie <code>group(1)</code>, <code>group(2)</code> usw.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 Um alle Gruppen auf einmal abzurufen, verwenden Sie die Methode `groups()`:
 
 ```python
@@ -135,7 +149,7 @@ print(main_number)
 
 ## Mehrere Gruppen mit Pipe
 
-Sie können das Zeichen `|` überall dort verwenden, wo Sie einen von vielen Ausdrücken abgleichen möchten.
+Sie können das Zeichen `|` überall dort verwenden, wo Sie eine von vielen Ausdrücken abgleichen möchten.
 
 ```python
 hero_regex = re.compile (r'Batman|Tina Fey')
@@ -157,7 +171,7 @@ mo2.group()
 'Tina Fey'
 ```
 
-Sie können die Pipe auch verwenden, um eines von mehreren Mustern als Teil Ihres Regex abzugleichen:
+Sie können die Pipe auch verwenden, um eine von mehreren Mustern als Teil Ihres Regex abzugleichen:
 
 ```python
 bat_regex = re.compile(r'Bat(man|mobile|copter|bat)')
@@ -180,7 +194,7 @@ mo.group(1)
 
 ## Optionale Übereinstimmung mit dem Fragezeichen
 
-Das Zeichen `?` kennzeichnet die ihm vorangestellte Gruppe als optionalen Teil des Musters.
+Das Zeichen `?` kennzeichnet die ihm vorangehende Gruppe als optionalen Teil des Musters.
 
 ```python
 bat_regex = re.compile(r'Bat(wo)?man')
@@ -202,9 +216,9 @@ mo2.group()
 'Batwoman'
 ```
 
-## Null oder mehr Übereinstimmungen mit dem Sternchen
+## Übereinstimmung von Null oder mehr mit dem Sternchen
 
-Das `*` (Sternchen) bedeutet "null oder mehr Vorkommen abgleichen". Die dem Sternchen vorangestellte Gruppe kann beliebig oft im Text vorkommen.
+Das `*` (Sternchen) bedeutet "null oder mehr Übereinstimmungen". Die Gruppe, der der Stern vorangestellt ist, kann beliebig oft im Text vorkommen.
 
 ```python
 bat_regex = re.compile(r'Bat(wo)*man')
@@ -234,9 +248,9 @@ mo3.group()
 'Batwowowowoman'
 ```
 
-## Eine oder mehr Übereinstimmungen mit dem Plus
+## Übereinstimmung von Eins oder mehr mit dem Plus
 
-Das `+` (Plus) bedeutet "eine oder mehr Vorkommen abgleichen". Die dem Plus vorangestellte Gruppe muss mindestens einmal vorkommen:
+Das `+` (Plus) bedeutet "eine oder mehr Übereinstimmungen". Der Gruppe, der ein Plus vorangestellt ist, muss mindestens einmal vorkommen:
 
 ```python
 bat_regex = re.compile(r'Bat(wo)+man')
@@ -291,7 +305,7 @@ mo2 is None
 True
 ```
 
-Anstelle einer Zahl können Sie einen Bereich mit einem Minimum und einem Maximum zwischen den geschweiften Klammern angeben. Zum Beispiel gleicht der Regex (Ha){3,5} 'HaHaHa', 'HaHaHaHa' und 'HaHaHaHaHa' ab.
+Anstelle einer einzelnen Zahl können Sie einen Bereich mit einem Minimum und einem Maximum zwischen den geschweiften Klammern angeben. Zum Beispiel gleicht der Regex (Ha){3,5} 'HaHaHa', 'HaHaHaHa' und 'HaHaHaHaHa' ab.
 
 ```python
 ha_regex = re.compile(r'(Ha){2,3}')
@@ -305,7 +319,7 @@ mo1.group()
 
 ## Gierige und nicht-gierige Übereinstimmungen
 
-Pythons reguläre Ausdrücke sind standardmäßig gierig: In mehrdeutigen Situationen versuchen sie, die längstmögliche Zeichenfolge abzugleichen. Die nicht-gierige Version der geschweiften Klammern, die die kürzestmögliche Zeichenfolge abgleicht, hat die schließende geschweifte Klammer gefolgt von einem Fragezeichen.
+Die regulären Ausdrücke von Python sind standardmäßig gierig (greedy): In mehrdeutigen Situationen versuchen sie, die längstmögliche Zeichenfolge abzugleichen. Die nicht-gierige Version der geschweiften Klammern, die die kürzestmögliche Zeichenfolge abgleicht, hat die schließende geschweifte Klammer gefolgt von einem Fragezeichen.
 
 ```python
 greedy_ha_regex = re.compile(r'(Ha){3,5}')
@@ -328,9 +342,23 @@ mo2.group()
 'HaHaHa'
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Was macht ein Regex-Muster nicht-gierig?
+</template>
+
+<base-quiz-option value="A">A. Verwendung von <code>_</code> anstelle von <code>+</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. Hinzufügen eines <code>?</code> nach dem Quantifizierer (z. B. <code>_?</code>, <code>+?</code>, <code>{3,5}?</code>)</base-quiz-option>
+<base-quiz-option value="C">C. Verwendung von Klammern</base-quiz-option>
+<base-quiz-option value="D">D. Verwendung von eckigen Klammern</base-quiz-option>
+<base-quiz-answer value="B">Das Hinzufügen eines <code>?</code> nach Quantifizierern wie <code>\*</code>, <code>+</code> oder <code>{n,m}</code> macht diese nicht-gierig und lässt sie die kürzestmögliche Zeichenfolge abgleichen, anstatt der längsten.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Die findall()-Methode
 
-Die Methode `findall()` gibt die Strings jeder Übereinstimmung im durchsuchten String zurück.
+Die Methode `findall()` gibt die Strings aller Übereinstimmungen im durchsuchten String zurück.
 
 ```python
 phone_num_regex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d') # hat keine Gruppen
@@ -348,29 +376,29 @@ Sie können Ihre eigene Zeichenklasse mit eckigen Klammern definieren. Zum Beisp
 
 ```python
 vowel_regex = re.compile(r'[aeiouAEIOU]')
-vowel_regex.findall('Robocop isst Babynahrung. BABYNahrung.')
+vowel_regex.findall('Robocop isst Babynahrung. BABY NAHRUNG.')
 ```
 
 ```output
 ['o', 'o', 'o', 'e', 'a', 'a', 'o', 'o', 'A', 'O', 'O']
 ```
 
-Sie können auch Bereiche von Buchstaben oder Zahlen einschließen, indem Sie einen Bindestrich verwenden. Zum Beispiel gleicht die Zeichenklasse _[a-zA-Z0-9]_ alle Kleinbuchstaben, Großbuchstaben und Zahlen ab.
+Sie können auch Buchstaben- oder Zahlenbereiche einschließen, indem Sie einen Bindestrich verwenden. Zum Beispiel gleicht die Zeichenklasse _[a-zA-Z0-9]_ alle Kleinbuchstaben, Großbuchstaben und Zahlen ab.
 
 Indem Sie ein Zirkumflexzeichen (`^`) direkt nach der öffnenden Klammer der Zeichenklasse platzieren, können Sie eine negative Zeichenklasse erstellen, die alle Zeichen abgleicht, die nicht in der Zeichenklasse enthalten sind:
 
 ```python
 consonant_regex = re.compile(r'[^aeiouAEIOU]')
-consonant_regex.findall('Robocop isst Babynahrung. BABYNahrung.')
+consonant_regex.findall('Robocop isst Babynahrung. BABY NAHRUNG.')
 ```
 
 ```output
 ['R', 'b', 'c', 'p', ' ', 't', 's', ' ', 'b', 'b', 'y', ' ', 'f', 'd', '.', ' ', 'B', 'B', 'Y', ' ', 'F', 'D', '.']
 ```
 
-## Die Zeichen Zirkumflex und Dollar
+## Die Zeichen Caret und Dollar
 
-- Sie können auch das Zirkumflexsymbol `^` am Anfang eines Regex verwenden, um anzuzeigen, dass eine Übereinstimmung am Anfang des durchsuchten Textes erfolgen muss.
+- Sie können das Zirkumflexsymbol `^` auch am Anfang eines Regex verwenden, um anzuzeigen, dass eine Übereinstimmung am Anfang des durchsuchten Textes erfolgen muss.
 
 - Ebenso können Sie ein Dollarzeichen `$` am Ende des Regex platzieren, um anzuzeigen, dass der String mit diesem Regex-Muster enden muss.
 
@@ -437,7 +465,7 @@ at_regex.findall('Die Katze auf der Matte saß auf der flachen Matte.')
 ['cat', 'hat', 'sat', 'lat', 'mat']
 ```
 
-## Alles mit Punkt-Stern abgleichen
+## Alles mit Dot-Star abgleichen
 
 ```python
 name_regex = re.compile(r'First Name: (.*) Last Name: (.*)')
@@ -458,35 +486,35 @@ mo.group(2)
 'Sweigart'
 ```
 
-Das `.*` verwendet den gierigen Modus: Es wird immer versuchen, so viel Text wie möglich abzugleichen. Um beliebigen Text nicht-gierig abzugleichen, verwenden Sie den Punkt, Stern und das Fragezeichen (`.*?`). Das Fragezeichen weist Python an, nicht-gierig abzugleichen:
+Das `.*` verwendet den gierigen Modus: Es versucht immer, so viel Text wie möglich abzugleichen. Um beliebigen Text nicht-gierig abzugleichen, verwenden Sie den Punkt, Stern und das Fragezeichen (`.*?`). Das Fragezeichen weist Python an, nicht-gierig abzugleichen:
 
 ```python
 non_greedy_regex = re.compile(r'<.*?>')
-mo = non_greedy_regex.search('<Diene dem Mann> zum Abendessen.>.')
+mo = non_greedy_regex.search('<To serve man> for dinner.>')
 mo.group()
 ```
 
 ```output
-'<Diene dem Mann>'
+'<To serve man>'
 ```
 
 ```python
 greedy_regex = re.compile(r'<.*>')
-mo = greedy_regex.search('<Diene dem Mann> zum Abendessen.>.')
+mo = greedy_regex.search('<To serve man> for dinner.>')
 mo.group()
 ```
 
 ```output
-'<Diene dem Mann> zum Abendessen.>.'
+'<To serve man> for dinner.>'
 ```
 
 ## Zeilenumbrüche mit dem Punkt-Zeichen abgleichen
 
-Der Punkt-Stern gleicht alles außer einem Zeilenumbruch ab. Indem Sie `re.DOTALL` als zweites Argument an `re.compile()` übergeben, können Sie das Punkt-Zeichen so ändern, dass es alle Zeichen einschließlich des Zeilenumbruchzeichens abgleicht:
+Der Punkt-Stern gleicht alles außer einem Zeilenumbruch ab. Indem Sie `re.DOTALL` als zweites Argument an `re.compile()` übergeben, können Sie das Punktzeichen dazu bringen, alle Zeichen abzugleichen, einschließlich des Zeilenumbruchzeichens:
 
 ```python
 no_newline_regex = re.compile('.*')
-no_newline_regex.search('Dienen Sie dem öffentlichen Vertrauen.\nSchützen Sie die Unschuldigen.\nSetzen Sie das Gesetz durch.').group()
+no_newline_regex.search('Serve the public trust.\nProtect the innocent.\nUphold the law.').group()
 ```
 
 ```output
@@ -495,21 +523,21 @@ no_newline_regex.search('Dienen Sie dem öffentlichen Vertrauen.\nSchützen Sie 
 
 ```python
 newline_regex = re.compile('.*', re.DOTALL)
-newline_regex.search('Dienen Sie dem öffentlichen Vertrauen.\nSchützen Sie die Unschuldigen.\nSetzen Sie das Gesetz durch.').group()
+newline_regex.search('Serve the public trust.\nProtect the innocent.\nUphold the law.').group()
 ```
 
 ```output
 'Serve the public trust.\nProtect the innocent.\nUphold the law.'
 ```
 
-## Groß-/Kleinschreibung-unempfindliches Matching
+## Groß-/Kleinschreibung ignorierendes Matching
 
-Um Ihr Regex groß-/kleinschreibung-unempfindlich zu machen, können Sie `re.IGNORECASE` oder `re.I` als zweites Argument an `re.compile()` übergeben:
+Um Ihr Regex fallunempfindlich zu machen, können Sie `re.IGNORECASE` oder `re.I` als zweites Argument an `re.compile()` übergeben:
 
 ```python
 robocop = re.compile(r'robocop', re.I)
 
-robocop.search('Robocop ist halb Mensch, halb Maschine, ganz Cop.').group()
+robocop.search('Robocop ist teils Mensch, teils Maschine, ganz Cop.').group()
 ```
 
 ```output
@@ -532,11 +560,11 @@ robocop.search('Al, warum spricht dein Programmierbuch so viel über robocop?').
 'robocop'
 ```
 
-## Ersetzen von Zeichenfolgen mit der sub()-Methode
+## Strings mit der sub()-Methode ersetzen
 
-Die Methode `sub()` für Regex-Objekte erhält zwei Argumente übergeben:
+Die Methode `sub()` für Regex-Objekte wird mit zwei Argumenten aufgerufen:
 
-1. Das erste Argument ist ein String, der alle Übereinstimmungen ersetzt.
+1. Das erste Argument ist ein String, der alle Übereinstimmungen ersetzen soll.
 2. Das zweite ist der String für den regulären Ausdruck.
 
 Die Methode `sub()` gibt einen String mit den angewendeten Ersetzungen zurück:
@@ -550,6 +578,20 @@ names_regex.sub('ZENSIERT', 'Agent Alice gab die geheimen Dokumente an Agent Bob
 ```output
 'ZENSIERT gab die geheimen Dokumente an ZENSIERT.'
 ```
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Was bewirkt die Methode <code>sub()</code>?
+</template>
+
+<base-quiz-option value="A">A. Findet alle Übereinstimmungen in einem String</base-quiz-option>
+<base-quiz-option value="B" correct>B. Ersetzt alle Übereinstimmungen durch einen Ersatzstring</base-quiz-option>
+<base-quiz-option value="C">C. Teilt einen String an Übereinstimmungen</base-quiz-option>
+<base-quiz-option value="D">D. Validiert ein Stringformat</base-quiz-option>
+<base-quiz-answer value="B">Die Methode <code>sub()</code> ersetzt alle Übereinstimmungen des Musters durch einen Ersatzstring. Sie gibt einen neuen String mit den angewendeten Ersetzungen zurück.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Verwaltung komplexer Regexes
 
@@ -574,9 +616,23 @@ phone_regex = re.compile(r'''(
     )''', re.VERBOSE)
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+Was bewirkt <code>re.VERBOSE</code>, wenn es an <code>re.compile()</code> übergeben wird?
+</template>
+
+<base-quiz-option value="A" correct>A. Ermöglicht Leerzeichen und Kommentare im Regex-Muster zur besseren Lesbarkeit</base-quiz-option>
+<base-quiz-option value="B">B. Macht das Regex fallunempfindlich</base-quiz-option>
+<base-quiz-option value="C">C. Lässt den Punkt Zeilenumbrüche abgleichen</base-quiz-option>
+<base-quiz-option value="D">D. Beschleunigt das Regex-Matching</base-quiz-option>
+<base-quiz-answer value="A">Das Flag <code>re.VERBOSE</code> ermöglicht es Ihnen, Leerzeichen und Kommentare zu Ihrem Regex-Muster hinzuzufügen, was komplexe Regexes viel lesbarer macht, ohne das Muster-Matching zu beeinflussen.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Relevante Links
 
-- <router-link to="/cheatsheet/manipulating-strings">Zeichenfolgen bearbeiten</router-link>
+- <router-link to="/cheatsheet/manipulating-strings">Strings bearbeiten</router-link>
 - <router-link to="/cheatsheet/string-formatting">String-Formatierung</router-link>
-- <router-link to="/blog/python-data-types">Python Datentypen Blogbeitrag</router-link>
+- <router-link to="/blog/python-data-types">Blogbeitrag zu Python-Datentypen</router-link>
 - <router-link to="/builtin/compile">compile()</router-link>

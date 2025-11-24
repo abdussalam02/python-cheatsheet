@@ -1,6 +1,6 @@
 ---
 title: 'Expressões Regulares Python - Guia Rápido Python'
-description: 'Uma expressão regular (abreviada como regex) é uma sequência de caracteres que especifica um padrão de busca em texto e é usada por algoritmos de pesquisa de strings.'
+description: 'Uma expressão regular (abreviada como regex) é uma sequência de caracteres que especifica um padrão de busca em texto e é usada por algoritmos de busca de strings.'
 labUrl: 'https://labex.io/pt/labs/python-python-regular-expressions-633664?course=python-cheatsheet'
 ---
 
@@ -35,13 +35,13 @@ import re
 
 | Símbolo                  | Corresponde a                                                         |
 | ------------------------ | --------------------------------------------------------------------- |
-| `?`                      | zero ou um do grupo precedente.                                       |
-| `*`                      | zero ou mais do grupo precedente.                                     |
-| `+`                      | um ou mais do grupo precedente.                                       |
-| `{n}`                    | exatamente n do grupo precedente.                                     |
-| `{n,}`                   | n ou mais do grupo precedente.                                        |
-| `{,m}`                   | 0 a m do grupo precedente.                                            |
-| `{n,m}`                  | pelo menos n e no máximo m do p precedente.                           |
+| `?`                      | zero ou uma ocorrência do grupo precedente.                           |
+| `*`                      | zero ou mais ocorrências do grupo precedente.                         |
+| `+`                      | uma ou mais ocorrências do grupo precedente.                          |
+| `{n}`                    | exatamente n ocorrências do grupo precedente.                         |
+| `{n,}`                   | n ou mais ocorrências do grupo precedente.                            |
+| `{,m}`                   | 0 a m ocorrências do grupo precedente.                                |
+| `{n,m}`                  | no mínimo n e no máximo m ocorrências do p precedente.                |
 | `{n,m}?` ou `*?` ou `+?` | executa uma correspondência não-gulosa (non-greedy) do p precedente.  |
 | `^spam`                  | significa que a string deve começar com spam.                         |
 | `spam$`                  | significa que a string deve terminar com spam.                        |
@@ -57,13 +57,13 @@ import re
 # re.compile(): cria o objeto de padrão regex (use string bruta r'' para evitar escape)
 phone_num_regex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d')  # Padrão: 3 dígitos-3 dígitos-4 dígitos
 
-mo = phone_num_regex.search('Meu número é 415-555-4242.')  # Procura pelo padrão
+mo = phone_num_regex.search('My number is 415-555-4242.')  # Procura pelo padrão
 
-print(f'Número de telefone encontrado: {mo.group()}')  # group() retorna o texto correspondido
+print(f'Phone number found: {mo.group()}')  # group() retorna o texto correspondido
 ```
 
 ```output
-Número de telefone encontrado: 415-555-4242
+Phone number found: 415-555-4242
 ```
 
 ## Agrupamento com parênteses
@@ -71,7 +71,7 @@ Número de telefone encontrado: 415-555-4242
 ```python
 # Parênteses criam grupos: group(1) retorna o primeiro grupo, group(2) retorna o segundo
 phone_num_regex = re.compile(r'(\d\d\d)-(\d\d\d-\d\d\d\d)')  # Dois grupos entre parênteses
-mo = phone_num_regex.search('Meu número é 415-555-4242.')
+mo = phone_num_regex.search('My number is 415-555-4242.')
 
 mo.group(1)  # Retorna o primeiro grupo: '415'
 ```
@@ -104,6 +104,20 @@ mo.group()
 '415-555-4242'
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+O que <code>group()</code> retorna quando chamado em um objeto de correspondência?
+</template>
+
+<base-quiz-option value="A" correct>A. O texto correspondido inteiro</base-quiz-option>
+<base-quiz-option value="B">B. Apenas o primeiro grupo</base-quiz-option>
+<base-quiz-option value="C">C. Todos os grupos como uma lista</base-quiz-option>
+<base-quiz-option value="D">D. O índice da correspondência</base-quiz-option>
+<base-quiz-answer value="A">O método <code>group()</code> (ou <code>group(0)</code>) retorna o texto correspondido inteiro. Para obter grupos específicos, use <code>group(1)</code>, <code>group(2)</code>, etc.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 Para recuperar todos os grupos de uma vez, use o método `groups()`:
 
 ```python
@@ -135,7 +149,7 @@ print(main_number)
 
 ## Múltiplos grupos com Pipe
 
-Você pode usar o caractere `|` onde quiser para corresponder a uma de muitas expressões.
+Você pode usar o caractere `|` onde quiser corresponder a uma de muitas expressões.
 
 ```python
 hero_regex = re.compile (r'Batman|Tina Fey')
@@ -204,7 +218,7 @@ mo2.group()
 
 ## Correspondência de zero ou mais com o Asterisco
 
-O `*` (asterisco) significa "corresponder zero ou mais". O grupo que precede um asterisco pode ocorrer qualquer número de vezes no texto.
+O `*` (asterisco) significa "corresponder zero ou mais". O grupo que precede o asterisco pode ocorrer qualquer número de vezes no texto.
 
 ```python
 bat_regex = re.compile(r'Bat(wo)*man')
@@ -236,7 +250,7 @@ mo3.group()
 
 ## Correspondência de um ou mais com o Mais
 
-O `+` (ou mais) significa _corresponder um ou mais_. O grupo que precede um mais deve aparecer pelo menos uma vez:
+O `+` (ou mais) _significa corresponder um ou mais_. O grupo que precede um mais deve aparecer pelo menos uma vez:
 
 ```python
 bat_regex = re.compile(r'Bat(wo)+man')
@@ -305,7 +319,7 @@ mo1.group()
 
 ## Correspondência gulosa (Greedy) e não-gulosa (Non-greedy)
 
-As expressões regulares do Python são gulosas por padrão: em situações ambíguas, elas corresponderão à string mais longa possível. A versão não-gulosa das chaves, que corresponde à string mais curta possível, tem a chave de fechamento seguida por um ponto de interrogação.
+As expressões regulares do Python são gulosas (greedy) por padrão: em situações ambíguas, elas corresponderão à string mais longa possível. A versão não-gulosa das chaves, que corresponde à string mais curta possível, tem a chave de fechamento seguida por um ponto de interrogação.
 
 ```python
 greedy_ha_regex = re.compile(r'(Ha){3,5}')
@@ -328,6 +342,20 @@ mo2.group()
 'HaHaHa'
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+O que torna um padrão regex não-guloso (non-greedy)?
+</template>
+
+<base-quiz-option value="A">A. Usar <code>_</code> em vez de <code>+</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. Adicionar um <code>?</code> após o quantificador (ex: <code>_?</code>, <code>+?</code>, <code>{3,5}?</code>)</base-quiz-option>
+<base-quiz-option value="C">C. Usar parênteses</base-quiz-option>
+<base-quiz-option value="D">D. Usar colchetes</base-quiz-option>
+<base-quiz-answer value="B">Adicionar um <code>?</code> após quantificadores como <code>\*</code>, <code>+</code>, ou <code>{n,m}</code> os torna não-gulosos, correspondendo à string mais curta possível em vez da mais longa.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## O método findall()
 
 O método `findall()` retornará as strings de cada correspondência na string pesquisada.
@@ -335,7 +363,7 @@ O método `findall()` retornará as strings de cada correspondência na string p
 ```python
 phone_num_regex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d') # não tem grupos
 
-phone_num_regex.findall('Celular: 415-555-9999 Trabalho: 212-555-0000')
+phone_num_regex.findall('Cell: 415-555-9999 Work: 212-555-0000')
 ```
 
 ```output
@@ -348,7 +376,7 @@ Você pode definir sua própria classe de caracteres usando colchetes. Por exemp
 
 ```python
 vowel_regex = re.compile(r'[aeiouAEIOU]')
-vowel_regex.findall('Robocop come comida de bebê. COMIDA DE BEBÊ.')
+vowel_regex.findall('Robocop eats baby food. BABY FOOD.')
 ```
 
 ```output
@@ -361,18 +389,18 @@ Ao colocar um acento circunflexo (`^`) logo após o colchete de abertura da clas
 
 ```python
 consonant_regex = re.compile(r'[^aeiouAEIOU]')
-consonant_regex.findall('Robocop come comida de bebê. COMIDA DE BEBÊ.')
+consonant_regex.findall('Robocop eats baby food. BABY FOOD.')
 ```
 
 ```output
-['R', 'b', 'c', 'p', ' ', 'c', 'm', ' ', 'd', ' ', 'd', ' ', 'b', 'b', '.', ' ', 'C', 'M', 'D', ' ', 'D', 'B', '.', ' ']
+['R', 'b', 'c', 'p', ' ', 't', 's', ' ', 'b', 'b', 'y', ' ', 'f', 'd', '.', ' ', 'B', 'B', 'Y', ' ', 'F', 'D', '.']
 ```
 
-## Os caracteres Acento Circunflexo e Sinal de Dólar
+## Os caracteres Caret e Dollar sign
 
 - Você também pode usar o símbolo de acento circunflexo `^` no início de um regex para indicar que uma correspondência deve ocorrer no início do texto pesquisado.
 
-- Da mesma forma, você pode colocar um sinal de dólar `$` no final do regex para indicar que a string deve terminar com este padrão regex.
+- Da mesma forma, você pode colocar um cifrão `$` no final do regex para indicar que a string deve terminar com este padrão regex.
 
 - E você pode usar o `^` e o `$` juntos para indicar que a string inteira deve corresponder ao regex.
 
@@ -423,21 +451,21 @@ whole_string_is_num.search('12 34567890') is None
 True
 ```
 
-## O caractere Curinga
+## O caractere curinga (Wildcard)
 
 O caractere `.` (ou ponto) em uma expressão regular corresponderá a qualquer caractere, exceto uma nova linha:
 
 ```python
 at_regex = re.compile(r'.at')
 
-at_regex.findall('O gato no chapéu sentou no tapete plano.')
+at_regex.findall('The cat in the hat sat on the flat mat.')
 ```
 
 ```output
 ['cat', 'hat', 'sat', 'lat', 'mat']
 ```
 
-## Correspondência de tudo com Ponto-Asterisco
+## Correspondendo tudo com Ponto-Asterisco
 
 ```python
 name_regex = re.compile(r'First Name: (.*) Last Name: (.*)')
@@ -458,7 +486,7 @@ mo.group(2)
 'Sweigart'
 ```
 
-O `.*` usa modo guloso: Ele sempre tentará corresponder ao máximo de texto possível. Para corresponder a qualquer texto de forma não-gulosa, use o ponto, asterisco e ponto de interrogação (`.*?`). O ponto de interrogação diz ao Python para corresponder de forma não-gulosa:
+O `.*` usa modo guloso: Ele sempre tentará corresponder o máximo de texto possível. Para corresponder a qualquer texto de forma não-gulosa, use o ponto, asterisco e ponto de interrogação (`.*?`). O ponto de interrogação diz ao Python para corresponder de forma não-gulosa:
 
 ```python
 non_greedy_regex = re.compile(r'<.*?>')
@@ -480,9 +508,9 @@ mo.group()
 '<To serve man> for dinner.>'
 ```
 
-## Correspondência de novas linhas com o caractere Ponto
+## Correspondendo novas linhas com o caractere Ponto
 
-O ponto-asterisco corresponderá a tudo, exceto uma nova linha. Ao passar `re.DOTALL` como o segundo argumento para `re.compile()`, você pode fazer com que o caractere ponto corresponda a todos os caracteres, incluindo o caractere de nova linha:
+O ponto-asterisco corresponde a tudo, exceto uma nova linha. Ao passar `re.DOTALL` como o segundo argumento para `re.compile()`, você pode fazer com que o caractere ponto corresponda a todos os caracteres, incluindo o caractere de nova linha:
 
 ```python
 no_newline_regex = re.compile('.*')
@@ -502,7 +530,7 @@ newline_regex.search('Serve the public trust.\nProtect the innocent.\nUphold the
 'Serve the public trust.\nProtect the innocent.\nUphold the law.'
 ```
 
-## Correspondência sem distinção entre maiúsculas e minúsculas
+## Correspondência sem distinção entre maiúsculas e minúsculas (Case-Insensitive)
 
 Para tornar seu regex insensível a maiúsculas e minúsculas, você pode passar `re.IGNORECASE` ou `re.I` como segundo argumento para `re.compile()`:
 
@@ -551,6 +579,20 @@ names_regex.sub('CENSORED', 'Agent Alice gave the secret documents to Agent Bob.
 'CENSORED gave the secret documents to CENSORED.'
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+O que o método <code>sub()</code> faz?
+</template>
+
+<base-quiz-option value="A">A. Encontra todas as correspondências em uma string</base-quiz-option>
+<base-quiz-option value="B" correct>B. Substitui todas as correspondências por uma string de substituição</base-quiz-option>
+<base-quiz-option value="C">C. Divide uma string nas correspondências</base-quiz-option>
+<base-quiz-option value="D">D. Valida o formato de uma string</base-quiz-option>
+<base-quiz-answer value="B">O método <code>sub()</code> substitui todas as correspondências do padrão por uma string de substituição. Ele retorna uma nova string com as substituições aplicadas.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Gerenciando Regexes complexos
 
 Para instruir a função `re.compile()` a ignorar espaços em branco e comentários dentro da string de expressão regular, o "modo verboso" pode ser ativado passando a variável `re.VERBOSE` como o segundo argumento para `re.compile()`.
@@ -574,9 +616,23 @@ phone_regex = re.compile(r'''(
     )''', re.VERBOSE)
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+O que <code>re.VERBOSE</code> faz quando passado para <code>re.compile()</code>?
+</template>
+
+<base-quiz-option value="A" correct>A. Permite espaços em branco e comentários no padrão regex para melhor legibilidade</base-quiz-option>
+<base-quiz-option value="B">B. Torna o regex insensível a maiúsculas e minúsculas</base-quiz-option>
+<base-quiz-option value="C">C. Faz com que o ponto corresponda a caracteres de nova linha</base-quiz-option>
+<base-quiz-option value="D">D. Acelera a correspondência regex</base-quiz-option>
+<base-quiz-answer value="A">O flag <code>re.VERBOSE</code> permite que você adicione espaços em branco e comentários ao seu padrão regex, tornando regexes complexos muito mais legíveis sem afetar a correspondência do padrão.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Links relevantes
 
 - <router-link to="/cheatsheet/manipulating-strings">Manipulando Strings</router-link>
 - <router-link to="/cheatsheet/string-formatting">Formatação de Strings</router-link>
-- <router-link to="/blog/python-data-types">Postagem do Blog Tipos de Dados Python</router-link>
+- <router-link to="/blog/python-data-types">Postagem do Blog sobre Tipos de Dados Python</router-link>
 - <router-link to="/builtin/compile">compile()</router-link>

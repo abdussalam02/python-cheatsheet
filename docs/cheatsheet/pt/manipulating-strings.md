@@ -52,6 +52,20 @@ Hello there!\nHow are you?\nI\'m doing fine.
 
 Strings brutas são usadas principalmente para definição de <router-link to="/cheatsheet/regular-expressions">expressões regulares</router-link>.
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+O que uma string bruta (prefixada com <code>r</code>) faz em Python?
+</template>
+
+<base-quiz-option value="A">A. Converte todos os caracteres para maiúsculas</base-quiz-option>
+<base-quiz-option value="B" correct>B. Trata barras invertidas como caracteres literais, ignorando sequências de escape</base-quiz-option>
+<base-quiz-option value="C">C. Remove todos os espaços em branco</base-quiz-option>
+<base-quiz-option value="D">D. Inverte a string</base-quiz-option>
+<base-quiz-answer value="B">Strings brutas (prefixadas com <code>r</code>) tratam barras invertidas como caracteres literais, então sequências de escape como <code>\n</code> não são interpretadas.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Strings Multilinhas
 
 ```python
@@ -76,7 +90,7 @@ Sincerely,
 Bob
 ```
 
-## Indexação e Fatiamento (Slicing) de Strings
+## Indexação e Fatiamento de Strings
 
     H   e   l   l   o       w   o   r   l   d    !
     0   1   2   3   4   5   6   7   8   9   10   11
@@ -162,6 +176,20 @@ spam[::-1]
 ```output
 '!dlrow olleH'
 ```
+
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+O que <code>spam[::-1]</code> faz com uma string?
+</template>
+
+<base-quiz-option value="A">A. Retorna o primeiro caractere</base-quiz-option>
+<base-quiz-option value="B">B. Retorna o último caractere</base-quiz-option>
+<base-quiz-option value="C" correct>C. Inverte a string</base-quiz-option>
+<base-quiz-option value="D">D. Remove todos os caracteres</base-quiz-option>
+<base-quiz-answer value="C">O fatiamento <code>[::-1]</code> inverte uma string percorrendo todos os caracteres de trás para frente. O valor de passo <code>-1</code> significa "voltar".</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ```python
 fizz = spam[0:5]
@@ -296,7 +324,7 @@ False
 False
 ```
 
-## Os métodos de string isX
+## Os métodos isX de string
 
 | Método      | Descrição                                                                                                                            |
 | ----------- | ------------------------------------------------------------------------------------------------------------------------------------ |
@@ -356,6 +384,20 @@ True
 True
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+O que <code>startswith()</code> retorna?
+</template>
+
+<base-quiz-option value="A" correct>A. <code>True</code> se a string começa com a substring especificada, <code>False</code> caso contrário</base-quiz-option>
+<base-quiz-option value="B">B. A substring que corresponde ao início</base-quiz-option>
+<base-quiz-option value="C">C. O índice onde a substring começa</base-quiz-option>
+<base-quiz-option value="D">D. Uma nova string sem o prefixo</base-quiz-option>
+<base-quiz-answer value="A">O método <code>startswith()</code> retorna um valor booleano: <code>True</code> se a string começa com a substring especificada, <code>False</code> caso contrário.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## join() e split()
 
 ### join()
@@ -396,7 +438,7 @@ O método `join()` pega todos os itens em um iterável, como uma <router-link to
 
 ### split()
 
-O método `split()` divide uma `string` em uma `list`. Por padrão, ele usará espaço em branco para separar os itens, mas você também pode definir outro caractere de sua escolha:
+O método `split()` divide uma `string` em uma `lista`. Por padrão, ele usará espaço em branco para separar os itens, mas você também pode definir outro caractere de sua escolha:
 
 ```python
 'My name is Simon'.split()
@@ -437,6 +479,20 @@ O método `split()` divide uma `string` em uma `list`. Por padrão, ele usará e
 ```output
 ['', 'My', '', 'name', 'is', '', 'Simon']
 ```
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+O que <code>split()</code> retorna quando chamado em uma string?
+</template>
+
+<base-quiz-option value="A">A. Uma string</base-quiz-option>
+<base-quiz-option value="B" correct>B. Uma lista de strings</base-quiz-option>
+<base-quiz-option value="C">C. Uma tupla de strings</base-quiz-option>
+<base-quiz-option value="D">D. Um dicionário</base-quiz-option>
+<base-quiz-answer value="B">O método <code>split()</code> divide uma string em uma lista de substrings. Por padrão, ele divide em espaços em branco, mas você pode especificar um separador diferente.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Justificando texto com rjust(), ljust() e center()
 
@@ -564,7 +620,7 @@ sentence.count('e')
 ```
 
 ```python
-# retorna a contagem de 'e' após 'one sh' i.e 6 caracteres desde o início da string
+# retorna a contagem de 'e' após 'one sh' i.e. 6 caracteres desde o início da string
 sentence.count('e', 6)
 ```
 
@@ -611,6 +667,20 @@ sentence.replace("apples", "oranges")
 'I like oranges, Apples are my favorite fruit'
 ```
 
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+O que o método <code>replace()</code> retorna?
+</template>
+
+<base-quiz-option value="A">A. Modifica a string original</base-quiz-option>
+<base-quiz-option value="B">B. Retorna <code>None</code></base-quiz-option>
+<base-quiz-option value="C" correct>C. Retorna uma nova string com as substituições feitas</base-quiz-option>
+<base-quiz-option value="D">D. Retorna uma lista de strings substituídas</base-quiz-option>
+<base-quiz-answer value="C">O método <code>replace()</code> retorna uma nova string com todas as ocorrências da substring antiga substituídas pela nova substring. A string original não é modificada.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Links Relevantes
 
 - <router-link to="/builtin/format">format()</router-link>
@@ -618,5 +688,5 @@ sentence.replace("apples", "oranges")
 - <router-link to="/builtin/str">str()</router-link>
 - <router-link to="/builtin/repr">repr()</router-link>
 - <router-link to="/builtin/input">input()</router-link>
-- <router-link to="/cheatsheet/string-formatting">Formatação de String</router-link>
+- <router-link to="/cheatsheet/string-formatting">Formatação de Strings</router-link>
 - <router-link to="/cheatsheet/regular-expressions">Expressões Regulares</router-link>

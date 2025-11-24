@@ -57,7 +57,7 @@ obj.val
 É fácil adicionar valores padrão aos campos da sua data class.
 
 ```python
-# Dataclass com valores padrão: campos com padrões devem vir após os campos obrigatórios
+# Dataclass com valores padrão: campos com padrões devem vir depois dos campos obrigatórios
 @dataclass
 class Product:
     name: str        # Campo obrigatório
@@ -88,7 +88,21 @@ obj.price
 0.0
 ```
 
-## Dicas de Tipo (Type Hints)
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Em uma dataclass, onde os campos com valores padrão devem ser colocados?
+</template>
+
+<base-quiz-option value="A">A. Antes dos campos sem valores padrão</base-quiz-option>
+<base-quiz-option value="B" correct>B. Depois dos campos sem valores padrão</base-quiz-option>
+<base-quiz-option value="C">C. Não importa</base-quiz-option>
+<base-quiz-option value="D">D. Em uma seção separada</base-quiz-option>
+<base-quiz-answer value="B">Em dataclasses, campos com valores padrão devem vir depois de campos sem valores padrão. Isso ocorre porque o Python precisa saber a ordem dos parâmetros obrigatórios versus opcionais para o método <code>**init**</code> gerado.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+## Dicas de Tipo (Type hints)
 
 É obrigatório definir o tipo de dado na dataclass. No entanto, se você preferir não especificar o tipo de dado, use `typing.Any`.
 
@@ -106,7 +120,7 @@ class WithoutExplicitTypes:
 
 - <router-link to="/cheatsheet/oop-basics">Noções Básicas de OOP</router-link>
 - <router-link to="/cheatsheet/decorators">Decoradores</router-link>
-- <router-link to="/blog/python-data-types">Post de Blog sobre Tipos de Dados Python</router-link>
+- <router-link to="/blog/python-data-types">Post do Blog Tipos de Dados Python</router-link>
 - <router-link to="/builtin/object">object()</router-link>
 - <router-link to="/builtin/repr">repr()</router-link>
 - <router-link to="/builtin/type">type()</router-link>

@@ -10,9 +10,9 @@ Python デコレータ
 
 <base-lab-url :url="frontmatter.labUrl" />
 
-Python のデコレータは、関数やクラスを拡張するための簡潔で再利用可能な方法を提供します。実践的な例とパターンについては、関連する記事「<router-link to="/blog/python-decorators-for-beginners">Python デコレータ：コードをレベルアップするためのシンプルなパターン</router-link>」をお読みください。
+Python のデコレータは、関数やクラスを拡張するための簡潔で再利用可能な方法を提供します。実践的な例とパターンについては、関連記事の<router-link to="/blog/python-decorators-for-beginners">Python デコレータ：コードをレベルアップするためのシンプルなパターン</router-link>をお読みください。
 
-## ベアボーンデコレータ
+## 基本的なデコレータ
 
 最も単純な形のデコレータは、別の関数を引数として受け取り、ラッパーを返す関数です。次の例は、デコレータの作成とその使用方法を示しています。
 
@@ -27,12 +27,12 @@ def your_decorator(func):
     print("After func!")
   return wrapper  # ラッパー関数を返す
 
-# @your_decorator は、foo = your_decorator(foo) のシンタックスシュガーです
+# @your_decorator は、foo = your_decorator(foo) の糖衣構文です
 @your_decorator
 def foo():
   print("Hello World!")
 
-foo()  # ラッパーを呼び出し、追加の動作を持つ foo が呼び出される
+foo()  # ラッパーを呼び出し、それが追加の動作を持つ foo を呼び出す
 ```
 
 ```output
@@ -40,6 +40,20 @@ Before func!
 Hello World!
 After func!
 ```
+
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+Python におけるデコレータとは何ですか？
+</template>
+
+<base-quiz-option value="A" correct>A. 別の関数を受け取り、ラッパー関数を返す関数</base-quiz-option>
+<base-quiz-option value="B">B. 特別な種類のクラス</base-quiz-option>
+<base-quiz-option value="C">C. Python の組み込みキーワード</base-quiz-option>
+<base-quiz-option value="D">D. 関数を削除する方法</base-quiz-option>
+<base-quiz-answer value="A">デコレータは、別の関数を引数として受け取り、ラッパー関数を返す関数です。<code>@</code>構文は、デコレータを関数に適用するための糖衣構文です。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## パラメータを持つ関数のデコレータ
 
@@ -69,12 +83,12 @@ After func!
 
 ## 基本的なデコレータのテンプレート
 
-このテンプレートは、ほとんどのデコレータの使用例に役立ちます。パラメータの有無、戻り値の有無にかかわらず、関数に対して有効です。
+このテンプレートは、ほとんどのデコレータのユースケースに役立ちます。パラメータの有無、戻り値の有無にかかわらず、関数に対して有効です。
 
 ```python
 import functools
 
-# ベストプラクティスデコレータテンプレート：関数のメタデータと戻り値を保持する
+# ベストプラクティスのデコレータテンプレート：関数のメタデータを保持し、戻り値を保持する
 def your_decorator(func):
   @functools.wraps(func)  # 関数名、docstring などを保持する
   def wrapper(*args,**kwargs):
@@ -85,7 +99,21 @@ def your_decorator(func):
   return wrapper
 ```
 
-## パラメータを持つデコレータ
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+デコレータ内の<code>@functools.wraps(func)</code>は何をしますか？
+</template>
+
+<base-quiz-option value="A">A. デコレータの実行を高速化する</base-quiz-option>
+<base-quiz-option value="B" correct>B. 元の関数のメタデータ（名前、docstring など）を保持する</base-quiz-option>
+<base-quiz-option value="C">C. 関数の呼び出しを防ぐ</base-quiz-option>
+<base-quiz-option value="D">D. 関数をクラスに変換する</base-quiz-option>
+<base-quiz-answer value="B"><code>@functools.wraps(func)</code>デコレータは、元の関数のメタデータ（名前や docstring など）をラッパー関数に保持します。これはデコレータを作成する際のベストプラクティスと見なされます。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+## パラメータ付きデコレータ
 
 デコレータにパラメータを定義することもできます。
 
@@ -95,7 +123,7 @@ import functools
 # デコレータファクトリ：パラメータに基づいてデコレータを返す
 def your_decorator(arg):
   def decorator(func):
-    @functools.wraps(func)  # 関数のメタデータを保持する
+    @functools.wraps(func)  # 関数メタデータを保持する
     def wrapper(*args,**kwargs):
       # func...の前に何かを行う（arg を使用する可能性がある）
       result = func(*args,**kwargs)
@@ -108,8 +136,8 @@ def your_decorator(arg):
 このデコレータを使用するには：
 
 ```python
-# パラメータを持つデコレータの使用法：@your_decorator(arg='x') は your_decorator('x') を呼び出し、
-# それがデコレータを返し、foo に適用される
+# パラメータ付きデコレータの使用法：@your_decorator(arg='x') は your_decorator('x') を呼び出し、
+# それが foo に適用されるデコレータを返す
 @your_decorator(arg = 'x')
 def foo(bar):
   return bar
@@ -117,13 +145,13 @@ def foo(bar):
 
 ## クラスベースのデコレータ
 
-クラスのメソッドをデコレートするには、デコレータをクラス内で定義する必要があります。暗黙的な引数 `self` のみがメソッドに渡され、明示的な追加引数がない場合、引数なしのメソッド専用のデコレータを別途定義する必要があります。例として、特定の例外をキャッチして表示したい場合などが挙げられます。
+クラスメソッドをデコレートするには、デコレータをクラス内に定義する必要があります。暗黙的な引数 `self` のみが渡され、明示的な追加引数がないメソッドをデコレートする場合、追加引数なしのメソッド専用のデコレータを別途作成する必要があります。以下に、特定の例外処理を行う例を示します。
 
 ```python
-# クラスメソッドデコレータ：クラス内で定義される
+# クラスメソッドデコレータ：クラス内に定義される
 class DecorateMyMethod:
 
-  # 'self'パラメータのみを持つメソッド用のスタティックメソッドデコレータ
+  # 'self'パラメータのみを持つメソッド用の静的メソッドデコレータ
   def decorator_for_class_method_with_no_args(method):
     def wrapper_for_class_method(self):  # self のみを受け取る
       try:
@@ -160,18 +188,18 @@ test_fail.class_action()
 Exception: Epic fail of your own creation.
 ```
 
-デコレータは、メソッドの代わりにクラスとして定義することもできます。これは、呼び出し回数をカウントする例のように、状態を維持および更新する場合に役立ちます。
+デコレータは、メソッドの代わりにクラスとして定義することもできます。これは、以下の例のように、メソッドが呼び出された回数をカウントするなど、状態を維持および更新する場合に役立ちます。
 
 ```python
-# クラスベースデコレータ：呼び出し間で状態を維持する
+# クラスベースのデコレータ：呼び出し間で状態を維持する
 class CountCallNumber:
 
   def __init__(self, func):
-    self.func = func  # デコレートする関数を格納
-    self.call_number = 0  # 呼び出しカウンターを初期化
+    self.func = func  # デコレートする関数を保存する
+    self.call_number = 0  # 呼び出しカウンターを初期化する
 
   def __call__(self, *args, **kwargs):  # インスタンスを呼び出し可能にする
-    self.call_number += 1  # カウンターをインクリメント
+    self.call_number += 1  # カウンターをインクリメントする
     print("This is execution number " + str(self.call_number))
     return self.func(*args, **kwargs)  # 元の関数を呼び出す
 
@@ -208,7 +236,7 @@ Hi! My name is James
 ## 関連リンク
 
 - <router-link to="/blog/python-decorators-for-beginners">Python デコレータ：コードをレベルアップするためのシンプルなパターン</router-link>
-- <router-link to="/blog/python-easy-args-kwargs">Python \*args と \*\*kwargs を簡単に</router-link>
+- <router-link to="/blog/python-easy-args-kwargs">Python \*args と \*\*kwargs の簡単な使い方</router-link>
 - <router-link to="/cheatsheet/functions">関数</router-link>
 - <router-link to="/cheatsheet/args-and-kwargs">Args と Kwargs</router-link>
 - <router-link to="/builtin/classmethod">classmethod()</router-link>

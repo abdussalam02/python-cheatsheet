@@ -1,6 +1,6 @@
 ---
 title: 'Python Dataclasses - Python Spickzettel'
-description: 'Dataclasses sind Python-Klassen, die sich ideal zur Speicherung von Datenobjekten eignen. Dieses Modul bietet einen Dekorator und Funktionen zur automatischen Ergänzung von generierten Sonderfunktionen wie __init__() und __repr__() für benutzerdefinierte Klassen.'
+description: 'Dataclasses sind Python-Klassen, die sich ideal zur Speicherung von Datenobjekten eignen. Dieses Modul bietet einen Decorator und Funktionen zur automatischen Ergänzung von generierten Spezialmethoden wie __init__() und __repr__() für benutzerdefinierte Klassen.'
 labUrl: 'https://labex.io/de/labs/python-python-dataclasses-633652?course=python-cheatsheet'
 ---
 
@@ -19,7 +19,7 @@ Dieses Modul stellt einen Decorator und Funktionen bereit, um automatisch generi
 
 2. Sie können mit anderen Objekten desselben Typs verglichen werden. Bsp.: Eine Zahl kann größer, kleiner oder gleich einer anderen Zahl sein.
 
-Python 3.7 stellt den Decorator `dataclass` bereit, der verwendet wird, um eine Klasse in eine Dataclass umzuwandeln.
+Python 3.7 bietet den Decorator `dataclass`, der verwendet wird, um eine Klasse in eine Dataclass umzuwandeln.
 
 ```python
 class Number:
@@ -34,7 +34,7 @@ obj.val
 2
 ```
 
-mit dataclass
+mit Dataclass
 
 ```python
 # Dataclass: generiert automatisch __init__ und __repr__ Methoden
@@ -52,19 +52,19 @@ obj.val
 2
 ```
 
-## Defaultwerte
+## Standardwerte
 
 Es ist einfach, Standardwerte zu den Feldern Ihrer Datenklasse hinzuzufügen.
 
 ```python
-# Dataclass mit Standardwerten: Felder mit Defaults müssen nach erforderlichen Feldern kommen
+# Dataclass mit Standardwerten: Felder mit Standardwerten müssen nach erforderlichen Feldern kommen
 @dataclass
 class Product:
     name: str        # Erforderliches Feld
     count: int = 0   # Optionales Feld mit Standardwert
     price: float = 0.0  # Optionales Feld mit Standardwert
 
-obj = Product("Python")  # Nur Name erforderlich, andere verwenden Defaults
+obj = Product("Python")  # Nur Name erforderlich, andere verwenden Standardwerte
 obj.name
 ```
 
@@ -88,9 +88,23 @@ obj.price
 0.0
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+In einer Dataclass, wo müssen Felder mit Standardwerten platziert werden?
+</template>
+
+<base-quiz-option value="A">A. Vor Feldern ohne Standardwerte</base-quiz-option>
+<base-quiz-option value="B" correct>B. Nach Feldern ohne Standardwerte</base-quiz-option>
+<base-quiz-option value="C">C. Es spielt keine Rolle</base-quiz-option>
+<base-quiz-option value="D">D. In einem separaten Abschnitt</base-quiz-option>
+<base-quiz-answer value="B">In Dataclasses müssen Felder mit Standardwerten nach Feldern ohne Standardwerte kommen. Dies liegt daran, dass Python die Reihenfolge der erforderlichen vs. optionalen Parameter für die generierte <code>**init**</code> Methode kennen muss.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Typ-Hinweise (Type hints)
 
-Es ist zwingend erforderlich, den Datentyp in der Dataclass zu definieren. Wenn Sie es jedoch vorziehen, den Datentyp nicht anzugeben, verwenden Sie `typing.Any`.
+Es ist zwingend erforderlich, den Datentyp in der Dataclass zu definieren. Wenn Sie jedoch den Datentyp nicht angeben möchten, verwenden Sie `typing.Any`.
 
 ```python
 from dataclasses import dataclass

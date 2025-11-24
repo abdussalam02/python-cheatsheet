@@ -1,5 +1,5 @@
 ---
-title: 'Python Ausnahmebehandlung - Python Spickzettel'
+title: 'Python Ausnahmebehandlung – Python Spickzettel'
 description: 'In Python ist die Ausnahmebehandlung der Prozess der Reaktion auf das Auftreten von Ausnahmen.'
 labUrl: 'https://labex.io/de/labs/python-python-exception-handling-633656?course=python-cheatsheet'
 ---
@@ -15,7 +15,7 @@ Python Ausnahmebehandlung
     <a target="_blank" href="https://en.wikipedia.org/wiki/Exception_handling">Exception Handling</a>
   </base-disclaimer-title>
   <base-disclaimer-content>
-    Im Bereich des Rechnens und der Computerprogrammierung ist die Ausnahmebehandlung der Prozess der Reaktion auf das Auftreten von Ausnahmen – anomalen oder außergewöhnlichen Bedingungen, die eine spezielle Verarbeitung erfordern.
+    In der Informatik und Computerprogrammierung ist die Ausnahmebehandlung der Prozess der Reaktion auf das Auftreten von Ausnahmen – anomalen oder außergewöhnlichen Bedingungen, die eine spezielle Verarbeitung erfordern.
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -46,7 +46,7 @@ Traceback (most recent call last):
 ZeroDivisionError: division by zero
 ```
 
-Angenommen, wir möchten nicht, dass unser Programm seine Ausführung stoppt oder dem Benutzer eine Ausgabe zeigt, die er nicht versteht. Sagen wir, wir möchten eine nützliche und klare Nachricht ausgeben, dann müssen wir die Ausnahme mit den Schlüsselwörtern `try` und `except` **_behandeln_**:
+Angenommen, wir möchten nicht, dass unser Programm seine Ausführung stoppt oder dem Benutzer eine Ausgabe zeigt, die er nicht versteht. Wenn wir eine nützliche und klare Nachricht ausgeben möchten, müssen wir die Ausnahme mit den Schlüsselwörtern `try` und `except` **_behandeln_**:
 
 ```python
 # try-except: Ausnahmen elegant behandeln
@@ -54,7 +54,7 @@ def divide(dividend , divisor):
     try:  # Versuche, diesen Code auszuführen
         print(dividend / divisor)
     except ZeroDivisionError:  # Fange spezifischen Ausnahmetyp ab
-        print('Sie können nicht durch 0 teilen')
+        print('You can not divide by 0')
 
 divide(dividend=10, divisor=5)
 ```
@@ -68,12 +68,26 @@ divide(dividend=10, divisor=0)
 ```
 
 ```output
-Sie können nicht durch 0 teilen
+You can not divide by 0
 ```
+
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+Welche Schlüsselwörter werden in Python zur Ausnahmebehandlung verwendet?
+</template>
+
+<base-quiz-option value="A" correct>A. <code>try</code> und <code>except</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>catch</code> und <code>handle</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>error</code> und <code>rescue</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>if</code> und <code>else</code></base-quiz-option>
+<base-quiz-answer value="A">Python verwendet <code>try</code>, um Code zu kennzeichnen, der eine Ausnahme auslösen könnte, und <code>except</code>, um aufgetretene spezifische Ausnahmen zu behandeln.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Behandlung mehrerer Ausnahmen mit einem Ausnahmeblock
 
-Sie können auch mehrere Ausnahmen in einer Zeile wie folgt behandeln, ohne mehrere Ausnahmeblöcke erstellen zu müssen.
+Sie können auch mehrere Ausnahmen in einer einzigen Zeile wie folgt behandeln, ohne mehrere Ausnahmeblöcke erstellen zu müssen.
 
 ```python
 # Mehrere Ausnahmen in einem except-Block behandeln
@@ -109,6 +123,20 @@ divide(dividend=10, divisor=0)
 division by zero
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Können Sie mehrere Ausnahmetypen in einem einzigen <code>except</code>-Block behandeln?
+</template>
+
+<base-quiz-option value="A">A. Nein, Sie müssen für jeden Ausnahmetyp separate <code>except</code>-Blöcke verwenden</base-quiz-option>
+<base-quiz-option value="B" correct>B. Ja, indem Sie sie in ein Tupel wie <code>except (Exception1, Exception2)</code> setzen</base-quiz-option>
+<base-quiz-option value="C">C. Ja, aber nur, wenn sie verwandt sind</base-quiz-option>
+<base-quiz-option value="D">D. Nein, Python unterstützt dies nicht</base-quiz-option>
+<base-quiz-answer value="B">Sie können mehrere Ausnahmetypen in einem <code>except</code>-Block behandeln, indem Sie sie in ein Tupel setzen: <code>except (ZeroDivisionError, TypeError) as error:</code></base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Finally-Code in der Ausnahmebehandlung
 
 Der Code im `finally`-Abschnitt wird immer ausgeführt, unabhängig davon, ob eine Ausnahme ausgelöst wurde oder nicht:
@@ -119,16 +147,16 @@ def divide(dividend , divisor):
     try:
         print(dividend / divisor)
     except ZeroDivisionError:
-        print('Sie können nicht durch 0 teilen')
+        print('You can not divide by 0')
     finally:  # Wird immer ausgeführt, auch wenn eine Ausnahme auftritt
-        print('Ausführung beendet')
+        print('Execution finished')
 
 divide(dividend=10, divisor=5)
 ```
 
 ```output
 2.0
-Ausführung beendet
+Execution finished
 ```
 
 ```python
@@ -136,9 +164,23 @@ divide(dividend=10, divisor=0)
 ```
 
 ```output
-Sie können nicht durch 0 teilen
-Ausführung beendet
+You can not divide by 0
+Execution finished
 ```
+
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+Wann wird der <code>finally</code>-Block ausgeführt?
+</template>
+
+<base-quiz-option value="A">A. Nur wenn eine Ausnahme auftritt</base-quiz-option>
+<base-quiz-option value="B">B. Nur wenn keine Ausnahme auftritt</base-quiz-option>
+<base-quiz-option value="C" correct>C. Immer, unabhängig davon, ob eine Ausnahme aufgetreten ist oder nicht</base-quiz-option>
+<base-quiz-option value="D">D. Niemals</base-quiz-option>
+<base-quiz-answer value="C">Der <code>finally</code>-Block wird immer ausgeführt, unabhängig davon, ob eine Ausnahme aufgetreten ist oder nicht. Er ist nützlich für Aufräumarbeiten, die unabhängig vom Ergebnis ausgeführt werden müssen.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Benutzerdefinierte Ausnahmen
 
@@ -158,33 +200,47 @@ Traceback (most recent call last):
 __main__.MyCustomException
 ```
 
-Um eine benutzerdefinierte Fehlermeldung zu deklarieren, können Sie diese als Parameter übergeben:
+Um eine benutzerdefinierte Ausnahmemeldung zu deklarieren, können Sie diese als Parameter übergeben:
 
 ```python
 class MyCustomException(Exception):
     pass
 
-raise MyCustomException('Eine benutzerdefinierte Nachricht für meine benutzerdefinierte Ausnahme')
+raise MyCustomException('A custom message for my custom exception')
 ```
 
 ```output
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
-__main__.MyCustomException: Eine benutzerdefinierte Nachricht für meine benutzerdefinierte Ausnahme
+__main__.MyCustomException: A custom message for my custom exception
 ```
 
-Die Behandlung einer benutzerdefinierten Ausnahme ist dieselbe wie bei jeder anderen:
+Das Behandeln einer benutzerdefinierten Ausnahme ist dasselbe wie bei jeder anderen:
 
 ```python
 try:
-    raise MyCustomException('Eine benutzerdefinierte Nachricht für meine benutzerdefinierte Ausnahme')
+    raise MyCustomException('A custom message for my custom exception')
 except MyCustomException:
-    print('Meine benutzerdefinierte Ausnahme wurde ausgelöst')
+    print('My custom exception was raised')
 ```
 
 ```output
-Meine benutzerdefinierte Ausnahme wurde ausgelöst
+My custom exception was raised
 ```
+
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+Wie erstellt man eine benutzerdefinierte Ausnahme in Python?
+</template>
+
+<base-quiz-option value="A" correct>A. Erstellen Sie eine Klasse, die von der <code>Exception</code>-Klasse erbt</base-quiz-option>
+<base-quiz-option value="B">B. Verwenden Sie den Decorator <code>@exception</code></base-quiz-option>
+<base-quiz-option value="C">C. Rufen Sie <code>Exception.create()</code> auf</base-quiz-option>
+<base-quiz-option value="D">D. Importieren Sie sie aus einem speziellen Modul</base-quiz-option>
+<base-quiz-answer value="A">Benutzerdefinierte Ausnahmen werden erstellt, indem eine Klasse definiert wird, die von der Basisklasse <code>Exception</code> erbt. Sie können sie dann wie eingebaute Ausnahmen auslösen und behandeln.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Relevante Links
 

@@ -57,6 +57,20 @@ new_list
 ['Charles', 'Susan', 'Patrick', 'George']
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+What is the basic syntax of a list comprehension?
+</template>
+
+<base-quiz-option value="A" correct>A. <code>[expression for item in iterable]</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>(expression for item in iterable)</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>{expression for item in iterable}</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>expression for item in iterable</code></base-quiz-option>
+<base-quiz-answer value="A">List comprehensions use square brackets <code>[]</code> with the syntax <code>[expression for item in iterable]</code>. This creates a new list by applying the expression to each item.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 We can do the same with numbers:
 
 ```python
@@ -102,6 +116,20 @@ print(new_list)
 ```output
 ['Charles', 'Carol']
 ```
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Where does the <code>if</code> condition go in a list comprehension?
+</template>
+
+<base-quiz-option value="A">A. Before the <code>for</code> keyword</base-quiz-option>
+<base-quiz-option value="B" correct>B. After the <code>for</code> clause</base-quiz-option>
+<base-quiz-option value="C">C. Inside the expression</base-quiz-option>
+<base-quiz-option value="D">D. Before the square brackets</base-quiz-option>
+<base-quiz-answer value="B">In a list comprehension, the <code>if</code> condition comes after the <code>for</code> clause: <code>[expression for item in iterable if condition]</code>. This filters items based on the condition.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 To use an `if-else` statement in a List Comprehension:
 
@@ -151,6 +179,20 @@ c = {'name': 'Pooka', 'age': 5}
 ```output
 {'Pooka': 'name', 5: 'age'}
 ```
+
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+What syntax is used for dictionary comprehensions?
+</template>
+
+<base-quiz-option value="A">A. <code>[key: value for item in iterable]</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>(key: value for item in iterable)</code></base-quiz-option>
+<base-quiz-option value="C" correct>C. <code>{key_expression: value_expression for item in iterable}</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>{key, value for item in iterable}</code></base-quiz-option>
+<base-quiz-answer value="C">Dictionary comprehensions use curly braces <code>{}</code> with the syntax <code>{key_expression: value_expression for item in iterable}</code>, similar to list comprehensions but with key-value pairs.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 A List comprehension can be generated from a dictionary:
 

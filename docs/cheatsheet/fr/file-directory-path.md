@@ -1,5 +1,5 @@
 ---
-title: 'Cheatsheet : Chemins de Fichiers et de Répertoires - Python'
+title: 'Cheatsheet Python : Chemins de Fichiers et Répertoires'
 description: 'Python utilise deux modules principaux pour la manipulation des chemins : le module os.path et le module pathlib.'
 labUrl: 'https://labex.io/fr/labs/python-python-file-and-directory-path-manipulation-633657?course=python-cheatsheet'
 ---
@@ -20,13 +20,13 @@ L'un est le module <router-link to="/modules/os-module">os.path</router-link> et
     Pathlib vs Module OS
   </base-disclaimer-title>
   <base-disclaimer-content>
-    <code>pathlib</code> offre beaucoup plus de fonctionnalités que celles énumérées ci-dessus, comme obtenir le nom du fichier, obtenir l'extension du fichier, lire/écrire un fichier sans l'ouvrir manuellement, etc. Consultez la <a target="_blank" href="https://docs.python.org/3/library/pathlib.html">documentation officielle</a> si vous avez l'intention d'en savoir plus.
+    <code>pathlib</code> offre beaucoup plus de fonctionnalités que celles énumérées ci-dessus, comme obtenir le nom du fichier, obtenir l'extension du fichier, lire/écrire un fichier sans l'ouvrir manuellement, etc. Consultez la <a target="_blank" href="https://docs.python.org/3/library/pathlib.html">documentation officielle</a> si vous souhaitez en savoir plus.
   </base-disclaimer-content>
 </base-disclaimer>
 
 ## Chemins Linux et Windows
 
-Sur Windows, les chemins sont écrits en utilisant des barres obliques inverses (`\`) comme séparateur entre les noms de dossiers. Sur les systèmes d'exploitation basés sur Unix tels que macOS, Linux et BSD, la barre oblique avant (`/`) est utilisée comme séparateur de chemin. Joindre des chemins peut être un casse-tête si votre code doit fonctionner sur différentes plateformes.
+Sous Windows, les chemins sont écrits en utilisant des barres obliques inverses (`\`) comme séparateur entre les noms de dossiers. Sur les systèmes d'exploitation basés sur Unix tels que macOS, Linux et BSD, la barre oblique avant (`/`) est utilisée comme séparateur de chemin. Joindre des chemins peut être un casse-tête si votre code doit fonctionner sur différentes plateformes.
 
 Heureusement, le module `pathlib` de Python fournit un moyen facile de gérer cela.
 
@@ -36,7 +36,7 @@ Utilisation de `pathlib` sur \*nix :
 # pathlib.Path: gestion de chemins multiplateformes
 from pathlib import Path
 
-print(Path('usr').joinpath('bin').joinpath('spam'))  # Joindre les composants du chemin
+print(Path('usr').joinpath('bin').joinpath('spam'))  # Joindre des composants de chemin
 ```
 
 ```output
@@ -58,7 +58,21 @@ usr/bin/spam
 
 Remarquez que le séparateur de chemin est différent entre Windows et les systèmes d'exploitation basés sur Unix, c'est pourquoi vous voulez utiliser `pathlib` au lieu d'ajouter des chaînes de caractères ensemble pour joindre des chemins.
 
-Joindre des chemins est utile si vous devez créer différents chemins de fichiers sous le même répertoire.
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Quelle est la bonne façon de joindre des chemins en utilisant pathlib en Python ?
+</template>
+
+<base-quiz-option value="A">A. <code>Path('usr') + 'bin' + 'spam'</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>Path('usr') / 'bin' / 'spam'</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>Path('usr').join('bin').join('spam')</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>Path('usr/bin/spam')</code></base-quiz-option>
+<base-quiz-answer value="B">L'opérateur <code>/</code> est la méthode recommandée pour joindre des chemins avec pathlib. Il fonctionne sur toutes les plateformes et est plus lisible que la concaténation de chaînes.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+Joindre des chemins est utile si vous avez besoin de créer différents chemins de fichiers sous le même répertoire.
 
 Utilisation de `pathlib` sur \*nix :
 
@@ -76,14 +90,14 @@ for filename in my_files:
 /home/labex/project/invite.docx
 ```
 
-### Développer le répertoire personnel de l'utilisateur
+### Expansion du répertoire personnel de l'utilisateur
 
-Utiliser `os.path.expanduser()` pour développer `~` vers le répertoire personnel de l'utilisateur :
+Utilisation de `os.path.expanduser()` pour développer `~` en répertoire personnel de l'utilisateur :
 
 ```python
 import os.path
 
-# Développer ~ vers le répertoire personnel de l'utilisateur
+# Développer ~ en répertoire personnel de l'utilisateur
 print(os.path.expanduser('~'))
 ```
 
@@ -92,7 +106,7 @@ print(os.path.expanduser('~'))
 ```
 
 ```python
-# Développer ~/Documents vers le chemin complet
+# Développer ~/Documents en chemin complet
 print(os.path.expanduser('~/Documents'))
 ```
 
@@ -184,6 +198,20 @@ Path('..').is_absolute()
 ```output
 False
 ```
+
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+Que retourne <code>Path('/').is_absolute()</code> ?
+</template>
+
+<base-quiz-option value="A" correct>A. <code>True</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>False</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>None</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>'/'</code></base-quiz-option>
+<base-quiz-answer value="A">La méthode <code>is_absolute()</code> retourne <code>True</code> pour les chemins absolus (ceux qui commencent par <code>/</code> sur Unix ou une lettre de lecteur sur Windows).</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 Vous pouvez extraire un chemin absolu avec `pathlib` :
 
@@ -287,6 +315,20 @@ Path('nonexistentfile').is_file()
 False
 ```
 
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+Que retournera <code>Path('setup.py').is_file()</code> si setup.py existe ?
+</template>
+
+<base-quiz-option value="A">A. <code>'setup.py'</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>False</code></base-quiz-option>
+<base-quiz-option value="C" correct>C. <code>True</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>None</code></base-quiz-option>
+<base-quiz-answer value="C">La méthode <code>is_file()</code> retourne <code>True</code> si le chemin existe et est un fichier, <code>False</code> sinon.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ### Vérification si un chemin est un répertoire
 
 Utilisation de `pathlib` sur \*nix :
@@ -342,9 +384,9 @@ print(stat.st_size) # taille en octets
 10024
 ```
 
-## Liste des répertoires
+## Listage des répertoires
 
-Liste du contenu d'un répertoire en utilisant `pathlib` sur \*nix :
+Listage du contenu d'un répertoire en utilisant `pathlib` sur \*nix :
 
 ```python
 from pathlib import Path
@@ -367,11 +409,11 @@ for f in Path('/usr/bin').iterdir():
 ...
 ```
 
-## Tailles des fichiers de répertoire
+## Tailles de fichiers de répertoire
 
 <base-warning>
   <base-warning-title>
-    AVERTISSEMENT
+    ATTENTION
   </base-warning-title>
   <base-warning-content>
     Les répertoires eux-mêmes ont également une taille ! Vous voudrez donc vérifier si un chemin est un fichier ou un répertoire en utilisant les méthodes discutées dans la section précédente.
@@ -415,6 +457,20 @@ shutil.copy('/tmp/eggs.txt', '/tmp/delicious/eggs2.txt')
 ```output
 /tmp/delicious/eggs2.txt
 ```
+
+<base-quiz>
+<base-quiz-question correct="D">
+<template #question>
+Quelle fonction devez-vous utiliser pour copier une arborescence de répertoires entière, y compris tous les sous-répertoires et fichiers ?
+</template>
+
+<base-quiz-option value="A">A. <code>shutil.copy()</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>Path.copy()</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>os.copy()</code></base-quiz-option>
+<base-quiz-option value="D" correct>D. <code>shutil.copytree()</code></base-quiz-option>
+<base-quiz-answer value="D">La fonction <code>shutil.copytree()</code> copie une arborescence de répertoires entière de manière récursive, tandis que <code>shutil.copy()</code> ne copie qu'un seul fichier.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 Alors que `shutil.copy()` copiera un seul fichier, `shutil.copytree()` copiera un dossier entier et tous les dossiers et fichiers qu'il contient :
 
@@ -465,6 +521,20 @@ shutil.move('/tmp/bacon.txt', '/tmp/eggs')
 - Appeler `Path.unlink()` supprimera le fichier au chemin spécifié.
 - Appeler `Path.rmdir()` supprimera le dossier au chemin spécifié. Ce dossier doit être vide de tout fichier ou dossier.
 - Appeler `shutil.rmtree(path)` supprimera le dossier au chemin spécifié, et tous les fichiers et dossiers qu'il contient seront également supprimés.
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Quelle méthode peut supprimer un répertoire non vide et tout son contenu ?
+</template>
+
+<base-quiz-option value="A">A. <code>Path.rmdir()</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>shutil.rmtree()</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>Path.unlink()</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>os.remove()</code></base-quiz-option>
+<base-quiz-answer value="B">La fonction <code>shutil.rmtree()</code> peut supprimer un répertoire et tout son contenu de manière récursive. <code>Path.rmdir()</code> ne fonctionne que sur les répertoires vides.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Parcours d'une arborescence de répertoires
 

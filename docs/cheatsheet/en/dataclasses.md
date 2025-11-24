@@ -88,6 +88,20 @@ obj.price
 0.0
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+In a dataclass, where must fields with default values be placed?
+</template>
+
+<base-quiz-option value="A">A. Before fields without default values</base-quiz-option>
+<base-quiz-option value="B" correct>B. After fields without default values</base-quiz-option>
+<base-quiz-option value="C">C. It doesn't matter</base-quiz-option>
+<base-quiz-option value="D">D. In a separate section</base-quiz-option>
+<base-quiz-answer value="B">In dataclasses, fields with default values must come after fields without default values. This is because Python needs to know the order of required vs optional parameters for the generated <code>**init**</code> method.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Type hints
 
 It is mandatory to define the data type in dataclass. However, If you would rather not specify the datatype then, use `typing.Any`.

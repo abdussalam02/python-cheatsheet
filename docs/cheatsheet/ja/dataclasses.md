@@ -15,9 +15,9 @@ Python Dataclasses
 
 ## 特徴 (Features)
 
-1. データオブジェクトを格納し、特定のデータ型を表します。例：数値。ORM に慣れている人にとって、モデルインスタンスはデータオブジェクトです。それは特定の種類のエンティティを表します。エンティティを定義または表す属性を保持します。
+1. データ型を表し、データを格納します。例：数値。ORM に慣れている人にとって、モデルインスタンスはデータオブジェクトです。それは特定の種類のエンティティを表します。エンティティを定義または表す属性を保持します。
 
-2. 同一タイプの他のオブジェクトと比較できます。例：数値は他の数値よりも大きい、小さい、または等しい場合があります。
+2. 同種の他のオブジェクトと比較できます。例：数値は他の数値よりも大きい、小さい、または等しい場合があります。
 
 Python 3.7 は、クラスを dataclass に変換するために使用される `dataclass` デコレータを提供します。
 
@@ -44,7 +44,7 @@ from dataclasses import dataclass
 class Number:
     val: int  # 型アノテーションが必要
 
-obj = Number(2)  # __init__ が自動的に作成される
+obj = Number(2)  # __init__ が自動作成される
 obj.val
 ```
 
@@ -57,7 +57,7 @@ obj.val
 データクラスのフィールドにデフォルト値を追加するのは簡単です。
 
 ```python
-# デフォルト値を持つ Dataclass: デフォルト値を持つフィールドは必須フィールドの後に来る必要があります
+# デフォルト値を持つ Dataclass: デフォルト値を持つフィールドは必須フィールドの後に配置する必要があります
 @dataclass
 class Product:
     name: str        # 必須フィールド
@@ -88,6 +88,20 @@ obj.price
 0.0
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+dataclass では、デフォルト値を持つフィールドはどこに配置する必要がありますか？
+</template>
+
+<base-quiz-option value="A">A. デフォルト値を持たないフィールドの前</base-quiz-option>
+<base-quiz-option value="B" correct>B. デフォルト値を持たないフィールドの後</base-quiz-option>
+<base-quiz-option value="C">C. どこでもよい</base-quiz-option>
+<base-quiz-option value="D">D. 別々のセクション</base-quiz-option>
+<base-quiz-answer value="B">dataclass では、デフォルト値を持つフィールドはデフォルト値を持たないフィールドの後に配置する必要があります。これは、Python が生成される <code>**init**</code> メソッドの必須パラメーターとオプションパラメーターの順序を知る必要があるためです。</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## 型ヒント (Type hints)
 
 dataclass ではデータ型を定義することが必須です。ただし、データ型を指定したくない場合は、`typing.Any` を使用します。
@@ -104,9 +118,9 @@ class WithoutExplicitTypes:
 
 ## 関連リンク (Relevant links)
 
-- <router-link to="/cheatsheet/oop-basics">OOP の基礎 (OOP Basics)</router-link>
-- <router-link to="/cheatsheet/decorators">デコレータ (Decorators)</router-link>
-- <router-link to="/blog/python-data-types">Python データ型ブログ投稿 (Python Data Types Blog Post)</router-link>
+- <router-link to="/cheatsheet/oop-basics">OOP Basics</router-link>
+- <router-link to="/cheatsheet/decorators">Decorators</router-link>
+- <router-link to="/blog/python-data-types">Python Data Types Blog Post</router-link>
 - <router-link to="/builtin/object">object()</router-link>
 - <router-link to="/builtin/repr">repr()</router-link>
 - <router-link to="/builtin/type">type()</router-link>

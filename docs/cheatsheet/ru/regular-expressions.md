@@ -1,5 +1,5 @@
 ---
-title: 'Регулярные выражения Python - Шпаргалка по Python'
+title: 'Регулярные выражения Python - Справочник Python'
 description: 'Регулярное выражение (сокращенно regex) — это последовательность символов, определяющая шаблон поиска в тексте, используемый алгоритмами поиска строк.'
 labUrl: 'https://labex.io/ru/labs/python-python-regular-expressions-633664?course=python-cheatsheet'
 ---
@@ -15,51 +15,51 @@ labUrl: 'https://labex.io/ru/labs/python-python-regular-expressions-633664?cours
     <a target="_blank" href="https://en.wikipedia.org/wiki/Regular_expression">Регулярные выражения</a>
   </base-disclaimer-title>
   <base-disclaimer-content>
-    Регулярное выражение (сокращенно regex [...]) — это последовательность символов, которая определяет шаблон поиска в тексте. [...] используется алгоритмами поиска строк для операций «найти» или «найти и заменить» в строках, или для проверки входных данных.
+    Регулярное выражение (сокращенно regex [...]) — это последовательность символов, которая определяет шаблон поиска в тексте. [...] используется алгоритмами поиска строк для операций «найти» или «найти и заменить» в строках, или для проверки ввода.
   </base-disclaimer-content>
 </base-disclaimer>
 
 1. Импортируйте модуль regex с помощью `import re`.
-2. Создайте объект Regex с помощью функции `re.compile()`. (Не забудьте использовать "сырую" строку.)
+2. Создайте объект Regex с помощью функции `re.compile()`. (Не забудьте использовать необработанную строку (raw string).)
 3. Передайте строку, которую вы хотите искать, в метод `search()` объекта Regex. Это возвращает объект `Match`.
 4. Вызовите метод `group()` объекта Match, чтобы вернуть строку фактически сопоставленного текста.
 
 Все функции regex в Python находятся в модуле re:
 
 ```python
-# Импорт модуля re для операций с регулярными выражениями
+# Import re module for regular expression operations
 import re
 ```
 
 ## Символы Regex
 
-| Символ                     | Соответствует                                               |
-| :------------------------- | :---------------------------------------------------------- |
-| `?`                        | ноль или одно из предыдущей группы.                         |
-| `*`                        | ноль или более из предыдущей группы.                        |
-| `+`                        | одно или более из предыдущей группы.                        |
-| `{n}`                      | ровно n из предыдущей группы.                               |
-| `{n,}`                     | n или более из предыдущей группы.                           |
-| `{,m}`                     | от 0 до m из предыдущей группы.                             |
-| `{n,m}`                    | не менее n и не более m из предыдущей группы.               |
-| `{n,m}?` или `*?` или `+?` | выполняет нежадный поиск предыдущей группы.                 |
-| `^spam`                    | означает, что строка должна начинаться с spam.              |
-| `spam$`                    | означает, что строка должна заканчиваться на spam.          |
-| `.`                        | любой символ, кроме символов новой строки.                  |
-| `\d`, `\w`, и `\s`         | цифра, слово или пробельный символ, соответственно.         |
-| `\D`, `\W`, и `\S`         | что угодно, кроме цифры, слова или пробела, соответственно. |
-| `[abc]`                    | любой символ между скобками (например, a, b, ).             |
-| `[^abc]`                   | любой символ, который не находится между скобками.          |
+| Символ                     | Соответствует                                              |
+| -------------------------- | ---------------------------------------------------------- |
+| `?`                        | ноль или одно из предыдущей группы.                        |
+| `*`                        | ноль или более из предыдущей группы.                       |
+| `+`                        | один или более из предыдущей группы.                       |
+| `{n}`                      | ровно n из предыдущей группы.                              |
+| `{n,}`                     | n или более из предыдущей группы.                          |
+| `{,m}`                     | от 0 до m из предыдущей группы.                            |
+| `{n,m}`                    | не менее n и не более m предыдущей группы.                 |
+| `{n,m}?` или `*?` или `+?` | выполняет нежадный (non-greedy) поиск предыдущей группы.   |
+| `^spam`                    | означает, что строка должна начинаться с spam.             |
+| `spam$`                    | означает, что строка должна заканчиваться на spam.         |
+| `.`                        | любой символ, кроме символов новой строки.                 |
+| `\d`, `\w`, и `\s`         | цифра, слово или пробельный символ соответственно.         |
+| `\D`, `\W`, и `\S`         | что угодно, кроме цифры, слова или пробела соответственно. |
+| `[abc]`                    | любой символ между скобками (например, a, b, ).            |
+| `[^abc]`                   | любой символ, которого нет между скобками.                 |
 
 ## Объекты сопоставления regex
 
 ```python
-# re.compile(): создание объекта шаблона regex (используйте сырую строку r'', чтобы избежать экранирования)
-phone_num_regex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d')  # Шаблон: 3 цифры-3 цифры-4 цифры
+# re.compile(): create regex pattern object (use raw string r'' to avoid escaping)
+phone_num_regex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d')  # Pattern: 3 digits-3 digits-4 digits
 
-mo = phone_num_regex.search('My number is 415-555-4242.')  # Поиск шаблона
+mo = phone_num_regex.search('My number is 415-555-4242.')  # Search for pattern
 
-print(f'Phone number found: {mo.group()}')  # group() возвращает сопоставленный текст
+print(f'Phone number found: {mo.group()}')  # group() returns matched text
 ```
 
 ```output
@@ -69,11 +69,11 @@ Phone number found: 415-555-4242
 ## Группировка с помощью скобок
 
 ```python
-# Скобки создают группы: group(1) возвращает первую группу, group(2) возвращает вторую
-phone_num_regex = re.compile(r'(\d\d\d)-(\d\d\d-\d\d\d\d)')  # Две группы в скобках
+# Parentheses create groups: group(1) returns first group, group(2) returns second
+phone_num_regex = re.compile(r'(\d\d\d)-(\d\d\d-\d\d\d\d)')  # Two groups in parentheses
 mo = phone_num_regex.search('My number is 415-555-4242.')
 
-mo.group(1)  # Возвращает первую группу: '415'
+mo.group(1)  # Returns first group: '415'
 ```
 
 ```output
@@ -104,11 +104,25 @@ mo.group()
 '415-555-4242'
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+What does <code>group()</code> return when called on a match object?
+</template>
+
+<base-quiz-option value="A" correct>A. The entire matched text</base-quiz-option>
+<base-quiz-option value="B">B. The first group only</base-quiz-option>
+<base-quiz-option value="C">C. All groups as a list</base-quiz-option>
+<base-quiz-option value="D">D. The index of the match</base-quiz-option>
+<base-quiz-answer value="A">The <code>group()</code> method (or <code>group(0)</code>) returns the entire matched text. To get specific groups, use <code>group(1)</code>, <code>group(2)</code>, etc.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 Чтобы получить все группы сразу, используйте метод `groups()`:
 
 ```python
-# groups(): возвращает кортеж всех групп
-mo.groups()  # Возвращает ('415', '555-4242')
+# groups(): returns tuple of all groups
+mo.groups()  # Returns ('415', '555-4242')
 ```
 
 ```output
@@ -133,7 +147,7 @@ print(main_number)
 555-4242
 ```
 
-## Несколько групп с помощью "Пайп"
+## Несколько групп с оператором "ИЛИ" (Pipe)
 
 Вы можете использовать символ `|` везде, где хотите сопоставить одно из нескольких выражений.
 
@@ -157,7 +171,7 @@ mo2.group()
 'Tina Fey'
 ```
 
-Вы также можете использовать "пайп" для сопоставления одного из нескольких шаблонов как части вашего regex:
+Вы также можете использовать оператор "ИЛИ" для сопоставления одного из нескольких шаблонов как части вашего regex:
 
 ```python
 bat_regex = re.compile(r'Bat(man|mobile|copter|bat)')
@@ -178,7 +192,7 @@ mo.group(1)
 'mobile'
 ```
 
-## Необязательное сопоставление с помощью вопросительного знака
+## Необязательное сопоставление с помощью знака вопроса
 
 Символ `?` помечает группу, предшествующую ему, как необязательную часть шаблона.
 
@@ -204,7 +218,7 @@ mo2.group()
 
 ## Сопоставление нуля или более с помощью Звездочки
 
-`*` (звездочка или астериск) означает "сопоставить ноль или более". Группа, предшествующая звездочке, может встречаться в тексте любое количество раз.
+`*` (звездочка или астериск) означает «сопоставить ноль или более». Группа, предшествующая звездочке, может встречаться в тексте любое количество раз.
 
 ```python
 bat_regex = re.compile(r'Bat(wo)*man')
@@ -267,7 +281,7 @@ mo3 is None
 True
 ```
 
-## Сопоставление определенных повторений с помощью фигурных скобок
+## Сопоставление конкретных повторений с помощью фигурных скобок
 
 Если у вас есть группа, которую вы хотите повторить определенное количество раз, следуйте за группой в вашем regex числом в фигурных скобках:
 
@@ -303,9 +317,9 @@ mo1.group()
 'HaHaHa'
 ```
 
-## Жадноe и нежадное сопоставление
+## Жадное и нежадное сопоставление
 
-Регулярные выражения Python по умолчанию являются жадными: в неоднозначных ситуациях они будут сопоставлять максимально длинную возможную строку. Нежадная версия фигурных скобок, которая сопоставляет минимально возможную строку, имеет закрывающую фигурную скобку, за которой следует вопросительный знак.
+Регулярные выражения Python по умолчанию являются жадными (greedy): в неоднозначных ситуациях они будут сопоставлять максимально длинную строку. Нежадная версия фигурных скобок, которая сопоставляет минимально возможную строку, имеет закрывающую фигурную скобку, за которой следует вопросительный знак.
 
 ```python
 greedy_ha_regex = re.compile(r'(Ha){3,5}')
@@ -328,12 +342,26 @@ mo2.group()
 'HaHaHa'
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+What makes a regex pattern non-greedy?
+</template>
+
+<base-quiz-option value="A">A. Using <code>_</code> instead of <code>+</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. Adding a <code>?</code> after the quantifier (e.g., <code>_?</code>, <code>+?</code>, <code>{3,5}?</code>)</base-quiz-option>
+<base-quiz-option value="C">C. Using parentheses</base-quiz-option>
+<base-quiz-option value="D">D. Using square brackets</base-quiz-option>
+<base-quiz-answer value="B">Adding a <code>?</code> after quantifiers like <code>\*</code>, <code>+</code>, or <code>{n,m}</code> makes them non-greedy, matching the shortest possible string instead of the longest.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Метод findall()
 
-Метод `findall()` вернет строки всех совпадений в искомой строке.
+Метод `findall()` вернет строки каждого совпадения в искомой строке.
 
 ```python
-phone_num_regex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d') # не имеет групп
+phone_num_regex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d') # has no groups
 
 phone_num_regex.findall('Cell: 415-555-9999 Work: 212-555-0000')
 ```
@@ -355,7 +383,7 @@ vowel_regex.findall('Robocop eats baby food. BABY FOOD.')
 ['o', 'o', 'o', 'e', 'a', 'a', 'o', 'o', 'A', 'O', 'O']
 ```
 
-Вы также можете включать диапазоны букв или чисел, используя дефис. Например, класс символов _[a-zA-Z0-9]_ будет соответствовать всем строчным буквам, заглавным буквам и цифрам.
+Вы также можете включать диапазоны букв или цифр, используя дефис. Например, класс символов _[a-zA-Z0-9]_ будет соответствовать всем строчным буквам, заглавным буквам и цифрам.
 
 Поместив символ каретки (`^`) сразу после открывающей скобки класса символов, вы можете создать отрицательный класс символов, который будет соответствовать всем символам, которых нет в классе символов:
 
@@ -368,7 +396,7 @@ consonant_regex.findall('Robocop eats baby food. BABY FOOD.')
 ['R', 'b', 'c', 'p', ' ', 't', 's', ' ', 'b', 'b', 'y', ' ', 'f', 'd', '.', ' ', 'B', 'B', 'Y', ' ', 'F', 'D', '.']
 ```
 
-## Символы Каретка и Знак доллара
+## Символы Каретки и Знака доллара
 
 - Вы также можете использовать символ каретки `^` в начале regex, чтобы указать, что совпадение должно произойти в начале искомого текста.
 
@@ -376,7 +404,7 @@ consonant_regex.findall('Robocop eats baby food. BABY FOOD.')
 
 - И вы можете использовать `^` и `$` вместе, чтобы указать, что вся строка должна соответствовать regex.
 
-Регулярное выражение `r'^Hello'` соответствует строкам, начинающимся с 'Hello':
+Строка регулярного выражения `r'^Hello'` соответствует строкам, начинающимся с 'Hello':
 
 ```python
 begins_with_hello = re.compile(r'^Hello')
@@ -395,7 +423,7 @@ begins_with_hello.search('He said hello.') is None
 True
 ```
 
-Регулярное выражение `r'\d\$'` соответствует строкам, которые заканчиваются числовым символом от 0 до 9:
+Строка регулярного выражения `r'\d\$'` соответствует строкам, которые заканчиваются числовым символом от 0 до 9:
 
 ```python
 whole_string_is_num = re.compile(r'^\d+$')
@@ -504,7 +532,7 @@ newline_regex.search('Serve the public trust.\nProtect the innocent.\nUphold the
 
 ## Регистронезависимое сопоставление
 
-Чтобы сделать ваш regex регистронезависимым, вы можете передать `re.IGNORECASE` или `re.I` в качестве второго аргумента в `re.compile()`:
+Чтобы сделать ваше regex регистронезависимым, вы можете передать `re.IGNORECASE` или `re.I` в качестве второго аргумента в `re.compile()`:
 
 ```python
 robocop = re.compile(r'robocop', re.I)
@@ -551,9 +579,23 @@ names_regex.sub('CENSORED', 'Agent Alice gave the secret documents to Agent Bob.
 'CENSORED gave the secret documents to CENSORED.'
 ```
 
-## Управление сложными Regexes
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+What does the <code>sub()</code> method do?
+</template>
 
-Чтобы указать функции `re.compile()` игнорировать пробелы и комментарии внутри строки регулярного выражения, можно включить "подробный режим", передав переменную `re.VERBOSE` в качестве второго аргумента в `re.compile()`.
+<base-quiz-option value="A">A. Finds all matches in a string</base-quiz-option>
+<base-quiz-option value="B" correct>B. Replaces all matches with a replacement string</base-quiz-option>
+<base-quiz-option value="C">C. Splits a string at matches</base-quiz-option>
+<base-quiz-option value="D">D. Validates a string format</base-quiz-option>
+<base-quiz-answer value="B">The <code>sub()</code> method substitutes all matches of the pattern with a replacement string. It returns a new string with the substitutions applied.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+## Управление сложными Regex
+
+Чтобы указать функции `re.compile()` игнорировать пробелы и комментарии внутри строки регулярного выражения, можно включить «подробный режим» (verbose mode), передав переменную `re.VERBOSE` в качестве второго аргумента в `re.compile()`.
 
 Теперь вместо трудночитаемого регулярного выражения, такого как это:
 
@@ -561,7 +603,7 @@ names_regex.sub('CENSORED', 'Agent Alice gave the secret documents to Agent Bob.
 phone_regex = re.compile(r'((\d{3}|\(\d{3}\))?(\s|-|\.)?\d{3}(\s|-|\.)\d{4}(\s*(ext|x|ext.)\s*\d{2,5})?)')
 ```
 
-вы можете разбить регулярное выражение на несколько строк с комментариями, как это:
+вы можете разбить регулярное выражение на несколько строк с комментариями, как показано ниже:
 
 ```python
 phone_regex = re.compile(r'''(
@@ -573,6 +615,20 @@ phone_regex = re.compile(r'''(
     (\s*(ext|x|ext.)\s*\d{2,5})?  # extension
     )''', re.VERBOSE)
 ```
+
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+What does <code>re.VERBOSE</code> do when passed to <code>re.compile()</code>?
+</template>
+
+<base-quiz-option value="A" correct>A. Allows whitespace and comments in the regex pattern for better readability</base-quiz-option>
+<base-quiz-option value="B">B. Makes the regex case-insensitive</base-quiz-option>
+<base-quiz-option value="C">C. Makes the dot match newline characters</base-quiz-option>
+<base-quiz-option value="D">D. Speeds up regex matching</base-quiz-option>
+<base-quiz-answer value="A">The <code>re.VERBOSE</code> flag allows you to add whitespace and comments to your regex pattern, making complex regexes much more readable without affecting the pattern matching.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Соответствующие ссылки
 

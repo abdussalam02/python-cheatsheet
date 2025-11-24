@@ -1,6 +1,6 @@
 ---
 title: 'Gerenciador de Contexto Python - Folha de Dicas Python'
-description: 'Embora os gerenciadores de contexto Python sejam amplamente utilizados, poucos entendem o propósito por trás de seu uso. Essas instruções, comumente usadas na leitura e gravação de arquivos, auxiliam a aplicação a conservar a memória do sistema e melhoram o gerenciamento de recursos, garantindo que recursos específicos sejam usados apenas para determinados processos.'
+description: 'Embora os gerenciadores de contexto Python sejam amplamente utilizados, poucos entendem o propósito por trás de seu uso. Essas instruções, comumente usadas na leitura e gravação de arquivos, auxiliam a aplicação na conservação da memória do sistema e melhoram o gerenciamento de recursos, garantindo que recursos específicos estejam em uso apenas para determinados processos.'
 labUrl: 'https://labex.io/pt/labs/python-python-context-manager-633650?course=python-cheatsheet'
 ---
 
@@ -10,11 +10,11 @@ Gerenciador de Contexto Python
 
 <base-lab-url :url="frontmatter.labUrl" />
 
-Embora os gerenciadores de contexto do Python sejam amplamente utilizados, poucos entendem o propósito por trás de seu uso. Essas declarações, comumente usadas na leitura e gravação de arquivos, ajudam o aplicativo a conservar a memória do sistema e melhoram o gerenciamento de recursos, garantindo que recursos específicos sejam usados apenas para determinados processos.
+Embora os gerenciadores de contexto do Python sejam amplamente utilizados, poucos entendem o propósito por trás de seu uso. Essas instruções, comumente usadas na leitura e escrita de arquivos, ajudam a aplicação a conservar a memória do sistema e melhoram o gerenciamento de recursos, garantindo que recursos específicos sejam usados apenas para determinados processos.
 
-## A declaração with
+## A instrução with
 
-Um gerenciador de contexto é um objeto que é notificado quando um contexto (um bloco de código) começa e termina. Você comumente usa um com a declaração `with`. Ela cuida da notificação.
+Um gerenciador de contexto é um objeto que é notificado quando um contexto (um bloco de código) começa e termina. Você comumente usa um com a instrução `with`. Ele cuida da notificação.
 
 Por exemplo, objetos de arquivo são gerenciadores de contexto. Quando um contexto termina, o objeto de arquivo é fechado automaticamente:
 
@@ -27,22 +27,36 @@ with open(filename) as f:  # 'f' é o objeto de arquivo
 # O arquivo é fechado automaticamente aqui, mesmo que um erro tenha ocorrido
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+Qual é o principal benefício de usar um gerenciador de contexto (a instrução <code>with</code>)?
+</template>
+
+<base-quiz-option value="A" correct>A. Lida automaticamente com a limpeza de recursos, mesmo que ocorra um erro</base-quiz-option>
+<base-quiz-option value="B">B. Faz o código ser executado mais rapidamente</base-quiz-option>
+<base-quiz-option value="C">C. Permite que vários arquivos sejam abertos simultaneamente</base-quiz-option>
+<base-quiz-option value="D">D. Previne todos os erros</base-quiz-option>
+<base-quiz-answer value="A">Gerenciadores de contexto garantem que os recursos (como arquivos) sejam devidamente limpos ao sair do bloco, mesmo que ocorra uma exceção. Isso evita vazamento de recursos e perda de dados.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 Qualquer coisa que termine a execução do bloco faz com que o método de saída do gerenciador de contexto seja chamado. Isso inclui exceções e pode ser útil quando um erro faz com que você saia prematuramente de um arquivo ou conexão aberta. Sair de um script sem fechar adequadamente arquivos/conexões é uma má ideia, o que pode causar perda de dados ou outros problemas. Ao usar um gerenciador de contexto, você pode garantir que precauções sejam sempre tomadas para evitar danos ou perdas dessa forma.
 
 ## Escrevendo seu próprio gerenciador de contexto
 
-Também é possível escrever um gerenciador de contexto usando a sintaxe de gerador graças ao decorador `contextlib.contextmanager`:
+Também é possível escrever um gerenciador de contexto usando sintaxe de gerador graças ao decorador `contextlib.contextmanager`:
 
 ```python
 # Gerenciador de contexto baseado em função usando o decorador contextlib
 import contextlib
 @contextlib.contextmanager
 def context_manager(num):
-    print('Enter')  # O código antes do yield é executado em __enter__
-    yield num + 1   # O valor retornado se torna a variável 'cm'
-    print('Exit')    # O código após o yield é executado em __exit__
+    print('Enter')  # Código antes do yield é executado em __enter__
+    yield num + 1   # Valor cedido se torna a variável 'cm'
+    print('Exit')    # Código após o yield é executado em __exit__
 
-with context_manager(2) as cm:  # cm recebe o valor retornado (3)
+with context_manager(2) as cm:  # cm recebe o valor cedido (3)
     print('Right in the middle with cm = {}'.format(cm))
 ```
 
@@ -54,7 +68,7 @@ Exit
 
 ## Gerenciador de contexto baseado em classe
 
-Você pode definir um gerenciador de contexto baseado em classe. Os métodos principais são `__enter__` e `__exit__`
+Você pode definir um gerenciador de contexto baseado em classe. Os métodos chave são `__enter__` e `__exit__`
 
 ```python
 # Gerenciador de contexto baseado em classe: implementa os métodos __enter__ e __exit__
@@ -76,10 +90,24 @@ test
 --exit--
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Quais métodos uma classe deve implementar para ser usada como um gerenciador de contexto?
+</template>
+
+<base-quiz-option value="A">A. <code>**init**</code> e <code>**del**</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>**enter**</code> e <code>**exit**</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>open</code> e <code>close</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>start</code> e <code>stop</code></base-quiz-option>
+<base-quiz-answer value="B">Um gerenciador de contexto baseado em classe deve implementar <code>**enter**</code> (chamado ao entrar no bloco <code>with</code>) e <code>**exit**</code> (chamado ao sair do bloco).</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Links relevantes
 
 - <router-link to="/cheatsheet/reading-and-writing-files">Leitura e Escrita de Arquivos</router-link>
 - <router-link to="/cheatsheet/exception-handling">Tratamento de Exceções</router-link>
-- <router-link to="/cheatsheet/decorators">Decoradores</router-link>
+- <router-link to="/cheatsheet/decorators">Decorators</router-link>
 - <router-link to="/blog/python-pathlib-essentials">10 Operações Essenciais do Sistema de Arquivos que Todo Desenvolvedor Deve Conhecer</router-link>
 - <router-link to="/builtin/open">open()</router-link>

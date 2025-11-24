@@ -52,6 +52,20 @@ Hello there!\nHow are you?\nI\'m doing fine.
 
 Las cadenas sin formato se utilizan principalmente para la definición de <router-link to="/cheatsheet/regular-expressions">expresiones regulares</router-link>.
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+¿Qué hace una cadena sin formato (precedida por <code>r</code>) en Python?
+</template>
+
+<base-quiz-option value="A">A. Convierte todos los caracteres a mayúsculas</base-quiz-option>
+<base-quiz-option value="B" correct>B. Trata las barras invertidas como caracteres literales, ignorando las secuencias de escape</base-quiz-option>
+<base-quiz-option value="C">C. Elimina todos los espacios en blanco</base-quiz-option>
+<base-quiz-option value="D">D. Invierte la cadena</base-quiz-option>
+<base-quiz-answer value="B">Las cadenas sin formato (precedidas por <code>r</code>) tratan las barras invertidas como caracteres literales, por lo que las secuencias de escape como <code>\n</code> no se interpretan.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Cadenas Multilínea
 
 ```python
@@ -163,6 +177,20 @@ spam[::-1]
 '!dlrow olleH'
 ```
 
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+¿Qué hace <code>spam[::-1]</code> a una cadena?
+</template>
+
+<base-quiz-option value="A">A. Devuelve el primer carácter</base-quiz-option>
+<base-quiz-option value="B">B. Devuelve el último carácter</base-quiz-option>
+<base-quiz-option value="C" correct>C. Invierte la cadena</base-quiz-option>
+<base-quiz-option value="D">D. Elimina todos los caracteres</base-quiz-option>
+<base-quiz-answer value="C">El segmento <code>[::-1]</code> invierte una cadena recorriendo todos los caracteres hacia atrás. El valor de paso <code>-1</code> significa "ir hacia atrás".</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ```python
 fizz = spam[0:5]
 fizz
@@ -216,7 +244,7 @@ False
 
 ## upper(), lower() y title()
 
-Transforma una cadena a mayúsculas, minúsculas y formato de título:
+Transforman una cadena a mayúsculas, minúsculas y formato de título:
 
 ```python
 greet = 'Hello world!'
@@ -243,7 +271,7 @@ greet.title()
 'Hello World!'
 ```
 
-## Métodos isupper() y islower()
+## Métodos isupper() e islower()
 
 Devuelven `True` o `False` después de evaluar si una cadena está en mayúsculas o minúsculas:
 
@@ -356,6 +384,20 @@ True
 True
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+¿Qué devuelve <code>startswith()</code>?
+</template>
+
+<base-quiz-option value="A" correct>A. <code>True</code> si la cadena comienza con la subcadena especificada, <code>False</code> en caso contrario</base-quiz-option>
+<base-quiz-option value="B">B. La subcadena que coincide con el inicio</base-quiz-option>
+<base-quiz-option value="C">C. El índice donde comienza la subcadena</base-quiz-option>
+<base-quiz-option value="D">D. Una nueva cadena sin el prefijo</base-quiz-option>
+<base-quiz-answer value="A">El método <code>startswith()</code> devuelve un valor booleano: <code>True</code> si la cadena comienza con la subcadena especificada, <code>False</code> en caso contrario.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## join() y split()
 
 ### join()
@@ -438,6 +480,20 @@ El método `split()` divide una `cadena` en una `lista`. Por defecto, utilizará
 ['', 'My', '', 'name', 'is', '', 'Simon']
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+¿Qué devuelve <code>split()</code> cuando se llama en una cadena?
+</template>
+
+<base-quiz-option value="A">A. Una cadena</base-quiz-option>
+<base-quiz-option value="B" correct>B. Una lista de cadenas</base-quiz-option>
+<base-quiz-option value="C">C. Una tupla de cadenas</base-quiz-option>
+<base-quiz-option value="D">D. Un diccionario</base-quiz-option>
+<base-quiz-answer value="B">El método <code>split()</code> divide una cadena en una lista de subcadenas. Por defecto, divide por espacios en blanco, pero se puede especificar un separador diferente.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Justificación de texto con rjust(), ljust() y center()
 
 ```python
@@ -506,7 +562,7 @@ Un segundo argumento opcional para `rjust()` y `ljust()` especificará un carác
 '=======Hello========'
 ```
 
-## Eliminación de espacios en blanco con strip(), rstrip(), y lstrip()
+## Eliminación de espacios en blanco con strip(), rstrip() y lstrip()
 
 ```python
 spam = '    Hello World     '
@@ -610,6 +666,20 @@ sentence.replace("apples", "oranges")
 ```output
 'I like oranges, Apples are my favorite fruit'
 ```
+
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+¿Qué devuelve el método <code>replace()</code>?
+</template>
+
+<base-quiz-option value="A">A. Modifica la cadena original</base-quiz-option>
+<base-quiz-option value="B">B. Devuelve <code>None</code></base-quiz-option>
+<base-quiz-option value="C" correct>C. Devuelve una nueva cadena con los reemplazos realizados</base-quiz-option>
+<base-quiz-option value="D">D. Devuelve una lista de cadenas reemplazadas</base-quiz-option>
+<base-quiz-answer value="C">El método <code>replace()</code> devuelve una nueva cadena con todas las ocurrencias de la subcadena antigua reemplazadas por la nueva subcadena. La cadena original no se modifica.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Enlaces relevantes
 

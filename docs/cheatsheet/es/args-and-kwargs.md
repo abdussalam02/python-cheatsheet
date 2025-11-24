@@ -12,18 +12,18 @@ Args y Kwargs de Python
 
 <base-disclaimer>
   <base-disclaimer-title>
-    <a href="https://docs.python.org/3/tutorial/index.html">Python args and kwargs Made Easy</a>
+    <a href="https://docs.python.org/3/tutorial/index.html">args y kwargs de Python Hechos Fáciles</a>
   </base-disclaimer-title>
   <base-disclaimer-content>
-    <code>*args</code> y <code>**kwargs</code> pueden parecer intimidantes, pero la verdad es que no son tan difíciles de entender y tienen el poder de otorgar mucha flexibilidad a sus funciones.
+    <code>*args</code> y <code>**kwargs</code> pueden parecer intimidantes, pero la verdad es que no son tan difíciles de entender y tienen el poder de otorgar a tus funciones mucha flexibilidad.
   </base-disclaimer-content>
 </base-disclaimer>
 
-Lea el artículo <router-link to="/blog/python-easy-args-kwargs">Python \*args y \*\*kwargs Hechos Fáciles</router-link> para una introducción más profunda.
+Lee el artículo <router-link to="/blog/python-easy-args-kwargs">Python \*args y \*\*kwargs Hechos Fáciles</router-link> para una introducción más profunda.
 
 ## Args y Kwargs
 
-`*args` y `**kwargs` le permiten pasar un número indefinido de argumentos y palabras clave al llamar a una función.
+`*args` y `**kwargs` te permiten pasar un número indefinido de argumentos y argumentos de palabra clave al llamar a una función.
 
 ```python
 # Define una función que acepta cualquier número de argumentos posicionales y de palabra clave
@@ -52,12 +52,12 @@ some_function()
   </base-warning-content>
 </base-warning>
 
-## args
+## Args
 
-Puede acceder a los _argumentos_ a través de la variable `args`:
+Puedes acceder a los _argumentos_ a través de la variable `args`:
 
 ```python
-# *args recopila argumentos posicionales en una tupla
+# *args recopila los argumentos posicionales en una tupla
 def some_function(*args):
     print(f'Argumentos pasados: {args} como {type(args)}')
 
@@ -69,12 +69,26 @@ some_function('arg1', 'arg2', 'arg3')
 Argumentos pasados: ('arg1', 'arg2', 'arg3') como <class 'tuple'>
 ```
 
-## kwargs
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+¿En qué tipo de dato recopila los argumentos <code>*args</code>?
+</template>
+
+<base-quiz-option value="A">A. Una lista</base-quiz-option>
+<base-quiz-option value="B" correct>B. Una tupla</base-quiz-option>
+<base-quiz-option value="C">C. Un diccionario</base-quiz-option>
+<base-quiz-option value="D">D. Un conjunto</base-quiz-option>
+<base-quiz-answer value="B">El parámetro <code>\*args</code> recopila los argumentos posicionales en una tupla. Esto permite que una función acepte cualquier número de argumentos posicionales.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+## Kwargs
 
 Las palabras clave se acceden a través de la variable `kwargs`:
 
 ```python
-# **kwargs recopila argumentos de palabra clave en un diccionario
+# **kwargs recopila los argumentos de palabra clave en un diccionario
 def some_function(**kwargs):
     print(f'palabras clave: {kwargs} como {type(kwargs)}')
 
@@ -85,6 +99,20 @@ some_function(key1='arg1', key2='arg2')
 ```output
 palabras clave: {'key1': 'arg1', 'key2': 'arg2'} como <class 'dict'>
 ```
+
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+¿En qué tipo de dato recopila los argumentos <code>**kwargs</code>?
+</template>
+
+<base-quiz-option value="A">A. Una lista</base-quiz-option>
+<base-quiz-option value="B">B. Una tupla</base-quiz-option>
+<base-quiz-option value="C" correct>C. Un diccionario</base-quiz-option>
+<base-quiz-option value="D">D. Un conjunto</base-quiz-option>
+<base-quiz-answer value="C">El parámetro <code>\*\*kwargs</code> recopila los argumentos de palabra clave en un diccionario. Esto permite que una función acepte cualquier número de argumentos de palabra clave.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Enlaces relevantes
 

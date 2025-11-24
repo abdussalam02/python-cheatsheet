@@ -1,6 +1,6 @@
 ---
 title: 'Управление потоком Python - Шпаргалка по Python'
-description: 'Управление потоком — это порядок выполнения или оценки отдельных операторов, инструкций или вызовов функций. Поток выполнения программы Python регулируется условными операторами, циклами и вызовами функций.'
+description: 'Управление потоком — это порядок, в котором выполняются или оцениваются отдельные операторы, инструкции или вызовы функций. Управление потоком программы Python регулируется условными операторами, циклами и вызовами функций.'
 labUrl: 'https://labex.io/ru/labs/python-python-control-flow-633651?course=python-cheatsheet'
 ---
 
@@ -89,6 +89,20 @@ True
 ```output
 False
 ```
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Чему равно выражение <code>'hello' == 'Hello'</code>?
+</template>
+
+<base-quiz-option value="A">A. <code>True</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>False</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>None</code></base-quiz-option>
+<base-quiz-option value="D">D. Вызывает ошибку</base-quiz-option>
+<base-quiz-answer value="B">Сравнение строк в Python чувствительно к регистру. <code>'hello'</code> и <code>'Hello'</code> — разные строки, поэтому сравнение возвращает <code>False</code>.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Логические операторы
 
@@ -186,7 +200,7 @@ False
 name = 'Debora'
 
 if name == 'Debora':  # Проверить, равно ли имя 'Debora'
-   print('Hi, Debora')  # Эта строка выполняется, если условие истинно
+   print('Hi, Debora')  # Эта строка выполняется, если условие True
 ```
 
 ```output
@@ -205,12 +219,12 @@ You are not George
 Оператор `else` выполняется только в том случае, если оценка выражений `if` и всех выражений `elif` равна `False`:
 
 ```python
-# if-else: выполнить другой код в зависимости от условия
+# if-else: выполнить разный код в зависимости от условия
 name = 'Debora'
 
 if name == 'George':
    print('Hi, George.')
-else:  # Выполнить, если условие if ложно
+else:  # Выполняется, если условие if ложно
    print('You are not George')
 ```
 
@@ -218,10 +232,24 @@ else:  # Выполнить, если условие if ложно
 You are not George
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Когда выполняется блок <code>else</code> в операторе if-else?
+</template>
+
+<base-quiz-option value="A">A. Всегда</base-quiz-option>
+<base-quiz-option value="B" correct>B. Только когда условие <code>if</code> (и все условия <code>elif</code>, если они есть) равны <code>False</code></base-quiz-option>
+<base-quiz-option value="C">C. Только когда условие <code>if</code> равно <code>True</code></base-quiz-option>
+<base-quiz-option value="D">D. Никогда</base-quiz-option>
+<base-quiz-answer value="B">Блок <code>else</code> выполняется только тогда, когда условие <code>if</code> и все условия <code>elif</code> (если таковые имеются) оцениваются как <code>False</code>.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 Только после того, как выражение оператора `if` окажется `False`, оператор `elif` будет оценен и выполнен:
 
 ```python
-# if-elif: проверка нескольких условий последовательно
+# if-elif: проверка нескольких условий по порядку
 name = 'George'
 
 if name == 'Debora':
@@ -234,7 +262,7 @@ elif name == 'George':  # Проверяется, только если пред
 Hi George!
 ```
 
-части `elif` и `else` необязательны.
+части `elif` и `else` являются необязательными.
 
 ```python
 name = 'Antony'
@@ -253,7 +281,7 @@ Who are you?
 
 ## Тернарный условный оператор
 
-Многие языки программирования имеют тернарный оператор, который определяет условное выражение. Наиболее распространенное использование — это создание краткого, простого оператора присваивания с условием. Другими словами, он предлагает однострочный код для оценки первого выражения, если условие истинно, и в противном случае он оценивает второе выражение.
+Многие языки программирования имеют тернарный оператор, который определяет условное выражение. Наиболее распространенное использование — создание краткого, простого оператора присваивания с условием. Другими словами, он предлагает однострочный код для вычисления первого выражения, если условие истинно, и в противном случае вычисляет второе выражение.
 
 ```plaintext
 <expression1> if <condition> else <expression2>
@@ -276,8 +304,8 @@ kid
 ```
 
 ```python
-# Тернарный оператор: условное выражение в одну строку
-# Синтаксис: value_if_true if condition else value_if_false
+# Тернарный оператор: однострочное условное выражение
+# Синтаксис: значение_если_истинно if условие else значение_если_ложно
 print('kid' if age < 18 else 'adult')
 ```
 
@@ -299,7 +327,7 @@ teen
 ```
 
 ```python
-# эквивалентно этому оператору if:
+# эквивалентен этому оператору if:
 if age < 13:
     print('kid')
 else:
@@ -320,11 +348,11 @@ teen
     Операторы Switch-Case
   </base-disclaimer-title>
   <base-disclaimer-content>
-  В языках программирования оператор switch — это тип механизма управления выбором, используемый для того, чтобы значение переменной или выражения изменяло поток управления выполнением программы посредством поиска и сопоставления.
+  В языках программирования оператор switch — это тип механизма управления выбором, используемый для изменения потока управления выполнением программы путем поиска и сопоставления значения переменной или выражения.
   </base-disclaimer-content>
 </base-disclaimer>
 
-Операторы _Switch-Case_, или **Структурное сопоставление шаблонов (Structural Pattern Matching)**, были впервые представлены в 2020 году через [PEP 622](https://peps.python.org/pep-0622/), а затем официально выпущены с **Python 3.10** в сентябре 2022 года.
+Операторы _Switch-Case_, или **Структурное сопоставление шаблонов (Structural Pattern Matching)**, были впервые представлены в 2020 году через [PEP 622](https://peps.python.org/pep-0622/) и официально выпущены с **Python 3.10** в сентябре 2022 года.
 
 <base-disclaimer>
   <base-disclaimer-title>
@@ -335,7 +363,7 @@ teen
   </base-disclaimer-content>
 </base-disclaimer>
 
-### Сопоставление одиночных значений
+### Сопоставление отдельных значений
 
 ```python
 response_code = 201
@@ -360,7 +388,7 @@ match response_code:
 Created
 ```
 
-### Сопоставление с шаблоном или (`or`)
+### Сопоставление с шаблоном или (or Pattern)
 
 В этом примере символ вертикальной черты (`|` или `or`) позволяет Python возвращать один и тот же ответ для двух или более случаев.
 
@@ -438,7 +466,7 @@ match response_code:
 Code is a string
 ```
 
-### Защита операторов Match-Case (Guard)
+### Защита операторов Match-Case (Guarding)
 
 ```python
 response_code = 300
@@ -472,6 +500,20 @@ Hello, world.
 Hello, world.
 Hello, world.
 ```
+
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+Что делает цикл <code>while</code>?
+</template>
+
+<base-quiz-option value="A" correct>A. Повторяет код, пока условие <code>True</code></base-quiz-option>
+<base-quiz-option value="B">B. Выполняет код ровно один раз</base-quiz-option>
+<base-quiz-option value="C">C. Выполняет код фиксированное количество раз</base-quiz-option>
+<base-quiz-option value="D">D. Пропускает выполнение кода</base-quiz-option>
+<base-quiz-answer value="A">Цикл <code>while</code> многократно выполняет блок кода, пока условие оценивается как <code>True</code>. Когда условие становится <code>False</code>, цикл останавливается.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Операторы break
 
@@ -517,15 +559,15 @@ Password? (It is a fish.): swordfish
 Access granted.
 ```
 
-## Цикл for
+## Цикл For
 
-Цикл `for` итерируется по `list`, `tuple`, `dictionary`, `set` или `string`:
+Цикл `for` перебирает `list`, `tuple`, `dictionary`, `set` или `string`:
 
 ```python
 # цикл for: итерация по каждому элементу в последовательности
 pets = ['Bella', 'Milo', 'Loki']
 for pet in pets:  # Цикл по каждому питомцу в списке
-    print(pet)  # Вывести имя каждого питомца
+    print(pet)  # Печать имени каждого питомца
 ```
 
 ```output
@@ -533,6 +575,20 @@ Bella
 Milo
 Loki
 ```
+
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+Что перебирает цикл <code>for</code>?
+</template>
+
+<base-quiz-option value="A">A. Только числа</base-quiz-option>
+<base-quiz-option value="B">B. Только строки</base-quiz-option>
+<base-quiz-option value="C" correct>C. Любая итерируемая последовательность (список, кортеж, словарь, множество и т. д.)</base-quiz-option>
+<base-quiz-option value="D">D. Только списки</base-quiz-option>
+<base-quiz-answer value="C">Цикл <code>for</code> может перебирать любую итерируемую последовательность, включая списки, кортежи, словари, множества, строки и другие итерируемые объекты.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Функция range()
 
@@ -551,7 +607,21 @@ Will stop at 5! or 4? (3)
 Will stop at 5! or 4? (4)
 ```
 
-Функция `range()` также может изменять свои 3 значения по умолчанию. Первые два будут значениями `start` и `stop`, а третье будет аргументом `step`. Шаг — это величина, на которую увеличивается переменная после каждой итерации.
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Что генерирует <code>range(5)</code>?
+</template>
+
+<base-quiz-option value="A">A. Числа от 1 до 5</base-quiz-option>
+<base-quiz-option value="B" correct>B. Числа от 0 до 4</base-quiz-option>
+<base-quiz-option value="C">C. Числа от 0 до 5</base-quiz-option>
+<base-quiz-option value="D">D. Пять случайных чисел</base-quiz-option>
+<base-quiz-answer value="B">Функция <code>range(5)</code> генерирует числа от 0 до 4 (всего 5 чисел). Конечное значение не включается, поэтому она останавливается, не достигая 5.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+Функция `range()` также может изменять свои 3 значения по умолчанию. Первые два будут значениями `start` (начало) и `stop` (конец), а третье будет аргументом `step` (шаг). Шаг — это величина, на которую увеличивается переменная после каждой итерации.
 
 ```python
 # range(start, stop, step)
@@ -567,7 +637,7 @@ for i in range(0, 10, 2):
 8
 ```
 
-Вы даже можете использовать отрицательное число для аргумента `step`, чтобы заставить цикл `for` считать в обратном порядке, а не по возрастанию.
+Вы даже можете использовать отрицательное число в качестве аргумента `step`, чтобы цикл `for` считал в обратном порядке, а не по возрастанию.
 
 ```python
 for i in range(5, -1, -1):
@@ -585,7 +655,7 @@ for i in range(5, -1, -1):
 
 ## Оператор For else
 
-Это позволяет указать оператор для выполнения в случае полного выполнения цикла. Полезно только тогда, когда в цикле может произойти условие `break`:
+Это позволяет указать оператор для выполнения в случае полного выполнения цикла. Это полезно только тогда, когда в цикле может произойти условие `break`:
 
 ```python
 for i in [1, 2, 3, 4, 5]:
@@ -618,10 +688,10 @@ You typed exit.
 
 ## Связанные ссылки
 
-- <router-link to="/cheatsheet/basics">Basics</router-link>
-- <router-link to="/cheatsheet/functions">Functions</router-link>
-- <router-link to="/cheatsheet/exception-handling">Exception Handling</router-link>
-- <router-link to="/cheatsheet/lists-and-tuples">Lists and Tuples</router-link>
-- <router-link to="/cheatsheet/sets">Sets</router-link>
-- <router-link to="/cheatsheet/dictionaries">Dictionaries</router-link>
-- <router-link to="/cheatsheet/comprehensions">Comprehensions</router-link>
+- <router-link to="/cheatsheet/basics">Основы</router-link>
+- <router-link to="/cheatsheet/functions">Функции</router-link>
+- <router-link to="/cheatsheet/exception-handling">Обработка исключений</router-link>
+- <router-link to="/cheatsheet/lists-and-tuples">Списки и кортежи</router-link>
+- <router-link to="/cheatsheet/sets">Множества</router-link>
+- <router-link to="/cheatsheet/dictionaries">Словари</router-link>
+- <router-link to="/cheatsheet/comprehensions">Генераторы (Comprehensions)</router-link>

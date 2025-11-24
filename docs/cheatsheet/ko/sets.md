@@ -25,14 +25,14 @@ Python 은 데이터를 구성하는 데 도움이 되는 여러 내장 데이�
 
 ## 집합 초기화
 
-집합을 생성하는 두 가지 방법이 있습니다: 중괄호 `{}` 사용과 내장 함수 `set()` 사용
+집합을 생성하는 두 가지 방법이 있습니다. 중괄호 `{}`를 사용하거나 내장 함수 `set()`을 사용하는 것입니다.
 
 <base-warning>
   <base-warning-title>
     빈 집합
   </base-warning-title>
   <base-warning-content>
-    집합을 생성할 때 빈 중괄호 <code>{}</code>를 사용하지 않도록 주의하세요. 그렇지 않으면 대신 빈 딕셔너리가 생성됩니다.
+    집합을 만들 때 빈 중괄호 <code>{}</code>를 사용하지 않도록 주의하세요. 그렇지 않으면 대신 빈 딕셔너리가 생성됩니다.
   </base-warning-content>
 </base-warning>
 
@@ -56,13 +56,27 @@ type(s)  # <class 'dict'> 반환
 
 ```python
 # 집합은 중복을 자동으로 제거합니다
-s = {1, 2, 3, 2, 3, 4}  # 중복 항목 제거됨
+s = {1, 2, 3, 2, 3, 4}  # 중복은 제거됩니다
 s  # {1, 2, 3, 4} 반환
 ```
 
 ```output
 {1, 2, 3, 4}
 ```
+
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+중복 값이 있는 집합을 생성하면 어떻게 됩니까?
+</template>
+
+<base-quiz-option value="A" correct>A. 중복이 자동으로 제거됩니다</base-quiz-option>
+<base-quiz-option value="B">B. 오류가 발생합니다</base-quiz-option>
+<base-quiz-option value="C">C. 집합은 모든 중복을 유지합니다</base-quiz-option>
+<base-quiz-option value="D">D. 첫 번째 발생만 유지됩니다</base-quiz-option>
+<base-quiz-answer value="A">집합은 중복 값을 자동으로 제거합니다. 집합은 중복 요소가 없는 순서가 없는 컬렉션입니다.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 그리고 순서가 없는 데이터 유형이므로 인덱싱할 수 없습니다.
 
@@ -77,7 +91,7 @@ Traceback (most recent call last):
 TypeError: 'set' object does not support indexing
 ```
 
-## 집합 add 및 update
+## set add 및 update
 
 `add()` 메서드를 사용하여 집합에 단일 요소를 추가할 수 있습니다.
 
@@ -92,7 +106,7 @@ s
 {1, 2, 3, 4}
 ```
 
-그리고 `update()`를 사용하면 여러 요소를 추가할 수 있습니다:
+그리고 `update()`를 사용하면 여러 요소를 추가할 수 있습니다.
 
 ```python
 # update() 메서드: 반복 가능한 (iterable) 객체에서 여러 요소 추가
@@ -105,9 +119,9 @@ s
 {1, 2, 3, 4, 5, 6}
 ```
 
-## 집합 remove 및 discard
+## set remove 및 discard
 
-두 메서드 모두 집합에서 요소를 제거하지만, `remove()`는 해당 값이 존재하지 않으면 `key error`를 발생시킵니다.
+두 메서드 모두 집합에서 요소를 제거하지만, `remove()`는 값이 존재하지 않으면 `key error`를 발생시킵니다.
 
 ```python
 # remove() 메서드: 요소 제거, 찾을 수 없으면 KeyError 발생
@@ -133,9 +147,9 @@ KeyError: 3
 `discard()`는 오류를 발생시키지 않습니다.
 
 ```python
-# discard() 메서드: 요소 제거, 없어도 오류 없음
+# discard() 메서드: 요소 제거, 누락되어도 오류 없음
 s = {1, 2, 3}
-s.discard(3)  # 요소 3 제거 (안전함, 없어도 오류 없음)
+s.discard(3)  # 요소 3 제거 (안전함, 누락되어도 오류 없음)
 s
 ```
 
@@ -147,7 +161,21 @@ s
 s.discard(3)
 ```
 
-## 집합 union (합집합)
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+집합의 <code>remove()</code>와 <code>discard()</code> 메서드의 차이점은 무엇입니까?
+</template>
+
+<base-quiz-option value="A">A. <code>remove()</code>는 하나의 요소를 제거하고, <code>discard()</code>는 모든 요소를 제거합니다</base-quiz-option>
+<base-quiz-option value="B">B. 차이점이 없습니다</base-quiz-option>
+<base-quiz-option value="C" correct>C. <code>remove()</code>는 요소가 존재하지 않으면 오류를 발생시키지만, <code>discard()</code>는 그렇지 않습니다</base-quiz-option>
+<base-quiz-option value="D">D. <code>remove()</code>가 더 빠릅니다</base-quiz-option>
+<base-quiz-answer value="C">두 메서드 모두 집합에서 요소를 제거하지만, <code>remove()</code>는 요소가 존재하지 않으면 <code>KeyError</code>를 발생시키는 반면, <code>discard()</code>는 요소가 누락된 경우 아무 작업도 수행하지 않습니다.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+## set union (합집합)
 
 `union()` 또는 `|`는 제공된 집합들의 모든 요소를 포함하는 새 집합을 생성합니다.
 
@@ -162,7 +190,7 @@ s1.union(s2)  # 또는 's1 | s2' - {1, 2, 3, 4, 5} 반환
 {1, 2, 3, 4, 5}
 ```
 
-## 집합 intersection (교집합)
+## set intersection (교집합)
 
 `intersection()` 또는 `&`는 모든 집합에 공통된 요소만 포함하는 집합을 반환합니다.
 
@@ -178,7 +206,21 @@ s1.intersection(s2, s3)  # 또는 's1 & s2 & s3' - {3} 반환
 {3}
 ```
 
-## 집합 difference (차집합)
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+<code>intersection()</code>은 집합에 대해 무엇을 반환합니까?
+</template>
+
+<base-quiz-option value="A">A. 모든 집합의 모든 요소</base-quiz-option>
+<base-quiz-option value="B" correct>B. 모든 집합에 공통된 요소만</base-quiz-option>
+<base-quiz-option value="C">C. 첫 번째 집합에는 있지만 다른 집합에는 없는 요소</base-quiz-option>
+<base-quiz-option value="D">D. 두 집합 중 하나에는 있지만 둘 다에는 없는 요소</base-quiz-option>
+<base-quiz-answer value="B"><code>intersection()</code> 메서드는 비교되는 모든 집합에 존재하는 요소만 포함하는 집합을 반환합니다.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
+## set difference (차집합)
 
 `difference()` 또는 `-`는 첫 번째 집합 (호출된 집합) 에만 고유한 요소만 반환합니다.
 
@@ -202,12 +244,12 @@ s2.difference(s1) # 또는 's2 - s1'
 {4}
 ```
 
-## 집합 symmetric_difference (대칭 차집합)
+## set symmetric_difference (대칭 차집합)
 
-`symmetric_difference()` 또는 `^`는 두 집합 중 하나에는 있지만 둘 다에는 없는 모든 요소를 반환합니다.
+`symmetric_difference()` 또는 `^`는 두 집합에 공통되지 않은 모든 요소를 반환합니다.
 
 ```python
-# symmetric_difference(): 두 집합 중 하나에만 있는 요소 반환, 둘 다에는 없는 요소
+# symmetric_difference(): 두 집합 중 하나에는 있지만 둘 다에는 없는 요소 반환
 s1 = {1, 2, 3}
 s2 = {2, 3, 4}
 s1.symmetric_difference(s2)  # 또는 's1 ^ s2' - {1, 4} 반환
@@ -216,6 +258,20 @@ s1.symmetric_difference(s2)  # 또는 's1 ^ s2' - {1, 4} 반환
 ```output
 {1, 4}
 ```
+
+<base-quiz>
+<base-quiz-question correct="D">
+<template #question>
+두 집합에 대해 <code>symmetric_difference()</code>는 무엇을 반환합니까?
+</template>
+
+<base-quiz-option value="A">A. 두 집합의 모든 요소</base-quiz-option>
+<base-quiz-option value="B">B. 두 집합에 공통된 요소만</base-quiz-option>
+<base-quiz-option value="C">C. 첫 번째 집합에는 있지만 두 번째 집합에는 없는 요소</base-quiz-option>
+<base-quiz-option value="D" correct>D. 두 집합 중 하나에는 있지만 둘 다에는 없는 요소</base-quiz-option>
+<base-quiz-answer value="D"><code>symmetric_difference()</code> 메서드는 두 집합 모두에 포함되지 않고 어느 한쪽에만 포함된 요소를 포함하는 집합을 반환합니다.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## 관련 링크
 

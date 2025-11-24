@@ -11,12 +11,13 @@ Décorateurs Python
 <base-lab-url :url="frontmatter.labUrl" />
 
 Un décorateur Python offre une manière concise et réutilisable d'étendre
-une fonction ou une classe. Lisez l'article compagnon <router-link to="/blog/python-decorators-for-beginners">Décorateurs Python : Modèles Simples pour Améliorer Votre Code</router-link> pour des exemples pratiques et des modèles.
+une fonction ou une classe. Lisez l'article compagnon <router-link to="/blog/python-decorators-for-beginners">Python Decorators: Simple Patterns to Level Up Your Code</router-link> pour des exemples pratiques et des modèles.
 
 ## Décorateur de base
 
 Un décorateur dans sa forme la plus simple est une fonction qui prend une autre
-fonction comme argument et retourne un enveloppeur (_wrapper_). L'exemple suivant montre la création d'un décorateur et son utilisation.
+fonction comme argument et retourne un enveloppeur (wrapper). L'exemple suivant
+montre la création d'un décorateur et son utilisation.
 
 ```python
 # Décorateur : une fonction qui prend une autre fonction et retourne un enveloppeur
@@ -42,6 +43,20 @@ Before func!
 Hello World!
 After func!
 ```
+
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+Qu'est-ce qu'un décorateur en Python ?
+</template>
+
+<base-quiz-option value="A" correct>A. Une fonction qui prend une autre fonction et retourne une fonction enveloppeuse</base-quiz-option>
+<base-quiz-option value="B">B. Un type de classe spécial</base-quiz-option>
+<base-quiz-option value="C">C. Un mot-clé intégré de Python</base-quiz-option>
+<base-quiz-option value="D">D. Une manière de supprimer des fonctions</base-quiz-option>
+<base-quiz-answer value="A">Un décorateur est une fonction qui prend une autre fonction comme argument et retourne une fonction enveloppeuse. La syntaxe <code>@</code> est du sucre syntaxique qui applique le décorateur à une fonction.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Décorateur pour une fonction avec paramètres
 
@@ -77,7 +92,7 @@ avec ou sans paramètres, et avec ou sans valeur de retour.
 ```python
 import functools
 
-# Modèle de décorateur de bonne pratique : préserve les métadonnées et la valeur de retour de la fonction
+# Modèle de décorateur de meilleure pratique : préserve les métadonnées et la valeur de retour de la fonction
 def your_decorator(func):
   @functools.wraps(func)  # Préserve le nom de la fonction, la docstring, etc.
   def wrapper(*args,**kwargs):
@@ -88,14 +103,28 @@ def your_decorator(func):
   return wrapper
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Que fait <code>@functools.wraps(func)</code> dans un décorateur ?
+</template>
+
+<base-quiz-option value="A">A. Rend le décorateur plus rapide à exécuter</base-quiz-option>
+<base-quiz-option value="B" correct>B. Préserve les métadonnées de la fonction originale (nom, docstring, etc.)</base-quiz-option>
+<base-quiz-option value="C">C. Empêche l'appel de la fonction</base-quiz-option>
+<base-quiz-option value="D">D. Convertit la fonction en classe</base-quiz-option>
+<base-quiz-answer value="B">Le décorateur <code>@functools.wraps(func)</code> préserve les métadonnées de la fonction originale (comme son nom et sa docstring) dans la fonction enveloppeuse. Ceci est considéré comme une meilleure pratique lors de l'écriture de décorateurs.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Décorateur avec paramètres
 
-Vous pouvez également définir des paramètres pour le décorateur à utiliser.
+Vous pouvez également définir des paramètres pour que le décorateur les utilise.
 
 ```python
 import functools
 
-# Usine à décorateur : retourne un décorateur basé sur les paramètres
+# Fabrique de décorateur : retourne un décorateur basé sur les paramètres
 def your_decorator(arg):
   def decorator(func):
     @functools.wraps(func)  # Préserver les métadonnées de la fonction
@@ -105,7 +134,7 @@ def your_decorator(arg):
       # Faire des choses après func potentiellement en utilisant arg...
       return result
     return wrapper
-  return decorator  # Retourner la fonction de décorateur réelle
+  return decorator  # Retourner la fonction décoratrice réelle
 ```
 
 Pour utiliser ce décorateur :
@@ -210,10 +239,10 @@ Hi! My name is James
 
 ## Liens pertinents
 
-- <router-link to="/blog/python-decorators-for-beginners">Décorateurs Python : Modèles Simples pour Améliorer Votre Code</router-link>
-- <router-link to="/blog/python-easy-args-kwargs">Python \*args et \*\*kwargs Simplifiés</router-link>
-- <router-link to="/cheatsheet/functions">Fonctions</router-link>
-- <router-link to="/cheatsheet/args-and-kwargs">Args et Kwargs</router-link>
+- <router-link to="/blog/python-decorators-for-beginners">Python Decorators: Simple Patterns to Level Up Your Code</router-link>
+- <router-link to="/blog/python-easy-args-kwargs">Python \*args and \*\*kwargs Made Easy</router-link>
+- <router-link to="/cheatsheet/functions">Functions</router-link>
+- <router-link to="/cheatsheet/args-and-kwargs">Args and Kwargs</router-link>
 - <router-link to="/builtin/classmethod">classmethod()</router-link>
 - <router-link to="/builtin/staticmethod">staticmethod()</router-link>
 - <router-link to="/builtin/property">property()</router-link>

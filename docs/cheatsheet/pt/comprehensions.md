@@ -10,11 +10,11 @@ Compreensões Python
 
 <base-lab-url :url="frontmatter.labUrl" />
 
-List Comprehensions são um tipo especial de sintaxe que nos permite criar listas a partir de outras listas, e são incrivelmente úteis ao lidar com números e com um ou dois níveis de loops `for` aninhados.
+As List Comprehensions (Compreensões de Lista) são um tipo especial de sintaxe que nos permite criar listas a partir de outras listas, e são incrivelmente úteis ao lidar com números e com um ou dois níveis de loops `for` aninhados.
 
 <base-disclaimer>
   <base-disclaimer-title>
-    Do tutorial do Python 3 <a target="_blank" href="https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions">tutorial</a>
+    Do tutorial do Python 3 <a target="_blank" href="https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions">aqui</a>
   </base-disclaimer-title>
   <base-disclaimer-content>
     List comprehensions provide a concise way to create lists. [...] or to create a subsequence of those elements that satisfy a certain condition.
@@ -57,6 +57,20 @@ new_list
 ['Charles', 'Susan', 'Patrick', 'George']
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+What is the basic syntax of a list comprehension?
+</template>
+
+<base-quiz-option value="A" correct>A. <code>[expression for item in iterable]</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>(expression for item in iterable)</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>{expression for item in iterable}</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>expression for item in iterable</code></base-quiz-option>
+<base-quiz-answer value="A">List comprehensions use square brackets <code>[]</code> with the syntax <code>[expression for item in iterable]</code>. This creates a new list by applying the expression to each item.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 Podemos fazer o mesmo com números:
 
 ```python
@@ -70,7 +84,7 @@ n
 [(1, 1), (1, 2), (2, 1), (2, 2)]
 ```
 
-## Adicionando condicionais
+## Adding conditionals
 
 Se quisermos que `new_list` contenha apenas os nomes que começam com C, com um loop for, faríamos assim:
 
@@ -102,6 +116,20 @@ print(new_list)
 ```output
 ['Charles', 'Carol']
 ```
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Where does the <code>if</code> condition go in a list comprehension?
+</template>
+
+<base-quiz-option value="A">A. Before the <code>for</code> keyword</base-quiz-option>
+<base-quiz-option value="B" correct>B. After the <code>for</code> clause</base-quiz-option>
+<base-quiz-option value="C">C. Inside the expression</base-quiz-option>
+<base-quiz-option value="D">D. Before the square brackets</base-quiz-option>
+<base-quiz-answer value="B">In a list comprehension, the <code>if</code> condition comes after the <code>for</code> clause: <code>[expression for item in iterable if condition]</code>. This filters items based on the condition.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 Para usar uma instrução `if-else` em uma List Comprehension:
 
@@ -151,6 +179,20 @@ c = {'name': 'Pooka', 'age': 5}
 ```output
 {'Pooka': 'name', 5: 'age'}
 ```
+
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+What syntax is used for dictionary comprehensions?
+</template>
+
+<base-quiz-option value="A">A. <code>[key: value for item in iterable]</code></base-quiz-option>
+<base-quiz-option value="B">B. <code>(key: value for item in iterable)</code></base-quiz-option>
+<base-quiz-option value="C" correct>C. <code>{key_expression: value_expression for item in iterable}</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>{key, value for item in iterable}</code></base-quiz-option>
+<base-quiz-answer value="C">Dictionary comprehensions use curly braces <code>{}</code> with the syntax <code>{key_expression: value_expression for item in iterable}</code>, similar to list comprehensions but with key-value pairs.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 Uma List comprehension pode ser gerada a partir de um dicionário:
 

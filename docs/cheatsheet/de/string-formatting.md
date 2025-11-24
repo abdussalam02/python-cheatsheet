@@ -1,5 +1,5 @@
 ---
-title: 'Python Stringformatierung - Python Spickzettel'
+title: 'Python String-Formatierung - Python Spickzettel'
 description: 'Wenn Sie Python 3.6+ verwenden, sind String-f-Strings die empfohlene Methode zur Formatierung von Strings.'
 labUrl: 'https://labex.io/de/labs/python-python-string-formatting-633667?course=python-cheatsheet'
 ---
@@ -23,7 +23,7 @@ Python Stringformatierung
 
 <base-warning>
   <base-warning-title>
-    Bevorzugen Sie String-Literale
+    String-Literale bevorzugen
   </base-warning-title>
   <base-warning-content>
     Für neuen Code wird dringend empfohlen, <a href="#strformat">str.format</a> oder <a href="#formatted-string-literals-or-f-strings">formatierte String-Literale</a> (Python 3.6+) anstelle des <code>%</code> Operators zu verwenden.
@@ -53,7 +53,7 @@ num = 5
 
 ## str.format
 
-Python 3 führte eine neue Methode zur Stringformatierung ein, die später auch in Python 2.7 verfügbar gemacht wurde. Dies macht die Syntax für die Stringformatierung regelmäßiger.
+Python 3 führte eine neue Methode zur Stringformatierung ein, die später nach Python 2.7 zurückportiert wurde. Dies macht die Syntax für die Stringformatierung einheitlicher.
 
 ```python
 # str.format() Methode: moderne Stringformatierung (Python 2.7+)
@@ -84,12 +84,12 @@ Wenn Sie Python 3.6+ verwenden, sind String `f-Strings` die empfohlene Methode z
     Aus der <a href="https://docs.python.org/3/reference/lexical_analysis.html#f-strings">Python 3 Dokumentation</a>
   </base-disclaimer-title>
   <base-disclaimer-content>
-    Ein formatierter String-Literal oder f-String ist ein String-Literal, dem `f` oder `F` vorangestellt ist. Diese Strings können Ersetzungsfelder enthalten, die durch geschweifte Klammern {} begrenzt sind. Während andere String-Literale immer einen konstanten Wert haben, sind formatierte Strings eigentlich Ausdrücke, die zur Laufzeit ausgewertet werden.
+    Ein formatierter String-Literal oder f-String ist ein String-Literal, dem <code>f</code> oder <code>F</code> vorangestellt ist. Diese Strings können Ersetzungsfelder enthalten, die Ausdrücke sind, die durch geschweifte Klammern {} begrenzt sind. Während andere String-Literale immer einen konstanten Wert haben, sind formatierte Strings eigentlich Ausdrücke, die zur Laufzeit ausgewertet werden.
   </base-disclaimer-content>
 </base-disclaimer>
 
 ```python
-# f-string: empfohlene Methode zur Stringformatierung (Python 3.6+)
+# f-string: empfohlene Methode zur Formatierung von Strings (Python 3.6+)
 name = 'Elizabeth'
 f'Hello {name}!'  # f Präfix erlaubt Ausdrücke in {}
 ```
@@ -97,6 +97,20 @@ f'Hello {name}!'  # f Präfix erlaubt Ausdrücke in {}
 ```output
 'Hello Elizabeth!'
 ```
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Welches Präfix wird für f-Strings in Python verwendet?
+</template>
+
+<base-quiz-option value="A">A. <code>fmt</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. <code>f</code> oder <code>F</code></base-quiz-option>
+<base-quiz-option value="C">C. <code>format</code></base-quiz-option>
+<base-quiz-option value="D">D. <code>str</code></base-quiz-option>
+<base-quiz-answer value="B">F-Strings wird <code>f</code> oder <code>F</code> vor dem öffnenden Anführungszeichen vorangestellt. Sie ermöglichen das Einbetten von Ausdrücken in geschweifte Klammern <code>{}</code>.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 Es ist sogar möglich, Inline-Arithmetik damit durchzuführen:
 
@@ -128,7 +142,7 @@ f'You have {messages} unread messages'
 
 ### Der = Spezifizierer
 
-Dieser gibt sowohl den Ausdruck als auch seinen Wert aus:
+Dieser gibt den Ausdruck und seinen Wert aus:
 
 ```python
 # = Spezifizierer: gibt sowohl den Variablennamen als auch den Wert aus (Python 3.8+)
@@ -192,6 +206,20 @@ f"{a:.2f}"
 '3.14'
 ```
 
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+Was bewirkt <code>f"{a:.2f}"</code>?
+</template>
+
+<base-quiz-option value="A">A. Rundet die Zahl auf die nächste ganze Zahl</base-quiz-option>
+<base-quiz-option value="B">B. Formatiert als Prozentsatz</base-quiz-option>
+<base-quiz-option value="C" correct>C. Formatiert die Zahl als Gleitkommazahl mit 2 Dezimalstellen</base-quiz-option>
+<base-quiz-option value="D">D. Konvertiert in wissenschaftliche Notation</base-quiz-option>
+<base-quiz-answer value="C">Der Format-Spezifizierer <code>:.2f</code> formatiert eine Zahl als Gleitkommazahl mit genau 2 Dezimalstellen. Die <code>.2</code> gibt die Genauigkeit an und <code>f</code> bedeutet Gleitkommaformat.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 Als Prozentsatz anzeigen
 
 ```python
@@ -205,25 +233,25 @@ f"{a:.2%}"
 
 ### Zahlformatierungstabelle
 
-| Zahl       | Format  | Ausgabe   | Beschreibung                                 |
-| ---------- | ------- | --------- | -------------------------------------------- |
-| 3.1415926  | {:.2f}  | 3.14      | Float mit 2 Dezimalstellen formatieren       |
-| 3.1415926  | {:+.2f} | +3.14     | Float mit 2 Dezimalstellen und Vorzeichen    |
-| -1         | {:+.2f} | -1.00     | Float mit 2 Dezimalstellen und Vorzeichen    |
-| 2.71828    | {:.0f}  | 3         | Float ohne Dezimalstellen formatieren        |
-| 4          | {:0>2d} | 04        | Mit Nullen auffüllen (linksbündig, Breite 2) |
-| 4          | {:x<4d} | 4xxx      | Mit x auffüllen (rechtsbündig, Breite 4)     |
-| 10         | {:x<4d} | 10xx      | Mit x auffüllen (rechtsbündig, Breite 4)     |
-| 1000000    | {:,}    | 1,000,000 | Zahlenformat mit Komma als Trennzeichen      |
-| 0.35       | {:.2%}  | 35.00%    | Prozentformatierung                          |
-| 1000000000 | {:.2e}  | 1.00e+09  | Exponentialschreibweise                      |
-| 11         | {:11d}  | 11        | Rechtsbündig (Standard, Breite 10)           |
-| 11         | {:<11d} | 11        | Linksbündig (Breite 10)                      |
-| 11         | {:^11d} | 11        | Zentriert ausgerichtet (Breite 10)           |
+| Zahl       | Format  | Ausgabe   | Beschreibung                                                   |
+| ---------- | ------- | --------- | -------------------------------------------------------------- |
+| 3.1415926  | {:.2f}  | 3.14      | Gleitkommazahl mit 2 Dezimalstellen formatieren                |
+| 3.1415926  | {:+.2f} | +3.14     | Gleitkommazahl mit 2 Dezimalstellen und Vorzeichen formatieren |
+| -1         | {:+.2f} | -1.00     | Gleitkommazahl mit 2 Dezimalstellen und Vorzeichen formatieren |
+| 2.71828    | {:.0f}  | 3         | Gleitkommazahl ohne Dezimalstellen formatieren                 |
+| 4          | {:0>2d} | 04        | Zahl mit Nullen auffüllen (linksbündig, Breite 2)              |
+| 4          | {:x<4d} | 4xxx      | Zahl mit x auffüllen (rechtsbündig, Breite 4)                  |
+| 10         | {:x<4d} | 10xx      | Zahl mit x auffüllen (rechtsbündig, Breite 4)                  |
+| 1000000    | {:,}    | 1,000,000 | Zahlenformat mit Komma als Trennzeichen                        |
+| 0.35       | {:.2%}  | 35.00%    | Prozentformatierung                                            |
+| 1000000000 | {:.2e}  | 1.00e+09  | Exponentielle Notation                                         |
+| 11         | {:11d}  | 11        | Rechtsbündig (Standard, Breite 10)                             |
+| 11         | {:<11d} | 11        | Linksbündig (Breite 10)                                        |
+| 11         | {:^11d} | 11        | Zentriert ausgerichtet (Breite 10)                             |
 
 ## Template Strings
 
-Ein einfacherer und weniger leistungsfähiger Mechanismus, der jedoch empfohlen wird, wenn Strings verarbeitet werden, die von Benutzern generiert wurden. Aufgrund ihrer geringeren Komplexität sind Template-Strings die sicherere Wahl.
+Ein einfacherer und weniger leistungsfähiger Mechanismus, der jedoch empfohlen wird, wenn Zeichenketten verarbeitet werden, die von Benutzern generiert wurden. Aufgrund ihrer geringeren Komplexität sind Template-Strings die sicherere Wahl.
 
 ```python
 from string import Template
@@ -238,7 +266,7 @@ t.substitute(name=name)
 
 ## Relevante Links
 
-- <router-link to="/cheatsheet/manipulating-strings">Strings bearbeiten</router-link>
+- <router-link to="/cheatsheet/manipulating-strings">Strings manipulieren</router-link>
 - <router-link to="/blog/python-data-types">Python Datentypen Blogbeitrag</router-link>
 - <router-link to="/builtin/format">format()</router-link>
 - <router-link to="/builtin/print">print()</router-link>

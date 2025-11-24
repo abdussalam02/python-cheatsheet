@@ -52,6 +52,20 @@ Hello there!\nHow are you?\nI\'m doing fine.
 
 Raw strings are mostly used for <router-link to="/cheatsheet/regular-expressions">regular expression</router-link> definition.
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+What does a raw string (prefixed with <code>r</code>) do in Python?
+</template>
+
+<base-quiz-option value="A">A. Converts all characters to uppercase</base-quiz-option>
+<base-quiz-option value="B" correct>B. Treats backslashes as literal characters, ignoring escape sequences</base-quiz-option>
+<base-quiz-option value="C">C. Removes all whitespace</base-quiz-option>
+<base-quiz-option value="D">D. Reverses the string</base-quiz-option>
+<base-quiz-answer value="B">Raw strings (prefixed with <code>r</code>) treat backslashes as literal characters, so escape sequences like <code>\n</code> are not interpreted.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Multiline Strings
 
 ```python
@@ -162,6 +176,20 @@ spam[::-1]
 ```output
 '!dlrow olleH'
 ```
+
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+What does <code>spam[::-1]</code> do to a string?
+</template>
+
+<base-quiz-option value="A">A. Returns the first character</base-quiz-option>
+<base-quiz-option value="B">B. Returns the last character</base-quiz-option>
+<base-quiz-option value="C" correct>C. Reverses the string</base-quiz-option>
+<base-quiz-option value="D">D. Removes all characters</base-quiz-option>
+<base-quiz-answer value="C">The slice <code>[::-1]</code> reverses a string by stepping backwards through all characters. The <code>-1</code> step value means "go backwards".</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ```python
 fizz = spam[0:5]
@@ -356,6 +384,20 @@ True
 True
 ```
 
+<base-quiz>
+<base-quiz-question correct="A">
+<template #question>
+What does <code>startswith()</code> return?
+</template>
+
+<base-quiz-option value="A" correct>A. <code>True</code> if the string starts with the specified substring, <code>False</code> otherwise</base-quiz-option>
+<base-quiz-option value="B">B. The substring that matches the start</base-quiz-option>
+<base-quiz-option value="C">C. The index where the substring starts</base-quiz-option>
+<base-quiz-option value="D">D. A new string without the prefix</base-quiz-option>
+<base-quiz-answer value="A">The <code>startswith()</code> method returns a boolean value: <code>True</code> if the string starts with the specified substring, <code>False</code> otherwise.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## join() and split()
 
 ### join()
@@ -437,6 +479,20 @@ The `split()` method splits a `string` into a `list`. By default, it will use wh
 ```output
 ['', 'My', '', 'name', 'is', '', 'Simon']
 ```
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+What does <code>split()</code> return when called on a string?
+</template>
+
+<base-quiz-option value="A">A. A string</base-quiz-option>
+<base-quiz-option value="B" correct>B. A list of strings</base-quiz-option>
+<base-quiz-option value="C">C. A tuple of strings</base-quiz-option>
+<base-quiz-option value="D">D. A dictionary</base-quiz-option>
+<base-quiz-answer value="B">The <code>split()</code> method splits a string into a list of substrings. By default, it splits on whitespace, but you can specify a different separator.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Justifying text with rjust(), ljust() and center()
 
@@ -610,6 +666,20 @@ sentence.replace("apples", "oranges")
 ```output
 'I like oranges, Apples are my favorite fruit'
 ```
+
+<base-quiz>
+<base-quiz-question correct="C">
+<template #question>
+What does the <code>replace()</code> method return?
+</template>
+
+<base-quiz-option value="A">A. Modifies the original string</base-quiz-option>
+<base-quiz-option value="B">B. Returns <code>None</code></base-quiz-option>
+<base-quiz-option value="C" correct>C. Returns a new string with replacements made</base-quiz-option>
+<base-quiz-option value="D">D. Returns a list of replaced strings</base-quiz-option>
+<base-quiz-answer value="C">The <code>replace()</code> method returns a new string with all occurrences of the old substring replaced with the new substring. The original string is not modified.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Relevant links
 

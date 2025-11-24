@@ -1,47 +1,47 @@
 ---
 title: 'Python Dictionaries – Python Spickzettel'
-description: 'Ein Python-Dictionary ist eine (ab Python > 3.7) einfügegeordnete Sammlung von Schlüssel-Wert-Paaren.'
+description: 'In Python ist ein Dictionary eine (ab Python > 3.7) in der Einfügereihenfolge geordnete Sammlung von Schlüssel-Wert-Paaren.'
 labUrl: 'https://labex.io/de/labs/python-python-dictionaries-633655?course=python-cheatsheet'
 ---
 
 <base-title :title="frontmatter.title" :description="frontmatter.description">
-Python Wörterbücher
+Python Dictionaries
 </base-title>
 
 <base-lab-url :url="frontmatter.labUrl" />
 
-In Python ist ein Wörterbuch (Dictionary) eine _geordnete_ (ab Python > 3.7) Sammlung von `Schlüssel`: `Wert`-Paaren.
+In Python ist ein Dictionary eine _geordnete_ (ab Python > 3.7) Sammlung von `key`: `value`-Paaren.
 
 <base-disclaimer>
   <base-disclaimer-title>
     Aus der Python 3 <a target="_blank" href="https://docs.python.org/3/tutorial/datastructures.html#dictionaries">Dokumentation</a>
   </base-disclaimer-title>
   <base-disclaimer-content>
-    Die Hauptoperationen für ein Wörterbuch sind das Speichern eines Wertes mit einem bestimmten Schlüssel und das Extrahieren des Wertes anhand des Schlüssels. Es ist auch möglich, ein Schlüssel:Wert-Paar mit <code>del</code> zu löschen.
+    Die Hauptoperationen für ein Dictionary sind das Speichern eines Wertes mit einem bestimmten Schlüssel und das Extrahieren des Wertes anhand des Schlüssels. Es ist auch möglich, ein Schlüssel:Wert-Paar mit <code>del</code> zu löschen.
   </base-disclaimer-content>
 </base-disclaimer>
 
-Beispiel-Wörterbuch:
+Beispiel-Dictionary:
 
 ```python
-# Dictionary: Sammlung von Schlüssel-Wert-Paaren
+# Dictionary: collection of key-value pairs
 my_cat = {
-    'size': 'fat',          # Schlüssel: 'size', Wert: 'fat'
-    'color': 'gray',         # Schlüssel: 'color', Wert: 'gray'
-    'disposition': 'loud'    # Schlüssel: 'disposition', Wert: 'loud'
+    'size': 'fat',          # key: 'size', value: 'fat'
+    'color': 'gray',         # key: 'color', value: 'gray'
+    'disposition': 'loud'    # key: 'disposition', value: 'loud'
 }
 ```
 
-## Schlüssel, Wert mit dem Subskript-Operator `[]` setzen
+## Schlüssel, Wert mit dem Subskriptoperator `[]` setzen
 
 ```python
-# Wörterbucheintrag hinzufügen oder aktualisieren mit dem Subskript-Operator
+# Add or update dictionary entry using subscript operator
 my_cat = {
  'size': 'fat',
  'color': 'gray',
  'disposition': 'loud',
 }
-my_cat['age_years'] = 2  # Neues Schlüssel-Wert-Paar hinzufügen
+my_cat['age_years'] = 2  # Add new key-value pair
 print(my_cat)
 ```
 
@@ -49,9 +49,9 @@ print(my_cat)
 {'size': 'fat', 'color': 'gray', 'disposition': 'loud', 'age_years': 2}
 ```
 
-## Wert mit dem Subskript-Operator `[]` abrufen
+## Wert mit dem Subskriptoperator `[]` abrufen
 
-Falls der Schlüssel nicht im Wörterbuch vorhanden ist, wird <a target="_blank" href="https://docs.python.org/3/library/exceptions.html#KeyError">`KeyError`</a> ausgelöst.
+Falls der Schlüssel nicht im Dictionary vorhanden ist, wird <a target="_blank" href="https://docs.python.org/3/library/exceptions.html#KeyError">`KeyError`</a> ausgelöst.
 
 ```python
 my_cat = {
@@ -78,12 +78,12 @@ KeyError: 'eye_color'
 
 ## values()
 
-Die Methode `values()` ruft die **Werte** des Wörterbuchs ab:
+Die Methode `values()` gibt die **Werte** des Dictionaries zurück:
 
 ```python
-# Über Wörterbuchwerte mit der .values()-Methode iterieren
+# Iterate over dictionary values using .values() method
 pet = {'color': 'red', 'age': 42}
-for value in pet.values():  # Durch alle Werte iterieren
+for value in pet.values():  # Loop through all values
     print(value)
 ```
 
@@ -94,12 +94,12 @@ red
 
 ## keys()
 
-Die Methode `keys()` ruft die **Schlüssel** des Wörterbuchs ab:
+Die Methode `keys()` gibt die **Schlüssel** des Dictionaries zurück:
 
 ```python
-# Über Wörterbuchschlüssel mit der .keys()-Methode iterieren
+# Iterate over dictionary keys using .keys() method
 pet = {'color': 'red', 'age': 42}
-for key in pet.keys():  # Durch alle Schlüssel iterieren
+for key in pet.keys():  # Loop through all keys
     print(key)
 ```
 
@@ -111,9 +111,9 @@ age
 Es ist nicht notwendig, **.keys()** zu verwenden, da standardmäßig über die Schlüssel iteriert wird:
 
 ```python
-# Die direkte Iteration über ein Wörterbuch iteriert über die Schlüssel (Standardverhalten)
+# Iterating over dictionary directly loops through keys (default behavior)
 pet = {'color': 'red', 'age': 42}
-for key in pet:  # Äquivalent zu for key in pet.keys()
+for key in pet:  # Equivalent to for key in pet.keys()
     print(key)
 ```
 
@@ -124,7 +124,7 @@ age
 
 ## items()
 
-Die Methode `items()` ruft die **Elemente** eines Wörterbuchs ab und gibt sie als <router-link to=/cheatsheet/lists-and-tuples#the-tuple-data-type>Tupel</router-link> zurück:
+Die Methode `items()` gibt die **Elemente** eines Dictionaries zurück und liefert sie als <router-link to=/cheatsheet/lists-and-tuples#the-tuple-data-type>Tupel</router-link>:
 
 ```python
 pet = {'color': 'red', 'age': 42}
@@ -137,12 +137,12 @@ for item in pet.items():
 ('age', 42)
 ```
 
-Mithilfe der Methoden `keys()`, `values()` und `items()` kann eine for-Schleife über die Schlüssel, Werte bzw. Schlüssel-Wert-Paare in einem Wörterbuch iterieren.
+Mithilfe der Methoden `keys()`, `values()` und `items()` kann eine for-Schleife über die Schlüssel, Werte bzw. Schlüssel-Wert-Paare in einem Dictionary iterieren.
 
 ```python
-# Über Schlüssel-Wert-Paare mit der .items()-Methode iterieren
+# Iterate over key-value pairs using .items() method
 pet = {'color': 'red', 'age': 42}
-for key, value in pet.items():  # Tupel in Schlüssel und Wert entpacken
+for key, value in pet.items():  # Unpack tuple into key and value
     print(f'Key: {key} Value: {value}')
 ```
 
@@ -153,13 +153,13 @@ Key: age Value: 42
 
 ## get()
 
-Die Methode `get()` gibt den Wert eines Elements mit dem angegebenen Schlüssel zurück. Wenn der Schlüssel nicht existiert, gibt sie `None` zurück:
+Die Methode `get()` gibt den Wert eines Elements mit dem angegebenen Schlüssel zurück. Wenn der Schlüssel nicht existiert, wird `None` zurückgegeben:
 
 ```python
-# .get()-Methode: Wert sicher abrufen, gibt None zurück, wenn Schlüssel nicht existiert
+# .get() method: safely retrieve value, returns None if key doesn't exist
 wife = {'name': 'Rose', 'age': 33}
 
-f'My wife name is {wife.get("name")}'  # Gibt 'Rose' zurück
+f'My wife name is {wife.get("name")}'  # Returns 'Rose'
 ```
 
 ```output
@@ -182,7 +182,7 @@ f'She is deeply in love with {wife.get("husband")}'
 'She is deeply in love with None'
 ```
 
-Sie können auch den Standardwert `None` durch einen von Ihnen gewählten Wert ersetzen:
+Sie können den Standardwert `None` auch durch einen von Ihnen gewählten Wert ersetzen:
 
 ```python
 wife = {'name': 'Rose', 'age': 33}
@@ -196,7 +196,7 @@ f'She is deeply in love with {wife.get("husband", "lover")}'
 
 ## Elemente mit setdefault() hinzufügen
 
-Es ist möglich, ein Element auf diese Weise zu einem Wörterbuch hinzuzufügen:
+Es ist möglich, ein Element auf diese Weise zu einem Dictionary hinzuzufügen:
 
 ```python
 wife = {'name': 'Rose', 'age': 33}
@@ -204,7 +204,7 @@ if 'has_hair' not in wife:
     wife['has_hair'] = True
 ```
 
-Mit der Methode `setdefault` können wir denselben Code kürzer schreiben:
+Mit der Methode `setdefault` können wir denselben Code kürzer gestalten:
 
 ```python
 wife = {'name': 'Rose', 'age': 33}
@@ -220,7 +220,7 @@ wife
 
 ### pop()
 
-Die Methode `pop()` entfernt und gibt ein Element basierend auf einem gegebenen Schlüssel zurück.
+Die Methode `pop()` entfernt und gibt ein Element basierend auf einem angegebenen Schlüssel zurück.
 
 ```python
 wife = {'name': 'Rose', 'age': 33, 'hair': 'brown'}
@@ -239,9 +239,23 @@ wife
 {'name': 'Rose', 'hair': 'brown'}
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Was bewirkt <code>pop()</code>, wenn es auf einem Dictionary aufgerufen wird?
+</template>
+
+<base-quiz-option value="A">A. Entfernt nur das Schlüssel-Wert-Paar</base-quiz-option>
+<base-quiz-option value="B" correct>B. Entfernt und gibt den Wert für den angegebenen Schlüssel zurück</base-quiz-option>
+<base-quiz-option value="C">C. Gibt nur den Wert zurück, ohne ihn zu entfernen</base-quiz-option>
+<base-quiz-option value="D">D. Entfernt alle Elemente aus dem Dictionary</base-quiz-option>
+<base-quiz-answer value="B">Die Methode <code>pop()</code> entfernt das Schlüssel-Wert-Paar für den angegebenen Schlüssel und gibt den Wert zurück. Wenn der Schlüssel nicht existiert, wird ein <code>KeyError</code> ausgelöst (es sei denn, Sie geben einen Standardwert an).</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ### popitem()
 
-Die Methode `popitem()` entfernt das letzte Element in einem Wörterbuch und gibt es zurück.
+Die Methode `popitem()` entfernt das letzte Element in einem Dictionary und gibt es zurück.
 
 ```python
 wife = {'name': 'Rose', 'age': 33, 'hair': 'brown'}
@@ -262,7 +276,7 @@ wife
 
 ### del()
 
-Die Methode `del()` entfernt ein Element basierend auf einem gegebenen Schlüssel.
+Die Methode `del()` entfernt ein Element basierend auf einem angegebenen Schlüssel.
 
 ```python
 wife = {'name': 'Rose', 'age': 33, 'hair': 'brown'}
@@ -276,7 +290,7 @@ wife
 
 ### clear()
 
-Die Methode `clear()` entfernt alle Elemente in einem Wörterbuch.
+Die Methode `clear()` entfernt alle Elemente in einem Dictionary.
 
 ```python
 wife = {'name': 'Rose', 'age': 33, 'hair': 'brown'}
@@ -288,7 +302,7 @@ wife
 {}
 ```
 
-## Schlüssel in einem Wörterbuch überprüfen
+## Überprüfen von Schlüsseln in einem Dictionary
 
 ```python
 person = {'name': 'Rose', 'age': 33}
@@ -309,14 +323,14 @@ False
 ```
 
 ```python
-'skin' in person # Sie können keys() weglassen
+'skin' in person # You can omit keys()
 ```
 
 ```output
 False
 ```
 
-## Werte in einem Wörterbuch überprüfen
+## Überprüfen von Werten in einem Dictionary
 
 ```python
 person = {'name': 'Rose', 'age': 33}
@@ -354,20 +368,34 @@ pprint.pprint(wife)
  'name': 'Rose'}
 ```
 
-## Zwei Wörterbücher zusammenführen
+## Zwei Dictionaries zusammenführen
 
 Für Python 3.5+:
 
 ```python
 dict_a = {'a': 1, 'b': 2}
 dict_b = {'b': 3, 'c': 4}
-dict_c = {**dict_a, **dict_b}
+dict_c = {**dict_b, **dict_a}
 dict_c
 ```
 
 ```output
 {'a': 1, 'b': 3, 'c': 4}
 ```
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Was passiert beim Zusammenführen von zwei Dictionaries mit <code>{**dict_b, **dict_a}</code>, wenn beide Dictionaries denselben Schlüssel haben?
+</template>
+
+<base-quiz-option value="A">A. Der Wert von <code>dict_b</code> überschreibt den Wert von <code>dict_a</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. Der Wert von <code>dict_a</code> überschreibt den Wert von <code>dict_b</code></base-quiz-option>
+<base-quiz-option value="C">C. Beide Werte werden in einer Liste beibehalten</base-quiz-option>
+<base-quiz-option value="D">D. Es wird ein Fehler ausgelöst</base-quiz-option>
+<base-quiz-answer value="B">Beim Zusammenführen von Dictionaries mit dem Entpackungsoperator <code>\*\*</code> überschreibt der Wert des Dictionaries, das später kommt (in diesem Fall <code>dict_a</code>), den Wert des früheren Dictionaries, falls beide denselben Schlüssel haben.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ## Relevante Links
 

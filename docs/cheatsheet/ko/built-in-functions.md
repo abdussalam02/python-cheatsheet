@@ -35,7 +35,7 @@ Python 인터프리터에는 항상 사용할 수 있는 여러 함수와 타입
 | <router-link to='/builtin/dict'>dict()</router-link>                 | 새 딕셔너리를 생성합니다.                                                                |
 | <router-link to='/builtin/dir'>dir()</router-link>                   | 현재 로컬 범위의 이름을 포함하는 목록을 반환합니다.                                      |
 | <router-link to='/builtin/divmod'>divmod()</router-link>             | 몫과 나머지를 포함하는 한 쌍의 숫자를 반환합니다.                                        |
-| <router-link to='/builtin/enumerate'>enumerate()</router-link>       | 열거 객체를 반환합니다.                                                                  |
+| <router-link to='/builtin/enumerate'>enumerate()</router-link>       | enumerate 객체를 반환합니다.                                                             |
 | <router-link to='/builtin/eval'>eval()</router-link>                 | 표현식을 평가하고 실행합니다.                                                            |
 | <router-link to='/builtin/exec'>exec()</router-link>                 | 이 함수는 Python 코드를 동적으로 실행하는 것을 지원합니다.                               |
 | <router-link to='/builtin/filter'>filter()</router-link>             | 이터러블에서 이터레이터를 구성하고 참인 요소만 반환합니다.                               |
@@ -64,8 +64,8 @@ Python 인터프리터에는 항상 사용할 수 있는 여러 함수와 타입
 | <router-link to='/builtin/object'>object()</router-link>             | 새로운 특징 없는 객체를 반환합니다.                                                      |
 | <router-link to='/builtin/oct'>oct()</router-link>                   | 정수를 8 진수 문자열로 변환합니다.                                                       |
 | <router-link to='/builtin/open'>open()</router-link>                 | 파일을 열고 해당 파일 객체를 반환합니다.                                                 |
-| <router-link to='/builtin/ord'>ord()</router-link>                   | 문자에 해당하는 유니코드 코드 포인트를 나타내는 정수를 반환합니다.                       |
-| <router-link to='/builtin/pow'>pow()</router-link>                   | base 를 exp 거듭제곱한 값을 반환합니다.                                                  |
+| <router-link to='/builtin/ord'>ord()</router-link>                   | 문자의 유니코드 코드 포인트를 나타내는 정수를 반환합니다.                                |
+| <router-link to='/builtin/pow'>pow()</router-link>                   | base 를 exp 의 거듭제곱으로 반환합니다.                                                  |
 | <router-link to='/builtin/print'>print()</router-link>               | 텍스트 스트림 파일에 객체를 출력합니다.                                                  |
 | <router-link to='/builtin/property'>property()</router-link>         | 속성 속성을 반환합니다.                                                                  |
 | <router-link to='/builtin/repr'>repr()</router-link>                 | 객체의 출력 가능한 표현을 포함하는 문자열을 반환합니다.                                  |
@@ -78,9 +78,9 @@ Python 인터프리터에는 항상 사용할 수 있는 여러 함수와 타입
 | <router-link to='/builtin/staticmethod'>staticmethod()</router-link> | 메서드를 정적 메서드로 변환합니다.                                                       |
 | <router-link to='/builtin/str'>str()</router-link>                   | 객체의 str 버전을 반환합니다.                                                            |
 | <router-link to='/builtin/sum'>sum()</router-link>                   | start 와 이터러블의 항목들을 합산합니다.                                                 |
-| <router-link to='/builtin/super'>super()</router-link>               | 부모 또는 형제 클래스에 대한 메서드 호출을 위임하는 프록시 객체를 반환합니다.            |
+| <router-link to='/builtin/super'>super()</router-link>               | 부모 또는 형제 클래스로 메서드 호출을 위임하는 프록시 객체를 반환합니다.                 |
 | <router-link to='/builtin/tuple'>tuple()</router-link>               | 함수가 아니라 불변 시퀀스 타입입니다.                                                    |
 | <router-link to='/builtin/type'>type()</router-link>                 | 객체의 타입을 반환합니다.                                                                |
-| <router-link to='/builtin/vars'>vars()</router-link>                 | dict 속성을 가진 다른 객체에 대해 해당 dict 속성을 반환합니다.                           |
+| <router-link to='/builtin/vars'>vars()</router-link>                 | dict 속성이 있는 다른 객체에 대한 dict 속성을 반환합니다.                                |
 | <router-link to='/builtin/zip'>zip()</router-link>                   | 여러 이터러블을 병렬로 반복합니다.                                                       |
 | <router-link to='/builtin/import'>**import**()</router-link>         | 이 함수는 import 문에 의해 호출됩니다.                                                   |

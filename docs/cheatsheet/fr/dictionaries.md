@@ -14,7 +14,7 @@ En Python, un dictionnaire est une collection _ordonnée_ (à partir de Python >
 
 <base-disclaimer>
   <base-disclaimer-title>
-    De la documentation Python 3 <a target="_blank" href="https://docs.python.org/3/tutorial/datastructures.html#dictionaries">documentation</a>
+    De la <a target="_blank" href="https://docs.python.org/3/tutorial/datastructures.html#dictionaries">documentation</a> Python 3
   </base-disclaimer-title>
   <base-disclaimer-content>
     Les principales opérations sur un dictionnaire sont de stocker une valeur avec une certaine clé et d'extraire la valeur étant donnée la clé. Il est également possible de supprimer une paire clé:valeur avec <code>del</code>.
@@ -78,7 +78,7 @@ KeyError: 'eye_color'
 
 ## values()
 
-La méthode `values()` obtient les **valeurs** du dictionnaire :
+La méthode `values()` récupère les **valeurs** du dictionnaire :
 
 ```python
 # Itérer sur les valeurs du dictionnaire en utilisant la méthode .values()
@@ -94,7 +94,7 @@ red
 
 ## keys()
 
-La méthode `keys()` obtient les **clés** du dictionnaire :
+La méthode `keys()` récupère les **clés** du dictionnaire :
 
 ```python
 # Itérer sur les clés du dictionnaire en utilisant la méthode .keys()
@@ -124,7 +124,7 @@ age
 
 ## items()
 
-La méthode `items()` obtient les **éléments** d'un dictionnaire et les retourne sous forme de <router-link to=/cheatsheet/lists-and-tuples#the-tuple-data-type>Tuple</router-link> :
+La méthode `items()` récupère les **éléments** d'un dictionnaire et les retourne sous forme de <router-link to=/cheatsheet/lists-and-tuples#the-tuple-data-type>Tuple</router-link> :
 
 ```python
 pet = {'color': 'red', 'age': 42}
@@ -137,7 +137,7 @@ for item in pet.items():
 ('age', 42)
 ```
 
-En utilisant les méthodes `keys()`, `values()` et `items()`, une boucle for peut itérer respectivement sur les clés, les valeurs ou les paires clé-valeur dans un dictionnaire.
+En utilisant les méthodes `keys()`, `values()` et `items()`, une boucle for peut itérer respectivement sur les clés, les valeurs ou les paires clé-valeur d'un dictionnaire.
 
 ```python
 # Itérer sur les paires clé-valeur en utilisant la méthode .items()
@@ -194,7 +194,7 @@ f'She is deeply in love with {wife.get("husband", "lover")}'
 'She is deeply in love with lover'
 ```
 
-## Ajouter des éléments avec setdefault()
+## Ajout d'éléments avec setdefault()
 
 Il est possible d'ajouter un élément à un dictionnaire de cette manière :
 
@@ -238,6 +238,20 @@ wife
 ```output
 {'name': 'Rose', 'hair': 'brown'}
 ```
+
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Que fait <code>pop()</code> lorsqu'il est appelé sur un dictionnaire ?
+</template>
+
+<base-quiz-option value="A">A. Supprime uniquement la paire clé-valeur</base-quiz-option>
+<base-quiz-option value="B" correct>B. Supprime et retourne la valeur pour la clé spécifiée</base-quiz-option>
+<base-quiz-option value="C">C. Retourne uniquement la valeur sans la supprimer</base-quiz-option>
+<base-quiz-option value="D">D. Supprime tous les éléments du dictionnaire</base-quiz-option>
+<base-quiz-answer value="B">La méthode <code>pop()</code> supprime la paire clé-valeur pour la clé spécifiée et retourne la valeur. Si la clé n'existe pas, elle lève une <code>KeyError</code> (sauf si vous fournissez une valeur par défaut).</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
 
 ### popitem()
 
@@ -288,7 +302,7 @@ wife
 {}
 ```
 
-## Vérifier les clés dans un Dictionnaire
+## Vérification des clés dans un Dictionnaire
 
 ```python
 person = {'name': 'Rose', 'age': 33}
@@ -316,7 +330,7 @@ False
 False
 ```
 
-## Vérifier les valeurs dans un Dictionnaire
+## Vérification des valeurs dans un Dictionnaire
 
 ```python
 person = {'name': 'Rose', 'age': 33}
@@ -356,12 +370,12 @@ pprint.pprint(wife)
 
 ## Fusionner deux dictionnaires
 
-Pour Python 3.5 et versions ultérieures :
+Pour Python 3.5 et supérieur :
 
 ```python
 dict_a = {'a': 1, 'b': 2}
 dict_b = {'b': 3, 'c': 4}
-dict_c = {**dict_a, **dict_b}
+dict_c = {**dict_b, **dict_a}
 dict_c
 ```
 
@@ -369,13 +383,27 @@ dict_c
 {'a': 1, 'b': 3, 'c': 4}
 ```
 
+<base-quiz>
+<base-quiz-question correct="B">
+<template #question>
+Lors de la fusion de deux dictionnaires en utilisant <code>{**dict_b, **dict_a}</code>, que se passe-t-il si les deux dictionnaires ont la même clé ?
+</template>
+
+<base-quiz-option value="A">A. La valeur de <code>dict_b</code> écrase la valeur de <code>dict_a</code></base-quiz-option>
+<base-quiz-option value="B" correct>B. La valeur de <code>dict_a</code> écrase la valeur de <code>dict_b</code></base-quiz-option>
+<base-quiz-option value="C">C. Les deux valeurs sont conservées dans une liste</base-quiz-option>
+<base-quiz-option value="D">D. Une erreur est levée</base-quiz-option>
+<base-quiz-answer value="B">Lors de la fusion de dictionnaires avec l'opérateur de dépaquetage <code>\*\*</code>, si les deux dictionnaires ont la même clé, la valeur du dictionnaire qui vient après (dans ce cas <code>dict_a</code>) écrase la valeur du dictionnaire précédent.</base-quiz-answer>
+</base-quiz-question>
+</base-quiz>
+
 ## Liens pertinents
 
 - <router-link to="/blog/python-data-types">Article de blog sur les types de données Python</router-link>
-- <router-link to="/blog/python-easy-args-kwargs">Python \*args et \*\*kwargs Facilement Expliqués</router-link>
+- <router-link to="/blog/python-easy-args-kwargs">Les \*args et \*\*kwargs Python expliqués simplement</router-link>
 - <router-link to="/cheatsheet/comprehensions">Compréhensions</router-link>
 - <router-link to="/cheatsheet/args-and-kwargs">Args et Kwargs</router-link>
-- <router-link to="/blog/python-comprehensions-step-by-step">Compréhensions Python Étape par Étape</router-link>
+- <router-link to="/blog/python-comprehensions-step-by-step">Compréhensions Python étape par étape</router-link>
 - <router-link to="/builtin/dict">dict()</router-link>
 - <router-link to="/builtin/len">len()</router-link>
 - <router-link to="/builtin/iter">iter()</router-link>
