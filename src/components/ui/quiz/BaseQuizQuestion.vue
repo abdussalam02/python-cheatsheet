@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, provide, useSlots, watch, computed, onMounted } from 'vue'
-import { useI18n } from '~/composables/useI18n'
+import { useI18n, SUPPORTED_LOCALES } from '~/composables/useI18n'
 import { useQuizTracking } from '~/composables/useQuizTracking'
 import { useRoute } from 'vue-router'
 
@@ -22,10 +22,23 @@ if (props.correct) {
   correctAnswer.value = props.correct
 }
 
+/**
+ * Normalize path to English version by removing language prefix
+ * This ensures all language versions of the same page share the same quiz data
+ */
+function normalizePathToEnglish(path: string): string {
+  const segments = path.split('/').filter(Boolean)
+  if (segments.length > 0 && SUPPORTED_LOCALES.includes(segments[0] as typeof SUPPORTED_LOCALES[number])) {
+    segments.shift()
+    return segments.length > 0 ? '/' + segments.join('/') : '/'
+  }
+  return path
+}
+
 // Generate stable quiz ID based on page path and correct answer
-// Uses page path and component position to generate unique ID
+// Uses normalized English path to ensure all language versions share the same quiz data
 const quizId = computed(() => {
-  const pagePath = route.path
+  const pagePath = normalizePathToEnglish(route.path)
   // Use props.correct as primary identifier, fallback to correctAnswer if not available
   const correct = props.correct || correctAnswer.value || 'default'
   // Generate stable hash from page path and correct answer

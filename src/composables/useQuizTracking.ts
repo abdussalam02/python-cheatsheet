@@ -1,12 +1,26 @@
 import { useRoute } from 'vue-router'
+import { SUPPORTED_LOCALES } from './useI18n'
+
+/**
+ * Normalize path to English version by removing language prefix
+ * This ensures all language versions of the same page share the same quiz data
+ */
+function normalizePathToEnglish(path: string): string {
+  const segments = path.split('/').filter(Boolean)
+  if (segments.length > 0 && SUPPORTED_LOCALES.includes(segments[0] as typeof SUPPORTED_LOCALES[number])) {
+    segments.shift()
+    return segments.length > 0 ? '/' + segments.join('/') : '/'
+  }
+  return path
+}
 
 export function useQuizTracking() {
   const route = useRoute()
 
   const recordQuizCompletion = async (quizId: string): Promise<number | null> => {
     try {
-      const pagePath = route.path
-      
+      const pagePath = normalizePathToEnglish(route.path)
+
       const response = await fetch('/api/quiz/record', {
         method: 'POST',
         headers: {
@@ -33,7 +47,7 @@ export function useQuizTracking() {
 
   const getQuizStats = async (quizId: string): Promise<number | null> => {
     try {
-      const pagePath = route.path
+      const pagePath = normalizePathToEnglish(route.path)
       const url = new URL('/api/quiz/stats', window.location.origin)
       url.searchParams.set('quizId', quizId)
       url.searchParams.set('pagePath', pagePath)

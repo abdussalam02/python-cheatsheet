@@ -1,5 +1,20 @@
 /// <reference path="../../types.d.ts" />
 
+const SUPPORTED_LOCALES = ['en', 'zh', 'es', 'fr', 'de', 'ja', 'ru', 'ko', 'pt'] as const
+
+/**
+ * Normalize path to English version by removing language prefix
+ * This ensures all language versions of the same page share the same quiz data
+ */
+function normalizePathToEnglish(path: string): string {
+  const segments = path.split('/').filter(Boolean)
+  if (segments.length > 0 && SUPPORTED_LOCALES.includes(segments[0] as typeof SUPPORTED_LOCALES[number])) {
+    segments.shift()
+    return segments.length > 0 ? '/' + segments.join('/') : '/'
+  }
+  return path
+}
+
 export async function onRequestGet(context: {
   request: Request
   env: {
@@ -36,8 +51,10 @@ export async function onRequestGet(context: {
       )
     }
 
+    // Normalize path to English version to ensure all languages share the same quiz data
+    const normalizedPath = normalizePathToEnglish(pagePath)
     // Generate unique key
-    const key = `quiz:${pagePath}:${quizId}`
+    const key = `quiz:${normalizedPath}:${quizId}`
 
     // Get count from KV
     const countStr = await env.PYTHONCHEATSHEET_QUIZ_KV.get(key)
@@ -48,7 +65,7 @@ export async function onRequestGet(context: {
       JSON.stringify({
         success: true,
         quizId,
-        pagePath,
+        pagePath: normalizedPath,
         count,
       }),
       {
