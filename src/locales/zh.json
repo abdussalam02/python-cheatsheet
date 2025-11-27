@@ -12,12 +12,7 @@
     "repositoryLink": "Python 速查表仓库"
   },
   "footer": {
-    "editThisPageOn": "在",
-    "github": "GitHub",
-    "doYouHaveAQuestion": "有问题吗？",
-    "askTheCommunity": "询问社区",
-    "doYouSeeABug": "发现错误？",
-    "openAnIssueOnGithub": "在 GitHub 上提交问题"
+    "moreCheatsheets": "更多速查表"
   },
   "mobile": {
     "openNavigation": "打开导航",
@@ -50,8 +45,6 @@
   },
   "home": {
     "title": "Python 速查表",
-    "basedOnBook": "基于书籍",
-    "andManyOtherSources": "以及其他许多来源。",
     "anyoneCanForget": "任何人都可能忘记如何",
     "makeCharacterClasses": "为正则表达式创建字符类",
     "forRegex": "，",

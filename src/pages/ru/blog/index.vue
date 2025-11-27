@@ -17,7 +17,7 @@ useHead({
 const router = useRouter()
 const route = useRoute()
 const currentPage = ref(parseInt(route.query.page) || 1)
-const postsPerPage = 7
+const postsPerPage = 14
 
 watch(
   () => route.query.page,

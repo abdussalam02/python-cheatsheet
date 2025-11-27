@@ -12,12 +12,7 @@
     "repositoryLink": "python cheatsheet repository"
   },
   "footer": {
-    "editThisPageOn": "Edit this page on",
-    "github": "GitHub",
-    "doYouHaveAQuestion": "Do you have a question?",
-    "askTheCommunity": "ask the community",
-    "doYouSeeABug": "Do you see a bug?",
-    "openAnIssueOnGithub": "open an issue on GitHub"
+    "moreCheatsheets": "More Cheatsheets"
   },
   "mobile": {
     "openNavigation": "Open navigation",
@@ -50,8 +45,6 @@
   },
   "home": {
     "title": "Python Cheatsheet",
-    "basedOnBook": "Based on the book",
-    "andManyOtherSources": "and many other sources.",
     "anyoneCanForget": "Anyone can forget how to",
     "makeCharacterClasses": "make character classes",
     "forRegex": "for a regex,",

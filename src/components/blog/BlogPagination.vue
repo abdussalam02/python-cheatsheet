@@ -24,29 +24,29 @@ const next = () => {
 </script>
 
 <template>
-  <div class="mt-12 flex items-center justify-between gap-x-8 max-w-lg mx-auto">
+  <div class="mt-12 flex items-center justify-between gap-x-6 max-w-lg mx-auto">
     <button
       :disabled="currentPage === 1"
-      class="rounded-lg border border-slate-300/70 p-4 text-left transition duration-300 hover:border-primary-500 hover:bg-primary-400/5 disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-800 dark:hover:border-primary-400"
+      class="flex flex-col rounded-md border border-slate-300/70 px-3 py-2 text-left transition duration-200 hover:border-primary-500 hover:bg-primary-400/5 disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-800 dark:hover:border-primary-400"
       @click="prev"
     >
-      <span class="text-sm text-slate-500 dark:text-slate-400">{{ t('blog.previous') }}</span>
-      <span class="mt-1 block font-medium text-primary-500 dark:text-primary-400">
+      <span class="text-xs text-slate-500 dark:text-slate-400">{{ t('blog.previous') }}</span>
+      <span class="text-sm font-medium text-primary-500 dark:text-primary-400">
         {{ t('blog.newerPosts') }}
       </span>
     </button>
 
-    <span class="font-medium text-slate-700 dark:text-slate-300">
+    <span class="text-sm font-medium text-slate-700 dark:text-slate-300">
       {{ currentPage }} / {{ totalPages }}
     </span>
 
     <button
       :disabled="currentPage === totalPages"
-      class="rounded-lg border border-slate-300/70 p-4 text-right transition duration-300 hover:border-primary-500 hover:bg-primary-400/5 disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-800 dark:hover:border-primary-400"
+      class="flex flex-col rounded-md border border-slate-300/70 px-3 py-2 text-right transition duration-200 hover:border-primary-500 hover:bg-primary-400/5 disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-800 dark:hover:border-primary-400"
       @click="next"
     >
-      <span class="text-sm text-slate-500 dark:text-slate-400">{{ t('blog.next') }}</span>
-      <span class="mt-1 block font-medium text-primary-500 dark:text-primary-400">
+      <span class="text-xs text-slate-500 dark:text-slate-400">{{ t('blog.next') }}</span>
+      <span class="text-sm font-medium text-primary-500 dark:text-primary-400">
         {{ t('blog.olderPosts') }}
       </span>
     </button>

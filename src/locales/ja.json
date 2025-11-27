@@ -12,12 +12,7 @@
     "repositoryLink": "Python チートシートリポジトリ"
   },
   "footer": {
-    "editThisPageOn": "このページを編集する",
-    "github": "GitHub",
-    "doYouHaveAQuestion": "質問がありますか？",
-    "askTheCommunity": "コミュニティに質問する",
-    "doYouSeeABug": "バグを見つけましたか？",
-    "openAnIssueOnGithub": "GitHub で問題を報告する"
+    "moreCheatsheets": "その他のチートシート"
   },
   "mobile": {
     "openNavigation": "ナビゲーションを開く",
@@ -50,8 +45,6 @@
   },
   "home": {
     "title": "Python チートシート",
-    "basedOnBook": "書籍",
-    "andManyOtherSources": "およびその他の多くの情報源に基づいています。",
     "anyoneCanForget": "誰でも忘れることがあります：",
     "makeCharacterClasses": "正規表現の文字クラスを作成する方法",
     "forRegex": "、",

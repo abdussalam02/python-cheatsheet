@@ -12,12 +12,7 @@
     "repositoryLink": "Python Spickzettel Repository"
   },
   "footer": {
-    "editThisPageOn": "Diese Seite bearbeiten auf",
-    "github": "GitHub",
-    "doYouHaveAQuestion": "Haben Sie eine Frage?",
-    "askTheCommunity": "die Community fragen",
-    "doYouSeeABug": "Sehen Sie einen Fehler?",
-    "openAnIssueOnGithub": "ein Problem auf GitHub öffnen"
+    "moreCheatsheets": "Weitere Spickzettel"
   },
   "mobile": {
     "openNavigation": "Navigation öffnen",
@@ -50,8 +45,6 @@
   },
   "home": {
     "title": "Python Spickzettel",
-    "basedOnBook": "Basierend auf dem Buch",
-    "andManyOtherSources": "und vielen anderen Quellen.",
     "anyoneCanForget": "Jeder kann vergessen, wie man",
     "makeCharacterClasses": "Zeichenklassen erstellt",
     "forRegex": "für einen regulären Ausdruck,",

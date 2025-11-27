@@ -12,12 +12,7 @@
     "repositoryLink": "dépôt de l'aide-mémoire Python"
   },
   "footer": {
-    "editThisPageOn": "Modifier cette page sur",
-    "github": "GitHub",
-    "doYouHaveAQuestion": "Avez-vous une question ?",
-    "askTheCommunity": "demander à la communauté",
-    "doYouSeeABug": "Voyez-vous un bug ?",
-    "openAnIssueOnGithub": "ouvrir un problème sur GitHub"
+    "moreCheatsheets": "Plus d'aides-mémoire"
   },
   "mobile": {
     "openNavigation": "Ouvrir la navigation",
@@ -50,8 +45,6 @@
   },
   "home": {
     "title": "Aide-mémoire Python",
-    "basedOnBook": "Basé sur le livre",
-    "andManyOtherSources": "et de nombreuses autres sources.",
     "anyoneCanForget": "N'importe qui peut oublier comment",
     "makeCharacterClasses": "créer des classes de caractères",
     "forRegex": "pour une expression régulière,",

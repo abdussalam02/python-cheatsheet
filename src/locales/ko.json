@@ -12,12 +12,7 @@
     "repositoryLink": "Python 치트 시트 저장소"
   },
   "footer": {
-    "editThisPageOn": "이 페이지 편집하기",
-    "github": "GitHub",
-    "doYouHaveAQuestion": "질문이 있으신가요?",
-    "askTheCommunity": "커뮤니티에 질문하기",
-    "doYouSeeABug": "버그를 발견하셨나요?",
-    "openAnIssueOnGithub": "GitHub 에서 이슈 열기"
+    "moreCheatsheets": "더 많은 치트 시트"
   },
   "mobile": {
     "openNavigation": "네비게이션 열기",
@@ -50,8 +45,6 @@
   },
   "home": {
     "title": "Python 치트 시트",
-    "basedOnBook": "책",
-    "andManyOtherSources": "및 기타 많은 소스를 기반으로 합니다.",
     "anyoneCanForget": "누구나 잊을 수 있습니다:",
     "makeCharacterClasses": "정규식의 문자 클래스를 만드는 방법",
     "forRegex": "을 (를),",

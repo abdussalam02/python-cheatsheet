@@ -27,24 +27,6 @@ const { localePath, t } = useI18n()
                 class="h-6 w-auto sm:h-7"
                 :src="
                   isDark
-                    ? 'https://raw.githubusercontent.com/labex-labs/python-cheatsheet/refs/heads/master/public/logo.svg'
-                    : 'https://raw.githubusercontent.com/labex-labs/python-cheatsheet/refs/heads/master/public/logo-light.svg'
-                "
-                alt="python-cheatsheet"
-                height="10"
-                width="10"
-              />
-            </router-link>
-            <div class="h-5 w-px bg-slate-300 dark:bg-slate-700 sm:h-6"></div>
-            <a
-              href="https://labex.io/learn"
-              target="_blank"
-              class="flex items-center"
-            >
-              <img
-                class="h-6 w-auto sm:h-7"
-                :src="
-                  isDark
                     ? 'https://cdn.jsdelivr.net/gh/labex-labs/files@master/images/labex-logo-light.svg'
                     : 'https://cdn.jsdelivr.net/gh/labex-labs/files@master/images/labex-logo-dark.svg'
                 "
@@ -52,29 +34,10 @@ const { localePath, t } = useI18n()
                 height="10"
                 width="10"
               />
-            </a>
+            </router-link>
           </div>
 
           <!-- <algolia-doc-search /> -->
-
-          <base-badge-notice size="xs" class="hidden lg:block">
-            <template #title>
-              <router-link
-                :to="localePath('/blog')"
-                class="capitalize hover:text-primary-500"
-              >
-                ✨ {{ t('navbar.blog') }}
-              </router-link>
-            </template>
-            <template #message>
-              <router-link
-                :to="localePath('/blog/python-decorators-for-beginners')"
-                class="hover:text-primary-500"
-              >
-                Python Decorators Patterns
-              </router-link>
-            </template>
-          </base-badge-notice>
         </div>
 
         <!-- actions -->
@@ -114,8 +77,8 @@ const { localePath, t } = useI18n()
               </a>
             </div>
             <a
-              href="/labex-python-cheatsheet.pdf"
-              download="labex-python-cheatsheet.pdf"
+              href="https://labex.io/cheatsheets/pdf/python-cheatsheet.pdf"
+              target="_blank"
             >
               <div
                 class="text-xs relative flex items-center gap-2 rounded-full border border-primary-600 px-4 py-0.5 leading-6 text-primary-600 transition duration-300 hover:bg-primary-50 dark:border-primary-400 dark:text-primary-400 dark:hover:bg-primary-950/20"
@@ -151,6 +114,10 @@ const { localePath, t } = useI18n()
             <github-icon />
             <span class="sr-only">{{ t('navbar.repositoryLink') }}</span>
           </a>
+          <router-link :to="localePath('/blog')">
+            <blog-icon />
+            <span class="sr-only">{{ t('navbar.blog') }}</span>
+          </router-link>
           <base-theme-toggle />
         </div>
       </div>

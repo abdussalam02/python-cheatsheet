@@ -92,17 +92,6 @@ const smAndLarger = breakpoints.greater('sm')
 
     <prose>
       <p>
-        {{ t('home.basedOnBook') }}
-        <a
-          href="https://automatetheboringstuff.com/"
-          target="_blank"
-          rel="nofollow noreferrer"
-        >
-          Automate the Boring Stuff with Python
-        </a>
-        {{ t('home.andManyOtherSources') }}
-      </p>
-      <p>
         {{ t('home.anyoneCanForget') }}
         <router-link
           :to="

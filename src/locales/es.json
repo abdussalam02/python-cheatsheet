@@ -12,12 +12,7 @@
     "repositoryLink": "repositorio de hoja de referencia Python"
   },
   "footer": {
-    "editThisPageOn": "Editar esta página en",
-    "github": "GitHub",
-    "doYouHaveAQuestion": "¿Tienes una pregunta?",
-    "askTheCommunity": "pregunta a la comunidad",
-    "doYouSeeABug": "¿Ves un error?",
-    "openAnIssueOnGithub": "abre un problema en GitHub"
+    "moreCheatsheets": "Más hojas de referencia"
   },
   "mobile": {
     "openNavigation": "Abrir navegación",
@@ -50,8 +45,6 @@
   },
   "home": {
     "title": "Hoja de referencia Python",
-    "basedOnBook": "Basado en el libro",
-    "andManyOtherSources": "y muchas otras fuentes.",
     "anyoneCanForget": "Cualquiera puede olvidar cómo",
     "makeCharacterClasses": "crear clases de caracteres",
     "forRegex": "para una expresión regular,",

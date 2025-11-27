@@ -12,12 +12,7 @@
     "repositoryLink": "репозиторий шпаргалки Python"
   },
   "footer": {
-    "editThisPageOn": "Редактировать эту страницу на",
-    "github": "GitHub",
-    "doYouHaveAQuestion": "Есть вопрос?",
-    "askTheCommunity": "спросить сообщество",
-    "doYouSeeABug": "Видите ошибку?",
-    "openAnIssueOnGithub": "открыть проблему на GitHub"
+    "moreCheatsheets": "Больше шпаргалок"
   },
   "mobile": {
     "openNavigation": "Открыть навигацию",
@@ -50,8 +45,6 @@
   },
   "home": {
     "title": "Шпаргалка Python",
-    "basedOnBook": "Основано на книге",
-    "andManyOtherSources": "и многих других источниках.",
     "anyoneCanForget": "Любой может забыть, как",
     "makeCharacterClasses": "создать классы символов",
     "forRegex": "для регулярного выражения,",
