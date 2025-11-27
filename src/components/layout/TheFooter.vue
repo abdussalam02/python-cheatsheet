@@ -32,8 +32,8 @@ const getCheatsheetsUrl = () => {
           class="h-5 w-auto"
           :src="
             isDark
-              ? 'https://cdn.jsdelivr.net/gh/labex-labs/files@master/images/labex-logo-light.svg'
-              : 'https://cdn.jsdelivr.net/gh/labex-labs/files@master/images/labex-logo-dark.svg'
+              ? '/labex-logo-light.svg'
+              : '/labex-logo-dark.svg'
           "
           alt="LabEx"
           height="20"

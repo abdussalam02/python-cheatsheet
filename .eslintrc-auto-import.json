@@ -308,6 +308,11 @@
     "watchTriggerable": true,
     "watchWithFilter": true,
     "whenever": true,
-    "useQuizTracking": true
+    "useQuizTracking": true,
+    "generateArticleSchema": true,
+    "generateBreadcrumbSchema": true,
+    "generateOrganizationSchema": true,
+    "generateStructuredData": true,
+    "generateWebSiteSchema": true
   }
 }

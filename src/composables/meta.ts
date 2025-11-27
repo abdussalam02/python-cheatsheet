@@ -1,15 +1,107 @@
 import { SUPPORTED_LOCALES, useI18n } from './useI18n'
 
-export function useMeta() {
+interface ArticleMeta {
+  title?: string
+  description?: string
+  date?: string
+  updated?: string
+  tags?: string
+  socialImage?: string
+}
+
+function getBaseUrl(): string {
+  const envBaseUrl = import.meta.env.VITE_BASE_URL || 'pythoncheatsheet.org'
+  const isDev = import.meta.env.DEV || import.meta.env.MODE === 'development'
+  
+  const isLocalhost = typeof window !== 'undefined' && 
+    (window.location.hostname === 'localhost' || 
+     window.location.hostname === '127.0.0.1' ||
+     window.location.hostname.startsWith('192.168.') ||
+     window.location.hostname.includes('.local'))
+  
+  const isPreviewDomain = envBaseUrl.includes('next.') || 
+                          envBaseUrl.includes('staging.') ||
+                          envBaseUrl.includes('preview.')
+  
+  if (isDev || isLocalhost || isPreviewDomain) {
+    return 'pythoncheatsheet.org'
+  }
+  
+  return envBaseUrl.startsWith('http') 
+    ? envBaseUrl.replace(/^https?:\/\//, '').replace(/\/$/, '')
+    : envBaseUrl.replace(/\/$/, '')
+}
+
+export function useMeta(articleMeta?: ArticleMeta) {
   const route = useRoute()
   const { t, currentLocale } = useI18n()
-  const base_url = import.meta.env.VITE_BASE_URL || 'localhost:3000'
+  const base_url = getBaseUrl()
 
-  const description = computed(() => t('meta.description'))
-  const cardImage =
+  const defaultDescription = computed(() => t('meta.description'))
+  const defaultCardImage =
     'https://raw.githubusercontent.com/labex-labs/python-cheatsheet/master/public/screenshots/dark.png'
   const themeColor = computed(() => (isDark.value ? '#1f2937' : '#ffffff'))
   const url = computed(() => `https://${base_url}${route.path}`)
+
+  const isArticle = computed(() => {
+    return !!(
+      articleMeta?.title ||
+      route.path.includes('/blog/') ||
+      route.meta?.layout === 'article'
+    )
+  })
+
+  const isHomePage = computed(() => {
+    return route.path === '/' || route.path === `/${currentLocale.value}`
+  })
+
+  const pageTitle = computed(() => {
+    return articleMeta?.title || t('meta.title')
+  })
+
+  const pageDescription = computed(() => {
+    return articleMeta?.description || defaultDescription.value
+  })
+
+  const pageImage = computed(() => {
+    if (articleMeta?.socialImage) {
+      return articleMeta.socialImage.startsWith('http')
+        ? articleMeta.socialImage
+        : `https://${base_url}${articleMeta.socialImage}`
+    }
+    return defaultCardImage
+  })
+
+  const ogType = computed(() => {
+    if (isArticle.value) {
+      return 'article'
+    }
+    if (isHomePage.value) {
+      return 'website'
+    }
+    return 'website'
+  })
+
+  const twitterCardType = computed(() => {
+    return pageImage.value && pageImage.value !== defaultCardImage
+      ? 'summary_large_image'
+      : 'summary'
+  })
+
+  const localeCode = computed(() => {
+    const localeMap: Record<string, string> = {
+      en: 'en_US',
+      zh: 'zh_CN',
+      es: 'es_ES',
+      fr: 'fr_FR',
+      de: 'de_DE',
+      ja: 'ja_JP',
+      ru: 'ru_RU',
+      ko: 'ko_KR',
+      pt: 'pt_BR',
+    }
+    return localeMap[currentLocale.value] || 'en_US'
+  })
 
   // Get base path (remove locale prefix)
   const getBasePath = (path: string): string => {
@@ -49,35 +141,66 @@ export function useMeta() {
     return links
   })
 
-  const title = computed(() => t('meta.title'))
-  const keywords = computed(() => t('meta.keywords'))
+  const keywords = computed(() => {
+    if (articleMeta?.tags) {
+      return articleMeta.tags
+    }
+    return t('meta.keywords')
+  })
+
+  const metaTags = computed(() => {
+    const tags: any[] = [
+      { name: 'theme-color', content: themeColor.value },
+      { name: 'description', content: pageDescription.value },
+      { name: 'author', content: 'Python Cheatsheet' },
+      { name: 'keywords', content: keywords.value },
+      { property: 'og:title', content: pageTitle.value },
+      { property: 'og:description', content: pageDescription.value },
+      { property: 'og:url', content: url.value },
+      { property: 'og:type', content: ogType.value },
+      { property: 'og:image', content: pageImage.value },
+      { property: 'og:site_name', content: 'Python Cheatsheet' },
+      { property: 'og:locale', content: localeCode.value },
+      { name: 'twitter:title', content: pageTitle.value },
+      { name: 'twitter:description', content: pageDescription.value },
+      { name: 'twitter:image', content: pageImage.value },
+      { name: 'twitter:card', content: twitterCardType.value },
+      { name: 'twitter:site', content: '@labex_io' },
+    ]
+
+    if (isArticle.value && articleMeta) {
+      if (articleMeta.date) {
+        const publishedDate = new Date(articleMeta.date).toISOString()
+        tags.push({ property: 'article:published_time', content: publishedDate })
+      }
+      if (articleMeta.updated) {
+        const modifiedDate = new Date(articleMeta.updated).toISOString()
+        tags.push({ property: 'article:modified_time', content: modifiedDate })
+      }
+      if (articleMeta.tags) {
+        const tagList = articleMeta.tags.split(',').map((tag) => tag.trim())
+        tagList.forEach((tag) => {
+          tags.push({ property: 'article:tag', content: tag })
+        })
+      }
+      tags.push({ property: 'article:author', content: 'Python Cheatsheet' })
+    }
+
+    return tags
+  })
 
   const meta = computed(() => ({
-    title: title.value,
-    description: description.value,
+    title: pageTitle.value,
+    description: pageDescription.value,
     htmlAttrs: {
       lang: currentLocale.value,
     },
-    meta: [
-      { name: 'theme-color', content: themeColor.value },
-      { name: 'description', content: description.value },
-      { name: 'author', content: 'Python Cheatsheet' },
-      { name: 'keywords', content: keywords.value },
-      { property: 'og:title', content: title.value },
-      { property: 'og:description', content: description.value },
-      { property: 'og:url', content: url.value },
-      { property: 'og:type', content: 'article' },
-      { property: 'og:image', content: cardImage },
-      { name: 'twitter:title', content: title.value },
-      { name: 'twitter:description', content: description.value },
-      { name: 'twitter:image', content: cardImage },
-      { name: 'twitter:card', content: 'summary' },
-    ],
+    meta: metaTags.value,
     link: [
       { rel: 'canonical', href: url.value },
       ...generateHreflangLinks.value,
     ],
   }))
 
-  return { meta, description }
+  return { meta, description: pageDescription }
 }

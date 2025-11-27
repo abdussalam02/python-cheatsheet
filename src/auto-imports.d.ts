@@ -34,6 +34,11 @@ declare global {
   const eagerComputed: typeof import('@vueuse/core')['eagerComputed']
   const effectScope: typeof import('vue')['effectScope']
   const extendRef: typeof import('@vueuse/core')['extendRef']
+  const generateArticleSchema: typeof import('./composables/structuredData')['generateArticleSchema']
+  const generateBreadcrumbSchema: typeof import('./composables/structuredData')['generateBreadcrumbSchema']
+  const generateOrganizationSchema: typeof import('./composables/structuredData')['generateOrganizationSchema']
+  const generateStructuredData: typeof import('./composables/structuredData')['generateStructuredData']
+  const generateWebSiteSchema: typeof import('./composables/structuredData')['generateWebSiteSchema']
   const getCurrentInstance: typeof import('vue')['getCurrentInstance']
   const getCurrentScope: typeof import('vue')['getCurrentScope']
   const h: typeof import('vue')['h']
@@ -342,6 +347,11 @@ declare module 'vue' {
     readonly eagerComputed: UnwrapRef<typeof import('@vueuse/core')['eagerComputed']>
     readonly effectScope: UnwrapRef<typeof import('vue')['effectScope']>
     readonly extendRef: UnwrapRef<typeof import('@vueuse/core')['extendRef']>
+    readonly generateArticleSchema: UnwrapRef<typeof import('./composables/structuredData')['generateArticleSchema']>
+    readonly generateBreadcrumbSchema: UnwrapRef<typeof import('./composables/structuredData')['generateBreadcrumbSchema']>
+    readonly generateOrganizationSchema: UnwrapRef<typeof import('./composables/structuredData')['generateOrganizationSchema']>
+    readonly generateStructuredData: UnwrapRef<typeof import('./composables/structuredData')['generateStructuredData']>
+    readonly generateWebSiteSchema: UnwrapRef<typeof import('./composables/structuredData')['generateWebSiteSchema']>
     readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
     readonly h: UnwrapRef<typeof import('vue')['h']>

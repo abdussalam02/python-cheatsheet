@@ -39,9 +39,6 @@ declare module 'vue' {
     BlogTitleHeader: typeof import('./components/BlogTitleHeader.vue')['default']
     BookIcon: typeof import('./components/icons/BookIcon.vue')['default']
     BugIcon: typeof import('./components/icons/BugIcon.vue')['default']
-    Dialog: typeof import('@headlessui/vue')['Dialog']
-    DialogPanel: typeof import('@headlessui/vue')['DialogPanel']
-    DialogTitle: typeof import('@headlessui/vue')['DialogTitle']
     EditIcon: typeof import('./components/icons/EditIcon.vue')['default']
     EmptySection: typeof import('./components/EmptySection.vue')['default']
     ExternalLinkIcon: typeof import('./components/icons/ExternalLinkIcon.vue')['default']
@@ -55,7 +52,6 @@ declare module 'vue' {
     ReferenceIcon: typeof import('./components/icons/ReferenceIcon.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    Switch: typeof import('@headlessui/vue')['Switch']
     Tag: typeof import('./components/ui/Tag.vue')['default']
     TheFooter: typeof import('./components/layout/TheFooter.vue')['default']
     TheNavbar: typeof import('./components/layout/TheNavbar.vue')['default']
@@ -64,8 +60,6 @@ declare module 'vue' {
     TheSidebarMobile: typeof import('./components/layout/TheSidebarMobile.vue')['default']
     TheSidebarNavigation: typeof import('./components/layout/TheSidebarNavigation.vue')['default']
     TheToc: typeof import('./components/layout/TheToc.vue')['default']
-    TransitionChild: typeof import('@headlessui/vue')['TransitionChild']
-    TransitionRoot: typeof import('@headlessui/vue')['TransitionRoot']
     WarningIcon: typeof import('./components/icons/WarningIcon.vue')['default']
   }
 }
