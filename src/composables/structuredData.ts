@@ -79,7 +79,12 @@ export function generateArticleSchema(
     : `${siteUrl}/screenshots/dark.png`
 
   const tags = meta.tags
-    ? meta.tags.split(',').map((tag) => tag.trim())
+    ? (typeof meta.tags === 'string' 
+        ? meta.tags 
+        : Array.isArray(meta.tags) 
+          ? (meta.tags as string[]).join(',')
+          : String(meta.tags)
+      ).split(',').map((tag: string) => tag.trim()).filter(Boolean)
     : []
 
   const parseDate = (dateStr: string | undefined): string | undefined => {

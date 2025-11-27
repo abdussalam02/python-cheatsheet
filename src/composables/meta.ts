@@ -12,22 +12,22 @@ interface ArticleMeta {
 function getBaseUrl(): string {
   const envBaseUrl = import.meta.env.VITE_BASE_URL || 'pythoncheatsheet.org'
   const isDev = import.meta.env.DEV || import.meta.env.MODE === 'development'
-  
-  const isLocalhost = typeof window !== 'undefined' && 
-    (window.location.hostname === 'localhost' || 
-     window.location.hostname === '127.0.0.1' ||
-     window.location.hostname.startsWith('192.168.') ||
-     window.location.hostname.includes('.local'))
-  
-  const isPreviewDomain = envBaseUrl.includes('next.') || 
-                          envBaseUrl.includes('staging.') ||
-                          envBaseUrl.includes('preview.')
-  
+
+  const isLocalhost = typeof window !== 'undefined' &&
+    (window.location.hostname === 'localhost' ||
+      window.location.hostname === '127.0.0.1' ||
+      window.location.hostname.startsWith('192.168.') ||
+      window.location.hostname.includes('.local'))
+
+  const isPreviewDomain = envBaseUrl.includes('next.') ||
+    envBaseUrl.includes('staging.') ||
+    envBaseUrl.includes('preview.')
+
   if (isDev || isLocalhost || isPreviewDomain) {
     return 'pythoncheatsheet.org'
   }
-  
-  return envBaseUrl.startsWith('http') 
+
+  return envBaseUrl.startsWith('http')
     ? envBaseUrl.replace(/^https?:\/\//, '').replace(/\/$/, '')
     : envBaseUrl.replace(/\/$/, '')
 }
@@ -143,10 +143,27 @@ export function useMeta(articleMeta?: ArticleMeta) {
 
   const keywords = computed(() => {
     if (articleMeta?.tags) {
-      return articleMeta.tags
+      if (typeof articleMeta.tags === 'string') {
+        return articleMeta.tags
+      }
+      if (Array.isArray(articleMeta.tags)) {
+        return (articleMeta.tags as string[]).join(', ')
+      }
+      return String(articleMeta.tags)
     }
     return t('meta.keywords')
   })
+
+  const parseDate = (dateStr: string | undefined): string | undefined => {
+    if (!dateStr) return undefined
+    try {
+      const date = new Date(dateStr)
+      if (isNaN(date.getTime())) return undefined
+      return date.toISOString()
+    } catch {
+      return undefined
+    }
+  }
 
   const metaTags = computed(() => {
     const tags: any[] = [
@@ -169,17 +186,22 @@ export function useMeta(articleMeta?: ArticleMeta) {
     ]
 
     if (isArticle.value && articleMeta) {
-      if (articleMeta.date) {
-        const publishedDate = new Date(articleMeta.date).toISOString()
+      const publishedDate = parseDate(articleMeta.date)
+      if (publishedDate) {
         tags.push({ property: 'article:published_time', content: publishedDate })
       }
-      if (articleMeta.updated) {
-        const modifiedDate = new Date(articleMeta.updated).toISOString()
+      const modifiedDate = parseDate(articleMeta.updated)
+      if (modifiedDate) {
         tags.push({ property: 'article:modified_time', content: modifiedDate })
       }
       if (articleMeta.tags) {
-        const tagList = articleMeta.tags.split(',').map((tag) => tag.trim())
-        tagList.forEach((tag) => {
+        const tagsValue = typeof articleMeta.tags === 'string' 
+          ? articleMeta.tags 
+          : Array.isArray(articleMeta.tags) 
+            ? (articleMeta.tags as string[]).join(',')
+            : String(articleMeta.tags)
+        const tagList = tagsValue.split(',').map((tag: string) => tag.trim()).filter(Boolean)
+        tagList.forEach((tag: string) => {
           tags.push({ property: 'article:tag', content: tag })
         })
       }
