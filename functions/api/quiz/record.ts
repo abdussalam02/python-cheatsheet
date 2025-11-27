@@ -80,6 +80,8 @@ export async function onRequestPost(context: {
           'Access-Control-Allow-Origin': '*',
           'Access-Control-Allow-Methods': 'POST, OPTIONS',
           'Access-Control-Allow-Headers': 'Content-Type',
+          // POST 请求不缓存
+          'Cache-Control': 'no-store, no-cache, must-revalidate',
         },
       }
     )
@@ -89,7 +91,10 @@ export async function onRequestPost(context: {
       JSON.stringify({ error: 'Internal server error' }),
       {
         status: 500,
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          'Cache-Control': 'no-store, no-cache, must-revalidate',
+        },
       }
     )
   }

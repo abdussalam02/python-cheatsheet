@@ -75,6 +75,8 @@ export async function onRequestGet(context: {
           'Access-Control-Allow-Origin': '*',
           'Access-Control-Allow-Methods': 'GET, OPTIONS',
           'Access-Control-Allow-Headers': 'Content-Type',
+          // 设置短缓存，因为统计数据可能会变化
+          'Cache-Control': 'public, max-age=60, s-maxage=60',
         },
       }
     )
@@ -84,7 +86,10 @@ export async function onRequestGet(context: {
       JSON.stringify({ error: 'Internal server error' }),
       {
         status: 500,
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          'Cache-Control': 'no-store, no-cache, must-revalidate',
+        },
       }
     )
   }
