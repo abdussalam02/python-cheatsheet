@@ -52,19 +52,17 @@ Hello there!\nHow are you?\nI\'m doing fine.
 
 Сырые строки в основном используются для определения <router-link to="/cheatsheet/regular-expressions">регулярных выражений</router-link>.
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-manipulating-strings-1">
+<BaseQuiz id="cheatsheet-manipulating-strings-1" correct="B">
 <template #question>
 Что делает сырая строка (с префиксом <code>r</code>) в Python?
 </template>
 
-<base-quiz-option value="A">A. Преобразует все символы в верхний регистр</base-quiz-option>
-<base-quiz-option value="B" correct>B. Обрабатывает обратные косые черты как литеральные символы, игнорируя последовательности экранирования</base-quiz-option>
-<base-quiz-option value="C">C. Удаляет все пробелы</base-quiz-option>
-<base-quiz-option value="D">D. Меняет строку на обратную</base-quiz-option>
-<base-quiz-answer value="B">Сырые строки (с префиксом <code>r</code>) обрабатывают обратные косые черты как литеральные символы, поэтому последовательности экранирования, такие как <code>\n</code>, не интерпретируются.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Преобразует все символы в верхний регистр</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Обрабатывает обратные косые черты как литеральные символы, игнорируя последовательности экранирования</BaseQuizOption>
+<BaseQuizOption value="C">C. Удаляет все пробелы</BaseQuizOption>
+<BaseQuizOption value="D">D. Меняет строку на обратную</BaseQuizOption>
+<BaseQuizAnswer>Сырые строки (с префиксом <code>r</code>) обрабатывают обратные косые черты как литеральные символы, поэтому последовательности экранирования, такие как <code>\n</code>, не интерпретируются.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Multiline Strings
 
@@ -177,19 +175,17 @@ spam[::-1]
 '!dlrow olleH'
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-manipulating-strings-2">
+<BaseQuiz id="cheatsheet-manipulating-strings-2" correct="C">
 <template #question>
 Что делает <code>spam[::-1]</code> со строкой?
 </template>
 
-<base-quiz-option value="A">A. Возвращает первый символ</base-quiz-option>
-<base-quiz-option value="B">B. Возвращает последний символ</base-quiz-option>
-<base-quiz-option value="C" correct>C. Меняет строку на обратную</base-quiz-option>
-<base-quiz-option value="D">D. Удаляет все символы</base-quiz-option>
-<base-quiz-answer value="C">Срез <code>[::-1]</code> меняет строку на обратную, проходя по всем символам в обратном порядке. Шаг <code>-1</code> означает "двигаться назад".</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Возвращает первый символ</BaseQuizOption>
+<BaseQuizOption value="B">B. Возвращает последний символ</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. Меняет строку на обратную</BaseQuizOption>
+<BaseQuizOption value="D">D. Удаляет все символы</BaseQuizOption>
+<BaseQuizAnswer>Срез <code>[::-1]</code> меняет строку на обратную, проходя по всем символам в обратном порядке. Шаг <code>-1</code> означает "двигаться назад".</BaseQuizAnswer>
+</BaseQuiz>
 
 ```python
 fizz = spam[0:5]
@@ -384,19 +380,17 @@ True
 True
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-manipulating-strings-3">
+<BaseQuiz id="cheatsheet-manipulating-strings-3" correct="A">
 <template #question>
 Что возвращает <code>startswith()</code>?
 </template>
 
-<base-quiz-option value="A" correct>A. <code>True</code>, если строка начинается с указанной подстроки, <code>False</code> в противном случае</base-quiz-option>
-<base-quiz-option value="B">B. Подстрока, соответствующая началу</base-quiz-option>
-<base-quiz-option value="C">C. Индекс, с которого начинается подстрока</base-quiz-option>
-<base-quiz-option value="D">D. Новая строка без префикса</base-quiz-option>
-<base-quiz-answer value="A">Метод <code>startswith()</code> возвращает булево значение: <code>True</code>, если строка начинается с указанной подстроки, <code>False</code> в противном случае.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. <code>True</code>, если строка начинается с указанной подстроки, <code>False</code> в противном случае</BaseQuizOption>
+<BaseQuizOption value="B">B. Подстрока, соответствующая началу</BaseQuizOption>
+<BaseQuizOption value="C">C. Индекс, с которого начинается подстрока</BaseQuizOption>
+<BaseQuizOption value="D">D. Новая строка без префикса</BaseQuizOption>
+<BaseQuizAnswer>Метод <code>startswith()</code> возвращает булево значение: <code>True</code>, если строка начинается с указанной подстроки, <code>False</code> в противном случае.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## join() and split()
 
@@ -480,19 +474,17 @@ True
 ['', 'My', '', 'name', 'is', '', 'Simon']
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-manipulating-strings-4">
+<BaseQuiz id="cheatsheet-manipulating-strings-4" correct="B">
 <template #question>
 Что возвращает <code>split()</code> при вызове на строке?
 </template>
 
-<base-quiz-option value="A">A. Строку</base-quiz-option>
-<base-quiz-option value="B" correct>B. Список строк</base-quiz-option>
-<base-quiz-option value="C">C. Кортеж строк</base-quiz-option>
-<base-quiz-option value="D">D. Словарь</base-quiz-option>
-<base-quiz-answer value="B">Метод <code>split()</code> разделяет строку на список подстрок. По умолчанию он разделяет по пробелам, но вы можете указать другой разделитель.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Строку</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Список строк</BaseQuizOption>
+<BaseQuizOption value="C">C. Кортеж строк</BaseQuizOption>
+<BaseQuizOption value="D">D. Словарь</BaseQuizOption>
+<BaseQuizAnswer>Метод <code>split()</code> разделяет строку на список подстрок. По умолчанию он разделяет по пробелам, но вы можете указать другой разделитель.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Justifying text with rjust(), ljust() and center()
 
@@ -667,19 +659,17 @@ sentence.replace("apples", "oranges")
 'I like oranges, Apples are my favorite fruit'
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-manipulating-strings-5">
+<BaseQuiz id="cheatsheet-manipulating-strings-5" correct="C">
 <template #question>
 Что возвращает метод <code>replace()</code>?
 </template>
 
-<base-quiz-option value="A">A. Изменяет исходную строку</base-quiz-option>
-<base-quiz-option value="B">B. Возвращает <code>None</code></base-quiz-option>
-<base-quiz-option value="C" correct>C. Возвращает новую строку с внесенными заменами</base-quiz-option>
-<base-quiz-option value="D">D. Возвращает список замененных строк</base-quiz-option>
-<base-quiz-answer value="C">Метод <code>replace()</code> возвращает новую строку со всеми заменами старой подстроки на новую. Исходная строка не изменяется.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Изменяет исходную строку</BaseQuizOption>
+<BaseQuizOption value="B">B. Возвращает <code>None</code></BaseQuizOption>
+<BaseQuizOption value="C" correct>C. Возвращает новую строку с внесенными заменами</BaseQuizOption>
+<BaseQuizOption value="D">D. Возвращает список замененных строк</BaseQuizOption>
+<BaseQuizAnswer>Метод <code>replace()</code> возвращает новую строку со всеми заменами старой подстроки на новую. Исходная строка не изменяется.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Relevant links
 

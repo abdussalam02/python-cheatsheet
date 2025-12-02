@@ -30,19 +30,17 @@ python3 -m venv venv
 
 これにより、現在のフォルダー内に仮想環境を含む `venv` ディレクトリが作成されます。
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-virtual-environments-1">
+<BaseQuiz id="cheatsheet-virtual-environments-1" correct="A">
 <template #question>
 <code>venv</code> を使用して仮想環境を作成するために使用されるコマンドは何ですか？
 </template>
 
-<base-quiz-option value="A" correct>A. <code>python -m venv venv</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>python create venv</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>venv create</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>python venv new</code></base-quiz-option>
-<base-quiz-answer value="A">コマンド <code>python -m venv venv</code> は仮想環境を作成します。<code>-m</code> フラグは venv モジュールを実行し、末尾の <code>venv</code> は作成するディレクトリ名です。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. <code>python -m venv venv</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>python create venv</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>venv create</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>python venv new</code></BaseQuizOption>
+<BaseQuizAnswer>コマンド <code>python -m venv venv</code> は仮想環境を作成します。<code>-m</code> フラグは venv モジュールを実行し、末尾の <code>venv</code> は作成するディレクトリ名です。</BaseQuizAnswer>
+</BaseQuiz>
 
 2. 仮想環境のアクティベート
 
@@ -60,19 +58,17 @@ venv\Scripts\activate
 
 アクティベートされると、コマンドプロンプトの先頭に `(venv)` と表示され、仮想環境がアクティブであることを示します。
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-virtual-environments-2">
+<BaseQuiz id="cheatsheet-virtual-environments-2" correct="B">
 <template #question>
 Linux/macOS で仮想環境をアクティベートするにはどうすればよいですか？
 </template>
 
-<base-quiz-option value="A">A. <code>activate venv</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>source venv/bin/activate</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>venv activate</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>python venv activate</code></base-quiz-option>
-<base-quiz-answer value="B">Linux/macOS では、<code>source venv/bin/activate</code> を使用して仮想環境をアクティベートします。Windows では <code>venv\Scripts\activate</code> を使用します。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>activate venv</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>source venv/bin/activate</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>venv activate</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>python venv activate</code></BaseQuizOption>
+<BaseQuizAnswer>Linux/macOS では、<code>source venv/bin/activate</code> を使用して仮想環境をアクティベートします。Windows では <code>venv\Scripts\activate</code> を使用します。</BaseQuizAnswer>
+</BaseQuiz>
 
 3. パッケージのインストール
 
@@ -94,19 +90,17 @@ deactivate
 
 コマンドプロンプトから `(venv)` プレフィックスが消えます。
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-virtual-environments-3">
+<BaseQuiz id="cheatsheet-virtual-environments-3" correct="A">
 <template #question>
 仮想環境を使用する主な目的は何ですか？
 </template>
 
-<base-quiz-option value="A" correct>A. プロジェクトの依存関係を分離し、ベースの Python インストールが埋め尽くされるのを避けるため</base-quiz-option>
-<base-quiz-option value="B">B. Python の実行速度を向上させるため</base-quiz-option>
-<base-quiz-option value="C">C. Python コードを暗号化するため</base-quiz-option>
-<base-quiz-option value="D">D. Python を機械語にコンパイルするため</base-quiz-option>
-<base-quiz-answer value="A">仮想環境を使用すると、カプセル化された環境で Python コードをテストし、単一のプロジェクトでのみ使用する可能性のあるライブラリでベースの Python インストールを埋め尽くすことを避けることができます。これはプロジェクトごとの依存関係の管理に役立ちます。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. プロジェクトの依存関係を分離し、ベースの Python インストールが埋め尽くされるのを避けるため</BaseQuizOption>
+<BaseQuizOption value="B">B. Python の実行速度を向上させるため</BaseQuizOption>
+<BaseQuizOption value="C">C. Python コードを暗号化するため</BaseQuizOption>
+<BaseQuizOption value="D">D. Python を機械語にコンパイルするため</BaseQuizOption>
+<BaseQuizAnswer>仮想環境を使用すると、カプセル化された環境で Python コードをテストし、単一のプロジェクトでのみ使用する可能性のあるライブラリでベースの Python インストールを埋め尽くすことを避けることができます。これはプロジェクトごとの依存関係の管理に役立ちます。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## virtualenv
 

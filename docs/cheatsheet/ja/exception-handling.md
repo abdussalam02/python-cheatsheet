@@ -71,19 +71,17 @@ divide(dividend=10, divisor=0)
 You can not divide by 0
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-exception-handling-1">
+<BaseQuiz id="cheatsheet-exception-handling-1" correct="A">
 <template #question>
 Python で例外を処理するために使用されるキーワードは何ですか？
 </template>
 
-<base-quiz-option value="A" correct>A. <code>try</code> および <code>except</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>catch</code> および <code>handle</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>error</code> および <code>rescue</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>if</code> および <code>else</code></base-quiz-option>
-<base-quiz-answer value="A">Python では、例外を発生させる可能性のあるコードを示すために<code>try</code>を、発生した特定の例外を処理するために<code>except</code>を使用します。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. <code>try</code> および <code>except</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>catch</code> および <code>handle</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>error</code> および <code>rescue</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>if</code> および <code>else</code></BaseQuizOption>
+<BaseQuizAnswer>Python では、例外を発生させる可能性のあるコードを示すために<code>try</code>を、発生した特定の例外を処理するために<code>except</code>を使用します。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 1 つの例外ブロックを使用した複数の例外の処理
 
@@ -123,19 +121,17 @@ divide(dividend=10, divisor=0)
 division by zero
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-exception-handling-2">
+<BaseQuiz id="cheatsheet-exception-handling-2" correct="B">
 <template #question>
 単一の<code>except</code>ブロックで複数の例外タイプを処理できますか？
 </template>
 
-<base-quiz-option value="A">A. いいえ、各例外タイプに対して個別の<code>except</code>ブロックを使用する必要があります</base-quiz-option>
-<base-quiz-option value="B" correct>B. はい、<code>except (Exception1, Exception2)</code>のようにタプルに入れることで可能です</base-quiz-option>
-<base-quiz-option value="C">C. はい、ただしそれらが関連している場合に限ります</base-quiz-option>
-<base-quiz-option value="D">D. いいえ、Python はこれをサポートしていません</base-quiz-option>
-<base-quiz-answer value="B">複数の例外タイプは、それらをタプルに入れることによって 1 つの<code>except</code>ブロックで処理できます：<code>except (ZeroDivisionError, TypeError) as error:</code></base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. いいえ、各例外タイプに対して個別の<code>except</code>ブロックを使用する必要があります</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. はい、<code>except (Exception1, Exception2)</code>のようにタプルに入れることで可能です</BaseQuizOption>
+<BaseQuizOption value="C">C. はい、ただしそれらが関連している場合に限ります</BaseQuizOption>
+<BaseQuizOption value="D">D. いいえ、Python はこれをサポートしていません</BaseQuizOption>
+<BaseQuizAnswer>複数の例外タイプは、それらをタプルに入れることによって 1 つの<code>except</code>ブロックで処理できます：<code>except (ZeroDivisionError, TypeError) as error:</code></BaseQuizAnswer>
+</BaseQuiz>
 
 ## 例外処理における Finally コード
 
@@ -168,19 +164,17 @@ You can not divide by 0
 Execution finished
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-exception-handling-3">
+<BaseQuiz id="cheatsheet-exception-handling-3" correct="C">
 <template #question>
 <code>finally</code>ブロックはいつ実行されますか？
 </template>
 
-<base-quiz-option value="A">A. 例外が発生した場合のみ</base-quiz-option>
-<base-quiz-option value="B">B. 例外が発生しなかった場合のみ</base-quiz-option>
-<base-quiz-option value="C" correct>C. 例外が発生したかどうかにかかわらず、常に</base-quiz-option>
-<base-quiz-option value="D">D. 決して</base-quiz-option>
-<base-quiz-answer value="C"><code>finally</code>ブロックは、例外が発生したかどうかにかかわらず、常に実行されます。結果に関係なく実行する必要があるクリーンアップコードに役立ちます。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 例外が発生した場合のみ</BaseQuizOption>
+<BaseQuizOption value="B">B. 例外が発生しなかった場合のみ</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. 例外が発生したかどうかにかかわらず、常に</BaseQuizOption>
+<BaseQuizOption value="D">D. 決して</BaseQuizOption>
+<BaseQuizAnswer><code>finally</code>ブロックは、例外が発生したかどうかにかかわらず、常に実行されます。結果に関係なく実行する必要があるクリーンアップコードに役立ちます。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## カスタム例外
 
@@ -228,19 +222,17 @@ except MyCustomException:
 My custom exception was raised
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-exception-handling-4">
+<BaseQuiz id="cheatsheet-exception-handling-4" correct="A">
 <template #question>
 Python でカスタム例外を作成するにはどうすればよいですか？
 </template>
 
-<base-quiz-option value="A" correct>A. <code>Exception</code>クラスを継承するクラスを作成する</base-quiz-option>
-<base-quiz-option value="B">B. <code>@exception</code>デコレータを使用する</base-quiz-option>
-<base-quiz-option value="C">C. <code>Exception.create()</code>を呼び出す</base-quiz-option>
-<base-quiz-option value="D">D. 特別なモジュールからインポートする</base-quiz-option>
-<base-quiz-answer value="A">カスタム例外は、基本の<code>Exception</code>クラスを継承するクラスを定義することによって作成されます。その後、組み込み例外とまったく同じように発生させたり処理したりできます。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. <code>Exception</code>クラスを継承するクラスを作成する</BaseQuizOption>
+<BaseQuizOption value="B">B. <code>@exception</code>デコレータを使用する</BaseQuizOption>
+<BaseQuizOption value="C">C. <code>Exception.create()</code>を呼び出す</BaseQuizOption>
+<BaseQuizOption value="D">D. 特別なモジュールからインポートする</BaseQuizOption>
+<BaseQuizAnswer>カスタム例外は、基本の<code>Exception</code>クラスを継承するクラスを定義することによって作成されます。その後、組み込み例外とまったく同じように発生させたり処理したりできます。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 関連リンク
 

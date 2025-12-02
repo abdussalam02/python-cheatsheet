@@ -37,19 +37,17 @@ if __name__ == "__main__":  # 파일이 직접 실행될 때만 실행됨, 가�
     add(3, 5)
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-main-1">
+<BaseQuiz id="cheatsheet-main-1" correct="B">
 <template #question>
 파이썬 파일을 스크립트로 직접 실행할 때 <code>__name__</code>의 값은 무엇입니까?
 </template>
 
-<base-quiz-option value="A">A. 파일 이름</base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>"**main**"</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>None</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>True</code></base-quiz-option>
-<base-quiz-answer value="B">파이썬 파일을 스크립트로 직접 실행하면 <code>**name**</code>은 <code>"**main**"</code>으로 설정됩니다. 파일이 모듈로 가져와지면 <code>**name**</code>은 모듈 이름으로 설정됩니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 파일 이름</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>"**main**"</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>None</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>True</code></BaseQuizOption>
+<BaseQuizAnswer>파이썬 파일을 스크립트로 직접 실행하면 <code>**name**</code>은 <code>"**main**"</code>으로 설정됩니다. 파일이 모듈로 가져와지면 <code>**name**</code>은 모듈 이름으로 설정됩니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Advantages
 
@@ -58,19 +56,17 @@ if __name__ == "__main__":  # 파일이 직접 실행될 때만 실행됨, 가�
 3. 파이썬 파일은 재사용 가능한 모듈 또는 독립 실행형 프로그램 역할을 할 수 있습니다.
 4. `if __name__ == "__main__":`은 파일이 직접 실행될 때만 특정 코드를 실행하고, 가져오기될 때는 실행하지 않도록 하는 데 사용됩니다.
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-main-2">
+<BaseQuiz id="cheatsheet-main-2" correct="A">
 <template #question>
 <code>if __name__ == "__main__":</code>을 사용하는 주된 목적은 무엇입니까?
 </template>
 
-<base-quiz-option value="A" correct>A. 파일이 직접 실행될 때만 코드를 실행하고, 가져오기될 때는 실행하지 않음</base-quiz-option>
-<base-quiz-option value="B">B. 파일이 가져와지는 것을 방지</base-quiz-option>
-<base-quiz-option value="C">C. 파일 실행 속도를 높임</base-quiz-option>
-<base-quiz-option value="D">D. 다른 모듈로부터 코드를 숨김</base-quiz-option>
-<base-quiz-answer value="A"><code>if **name** == "**main**":</code> 관용구는 파이썬 파일이 재사용 가능한 모듈과 독립 실행형 프로그램 역할을 모두 수행할 수 있도록 합니다. 이 블록 안의 코드는 파일이 직접 실행될 때만 실행되며, 가져와질 때는 실행되지 않습니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. 파일이 직접 실행될 때만 코드를 실행하고, 가져오기될 때는 실행하지 않음</BaseQuizOption>
+<BaseQuizOption value="B">B. 파일이 가져와지는 것을 방지</BaseQuizOption>
+<BaseQuizOption value="C">C. 파일 실행 속도를 높임</BaseQuizOption>
+<BaseQuizOption value="D">D. 다른 모듈로부터 코드를 숨김</BaseQuizOption>
+<BaseQuizAnswer><code>if **name** == "**main**":</code> 관용구는 파이썬 파일이 재사용 가능한 모듈과 독립 실행형 프로그램 역할을 모두 수행할 수 있도록 합니다. 이 블록 안의 코드는 파일이 직접 실행될 때만 실행되며, 가져와질 때는 실행되지 않습니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Relevant links
 

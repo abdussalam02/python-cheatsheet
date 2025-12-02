@@ -24,7 +24,6 @@ declare module 'vue' {
     BaseQuiz: typeof import('./components/ui/quiz/BaseQuiz.vue')['default']
     BaseQuizAnswer: typeof import('./components/ui/quiz/BaseQuizAnswer.vue')['default']
     BaseQuizOption: typeof import('./components/ui/quiz/BaseQuizOption.vue')['default']
-    BaseQuizQuestion: typeof import('./components/ui/quiz/BaseQuizQuestion.vue')['default']
     BaseReaderMode: typeof import('./components/ui/BaseReaderMode.vue')['default']
     BaseTable: typeof import('./components/ui/table/BaseTable.vue')['default']
     BaseTableItem: typeof import('./components/ui/table/BaseTableItem.vue')['default']

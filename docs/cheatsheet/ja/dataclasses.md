@@ -88,19 +88,17 @@ obj.price
 0.0
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-dataclasses-1">
+<BaseQuiz id="cheatsheet-dataclasses-1" correct="B">
 <template #question>
 dataclass では、デフォルト値を持つフィールドはどこに配置する必要がありますか？
 </template>
 
-<base-quiz-option value="A">A. デフォルト値を持たないフィールドの前</base-quiz-option>
-<base-quiz-option value="B" correct>B. デフォルト値を持たないフィールドの後</base-quiz-option>
-<base-quiz-option value="C">C. どこでもよい</base-quiz-option>
-<base-quiz-option value="D">D. 別々のセクション</base-quiz-option>
-<base-quiz-answer value="B">dataclass では、デフォルト値を持つフィールドはデフォルト値を持たないフィールドの後に配置する必要があります。これは、Python が生成される <code>**init**</code> メソッドの必須パラメーターとオプションパラメーターの順序を知る必要があるためです。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. デフォルト値を持たないフィールドの前</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. デフォルト値を持たないフィールドの後</BaseQuizOption>
+<BaseQuizOption value="C">C. どこでもよい</BaseQuizOption>
+<BaseQuizOption value="D">D. 別々のセクション</BaseQuizOption>
+<BaseQuizAnswer>dataclass では、デフォルト値を持つフィールドはデフォルト値を持たないフィールドの後に配置する必要があります。これは、Python が生成される <code>**init**</code> メソッドの必須パラメーターとオプションパラメーターの順序を知る必要があるためです。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 型ヒント (Type hints)
 

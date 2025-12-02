@@ -52,19 +52,17 @@ Hello there!\nHow are you?\nI\'m doing fine.
 
 Raw Strings werden hauptsächlich für die Definition von <router-link to="/cheatsheet/regular-expressions">Regulären Ausdrücken</router-link> verwendet.
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-manipulating-strings-1">
+<BaseQuiz id="cheatsheet-manipulating-strings-1" correct="B">
 <template #question>
 Was bewirkt ein Raw String (mit <code>r</code> präfixiert) in Python?
 </template>
 
-<base-quiz-option value="A">A. Wandelt alle Zeichen in Großbuchstaben um</base-quiz-option>
-<base-quiz-option value="B" correct>B. Behandelt Backslashes als literale Zeichen und ignoriert Escape-Sequenzen</base-quiz-option>
-<base-quiz-option value="C">C. Entfernt alle Leerzeichen</base-quiz-option>
-<base-quiz-option value="D">D. Kehrt die Zeichenkette um</base-quiz-option>
-<base-quiz-answer value="B">Raw Strings (mit <code>r</code> präfixiert) behandeln Backslashes als literale Zeichen, sodass Escape-Sequenzen wie <code>\n</code> nicht interpretiert werden.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Wandelt alle Zeichen in Großbuchstaben um</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Behandelt Backslashes als literale Zeichen und ignoriert Escape-Sequenzen</BaseQuizOption>
+<BaseQuizOption value="C">C. Entfernt alle Leerzeichen</BaseQuizOption>
+<BaseQuizOption value="D">D. Kehrt die Zeichenkette um</BaseQuizOption>
+<BaseQuizAnswer>Raw Strings (mit <code>r</code> präfixiert) behandeln Backslashes als literale Zeichen, sodass Escape-Sequenzen wie <code>\n</code> nicht interpretiert werden.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Mehrzeilige Zeichenketten
 
@@ -177,19 +175,17 @@ spam[::-1]
 '!dlrow olleH'
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-manipulating-strings-2">
+<BaseQuiz id="cheatsheet-manipulating-strings-2" correct="C">
 <template #question>
 Was bewirkt <code>spam[::-1]</code> mit einer Zeichenkette?
 </template>
 
-<base-quiz-option value="A">A. Gibt das erste Zeichen zurück</base-quiz-option>
-<base-quiz-option value="B">B. Gibt das letzte Zeichen zurück</base-quiz-option>
-<base-quiz-option value="C" correct>C. Kehrt die Zeichenkette um</base-quiz-option>
-<base-quiz-option value="D">D. Entfernt alle Zeichen</base-quiz-option>
-<base-quiz-answer value="C">Der Slice <code>[::-1]</code> kehrt eine Zeichenkette um, indem er rückwärts durch alle Zeichen geht. Der Schrittwert <code>-1</code> bedeutet "gehe rückwärts".</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Gibt das erste Zeichen zurück</BaseQuizOption>
+<BaseQuizOption value="B">B. Gibt das letzte Zeichen zurück</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. Kehrt die Zeichenkette um</BaseQuizOption>
+<BaseQuizOption value="D">D. Entfernt alle Zeichen</BaseQuizOption>
+<BaseQuizAnswer>Der Slice <code>[::-1]</code> kehrt eine Zeichenkette um, indem er rückwärts durch alle Zeichen geht. Der Schrittwert <code>-1</code> bedeutet "gehe rückwärts".</BaseQuizAnswer>
+</BaseQuiz>
 
 ```python
 fizz = spam[0:5]
@@ -384,19 +380,17 @@ True
 True
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-manipulating-strings-3">
+<BaseQuiz id="cheatsheet-manipulating-strings-3" correct="A">
 <template #question>
 Was gibt <code>startswith()</code> zurück?
 </template>
 
-<base-quiz-option value="A" correct>A. <code>True</code>, wenn die Zeichenkette mit dem angegebenen Teilstring beginnt, andernfalls <code>False</code></base-quiz-option>
-<base-quiz-option value="B">B. Den Teilstring, der übereinstimmt</base-quiz-option>
-<base-quiz-option value="C">C. Den Index, an dem der Teilstring beginnt</base-quiz-option>
-<base-quiz-option value="D">D. Eine neue Zeichenkette ohne das Präfix</base-quiz-option>
-<base-quiz-answer value="A">Die Methode <code>startswith()</code> gibt einen booleschen Wert zurück: <code>True</code>, wenn die Zeichenkette mit dem angegebenen Teilstring beginnt, andernfalls <code>False</code>.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. <code>True</code>, wenn die Zeichenkette mit dem angegebenen Teilstring beginnt, andernfalls <code>False</code></BaseQuizOption>
+<BaseQuizOption value="B">B. Den Teilstring, der übereinstimmt</BaseQuizOption>
+<BaseQuizOption value="C">C. Den Index, an dem der Teilstring beginnt</BaseQuizOption>
+<BaseQuizOption value="D">D. Eine neue Zeichenkette ohne das Präfix</BaseQuizOption>
+<BaseQuizAnswer>Die Methode <code>startswith()</code> gibt einen booleschen Wert zurück: <code>True</code>, wenn die Zeichenkette mit dem angegebenen Teilstring beginnt, andernfalls <code>False</code>.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## join() und split()
 
@@ -480,19 +474,17 @@ Die Methode `split()` teilt eine `string` in eine `list` auf. Standardmäßig ve
 ['', 'My', '', 'name', 'is', '', 'Simon']
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-manipulating-strings-4">
+<BaseQuiz id="cheatsheet-manipulating-strings-4" correct="B">
 <template #question>
 Was gibt <code>split()</code> zurück, wenn es auf eine Zeichenkette angewendet wird?
 </template>
 
-<base-quiz-option value="A">A. Eine Zeichenkette</base-quiz-option>
-<base-quiz-option value="B" correct>B. Eine Liste von Zeichenketten</base-quiz-option>
-<base-quiz-option value="C">C. Ein Tupel von Zeichenketten</base-quiz-option>
-<base-quiz-option value="D">D. Ein Dictionary</base-quiz-option>
-<base-quiz-answer value="B">Die Methode <code>split()</code> teilt eine Zeichenkette in eine Liste von Teilzeichenketten auf. Standardmäßig wird nach Leerzeichen geteilt, aber Sie können einen anderen Trennwert angeben.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Eine Zeichenkette</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Eine Liste von Zeichenketten</BaseQuizOption>
+<BaseQuizOption value="C">C. Ein Tupel von Zeichenketten</BaseQuizOption>
+<BaseQuizOption value="D">D. Ein Dictionary</BaseQuizOption>
+<BaseQuizAnswer>Die Methode <code>split()</code> teilt eine Zeichenkette in eine Liste von Teilzeichenketten auf. Standardmäßig wird nach Leerzeichen geteilt, aber Sie können einen anderen Trennwert angeben.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Textausrichtung mit rjust(), ljust() und center()
 
@@ -667,19 +659,17 @@ sentence.replace("apples", "oranges")
 'I like oranges, Apples are my favorite fruit'
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-manipulating-strings-5">
+<BaseQuiz id="cheatsheet-manipulating-strings-5" correct="C">
 <template #question>
 Was gibt die <code>replace()</code> Methode zurück?
 </template>
 
-<base-quiz-option value="A">A. Modifiziert die ursprüngliche Zeichenkette</base-quiz-option>
-<base-quiz-option value="B">B. Gibt <code>None</code> zurück</base-quiz-option>
-<base-quiz-option value="C" correct>C. Gibt eine neue Zeichenkette mit den vorgenommenen Ersetzungen zurück</base-quiz-option>
-<base-quiz-option value="D">D. Gibt eine Liste der ersetzten Zeichenketten zurück</base-quiz-option>
-<base-quiz-answer value="C">Die Methode <code>replace()</code> gibt eine neue Zeichenkette zurück, in der alle Vorkommen des alten Teilstrings durch den neuen Teilstring ersetzt wurden. Die ursprüngliche Zeichenkette wird nicht geändert.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Modifiziert die ursprüngliche Zeichenkette</BaseQuizOption>
+<BaseQuizOption value="B">B. Gibt <code>None</code> zurück</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. Gibt eine neue Zeichenkette mit den vorgenommenen Ersetzungen zurück</BaseQuizOption>
+<BaseQuizOption value="D">D. Gibt eine Liste der ersetzten Zeichenketten zurück</BaseQuizOption>
+<BaseQuizAnswer>Die Methode <code>replace()</code> gibt eine neue Zeichenkette zurück, in der alle Vorkommen des alten Teilstrings durch den neuen Teilstring ersetzt wurden. Die ursprüngliche Zeichenkette wird nicht geändert.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Relevante Links
 

@@ -69,19 +69,17 @@ some_function('arg1', 'arg2', 'arg3')
 Arguments passed: ('arg1', 'arg2', 'arg3') as <class 'tuple'>
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-args-and-kwargs-1">
+<BaseQuiz id="cheatsheet-args-and-kwargs-1" correct="B">
 <template #question>
 <code>*args</code> は引数をどのデータ型に収集しますか？
 </template>
 
-<base-quiz-option value="A">A. リスト</base-quiz-option>
-<base-quiz-option value="B" correct>B. タプル</base-quiz-option>
-<base-quiz-option value="C">C. 辞書</base-quiz-option>
-<base-quiz-option value="D">D. セット</base-quiz-option>
-<base-quiz-answer value="B"><code>\*args</code> パラメータは、位置引数をタプルに収集します。これにより、関数は任意の数の位置引数を受け入れることができます。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. リスト</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. タプル</BaseQuizOption>
+<BaseQuizOption value="C">C. 辞書</BaseQuizOption>
+<BaseQuizOption value="D">D. セット</BaseQuizOption>
+<BaseQuizAnswer><code>\*args</code> パラメータは、位置引数をタプルに収集します。これにより、関数は任意の数の位置引数を受け入れることができます。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## kwargs
 
@@ -100,19 +98,17 @@ some_function(key1='arg1', key2='arg2')
 keywords: {'key1': 'arg1', 'key2': 'arg2'} as <class 'dict'>
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-args-and-kwargs-2">
+<BaseQuiz id="cheatsheet-args-and-kwargs-2" correct="C">
 <template #question>
 <code>**kwargs</code> は引数をどのデータ型に収集しますか？
 </template>
 
-<base-quiz-option value="A">A. リスト</base-quiz-option>
-<base-quiz-option value="B">B. タプル</base-quiz-option>
-<base-quiz-option value="C" correct>C. 辞書</base-quiz-option>
-<base-quiz-option value="D">D. セット</base-quiz-option>
-<base-quiz-answer value="C"><code>\*\*kwargs</code> パラメータは、キーワード引数を辞書に収集します。これにより、関数は任意の数のキーワード引数を受け入れることができます。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. リスト</BaseQuizOption>
+<BaseQuizOption value="B">B. タプル</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. 辞書</BaseQuizOption>
+<BaseQuizOption value="D">D. セット</BaseQuizOption>
+<BaseQuizAnswer><code>\*\*kwargs</code> パラメータは、キーワード引数を辞書に収集します。これにより、関数は任意の数のキーワード引数を受け入れることができます。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 関連リンク
 

@@ -52,19 +52,17 @@ Hello there!\nHow are you?\nI\'m doing fine.
 
 原始字符串主要用于 <router-link to="/cheatsheet/regular-expressions">正则表达式</router-link> 定义。
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-manipulating-strings-1">
+<BaseQuiz id="cheatsheet-manipulating-strings-1" correct="B">
 <template #question>
 Python 中以 <code>r</code> 为前缀的原始字符串的作用是什么？
 </template>
 
-<base-quiz-option value="A">A. 将所有字符转换为大写</base-quiz-option>
-<base-quiz-option value="B" correct>B. 将反斜杠视为字面字符，忽略转义序列</base-quiz-option>
-<base-quiz-option value="C">C. 移除所有空格</base-quiz-option>
-<base-quiz-option value="D">D. 反转字符串</base-quiz-option>
-<base-quiz-answer value="B">以 <code>r</code> 为前缀的原始字符串将反斜杠视为字面字符，因此 <code>\n</code> 等转义序列不会被解释。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 将所有字符转换为大写</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. 将反斜杠视为字面字符，忽略转义序列</BaseQuizOption>
+<BaseQuizOption value="C">C. 移除所有空格</BaseQuizOption>
+<BaseQuizOption value="D">D. 反转字符串</BaseQuizOption>
+<BaseQuizAnswer>以 <code>r</code> 为前缀的原始字符串将反斜杠视为字面字符，因此 <code>\n</code> 等转义序列不会被解释。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 多行字符串
 
@@ -177,19 +175,17 @@ spam[::-1]
 '!dlrow olleH'
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-manipulating-strings-2">
+<BaseQuiz id="cheatsheet-manipulating-strings-2" correct="C">
 <template #question>
 <code>spam[::-1]</code> 对字符串做什么？
 </template>
 
-<base-quiz-option value="A">A. 返回第一个字符</base-quiz-option>
-<base-quiz-option value="B">B. 返回最后一个字符</base-quiz-option>
-<base-quiz-option value="C" correct>C. 反转字符串</base-quiz-option>
-<base-quiz-option value="D">D. 移除所有字符</base-quiz-option>
-<base-quiz-answer value="C">切片 <code>[::-1]</code> 通过向后遍历所有字符来反转字符串。<code>-1</code> 的步长值表示“向后移动”。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 返回第一个字符</BaseQuizOption>
+<BaseQuizOption value="B">B. 返回最后一个字符</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. 反转字符串</BaseQuizOption>
+<BaseQuizOption value="D">D. 移除所有字符</BaseQuizOption>
+<BaseQuizAnswer>切片 <code>[::-1]</code> 通过向后遍历所有字符来反转字符串。<code>-1</code> 的步长值表示“向后移动”。</BaseQuizAnswer>
+</BaseQuiz>
 
 ```python
 fizz = spam[0:5]
@@ -384,19 +380,17 @@ True
 True
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-manipulating-strings-3">
+<BaseQuiz id="cheatsheet-manipulating-strings-3" correct="A">
 <template #question>
 <code>startswith()</code> 返回什么？
 </template>
 
-<base-quiz-option value="A" correct>A. 如果字符串以指定的子字符串开头，则返回 <code>True</code>，否则返回 <code>False</code></base-quiz-option>
-<base-quiz-option value="B">B. 匹配开头的子字符串</base-quiz-option>
-<base-quiz-option value="C">C. 子字符串开始的索引</base-quiz-option>
-<base-quiz-option value="D">D. 一个不带前缀的新字符串</base-quiz-option>
-<base-quiz-answer value="A"><code>startswith()</code> 方法返回一个布尔值：如果字符串以指定的子字符串开头，则返回 <code>True</code>，否则返回 <code>False</code>。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. 如果字符串以指定的子字符串开头，则返回 <code>True</code>，否则返回 <code>False</code></BaseQuizOption>
+<BaseQuizOption value="B">B. 匹配开头的子字符串</BaseQuizOption>
+<BaseQuizOption value="C">C. 子字符串开始的索引</BaseQuizOption>
+<BaseQuizOption value="D">D. 一个不带前缀的新字符串</BaseQuizOption>
+<BaseQuizAnswer><code>startswith()</code> 方法返回一个布尔值：如果字符串以指定的子字符串开头，则返回 <code>True</code>，否则返回 <code>False</code>。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## join() 和 split()
 
@@ -480,19 +474,17 @@ True
 ['', 'My', '', 'name', 'is', '', 'Simon']
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-manipulating-strings-4">
+<BaseQuiz id="cheatsheet-manipulating-strings-4" correct="B">
 <template #question>
 对字符串调用 <code>split()</code> 会返回什么？
 </template>
 
-<base-quiz-option value="A">A. 一个字符串</base-quiz-option>
-<base-quiz-option value="B" correct>B. 一个字符串列表</base-quiz-option>
-<base-quiz-option value="C">C. 一个字符串元组</base-quiz-option>
-<base-quiz-option value="D">D. 一个字典</base-quiz-option>
-<base-quiz-answer value="B"><code>split()</code> 方法将一个字符串分割成一个子字符串列表。默认情况下，它按空格分割，但您可以指定不同的分隔符。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 一个字符串</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. 一个字符串列表</BaseQuizOption>
+<BaseQuizOption value="C">C. 一个字符串元组</BaseQuizOption>
+<BaseQuizOption value="D">D. 一个字典</BaseQuizOption>
+<BaseQuizAnswer><code>split()</code> 方法将一个字符串分割成一个子字符串列表。默认情况下，它按空格分割，但您可以指定不同的分隔符。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 使用 rjust(), ljust() 和 center() 进行文本对齐
 
@@ -667,19 +659,17 @@ sentence.replace("apples", "oranges")
 'I like oranges, Apples are my favorite fruit'
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-manipulating-strings-5">
+<BaseQuiz id="cheatsheet-manipulating-strings-5" correct="C">
 <template #question>
 <code>replace()</code> 方法返回什么？
 </template>
 
-<base-quiz-option value="A">A. 修改原始字符串</base-quiz-option>
-<base-quiz-option value="B">B. 返回 <code>None</code></base-quiz-option>
-<base-quiz-option value="C" correct>C. 返回一个已进行替换的新字符串</base-quiz-option>
-<base-quiz-option value="D">D. 返回一个被替换字符串的列表</base-quiz-option>
-<base-quiz-answer value="C"><code>replace()</code> 方法返回一个新字符串，其中旧子字符串的所有出现都替换为新子字符串。原始字符串不会被修改。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 修改原始字符串</BaseQuizOption>
+<BaseQuizOption value="B">B. 返回 <code>None</code></BaseQuizOption>
+<BaseQuizOption value="C" correct>C. 返回一个已进行替换的新字符串</BaseQuizOption>
+<BaseQuizOption value="D">D. 返回一个被替换字符串的列表</BaseQuizOption>
+<BaseQuizAnswer><code>replace()</code> 方法返回一个新字符串，其中旧子字符串的所有出现都替换为新子字符串。原始字符串不会被修改。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 相关链接
 

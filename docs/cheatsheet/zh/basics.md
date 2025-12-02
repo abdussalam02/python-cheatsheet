@@ -97,8 +97,7 @@ Python 基础知识概述
 16.0
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-basics-1">
+<BaseQuiz id="cheatsheet-basics-1" correct="A">
 <template #question>
 这个 Python 表达式的结果是什么？
 
@@ -108,13 +107,12 @@ Python 基础知识概述
 
 </template>
 
-<base-quiz-option value="A" correct>A. 10</base-quiz-option>
-<base-quiz-option value="B">B. 18</base-quiz-option>
-<base-quiz-option value="C">C. 12</base-quiz-option>
-<base-quiz-option value="D">D. 20</base-quiz-option>
-<base-quiz-answer value="A">乘法优先级高于加法，所以这被评估为：4 + (2 \* 3) = 4 + 6 = 10</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. 10</BaseQuizOption>
+<BaseQuizOption value="B">B. 18</BaseQuizOption>
+<BaseQuizOption value="C">C. 12</BaseQuizOption>
+<BaseQuizOption value="D">D. 20</BaseQuizOption>
+<BaseQuizAnswer>乘法优先级高于加法，所以这被评估为：4 + (2 \* 3) = 4 + 6 = 10</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 增强赋值运算符
 
@@ -163,8 +161,7 @@ my_list
 ['item', 'item', 'item']
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-basics-2">
+<BaseQuiz id="cheatsheet-basics-2" correct="B">
 <template #question>
 执行此代码后 <code>x</code> 的值是多少？
 
@@ -175,13 +172,12 @@ x += 3
 
 </template>
 
-<base-quiz-option value="A">A. 3</base-quiz-option>
-<base-quiz-option value="B" correct>B. 8</base-quiz-option>
-<base-quiz-option value="C">C. 5</base-quiz-option>
-<base-quiz-option value="D">D. 15</base-quiz-option>
-<base-quiz-answer value="B">增强赋值运算符 <code>+=</code> 等同于 <code>x = x + 3</code>。所以 <code>x</code> 开始是 5，然后变为 5 + 3 = 8。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 3</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. 8</BaseQuizOption>
+<BaseQuizOption value="C">C. 5</BaseQuizOption>
+<BaseQuizOption value="D">D. 15</BaseQuizOption>
+<BaseQuizAnswer>增强赋值运算符 <code>+=</code> 等同于 <code>x = x + 3</code>。所以 <code>x</code> 开始是 5，然后变为 5 + 3 = 8。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 海象运算符 (Walrus Operator)
 
@@ -340,19 +336,17 @@ my_var_2 = 'Hello'
 _spam = 'Hello'
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-basics-3">
+<BaseQuiz id="cheatsheet-basics-3" correct="C">
 <template #question>
 在 Python 基础知识中，以下哪个是有效的变量名？
 </template>
 
-<base-quiz-option value="A">A. <code>3value</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>user-name</code></base-quiz-option>
-<base-quiz-option value="C" correct>C. <code>user_name</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>for</code></base-quiz-option>
-<base-quiz-answer value="C"><code>user_name</code> 是一个有效的变量名，因为它只使用字母、数字和下划线，并且不以数字开头。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>3value</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>user-name</code></BaseQuizOption>
+<BaseQuizOption value="C" correct>C. <code>user_name</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>for</code></BaseQuizOption>
+<BaseQuizAnswer><code>user_name</code> 是一个有效的变量名，因为它只使用字母、数字和下划线，并且不以数字开头。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 注释
 
@@ -479,19 +473,17 @@ What is your name? Martha
 Hi, Martha
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-basics-4">
+<BaseQuiz id="cheatsheet-basics-4" correct="B">
 <template #question>
 在 Python 基础知识中，`input()` 返回什么类型？
 </template>
 
-<base-quiz-option value="A">A. int</base-quiz-option>
-<base-quiz-option value="B" correct>B. str</base-quiz-option>
-<base-quiz-option value="C">C. float</base-quiz-option>
-<base-quiz-option value="D">D. 取决于用户输入</base-quiz-option>
-<base-quiz-answer value="B"><code>input()</code> 函数总是返回一个字符串，无论用户输入什么。如果需要，你需要将其转换为其他类型。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. int</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. str</BaseQuizOption>
+<BaseQuizOption value="C">C. float</BaseQuizOption>
+<BaseQuizOption value="D">D. 取决于用户输入</BaseQuizOption>
+<BaseQuizAnswer><code>input()</code> 函数总是返回一个字符串，无论用户输入什么。如果需要，你需要将其转换为其他类型。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## len() 函数
 
@@ -588,8 +580,7 @@ float('3.14')  # 返回 3.14
 3.14
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-basics-5">
+<BaseQuiz id="cheatsheet-basics-5" correct="C">
 <template #question>
 这段 Python 代码的结果是什么？
 
@@ -600,13 +591,12 @@ type(result)
 
 </template>
 
-<base-quiz-option value="A">A. <code>str</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>float</code></base-quiz-option>
-<base-quiz-option value="C" correct>C. <code>int</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>NoneType</code></base-quiz-option>
-<base-quiz-answer value="C"><code>int()</code> 函数将字符串转换为整数。因此 <code>int('42')</code> 返回整数 <code>42</code>，而 <code>type(42)</code> 返回 <code>int</code>。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>str</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>float</code></BaseQuizOption>
+<BaseQuizOption value="C" correct>C. <code>int</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>NoneType</code></BaseQuizOption>
+<BaseQuizAnswer><code>int()</code> 函数将字符串转换为整数。因此 <code>int('42')</code> 返回整数 <code>42</code>，而 <code>type(42)</code> 返回 <code>int</code>。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 相关链接
 

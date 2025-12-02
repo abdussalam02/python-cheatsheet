@@ -58,19 +58,17 @@ usr/bin/spam
 
 Обратите внимание, что разделитель путей отличается между Windows и операционными системами на базе Unix, поэтому вам следует использовать `pathlib` вместо конкатенации строк для объединения путей.
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-file-directory-path-1">
+<BaseQuiz id="cheatsheet-file-directory-path-1" correct="B">
 <template #question>
 Какой правильный способ объединить пути с помощью pathlib в Python?
 </template>
 
-<base-quiz-option value="A">A. <code>Path('usr') + 'bin' + 'spam'</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>Path('usr') / 'bin' / 'spam'</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>Path('usr').join('bin').join('spam')</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>Path('usr/bin/spam')</code></base-quiz-option>
-<base-quiz-answer value="B">Оператор <code>/</code> является рекомендуемым способом объединения путей с помощью pathlib. Он работает кроссплатформенно и более читабелен, чем конкатенация строк.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>Path('usr') + 'bin' + 'spam'</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>Path('usr') / 'bin' / 'spam'</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>Path('usr').join('bin').join('spam')</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>Path('usr/bin/spam')</code></BaseQuizOption>
+<BaseQuizAnswer>Оператор <code>/</code> является рекомендуемым способом объединения путей с помощью pathlib. Он работает кроссплатформенно и более читабелен, чем конкатенация строк.</BaseQuizAnswer>
+</BaseQuiz>
 
 Объединение путей полезно, если вам нужно создать разные пути к файлам в одном и том же каталоге.
 
@@ -199,19 +197,17 @@ Path('..').is_absolute()
 False
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-file-directory-path-2">
+<BaseQuiz id="cheatsheet-file-directory-path-2" correct="A">
 <template #question>
 Что вернет <code>Path('/').is_absolute()</code>?
 </template>
 
-<base-quiz-option value="A" correct>A. <code>True</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>False</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>None</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>'/'</code></base-quiz-option>
-<base-quiz-answer value="A">Метод <code>is_absolute()</code> возвращает <code>True</code> для абсолютных путей (тех, которые начинаются с <code>/</code> в Unix или буквы диска в Windows).</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. <code>True</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>False</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>None</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>'/'</code></BaseQuizOption>
+<BaseQuizAnswer>Метод <code>is_absolute()</code> возвращает <code>True</code> для абсолютных путей (тех, которые начинаются с <code>/</code> в Unix или буквы диска в Windows).</BaseQuizAnswer>
+</BaseQuiz>
 
 Вы можете извлечь абсолютный путь с помощью `pathlib`:
 
@@ -315,19 +311,17 @@ Path('nonexistentfile').is_file()
 False
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-file-directory-path-3">
+<BaseQuiz id="cheatsheet-file-directory-path-3" correct="C">
 <template #question>
 Что вернет <code>Path('setup.py').is_file()</code>, если setup.py существует?
 </template>
 
-<base-quiz-option value="A">A. <code>'setup.py'</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>False</code></base-quiz-option>
-<base-quiz-option value="C" correct>C. <code>True</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>None</code></base-quiz-option>
-<base-quiz-answer value="C">Метод <code>is_file()</code> возвращает <code>True</code>, если путь существует и является файлом, и <code>False</code> в противном случае.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>'setup.py'</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>False</code></BaseQuizOption>
+<BaseQuizOption value="C" correct>C. <code>True</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>None</code></BaseQuizOption>
+<BaseQuizAnswer>Метод <code>is_file()</code> возвращает <code>True</code>, если путь существует и является файлом, и <code>False</code> в противном случае.</BaseQuizAnswer>
+</BaseQuiz>
 
 ### Проверка, является ли путь каталогом
 
@@ -458,19 +452,17 @@ shutil.copy('/tmp/eggs.txt', '/tmp/delicious/eggs2.txt')
 /tmp/delicious/eggs2.txt
 ```
 
-<base-quiz>
-<base-quiz-question correct="D" id="cheatsheet-file-directory-path-4">
+<BaseQuiz id="cheatsheet-file-directory-path-4" correct="D">
 <template #question>
 Какую функцию следует использовать для копирования всего дерева каталогов, включая все подкаталоги и файлы?
 </template>
 
-<base-quiz-option value="A">A. <code>shutil.copy()</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>Path.copy()</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>os.copy()</code></base-quiz-option>
-<base-quiz-option value="D" correct>D. <code>shutil.copytree()</code></base-quiz-option>
-<base-quiz-answer value="D">Функция <code>shutil.copytree()</code> рекурсивно копирует все дерево каталогов, в то время как <code>shutil.copy()</code> копирует только один файл.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>shutil.copy()</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>Path.copy()</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>os.copy()</code></BaseQuizOption>
+<BaseQuizOption value="D" correct>D. <code>shutil.copytree()</code></BaseQuizOption>
+<BaseQuizAnswer>Функция <code>shutil.copytree()</code> рекурсивно копирует все дерево каталогов, в то время как <code>shutil.copy()</code> копирует только один файл.</BaseQuizAnswer>
+</BaseQuiz>
 
 В то время как `shutil.copy()` скопирует один файл, `shutil.copytree()` скопирует всю папку и каждый содержащийся в ней каталог и файл:
 
@@ -522,19 +514,17 @@ shutil.move('/tmp/bacon.txt', '/tmp/eggs')
 - Вызов `Path.rmdir()` удалит папку по указанному пути. Эта папка должна быть пуста от каких-либо файлов или папок.
 - Вызов `shutil.rmtree(path)` удалит папку по указанному пути, а также все содержащиеся в ней файлы и папки.
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-file-directory-path-5">
+<BaseQuiz id="cheatsheet-file-directory-path-5" correct="B">
 <template #question>
 Какой метод может удалить непустой каталог и все его содержимое?
 </template>
 
-<base-quiz-option value="A">A. <code>Path.rmdir()</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>shutil.rmtree()</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>Path.unlink()</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>os.remove()</code></base-quiz-option>
-<base-quiz-answer value="B">Функция <code>shutil.rmtree()</code> может рекурсивно удалять каталог и все его содержимое. <code>Path.rmdir()</code> работает только с пустыми каталогами.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>Path.rmdir()</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>shutil.rmtree()</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>Path.unlink()</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>os.remove()</code></BaseQuizOption>
+<BaseQuizAnswer>Функция <code>shutil.rmtree()</code> может рекурсивно удалять каталог и все его содержимое. <code>Path.rmdir()</code> работает только с пустыми каталогами.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Обход дерева каталогов
 

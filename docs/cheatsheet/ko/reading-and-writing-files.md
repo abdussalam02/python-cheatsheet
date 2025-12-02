@@ -32,19 +32,17 @@ hello_content
 'Hello World!'
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-reading-and-writing-files-1">
+<BaseQuiz id="cheatsheet-reading-and-writing-files-1" correct="A">
 <template #question>
 파일을 열 때 <code>with</code> 문을 사용하는 주된 이점은 무엇입니까?
 </template>
 
-<base-quiz-option value="A" correct>A. 오류가 발생하더라도 작업이 완료되면 파일이 자동으로 닫힙니다</base-quiz-option>
-<base-quiz-option value="B">B. 파일 열기가 더 빠릅니다</base-quiz-option>
-<base-quiz-option value="C">C. 파일을 읽기 및 쓰기 모드로 동시에 열 수 있습니다</base-quiz-option>
-<base-quiz-option value="D">D. 파일이 자동으로 압축됩니다</base-quiz-option>
-<base-quiz-answer value="A"><code>with</code> 문은 예외가 발생하더라도 블록을 벗어날 때 파일이 자동으로 닫히도록 보장합니다. 이는 리소스를 적절하게 관리하는 데 도움이 됩니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. 오류가 발생하더라도 작업이 완료되면 파일이 자동으로 닫힙니다</BaseQuizOption>
+<BaseQuizOption value="B">B. 파일 열기가 더 빠릅니다</BaseQuizOption>
+<BaseQuizOption value="C">C. 파일을 읽기 및 쓰기 모드로 동시에 열 수 있습니다</BaseQuizOption>
+<BaseQuizOption value="D">D. 파일이 자동으로 압축됩니다</BaseQuizOption>
+<BaseQuizAnswer><code>with</code> 문은 예외가 발생하더라도 블록을 벗어날 때 파일이 자동으로 닫히도록 보장합니다. 이는 리소스를 적절하게 관리하는 데 도움이 됩니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 또는 _readlines()_ 메서드를 사용하여 파일에서 문자열 값 목록을 가져올 수 있으며, 텍스트의 각 줄에 대해 하나의 문자열이 포함됩니다.
 
@@ -111,19 +109,17 @@ Hello world!
 Bacon is not a vegetable.
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-reading-and-writing-files-2">
+<BaseQuiz id="cheatsheet-reading-and-writing-files-2" correct="B">
 <template #question>
 <code>'w'</code> 모드로 파일을 여는 것과 <code>'a'</code> 모드로 파일을 여는 것의 차이점은 무엇입니까?
 </template>
 
-<base-quiz-option value="A">A. <code>'w'</code>는 읽기용이고, <code>'a'</code>는 쓰기용입니다</base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>'w'</code>는 파일을 덮어쓰고, <code>'a'</code>는 파일에 추가합니다</base-quiz-option>
-<base-quiz-option value="C">C. <code>'w'</code>는 Windows 용이고, <code>'a'</code>는 Apple 용입니다</base-quiz-option>
-<base-quiz-option value="D">D. 차이점이 없습니다</base-quiz-option>
-<base-quiz-answer value="B"><code>'w'</code> 모드는 파일을 쓰기용으로 열고 기존 내용을 덮어씁니다. <code>'a'</code> 모드는 파일을 추가용으로 열고 새 내용을 파일 끝에 추가합니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>'w'</code>는 읽기용이고, <code>'a'</code>는 쓰기용입니다</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>'w'</code>는 파일을 덮어쓰고, <code>'a'</code>는 파일에 추가합니다</BaseQuizOption>
+<BaseQuizOption value="C">C. <code>'w'</code>는 Windows 용이고, <code>'a'</code>는 Apple 용입니다</BaseQuizOption>
+<BaseQuizOption value="D">D. 차이점이 없습니다</BaseQuizOption>
+<BaseQuizAnswer><code>'w'</code> 모드는 파일을 쓰기용으로 열고 기존 내용을 덮어씁니다. <code>'a'</code> 모드는 파일을 추가용으로 열고 새 내용을 파일 끝에 추가합니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 관련 링크
 

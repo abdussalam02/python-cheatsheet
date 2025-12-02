@@ -71,19 +71,17 @@ divide(dividend=10, divisor=0)
 You can not divide by 0
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-exception-handling-1">
+<BaseQuiz id="cheatsheet-exception-handling-1" correct="A">
 <template #question>
 What keywords are used to handle exceptions in Python?
 </template>
 
-<base-quiz-option value="A" correct>A. <code>try</code> and <code>except</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>catch</code> and <code>handle</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>error</code> and <code>rescue</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>if</code> and <code>else</code></base-quiz-option>
-<base-quiz-answer value="A">Python uses <code>try</code> to mark code that might raise an exception, and <code>except</code> to handle specific exceptions that occur.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. <code>try</code> and <code>except</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>catch</code> and <code>handle</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>error</code> and <code>rescue</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>if</code> and <code>else</code></BaseQuizOption>
+<BaseQuizAnswer>Python uses <code>try</code> to mark code that might raise an exception, and <code>except</code> to handle specific exceptions that occur.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Handling Multiple exceptions using one exception block
 
@@ -123,19 +121,17 @@ divide(dividend=10, divisor=0)
 division by zero
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-exception-handling-2">
+<BaseQuiz id="cheatsheet-exception-handling-2" correct="B">
 <template #question>
 Can you handle multiple exception types in a single <code>except</code> block?
 </template>
 
-<base-quiz-option value="A">A. No, you must use separate <code>except</code> blocks for each exception type</base-quiz-option>
-<base-quiz-option value="B" correct>B. Yes, by putting them in a tuple like <code>except (Exception1, Exception2)</code></base-quiz-option>
-<base-quiz-option value="C">C. Yes, but only if they are related</base-quiz-option>
-<base-quiz-option value="D">D. No, Python doesn't support this</base-quiz-option>
-<base-quiz-answer value="B">You can handle multiple exception types in one <code>except</code> block by putting them in a tuple: <code>except (ZeroDivisionError, TypeError) as error:</code></base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. No, you must use separate <code>except</code> blocks for each exception type</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Yes, by putting them in a tuple like <code>except (Exception1, Exception2)</code></BaseQuizOption>
+<BaseQuizOption value="C">C. Yes, but only if they are related</BaseQuizOption>
+<BaseQuizOption value="D">D. No, Python doesn't support this</BaseQuizOption>
+<BaseQuizAnswer>You can handle multiple exception types in one <code>except</code> block by putting them in a tuple: <code>except (ZeroDivisionError, TypeError) as error:</code></BaseQuizAnswer>
+</BaseQuiz>
 
 ## Finally code in exception handling
 
@@ -168,19 +164,17 @@ You can not divide by 0
 Execution finished
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-exception-handling-3">
+<BaseQuiz id="cheatsheet-exception-handling-3" correct="C">
 <template #question>
 When does the <code>finally</code> block execute?
 </template>
 
-<base-quiz-option value="A">A. Only when an exception occurs</base-quiz-option>
-<base-quiz-option value="B">B. Only when no exception occurs</base-quiz-option>
-<base-quiz-option value="C" correct>C. Always, regardless of whether an exception occurred or not</base-quiz-option>
-<base-quiz-option value="D">D. Never</base-quiz-option>
-<base-quiz-answer value="C">The <code>finally</code> block always executes, whether an exception occurred or not. It's useful for cleanup code that must run regardless of the outcome.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Only when an exception occurs</BaseQuizOption>
+<BaseQuizOption value="B">B. Only when no exception occurs</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. Always, regardless of whether an exception occurred or not</BaseQuizOption>
+<BaseQuizOption value="D">D. Never</BaseQuizOption>
+<BaseQuizAnswer>The <code>finally</code> block always executes, whether an exception occurred or not. It's useful for cleanup code that must run regardless of the outcome.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Custom Exceptions
 
@@ -228,19 +222,17 @@ except MyCustomException:
 My custom exception was raised
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-exception-handling-4">
+<BaseQuiz id="cheatsheet-exception-handling-4" correct="A">
 <template #question>
 How do you create a custom exception in Python?
 </template>
 
-<base-quiz-option value="A" correct>A. Create a class that inherits from the <code>Exception</code> class</base-quiz-option>
-<base-quiz-option value="B">B. Use the <code>@exception</code> decorator</base-quiz-option>
-<base-quiz-option value="C">C. Call <code>Exception.create()</code></base-quiz-option>
-<base-quiz-option value="D">D. Import it from a special module</base-quiz-option>
-<base-quiz-answer value="A">Custom exceptions are created by defining a class that inherits from the base <code>Exception</code> class. You can then raise and handle them just like built-in exceptions.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. Create a class that inherits from the <code>Exception</code> class</BaseQuizOption>
+<BaseQuizOption value="B">B. Use the <code>@exception</code> decorator</BaseQuizOption>
+<BaseQuizOption value="C">C. Call <code>Exception.create()</code></BaseQuizOption>
+<BaseQuizOption value="D">D. Import it from a special module</BaseQuizOption>
+<BaseQuizAnswer>Custom exceptions are created by defining a class that inherits from the base <code>Exception</code> class. You can then raise and handle them just like built-in exceptions.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Relevant links
 

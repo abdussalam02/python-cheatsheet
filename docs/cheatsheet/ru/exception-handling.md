@@ -71,19 +71,17 @@ divide(dividend=10, divisor=0)
 You can not divide by 0
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-exception-handling-1">
+<BaseQuiz id="cheatsheet-exception-handling-1" correct="A">
 <template #question>
 Какие ключевые слова используются для обработки исключений в Python?
 </template>
 
-<base-quiz-option value="A" correct>A. <code>try</code> и <code>except</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>catch</code> и <code>handle</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>error</code> и <code>rescue</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>if</code> и <code>else</code></base-quiz-option>
-<base-quiz-answer value="A">Python использует <code>try</code> для обозначения кода, который может вызвать исключение, и <code>except</code> для обработки конкретных возникающих исключений.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. <code>try</code> и <code>except</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>catch</code> и <code>handle</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>error</code> и <code>rescue</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>if</code> и <code>else</code></BaseQuizOption>
+<BaseQuizAnswer>Python использует <code>try</code> для обозначения кода, который может вызвать исключение, и <code>except</code> для обработки конкретных возникающих исключений.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Обработка нескольких исключений с помощью одного блока исключений
 
@@ -123,19 +121,17 @@ divide(dividend=10, divisor=0)
 division by zero
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-exception-handling-2">
+<BaseQuiz id="cheatsheet-exception-handling-2" correct="B">
 <template #question>
 Можно ли обрабатывать несколько типов исключений в одном блоке <code>except</code>?
 </template>
 
-<base-quiz-option value="A">A. Нет, для каждого типа исключения необходимо использовать отдельные блоки <code>except</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. Да, поместив их в кортеж, например <code>except (Exception1, Exception2)</code></base-quiz-option>
-<base-quiz-option value="C">C. Да, но только если они связаны</base-quiz-option>
-<base-quiz-option value="D">D. Нет, Python этого не поддерживает</base-quiz-option>
-<base-quiz-answer value="B">Вы можете обрабатывать несколько типов исключений в одном блоке <code>except</code>, поместив их в кортеж: <code>except (ZeroDivisionError, TypeError) as error:</code></base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Нет, для каждого типа исключения необходимо использовать отдельные блоки <code>except</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Да, поместив их в кортеж, например <code>except (Exception1, Exception2)</code></BaseQuizOption>
+<BaseQuizOption value="C">C. Да, но только если они связаны</BaseQuizOption>
+<BaseQuizOption value="D">D. Нет, Python этого не поддерживает</BaseQuizOption>
+<BaseQuizAnswer>Вы можете обрабатывать несколько типов исключений в одном блоке <code>except</code>, поместив их в кортеж: <code>except (ZeroDivisionError, TypeError) as error:</code></BaseQuizAnswer>
+</BaseQuiz>
 
 ## Код finally при обработке исключений
 
@@ -168,19 +164,17 @@ You can not divide by 0
 Execution finished
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-exception-handling-3">
+<BaseQuiz id="cheatsheet-exception-handling-3" correct="C">
 <template #question>
 Когда выполняется блок <code>finally</code>?
 </template>
 
-<base-quiz-option value="A">A. Только когда возникает исключение</base-quiz-option>
-<base-quiz-option value="B">B. Только когда исключение не возникает</base-quiz-option>
-<base-quiz-option value="C" correct>C. Всегда, независимо от того, произошло исключение или нет</base-quiz-option>
-<base-quiz-option value="D">D. Никогда</base-quiz-option>
-<base-quiz-answer value="C">Блок <code>finally</code> выполняется всегда, независимо от того, произошло исключение или нет. Он полезен для кода очистки, который должен быть выполнен независимо от результата.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Только когда возникает исключение</BaseQuizOption>
+<BaseQuizOption value="B">B. Только когда исключение не возникает</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. Всегда, независимо от того, произошло исключение или нет</BaseQuizOption>
+<BaseQuizOption value="D">D. Никогда</BaseQuizOption>
+<BaseQuizAnswer>Блок <code>finally</code> выполняется всегда, независимо от того, произошло исключение или нет. Он полезен для кода очистки, который должен быть выполнен независимо от результата.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Пользовательские исключения
 
@@ -228,19 +222,17 @@ except MyCustomException:
 My custom exception was raised
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-exception-handling-4">
+<BaseQuiz id="cheatsheet-exception-handling-4" correct="A">
 <template #question>
 Как создать пользовательское исключение в Python?
 </template>
 
-<base-quiz-option value="A" correct>A. Создать класс, который наследуется от класса <code>Exception</code></base-quiz-option>
-<base-quiz-option value="B">B. Использовать декоратор <code>@exception</code></base-quiz-option>
-<base-quiz-option value="C">C. Вызвать <code>Exception.create()</code></base-quiz-option>
-<base-quiz-option value="D">D. Импортировать его из специального модуля</base-quiz-option>
-<base-quiz-answer value="A">Пользовательские исключения создаются путем определения класса, который наследуется от базового класса <code>Exception</code>. Затем их можно вызывать и обрабатывать так же, как и встроенные исключения.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. Создать класс, который наследуется от класса <code>Exception</code></BaseQuizOption>
+<BaseQuizOption value="B">B. Использовать декоратор <code>@exception</code></BaseQuizOption>
+<BaseQuizOption value="C">C. Вызвать <code>Exception.create()</code></BaseQuizOption>
+<BaseQuizOption value="D">D. Импортировать его из специального модуля</BaseQuizOption>
+<BaseQuizAnswer>Пользовательские исключения создаются путем определения класса, который наследуется от базового класса <code>Exception</code>. Затем их можно вызывать и обрабатывать так же, как и встроенные исключения.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Соответствующие ссылки
 

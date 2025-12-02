@@ -32,19 +32,17 @@ hello_content
 'Hello World!'
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-reading-and-writing-files-1">
+<BaseQuiz id="cheatsheet-reading-and-writing-files-1" correct="A">
 <template #question>
 Was ist der Hauptvorteil der Verwendung der <code>with</code>-Anweisung beim Öffnen von Dateien?
 </template>
 
-<base-quiz-option value="A" correct>A. Die Datei wird automatisch geschlossen, wenn sie fertig ist, auch wenn ein Fehler auftritt</base-quiz-option>
-<base-quiz-option value="B">B. Dateien öffnen schneller</base-quiz-option>
-<base-quiz-option value="C">C. Dateien können gleichzeitig im Lese- und Schreibmodus geöffnet werden</base-quiz-option>
-<base-quiz-option value="D">D. Dateien werden automatisch komprimiert</base-quiz-option>
-<base-quiz-answer value="A">Die <code>with</code>-Anweisung stellt sicher, dass die Datei automatisch geschlossen wird, wenn der Block verlassen wird, auch wenn eine Ausnahme auftritt. Dies hilft bei der ordnungsgemäßen Verwaltung der Ressourcen.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. Die Datei wird automatisch geschlossen, wenn sie fertig ist, auch wenn ein Fehler auftritt</BaseQuizOption>
+<BaseQuizOption value="B">B. Dateien öffnen schneller</BaseQuizOption>
+<BaseQuizOption value="C">C. Dateien können gleichzeitig im Lese- und Schreibmodus geöffnet werden</BaseQuizOption>
+<BaseQuizOption value="D">D. Dateien werden automatisch komprimiert</BaseQuizOption>
+<BaseQuizAnswer>Die <code>with</code>-Anweisung stellt sicher, dass die Datei automatisch geschlossen wird, wenn der Block verlassen wird, auch wenn eine Ausnahme auftritt. Dies hilft bei der ordnungsgemäßen Verwaltung der Ressourcen.</BaseQuizAnswer>
+</BaseQuiz>
 
 Alternativ können Sie die Methode _readlines()_ verwenden, um eine Liste von String-Werten aus der Datei zu erhalten, einen String für jede Textzeile:
 
@@ -111,19 +109,17 @@ Hello world!
 Bacon is not a vegetable.
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-reading-and-writing-files-2">
+<BaseQuiz id="cheatsheet-reading-and-writing-files-2" correct="B">
 <template #question>
 Was ist der Unterschied zwischen dem Öffnen einer Datei mit dem Modus <code>'w'</code> und dem Modus <code>'a'</code>?
 </template>
 
-<base-quiz-option value="A">A. <code>'w'</code> ist zum Lesen, <code>'a'</code> ist zum Schreiben</base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>'w'</code> überschreibt die Datei, <code>'a'</code> hängt an die Datei an</base-quiz-option>
-<base-quiz-option value="C">C. <code>'w'</code> ist für Windows, <code>'a'</code> ist für Apple</base-quiz-option>
-<base-quiz-option value="D">D. Es gibt keinen Unterschied</base-quiz-option>
-<base-quiz-answer value="B">Modus <code>'w'</code> öffnet die Datei zum Schreiben und überschreibt vorhandene Inhalte. Modus <code>'a'</code> öffnet die Datei zum Anhängen und fügt neue Inhalte am Ende der Datei hinzu.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>'w'</code> ist zum Lesen, <code>'a'</code> ist zum Schreiben</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>'w'</code> überschreibt die Datei, <code>'a'</code> hängt an die Datei an</BaseQuizOption>
+<BaseQuizOption value="C">C. <code>'w'</code> ist für Windows, <code>'a'</code> ist für Apple</BaseQuizOption>
+<BaseQuizOption value="D">D. Es gibt keinen Unterschied</BaseQuizOption>
+<BaseQuizAnswer>Modus <code>'w'</code> öffnet die Datei zum Schreiben und überschreibt vorhandene Inhalte. Modus <code>'a'</code> öffnet die Datei zum Anhängen und fügt neue Inhalte am Ende der Datei hinzu.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Relevante Links
 

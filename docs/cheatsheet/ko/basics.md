@@ -97,8 +97,7 @@ Python 기본 개요
 16.0
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-basics-1">
+<BaseQuiz id="cheatsheet-basics-1" correct="A">
 <template #question>
 다음 Python 표현식의 결과는 무엇입니까?
 
@@ -108,13 +107,12 @@ Python 기본 개요
 
 </template>
 
-<base-quiz-option value="A" correct>A. 10</base-quiz-option>
-<base-quiz-option value="B">B. 18</base-quiz-option>
-<base-quiz-option value="C">C. 12</base-quiz-option>
-<base-quiz-option value="D">D. 20</base-quiz-option>
-<base-quiz-answer value="A">곱셈이 덧셈보다 우선순위가 높으므로, 이는 다음과 같이 평가됩니다: 4 + (2 \* 3) = 4 + 6 = 10</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. 10</BaseQuizOption>
+<BaseQuizOption value="B">B. 18</BaseQuizOption>
+<BaseQuizOption value="C">C. 12</BaseQuizOption>
+<BaseQuizOption value="D">D. 20</BaseQuizOption>
+<BaseQuizAnswer>곱셈이 덧셈보다 우선순위가 높으므로, 이는 다음과 같이 평가됩니다: 4 + (2 \* 3) = 4 + 6 = 10</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 증감 할당 연산자
 
@@ -163,8 +161,7 @@ my_list
 ['item', 'item', 'item']
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-basics-2">
+<BaseQuiz id="cheatsheet-basics-2" correct="B">
 <template #question>
 이 코드를 실행한 후 <code>x</code>의 값은 얼마입니까?
 
@@ -175,13 +172,12 @@ x += 3
 
 </template>
 
-<base-quiz-option value="A">A. 3</base-quiz-option>
-<base-quiz-option value="B" correct>B. 8</base-quiz-option>
-<base-quiz-option value="C">C. 5</base-quiz-option>
-<base-quiz-option value="D">D. 15</base-quiz-option>
-<base-quiz-answer value="B">증감 할당 연산자 <code>+=</code>는 <code>x = x + 3</code>과 동일합니다. 따라서 <code>x</code>는 5 로 시작하여 5 + 3 = 8 이 됩니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 3</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. 8</BaseQuizOption>
+<BaseQuizOption value="C">C. 5</BaseQuizOption>
+<BaseQuizOption value="D">D. 15</BaseQuizOption>
+<BaseQuizAnswer>증감 할당 연산자 <code>+=</code>는 <code>x = x + 3</code>과 동일합니다. 따라서 <code>x</code>는 5 로 시작하여 5 + 3 = 8 이 됩니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 월러스 연산자 (Walrus Operator)
 
@@ -340,19 +336,17 @@ my_var_2 = 'Hello'
 _spam = 'Hello'
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-basics-3">
+<BaseQuiz id="cheatsheet-basics-3" correct="C">
 <template #question>
 Python 기본 사항에서 다음 중 유효한 변수 이름은 무엇입니까?
 </template>
 
-<base-quiz-option value="A">A. <code>3value</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>user-name</code></base-quiz-option>
-<base-quiz-option value="C" correct>C. <code>user_name</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>for</code></base-quiz-option>
-<base-quiz-answer value="C"><code>user_name</code>은 문자, 숫자 및 밑줄만 사용하고 숫자로 시작하지 않으므로 유효한 변수 이름입니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>3value</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>user-name</code></BaseQuizOption>
+<BaseQuizOption value="C" correct>C. <code>user_name</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>for</code></BaseQuizOption>
+<BaseQuizAnswer><code>user_name</code>은 문자, 숫자 및 밑줄만 사용하고 숫자로 시작하지 않으므로 유효한 변수 이름입니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 주석
 
@@ -479,19 +473,17 @@ What is your name? Martha
 Hi, Martha
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-basics-4">
+<BaseQuiz id="cheatsheet-basics-4" correct="B">
 <template #question>
 Python 기본 사항에서 `input()` 은 어떤 유형을 반환합니까?
 </template>
 
-<base-quiz-option value="A">A. int</base-quiz-option>
-<base-quiz-option value="B" correct>B. str</base-quiz-option>
-<base-quiz-option value="C">C. float</base-quiz-option>
-<base-quiz-option value="D">D. 사용자 입력에 따라 다름</base-quiz-option>
-<base-quiz-answer value="B"><code>input()</code> 함수는 사용자가 입력하는 내용에 관계없이 항상 문자열을 반환합니다. 필요한 경우 다른 유형으로 변환해야 합니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. int</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. str</BaseQuizOption>
+<BaseQuizOption value="C">C. float</BaseQuizOption>
+<BaseQuizOption value="D">D. 사용자 입력에 따라 다름</BaseQuizOption>
+<BaseQuizAnswer><code>input()</code> 함수는 사용자가 입력하는 내용에 관계없이 항상 문자열을 반환합니다. 필요한 경우 다른 유형으로 변환해야 합니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## len() 함수
 
@@ -588,8 +580,7 @@ float('3.14')  # 3.14 반환
 3.14
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-basics-5">
+<BaseQuiz id="cheatsheet-basics-5" correct="C">
 <template #question>
 다음 Python 코드의 결과는 무엇입니까?
 
@@ -600,13 +591,12 @@ type(result)
 
 </template>
 
-<base-quiz-option value="A">A. <code>str</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>float</code></base-quiz-option>
-<base-quiz-option value="C" correct>C. <code>int</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>NoneType</code></base-quiz-option>
-<base-quiz-answer value="C"><code>int()</code> 함수는 문자열을 정수로 변환합니다. 따라서 <code>int('42')</code>는 정수 <code>42</code>를 반환하고 <code>type(42)</code>는 <code>int</code>를 반환합니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>str</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>float</code></BaseQuizOption>
+<BaseQuizOption value="C" correct>C. <code>int</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>NoneType</code></BaseQuizOption>
+<BaseQuizAnswer><code>int()</code> 함수는 문자열을 정수로 변환합니다. 따라서 <code>int('42')</code>는 정수 <code>42</code>를 반환하고 <code>type(42)</code>는 <code>int</code>를 반환합니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 관련 링크
 

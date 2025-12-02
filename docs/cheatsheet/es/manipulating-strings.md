@@ -52,19 +52,17 @@ Hello there!\nHow are you?\nI\'m doing fine.
 
 Las cadenas sin formato se utilizan principalmente para la definición de <router-link to="/cheatsheet/regular-expressions">expresiones regulares</router-link>.
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-manipulating-strings-1">
+<BaseQuiz id="cheatsheet-manipulating-strings-1" correct="B">
 <template #question>
 ¿Qué hace una cadena sin formato (precedida por <code>r</code>) en Python?
 </template>
 
-<base-quiz-option value="A">A. Convierte todos los caracteres a mayúsculas</base-quiz-option>
-<base-quiz-option value="B" correct>B. Trata las barras invertidas como caracteres literales, ignorando las secuencias de escape</base-quiz-option>
-<base-quiz-option value="C">C. Elimina todos los espacios en blanco</base-quiz-option>
-<base-quiz-option value="D">D. Invierte la cadena</base-quiz-option>
-<base-quiz-answer value="B">Las cadenas sin formato (precedidas por <code>r</code>) tratan las barras invertidas como caracteres literales, por lo que las secuencias de escape como <code>\n</code> no se interpretan.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Convierte todos los caracteres a mayúsculas</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Trata las barras invertidas como caracteres literales, ignorando las secuencias de escape</BaseQuizOption>
+<BaseQuizOption value="C">C. Elimina todos los espacios en blanco</BaseQuizOption>
+<BaseQuizOption value="D">D. Invierte la cadena</BaseQuizOption>
+<BaseQuizAnswer>Las cadenas sin formato (precedidas por <code>r</code>) tratan las barras invertidas como caracteres literales, por lo que las secuencias de escape como <code>\n</code> no se interpretan.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Cadenas Multilínea
 
@@ -177,19 +175,17 @@ spam[::-1]
 '!dlrow olleH'
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-manipulating-strings-2">
+<BaseQuiz id="cheatsheet-manipulating-strings-2" correct="C">
 <template #question>
 ¿Qué hace <code>spam[::-1]</code> a una cadena?
 </template>
 
-<base-quiz-option value="A">A. Devuelve el primer carácter</base-quiz-option>
-<base-quiz-option value="B">B. Devuelve el último carácter</base-quiz-option>
-<base-quiz-option value="C" correct>C. Invierte la cadena</base-quiz-option>
-<base-quiz-option value="D">D. Elimina todos los caracteres</base-quiz-option>
-<base-quiz-answer value="C">El segmento <code>[::-1]</code> invierte una cadena recorriendo todos los caracteres hacia atrás. El valor de paso <code>-1</code> significa "ir hacia atrás".</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Devuelve el primer carácter</BaseQuizOption>
+<BaseQuizOption value="B">B. Devuelve el último carácter</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. Invierte la cadena</BaseQuizOption>
+<BaseQuizOption value="D">D. Elimina todos los caracteres</BaseQuizOption>
+<BaseQuizAnswer>El segmento <code>[::-1]</code> invierte una cadena recorriendo todos los caracteres hacia atrás. El valor de paso <code>-1</code> significa "ir hacia atrás".</BaseQuizAnswer>
+</BaseQuiz>
 
 ```python
 fizz = spam[0:5]
@@ -384,19 +380,17 @@ True
 True
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-manipulating-strings-3">
+<BaseQuiz id="cheatsheet-manipulating-strings-3" correct="A">
 <template #question>
 ¿Qué devuelve <code>startswith()</code>?
 </template>
 
-<base-quiz-option value="A" correct>A. <code>True</code> si la cadena comienza con la subcadena especificada, <code>False</code> en caso contrario</base-quiz-option>
-<base-quiz-option value="B">B. La subcadena que coincide con el inicio</base-quiz-option>
-<base-quiz-option value="C">C. El índice donde comienza la subcadena</base-quiz-option>
-<base-quiz-option value="D">D. Una nueva cadena sin el prefijo</base-quiz-option>
-<base-quiz-answer value="A">El método <code>startswith()</code> devuelve un valor booleano: <code>True</code> si la cadena comienza con la subcadena especificada, <code>False</code> en caso contrario.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. <code>True</code> si la cadena comienza con la subcadena especificada, <code>False</code> en caso contrario</BaseQuizOption>
+<BaseQuizOption value="B">B. La subcadena que coincide con el inicio</BaseQuizOption>
+<BaseQuizOption value="C">C. El índice donde comienza la subcadena</BaseQuizOption>
+<BaseQuizOption value="D">D. Una nueva cadena sin el prefijo</BaseQuizOption>
+<BaseQuizAnswer>El método <code>startswith()</code> devuelve un valor booleano: <code>True</code> si la cadena comienza con la subcadena especificada, <code>False</code> en caso contrario.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## join() y split()
 
@@ -480,19 +474,17 @@ El método `split()` divide una `cadena` en una `lista`. Por defecto, utilizará
 ['', 'My', '', 'name', 'is', '', 'Simon']
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-manipulating-strings-4">
+<BaseQuiz id="cheatsheet-manipulating-strings-4" correct="B">
 <template #question>
 ¿Qué devuelve <code>split()</code> cuando se llama en una cadena?
 </template>
 
-<base-quiz-option value="A">A. Una cadena</base-quiz-option>
-<base-quiz-option value="B" correct>B. Una lista de cadenas</base-quiz-option>
-<base-quiz-option value="C">C. Una tupla de cadenas</base-quiz-option>
-<base-quiz-option value="D">D. Un diccionario</base-quiz-option>
-<base-quiz-answer value="B">El método <code>split()</code> divide una cadena en una lista de subcadenas. Por defecto, divide por espacios en blanco, pero se puede especificar un separador diferente.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Una cadena</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Una lista de cadenas</BaseQuizOption>
+<BaseQuizOption value="C">C. Una tupla de cadenas</BaseQuizOption>
+<BaseQuizOption value="D">D. Un diccionario</BaseQuizOption>
+<BaseQuizAnswer>El método <code>split()</code> divide una cadena en una lista de subcadenas. Por defecto, divide por espacios en blanco, pero se puede especificar un separador diferente.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Justificación de texto con rjust(), ljust() y center()
 
@@ -667,19 +659,17 @@ sentence.replace("apples", "oranges")
 'I like oranges, Apples are my favorite fruit'
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-manipulating-strings-5">
+<BaseQuiz id="cheatsheet-manipulating-strings-5" correct="C">
 <template #question>
 ¿Qué devuelve el método <code>replace()</code>?
 </template>
 
-<base-quiz-option value="A">A. Modifica la cadena original</base-quiz-option>
-<base-quiz-option value="B">B. Devuelve <code>None</code></base-quiz-option>
-<base-quiz-option value="C" correct>C. Devuelve una nueva cadena con los reemplazos realizados</base-quiz-option>
-<base-quiz-option value="D">D. Devuelve una lista de cadenas reemplazadas</base-quiz-option>
-<base-quiz-answer value="C">El método <code>replace()</code> devuelve una nueva cadena con todas las ocurrencias de la subcadena antigua reemplazadas por la nueva subcadena. La cadena original no se modifica.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Modifica la cadena original</BaseQuizOption>
+<BaseQuizOption value="B">B. Devuelve <code>None</code></BaseQuizOption>
+<BaseQuizOption value="C" correct>C. Devuelve una nueva cadena con los reemplazos realizados</BaseQuizOption>
+<BaseQuizOption value="D">D. Devuelve una lista de cadenas reemplazadas</BaseQuizOption>
+<BaseQuizAnswer>El método <code>replace()</code> devuelve una nueva cadena con todas las ocurrencias de la subcadena antigua reemplazadas por la nueva subcadena. La cadena original no se modifica.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Enlaces relevantes
 

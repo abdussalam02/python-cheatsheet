@@ -239,19 +239,17 @@ wife
 {'name': 'Rose', 'hair': 'brown'}
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-dictionaries-1">
+<BaseQuiz id="cheatsheet-dictionaries-1" correct="B">
 <template #question>
 当在字典上调用 <code>pop()</code> 时，它会做什么？
 </template>
 
-<base-quiz-option value="A">A. 只移除键值对</base-quiz-option>
-<base-quiz-option value="B" correct>B. 移除并返回指定键的值</base-quiz-option>
-<base-quiz-option value="C">C. 只返回值而不移除它</base-quiz-option>
-<base-quiz-option value="D">D. 移除字典中的所有项</base-quiz-option>
-<base-quiz-answer value="B"><code>pop()</code> 方法会移除指定键的键值对并返回该值。如果键不存在，它会引发 <code>KeyError</code>（除非您提供一个默认值）。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 只移除键值对</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. 移除并返回指定键的值</BaseQuizOption>
+<BaseQuizOption value="C">C. 只返回值而不移除它</BaseQuizOption>
+<BaseQuizOption value="D">D. 移除字典中的所有项</BaseQuizOption>
+<BaseQuizAnswer><code>pop()</code> 方法会移除指定键的键值对并返回该值。如果键不存在，它会引发 <code>KeyError</code>（除非您提供一个默认值）。</BaseQuizAnswer>
+</BaseQuiz>
 
 ### popitem()
 
@@ -383,19 +381,17 @@ dict_c
 {'a': 1, 'b': 3, 'c': 4}
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-dictionaries-2">
+<BaseQuiz id="cheatsheet-dictionaries-2" correct="B">
 <template #question>
 当使用 <code>{**dict_b, **dict_a}</code> 合并两个字典时，如果两个字典具有相同的键，会发生什么？
 </template>
 
-<base-quiz-option value="A">A. <code>dict_b</code> 中的值会覆盖 <code>dict_a</code> 中的值</base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>dict_a</code> 中的值会覆盖 <code>dict_b</code> 中的值</base-quiz-option>
-<base-quiz-option value="C">C. 两个值都会被保留在一个列表中</base-quiz-option>
-<base-quiz-option value="D">D. 引发错误</base-quiz-option>
-<base-quiz-answer value="B">当使用 <code>\*\*</code> 解包运算符合并字典时，如果两个字典具有相同的键，后出现的字典（在本例中为 <code>dict_a</code>）中的值会覆盖先出现的字典中的值。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>dict_b</code> 中的值会覆盖 <code>dict_a</code> 中的值</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>dict_a</code> 中的值会覆盖 <code>dict_b</code> 中的值</BaseQuizOption>
+<BaseQuizOption value="C">C. 两个值都会被保留在一个列表中</BaseQuizOption>
+<BaseQuizOption value="D">D. 引发错误</BaseQuizOption>
+<BaseQuizAnswer>当使用 <code>\*\*</code> 解包运算符合并字典时，如果两个字典具有相同的键，后出现的字典（在本例中为 <code>dict_a</code>）中的值会覆盖先出现的字典中的值。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 相关链接
 

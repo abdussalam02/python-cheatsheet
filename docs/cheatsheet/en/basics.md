@@ -97,8 +97,7 @@ Examples of expressions:
 16.0
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-basics-1">
+<BaseQuiz id="cheatsheet-basics-1" correct="A">
 <template #question>
 What is the result of this Python expression?
 
@@ -108,13 +107,12 @@ What is the result of this Python expression?
 
 </template>
 
-<base-quiz-option value="A" correct>A. 10</base-quiz-option>
-<base-quiz-option value="B">B. 18</base-quiz-option>
-<base-quiz-option value="C">C. 12</base-quiz-option>
-<base-quiz-option value="D">D. 20</base-quiz-option>
-<base-quiz-answer value="A">Multiplication has higher precedence than addition, so this evaluates as: 4 + (2 \* 3) = 4 + 6 = 10</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. 10</BaseQuizOption>
+<BaseQuizOption value="B">B. 18</BaseQuizOption>
+<BaseQuizOption value="C">C. 12</BaseQuizOption>
+<BaseQuizOption value="D">D. 20</BaseQuizOption>
+<BaseQuizAnswer>Multiplication has higher precedence than addition, so this evaluates as: 4 + (2 \* 3) = 4 + 6 = 10</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Augmented Assignment Operators
 
@@ -163,8 +161,7 @@ my_list
 ['item', 'item', 'item']
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-basics-2">
+<BaseQuiz id="cheatsheet-basics-2" correct="B">
 <template #question>
 What is the value of <code>x</code> after executing this code?
 
@@ -175,13 +172,12 @@ x += 3
 
 </template>
 
-<base-quiz-option value="A">A. 3</base-quiz-option>
-<base-quiz-option value="B" correct>B. 8</base-quiz-option>
-<base-quiz-option value="C">C. 5</base-quiz-option>
-<base-quiz-option value="D">D. 15</base-quiz-option>
-<base-quiz-answer value="B">The augmented assignment operator <code>+=</code> is equivalent to <code>x = x + 3</code>. So <code>x</code> starts as 5, then becomes 5 + 3 = 8.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 3</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. 8</BaseQuizOption>
+<BaseQuizOption value="C">C. 5</BaseQuizOption>
+<BaseQuizOption value="D">D. 15</BaseQuizOption>
+<BaseQuizAnswer>The augmented assignment operator <code>+=</code> is equivalent to <code>x = x + 3</code>. So <code>x</code> starts as 5, then becomes 5 + 3 = 8.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Walrus Operator
 
@@ -340,19 +336,17 @@ my_var_2 = 'Hello'
 _spam = 'Hello'
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-basics-3">
+<BaseQuiz id="cheatsheet-basics-3" correct="C">
 <template #question>
 In Python basics, which of the following is a valid variable name?
 </template>
 
-<base-quiz-option value="A">A. <code>3value</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>user-name</code></base-quiz-option>
-<base-quiz-option value="C" correct>C. <code>user_name</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>for</code></base-quiz-option>
-<base-quiz-answer value="C"><code>user_name</code> is a valid variable name because it uses only letters, numbers, and underscores, and doesn't start with a number.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>3value</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>user-name</code></BaseQuizOption>
+<BaseQuizOption value="C" correct>C. <code>user_name</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>for</code></BaseQuizOption>
+<BaseQuizAnswer><code>user_name</code> is a valid variable name because it uses only letters, numbers, and underscores, and doesn't start with a number.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Comments
 
@@ -479,19 +473,17 @@ What is your name? Martha
 Hi, Martha
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-basics-4">
+<BaseQuiz id="cheatsheet-basics-4" correct="B">
 <template #question>
 In Python basics, what type does `input()` return?
 </template>
 
-<base-quiz-option value="A">A. int</base-quiz-option>
-<base-quiz-option value="B" correct>B. str</base-quiz-option>
-<base-quiz-option value="C">C. float</base-quiz-option>
-<base-quiz-option value="D">D. Depends on user input</base-quiz-option>
-<base-quiz-answer value="B">The <code>input()</code> function always returns a string, regardless of what the user types. You need to convert it to other types if needed.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. int</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. str</BaseQuizOption>
+<BaseQuizOption value="C">C. float</BaseQuizOption>
+<BaseQuizOption value="D">D. Depends on user input</BaseQuizOption>
+<BaseQuizAnswer>The <code>input()</code> function always returns a string, regardless of what the user types. You need to convert it to other types if needed.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## The len() Function
 
@@ -588,8 +580,7 @@ float('3.14')  # Returns 3.14
 3.14
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-basics-5">
+<BaseQuiz id="cheatsheet-basics-5" correct="C">
 <template #question>
 What is the result of this Python code?
 
@@ -600,13 +591,12 @@ type(result)
 
 </template>
 
-<base-quiz-option value="A">A. <code>str</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>float</code></base-quiz-option>
-<base-quiz-option value="C" correct>C. <code>int</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>NoneType</code></base-quiz-option>
-<base-quiz-answer value="C">The <code>int()</code> function converts a string to an integer. So <code>int('42')</code> returns the integer <code>42</code>, and <code>type(42)</code> returns <code>int</code>.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>str</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>float</code></BaseQuizOption>
+<BaseQuizOption value="C" correct>C. <code>int</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>NoneType</code></BaseQuizOption>
+<BaseQuizAnswer>The <code>int()</code> function converts a string to an integer. So <code>int('42')</code> returns the integer <code>42</code>, and <code>type(42)</code> returns <code>int</code>.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Relevant Links
 

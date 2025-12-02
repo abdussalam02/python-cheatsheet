@@ -69,19 +69,17 @@ some_function('arg1', 'arg2', 'arg3')
 Arguments passed: ('arg1', 'arg2', 'arg3') as <class 'tuple'>
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-args-and-kwargs-1">
+<BaseQuiz id="cheatsheet-args-and-kwargs-1" correct="B">
 <template #question>
 <code>*args</code> 将参数收集到什么数据类型中？
 </template>
 
-<base-quiz-option value="A">A. 列表 (A list)</base-quiz-option>
-<base-quiz-option value="B" correct>B. 元组 (A tuple)</base-quiz-option>
-<base-quiz-option value="C">C. 字典 (A dictionary)</base-quiz-option>
-<base-quiz-option value="D">D. 集合 (A set)</base-quiz-option>
-<base-quiz-answer value="B"><code>\*args</code> 参数将位置参数收集到一个元组中。这允许函数接受任意数量的位置参数。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 列表 (A list)</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. 元组 (A tuple)</BaseQuizOption>
+<BaseQuizOption value="C">C. 字典 (A dictionary)</BaseQuizOption>
+<BaseQuizOption value="D">D. 集合 (A set)</BaseQuizOption>
+<BaseQuizAnswer><code>\*args</code> 参数将位置参数收集到一个元组中。这允许函数接受任意数量的位置参数。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## kwargs
 
@@ -100,19 +98,17 @@ some_function(key1='arg1', key2='arg2')
 keywords: {'key1': 'arg1', 'key2': 'arg2'} as <class 'dict'>
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-args-and-kwargs-2">
+<BaseQuiz id="cheatsheet-args-and-kwargs-2" correct="C">
 <template #question>
 <code>**kwargs</code> 将参数收集到什么数据类型中？
 </template>
 
-<base-quiz-option value="A">A. 列表 (A list)</base-quiz-option>
-<base-quiz-option value="B">B. 元组 (A tuple)</base-quiz-option>
-<base-quiz-option value="C" correct>C. 字典 (A dictionary)</base-quiz-option>
-<base-quiz-option value="D">D. 集合 (A set)</base-quiz-option>
-<base-quiz-answer value="C"><code>\*\*kwargs</code> 参数将关键字参数收集到一个字典中。这允许函数接受任意数量的关键字参数。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 列表 (A list)</BaseQuizOption>
+<BaseQuizOption value="B">B. 元组 (A tuple)</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. 字典 (A dictionary)</BaseQuizOption>
+<BaseQuizOption value="D">D. 集合 (A set)</BaseQuizOption>
+<BaseQuizAnswer><code>\*\*kwargs</code> 参数将关键字参数收集到一个字典中。这允许函数接受任意数量的关键字参数。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 相关链接
 

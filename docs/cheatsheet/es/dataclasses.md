@@ -88,19 +88,17 @@ obj.price
 0.0
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-dataclasses-1">
+<BaseQuiz id="cheatsheet-dataclasses-1" correct="B">
 <template #question>
 En una dataclass, ¿dónde deben colocarse los campos con valores por defecto?
 </template>
 
-<base-quiz-option value="A">A. Antes de los campos sin valores por defecto</base-quiz-option>
-<base-quiz-option value="B" correct>B. Después de los campos sin valores por defecto</base-quiz-option>
-<base-quiz-option value="C">C. No importa</base-quiz-option>
-<base-quiz-option value="D">D. En una sección separada</base-quiz-option>
-<base-quiz-answer value="B">En las dataclasses, los campos con valores por defecto deben ir después de los campos sin valores por defecto. Esto se debe a que Python necesita conocer el orden de los parámetros requeridos frente a los opcionales para el método <code>**init**</code> generado.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Antes de los campos sin valores por defecto</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Después de los campos sin valores por defecto</BaseQuizOption>
+<BaseQuizOption value="C">C. No importa</BaseQuizOption>
+<BaseQuizOption value="D">D. En una sección separada</BaseQuizOption>
+<BaseQuizAnswer>En las dataclasses, los campos con valores por defecto deben ir después de los campos sin valores por defecto. Esto se debe a que Python necesita conocer el orden de los parámetros requeridos frente a los opcionales para el método <code>**init**</code> generado.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Pistas de tipo (Type hints)
 

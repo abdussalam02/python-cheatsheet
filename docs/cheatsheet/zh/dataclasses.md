@@ -88,19 +88,17 @@ obj.price
 0.0
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-dataclasses-1">
+<BaseQuiz id="cheatsheet-dataclasses-1" correct="B">
 <template #question>
 在数据类中，带有默认值的字段必须放在哪里？
 </template>
 
-<base-quiz-option value="A">A. 放在没有默认值的字段之前</base-quiz-option>
-<base-quiz-option value="B" correct>B. 放在没有默认值的字段之后</base-quiz-option>
-<base-quiz-option value="C">C. 哪里都行</base-quiz-option>
-<base-quiz-option value="D">D. 在一个单独的部分</base-quiz-option>
-<base-quiz-answer value="B">在数据类中，带有默认值的字段必须放在没有默认值的字段之后。这是因为 Python 需要知道生成的 <code>**init**</code> 方法中必需参数和可选参数的顺序。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 放在没有默认值的字段之前</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. 放在没有默认值的字段之后</BaseQuizOption>
+<BaseQuizOption value="C">C. 哪里都行</BaseQuizOption>
+<BaseQuizOption value="D">D. 在一个单独的部分</BaseQuizOption>
+<BaseQuizAnswer>在数据类中，带有默认值的字段必须放在没有默认值的字段之后。这是因为 Python 需要知道生成的 <code>**init**</code> 方法中必需参数和可选参数的顺序。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 类型提示
 

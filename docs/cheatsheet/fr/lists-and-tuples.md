@@ -83,19 +83,17 @@ f'The {furniture[-1]} is bigger than the {furniture[-3]}'
 'The shelf is bigger than the chair'
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-lists-and-tuples-1">
+<BaseQuiz id="cheatsheet-lists-and-tuples-1" correct="B">
 <template #question>
 Que retourne <code>furniture[-1]</code> si <code>furniture = ['table', 'chair', 'rack', 'shelf']</code> ?
 </template>
 
-<base-quiz-option value="A">A. <code>'table'</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>'shelf'</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>['shelf']</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>IndexError</code></base-quiz-option>
-<base-quiz-answer value="B">Les index négatifs accèdent aux éléments depuis la fin de la liste. <code>-1</code> fait référence au dernier élément, <code>-2</code> à l'avant-dernier, et ainsi de suite.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>'table'</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>'shelf'</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>['shelf']</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>IndexError</code></BaseQuizOption>
+<BaseQuizAnswer>Les index négatifs accèdent aux éléments depuis la fin de la liste. <code>-1</code> fait référence au dernier élément, <code>-2</code> à l'avant-dernier, et ainsi de suite.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Obtenir des sous-listes avec des Slices
 
@@ -182,19 +180,17 @@ spam2
 ['cat', 'bat', 'rat', 'elephant']
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-lists-and-tuples-2">
+<BaseQuiz id="cheatsheet-lists-and-tuples-2" correct="C">
 <template #question>
 Que crée <code>spam[:]</code> lorsqu'il est appliqué à une liste <code>spam</code> ?
 </template>
 
-<base-quiz-option value="A">A. Une référence à la même liste</base-quiz-option>
-<base-quiz-option value="B">B. Une liste vide</base-quiz-option>
-<base-quiz-option value="C" correct>C. Une copie superficielle de la liste</base-quiz-option>
-<base-quiz-option value="D">D. Une liste inversée</base-quiz-option>
-<base-quiz-answer value="C">Le slicing de la liste complète avec <code>[:]</code> crée une copie superficielle. Modifier la copie n'affectera pas la liste originale.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Une référence à la même liste</BaseQuizOption>
+<BaseQuizOption value="B">B. Une liste vide</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. Une copie superficielle de la liste</BaseQuizOption>
+<BaseQuizOption value="D">D. Une liste inversée</BaseQuizOption>
+<BaseQuizAnswer>Le slicing de la liste complète avec <code>[:]</code> crée une copie superficielle. Modifier la copie n'affectera pas la liste originale.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Obtenir la longueur d'une liste avec len()
 
@@ -456,19 +452,17 @@ furniture
 ['table', 'chair', 'rack', 'shelf', 'bed']
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-lists-and-tuples-3">
+<BaseQuiz id="cheatsheet-lists-and-tuples-3" correct="A">
 <template #question>
 Que fait la méthode <code>append()</code> sur une liste ?
 </template>
 
-<base-quiz-option value="A" correct>A. Ajoute un élément à la fin de la liste</base-quiz-option>
-<base-quiz-option value="B">B. Ajoute un élément au début de la liste</base-quiz-option>
-<base-quiz-option value="C">C. Remplace le dernier élément</base-quiz-option>
-<base-quiz-option value="D">D. Supprime le dernier élément</base-quiz-option>
-<base-quiz-answer value="A">La méthode <code>append()</code> ajoute un seul élément à la fin d'une liste. Pour ajouter un élément à une position spécifique, utilisez <code>insert()</code>.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. Ajoute un élément à la fin de la liste</BaseQuizOption>
+<BaseQuizOption value="B">B. Ajoute un élément au début de la liste</BaseQuizOption>
+<BaseQuizOption value="C">C. Remplace le dernier élément</BaseQuizOption>
+<BaseQuizOption value="D">D. Supprime le dernier élément</BaseQuizOption>
+<BaseQuizAnswer>La méthode <code>append()</code> ajoute un seul élément à la fin d'une liste. Pour ajouter un élément à une position spécifique, utilisez <code>insert()</code>.</BaseQuizAnswer>
+</BaseQuiz>
 
 ### insert()
 
@@ -570,19 +564,17 @@ animals
 ['bat', 'rat']
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-lists-and-tuples-4">
+<BaseQuiz id="cheatsheet-lists-and-tuples-4" correct="B">
 <template #question>
 Que fait <code>pop()</code> lorsqu'il est appelé sur une liste ?
 </template>
 
-<base-quiz-option value="A">A. Supprime uniquement le dernier élément</base-quiz-option>
-<base-quiz-option value="B" correct>B. Supprime et retourne un élément (le dernier élément par défaut, ou l'index spécifié)</base-quiz-option>
-<base-quiz-option value="C">C. Retourne uniquement le dernier élément sans le supprimer</base-quiz-option>
-<base-quiz-option value="D">D. Supprime tous les éléments de la liste</base-quiz-option>
-<base-quiz-answer value="B">La méthode <code>pop()</code> supprime et retourne un élément. Par défaut, elle supprime le dernier élément, mais vous pouvez passer un index pour supprimer un élément spécifique.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Supprime uniquement le dernier élément</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Supprime et retourne un élément (le dernier élément par défaut, ou l'index spécifié)</BaseQuizOption>
+<BaseQuizOption value="C">C. Retourne uniquement le dernier élément sans le supprimer</BaseQuizOption>
+<BaseQuizOption value="D">D. Supprime tous les éléments de la liste</BaseQuizOption>
+<BaseQuizAnswer>La méthode <code>pop()</code> supprime et retourne un élément. Par défaut, elle supprime le dernier élément, mais vous pouvez passer un index pour supprimer un élément spécifique.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Trier les valeurs avec sort()
 
@@ -705,19 +697,17 @@ list('hello')
 ['h', 'e', 'l', 'l', 'o']
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-lists-and-tuples-5">
+<BaseQuiz id="cheatsheet-lists-and-tuples-5" correct="C">
 <template #question>
 Quelle est la principale différence entre les listes et les tuples en Python ?
 </template>
 
-<base-quiz-option value="A">A. Les listes ne peuvent contenir que des nombres, les tuples peuvent contenir n'importe quoi</base-quiz-option>
-<base-quiz-option value="B">B. Les tuples sont plus rapides à créer</base-quiz-option>
-<base-quiz-option value="C" correct>C. Les listes sont mutables (peuvent être modifiées), les tuples sont immuables (ne peuvent pas être modifiés)</base-quiz-option>
-<base-quiz-option value="D">D. Les listes utilisent des crochets, les tuples utilisent des accolades</base-quiz-option>
-<base-quiz-answer value="C">Les listes sont mutables, ce qui signifie que vous pouvez les modifier après leur création. Les tuples sont immuables, ce qui signifie qu'une fois créés, ils ne peuvent pas être modifiés. Les deux peuvent contenir n'importe quel type de données.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Les listes ne peuvent contenir que des nombres, les tuples peuvent contenir n'importe quoi</BaseQuizOption>
+<BaseQuizOption value="B">B. Les tuples sont plus rapides à créer</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. Les listes sont mutables (peuvent être modifiées), les tuples sont immuables (ne peuvent pas être modifiés)</BaseQuizOption>
+<BaseQuizOption value="D">D. Les listes utilisent des crochets, les tuples utilisent des accolades</BaseQuizOption>
+<BaseQuizAnswer>Les listes sont mutables, ce qui signifie que vous pouvez les modifier après leur création. Les tuples sont immuables, ce qui signifie qu'une fois créés, ils ne peuvent pas être modifiés. Les deux peuvent contenir n'importe quel type de données.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Liens pertinents
 

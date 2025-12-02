@@ -90,19 +90,17 @@ True
 False
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-control-flow-1">
+<BaseQuiz id="cheatsheet-control-flow-1" correct="B">
 <template #question>
 Was ergibt <code>'hello' == 'Hello'</code>?
 </template>
 
-<base-quiz-option value="A">A. <code>True</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>False</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>None</code></base-quiz-option>
-<base-quiz-option value="D">D. Löst einen Fehler aus</base-quiz-option>
-<base-quiz-answer value="B">Der String-Vergleich in Python ist case-sensitiv. <code>'hello'</code> und <code>'Hello'</code> sind unterschiedliche Strings, daher gibt der Vergleich <code>False</code> zurück.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>True</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>False</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>None</code></BaseQuizOption>
+<BaseQuizOption value="D">D. Löst einen Fehler aus</BaseQuizOption>
+<BaseQuizAnswer>Der String-Vergleich in Python ist case-sensitiv. <code>'hello'</code> und <code>'Hello'</code> sind unterschiedliche Strings, daher gibt der Vergleich <code>False</code> zurück.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Boolesche Operatoren
 
@@ -232,19 +230,17 @@ else:  # Wird ausgeführt, wenn die if-Bedingung False ist
 You are not George
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-control-flow-2">
+<BaseQuiz id="cheatsheet-control-flow-2" correct="B">
 <template #question>
 Wann wird der <code>else</code>-Block in einer if-else-Anweisung ausgeführt?
 </template>
 
-<base-quiz-option value="A">A. Immer</base-quiz-option>
-<base-quiz-option value="B" correct>B. Nur wenn die <code>if</code>-Bedingung (und alle <code>elif</code>-Bedingungen, falls vorhanden) <code>False</code> sind</base-quiz-option>
-<base-quiz-option value="C">C. Nur wenn die <code>if</code>-Bedingung <code>True</code> ist</base-quiz-option>
-<base-quiz-option value="D">D. Nie</base-quiz-option>
-<base-quiz-answer value="B">Der <code>else</code>-Block wird nur ausgeführt, wenn die <code>if</code>-Bedingung und alle <code>elif</code>-Bedingungen (falls vorhanden) zu <code>False</code> ausgewertet werden.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Immer</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Nur wenn die <code>if</code>-Bedingung (und alle <code>elif</code>-Bedingungen, falls vorhanden) <code>False</code> sind</BaseQuizOption>
+<BaseQuizOption value="C">C. Nur wenn die <code>if</code>-Bedingung <code>True</code> ist</BaseQuizOption>
+<BaseQuizOption value="D">D. Nie</BaseQuizOption>
+<BaseQuizAnswer>Der <code>else</code>-Block wird nur ausgeführt, wenn die <code>if</code>-Bedingung und alle <code>elif</code>-Bedingungen (falls vorhanden) zu <code>False</code> ausgewertet werden.</BaseQuizAnswer>
+</BaseQuiz>
 
 Erst nachdem der Ausdruck der `if`-Anweisung `False` ist, wird die `elif`-Anweisung ausgewertet und ausgeführt:
 
@@ -501,19 +497,17 @@ Hello, world.
 Hello, world.
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-control-flow-3">
+<BaseQuiz id="cheatsheet-control-flow-3" correct="A">
 <template #question>
 Was macht eine <code>while</code>-Schleife?
 </template>
 
-<base-quiz-option value="A" correct>A. Wiederholt Code, solange die Bedingung <code>True</code> ist</base-quiz-option>
-<base-quiz-option value="B">B. Führt Code genau einmal aus</base-quiz-option>
-<base-quiz-option value="C">C. Führt Code eine festgelegte Anzahl von Malen aus</base-quiz-option>
-<base-quiz-option value="D">D. Überspringt die Codeausführung</base-quiz-option>
-<base-quiz-answer value="A">Eine <code>while</code>-Schleife führt einen Codeblock wiederholt aus, solange die Bedingung zu <code>True</code> ausgewertet wird. Wenn die Bedingung zu <code>False</code> wird, stoppt die Schleife.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. Wiederholt Code, solange die Bedingung <code>True</code> ist</BaseQuizOption>
+<BaseQuizOption value="B">B. Führt Code genau einmal aus</BaseQuizOption>
+<BaseQuizOption value="C">C. Führt Code eine festgelegte Anzahl von Malen aus</BaseQuizOption>
+<BaseQuizOption value="D">D. Überspringt die Codeausführung</BaseQuizOption>
+<BaseQuizAnswer>Eine <code>while</code>-Schleife führt einen Codeblock wiederholt aus, solange die Bedingung zu <code>True</code> ausgewertet wird. Wenn die Bedingung zu <code>False</code> wird, stoppt die Schleife.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## break Anweisungen
 
@@ -576,19 +570,17 @@ Milo
 Loki
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-control-flow-4">
+<BaseQuiz id="cheatsheet-control-flow-4" correct="C">
 <template #question>
 Worüber iteriert eine <code>for</code>-Schleife?
 </template>
 
-<base-quiz-option value="A">A. Nur Zahlen</base-quiz-option>
-<base-quiz-option value="B">B. Nur Strings</base-quiz-option>
-<base-quiz-option value="C" correct>C. Jede iterierbare Sequenz (Liste, Tupel, Dictionary, Set, String usw.)</base-quiz-option>
-<base-quiz-option value="D">D. Nur Listen</base-quiz-option>
-<base-quiz-answer value="C">Eine <code>for</code>-Schleife kann über jede iterierbare Sequenz iterieren, einschließlich Listen, Tupeln, Dictionaries, Sets, Strings und anderen iterierbaren Objekten.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Nur Zahlen</BaseQuizOption>
+<BaseQuizOption value="B">B. Nur Strings</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. Jede iterierbare Sequenz (Liste, Tupel, Dictionary, Set, String usw.)</BaseQuizOption>
+<BaseQuizOption value="D">D. Nur Listen</BaseQuizOption>
+<BaseQuizAnswer>Eine <code>for</code>-Schleife kann über jede iterierbare Sequenz iterieren, einschließlich Listen, Tupeln, Dictionaries, Sets, Strings und anderen iterierbaren Objekten.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Die range() Funktion
 
@@ -607,19 +599,17 @@ Will stop at 5! or 4? (3)
 Will stop at 5! or 4? (4)
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-control-flow-5">
+<BaseQuiz id="cheatsheet-control-flow-5" correct="B">
 <template #question>
 Was erzeugt <code>range(5)</code>?
 </template>
 
-<base-quiz-option value="A">A. Zahlen von 1 bis 5</base-quiz-option>
-<base-quiz-option value="B" correct>B. Zahlen von 0 bis 4</base-quiz-option>
-<base-quiz-option value="C">C. Zahlen von 0 bis 5</base-quiz-option>
-<base-quiz-option value="D">D. Fünf Zufallszahlen</base-quiz-option>
-<base-quiz-answer value="B">Die Funktion <code>range(5)</code> erzeugt Zahlen von 0 bis 4 (insgesamt 5 Zahlen). Der Stoppwert ist exklusiv, sodass sie stoppt, bevor sie 5 erreicht.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Zahlen von 1 bis 5</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Zahlen von 0 bis 4</BaseQuizOption>
+<BaseQuizOption value="C">C. Zahlen von 0 bis 5</BaseQuizOption>
+<BaseQuizOption value="D">D. Fünf Zufallszahlen</BaseQuizOption>
+<BaseQuizAnswer>Die Funktion <code>range(5)</code> erzeugt Zahlen von 0 bis 4 (insgesamt 5 Zahlen). Der Stoppwert ist exklusiv, sodass sie stoppt, bevor sie 5 erreicht.</BaseQuizAnswer>
+</BaseQuiz>
 
 Die `range()`-Funktion kann auch ihre 3 Standardargumente modifizieren. Die ersten beiden sind die `start`- und `stop`-Werte, und der dritte ist das `step`-Argument. Der Schritt ist die Menge, um die die Variable nach jeder Iteration erhöht wird.
 

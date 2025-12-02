@@ -57,19 +57,17 @@ new_list
 ['Charles', 'Susan', 'Patrick', 'George']
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-comprehensions-1">
+<BaseQuiz id="cheatsheet-comprehensions-1" correct="A">
 <template #question>
 列表推导式的基本语法是什么？
 </template>
 
-<base-quiz-option value="A" correct>A. <code>[expression for item in iterable]</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>(expression for item in iterable)</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>{expression for item in iterable}</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>expression for item in iterable</code></base-quiz-option>
-<base-quiz-answer value="A">列表推导式使用方括号 <code>[]</code> 和语法 <code>[expression for item in iterable]</code>。它通过对每个项目应用表达式来创建一个新列表。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. <code>[expression for item in iterable]</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>(expression for item in iterable)</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>{expression for item in iterable}</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>expression for item in iterable</code></BaseQuizOption>
+<BaseQuizAnswer>列表推导式使用方括号 <code>[]</code> 和语法 <code>[expression for item in iterable]</code>。它通过对每个项目应用表达式来创建一个新列表。</BaseQuizAnswer>
+</BaseQuiz>
 
 我们可以对数字做同样的事情：
 
@@ -117,19 +115,17 @@ print(new_list)
 ['Charles', 'Carol']
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-comprehensions-2">
+<BaseQuiz id="cheatsheet-comprehensions-2" correct="B">
 <template #question>
 列表推导式中的 <code>if</code> 条件放在哪里？
 </template>
 
-<base-quiz-option value="A">A. 在 <code>for</code> 关键字之前</base-quiz-option>
-<base-quiz-option value="B" correct>B. 在 <code>for</code> 子句之后</base-quiz-option>
-<base-quiz-option value="C">C. 在表达式内部</base-quiz-option>
-<base-quiz-option value="D">D. 在方括号之前</base-quiz-option>
-<base-quiz-answer value="B">在列表推导式中，<code>if</code> 条件位于 <code>for</code> 子句之后：<code>[expression for item in iterable if condition]</code>。这会根据条件过滤项目。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 在 <code>for</code> 关键字之前</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. 在 <code>for</code> 子句之后</BaseQuizOption>
+<BaseQuizOption value="C">C. 在表达式内部</BaseQuizOption>
+<BaseQuizOption value="D">D. 在方括号之前</BaseQuizOption>
+<BaseQuizAnswer>在列表推导式中，<code>if</code> 条件位于 <code>for</code> 子句之后：<code>[expression for item in iterable if condition]</code>。这会根据条件过滤项目。</BaseQuizAnswer>
+</BaseQuiz>
 
 要在列表推导式中使用 `if-else` 语句：
 
@@ -180,19 +176,17 @@ c = {'name': 'Pooka', 'age': 5}
 {'Pooka': 'name', 5: 'age'}
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-comprehensions-3">
+<BaseQuiz id="cheatsheet-comprehensions-3" correct="C">
 <template #question>
 字典推导式使用什么语法？
 </template>
 
-<base-quiz-option value="A">A. <code>[key: value for item in iterable]</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>(key: value for item in iterable)</code></base-quiz-option>
-<base-quiz-option value="C" correct>C. <code>{key_expression: value_expression for item in iterable}</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>{key, value for item in iterable}</code></base-quiz-option>
-<base-quiz-answer value="C">字典推导式使用花括号 <code>{}</code> 和语法 <code>{key_expression: value_expression for item in iterable}</code>，类似于列表推导式，但包含键值对。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>[key: value for item in iterable]</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>(key: value for item in iterable)</code></BaseQuizOption>
+<BaseQuizOption value="C" correct>C. <code>{key_expression: value_expression for item in iterable}</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>{key, value for item in iterable}</code></BaseQuizOption>
+<BaseQuizAnswer>字典推导式使用花括号 <code>{}</code> 和语法 <code>{key_expression: value_expression for item in iterable}</code>，类似于列表推导式，但包含键值对。</BaseQuizAnswer>
+</BaseQuiz>
 
 列表推导式可以从字典生成：
 

@@ -37,19 +37,17 @@ if __name__ == "__main__":  # ファイルが直接実行された場合にの�
     add(3, 5)
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-main-1">
+<BaseQuiz id="cheatsheet-main-1" correct="B">
 <template #question>
 Python ファイルをスクリプトとして直接実行した場合、<code>__name__</code> の値は何になりますか？
 </template>
 
-<base-quiz-option value="A">A. ファイル名</base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>"**main**"</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>None</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>True</code></base-quiz-option>
-<base-quiz-answer value="B">Python ファイルをスクリプトとして直接実行すると、<code>**name**</code> は <code>"**main**"</code> に設定されます。ファイルがモジュールとしてインポートされると、<code>**name**</code> はモジュールの名前に設定されます。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. ファイル名</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>"**main**"</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>None</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>True</code></BaseQuizOption>
+<BaseQuizAnswer>Python ファイルをスクリプトとして直接実行すると、<code>**name**</code> は <code>"**main**"</code> に設定されます。ファイルがモジュールとしてインポートされると、<code>**name**</code> はモジュールの名前に設定されます。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Advantages
 
@@ -58,19 +56,17 @@ Python ファイルをスクリプトとして直接実行した場合、<code>_
 3. Python ファイルは、再利用可能なモジュールとしても、スタンドアロンプログラムとしても機能できます。
 4. `if __name__ == "__main__":` は、ファイルが直接実行された場合にのみコードを実行し、インポートされた場合には実行しないようにするために使用されます。
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-main-2">
+<BaseQuiz id="cheatsheet-main-2" correct="A">
 <template #question>
 <code>if __name__ == "__main__":</code> を使用する主な目的は何ですか？
 </template>
 
-<base-quiz-option value="A" correct>A. ファイルが直接実行された場合にのみコードを実行し、インポートされた場合には実行しないこと</base-quiz-option>
-<base-quiz-option value="B">B. ファイルがインポートされるのを防ぐこと</base-quiz-option>
-<base-quiz-option value="C">C. ファイルの実行速度を速くすること</base-quiz-option>
-<base-quiz-option value="D">D. 他のモジュールからコードを隠すこと</base-quiz-option>
-<base-quiz-answer value="A"><code>if **name** == "**main**":</code> のイディオムにより、Python ファイルは再利用可能なモジュールとスタンドアロンプログラムの両方として機能できます。このブロック内のコードは、ファイルが直接実行された場合にのみ実行され、インポートされた場合には実行されません。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. ファイルが直接実行された場合にのみコードを実行し、インポートされた場合には実行しないこと</BaseQuizOption>
+<BaseQuizOption value="B">B. ファイルがインポートされるのを防ぐこと</BaseQuizOption>
+<BaseQuizOption value="C">C. ファイルの実行速度を速くすること</BaseQuizOption>
+<BaseQuizOption value="D">D. 他のモジュールからコードを隠すこと</BaseQuizOption>
+<BaseQuizAnswer><code>if **name** == "**main**":</code> のイディオムにより、Python ファイルは再利用可能なモジュールとスタンドアロンプログラムの両方として機能できます。このブロック内のコードは、ファイルが直接実行された場合にのみ実行され、インポートされた場合には実行されません。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Relevant links
 

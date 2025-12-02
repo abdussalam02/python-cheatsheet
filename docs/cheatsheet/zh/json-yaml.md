@@ -32,19 +32,17 @@ with open("filename.json", "w") as f:  # 以写入模式打开文件
     json.dump(content, f, indent=2)  # 写入 JSON，使用 2 个空格缩进
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-json-yaml-1">
+<BaseQuiz id="cheatsheet-json-yaml-1" correct="B">
 <template #question>
 哪个函数用于将 Python 字典写入 JSON 文件？
 </template>
 
-<base-quiz-option value="A">A. <code>json.write()</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>json.dump()</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>json.save()</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>json.export()</code></base-quiz-option>
-<base-quiz-answer value="B"><code>json.dump()</code> 函数将 Python 对象（如字典）写入 JSON 文件。<code>json.load()</code> 用于读取 JSON 文件。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>json.write()</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>json.dump()</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>json.save()</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>json.export()</code></BaseQuizOption>
+<BaseQuizAnswer><code>json.dump()</code> 函数将 Python 对象（如字典）写入 JSON 文件。<code>json.load()</code> 用于读取 JSON 文件。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## YAML
 
@@ -70,19 +68,17 @@ with open("filename.yaml") as f:
     yaml.load(f)  # 解析 YAML 并返回 Python 字典/列表
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-json-yaml-2">
+<BaseQuiz id="cheatsheet-json-yaml-2" correct="C">
 <template #question>
 YAML 相对于 JSON 的一个优点是什么？
 </template>
 
-<base-quiz-option value="A">A. YAML 文件更小</base-quiz-option>
-<base-quiz-option value="B">B. YAML 解析速度更快</base-quiz-option>
-<base-quiz-option value="C" correct>C. YAML 允许注释且更易于人类阅读</base-quiz-option>
-<base-quiz-option value="D">D. YAML 是 Python 内置的</base-quiz-option>
-<base-quiz-answer value="C">YAML 允许注释，并且比 JSON 更易于人类阅读，使其成为需要人工编辑的配置文件的方便选择。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. YAML 文件更小</BaseQuizOption>
+<BaseQuizOption value="B">B. YAML 解析速度更快</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. YAML 允许注释且更易于人类阅读</BaseQuizOption>
+<BaseQuizOption value="D">D. YAML 是 Python 内置的</BaseQuizOption>
+<BaseQuizAnswer>YAML 允许注释，并且比 JSON 更易于人类阅读，使其成为需要人工编辑的配置文件的方便选择。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Anyconfig
 
@@ -102,19 +98,17 @@ import anyconfig
 conf1 = anyconfig.load("/path/to/foo/conf.d/a.yml")  # 自动检测格式
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-json-yaml-3">
+<BaseQuiz id="cheatsheet-json-yaml-3" correct="A">
 <template #question>
 anyconfig 库允许您做什么？
 </template>
 
-<base-quiz-option value="A" correct>A. 以各种格式（JSON、YAML、TOML）加载配置文件，而无需指定格式</base-quiz-option>
-<base-quiz-option value="B">B. 在不同配置格式之间转换</base-quiz-option>
-<base-quiz-option value="C">C. 验证配置文件语法</base-quiz-option>
-<base-quiz-option value="D">D. 加密配置文件</base-quiz-option>
-<base-quiz-answer value="A">anyconfig 库抽象了底层配置文件格式，允许您从 JSON、YAML、TOML 等格式加载 Python 字典，而无需知道正在使用的具体格式。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. 以各种格式（JSON、YAML、TOML）加载配置文件，而无需指定格式</BaseQuizOption>
+<BaseQuizOption value="B">B. 在不同配置格式之间转换</BaseQuizOption>
+<BaseQuizOption value="C">C. 验证配置文件语法</BaseQuizOption>
+<BaseQuizOption value="D">D. 加密配置文件</BaseQuizOption>
+<BaseQuizAnswer>anyconfig 库抽象了底层配置文件格式，允许您从 JSON、YAML、TOML 等格式加载 Python 字典，而无需知道正在使用的具体格式。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 相关链接
 

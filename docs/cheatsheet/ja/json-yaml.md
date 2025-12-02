@@ -32,19 +32,17 @@ with open("filename.json", "w") as f:  # ファイルを書き込みモードで
     json.dump(content, f, indent=2)  # 2 スペースのインデントで JSON を書き出す
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-json-yaml-1">
+<BaseQuiz id="cheatsheet-json-yaml-1" correct="B">
 <template #question>
 Python の辞書を JSON ファイルに書き込むために使用される関数はどれですか？
 </template>
 
-<base-quiz-option value="A">A. <code>json.write()</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>json.dump()</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>json.save()</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>json.export()</code></base-quiz-option>
-<base-quiz-answer value="B"><code>json.dump()</code>関数は、Python オブジェクト（辞書など）を JSON ファイルに書き込みます。<code>json.load()</code>は JSON ファイルを読み取るために使用されます。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>json.write()</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>json.dump()</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>json.save()</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>json.export()</code></BaseQuizOption>
+<BaseQuizAnswer><code>json.dump()</code>関数は、Python オブジェクト（辞書など）を JSON ファイルに書き込みます。<code>json.load()</code>は JSON ファイルを読み取るために使用されます。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## YAML
 
@@ -70,19 +68,17 @@ with open("filename.yaml") as f:
     yaml.load(f)  # YAML を解析し、Python の dict/list を返す
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-json-yaml-2">
+<BaseQuiz id="cheatsheet-json-yaml-2" correct="C">
 <template #question>
 JSON に対する YAML の利点は何ですか？
 </template>
 
-<base-quiz-option value="A">A. YAML ファイルはより小さい</base-quiz-option>
-<base-quiz-option value="B">B. YAML は解析が速い</base-quiz-option>
-<base-quiz-option value="C" correct>C. YAML はコメントを許可し、人間にとってより読みやすい</base-quiz-option>
-<base-quiz-option value="D">D. YAML は Python に組み込まれている</base-quiz-option>
-<base-quiz-answer value="C">YAML はコメントを許可し、JSON よりも人間にとって読みやすいため、人間が編集する必要のある設定ファイルにとって便利な選択肢となります。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. YAML ファイルはより小さい</BaseQuizOption>
+<BaseQuizOption value="B">B. YAML は解析が速い</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. YAML はコメントを許可し、人間にとってより読みやすい</BaseQuizOption>
+<BaseQuizOption value="D">D. YAML は Python に組み込まれている</BaseQuizOption>
+<BaseQuizAnswer>YAML はコメントを許可し、JSON よりも人間にとって読みやすいため、人間が編集する必要のある設定ファイルにとって便利な選択肢となります。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Anyconfig
 
@@ -102,19 +98,17 @@ import anyconfig
 conf1 = anyconfig.load("/path/to/foo/conf.d/a.yml")  # 形式を自動検出
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-json-yaml-3">
+<BaseQuiz id="cheatsheet-json-yaml-3" correct="A">
 <template #question>
 anyconfig ライブラリは何を可能にしますか？
 </template>
 
-<base-quiz-option value="A" correct>A. 形式を指定せずに様々な形式（JSON、YAML、TOML）の設定ファイルをロードすること</base-quiz-option>
-<base-quiz-option value="B">B. 異なる設定形式間で変換すること</base-quiz-option>
-<base-quiz-option value="C">C. 設定ファイルの構文を検証すること</base-quiz-option>
-<base-quiz-option value="D">D. 設定ファイルを暗号化すること</base-quiz-option>
-<base-quiz-answer value="A">anyconfig ライブラリは基盤となる設定ファイル形式を抽象化し、どの形式が使用されているかを知る必要なく、JSON、YAML、TOML などから Python 辞書をロードできるようにします。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. 形式を指定せずに様々な形式（JSON、YAML、TOML）の設定ファイルをロードすること</BaseQuizOption>
+<BaseQuizOption value="B">B. 異なる設定形式間で変換すること</BaseQuizOption>
+<BaseQuizOption value="C">C. 設定ファイルの構文を検証すること</BaseQuizOption>
+<BaseQuizOption value="D">D. 設定ファイルを暗号化すること</BaseQuizOption>
+<BaseQuizAnswer>anyconfig ライブラリは基盤となる設定ファイル形式を抽象化し、どの形式が使用されているかを知る必要なく、JSON、YAML、TOML などから Python 辞書をロードできるようにします。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 関連リンク
 

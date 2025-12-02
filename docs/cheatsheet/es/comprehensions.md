@@ -57,19 +57,17 @@ new_list
 ['Charles', 'Susan', 'Patrick', 'George']
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-comprehensions-1">
+<BaseQuiz id="cheatsheet-comprehensions-1" correct="A">
 <template #question>
 ¿Cuál es la sintaxis básica de una comprensión de listas?
 </template>
 
-<base-quiz-option value="A" correct>A. <code>[expresión for elemento in iterable]</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>(expresión for elemento in iterable)</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>{expresión for elemento in iterable}</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>expresión for elemento in iterable</code></base-quiz-option>
-<base-quiz-answer value="A">Las comprensiones de listas usan corchetes <code>[]</code> con la sintaxis <code>[expresión for elemento in iterable]</code>. Esto crea una nueva lista aplicando la expresión a cada elemento.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. <code>[expresión for elemento in iterable]</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>(expresión for elemento in iterable)</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>{expresión for elemento in iterable}</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>expresión for elemento in iterable</code></BaseQuizOption>
+<BaseQuizAnswer>Las comprensiones de listas usan corchetes <code>[]</code> con la sintaxis <code>[expresión for elemento in iterable]</code>. Esto crea una nueva lista aplicando la expresión a cada elemento.</BaseQuizAnswer>
+</BaseQuiz>
 
 Podemos hacer lo mismo con números:
 
@@ -117,19 +115,17 @@ print(new_list)
 ['Charles', 'Carol']
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-comprehensions-2">
+<BaseQuiz id="cheatsheet-comprehensions-2" correct="B">
 <template #question>
 ¿Dónde va la condición <code>if</code> en una comprensión de listas?
 </template>
 
-<base-quiz-option value="A">A. Antes de la palabra clave <code>for</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. Después de la cláusula <code>for</code></base-quiz-option>
-<base-quiz-option value="C">C. Dentro de la expresión</base-quiz-option>
-<base-quiz-option value="D">D. Antes de los corchetes</base-quiz-option>
-<base-quiz-answer value="B">En una comprensión de listas, la condición <code>if</code> viene después de la cláusula <code>for</code>: <code>[expresión for elemento in iterable if condición]</code>. Esto filtra elementos basándose en la condición.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Antes de la palabra clave <code>for</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Después de la cláusula <code>for</code></BaseQuizOption>
+<BaseQuizOption value="C">C. Dentro de la expresión</BaseQuizOption>
+<BaseQuizOption value="D">D. Antes de los corchetes</BaseQuizOption>
+<BaseQuizAnswer>En una comprensión de listas, la condición <code>if</code> viene después de la cláusula <code>for</code>: <code>[expresión for elemento in iterable if condición]</code>. Esto filtra elementos basándose en la condición.</BaseQuizAnswer>
+</BaseQuiz>
 
 Para usar una sentencia `if-else` en una Comprensión de Listas:
 
@@ -180,19 +176,17 @@ c = {'name': 'Pooka', 'age': 5}
 {'Pooka': 'name', 5: 'age'}
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-comprehensions-3">
+<BaseQuiz id="cheatsheet-comprehensions-3" correct="C">
 <template #question>
 ¿Qué sintaxis se utiliza para las comprensiones de diccionarios?
 </template>
 
-<base-quiz-option value="A">A. <code>[clave: valor for elemento in iterable]</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>(clave: valor for elemento in iterable)</code></base-quiz-option>
-<base-quiz-option value="C" correct>C. <code>{expresión_clave: expresión_valor for elemento in iterable}</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>{clave, valor for elemento in iterable}</code></base-quiz-option>
-<base-quiz-answer value="C">Las comprensiones de diccionarios usan llaves <code>{}</code> con la sintaxis <code>{expresión_clave: expresión_valor for elemento in iterable}</code>, similar a las comprensiones de listas pero con pares clave-valor.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>[clave: valor for elemento in iterable]</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>(clave: valor for elemento in iterable)</code></BaseQuizOption>
+<BaseQuizOption value="C" correct>C. <code>{expresión_clave: expresión_valor for elemento in iterable}</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>{clave, valor for elemento in iterable}</code></BaseQuizOption>
+<BaseQuizAnswer>Las comprensiones de diccionarios usan llaves <code>{}</code> con la sintaxis <code>{expresión_clave: expresión_valor for elemento in iterable}</code>, similar a las comprensiones de listas pero con pares clave-valor.</BaseQuizAnswer>
+</BaseQuiz>
 
 Se puede generar una comprensión de listas a partir de un diccionario:
 

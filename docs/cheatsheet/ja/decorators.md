@@ -41,19 +41,17 @@ Hello World!
 After func!
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-decorators-1">
+<BaseQuiz id="cheatsheet-decorators-1" correct="A">
 <template #question>
 Python におけるデコレータとは何ですか？
 </template>
 
-<base-quiz-option value="A" correct>A. 別の関数を受け取り、ラッパー関数を返す関数</base-quiz-option>
-<base-quiz-option value="B">B. 特別な種類のクラス</base-quiz-option>
-<base-quiz-option value="C">C. Python の組み込みキーワード</base-quiz-option>
-<base-quiz-option value="D">D. 関数を削除する方法</base-quiz-option>
-<base-quiz-answer value="A">デコレータは、別の関数を引数として受け取り、ラッパー関数を返す関数です。<code>@</code>構文は、デコレータを関数に適用するための糖衣構文です。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. 別の関数を受け取り、ラッパー関数を返す関数</BaseQuizOption>
+<BaseQuizOption value="B">B. 特別な種類のクラス</BaseQuizOption>
+<BaseQuizOption value="C">C. Python の組み込みキーワード</BaseQuizOption>
+<BaseQuizOption value="D">D. 関数を削除する方法</BaseQuizOption>
+<BaseQuizAnswer>デコレータは、別の関数を引数として受け取り、ラッパー関数を返す関数です。<code>@</code>構文は、デコレータを関数に適用するための糖衣構文です。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## パラメータを持つ関数のデコレータ
 
@@ -99,19 +97,17 @@ def your_decorator(func):
   return wrapper
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-decorators-2">
+<BaseQuiz id="cheatsheet-decorators-2" correct="B">
 <template #question>
 デコレータ内の<code>@functools.wraps(func)</code>は何をしますか？
 </template>
 
-<base-quiz-option value="A">A. デコレータの実行を高速化する</base-quiz-option>
-<base-quiz-option value="B" correct>B. 元の関数のメタデータ（名前、docstring など）を保持する</base-quiz-option>
-<base-quiz-option value="C">C. 関数の呼び出しを防ぐ</base-quiz-option>
-<base-quiz-option value="D">D. 関数をクラスに変換する</base-quiz-option>
-<base-quiz-answer value="B"><code>@functools.wraps(func)</code>デコレータは、元の関数のメタデータ（名前や docstring など）をラッパー関数に保持します。これはデコレータを作成する際のベストプラクティスと見なされます。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. デコレータの実行を高速化する</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. 元の関数のメタデータ（名前、docstring など）を保持する</BaseQuizOption>
+<BaseQuizOption value="C">C. 関数の呼び出しを防ぐ</BaseQuizOption>
+<BaseQuizOption value="D">D. 関数をクラスに変換する</BaseQuizOption>
+<BaseQuizAnswer><code>@functools.wraps(func)</code>デコレータは、元の関数のメタデータ（名前や docstring など）をラッパー関数に保持します。これはデコレータを作成する際のベストプラクティスと見なされます。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## パラメータ付きデコレータ
 

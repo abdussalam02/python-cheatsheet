@@ -27,19 +27,17 @@ with open(filename) as f:  # 'f'는 파일 객체
 # 오류가 발생하더라도 여기서 파일은 자동으로 닫힘
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-context-manager-1">
+<BaseQuiz id="cheatsheet-context-manager-1" correct="A">
 <template #question>
 컨텍스트 관리자 (<code>with</code> 문) 를 사용하는 주된 이점은 무엇입니까?
 </template>
 
-<base-quiz-option value="A" correct>A. 오류가 발생하더라도 리소스 정리를 자동으로 처리합니다</base-quiz-option>
-<base-quiz-option value="B">B. 코드 실행 속도를 높입니다</base-quiz-option>
-<base-quiz-option value="C">C. 여러 파일을 동시에 열 수 있게 합니다</base-quiz-option>
-<base-quiz-option value="D">D. 모든 오류를 방지합니다</base-quiz-option>
-<base-quiz-answer value="A">컨텍스트 관리자는 예외가 발생하더라도 블록을 나갈 때 리소스 (예: 파일) 가 적절하게 정리되도록 보장합니다. 이는 리소스 누수 및 데이터 손실을 방지합니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. 오류가 발생하더라도 리소스 정리를 자동으로 처리합니다</BaseQuizOption>
+<BaseQuizOption value="B">B. 코드 실행 속도를 높입니다</BaseQuizOption>
+<BaseQuizOption value="C">C. 여러 파일을 동시에 열 수 있게 합니다</BaseQuizOption>
+<BaseQuizOption value="D">D. 모든 오류를 방지합니다</BaseQuizOption>
+<BaseQuizAnswer>컨텍스트 관리자는 예외가 발생하더라도 블록을 나갈 때 리소스 (예: 파일) 가 적절하게 정리되도록 보장합니다. 이는 리소스 누수 및 데이터 손실을 방지합니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 블록 실행이 종료되는 모든 것은 컨텍스트 관리자의 exit 메서드를 호출하게 만듭니다. 여기에는 예외도 포함되며, 오류로 인해 열린 파일이나 연결을 조기에 종료해야 할 때 유용할 수 있습니다. 파일을 닫거나 연결을 끊지 않고 스크립트를 종료하는 것은 데이터 손실이나 기타 문제를 야기할 수 있는 나쁜 방법입니다. 컨텍스트 관리자를 사용하면 이러한 방식으로 손상이나 손실을 방지하기 위한 예방 조치가 항상 취해지도록 보장할 수 있습니다.
 
@@ -90,19 +88,17 @@ test
 --exit--
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-context-manager-2">
+<BaseQuiz id="cheatsheet-context-manager-2" correct="B">
 <template #question>
 클래스를 컨텍스트 관리자로 사용하려면 어떤 메서드를 구현해야 합니까?
 </template>
 
-<base-quiz-option value="A">A. <code>**init**</code> 및 <code>**del**</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>**enter**</code> 및 <code>**exit**</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>open</code> 및 <code>close</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>start</code> 및 <code>stop</code></base-quiz-option>
-<base-quiz-answer value="B">클래스 기반 컨텍스트 관리자는 <code>**enter**</code> (<code>with</code> 블록 진입 시 호출) 및 <code>**exit**</code> (블록 종료 시 호출) 를 구현해야 합니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>**init**</code> 및 <code>**del**</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>**enter**</code> 및 <code>**exit**</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>open</code> 및 <code>close</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>start</code> 및 <code>stop</code></BaseQuizOption>
+<BaseQuizAnswer>클래스 기반 컨텍스트 관리자는 <code>**enter**</code> (<code>with</code> 블록 진입 시 호출) 및 <code>**exit**</code> (블록 종료 시 호출) 를 구현해야 합니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 관련 링크
 

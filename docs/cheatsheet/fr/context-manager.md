@@ -27,19 +27,17 @@ with open(filename) as f:  # 'f' est l'objet fichier
 # Le fichier est automatiquement fermé ici, même si une erreur s'est produite
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-context-manager-1">
+<BaseQuiz id="cheatsheet-context-manager-1" correct="A">
 <template #question>
 Quel est le principal avantage d'utiliser un gestionnaire de contexte (l'instruction <code>with</code>) ?
 </template>
 
-<base-quiz-option value="A" correct>A. Gère automatiquement le nettoyage des ressources, même en cas d'erreur</base-quiz-option>
-<base-quiz-option value="B">B. Rend le code plus rapide à exécuter</base-quiz-option>
-<base-quiz-option value="C">C. Permet d'ouvrir plusieurs fichiers simultanément</base-quiz-option>
-<base-quiz-option value="D">D. Empêche toutes les erreurs</base-quiz-option>
-<base-quiz-answer value="A">Les gestionnaires de contexte garantissent que les ressources (comme les fichiers) sont correctement nettoyées lors de la sortie du bloc, même si une exception se produit. Cela prévient les fuites de ressources et la perte de données.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. Gère automatiquement le nettoyage des ressources, même en cas d'erreur</BaseQuizOption>
+<BaseQuizOption value="B">B. Rend le code plus rapide à exécuter</BaseQuizOption>
+<BaseQuizOption value="C">C. Permet d'ouvrir plusieurs fichiers simultanément</BaseQuizOption>
+<BaseQuizOption value="D">D. Empêche toutes les erreurs</BaseQuizOption>
+<BaseQuizAnswer>Les gestionnaires de contexte garantissent que les ressources (comme les fichiers) sont correctement nettoyées lors de la sortie du bloc, même si une exception se produit. Cela prévient les fuites de ressources et la perte de données.</BaseQuizAnswer>
+</BaseQuiz>
 
 Tout ce qui met fin à l'exécution du bloc provoque l'appel de la méthode de sortie du gestionnaire de contexte. Cela inclut les exceptions, et peut être utile lorsqu'une erreur vous fait sortir prématurément d'un fichier ou d'une connexion ouverte. Quitter un script sans fermer correctement les fichiers/connexions est une mauvaise pratique, qui peut entraîner une perte de données ou d'autres problèmes. En utilisant un gestionnaire de contexte, vous pouvez vous assurer que des précautions sont toujours prises pour prévenir les dommages ou les pertes de cette manière.
 
@@ -90,19 +88,17 @@ test
 --exit--
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-context-manager-2">
+<BaseQuiz id="cheatsheet-context-manager-2" correct="B">
 <template #question>
 Quelles méthodes une classe doit-elle implémenter pour être utilisée comme gestionnaire de contexte ?
 </template>
 
-<base-quiz-option value="A">A. <code>**init**</code> et <code>**del**</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>**enter**</code> et <code>**exit**</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>open</code> et <code>close</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>start</code> et <code>stop</code></base-quiz-option>
-<base-quiz-answer value="B">Un gestionnaire de contexte basé sur une classe doit implémenter <code>**enter**</code> (appelé lors de l'entrée dans le bloc <code>with</code>) et <code>**exit**</code> (appelé lors de la sortie du bloc).</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>**init**</code> et <code>**del**</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>**enter**</code> et <code>**exit**</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>open</code> et <code>close</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>start</code> et <code>stop</code></BaseQuizOption>
+<BaseQuizAnswer>Un gestionnaire de contexte basé sur une classe doit implémenter <code>**enter**</code> (appelé lors de l'entrée dans le bloc <code>with</code>) et <code>**exit**</code> (appelé lors de la sortie du bloc).</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Liens pertinents
 

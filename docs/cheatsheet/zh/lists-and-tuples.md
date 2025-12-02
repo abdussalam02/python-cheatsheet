@@ -83,19 +83,17 @@ f'The {furniture[-1]} is bigger than the {furniture[-3]}'
 'The shelf is bigger than the chair'
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-lists-and-tuples-1">
+<BaseQuiz id="cheatsheet-lists-and-tuples-1" correct="B">
 <template #question>
 如果 <code>furniture = ['table', 'chair', 'rack', 'shelf']</code>，那么 <code>furniture[-1]</code> 返回什么？
 </template>
 
-<base-quiz-option value="A">A. <code>'table'</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>'shelf'</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>['shelf']</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>IndexError</code></base-quiz-option>
-<base-quiz-answer value="B">负数索引从列表末尾访问元素。<code>-1</code> 指向最后一个元素，<code>-2</code> 指向倒数第二个，依此类推。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>'table'</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>'shelf'</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>['shelf']</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>IndexError</code></BaseQuizOption>
+<BaseQuizAnswer>负数索引从列表末尾访问元素。<code>-1</code> 指向最后一个元素，<code>-2</code> 指向倒数第二个，依此类推。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 使用切片获取子列表
 
@@ -182,19 +180,17 @@ spam2
 ['cat', 'bat', 'rat', 'elephant']
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-lists-and-tuples-2">
+<BaseQuiz id="cheatsheet-lists-and-tuples-2" correct="C">
 <template #question>
 当 <code>spam</code> 是一个列表时，<code>spam[:]</code> 创建什么？
 </template>
 
-<base-quiz-option value="A">A. 对同一列表的引用</base-quiz-option>
-<base-quiz-option value="B">B. 一个空列表</base-quiz-option>
-<base-quiz-option value="C" correct>C. 列表的浅拷贝</base-quiz-option>
-<base-quiz-option value="D">D. 一个反转的列表</base-quiz-option>
-<base-quiz-answer value="C">使用 <code>[:]</code> 对整个列表进行切片会创建一个浅拷贝。修改副本不会影响原始列表。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 对同一列表的引用</BaseQuizOption>
+<BaseQuizOption value="B">B. 一个空列表</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. 列表的浅拷贝</BaseQuizOption>
+<BaseQuizOption value="D">D. 一个反转的列表</BaseQuizOption>
+<BaseQuizAnswer>使用 <code>[:]</code> 对整个列表进行切片会创建一个浅拷贝。修改副本不会影响原始列表。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 使用 len() 获取列表长度
 
@@ -456,19 +452,17 @@ furniture
 ['table', 'chair', 'rack', 'shelf', 'bed']
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-lists-and-tuples-3">
+<BaseQuiz id="cheatsheet-lists-and-tuples-3" correct="A">
 <template #question>
 <code>append()</code> 方法对列表做什么？
 </template>
 
-<base-quiz-option value="A" correct>A. 将一个元素添加到列表的末尾</base-quiz-option>
-<base-quiz-option value="B">B. 将一个元素添加到列表的开头</base-quiz-option>
-<base-quiz-option value="C">C. 替换最后一个元素</base-quiz-option>
-<base-quiz-option value="D">D. 移除最后一个元素</base-quiz-option>
-<base-quiz-answer value="A"><code>append()</code> 方法将单个元素添加到列表的末尾。要将元素添加到特定位置，请使用 <code>insert()</code>。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. 将一个元素添加到列表的末尾</BaseQuizOption>
+<BaseQuizOption value="B">B. 将一个元素添加到列表的开头</BaseQuizOption>
+<BaseQuizOption value="C">C. 替换最后一个元素</BaseQuizOption>
+<BaseQuizOption value="D">D. 移除最后一个元素</BaseQuizOption>
+<BaseQuizAnswer><code>append()</code> 方法将单个元素添加到列表的末尾。要将元素添加到特定位置，请使用 <code>insert()</code>。</BaseQuizAnswer>
+</BaseQuiz>
 
 ### insert()
 
@@ -570,19 +564,17 @@ animals
 ['bat', 'rat']
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-lists-and-tuples-4">
+<BaseQuiz id="cheatsheet-lists-and-tuples-4" correct="B">
 <template #question>
 调用列表上的 <code>pop()</code> 会做什么？
 </template>
 
-<base-quiz-option value="A">A. 只移除最后一项</base-quiz-option>
-<base-quiz-option value="B" correct>B. 移除并返回一项（默认最后一个，或指定的索引）</base-quiz-option>
-<base-quiz-option value="C">C. 只返回最后一项而不移除它</base-quiz-option>
-<base-quiz-option value="D">D. 移除列表中的所有项</base-quiz-option>
-<base-quiz-answer value="B"><code>pop()</code> 方法会移除并返回一项。默认情况下它移除最后一项，但您可以传递一个索引来移除特定项。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 只移除最后一项</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. 移除并返回一项（默认最后一个，或指定的索引）</BaseQuizOption>
+<BaseQuizOption value="C">C. 只返回最后一项而不移除它</BaseQuizOption>
+<BaseQuizOption value="D">D. 移除列表中的所有项</BaseQuizOption>
+<BaseQuizAnswer><code>pop()</code> 方法会移除并返回一项。默认情况下它移除最后一项，但您可以传递一个索引来移除特定项。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 使用 sort() 对值进行排序
 
@@ -705,19 +697,17 @@ list('hello')
 ['h', 'e', 'l', 'l', 'o']
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-lists-and-tuples-5">
+<BaseQuiz id="cheatsheet-lists-and-tuples-5" correct="C">
 <template #question>
 Python 中列表和元组的主要区别是什么？
 </template>
 
-<base-quiz-option value="A">A. 列表只能包含数字，元组可以包含任何内容</base-quiz-option>
-<base-quiz-option value="B">B. 元组创建速度更快</base-quiz-option>
-<base-quiz-option value="C" correct>C. 列表是可变的（可以更改），元组是不可变的（不能更改）</base-quiz-option>
-<base-quiz-option value="D">D. 列表使用方括号，元组使用花括号</base-quiz-option>
-<base-quiz-answer value="C">列表是可变的，意味着您可以在创建后修改它们。元组是不可变的，意味着一旦创建就不能更改。两者都可以包含任何类型的数据。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 列表只能包含数字，元组可以包含任何内容</BaseQuizOption>
+<BaseQuizOption value="B">B. 元组创建速度更快</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. 列表是可变的（可以更改），元组是不可变的（不能更改）</BaseQuizOption>
+<BaseQuizOption value="D">D. 列表使用方括号，元组使用花括号</BaseQuizOption>
+<BaseQuizAnswer>列表是可变的，意味着您可以在创建后修改它们。元组是不可变的，意味着一旦创建就不能更改。两者都可以包含任何类型的数据。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 相关链接
 

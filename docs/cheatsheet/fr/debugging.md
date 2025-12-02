@@ -39,19 +39,17 @@ Traceback (most recent call last):
 Exception: This is the error message.
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-debugging-1">
+<BaseQuiz id="cheatsheet-debugging-1" correct="B">
 <template #question>
 Quel mot-clé est utilisé pour lever manuellement une exception en Python ?
 </template>
 
-<base-quiz-option value="A">A. <code>throw</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>raise</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>error</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>exception</code></base-quiz-option>
-<base-quiz-answer value="B">Le mot-clé <code>raise</code> est utilisé pour lever manuellement une exception en Python. Vous pouvez lever des exceptions intégrées ou des exceptions personnalisées.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>throw</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>raise</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>error</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>exception</code></BaseQuizOption>
+<BaseQuizAnswer>Le mot-clé <code>raise</code> est utilisé pour lever manuellement une exception en Python. Vous pouvez lever des exceptions intégrées ou des exceptions personnalisées.</BaseQuizAnswer>
+</BaseQuiz>
 
 Généralement, c'est le code qui appelle la fonction, et non la fonction elle-même, qui sait comment gérer une exception. Ainsi, vous verrez couramment une instruction `raise` à l'intérieur d'une fonction et les instructions `try` et `except` dans le code appelant la fonction.
 
@@ -145,19 +143,17 @@ Traceback (most recent call last):
 AssertionError: The pod bay doors need to be "open".
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-debugging-2">
+<BaseQuiz id="cheatsheet-debugging-2" correct="C">
 <template #question>
 Que se passe-t-il lorsqu'une instruction <code>assert</code> échoue ?
 </template>
 
-<base-quiz-option value="A">A. Le programme continue de s'exécuter</base-quiz-option>
-<base-quiz-option value="B">B. Un avertissement est affiché</base-quiz-option>
-<base-quiz-option value="C" correct>C. Une <code>AssertionError</code> est levée et le programme devrait planter</base-quiz-option>
-<base-quiz-option value="D">D. La condition est automatiquement corrigée</base-quiz-option>
-<base-quiz-answer value="C">Lorsqu'une instruction <code>assert</code> échoue, elle lève une <code>AssertionError</code>. Contrairement aux exceptions, les instructions assert ne doivent pas être interceptées avec try-except ; si une assertion échoue, votre programme devrait planter pour vous aider à trouver rapidement les bogues.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Le programme continue de s'exécuter</BaseQuizOption>
+<BaseQuizOption value="B">B. Un avertissement est affiché</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. Une <code>AssertionError</code> est levée et le programme devrait planter</BaseQuizOption>
+<BaseQuizOption value="D">D. La condition est automatiquement corrigée</BaseQuizOption>
+<BaseQuizAnswer>Lorsqu'une instruction <code>assert</code> échoue, elle lève une <code>AssertionError</code>. Contrairement aux exceptions, les instructions assert ne doivent pas être interceptées avec try-except ; si une assertion échoue, votre programme devrait planter pour vous aider à trouver rapidement les bogues.</BaseQuizAnswer>
+</BaseQuiz>
 
 En langage clair, une instruction assert signifie : "J'affirme que cette condition est vraie, et sinon, il y a un bogue quelque part dans le programme." Contrairement aux exceptions, votre code ne doit pas gérer les instructions assert avec try et except ; si une assertion échoue, votre programme doit planter. En plantant rapidement de cette manière, vous réduisez le temps entre la cause initiale du bogue et la première fois que vous le remarquez. Cela réduira la quantité de code que vous devrez vérifier avant de trouver le code qui cause le bogue.
 
@@ -174,19 +170,17 @@ import logging
 logging.basicConfig(level=logging.DEBUG, format=' %(asctime)s - %(levelname)s- %(message)s')
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-debugging-3">
+<BaseQuiz id="cheatsheet-debugging-3" correct="A">
 <template #question>
 Quel est le but du module <code>logging</code> en Python ?
 </template>
 
-<base-quiz-option value="A" correct>A. Enregistrer des informations sur l'exécution du programme pour le débogage et la surveillance</base-quiz-option>
-<base-quiz-option value="B">B. Empêcher les erreurs de se produire</base-quiz-option>
-<base-quiz-option value="C">C. Accélérer l'exécution du programme</base-quiz-option>
-<base-quiz-option value="D">D. Crypter les messages de journalisation</base-quiz-option>
-<base-quiz-answer value="A">Le module <code>logging</code> vous permet d'enregistrer des informations sur l'exécution de votre programme à différents niveaux (DEBUG, INFO, WARNING, ERROR, CRITICAL), ce qui est utile pour le débogage et la surveillance.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. Enregistrer des informations sur l'exécution du programme pour le débogage et la surveillance</BaseQuizOption>
+<BaseQuizOption value="B">B. Empêcher les erreurs de se produire</BaseQuizOption>
+<BaseQuizOption value="C">C. Accélérer l'exécution du programme</BaseQuizOption>
+<BaseQuizOption value="D">D. Crypter les messages de journalisation</BaseQuizOption>
+<BaseQuizAnswer>Le module <code>logging</code> vous permet d'enregistrer des informations sur l'exécution de votre programme à différents niveaux (DEBUG, INFO, WARNING, ERROR, CRITICAL), ce qui est utile pour le débogage et la surveillance.</BaseQuizAnswer>
+</BaseQuiz>
 
 Supposons que vous ayez écrit une fonction pour calculer la factorielle d'un nombre. En mathématiques, la factorielle de 4 est 1 × 2 × 3 × 4, soit 24. La factorielle de 7 est 1 × 2 × 3 × 4 × 5 × 6 × 7, soit 5 040. Ouvrez une nouvelle fenêtre d'éditeur de fichiers et entrez le code suivant. Il contient un bogue, mais vous allez également ajouter plusieurs messages de journalisation pour vous aider à comprendre ce qui ne va pas. Enregistrez le programme sous le nom factorialLog.py.
 
@@ -234,19 +228,17 @@ Les niveaux de journalisation offrent un moyen de catégoriser vos messages de j
 | `ERROR`    | `logging.error()`          | Utilisé pour enregistrer une erreur qui a empêché le programme de faire quelque chose.                                                                                                |
 | `CRITICAL` | `logging.critical()`       | Le niveau le plus élevé. Utilisé pour indiquer une erreur fatale qui a provoqué ou est sur le point de provoquer l'arrêt complet du programme.                                        |
 
-<base-quiz>
-<base-quiz-question correct="D" id="cheatsheet-debugging-4">
+<BaseQuiz id="cheatsheet-debugging-4" correct="D">
 <template #question>
 Quel est le niveau de journalisation le plus bas en Python ?
 </template>
 
-<base-quiz-option value="A">A. <code>INFO</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>WARNING</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>ERROR</code></base-quiz-option>
-<base-quiz-option value="D" correct>D. <code>DEBUG</code></base-quiz-option>
-<base-quiz-answer value="D">Les niveaux de journalisation du plus bas au plus élevé sont : <code>DEBUG</code>, <code>INFO</code>, <code>WARNING</code>, <code>ERROR</code>, <code>CRITICAL</code>. <code>DEBUG</code> est le niveau le plus bas, utilisé pour les informations de diagnostic détaillées.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>INFO</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>WARNING</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>ERROR</code></BaseQuizOption>
+<BaseQuizOption value="D" correct>D. <code>DEBUG</code></BaseQuizOption>
+<BaseQuizAnswer>Les niveaux de journalisation du plus bas au plus élevé sont : <code>DEBUG</code>, <code>INFO</code>, <code>WARNING</code>, <code>ERROR</code>, <code>CRITICAL</code>. <code>DEBUG</code> est le niveau le plus bas, utilisé pour les informations de diagnostic détaillées.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Désactiver la journalisation
 
@@ -278,19 +270,17 @@ import logging
 logging.basicConfig(filename='myProgramLog.txt', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-debugging-5">
+<BaseQuiz id="cheatsheet-debugging-5" correct="B">
 <template #question>
 Comment écrire des messages de journalisation dans un fichier au lieu de les afficher à l'écran ?
 </template>
 
-<base-quiz-option value="A">A. Utiliser <code>logging.file()</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. Passer le paramètre <code>filename</code> à <code>logging.basicConfig()</code></base-quiz-option>
-<base-quiz-option value="C">C. Utiliser <code>logging.write()</code></base-quiz-option>
-<base-quiz-option value="D">D. Les journaux sont toujours écrits dans des fichiers automatiquement</base-quiz-option>
-<base-quiz-answer value="B">Pour écrire des messages de journalisation dans un fichier, passez le paramètre <code>filename</code> à <code>logging.basicConfig()</code>. Cela écrira tous les messages de journalisation dans le fichier spécifié au lieu de les afficher à l'écran.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Utiliser <code>logging.file()</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Passer le paramètre <code>filename</code> à <code>logging.basicConfig()</code></BaseQuizOption>
+<BaseQuizOption value="C">C. Utiliser <code>logging.write()</code></BaseQuizOption>
+<BaseQuizOption value="D">D. Les journaux sont toujours écrits dans des fichiers automatiquement</BaseQuizOption>
+<BaseQuizAnswer>Pour écrire des messages de journalisation dans un fichier, passez le paramètre <code>filename</code> à <code>logging.basicConfig()</code>. Cela écrira tous les messages de journalisation dans le fichier spécifié au lieu de les afficher à l'écran.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Liens pertinents
 

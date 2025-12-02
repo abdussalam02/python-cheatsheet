@@ -239,19 +239,17 @@ esposa
 {'name': 'Rose', 'hair': 'brown'}
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-dictionaries-1">
+<BaseQuiz id="cheatsheet-dictionaries-1" correct="B">
 <template #question>
 ¿Qué hace <code>pop()</code> cuando se llama en un diccionario?
 </template>
 
-<base-quiz-option value="A">A. Solo elimina el par clave-valor</base-quiz-option>
-<base-quiz-option value="B" correct>B. Elimina y devuelve el valor para la clave especificada</base-quiz-option>
-<base-quiz-option value="C">C. Solo devuelve el valor sin eliminarlo</base-quiz-option>
-<base-quiz-option value="D">D. Elimina todos los elementos del diccionario</base-quiz-option>
-<base-quiz-answer value="B">El método <code>pop()</code> elimina el par clave-valor para la clave especificada y devuelve el valor. Si la clave no existe, genera un <code>KeyError</code> (a menos que proporciones un valor predeterminado).</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Solo elimina el par clave-valor</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Elimina y devuelve el valor para la clave especificada</BaseQuizOption>
+<BaseQuizOption value="C">C. Solo devuelve el valor sin eliminarlo</BaseQuizOption>
+<BaseQuizOption value="D">D. Elimina todos los elementos del diccionario</BaseQuizOption>
+<BaseQuizAnswer>El método <code>pop()</code> elimina el par clave-valor para la clave especificada y devuelve el valor. Si la clave no existe, genera un <code>KeyError</code> (a menos que proporciones un valor predeterminado).</BaseQuizAnswer>
+</BaseQuiz>
 
 ### popitem()
 
@@ -383,19 +381,17 @@ dict_c
 {'a': 1, 'b': 3, 'c': 4}
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-dictionaries-2">
+<BaseQuiz id="cheatsheet-dictionaries-2" correct="B">
 <template #question>
 Al fusionar dos diccionarios usando <code>{**dict_b, **dict_a}</code>, ¿qué sucede si ambos diccionarios tienen la misma clave?
 </template>
 
-<base-quiz-option value="A">A. El valor de <code>dict_b</code> sobrescribe el valor de <code>dict_a</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. El valor de <code>dict_a</code> sobrescribe el valor de <code>dict_b</code></base-quiz-option>
-<base-quiz-option value="C">C. Ambos valores se mantienen en una lista</base-quiz-option>
-<base-quiz-option value="D">D. Se genera un error</base-quiz-option>
-<base-quiz-answer value="B">Al fusionar diccionarios con el operador de desempaquetado <code>\*\*</code>, si ambos diccionarios tienen la misma clave, el valor del diccionario que aparece más tarde (en este caso <code>dict_a</code>) sobrescribe el valor del diccionario anterior.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. El valor de <code>dict_b</code> sobrescribe el valor de <code>dict_a</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. El valor de <code>dict_a</code> sobrescribe el valor de <code>dict_b</code></BaseQuizOption>
+<BaseQuizOption value="C">C. Ambos valores se mantienen en una lista</BaseQuizOption>
+<BaseQuizOption value="D">D. Se genera un error</BaseQuizOption>
+<BaseQuizAnswer>Al fusionar diccionarios con el operador de desempaquetado <code>\*\*</code>, si ambos diccionarios tienen la misma clave, el valor del diccionario que aparece más tarde (en este caso <code>dict_a</code>) sobrescribe el valor del diccionario anterior.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Enlaces relevantes
 

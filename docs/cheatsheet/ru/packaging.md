@@ -61,19 +61,17 @@ setup(
 )
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-packaging-1">
+<BaseQuiz id="cheatsheet-packaging-1" correct="C">
 <template #question>
 Какие три поля являются обязательными в файле <code>setup.py</code>?
 </template>
 
-<base-quiz-option value="A">A. name, author, license</base-quiz-option>
-<base-quiz-option value="B">B. name, description, packages</base-quiz-option>
-<base-quiz-option value="C" correct>C. name, version, packages</base-quiz-option>
-<base-quiz-option value="D">D. name, version, license</base-quiz-option>
-<base-quiz-answer value="C">Три обязательных поля в <code>setup.py</code> это <code>name</code> (имя пакета, должно быть уникальным на PyPI), <code>version</code> (отслеживает выпуски) и <code>packages</code> (описывает, где расположен исходный код Python).</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. name, author, license</BaseQuizOption>
+<BaseQuizOption value="B">B. name, description, packages</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. name, version, packages</BaseQuizOption>
+<BaseQuizOption value="D">D. name, version, license</BaseQuizOption>
+<BaseQuizAnswer>Три обязательных поля в <code>setup.py</code> это <code>name</code> (имя пакета, должно быть уникальным на PyPI), <code>version</code> (отслеживает выпуски) и <code>packages</code> (описывает, где расположен исходный код Python).</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Современный подход: pyproject.toml
 
@@ -131,19 +129,17 @@ pip install .
 pip install -e .
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-packaging-2">
+<BaseQuiz id="cheatsheet-packaging-2" correct="B">
 <template #question>
 Каково основное преимущество <code>pyproject.toml</code> перед <code>setup.py</code>?
 </template>
 
-<base-quiz-option value="A">A. Он быстрее выполняется</base-quiz-option>
-<base-quiz-option value="B" correct>B. Он декларативный, безопаснее (без выполнения кода) и соответствует стандартам PEP</base-quiz-option>
-<base-quiz-option value="C">C. Он требует меньше конфигурации</base-quiz-option>
-<base-quiz-option value="D">D. Он работает только с Python 3.10+</base-quiz-option>
-<base-quiz-answer value="B">Подход <code>pyproject.toml</code> является декларативным (все метаданные в одном месте), более безопасным, поскольку он не выполняет код, как <code>setup.py</code>, и соответствует стандартам PEP (PEP-517, PEP-518, PEP-660) для лучшей поддержки инструментов.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Он быстрее выполняется</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Он декларативный, безопаснее (без выполнения кода) и соответствует стандартам PEP</BaseQuizOption>
+<BaseQuizOption value="C">C. Он требует меньше конфигурации</BaseQuizOption>
+<BaseQuizOption value="D">D. Он работает только с Python 3.10+</BaseQuizOption>
+<BaseQuizAnswer>Подход <code>pyproject.toml</code> является декларативным (все метаданные в одном месте), более безопасным, поскольку он не выполняет код, как <code>setup.py</code>, и соответствует стандартам PEP (PEP-517, PEP-518, PEP-660) для лучшей поддержки инструментов.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Выбор правильного подхода
 

@@ -97,8 +97,7 @@ Ejemplos de expresiones:
 16.0
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-basics-1">
+<BaseQuiz id="cheatsheet-basics-1" correct="A">
 <template #question>
 ¿Cuál es el resultado de esta expresión de Python?
 
@@ -108,13 +107,12 @@ Ejemplos de expresiones:
 
 </template>
 
-<base-quiz-option value="A" correct>A. 10</base-quiz-option>
-<base-quiz-option value="B">B. 18</base-quiz-option>
-<base-quiz-option value="C">C. 12</base-quiz-option>
-<base-quiz-option value="D">D. 20</base-quiz-option>
-<base-quiz-answer value="A">La multiplicación tiene mayor precedencia que la suma, por lo que se evalúa como: 4 + (2 \* 3) = 4 + 6 = 10</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. 10</BaseQuizOption>
+<BaseQuizOption value="B">B. 18</BaseQuizOption>
+<BaseQuizOption value="C">C. 12</BaseQuizOption>
+<BaseQuizOption value="D">D. 20</BaseQuizOption>
+<BaseQuizAnswer>La multiplicación tiene mayor precedencia que la suma, por lo que se evalúa como: 4 + (2 \* 3) = 4 + 6 = 10</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Operadores de Asignación Aumentada
 
@@ -163,8 +161,7 @@ my_list
 ['item', 'item', 'item']
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-basics-2">
+<BaseQuiz id="cheatsheet-basics-2" correct="B">
 <template #question>
 ¿Cuál es el valor de <code>x</code> después de ejecutar este código?
 
@@ -175,13 +172,12 @@ x += 3
 
 </template>
 
-<base-quiz-option value="A">A. 3</base-quiz-option>
-<base-quiz-option value="B" correct>B. 8</base-quiz-option>
-<base-quiz-option value="C">C. 5</base-quiz-option>
-<base-quiz-option value="D">D. 15</base-quiz-option>
-<base-quiz-answer value="B">El operador de asignación aumentada <code>+=</code> es equivalente a <code>x = x + 3</code>. Por lo tanto, <code>x</code> comienza en 5, y luego se convierte en 5 + 3 = 8.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 3</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. 8</BaseQuizOption>
+<BaseQuizOption value="C">C. 5</BaseQuizOption>
+<BaseQuizOption value="D">D. 15</BaseQuizOption>
+<BaseQuizAnswer>El operador de asignación aumentada <code>+=</code> es equivalente a <code>x = x + 3</code>. Por lo tanto, <code>x</code> comienza en 5, y luego se convierte en 5 + 3 = 8.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Operador Walrus (Morsa)
 
@@ -340,19 +336,17 @@ my_var_2 = 'Hello'
 _spam = 'Hello'
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-basics-3">
+<BaseQuiz id="cheatsheet-basics-3" correct="C">
 <template #question>
 En los conceptos básicos de Python, ¿cuál de los siguientes es un nombre de variable válido?
 </template>
 
-<base-quiz-option value="A">A. <code>3value</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>user-name</code></base-quiz-option>
-<base-quiz-option value="C" correct>C. <code>user_name</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>for</code></base-quiz-option>
-<base-quiz-answer value="C"><code>user_name</code> es un nombre de variable válido porque solo utiliza letras, números y guiones bajos, y no comienza con un número.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>3value</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>user-name</code></BaseQuizOption>
+<BaseQuizOption value="C" correct>C. <code>user_name</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>for</code></BaseQuizOption>
+<BaseQuizAnswer><code>user_name</code> es un nombre de variable válido porque solo utiliza letras, números y guiones bajos, y no comienza con un número.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Comentarios
 
@@ -479,19 +473,17 @@ What is your name? Martha
 Hi, Martha
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-basics-4">
+<BaseQuiz id="cheatsheet-basics-4" correct="B">
 <template #question>
 En los conceptos básicos de Python, ¿qué tipo devuelve `input()`?
 </template>
 
-<base-quiz-option value="A">A. int</base-quiz-option>
-<base-quiz-option value="B" correct>B. str</base-quiz-option>
-<base-quiz-option value="C">C. float</base-quiz-option>
-<base-quiz-option value="D">D. Depende de la entrada del usuario</base-quiz-option>
-<base-quiz-answer value="B">La función <code>input()</code> siempre devuelve una cadena (string), independientemente de lo que escriba el usuario. Debe convertirla a otros tipos si es necesario.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. int</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. str</BaseQuizOption>
+<BaseQuizOption value="C">C. float</BaseQuizOption>
+<BaseQuizOption value="D">D. Depende de la entrada del usuario</BaseQuizOption>
+<BaseQuizAnswer>La función <code>input()</code> siempre devuelve una cadena (string), independientemente de lo que escriba el usuario. Debe convertirla a otros tipos si es necesario.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## La Función len()
 
@@ -588,8 +580,7 @@ float('3.14')  # Devuelve 3.14
 3.14
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-basics-5">
+<BaseQuiz id="cheatsheet-basics-5" correct="C">
 <template #question>
 ¿Cuál es el resultado de este código de Python?
 
@@ -600,13 +591,12 @@ type(result)
 
 </template>
 
-<base-quiz-option value="A">A. <code>str</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>float</code></base-quiz-option>
-<base-quiz-option value="C" correct>C. <code>int</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>NoneType</code></base-quiz-option>
-<base-quiz-answer value="C">La función <code>int()</code> convierte una cadena a un entero. Por lo tanto, <code>int('42')</code> devuelve el entero <code>42</code>, y <code>type(42)</code> devuelve <code>int</code>.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>str</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>float</code></BaseQuizOption>
+<BaseQuizOption value="C" correct>C. <code>int</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>NoneType</code></BaseQuizOption>
+<BaseQuizAnswer>La función <code>int()</code> convierte una cadena a un entero. Por lo tanto, <code>int('42')</code> devuelve el entero <code>42</code>, y <code>type(42)</code> devuelve <code>int</code>.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Enlaces Relevantes
 

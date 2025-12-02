@@ -61,19 +61,17 @@ print(obj.__private_var)    # AttributeError: 'MyClass' object has no attribute 
 
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-oop-basics-1">
+<BaseQuiz id="cheatsheet-oop-basics-1" correct="B">
 <template #question>
 如何在 Python 中指示一个受保护的变量？
 </template>
 
-<base-quiz-option value="A">A. 双下划线前缀：<code>**variable</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. 单下划线前缀：<code>_variable</code></base-quiz-option>
-<base-quiz-option value="C">C. 不需要下划线</base-quiz-option>
-<base-quiz-option value="D">D. 三下划线前缀：<code>_**variable</code></base-quiz-option>
-<base-quiz-answer value="B">在 Python 中，单个下划线前缀 (<code>\_variable</code>) 表示一个受保护的变量，这是一种约定，意味着它应该在类或其子类中使用。双下划线 (<code>\_\_variable</code>) 表示一个私有变量。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 双下划线前缀：<code>**variable</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. 单下划线前缀：<code>_variable</code></BaseQuizOption>
+<BaseQuizOption value="C">C. 不需要下划线</BaseQuizOption>
+<BaseQuizOption value="D">D. 三下划线前缀：<code>_**variable</code></BaseQuizOption>
+<BaseQuizAnswer>在 Python 中，单个下划线前缀 (<code>\_variable</code>) 表示一个受保护的变量，这是一种约定，意味着它应该在类或其子类中使用。双下划线 (<code>\_\_variable</code>) 表示一个私有变量。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 继承 (Inheritance)
 
@@ -130,19 +128,17 @@ cat.speak()   # 输出：Meow!
 
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-oop-basics-2">
+<BaseQuiz id="cheatsheet-oop-basics-2" correct="A">
 <template #question>
 Python 中的继承是什么？
 </template>
 
-<base-quiz-option value="A" correct>A. 一个类可以从另一个类继承属性和方法的机制</base-quiz-option>
-<base-quiz-option value="B">B. 复制对象的方式</base-quiz-option>
-<base-quiz-option value="C">C. 删除类的方法</base-quiz-option>
-<base-quiz-option value="D">D. 一个内置函数</base-quiz-option>
-<base-quiz-answer value="A">继承允许一个类（子类/派生类）从另一个类（父类/基类）继承属性和方法。这促进了代码重用，并允许您创建类层次结构。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. 一个类可以从另一个类继承属性和方法的机制</BaseQuizOption>
+<BaseQuizOption value="B">B. 复制对象的方式</BaseQuizOption>
+<BaseQuizOption value="C">C. 删除类的方法</BaseQuizOption>
+<BaseQuizOption value="D">D. 一个内置函数</BaseQuizOption>
+<BaseQuizAnswer>继承允许一个类（子类/派生类）从另一个类（父类/基类）继承属性和方法。这促进了代码重用，并允许您创建类层次结构。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 多态性 (Polymorphism)
 
@@ -193,19 +189,17 @@ for shape in shapes:
 
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-oop-basics-3">
+<BaseQuiz id="cheatsheet-oop-basics-3" correct="C">
 <template #question>
 Python 中的多态性是什么？
 </template>
 
-<base-quiz-option value="A">A. 创建多个同名类</base-quiz-option>
-<base-quiz-option value="B">B. 隐藏实现细节</base-quiz-option>
-<base-quiz-option value="C" correct>C. 能够通过通用接口以统一的方式使用不同类的对象</base-quiz-option>
-<base-quiz-option value="D">D. 复制对象</base-quiz-option>
-<base-quiz-answer value="C">多态性允许您以统一的方式处理不同类的对象。不同的类可以实现相同的**方法名称**，Python 会根据对象的类型调用适当的实现。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 创建多个同名类</BaseQuizOption>
+<BaseQuizOption value="B">B. 隐藏实现细节</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. 能够通过通用接口以统一的方式使用不同类的对象</BaseQuizOption>
+<BaseQuizOption value="D">D. 复制对象</BaseQuizOption>
+<BaseQuizAnswer>多态性允许您以统一的方式处理不同类的对象。不同的类可以实现相同的**方法名称**，Python 会根据对象的类型调用适当的实现。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 抽象 (Abstraction)
 

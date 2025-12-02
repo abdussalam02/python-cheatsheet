@@ -43,19 +43,17 @@ Hello World!
 After func!
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-decorators-1">
+<BaseQuiz id="cheatsheet-decorators-1" correct="A">
 <template #question>
 ¿Qué es un decorador en Python?
 </template>
 
-<base-quiz-option value="A" correct>A. Una función que toma otra función y devuelve una función envolvente</base-quiz-option>
-<base-quiz-option value="B">B. Un tipo especial de clase</base-quiz-option>
-<base-quiz-option value="C">C. Una palabra clave incorporada de Python</base-quiz-option>
-<base-quiz-option value="D">D. Una forma de eliminar funciones</base-quiz-option>
-<base-quiz-answer value="A">Un decorador es una función que toma otra función como argumento y devuelve una función envolvente. La sintaxis <code>@</code> es azúcar sintáctico que aplica el decorador a una función.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. Una función que toma otra función y devuelve una función envolvente</BaseQuizOption>
+<BaseQuizOption value="B">B. Un tipo especial de clase</BaseQuizOption>
+<BaseQuizOption value="C">C. Una palabra clave incorporada de Python</BaseQuizOption>
+<BaseQuizOption value="D">D. Una forma de eliminar funciones</BaseQuizOption>
+<BaseQuizAnswer>Un decorador es una función que toma otra función como argumento y devuelve una función envolvente. La sintaxis <code>@</code> es azúcar sintáctico que aplica el decorador a una función.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Decorador para una función con parámetros
 
@@ -102,19 +100,17 @@ def your_decorator(func):
   return wrapper
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-decorators-2">
+<BaseQuiz id="cheatsheet-decorators-2" correct="B">
 <template #question>
 ¿Qué hace <code>@functools.wraps(func)</code> en un decorador?
 </template>
 
-<base-quiz-option value="A">A. Hace que el decorador se ejecute más rápido</base-quiz-option>
-<base-quiz-option value="B" correct>B. Preserva los metadatos de la función original (nombre, cadena de documentación, etc.)</base-quiz-option>
-<base-quiz-option value="C">C. Evita que se llame a la función</base-quiz-option>
-<base-quiz-option value="D">D. Convierte la función en una clase</base-quiz-option>
-<base-quiz-answer value="B">El decorador <code>@functools.wraps(func)</code> preserva los metadatos de la función original (como su nombre y cadena de documentación) en la función envolvente. Esto se considera una mejor práctica al escribir decoradores.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Hace que el decorador se ejecute más rápido</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Preserva los metadatos de la función original (nombre, cadena de documentación, etc.)</BaseQuizOption>
+<BaseQuizOption value="C">C. Evita que se llame a la función</BaseQuizOption>
+<BaseQuizOption value="D">D. Convierte la función en una clase</BaseQuizOption>
+<BaseQuizAnswer>El decorador <code>@functools.wraps(func)</code> preserva los metadatos de la función original (como su nombre y cadena de documentación) en la función envolvente. Esto se considera una mejor práctica al escribir decoradores.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Decorador con parámetros
 

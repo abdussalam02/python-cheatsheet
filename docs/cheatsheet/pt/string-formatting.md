@@ -98,19 +98,17 @@ f'Hello {name}!'  # prefixo f permite expressões em {}
 'Hello Elizabeth!'
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-string-formatting-1">
+<BaseQuiz id="cheatsheet-string-formatting-1" correct="B">
 <template #question>
 Qual prefixo é usado para f-strings em Python?
 </template>
 
-<base-quiz-option value="A">A. <code>fmt</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>f</code> ou <code>F</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>format</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>str</code></base-quiz-option>
-<base-quiz-answer value="B">As f-strings são prefixadas com <code>f</code> ou <code>F</code> antes da aspa de abertura. Elas permitem incorporar expressões dentro de chaves <code>{}</code>.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>fmt</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>f</code> ou <code>F</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>format</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>str</code></BaseQuizOption>
+<BaseQuizAnswer>As f-strings são prefixadas com <code>f</code> ou <code>F</code> antes da aspa de abertura. Elas permitem incorporar expressões dentro de chaves <code>{}</code>.</BaseQuizAnswer>
+</BaseQuiz>
 
 É até possível fazer aritmética em linha com isso:
 
@@ -206,19 +204,17 @@ f"{a:.2f}"
 '3.14'
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-string-formatting-2">
+<BaseQuiz id="cheatsheet-string-formatting-2" correct="C">
 <template #question>
 O que <code>f"{a:.2f}"</code> faz?
 </template>
 
-<base-quiz-option value="A">A. Arredonda o número para o inteiro mais próximo</base-quiz-option>
-<base-quiz-option value="B">B. Formata como uma porcentagem</base-quiz-option>
-<base-quiz-option value="C" correct>C. Formata o número como um float com 2 casas decimais</base-quiz-option>
-<base-quiz-option value="D">D. Converte para notação científica</base-quiz-option>
-<base-quiz-answer value="C">O especificador de formato <code>:.2f</code> formata um número como um float com exatamente 2 casas decimais. O <code>.2</code> especifica a precisão, e <code>f</code> significa formato float.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Arredonda o número para o inteiro mais próximo</BaseQuizOption>
+<BaseQuizOption value="B">B. Formata como uma porcentagem</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. Formata o número como um float com 2 casas decimais</BaseQuizOption>
+<BaseQuizOption value="D">D. Converte para notação científica</BaseQuizOption>
+<BaseQuizAnswer>O especificador de formato <code>:.2f</code> formata um número como um float com exatamente 2 casas decimais. O <code>.2</code> especifica a precisão, e <code>f</code> significa formato float.</BaseQuizAnswer>
+</BaseQuiz>
 
 Exibindo como Porcentagem
 

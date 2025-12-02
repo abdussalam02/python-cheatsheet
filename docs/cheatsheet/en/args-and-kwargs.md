@@ -69,19 +69,17 @@ some_function('arg1', 'arg2', 'arg3')
 Arguments passed: ('arg1', 'arg2', 'arg3') as <class 'tuple'>
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-args-and-kwargs-1">
+<BaseQuiz id="cheatsheet-args-and-kwargs-1" correct="B">
 <template #question>
 What data type does <code>*args</code> collect arguments into?
 </template>
 
-<base-quiz-option value="A">A. A list</base-quiz-option>
-<base-quiz-option value="B" correct>B. A tuple</base-quiz-option>
-<base-quiz-option value="C">C. A dictionary</base-quiz-option>
-<base-quiz-option value="D">D. A set</base-quiz-option>
-<base-quiz-answer value="B">The <code>\*args</code> parameter collects positional arguments into a tuple. This allows a function to accept any number of positional arguments.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. A list</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. A tuple</BaseQuizOption>
+<BaseQuizOption value="C">C. A dictionary</BaseQuizOption>
+<BaseQuizOption value="D">D. A set</BaseQuizOption>
+<BaseQuizAnswer>The <code>\*args</code> parameter collects positional arguments into a tuple. This allows a function to accept any number of positional arguments.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## kwargs
 
@@ -100,19 +98,17 @@ some_function(key1='arg1', key2='arg2')
 keywords: {'key1': 'arg1', 'key2': 'arg2'} as <class 'dict'>
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-args-and-kwargs-2">
+<BaseQuiz id="cheatsheet-args-and-kwargs-2" correct="C">
 <template #question>
 What data type does <code>**kwargs</code> collect arguments into?
 </template>
 
-<base-quiz-option value="A">A. A list</base-quiz-option>
-<base-quiz-option value="B">B. A tuple</base-quiz-option>
-<base-quiz-option value="C" correct>C. A dictionary</base-quiz-option>
-<base-quiz-option value="D">D. A set</base-quiz-option>
-<base-quiz-answer value="C">The <code>\*\*kwargs</code> parameter collects keyword arguments into a dictionary. This allows a function to accept any number of keyword arguments.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. A list</BaseQuizOption>
+<BaseQuizOption value="B">B. A tuple</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. A dictionary</BaseQuizOption>
+<BaseQuizOption value="D">D. A set</BaseQuizOption>
+<BaseQuizAnswer>The <code>\*\*kwargs</code> parameter collects keyword arguments into a dictionary. This allows a function to accept any number of keyword arguments.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Relevant links
 

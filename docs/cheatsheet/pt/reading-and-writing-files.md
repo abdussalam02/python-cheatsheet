@@ -32,19 +32,17 @@ hello_content
 'Hello World!'
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-reading-and-writing-files-1">
+<BaseQuiz id="cheatsheet-reading-and-writing-files-1" correct="A">
 <template #question>
 What is the main advantage of using the <code>with</code> statement when opening files?
 </template>
 
-<base-quiz-option value="A" correct>A. O arquivo é fechado automaticamente quando terminado, mesmo que ocorra um erro</base-quiz-option>
-<base-quiz-option value="B">B. Arquivos abrem mais rápido</base-quiz-option>
-<base-quiz-option value="C">C. Arquivos podem ser abertos em modo de leitura e escrita simultaneamente</base-quiz-option>
-<base-quiz-option value="D">D. Arquivos são automaticamente compactados</base-quiz-option>
-<base-quiz-answer value="A">A instrução <code>with</code> garante que o arquivo seja fechado automaticamente quando o bloco for encerrado, mesmo que ocorra uma exceção. Isso ajuda a gerenciar os recursos adequadamente.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. O arquivo é fechado automaticamente quando terminado, mesmo que ocorra um erro</BaseQuizOption>
+<BaseQuizOption value="B">B. Arquivos abrem mais rápido</BaseQuizOption>
+<BaseQuizOption value="C">C. Arquivos podem ser abertos em modo de leitura e escrita simultaneamente</BaseQuizOption>
+<BaseQuizOption value="D">D. Arquivos são automaticamente compactados</BaseQuizOption>
+<BaseQuizAnswer>A instrução <code>with</code> garante que o arquivo seja fechado automaticamente quando o bloco for encerrado, mesmo que ocorra uma exceção. Isso ajuda a gerenciar os recursos adequadamente.</BaseQuizAnswer>
+</BaseQuiz>
 
 Alternativamente, você pode usar o método _readlines()_ para obter uma lista de valores de string do arquivo, uma string para cada linha de texto:
 
@@ -111,19 +109,17 @@ Hello world!
 Bacon is not a vegetable.
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-reading-and-writing-files-2">
+<BaseQuiz id="cheatsheet-reading-and-writing-files-2" correct="B">
 <template #question>
 What is the difference between opening a file with mode <code>'w'</code> and mode <code>'a'</code>?
 </template>
 
-<base-quiz-option value="A">A. <code>'w'</code> é para leitura, <code>'a'</code> é para escrita</base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>'w'</code> sobrescreve o arquivo, <code>'a'</code> anexa ao arquivo</base-quiz-option>
-<base-quiz-option value="C">C. <code>'w'</code> é para Windows, <code>'a'</code> é para Apple</base-quiz-option>
-<base-quiz-option value="D">D. Não há diferença</base-quiz-option>
-<base-quiz-answer value="B">O modo <code>'w'</code> abre o arquivo para escrita e sobrescreve qualquer conteúdo existente. O modo <code>'a'</code> abre o arquivo para anexar, adicionando novo conteúdo ao final do arquivo.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>'w'</code> é para leitura, <code>'a'</code> é para escrita</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>'w'</code> sobrescreve o arquivo, <code>'a'</code> anexa ao arquivo</BaseQuizOption>
+<BaseQuizOption value="C">C. <code>'w'</code> é para Windows, <code>'a'</code> é para Apple</BaseQuizOption>
+<BaseQuizOption value="D">D. Não há diferença</BaseQuizOption>
+<BaseQuizAnswer>O modo <code>'w'</code> abre o arquivo para escrita e sobrescreve qualquer conteúdo existente. O modo <code>'a'</code> abre o arquivo para anexar, adicionando novo conteúdo ao final do arquivo.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Links relevantes
 

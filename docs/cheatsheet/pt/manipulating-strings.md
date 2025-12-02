@@ -52,19 +52,17 @@ Hello there!\nHow are you?\nI\'m doing fine.
 
 Strings brutas são usadas principalmente para definição de <router-link to="/cheatsheet/regular-expressions">expressões regulares</router-link>.
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-manipulating-strings-1">
+<BaseQuiz id="cheatsheet-manipulating-strings-1" correct="B">
 <template #question>
 O que uma string bruta (prefixada com <code>r</code>) faz em Python?
 </template>
 
-<base-quiz-option value="A">A. Converte todos os caracteres para maiúsculas</base-quiz-option>
-<base-quiz-option value="B" correct>B. Trata barras invertidas como caracteres literais, ignorando sequências de escape</base-quiz-option>
-<base-quiz-option value="C">C. Remove todos os espaços em branco</base-quiz-option>
-<base-quiz-option value="D">D. Inverte a string</base-quiz-option>
-<base-quiz-answer value="B">Strings brutas (prefixadas com <code>r</code>) tratam barras invertidas como caracteres literais, então sequências de escape como <code>\n</code> não são interpretadas.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Converte todos os caracteres para maiúsculas</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Trata barras invertidas como caracteres literais, ignorando sequências de escape</BaseQuizOption>
+<BaseQuizOption value="C">C. Remove todos os espaços em branco</BaseQuizOption>
+<BaseQuizOption value="D">D. Inverte a string</BaseQuizOption>
+<BaseQuizAnswer>Strings brutas (prefixadas com <code>r</code>) tratam barras invertidas como caracteres literais, então sequências de escape como <code>\n</code> não são interpretadas.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Strings Multilinhas
 
@@ -177,19 +175,17 @@ spam[::-1]
 '!dlrow olleH'
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-manipulating-strings-2">
+<BaseQuiz id="cheatsheet-manipulating-strings-2" correct="C">
 <template #question>
 O que <code>spam[::-1]</code> faz com uma string?
 </template>
 
-<base-quiz-option value="A">A. Retorna o primeiro caractere</base-quiz-option>
-<base-quiz-option value="B">B. Retorna o último caractere</base-quiz-option>
-<base-quiz-option value="C" correct>C. Inverte a string</base-quiz-option>
-<base-quiz-option value="D">D. Remove todos os caracteres</base-quiz-option>
-<base-quiz-answer value="C">O fatiamento <code>[::-1]</code> inverte uma string percorrendo todos os caracteres de trás para frente. O valor de passo <code>-1</code> significa "voltar".</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Retorna o primeiro caractere</BaseQuizOption>
+<BaseQuizOption value="B">B. Retorna o último caractere</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. Inverte a string</BaseQuizOption>
+<BaseQuizOption value="D">D. Remove todos os caracteres</BaseQuizOption>
+<BaseQuizAnswer>O fatiamento <code>[::-1]</code> inverte uma string percorrendo todos os caracteres de trás para frente. O valor de passo <code>-1</code> significa "voltar".</BaseQuizAnswer>
+</BaseQuiz>
 
 ```python
 fizz = spam[0:5]
@@ -384,19 +380,17 @@ True
 True
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-manipulating-strings-3">
+<BaseQuiz id="cheatsheet-manipulating-strings-3" correct="A">
 <template #question>
 O que <code>startswith()</code> retorna?
 </template>
 
-<base-quiz-option value="A" correct>A. <code>True</code> se a string começa com a substring especificada, <code>False</code> caso contrário</base-quiz-option>
-<base-quiz-option value="B">B. A substring que corresponde ao início</base-quiz-option>
-<base-quiz-option value="C">C. O índice onde a substring começa</base-quiz-option>
-<base-quiz-option value="D">D. Uma nova string sem o prefixo</base-quiz-option>
-<base-quiz-answer value="A">O método <code>startswith()</code> retorna um valor booleano: <code>True</code> se a string começa com a substring especificada, <code>False</code> caso contrário.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. <code>True</code> se a string começa com a substring especificada, <code>False</code> caso contrário</BaseQuizOption>
+<BaseQuizOption value="B">B. A substring que corresponde ao início</BaseQuizOption>
+<BaseQuizOption value="C">C. O índice onde a substring começa</BaseQuizOption>
+<BaseQuizOption value="D">D. Uma nova string sem o prefixo</BaseQuizOption>
+<BaseQuizAnswer>O método <code>startswith()</code> retorna um valor booleano: <code>True</code> se a string começa com a substring especificada, <code>False</code> caso contrário.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## join() e split()
 
@@ -480,19 +474,17 @@ O método `split()` divide uma `string` em uma `lista`. Por padrão, ele usará 
 ['', 'My', '', 'name', 'is', '', 'Simon']
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-manipulating-strings-4">
+<BaseQuiz id="cheatsheet-manipulating-strings-4" correct="B">
 <template #question>
 O que <code>split()</code> retorna quando chamado em uma string?
 </template>
 
-<base-quiz-option value="A">A. Uma string</base-quiz-option>
-<base-quiz-option value="B" correct>B. Uma lista de strings</base-quiz-option>
-<base-quiz-option value="C">C. Uma tupla de strings</base-quiz-option>
-<base-quiz-option value="D">D. Um dicionário</base-quiz-option>
-<base-quiz-answer value="B">O método <code>split()</code> divide uma string em uma lista de substrings. Por padrão, ele divide em espaços em branco, mas você pode especificar um separador diferente.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Uma string</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Uma lista de strings</BaseQuizOption>
+<BaseQuizOption value="C">C. Uma tupla de strings</BaseQuizOption>
+<BaseQuizOption value="D">D. Um dicionário</BaseQuizOption>
+<BaseQuizAnswer>O método <code>split()</code> divide uma string em uma lista de substrings. Por padrão, ele divide em espaços em branco, mas você pode especificar um separador diferente.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Justificando texto com rjust(), ljust() e center()
 
@@ -667,19 +659,17 @@ sentence.replace("apples", "oranges")
 'I like oranges, Apples are my favorite fruit'
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-manipulating-strings-5">
+<BaseQuiz id="cheatsheet-manipulating-strings-5" correct="C">
 <template #question>
 O que o método <code>replace()</code> retorna?
 </template>
 
-<base-quiz-option value="A">A. Modifica a string original</base-quiz-option>
-<base-quiz-option value="B">B. Retorna <code>None</code></base-quiz-option>
-<base-quiz-option value="C" correct>C. Retorna uma nova string com as substituições feitas</base-quiz-option>
-<base-quiz-option value="D">D. Retorna uma lista de strings substituídas</base-quiz-option>
-<base-quiz-answer value="C">O método <code>replace()</code> retorna uma nova string com todas as ocorrências da substring antiga substituídas pela nova substring. A string original não é modificada.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Modifica a string original</BaseQuizOption>
+<BaseQuizOption value="B">B. Retorna <code>None</code></BaseQuizOption>
+<BaseQuizOption value="C" correct>C. Retorna uma nova string com as substituições feitas</BaseQuizOption>
+<BaseQuizOption value="D">D. Retorna uma lista de strings substituídas</BaseQuizOption>
+<BaseQuizAnswer>O método <code>replace()</code> retorna uma nova string com todas as ocorrências da substring antiga substituídas pela nova substring. A string original não é modificada.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Links Relevantes
 

@@ -32,19 +32,17 @@ with open("filename.json", "w") as f:  # Открыть файл в режиме
     json.dump(content, f, indent=2)  # Записать JSON с отступом в 2 пробела
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-json-yaml-1">
+<BaseQuiz id="cheatsheet-json-yaml-1" correct="B">
 <template #question>
 Какая функция используется для записи словаря Python в файл JSON?
 </template>
 
-<base-quiz-option value="A">A. <code>json.write()</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>json.dump()</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>json.save()</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>json.export()</code></base-quiz-option>
-<base-quiz-answer value="B">Функция <code>json.dump()</code> записывает объект Python (например, словарь) в файл JSON. <code>json.load()</code> используется для чтения файлов JSON.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>json.write()</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>json.dump()</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>json.save()</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>json.export()</code></BaseQuizOption>
+<BaseQuizAnswer>Функция <code>json.dump()</code> записывает объект Python (например, словарь) в файл JSON. <code>json.load()</code> используется для чтения файлов JSON.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## YAML
 
@@ -70,19 +68,17 @@ with open("filename.yaml") as f:
     yaml.load(f)  # Разобрать YAML и вернуть Python dict/list
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-json-yaml-2">
+<BaseQuiz id="cheatsheet-json-yaml-2" correct="C">
 <template #question>
 Какое одно из преимуществ YAML перед JSON?
 </template>
 
-<base-quiz-option value="A">A. Файлы YAML меньше</base-quiz-option>
-<base-quiz-option value="B">B. YAML быстрее разбирается</base-quiz-option>
-<base-quiz-option value="C" correct>C. YAML допускает комментарии и более читаем для человека</base-quiz-option>
-<base-quiz-option value="D">D. YAML встроен в Python</base-quiz-option>
-<base-quiz-answer value="C">YAML допускает комментарии и более читаем для человека, чем JSON, что делает его удобным выбором для конфигурационных файлов, которые должны редактироваться людьми.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Файлы YAML меньше</BaseQuizOption>
+<BaseQuizOption value="B">B. YAML быстрее разбирается</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. YAML допускает комментарии и более читаем для человека</BaseQuizOption>
+<BaseQuizOption value="D">D. YAML встроен в Python</BaseQuizOption>
+<BaseQuizAnswer>YAML допускает комментарии и более читаем для человека, чем JSON, что делает его удобным выбором для конфигурационных файлов, которые должны редактироваться людьми.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Anyconfig
 
@@ -102,19 +98,17 @@ import anyconfig
 conf1 = anyconfig.load("/path/to/foo/conf.d/a.yml")  # Автоматическое определение формата
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-json-yaml-3">
+<BaseQuiz id="cheatsheet-json-yaml-3" correct="A">
 <template #question>
 Что позволяет делать библиотека anyconfig?
 </template>
 
-<base-quiz-option value="A" correct>A. Загружать конфигурационные файлы в различных форматах (JSON, YAML, TOML) без указания формата</base-quiz-option>
-<base-quiz-option value="B">B. Преобразовывать между различными форматами конфигурации</base-quiz-option>
-<base-quiz-option value="C">C. Проверять синтаксис конфигурационного файла</base-quiz-option>
-<base-quiz-option value="D">D. Шифровать конфигурационные файлы</base-quiz-option>
-<base-quiz-answer value="A">Библиотека anyconfig абстрагирует базовый формат конфигурационного файла, позволяя загружать словари Python из JSON, YAML, TOML и других форматов без необходимости знать, какой формат используется.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. Загружать конфигурационные файлы в различных форматах (JSON, YAML, TOML) без указания формата</BaseQuizOption>
+<BaseQuizOption value="B">B. Преобразовывать между различными форматами конфигурации</BaseQuizOption>
+<BaseQuizOption value="C">C. Проверять синтаксис конфигурационного файла</BaseQuizOption>
+<BaseQuizOption value="D">D. Шифровать конфигурационные файлы</BaseQuizOption>
+<BaseQuizAnswer>Библиотека anyconfig абстрагирует базовый формат конфигурационного файла, позволяя загружать словари Python из JSON, YAML, TOML и других форматов без необходимости знать, какой формат используется.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Relevant links
 

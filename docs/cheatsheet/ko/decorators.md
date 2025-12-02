@@ -41,19 +41,17 @@ Hello World!
 After func!
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-decorators-1">
+<BaseQuiz id="cheatsheet-decorators-1" correct="A">
 <template #question>
 Python 에서 데코레이터란 무엇입니까?
 </template>
 
-<base-quiz-option value="A" correct>A. 다른 함수를 인수로 받아 래퍼 함수를 반환하는 함수</base-quiz-option>
-<base-quiz-option value="B">B. 특수한 유형의 클래스</base-quiz-option>
-<base-quiz-option value="C">C. 내장된 Python 키워드</base-quiz-option>
-<base-quiz-option value="D">D. 함수를 삭제하는 방법</base-quiz-option>
-<base-quiz-answer value="A">데코레이터는 다른 함수를 인수로 받아 래퍼 함수를 반환하는 함수입니다. <code>@</code> 구문은 데코레이터를 함수에 적용하는 구문 설탕입니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. 다른 함수를 인수로 받아 래퍼 함수를 반환하는 함수</BaseQuizOption>
+<BaseQuizOption value="B">B. 특수한 유형의 클래스</BaseQuizOption>
+<BaseQuizOption value="C">C. 내장된 Python 키워드</BaseQuizOption>
+<BaseQuizOption value="D">D. 함수를 삭제하는 방법</BaseQuizOption>
+<BaseQuizAnswer>데코레이터는 다른 함수를 인수로 받아 래퍼 함수를 반환하는 함수입니다. <code>@</code> 구문은 데코레이터를 함수에 적용하는 구문 설탕입니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 매개변수가 있는 함수를 위한 데코레이터
 
@@ -99,19 +97,17 @@ def your_decorator(func):
   return wrapper
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-decorators-2">
+<BaseQuiz id="cheatsheet-decorators-2" correct="B">
 <template #question>
 데코레이터에서 <code>@functools.wraps(func)</code>는 무엇을 합니까?
 </template>
 
-<base-quiz-option value="A">A. 데코레이터 실행 속도를 높입니다</base-quiz-option>
-<base-quiz-option value="B" correct>B. 원본 함수의 메타데이터 (이름, docstring 등) 를 보존합니다</base-quiz-option>
-<base-quiz-option value="C">C. 함수 호출을 방지합니다</base-quiz-option>
-<base-quiz-option value="D">D. 함수를 클래스로 변환합니다</base-quiz-option>
-<base-quiz-answer value="B"><code>@functools.wraps(func)</code> 데코레이터는 원본 함수의 메타데이터 (이름 및 docstring 등) 를 래퍼 함수에 보존합니다. 이는 데코레이터를 작성할 때 모범 사례로 간주됩니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 데코레이터 실행 속도를 높입니다</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. 원본 함수의 메타데이터 (이름, docstring 등) 를 보존합니다</BaseQuizOption>
+<BaseQuizOption value="C">C. 함수 호출을 방지합니다</BaseQuizOption>
+<BaseQuizOption value="D">D. 함수를 클래스로 변환합니다</BaseQuizOption>
+<BaseQuizAnswer><code>@functools.wraps(func)</code> 데코레이터는 원본 함수의 메타데이터 (이름 및 docstring 등) 를 래퍼 함수에 보존합니다. 이는 데코레이터를 작성할 때 모범 사례로 간주됩니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 매개변수가 있는 데코레이터
 

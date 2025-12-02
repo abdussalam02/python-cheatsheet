@@ -64,19 +64,17 @@ s  # Devuelve {1, 2, 3, 4}
 {1, 2, 3, 4}
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-sets-1">
+<BaseQuiz id="cheatsheet-sets-1" correct="A">
 <template #question>
 ¿Qué sucede cuando crea un conjunto con valores duplicados?
 </template>
 
-<base-quiz-option value="A" correct>A. Los duplicados se eliminan automáticamente</base-quiz-option>
-<base-quiz-option value="B">B. Se genera un error</base-quiz-option>
-<base-quiz-option value="C">C. El conjunto conserva todos los duplicados</base-quiz-option>
-<base-quiz-option value="D">D. Solo se conserva la primera ocurrencia</base-quiz-option>
-<base-quiz-answer value="A">Los conjuntos eliminan automáticamente los valores duplicados. Un conjunto es una colección desordenada sin elementos duplicados.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. Los duplicados se eliminan automáticamente</BaseQuizOption>
+<BaseQuizOption value="B">B. Se genera un error</BaseQuizOption>
+<BaseQuizOption value="C">C. El conjunto conserva todos los duplicados</BaseQuizOption>
+<BaseQuizOption value="D">D. Solo se conserva la primera ocurrencia</BaseQuizOption>
+<BaseQuizAnswer>Los conjuntos eliminan automáticamente los valores duplicados. Un conjunto es una colección desordenada sin elementos duplicados.</BaseQuizAnswer>
+</BaseQuiz>
 
 Y como tipo de dato desordenado, no se puede indexar.
 
@@ -161,19 +159,17 @@ s
 s.discard(3)
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-sets-2">
+<BaseQuiz id="cheatsheet-sets-2" correct="C">
 <template #question>
 ¿Cuál es la diferencia entre los métodos <code>remove()</code> y <code>discard()</code> para conjuntos?
 </template>
 
-<base-quiz-option value="A">A. <code>remove()</code> elimina un elemento, <code>discard()</code> elimina todos</base-quiz-option>
-<base-quiz-option value="B">B. No hay diferencia</base-quiz-option>
-<base-quiz-option value="C" correct>C. <code>remove()</code> genera un error si el elemento no existe, <code>discard()</code> no lo hace</base-quiz-option>
-<base-quiz-option value="D">D. <code>remove()</code> es más rápido</base-quiz-option>
-<base-quiz-answer value="C">Ambos métodos eliminan un elemento de un conjunto, pero <code>remove()</code> genera un <code>KeyError</code> si el elemento no existe, mientras que <code>discard()</code> no hace nada si el elemento falta.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>remove()</code> elimina un elemento, <code>discard()</code> elimina todos</BaseQuizOption>
+<BaseQuizOption value="B">B. No hay diferencia</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. <code>remove()</code> genera un error si el elemento no existe, <code>discard()</code> no lo hace</BaseQuizOption>
+<BaseQuizOption value="D">D. <code>remove()</code> es más rápido</BaseQuizOption>
+<BaseQuizAnswer>Ambos métodos eliminan un elemento de un conjunto, pero <code>remove()</code> genera un <code>KeyError</code> si el elemento no existe, mientras que <code>discard()</code> no hace nada si el elemento falta.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## set union
 
@@ -206,19 +202,17 @@ s1.intersection(s2, s3)  # o 's1 & s2 & s3' - devuelve {3}
 {3}
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-sets-3">
+<BaseQuiz id="cheatsheet-sets-3" correct="B">
 <template #question>
 ¿Qué devuelve <code>intersection()</code> para los conjuntos?
 </template>
 
-<base-quiz-option value="A">A. Todos los elementos de todos los conjuntos</base-quiz-option>
-<base-quiz-option value="B" correct>B. Solo los elementos que son comunes a todos los conjuntos</base-quiz-option>
-<base-quiz-option value="C">C. Elementos en el primer conjunto pero no en los otros</base-quiz-option>
-<base-quiz-option value="D">D. Elementos en cualquiera de los conjuntos pero no en ambos</base-quiz-option>
-<base-quiz-answer value="B">El método <code>intersection()</code> devuelve un conjunto que contiene solo los elementos que están presentes en todos los conjuntos que se comparan.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Todos los elementos de todos los conjuntos</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Solo los elementos que son comunes a todos los conjuntos</BaseQuizOption>
+<BaseQuizOption value="C">C. Elementos en el primer conjunto pero no en los otros</BaseQuizOption>
+<BaseQuizOption value="D">D. Elementos en cualquiera de los conjuntos pero no en ambos</BaseQuizOption>
+<BaseQuizAnswer>El método <code>intersection()</code> devuelve un conjunto que contiene solo los elementos que están presentes en todos los conjuntos que se comparan.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## set difference
 
@@ -259,19 +253,17 @@ s1.symmetric_difference(s2)  # o 's1 ^ s2' - devuelve {1, 4}
 {1, 4}
 ```
 
-<base-quiz>
-<base-quiz-question correct="D" id="cheatsheet-sets-4">
+<BaseQuiz id="cheatsheet-sets-4" correct="D">
 <template #question>
 ¿Qué devuelve <code>symmetric_difference()</code> para dos conjuntos?
 </template>
 
-<base-quiz-option value="A">A. Todos los elementos de ambos conjuntos</base-quiz-option>
-<base-quiz-option value="B">B. Solo los elementos comunes a ambos conjuntos</base-quiz-option>
-<base-quiz-option value="C">C. Elementos en el primer conjunto pero no en el segundo</base-quiz-option>
-<base-quiz-option value="D" correct>D. Elementos en cualquiera de los conjuntos, pero no en ambos</base-quiz-option>
-<base-quiz-answer value="D">El método <code>symmetric_difference()</code> devuelve un conjunto que contiene elementos que están en cualquiera de los conjuntos, pero no en ambos conjuntos.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Todos los elementos de ambos conjuntos</BaseQuizOption>
+<BaseQuizOption value="B">B. Solo los elementos comunes a ambos conjuntos</BaseQuizOption>
+<BaseQuizOption value="C">C. Elementos en el primer conjunto pero no en el segundo</BaseQuizOption>
+<BaseQuizOption value="D" correct>D. Elementos en cualquiera de los conjuntos, pero no en ambos</BaseQuizOption>
+<BaseQuizAnswer>El método <code>symmetric_difference()</code> devuelve un conjunto que contiene elementos que están en cualquiera de los conjuntos, pero no en ambos conjuntos.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Enlaces relevantes
 

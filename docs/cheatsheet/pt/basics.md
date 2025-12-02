@@ -97,8 +97,7 @@ Exemplos de expressões:
 16.0
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-basics-1">
+<BaseQuiz id="cheatsheet-basics-1" correct="A">
 <template #question>
 Qual é o resultado desta expressão Python?
 
@@ -108,13 +107,12 @@ Qual é o resultado desta expressão Python?
 
 </template>
 
-<base-quiz-option value="A" correct>A. 10</base-quiz-option>
-<base-quiz-option value="B">B. 18</base-quiz-option>
-<base-quiz-option value="C">C. 12</base-quiz-option>
-<base-quiz-option value="D">D. 20</base-quiz-option>
-<base-quiz-answer value="A">A multiplicação tem precedência maior que a adição, então isso é avaliado como: 4 + (2 \* 3) = 4 + 6 = 10</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. 10</BaseQuizOption>
+<BaseQuizOption value="B">B. 18</BaseQuizOption>
+<BaseQuizOption value="C">C. 12</BaseQuizOption>
+<BaseQuizOption value="D">D. 20</BaseQuizOption>
+<BaseQuizAnswer>A multiplicação tem precedência maior que a adição, então isso é avaliado como: 4 + (2 \* 3) = 4 + 6 = 10</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Operadores de Atribuição Aumentada
 
@@ -163,8 +161,7 @@ my_list
 ['item', 'item', 'item']
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-basics-2">
+<BaseQuiz id="cheatsheet-basics-2" correct="B">
 <template #question>
 Qual é o valor de <code>x</code> após executar este código?
 
@@ -175,13 +172,12 @@ x += 3
 
 </template>
 
-<base-quiz-option value="A">A. 3</base-quiz-option>
-<base-quiz-option value="B" correct>B. 8</base-quiz-option>
-<base-quiz-option value="C">C. 5</base-quiz-option>
-<base-quiz-option value="D">D. 15</base-quiz-option>
-<base-quiz-answer value="B">O operador de atribuição aumentada <code>+=</code> é equivalente a <code>x = x + 3</code>. Então <code>x</code> começa como 5, e depois se torna 5 + 3 = 8.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 3</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. 8</BaseQuizOption>
+<BaseQuizOption value="C">C. 5</BaseQuizOption>
+<BaseQuizOption value="D">D. 15</BaseQuizOption>
+<BaseQuizAnswer>O operador de atribuição aumentada <code>+=</code> é equivalente a <code>x = x + 3</code>. Então <code>x</code> começa como 5, e depois se torna 5 + 3 = 8.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Operador Walrus
 
@@ -340,19 +336,17 @@ my_var_2 = 'Hello'
 _spam = 'Hello'
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-basics-3">
+<BaseQuiz id="cheatsheet-basics-3" correct="C">
 <template #question>
 Nos fundamentos do Python, qual dos seguintes é um nome de variável válido?
 </template>
 
-<base-quiz-option value="A">A. <code>3value</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>user-name</code></base-quiz-option>
-<base-quiz-option value="C" correct>C. <code>user_name</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>for</code></base-quiz-option>
-<base-quiz-answer value="C"><code>user_name</code> é um nome de variável válido porque usa apenas letras, números e sublinhados, e não começa com um número.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>3value</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>user-name</code></BaseQuizOption>
+<BaseQuizOption value="C" correct>C. <code>user_name</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>for</code></BaseQuizOption>
+<BaseQuizAnswer><code>user_name</code> é um nome de variável válido porque usa apenas letras, números e sublinhados, e não começa com um número.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Comentários
 
@@ -479,19 +473,17 @@ What is your name? Martha
 Hi, Martha
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-basics-4">
+<BaseQuiz id="cheatsheet-basics-4" correct="B">
 <template #question>
 Nos fundamentos do Python, que tipo `input()` retorna?
 </template>
 
-<base-quiz-option value="A">A. int</base-quiz-option>
-<base-quiz-option value="B" correct>B. str</base-quiz-option>
-<base-quiz-option value="C">C. float</base-quiz-option>
-<base-quiz-option value="D">D. Depende da entrada do usuário</base-quiz-option>
-<base-quiz-answer value="B">A função <code>input()</code> sempre retorna uma string, independentemente do que o usuário digita. Você precisa convertê-la para outros tipos, se necessário.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. int</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. str</BaseQuizOption>
+<BaseQuizOption value="C">C. float</BaseQuizOption>
+<BaseQuizOption value="D">D. Depende da entrada do usuário</BaseQuizOption>
+<BaseQuizAnswer>A função <code>input()</code> sempre retorna uma string, independentemente do que o usuário digita. Você precisa convertê-la para outros tipos, se necessário.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## A Função len()
 
@@ -588,8 +580,7 @@ float('3.14')  # Retorna 3.14
 3.14
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-basics-5">
+<BaseQuiz id="cheatsheet-basics-5" correct="C">
 <template #question>
 Qual é o resultado deste código Python?
 
@@ -600,13 +591,12 @@ type(result)
 
 </template>
 
-<base-quiz-option value="A">A. <code>str</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>float</code></base-quiz-option>
-<base-quiz-option value="C" correct>C. <code>int</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>NoneType</code></base-quiz-option>
-<base-quiz-answer value="C">A função <code>int()</code> converte uma string em um inteiro. Portanto, <code>int('42')</code> retorna o inteiro <code>42</code>, e <code>type(42)</code> retorna <code>int</code>.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>str</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>float</code></BaseQuizOption>
+<BaseQuizOption value="C" correct>C. <code>int</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>NoneType</code></BaseQuizOption>
+<BaseQuizAnswer>A função <code>int()</code> converte uma string em um inteiro. Portanto, <code>int('42')</code> retorna o inteiro <code>42</code>, e <code>type(42)</code> retorna <code>int</code>.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Links Relevantes
 

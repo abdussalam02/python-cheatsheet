@@ -64,19 +64,17 @@ s  # {1, 2, 3, 4} を返します
 {1, 2, 3, 4}
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-sets-1">
+<BaseQuiz id="cheatsheet-sets-1" correct="A">
 <template #question>
 重複する値を持つセットを作成するとどうなりますか？
 </template>
 
-<base-quiz-option value="A" correct>A. 重複は自動的に削除されます</base-quiz-option>
-<base-quiz-option value="B">B. エラーが発生します</base-quiz-option>
-<base-quiz-option value="C">C. セットはすべての重複を保持します</base-quiz-option>
-<base-quiz-option value="D">D. 最初の出現のみが保持されます</base-quiz-option>
-<base-quiz-answer value="A">セットは重複する値を自動的に削除します。セットは、重複する要素のない順序付けられていないコレクションです。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. 重複は自動的に削除されます</BaseQuizOption>
+<BaseQuizOption value="B">B. エラーが発生します</BaseQuizOption>
+<BaseQuizOption value="C">C. セットはすべての重複を保持します</BaseQuizOption>
+<BaseQuizOption value="D">D. 最初の出現のみが保持されます</BaseQuizOption>
+<BaseQuizAnswer>セットは重複する値を自動的に削除します。セットは、重複する要素のない順序付けられていないコレクションです。</BaseQuizAnswer>
+</BaseQuiz>
 
 そして、順序付けられていないデータ型であるため、インデックス指定はできません。
 
@@ -161,19 +159,17 @@ s
 s.discard(3)
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-sets-2">
+<BaseQuiz id="cheatsheet-sets-2" correct="C">
 <template #question>
 セットの <code>remove()</code> メソッドと <code>discard()</code> メソッドの違いは何ですか？
 </template>
 
-<base-quiz-option value="A">A. <code>remove()</code> は 1 つの要素を削除し、<code>discard()</code> はすべてを削除します</base-quiz-option>
-<base-quiz-option value="B">B. 違いはありません</base-quiz-option>
-<base-quiz-option value="C" correct>C. <code>remove()</code> は要素が存在しない場合にエラーを発生させますが、<code>discard()</code> は発生させません</base-quiz-option>
-<base-quiz-option value="D">D. <code>remove()</code> の方が高速です</base-quiz-option>
-<base-quiz-answer value="C">どちらのメソッドもセットから要素を削除しますが、<code>remove()</code> は要素が存在しない場合に <code>KeyError</code> を発生させるのに対し、<code>discard()</code> は要素が欠落していても何もしません。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>remove()</code> は 1 つの要素を削除し、<code>discard()</code> はすべてを削除します</BaseQuizOption>
+<BaseQuizOption value="B">B. 違いはありません</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. <code>remove()</code> は要素が存在しない場合にエラーを発生させますが、<code>discard()</code> は発生させません</BaseQuizOption>
+<BaseQuizOption value="D">D. <code>remove()</code> の方が高速です</BaseQuizOption>
+<BaseQuizAnswer>どちらのメソッドもセットから要素を削除しますが、<code>remove()</code> は要素が存在しない場合に <code>KeyError</code> を発生させるのに対し、<code>discard()</code> は要素が欠落していても何もしません。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## set union
 
@@ -206,19 +202,17 @@ s1.intersection(s2, s3)  # または 's1 & s2 & s3' - {3} を返します
 {3}
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-sets-3">
+<BaseQuiz id="cheatsheet-sets-3" correct="B">
 <template #question>
 セットに対して <code>intersection()</code> は何を返しますか？
 </template>
 
-<base-quiz-option value="A">A. すべてのセットからのすべての要素</base-quiz-option>
-<base-quiz-option value="B" correct>B. すべてのセットに共通する要素のみ</base-quiz-option>
-<base-quiz-option value="C">C. 最初のセットには存在するが、他のセットには存在しない要素</base-quiz-option>
-<base-quiz-option value="D">D. いずれかのセットには存在するが、両方には存在しない要素</base-quiz-option>
-<base-quiz-answer value="B"><code>intersection()</code> メソッドは、比較されているすべてのセットに存在する要素のみを含むセットを返します。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. すべてのセットからのすべての要素</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. すべてのセットに共通する要素のみ</BaseQuizOption>
+<BaseQuizOption value="C">C. 最初のセットには存在するが、他のセットには存在しない要素</BaseQuizOption>
+<BaseQuizOption value="D">D. いずれかのセットには存在するが、両方には存在しない要素</BaseQuizOption>
+<BaseQuizAnswer><code>intersection()</code> メソッドは、比較されているすべてのセットに存在する要素のみを含むセットを返します。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## set difference
 
@@ -259,19 +253,17 @@ s1.symmetric_difference(s2)  # または 's1 ^ s2' - {1, 4} を返します
 {1, 4}
 ```
 
-<base-quiz>
-<base-quiz-question correct="D" id="cheatsheet-sets-4">
+<BaseQuiz id="cheatsheet-sets-4" correct="D">
 <template #question>
 2 つのセットに対して <code>symmetric_difference()</code> は何を返しますか？
 </template>
 
-<base-quiz-option value="A">A. 両方のセットからのすべての要素</base-quiz-option>
-<base-quiz-option value="B">B. 両方のセットに共通する要素のみ</base-quiz-option>
-<base-quiz-option value="C">C. 最初のセットには存在するが、2 番目のセットには存在しない要素</base-quiz-option>
-<base-quiz-option value="D" correct>D. いずれかのセットには存在するが、両方のセットには存在しない要素</base-quiz-option>
-<base-quiz-answer value="D"><code>symmetric_difference()</code> メソッドは、いずれかのセットには存在するが、両方のセットには存在しない要素を含むセットを返します。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 両方のセットからのすべての要素</BaseQuizOption>
+<BaseQuizOption value="B">B. 両方のセットに共通する要素のみ</BaseQuizOption>
+<BaseQuizOption value="C">C. 最初のセットには存在するが、2 番目のセットには存在しない要素</BaseQuizOption>
+<BaseQuizOption value="D" correct>D. いずれかのセットには存在するが、両方のセットには存在しない要素</BaseQuizOption>
+<BaseQuizAnswer><code>symmetric_difference()</code> メソッドは、いずれかのセットには存在するが、両方のセットには存在しない要素を含むセットを返します。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 関連リンク
 

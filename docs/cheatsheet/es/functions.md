@@ -80,19 +80,17 @@ say_hi(name='Anna', greeting='Hi')
 Hi Anna
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-functions-1">
+<BaseQuiz id="cheatsheet-functions-1" correct="C">
 <template #question>
 What is the main advantage of using keyword arguments in Python functions?
 </template>
 
-<base-quiz-option value="A">A. They execute faster</base-quiz-option>
-<base-quiz-option value="B">B. They use less memory</base-quiz-option>
-<base-quiz-option value="C" correct>C. They improve code readability and order doesn't matter</base-quiz-option>
-<base-quiz-option value="D">D. They prevent errors</base-quiz-option>
-<base-quiz-answer value="C">Los argumentos de palabra clave mejoran la legibilidad del código al dejar claro a qué representa cada argumento, y permiten pasar argumentos en cualquier orden.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. They execute faster</BaseQuizOption>
+<BaseQuizOption value="B">B. They use less memory</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. They improve code readability and order doesn't matter</BaseQuizOption>
+<BaseQuizOption value="D">D. They prevent errors</BaseQuizOption>
+<BaseQuizAnswer>Los argumentos de palabra clave mejoran la legibilidad del código al dejar claro a qué representa cada argumento, y permiten pasar argumentos en cualquier orden.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Valores de Retorno
 
@@ -116,19 +114,17 @@ print(result)
 15
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-functions-2">
+<BaseQuiz id="cheatsheet-functions-2" correct="A">
 <template #question>
 What keyword is used to return a value from a function in Python?
 </template>
 
-<base-quiz-option value="A" correct>A. <code>return</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>output</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>yield</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>exit</code></base-quiz-option>
-<base-quiz-answer value="A">La palabra clave <code>return</code> se utiliza para devolver un valor desde una función. Si no se utiliza ninguna declaración de retorno, la función devuelve <code>None</code>.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. <code>return</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>output</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>yield</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>exit</code></BaseQuizOption>
+<BaseQuizAnswer>La palabra clave <code>return</code> se utiliza para devolver un valor desde una función. Si no se utiliza ninguna declaración de retorno, la función devuelve <code>None</code>.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Alcance Local y Global (Local and Global Scope)
 
@@ -179,19 +175,17 @@ print(eggs)  # Imprime 'spam', no 'global'
 spam
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-functions-3">
+<BaseQuiz id="cheatsheet-functions-3" correct="B">
 <template #question>
 What keyword must you use inside a function to modify a global variable?
 </template>
 
-<base-quiz-option value="A">A. <code>nonlocal</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>global</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>extern</code></base-quiz-option>
-<base-quiz-option value="D">D. No keyword needed</base-quiz-option>
-<base-quiz-answer value="B">La palabra clave <code>global</code> debe usarse dentro de una función para modificar una variable global. Sin ella, Python creará una variable local en su lugar.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>nonlocal</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>global</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>extern</code></BaseQuizOption>
+<BaseQuizOption value="D">D. No keyword needed</BaseQuizOption>
+<BaseQuizAnswer>La palabra clave <code>global</code> debe usarse dentro de una función para modificar una variable global. Sin ella, Python creará una variable local en su lugar.</BaseQuizAnswer>
+</BaseQuiz>
 
 Hay cuatro reglas para saber si una variable está en un alcance local o global:
 
@@ -252,19 +246,17 @@ add(5, 3)
 8
 ```
 
-<base-quiz>
-<base-quiz-question correct="D" id="cheatsheet-functions-4">
+<BaseQuiz id="cheatsheet-functions-4" correct="D">
 <template #question>
 What is a lambda function in Python?
 </template>
 
-<base-quiz-option value="A">A. A function that can only be called once</base-quiz-option>
-<base-quiz-option value="B">B. A function that takes no arguments</base-quiz-option>
-<base-quiz-option value="C">C. A function that returns multiple values</base-quiz-option>
-<base-quiz-option value="D" correct>D. A single-line anonymous function that can have any number of arguments but only one expression</base-quiz-option>
-<base-quiz-answer value="D">Una función lambda es una función anónima de una sola línea definida usando la palabra clave <code>lambda</code>. Puede tomar cualquier número de argumentos pero solo puede contener una única expresión.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. A function that can only be called once</BaseQuizOption>
+<BaseQuizOption value="B">B. A function that takes no arguments</BaseQuizOption>
+<BaseQuizOption value="C">C. A function that returns multiple values</BaseQuizOption>
+<BaseQuizOption value="D" correct>D. A single-line anonymous function that can have any number of arguments but only one expression</BaseQuizOption>
+<BaseQuizAnswer>Una función lambda es una función anónima de una sola línea definida usando la palabra clave <code>lambda</code>. Puede tomar cualquier número de argumentos pero solo puede contener una única expresión.</BaseQuizAnswer>
+</BaseQuiz>
 
 Al igual que las funciones anidadas regulares, las lambdas también funcionan como cierres léxicos:
 
@@ -292,19 +284,17 @@ plus_5(4)
 9
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-functions-5">
+<BaseQuiz id="cheatsheet-functions-5" correct="A">
 <template #question>
 What does a lambda closure allow you to do?
 </template>
 
-<base-quiz-option value="A" correct>A. Capture variables from the outer scope</base-quiz-option>
-<base-quiz-option value="B">B. Modify global variables without the global keyword</base-quiz-option>
-<base-quiz-option value="C">C. Return multiple values</base-quiz-option>
-<base-quiz-option value="D">D. Execute code asynchronously</base-quiz-option>
-<base-quiz-answer value="A">Los cierres lambda permiten que las funciones lambda capturen y utilicen variables de su ámbito circundante, de manera similar a las funciones anidadas regulares.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. Capture variables from the outer scope</BaseQuizOption>
+<BaseQuizOption value="B">B. Modify global variables without the global keyword</BaseQuizOption>
+<BaseQuizOption value="C">C. Return multiple values</BaseQuizOption>
+<BaseQuizOption value="D">D. Execute code asynchronously</BaseQuizOption>
+<BaseQuizAnswer>Los cierres lambda permiten que las funciones lambda capturen y utilicen variables de su ámbito circundante, de manera similar a las funciones anidadas regulares.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Enlaces relevantes
 

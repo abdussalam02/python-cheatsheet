@@ -64,19 +64,17 @@ s  # 返回 {1, 2, 3, 4}
 {1, 2, 3, 4}
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-sets-1">
+<BaseQuiz id="cheatsheet-sets-1" correct="A">
 <template #question>
 当你创建一个包含重复值的集合时会发生什么？
 </template>
 
-<base-quiz-option value="A" correct>A. 重复项被自动删除</base-quiz-option>
-<base-quiz-option value="B">B. 抛出错误</base-quiz-option>
-<base-quiz-option value="C">C. 集合保留所有重复项</base-quiz-option>
-<base-quiz-option value="D">D. 只保留第一次出现的</base-quiz-option>
-<base-quiz-answer value="A">集合会自动删除重复的值。集合是无序的、不包含重复元素的集合。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. 重复项被自动删除</BaseQuizOption>
+<BaseQuizOption value="B">B. 抛出错误</BaseQuizOption>
+<BaseQuizOption value="C">C. 集合保留所有重复项</BaseQuizOption>
+<BaseQuizOption value="D">D. 只保留第一次出现的</BaseQuizOption>
+<BaseQuizAnswer>集合会自动删除重复的值。集合是无序的、不包含重复元素的集合。</BaseQuizAnswer>
+</BaseQuiz>
 
 并且由于它是一种无序数据类型，因此不能对其进行索引。
 
@@ -161,19 +159,17 @@ s
 s.discard(3)
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-sets-2">
+<BaseQuiz id="cheatsheet-sets-2" correct="C">
 <template #question>
 <code>remove()</code> 和 <code>discard()</code> 方法在集合上的区别是什么？
 </template>
 
-<base-quiz-option value="A">A. <code>remove()</code> 移除一个元素，<code>discard()</code> 移除所有</base-quiz-option>
-<base-quiz-option value="B">B. 没有区别</base-quiz-option>
-<base-quiz-option value="C" correct>C. 如果元素不存在，<code>remove()</code> 抛出错误，<code>discard()</code> 不会</base-quiz-option>
-<base-quiz-option value="D">D. <code>remove()</code> 更快</base-quiz-option>
-<base-quiz-answer value="C">这两种方法都从集合中移除一个元素，但如果元素不存在，<code>remove()</code> 会引发 <code>KeyError</code>，而 <code>discard()</code> 如果元素缺失则不做任何操作。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>remove()</code> 移除一个元素，<code>discard()</code> 移除所有</BaseQuizOption>
+<BaseQuizOption value="B">B. 没有区别</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. 如果元素不存在，<code>remove()</code> 抛出错误，<code>discard()</code> 不会</BaseQuizOption>
+<BaseQuizOption value="D">D. <code>remove()</code> 更快</BaseQuizOption>
+<BaseQuizAnswer>这两种方法都从集合中移除一个元素，但如果元素不存在，<code>remove()</code> 会引发 <code>KeyError</code>，而 <code>discard()</code> 如果元素缺失则不做任何操作。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 集合的并集 (union)
 
@@ -206,19 +202,17 @@ s1.intersection(s2, s3)  # 或 's1 & s2 & s3' - 返回 {3}
 {3}
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-sets-3">
+<BaseQuiz id="cheatsheet-sets-3" correct="B">
 <template #question>
 <code>intersection()</code> 返回集合的什么？
 </template>
 
-<base-quiz-option value="A">A. 所有集合中的所有元素</base-quiz-option>
-<base-quiz-option value="B" correct>B. 仅包含所有集合中共同的元素</base-quiz-option>
-<base-quiz-option value="C">C. 第一个集合中存在但其他集合中不存在的元素</base-quiz-option>
-<base-quiz-option value="D">D. 存在于任一集合中但不同时存在于两者中的元素</base-quiz-option>
-<base-quiz-answer value="B"><code>intersection()</code> 方法返回一个集合，其中仅包含存在于所有比较集合中的元素。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 所有集合中的所有元素</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. 仅包含所有集合中共同的元素</BaseQuizOption>
+<BaseQuizOption value="C">C. 第一个集合中存在但其他集合中不存在的元素</BaseQuizOption>
+<BaseQuizOption value="D">D. 存在于任一集合中但不同时存在于两者中的元素</BaseQuizOption>
+<BaseQuizAnswer><code>intersection()</code> 方法返回一个集合，其中仅包含存在于所有比较集合中的元素。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 集合的差集 (difference)
 
@@ -259,19 +253,17 @@ s1.symmetric_difference(s2)  # 或 's1 ^ s2' - 返回 {1, 4}
 {1, 4}
 ```
 
-<base-quiz>
-<base-quiz-question correct="D" id="cheatsheet-sets-4">
+<BaseQuiz id="cheatsheet-sets-4" correct="D">
 <template #question>
 <code>symmetric_difference()</code> 返回两个集合的什么？
 </template>
 
-<base-quiz-option value="A">A. 两个集合中的所有元素</base-quiz-option>
-<base-quiz-option value="B">B. 仅包含两个集合中共同的元素</base-quiz-option>
-<base-quiz-option value="C">C. 第一个集合中存在但第二个集合中不存在的元素</base-quiz-option>
-<base-quiz-option value="D" correct>D. 存在于任一集合中但不同时存在于两者中的元素</base-quiz-option>
-<base-quiz-answer value="D"><code>symmetric_difference()</code> 方法返回一个集合，其中包含存在于任一集合中，但不同时存在于两个集合中的元素。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 两个集合中的所有元素</BaseQuizOption>
+<BaseQuizOption value="B">B. 仅包含两个集合中共同的元素</BaseQuizOption>
+<BaseQuizOption value="C">C. 第一个集合中存在但第二个集合中不存在的元素</BaseQuizOption>
+<BaseQuizOption value="D" correct>D. 存在于任一集合中但不同时存在于两者中的元素</BaseQuizOption>
+<BaseQuizAnswer><code>symmetric_difference()</code> 方法返回一个集合，其中包含存在于任一集合中，但不同时存在于两个集合中的元素。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 相关链接
 

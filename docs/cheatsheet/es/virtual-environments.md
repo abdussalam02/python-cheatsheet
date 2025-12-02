@@ -30,19 +30,17 @@ python3 -m venv venv
 
 Esto crea un directorio `venv` en tu carpeta actual que contiene el entorno virtual.
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-virtual-environments-1">
+<BaseQuiz id="cheatsheet-virtual-environments-1" correct="A">
 <template #question>
 ¿Qué comando se utiliza para crear un entorno virtual usando <code>venv</code>?
 </template>
 
-<base-quiz-option value="A" correct>A. <code>python -m venv venv</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>python create venv</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>venv create</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>python venv new</code></base-quiz-option>
-<base-quiz-answer value="A">El comando <code>python -m venv venv</code> crea un entorno virtual. El flag <code>-m</code> ejecuta el módulo venv, y <code>venv</code> al final es el nombre del directorio a crear.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. <code>python -m venv venv</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>python create venv</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>venv create</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>python venv new</code></BaseQuizOption>
+<BaseQuizAnswer>El comando <code>python -m venv venv</code> crea un entorno virtual. El flag <code>-m</code> ejecuta el módulo venv, y <code>venv</code> al final es el nombre del directorio a crear.</BaseQuizAnswer>
+</BaseQuiz>
 
 2. Activar el entorno virtual
 
@@ -60,19 +58,17 @@ venv\Scripts\activate
 
 Una vez activado, verás `(venv)` al principio de tu símbolo del sistema, indicando que el entorno virtual está activo.
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-virtual-environments-2">
+<BaseQuiz id="cheatsheet-virtual-environments-2" correct="B">
 <template #question>
 ¿Cómo se activa un entorno virtual en Linux/macOS?
 </template>
 
-<base-quiz-option value="A">A. <code>activate venv</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>source venv/bin/activate</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>venv activate</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>python venv activate</code></base-quiz-option>
-<base-quiz-answer value="B">En Linux/macOS, se activa un entorno virtual usando <code>source venv/bin/activate</code>. En Windows, se usaría <code>venv\Scripts\activate</code>.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>activate venv</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>source venv/bin/activate</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>venv activate</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>python venv activate</code></BaseQuizOption>
+<BaseQuizAnswer>En Linux/macOS, se activa un entorno virtual usando <code>source venv/bin/activate</code>. En Windows, se usaría <code>venv\Scripts\activate</code>.</BaseQuizAnswer>
+</BaseQuiz>
 
 3. Instalar paquetes
 
@@ -94,19 +90,17 @@ deactivate
 
 El prefijo `(venv)` desaparecerá de tu símbolo del sistema.
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-virtual-environments-3">
+<BaseQuiz id="cheatsheet-virtual-environments-3" correct="A">
 <template #question>
 ¿Cuál es el propósito principal de usar un entorno virtual?
 </template>
 
-<base-quiz-option value="A" correct>A. Aislar las dependencias del proyecto y evitar llenar la instalación base de Python</base-quiz-option>
-<base-quiz-option value="B">B. Hacer que Python se ejecute más rápido</base-quiz-option>
-<base-quiz-option value="C">C. Cifrar código Python</base-quiz-option>
-<base-quiz-option value="D">D. Compilar Python a código máquina</base-quiz-option>
-<base-quiz-answer value="A">Los entornos virtuales te permiten probar código Python en entornos encapsulados y evitar llenar la instalación base de Python con librerías que podrían usarse solo para un proyecto. Esto ayuda a gestionar dependencias por proyecto.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. Aislar las dependencias del proyecto y evitar llenar la instalación base de Python</BaseQuizOption>
+<BaseQuizOption value="B">B. Hacer que Python se ejecute más rápido</BaseQuizOption>
+<BaseQuizOption value="C">C. Cifrar código Python</BaseQuizOption>
+<BaseQuizOption value="D">D. Compilar Python a código máquina</BaseQuizOption>
+<BaseQuizAnswer>Los entornos virtuales te permiten probar código Python en entornos encapsulados y evitar llenar la instalación base de Python con librerías que podrían usarse solo para un proyecto. Esto ayuda a gestionar dependencias por proyecto.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## virtualenv
 

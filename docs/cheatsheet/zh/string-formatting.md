@@ -98,19 +98,17 @@ f'Hello {name}!'  # f 前缀允许在 {} 中使用表达式
 'Hello Elizabeth!'
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-string-formatting-1">
+<BaseQuiz id="cheatsheet-string-formatting-1" correct="B">
 <template #question>
 Python 中 f-string 使用的前缀是什么？
 </template>
 
-<base-quiz-option value="A">A. <code>fmt</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>f</code> 或 <code>F</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>format</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>str</code></base-quiz-option>
-<base-quiz-answer value="B">f-string 前面有 <code>f</code> 或 <code>F</code> 后跟引号。它们允许您在花括号 <code>{}</code> 中嵌入表达式。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>fmt</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>f</code> 或 <code>F</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>format</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>str</code></BaseQuizOption>
+<BaseQuizAnswer>f-string 前面有 <code>f</code> 或 <code>F</code> 后跟引号。它们允许您在花括号 <code>{}</code> 中嵌入表达式。</BaseQuizAnswer>
+</BaseQuiz>
 
 它甚至可以在其中进行内联算术运算：
 
@@ -206,19 +204,17 @@ f"{a:.2f}"
 '3.14'
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-string-formatting-2">
+<BaseQuiz id="cheatsheet-string-formatting-2" correct="C">
 <template #question>
 <code>f"{a:.2f}"</code> 的作用是什么？
 </template>
 
-<base-quiz-option value="A">A. 将数字四舍五入到最接近的整数</base-quiz-option>
-<base-quiz-option value="B">B. 格式化为百分比</base-quiz-option>
-<base-quiz-option value="C" correct>C. 将数字格式化为带有 2 位小数的浮点数</base-quiz-option>
-<base-quiz-option value="D">D. 转换为科学记数法</base-quiz-option>
-<base-quiz-answer value="C">格式说明符 <code>:.2f</code> 将数字格式化为具有精确 2 位小数的浮点数。<code>.2</code> 指定精度，<code>f</code> 表示浮点格式。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 将数字四舍五入到最接近的整数</BaseQuizOption>
+<BaseQuizOption value="B">B. 格式化为百分比</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. 将数字格式化为带有 2 位小数的浮点数</BaseQuizOption>
+<BaseQuizOption value="D">D. 转换为科学记数法</BaseQuizOption>
+<BaseQuizAnswer>格式说明符 <code>:.2f</code> 将数字格式化为具有精确 2 位小数的浮点数。<code>.2</code> 指定精度，<code>f</code> 表示浮点格式。</BaseQuizAnswer>
+</BaseQuiz>
 
 显示为百分比
 

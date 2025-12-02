@@ -98,19 +98,17 @@ f'Hello {name}!'  # El prefijo f permite expresiones en {}
 'Hello Elizabeth!'
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-string-formatting-1">
+<BaseQuiz id="cheatsheet-string-formatting-1" correct="B">
 <template #question>
 ¿Qué prefijo se utiliza para las f-strings en Python?
 </template>
 
-<base-quiz-option value="A">A. <code>fmt</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>f</code> o <code>F</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>format</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>str</code></base-quiz-option>
-<base-quiz-answer value="B">Las f-strings van precedidas por <code>f</code> o <code>F</code> antes de la comilla de apertura. Permiten incrustar expresiones dentro de llaves <code>{}</code>.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>fmt</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>f</code> o <code>F</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>format</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>str</code></BaseQuizOption>
+<BaseQuizAnswer>Las f-strings van precedidas por <code>f</code> o <code>F</code> antes de la comilla de apertura. Permiten incrustar expresiones dentro de llaves <code>{}</code>.</BaseQuizAnswer>
+</BaseQuiz>
 
 Incluso es posible hacer aritmética en línea con ellas:
 
@@ -206,19 +204,17 @@ f"{a:.2f}"
 '3.14'
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-string-formatting-2">
+<BaseQuiz id="cheatsheet-string-formatting-2" correct="C">
 <template #question>
 ¿Qué hace <code>f"{a:.2f}"</code>?
 </template>
 
-<base-quiz-option value="A">A. Redondea el número al entero más cercano</base-quiz-option>
-<base-quiz-option value="B">B. Formatea como porcentaje</base-quiz-option>
-<base-quiz-option value="C" correct>C. Formatea el número como un flotante con 2 decimales</base-quiz-option>
-<base-quiz-option value="D">D. Convierte a notación científica</base-quiz-option>
-<base-quiz-answer value="C">El especificador de formato <code>:.2f</code> formatea un número como un flotante con exactamente 2 decimales. El <code>.2</code> especifica la precisión y <code>f</code> significa formato flotante.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Redondea el número al entero más cercano</BaseQuizOption>
+<BaseQuizOption value="B">B. Formatea como porcentaje</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. Formatea el número como un flotante con 2 decimales</BaseQuizOption>
+<BaseQuizOption value="D">D. Convierte a notación científica</BaseQuizOption>
+<BaseQuizAnswer>El especificador de formato <code>:.2f</code> formatea un número como un flotante con exactamente 2 decimales. El <code>.2</code> especifica la precisión y <code>f</code> significa formato flotante.</BaseQuizAnswer>
+</BaseQuiz>
 
 Mostrar como Porcentaje
 

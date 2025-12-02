@@ -27,19 +27,17 @@ with open(filename) as f:  # 'f' 是文件对象
 # 即使发生错误，文件也会在此处自动关闭
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-context-manager-1">
+<BaseQuiz id="cheatsheet-context-manager-1" correct="A">
 <template #question>
 使用上下文管理器（<code>with</code> 语句）的主要好处是什么？
 </template>
 
-<base-quiz-option value="A" correct>A. 自动处理资源清理，即使发生错误</base-quiz-option>
-<base-quiz-option value="B">B. 使代码执行速度更快</base-quiz-option>
-<base-quiz-option value="C">C. 允许多个文件同时打开</base-quiz-option>
-<base-quiz-option value="D">D. 阻止所有错误</base-quiz-option>
-<base-quiz-answer value="A">上下文管理器确保资源（如文件）在退出代码块时得到妥善清理，即使发生异常也是如此。这可以防止资源泄漏和数据丢失。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. 自动处理资源清理，即使发生错误</BaseQuizOption>
+<BaseQuizOption value="B">B. 使代码执行速度更快</BaseQuizOption>
+<BaseQuizOption value="C">C. 允许多个文件同时打开</BaseQuizOption>
+<BaseQuizOption value="D">D. 阻止所有错误</BaseQuizOption>
+<BaseQuizAnswer>上下文管理器确保资源（如文件）在退出代码块时得到妥善清理，即使发生异常也是如此。这可以防止资源泄漏和数据丢失。</BaseQuizAnswer>
+</BaseQuiz>
 
 任何导致代码块执行结束的操作都会导致调用上下文管理器的退出方法。这包括异常，当错误导致你过早地退出一个打开的文件或连接时，这会很有用。在没有正确关闭文件/连接的情况下退出脚本是个坏主意，可能会导致数据丢失或其他问题。通过使用上下文管理器，你可以确保始终采取预防措施以防止以这种方式造成损害或损失。
 
@@ -90,19 +88,17 @@ test
 --exit--
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-context-manager-2">
+<BaseQuiz id="cheatsheet-context-manager-2" correct="B">
 <template #question>
 一个类要用作上下文管理器，必须实现哪些方法？
 </template>
 
-<base-quiz-option value="A">A. <code>**init**</code> 和 <code>**del**</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>**enter**</code> 和 <code>**exit**</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>open</code> 和 <code>close</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>start</code> 和 <code>stop</code></base-quiz-option>
-<base-quiz-answer value="B">基于类的上下文管理器必须实现 <code>**enter**</code>（在进入 <code>with</code> 块时调用）和 <code>**exit**</code>（在退出该块时调用）。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>**init**</code> 和 <code>**del**</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>**enter**</code> 和 <code>**exit**</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>open</code> 和 <code>close</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>start</code> 和 <code>stop</code></BaseQuizOption>
+<BaseQuizAnswer>基于类的上下文管理器必须实现 <code>**enter**</code>（在进入 <code>with</code> 块时调用）和 <code>**exit**</code>（在退出该块时调用）。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 相关链接
 

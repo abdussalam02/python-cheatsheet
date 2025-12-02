@@ -64,19 +64,17 @@ s  # Returns {1, 2, 3, 4}
 {1, 2, 3, 4}
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-sets-1">
+<BaseQuiz id="cheatsheet-sets-1" correct="A">
 <template #question>
 Que se passe-t-il lorsque vous créez un ensemble avec des valeurs dupliquées ?
 </template>
 
-<base-quiz-option value="A" correct>A. Les doublons sont automatiquement supprimés</base-quiz-option>
-<base-quiz-option value="B">B. Une erreur est levée</base-quiz-option>
-<base-quiz-option value="C">C. L'ensemble conserve tous les doublons</base-quiz-option>
-<base-quiz-option value="D">D. Seule la première occurrence est conservée</base-quiz-option>
-<base-quiz-answer value="A">Les ensembles suppriment automatiquement les valeurs dupliquées. Un ensemble est une collection non ordonnée sans éléments dupliqués.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. Les doublons sont automatiquement supprimés</BaseQuizOption>
+<BaseQuizOption value="B">B. Une erreur est levée</BaseQuizOption>
+<BaseQuizOption value="C">C. L'ensemble conserve tous les doublons</BaseQuizOption>
+<BaseQuizOption value="D">D. Seule la première occurrence est conservée</BaseQuizOption>
+<BaseQuizAnswer>Les ensembles suppriment automatiquement les valeurs dupliquées. Un ensemble est une collection non ordonnée sans éléments dupliqués.</BaseQuizAnswer>
+</BaseQuiz>
 
 Et en tant que type de données non ordonné, ils ne peuvent pas être indexés.
 
@@ -161,19 +159,17 @@ s
 s.discard(3)
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-sets-2">
+<BaseQuiz id="cheatsheet-sets-2" correct="C">
 <template #question>
 Quelle est la différence entre les méthodes <code>remove()</code> et <code>discard()</code> pour les ensembles ?
 </template>
 
-<base-quiz-option value="A">A. <code>remove()</code> supprime un élément, <code>discard()</code> supprime tout</base-quiz-option>
-<base-quiz-option value="B">B. Il n'y a aucune différence</base-quiz-option>
-<base-quiz-option value="C" correct>C. <code>remove()</code> lève une erreur si l'élément n'existe pas, <code>discard()</code> non</base-quiz-option>
-<base-quiz-option value="D">D. <code>remove()</code> est plus rapide</base-quiz-option>
-<base-quiz-answer value="C">Les deux méthodes suppriment un élément d'un ensemble, mais <code>remove()</code> lève une <code>KeyError</code> si l'élément n'existe pas, tandis que <code>discard()</code> ne fait rien si l'élément est manquant.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>remove()</code> supprime un élément, <code>discard()</code> supprime tout</BaseQuizOption>
+<BaseQuizOption value="B">B. Il n'y a aucune différence</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. <code>remove()</code> lève une erreur si l'élément n'existe pas, <code>discard()</code> non</BaseQuizOption>
+<BaseQuizOption value="D">D. <code>remove()</code> est plus rapide</BaseQuizOption>
+<BaseQuizAnswer>Les deux méthodes suppriment un élément d'un ensemble, mais <code>remove()</code> lève une <code>KeyError</code> si l'élément n'existe pas, tandis que <code>discard()</code> ne fait rien si l'élément est manquant.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## set union
 
@@ -206,19 +202,17 @@ s1.intersection(s2, s3)  # or 's1 & s2 & s3' - returns {3}
 {3}
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-sets-3">
+<BaseQuiz id="cheatsheet-sets-3" correct="B">
 <template #question>
 Que retourne <code>intersection()</code> pour les ensembles ?
 </template>
 
-<base-quiz-option value="A">A. Tous les éléments de tous les ensembles</base-quiz-option>
-<base-quiz-option value="B" correct>B. Uniquement les éléments communs à tous les ensembles</base-quiz-option>
-<base-quiz-option value="C">C. Les éléments du premier ensemble mais pas des autres</base-quiz-option>
-<base-quiz-option value="D">D. Les éléments dans l'un ou l'autre ensemble mais pas les deux</base-quiz-option>
-<base-quiz-answer value="B">La méthode <code>intersection()</code> retourne un ensemble contenant uniquement les éléments présents dans tous les ensembles comparés.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Tous les éléments de tous les ensembles</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Uniquement les éléments communs à tous les ensembles</BaseQuizOption>
+<BaseQuizOption value="C">C. Les éléments du premier ensemble mais pas des autres</BaseQuizOption>
+<BaseQuizOption value="D">D. Les éléments dans l'un ou l'autre ensemble mais pas les deux</BaseQuizOption>
+<BaseQuizAnswer>La méthode <code>intersection()</code> retourne un ensemble contenant uniquement les éléments présents dans tous les ensembles comparés.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## set difference
 
@@ -259,19 +253,17 @@ s1.symmetric_difference(s2)  # or 's1 ^ s2' - returns {1, 4}
 {1, 4}
 ```
 
-<base-quiz>
-<base-quiz-question correct="D" id="cheatsheet-sets-4">
+<BaseQuiz id="cheatsheet-sets-4" correct="D">
 <template #question>
 Que retourne <code>symmetric_difference()</code> pour deux ensembles ?
 </template>
 
-<base-quiz-option value="A">A. Tous les éléments des deux ensembles</base-quiz-option>
-<base-quiz-option value="B">B. Uniquement les éléments communs aux deux ensembles</base-quiz-option>
-<base-quiz-option value="C">C. Les éléments du premier ensemble mais pas du second</base-quiz-option>
-<base-quiz-option value="D" correct>D. Les éléments dans l'un ou l'autre ensemble, mais pas dans les deux</base-quiz-option>
-<base-quiz-answer value="D">La méthode <code>symmetric_difference()</code> retourne un ensemble contenant les éléments qui sont dans l'un ou l'autre ensemble, mais pas dans les deux ensembles.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Tous les éléments des deux ensembles</BaseQuizOption>
+<BaseQuizOption value="B">B. Uniquement les éléments communs aux deux ensembles</BaseQuizOption>
+<BaseQuizOption value="C">C. Les éléments du premier ensemble mais pas du second</BaseQuizOption>
+<BaseQuizOption value="D" correct>D. Les éléments dans l'un ou l'autre ensemble, mais pas dans les deux</BaseQuizOption>
+<BaseQuizAnswer>La méthode <code>symmetric_difference()</code> retourne un ensemble contenant les éléments qui sont dans l'un ou l'autre ensemble, mais pas dans les deux ensembles.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Liens pertinents
 

@@ -63,19 +63,17 @@ Notice the path separator is different between Windows and Unix based operating
 system, that's why you want to use `pathlib` instead of
 adding strings together to join paths together.
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-file-directory-path-1">
+<BaseQuiz id="cheatsheet-file-directory-path-1" correct="B">
 <template #question>
 What is the correct way to join paths using pathlib in Python?
 </template>
 
-<base-quiz-option value="A">A. <code>Path('usr') + 'bin' + 'spam'</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>Path('usr') / 'bin' / 'spam'</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>Path('usr').join('bin').join('spam')</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>Path('usr/bin/spam')</code></base-quiz-option>
-<base-quiz-answer value="B">The <code>/</code> operator is the recommended way to join paths with pathlib. It works cross-platform and is more readable than string concatenation.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>Path('usr') + 'bin' + 'spam'</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>Path('usr') / 'bin' / 'spam'</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>Path('usr').join('bin').join('spam')</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>Path('usr/bin/spam')</code></BaseQuizOption>
+<BaseQuizAnswer>The <code>/</code> operator is the recommended way to join paths with pathlib. It works cross-platform and is more readable than string concatenation.</BaseQuizAnswer>
+</BaseQuiz>
 
 Joining paths is helpful if you need to create different file paths under
 the same directory.
@@ -207,19 +205,17 @@ Path('..').is_absolute()
 False
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-file-directory-path-2">
+<BaseQuiz id="cheatsheet-file-directory-path-2" correct="A">
 <template #question>
 What does <code>Path('/').is_absolute()</code> return?
 </template>
 
-<base-quiz-option value="A" correct>A. <code>True</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>False</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>None</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>'/'</code></base-quiz-option>
-<base-quiz-answer value="A">The <code>is_absolute()</code> method returns <code>True</code> for absolute paths (those starting with <code>/</code> on Unix or a drive letter on Windows).</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. <code>True</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>False</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>None</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>'/'</code></BaseQuizOption>
+<BaseQuizAnswer>The <code>is_absolute()</code> method returns <code>True</code> for absolute paths (those starting with <code>/</code> on Unix or a drive letter on Windows).</BaseQuizAnswer>
+</BaseQuiz>
 
 You can extract an absolute path with `pathlib`:
 
@@ -323,19 +319,17 @@ Path('nonexistentfile').is_file()
 False
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-file-directory-path-3">
+<BaseQuiz id="cheatsheet-file-directory-path-3" correct="C">
 <template #question>
 What will <code>Path('setup.py').is_file()</code> return if setup.py exists?
 </template>
 
-<base-quiz-option value="A">A. <code>'setup.py'</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>False</code></base-quiz-option>
-<base-quiz-option value="C" correct>C. <code>True</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>None</code></base-quiz-option>
-<base-quiz-answer value="C">The <code>is_file()</code> method returns <code>True</code> if the path exists and is a file, <code>False</code> otherwise.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>'setup.py'</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>False</code></BaseQuizOption>
+<BaseQuizOption value="C" correct>C. <code>True</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>None</code></BaseQuizOption>
+<BaseQuizAnswer>The <code>is_file()</code> method returns <code>True</code> if the path exists and is a file, <code>False</code> otherwise.</BaseQuizAnswer>
+</BaseQuiz>
 
 ### Checking if a path is a directory
 
@@ -466,19 +460,17 @@ shutil.copy('/tmp/eggs.txt', '/tmp/delicious/eggs2.txt')
 /tmp/delicious/eggs2.txt
 ```
 
-<base-quiz>
-<base-quiz-question correct="D" id="cheatsheet-file-directory-path-4">
+<BaseQuiz id="cheatsheet-file-directory-path-4" correct="D">
 <template #question>
 Which function should you use to copy an entire directory tree including all subdirectories and files?
 </template>
 
-<base-quiz-option value="A">A. <code>shutil.copy()</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>Path.copy()</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>os.copy()</code></base-quiz-option>
-<base-quiz-option value="D" correct>D. <code>shutil.copytree()</code></base-quiz-option>
-<base-quiz-answer value="D">The <code>shutil.copytree()</code> function copies an entire directory tree recursively, while <code>shutil.copy()</code> only copies a single file.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>shutil.copy()</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>Path.copy()</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>os.copy()</code></BaseQuizOption>
+<BaseQuizOption value="D" correct>D. <code>shutil.copytree()</code></BaseQuizOption>
+<BaseQuizAnswer>The <code>shutil.copytree()</code> function copies an entire directory tree recursively, while <code>shutil.copy()</code> only copies a single file.</BaseQuizAnswer>
+</BaseQuiz>
 
 While `shutil.copy()` will copy a single file, `shutil.copytree()` will copy an entire folder and every folder and file contained in it:
 
@@ -530,19 +522,17 @@ shutil.move('/tmp/bacon.txt', '/tmp/eggs')
 - Calling `Path.rmdir()` will delete the folder at path. This folder must be empty of any files or folders.
 - Calling `shutil.rmtree(path)` will remove the folder at path, and all files and folders it contains will also be deleted.
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-file-directory-path-5">
+<BaseQuiz id="cheatsheet-file-directory-path-5" correct="B">
 <template #question>
 Which method can delete a non-empty directory and all its contents?
 </template>
 
-<base-quiz-option value="A">A. <code>Path.rmdir()</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>shutil.rmtree()</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>Path.unlink()</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>os.remove()</code></base-quiz-option>
-<base-quiz-answer value="B">The <code>shutil.rmtree()</code> function can delete a directory and all its contents recursively. <code>Path.rmdir()</code> only works on empty directories.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>Path.rmdir()</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>shutil.rmtree()</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>Path.unlink()</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>os.remove()</code></BaseQuizOption>
+<BaseQuizAnswer>The <code>shutil.rmtree()</code> function can delete a directory and all its contents recursively. <code>Path.rmdir()</code> only works on empty directories.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Walking a Directory Tree
 

@@ -83,19 +83,17 @@ f'The {furniture[-1]} is bigger than the {furniture[-3]}'
 'The shelf is bigger than the chair'
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-lists-and-tuples-1">
+<BaseQuiz id="cheatsheet-lists-and-tuples-1" correct="B">
 <template #question>
 <code>furniture = ['table', 'chair', 'rack', 'shelf']</code> の場合、<code>furniture[-1]</code> は何を返しますか？
 </template>
 
-<base-quiz-option value="A">A. <code>'table'</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>'shelf'</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>['shelf']</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>IndexError</code></base-quiz-option>
-<base-quiz-answer value="B">負のインデックスはリストの末尾から要素にアクセスします。<code>-1</code> は最後の要素を指し、<code>-2</code> は最後から 2 番目の要素を指します。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>'table'</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>'shelf'</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>['shelf']</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>IndexError</code></BaseQuizOption>
+<BaseQuizAnswer>負のインデックスはリストの末尾から要素にアクセスします。<code>-1</code> は最後の要素を指し、<code>-2</code> は最後から 2 番目の要素を指します。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## スライスを使用したサブリストの取得
 
@@ -182,19 +180,17 @@ spam2
 ['cat', 'bat', 'rat', 'elephant']
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-lists-and-tuples-2">
+<BaseQuiz id="cheatsheet-lists-and-tuples-2" correct="C">
 <template #question>
 <code>spam</code> がリストである場合、<code>spam[:]</code> は何を作成しますか？
 </template>
 
-<base-quiz-option value="A">A. 同じリストへの参照</base-quiz-option>
-<base-quiz-option value="B">B. 空のリスト</base-quiz-option>
-<base-quiz-option value="C" correct>C. リストのシャローコピー</base-quiz-option>
-<base-quiz-option value="D">D. 逆順のリスト</base-quiz-option>
-<base-quiz-answer value="C">リスト全体を <code>[:]</code> でスライスするとシャローコピーが作成されます。コピーを変更しても元のリストには影響しません。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 同じリストへの参照</BaseQuizOption>
+<BaseQuizOption value="B">B. 空のリスト</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. リストのシャローコピー</BaseQuizOption>
+<BaseQuizOption value="D">D. 逆順のリスト</BaseQuizOption>
+<BaseQuizAnswer>リスト全体を <code>[:]</code> でスライスするとシャローコピーが作成されます。コピーを変更しても元のリストには影響しません。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## len() を使用したリストの長さの取得
 
@@ -456,19 +452,17 @@ furniture
 ['table', 'chair', 'rack', 'shelf', 'bed']
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-lists-and-tuples-3">
+<BaseQuiz id="cheatsheet-lists-and-tuples-3" correct="A">
 <template #question>
 <code>append()</code> メソッドはリストに対して何を行いますか？
 </template>
 
-<base-quiz-option value="A" correct>A. リストの末尾に要素を追加する</base-quiz-option>
-<base-quiz-option value="B">B. リストの先頭に要素を追加する</base-quiz-option>
-<base-quiz-option value="C">C. 最後の要素を置き換える</base-quiz-option>
-<base-quiz-option value="D">D. 最後の要素を削除する</base-quiz-option>
-<base-quiz-answer value="A"><code>append()</code> メソッドは単一の要素をリストの末尾に追加します。特定の位置に要素を追加するには、<code>insert()</code> を使用します。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. リストの末尾に要素を追加する</BaseQuizOption>
+<BaseQuizOption value="B">B. リストの先頭に要素を追加する</BaseQuizOption>
+<BaseQuizOption value="C">C. 最後の要素を置き換える</BaseQuizOption>
+<BaseQuizOption value="D">D. 最後の要素を削除する</BaseQuizOption>
+<BaseQuizAnswer><code>append()</code> メソッドは単一の要素をリストの末尾に追加します。特定の位置に要素を追加するには、<code>insert()</code> を使用します。</BaseQuizAnswer>
+</BaseQuiz>
 
 ### insert()
 
@@ -570,19 +564,17 @@ animals
 ['bat', 'rat']
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-lists-and-tuples-4">
+<BaseQuiz id="cheatsheet-lists-and-tuples-4" correct="B">
 <template #question>
 リストに対して <code>pop()</code> を呼び出すと、何が起こりますか？
 </template>
 
-<base-quiz-option value="A">A. 最後のアイテムのみを削除する</base-quiz-option>
-<base-quiz-option value="B" correct>B. アイテムを削除して返す (デフォルトは最後のアイテム、または指定されたインデックス)</base-quiz-option>
-<base-quiz-option value="C">C. 最後のアイテムのみを返し、削除はしない</base-quiz-option>
-<base-quiz-option value="D">D. リストからすべてのアイテムを削除する</base-quiz-option>
-<base-quiz-answer value="B"><code>pop()</code> メソッドはアイテムを削除して返します。デフォルトでは最後のアイテムを削除しますが、インデックスを渡して特定のアイテムを削除することもできます。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 最後のアイテムのみを削除する</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. アイテムを削除して返す (デフォルトは最後のアイテム、または指定されたインデックス)</BaseQuizOption>
+<BaseQuizOption value="C">C. 最後のアイテムのみを返し、削除はしない</BaseQuizOption>
+<BaseQuizOption value="D">D. リストからすべてのアイテムを削除する</BaseQuizOption>
+<BaseQuizAnswer><code>pop()</code> メソッドはアイテムを削除して返します。デフォルトでは最後のアイテムを削除しますが、インデックスを渡して特定のアイテムを削除することもできます。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## sort() を使用した値のソート
 
@@ -705,19 +697,17 @@ list('hello')
 ['h', 'e', 'l', 'l', 'o']
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-lists-and-tuples-5">
+<BaseQuiz id="cheatsheet-lists-and-tuples-5" correct="C">
 <template #question>
 Python のリストとタプルの主な違いは何ですか？
 </template>
 
-<base-quiz-option value="A">A. リストは数値のみを含むことができ、タプルは何でも含むことができる</base-quiz-option>
-<base-quiz-option value="B">B. タプルの方が作成が速い</base-quiz-option>
-<base-quiz-option value="C" correct>C. リストはミュータブル（変更可能）であり、タプルはイミュータブル（変更不可能）である</base-quiz-option>
-<base-quiz-option value="D">D. リストは角括弧を使い、タプルは波括弧を使う</base-quiz-option>
-<base-quiz-answer value="C">リストはミュータブルであり、作成後に変更できます。タプルはイミュータブルであり、作成後は変更できません。どちらも任意の型のデータを格納できます。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. リストは数値のみを含むことができ、タプルは何でも含むことができる</BaseQuizOption>
+<BaseQuizOption value="B">B. タプルの方が作成が速い</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. リストはミュータブル（変更可能）であり、タプルはイミュータブル（変更不可能）である</BaseQuizOption>
+<BaseQuizOption value="D">D. リストは角括弧を使い、タプルは波括弧を使う</BaseQuizOption>
+<BaseQuizAnswer>リストはミュータブルであり、作成後に変更できます。タプルはイミュータブルであり、作成後は変更できません。どちらも任意の型のデータを格納できます。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 関連リンク
 

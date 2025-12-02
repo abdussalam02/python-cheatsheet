@@ -32,19 +32,17 @@ hello_content
 'Hello World!'
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-reading-and-writing-files-1">
+<BaseQuiz id="cheatsheet-reading-and-writing-files-1" correct="A">
 <template #question>
 Каково основное преимущество использования оператора <code>with</code> при открытии файлов?
 </template>
 
-<base-quiz-option value="A" correct>A. Файл автоматически закрывается по завершении, даже если возникает ошибка</base-quiz-option>
-<base-quiz-option value="B">B. Файлы открываются быстрее</base-quiz-option>
-<base-quiz-option value="C">C. Файлы можно открывать одновременно в режиме чтения и записи</base-quiz-option>
-<base-quiz-option value="D">D. Файлы автоматически сжимаются</base-quiz-option>
-<base-quiz-answer value="A">Оператор <code>with</code> гарантирует, что файл будет автоматически закрыт при выходе из блока, даже если возникает исключение. Это помогает правильно управлять ресурсами.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. Файл автоматически закрывается по завершении, даже если возникает ошибка</BaseQuizOption>
+<BaseQuizOption value="B">B. Файлы открываются быстрее</BaseQuizOption>
+<BaseQuizOption value="C">C. Файлы можно открывать одновременно в режиме чтения и записи</BaseQuizOption>
+<BaseQuizOption value="D">D. Файлы автоматически сжимаются</BaseQuizOption>
+<BaseQuizAnswer>Оператор <code>with</code> гарантирует, что файл будет автоматически закрыт при выходе из блока, даже если возникает исключение. Это помогает правильно управлять ресурсами.</BaseQuizAnswer>
+</BaseQuiz>
 
 Альтернативно, вы можете использовать метод _readlines()_, чтобы получить список строковых значений из файла, по одной строке для каждой строки текста:
 
@@ -111,19 +109,17 @@ Hello world!
 Bacon is not a vegetable.
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-reading-and-writing-files-2">
+<BaseQuiz id="cheatsheet-reading-and-writing-files-2" correct="B">
 <template #question>
 В чем разница между открытием файла в режиме <code>'w'</code> и режиме <code>'a'</code>?
 </template>
 
-<base-quiz-option value="A">A. <code>'w'</code> для чтения, <code>'a'</code> для записи</base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>'w'</code> перезаписывает файл, <code>'a'</code> добавляет в конец файла</base-quiz-option>
-<base-quiz-option value="C">C. <code>'w'</code> для Windows, <code>'a'</code> для Apple</base-quiz-option>
-<base-quiz-option value="D">D. Разницы нет</base-quiz-option>
-<base-quiz-answer value="B">Режим <code>'w'</code> открывает файл для записи и перезаписывает любое существующее содержимое. Режим <code>'a'</code> открывает файл для добавления, добавляя новое содержимое в конец файла.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>'w'</code> для чтения, <code>'a'</code> для записи</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>'w'</code> перезаписывает файл, <code>'a'</code> добавляет в конец файла</BaseQuizOption>
+<BaseQuizOption value="C">C. <code>'w'</code> для Windows, <code>'a'</code> для Apple</BaseQuizOption>
+<BaseQuizOption value="D">D. Разницы нет</BaseQuizOption>
+<BaseQuizAnswer>Режим <code>'w'</code> открывает файл для записи и перезаписывает любое существующее содержимое. Режим <code>'a'</code> открывает файл для добавления, добавляя новое содержимое в конец файла.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Связанные ссылки
 

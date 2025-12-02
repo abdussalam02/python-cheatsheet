@@ -39,19 +39,17 @@ Traceback (most recent call last):
 Exception: This is the error message.
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-debugging-1">
+<BaseQuiz id="cheatsheet-debugging-1" correct="B">
 <template #question>
 Python で例外を手動で発生させるために使用されるキーワードは何ですか？
 </template>
 
-<base-quiz-option value="A">A. <code>throw</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>raise</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>error</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>exception</code></base-quiz-option>
-<base-quiz-answer value="B">Python で例外を手動で発生させるには、<code>raise</code> キーワードが使用されます。組み込みの例外またはカスタム例外を発生させることができます。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>throw</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>raise</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>error</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>exception</code></BaseQuizOption>
+<BaseQuizAnswer>Python で例外を手動で発生させるには、<code>raise</code> キーワードが使用されます。組み込みの例外またはカスタム例外を発生させることができます。</BaseQuizAnswer>
+</BaseQuiz>
 
 通常、例外を処理する方法を知っているのは、関数を呼び出すコードであり、関数自体ではありません。そのため、関数内で `raise` ステートメントを、関数を呼び出すコード内で `try` および `except` ステートメントをよく見かけることになります。
 
@@ -145,19 +143,17 @@ Traceback (most recent call last):
 AssertionError: The pod bay doors need to be "open".
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-debugging-2">
+<BaseQuiz id="cheatsheet-debugging-2" correct="C">
 <template #question>
 <code>assert</code> ステートメントが失敗するとどうなりますか？
 </template>
 
-<base-quiz-option value="A">A. プログラムの実行が継続される</base-quiz-option>
-<base-quiz-option value="B">B. 警告が出力される</base-quiz-option>
-<base-quiz-option value="C" correct>C. <code>AssertionError</code> が発生し、プログラムはクラッシュするはずである</base-quiz-option>
-<base-quiz-option value="D">D. 条件が自動的に修正される</base-quiz-option>
-<base-quiz-answer value="C"><code>assert</code> ステートメントが失敗すると、<code>AssertionError</code> が発生します。例外とは異なり、アサートステートメントは try-except で処理されるべきではありません。アサートが失敗した場合、バグを迅速に見つけるためにプログラムはクラッシュする必要があります。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. プログラムの実行が継続される</BaseQuizOption>
+<BaseQuizOption value="B">B. 警告が出力される</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. <code>AssertionError</code> が発生し、プログラムはクラッシュするはずである</BaseQuizOption>
+<BaseQuizOption value="D">D. 条件が自動的に修正される</BaseQuizOption>
+<BaseQuizAnswer><code>assert</code> ステートメントが失敗すると、<code>AssertionError</code> が発生します。例外とは異なり、アサートステートメントは try-except で処理されるべきではありません。アサートが失敗した場合、バグを迅速に見つけるためにプログラムはクラッシュする必要があります。</BaseQuizAnswer>
+</BaseQuiz>
 
 平たく言えば、アサートステートメントは「この条件が真であると主張する。そうでなければ、プログラムのどこかにバグがある」という意味です。例外とは異なり、コードはアサートステートメントを try や except で処理すべきではありません。アサートが失敗した場合、プログラムはクラッシュする必要があります。このようにすぐに失敗させることで、バグの元の原因と、最初にバグに気づくまでの時間を短縮できます。これにより、バグの原因となっているコードを見つける前に確認しなければならないコードの量が少なくなります。
 
@@ -174,19 +170,17 @@ import logging
 logging.basicConfig(level=logging.DEBUG, format=' %(asctime)s - %(levelname)s- %(message)s')
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-debugging-3">
+<BaseQuiz id="cheatsheet-debugging-3" correct="A">
 <template #question>
 Python における<code>logging</code>モジュールの目的は何ですか？
 </template>
 
-<base-quiz-option value="A" correct>A. デバッグと監視のためにプログラム実行に関する情報を記録すること</base-quiz-option>
-<base-quiz-option value="B">B. エラーの発生を防ぐこと</base-quiz-option>
-<base-quiz-option value="C">C. プログラムの実行速度を向上させること</base-quiz-option>
-<base-quiz-option value="D">D. ログメッセージを暗号化すること</base-quiz-option>
-<base-quiz-answer value="A"><code>logging</code>モジュールを使用すると、プログラムの実行に関する情報を異なるレベル（DEBUG、INFO、WARNING、ERROR、CRITICAL）で記録でき、デバッグや監視に役立ちます。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. デバッグと監視のためにプログラム実行に関する情報を記録すること</BaseQuizOption>
+<BaseQuizOption value="B">B. エラーの発生を防ぐこと</BaseQuizOption>
+<BaseQuizOption value="C">C. プログラムの実行速度を向上させること</BaseQuizOption>
+<BaseQuizOption value="D">D. ログメッセージを暗号化すること</BaseQuizOption>
+<BaseQuizAnswer><code>logging</code>モジュールを使用すると、プログラムの実行に関する情報を異なるレベル（DEBUG、INFO、WARNING、ERROR、CRITICAL）で記録でき、デバッグや監視に役立ちます。</BaseQuizAnswer>
+</BaseQuiz>
 
 例えば、数値の階乗を計算する関数を作成したとします。数学では、階乗 4 は 1 × 2 × 3 × 4、つまり 24 です。階乗 7 は 1 × 2 × 3 × 4 × 5 × 6 × 7、つまり 5,040 です。新しいファイルエディタウィンドウを開き、以下のコードを入力してください。これにはバグがありますが、何が問題なのかを把握するのに役立つように、いくつかのログメッセージも入力します。プログラムを factorialLog.py として保存します。
 
@@ -234,19 +228,17 @@ logging.debug('End of program')
 | `ERROR`    | `logging.error()`    | プログラムが何らかの処理に失敗したことを記録するために使用されます。                                               |
 | `CRITICAL` | `logging.critical()` | 最高レベル。プログラムの実行全体を停止させた、または停止させようとしている致命的なエラーを示すために使用されます。 |
 
-<base-quiz>
-<base-quiz-question correct="D" id="cheatsheet-debugging-4">
+<BaseQuiz id="cheatsheet-debugging-4" correct="D">
 <template #question>
 Python における最も低いロギングレベルは何ですか？
 </template>
 
-<base-quiz-option value="A">A. <code>INFO</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>WARNING</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>ERROR</code></base-quiz-option>
-<base-quiz-option value="D" correct>D. <code>DEBUG</code></base-quiz-option>
-<base-quiz-answer value="D">ロギングレベルは、低い方から高い方へ、<code>DEBUG</code>、<code>INFO</code>、<code>WARNING</code>、<code>ERROR</code>、<code>CRITICAL</code> の順です。<code>DEBUG</code> が最も低いレベルで、詳細な診断情報に使用されます。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>INFO</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>WARNING</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>ERROR</code></BaseQuizOption>
+<BaseQuizOption value="D" correct>D. <code>DEBUG</code></BaseQuizOption>
+<BaseQuizAnswer>ロギングレベルは、低い方から高い方へ、<code>DEBUG</code>、<code>INFO</code>、<code>WARNING</code>、<code>ERROR</code>、<code>CRITICAL</code> の順です。<code>DEBUG</code> が最も低いレベルで、詳細な診断情報に使用されます。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## ロギングの無効化
 
@@ -278,19 +270,17 @@ import logging
 logging.basicConfig(filename='myProgramLog.txt', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-debugging-5">
+<BaseQuiz id="cheatsheet-debugging-5" correct="B">
 <template #question>
 ログメッセージを画面に表示する代わりにファイルに書き込むにはどうすればよいですか？
 </template>
 
-<base-quiz-option value="A">A. <code>logging.file()</code> を使用する</base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>logging.basicConfig()</code> に <code>filename</code> パラメータを渡す</base-quiz-option>
-<base-quiz-option value="C">C. <code>logging.write()</code> を使用する</base-quiz-option>
-<base-quiz-option value="D">D. ログは常に自動的にファイルに書き込まれる</base-quiz-option>
-<base-quiz-answer value="B">ログメッセージをファイルに書き込むには、<code>logging.basicConfig()</code> に <code>filename</code> パラメータを渡します。これにより、すべてのログメッセージが画面に表示される代わりに、指定されたファイルに書き込まれます。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>logging.file()</code> を使用する</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>logging.basicConfig()</code> に <code>filename</code> パラメータを渡す</BaseQuizOption>
+<BaseQuizOption value="C">C. <code>logging.write()</code> を使用する</BaseQuizOption>
+<BaseQuizOption value="D">D. ログは常に自動的にファイルに書き込まれる</BaseQuizOption>
+<BaseQuizAnswer>ログメッセージをファイルに書き込むには、<code>logging.basicConfig()</code> に <code>filename</code> パラメータを渡します。これにより、すべてのログメッセージが画面に表示される代わりに、指定されたファイルに書き込まれます。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 関連リンク
 

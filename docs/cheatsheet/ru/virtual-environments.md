@@ -30,19 +30,17 @@ python3 -m venv venv
 
 Это создает каталог `venv` в вашей текущей папке, содержащий виртуальное окружение.
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-virtual-environments-1">
+<BaseQuiz id="cheatsheet-virtual-environments-1" correct="A">
 <template #question>
 Какая команда используется для создания виртуального окружения с помощью <code>venv</code>?
 </template>
 
-<base-quiz-option value="A" correct>A. <code>python -m venv venv</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>python create venv</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>venv create</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>python venv new</code></base-quiz-option>
-<base-quiz-answer value="A">Команда <code>python -m venv venv</code> создает виртуальное окружение. Флаг <code>-m</code> запускает модуль venv, а <code>venv</code> в конце — это имя каталога для создания.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. <code>python -m venv venv</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>python create venv</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>venv create</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>python venv new</code></BaseQuizOption>
+<BaseQuizAnswer>Команда <code>python -m venv venv</code> создает виртуальное окружение. Флаг <code>-m</code> запускает модуль venv, а <code>venv</code> в конце — это имя каталога для создания.</BaseQuizAnswer>
+</BaseQuiz>
 
 2. Активация виртуального окружения
 
@@ -60,19 +58,17 @@ venv\Scripts\activate
 
 После активации в начале вашей командной строки появится `(venv)`, указывающее на то, что виртуальное окружение активно.
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-virtual-environments-2">
+<BaseQuiz id="cheatsheet-virtual-environments-2" correct="B">
 <template #question>
 Как активировать виртуальное окружение в Linux/macOS?
 </template>
 
-<base-quiz-option value="A">A. <code>activate venv</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>source venv/bin/activate</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>venv activate</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>python venv activate</code></base-quiz-option>
-<base-quiz-answer value="B">В Linux/macOS вы активируете виртуальное окружение с помощью <code>source venv/bin/activate</code>. В Windows вы бы использовали <code>venv\Scripts\activate</code>.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>activate venv</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>source venv/bin/activate</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>venv activate</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>python venv activate</code></BaseQuizOption>
+<BaseQuizAnswer>В Linux/macOS вы активируете виртуальное окружение с помощью <code>source venv/bin/activate</code>. В Windows вы бы использовали <code>venv\Scripts\activate</code>.</BaseQuizAnswer>
+</BaseQuiz>
 
 3. Установка пакетов
 
@@ -94,19 +90,17 @@ deactivate
 
 Префикс `(venv)` исчезнет из вашей командной строки.
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-virtual-environments-3">
+<BaseQuiz id="cheatsheet-virtual-environments-3" correct="A">
 <template #question>
 Какова основная цель использования виртуального окружения?
 </template>
 
-<base-quiz-option value="A" correct>A. Изолировать зависимости проекта и избежать заполнения базовой установки Python</base-quiz-option>
-<base-quiz-option value="B">B. Заставить Python работать быстрее</base-quiz-option>
-<base-quiz-option value="C">C. Шифровать код Python</base-quiz-option>
-<base-quiz-option value="D">D. Компилировать Python в машинный код</base-quiz-option>
-<base-quiz-answer value="A">Виртуальные окружения позволяют тестировать код Python в инкапсулированных средах и избегать заполнения базовой установки Python библиотеками, которые могут использоваться только для одного проекта. Это помогает управлять зависимостями для каждого проекта.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. Изолировать зависимости проекта и избежать заполнения базовой установки Python</BaseQuizOption>
+<BaseQuizOption value="B">B. Заставить Python работать быстрее</BaseQuizOption>
+<BaseQuizOption value="C">C. Шифровать код Python</BaseQuizOption>
+<BaseQuizOption value="D">D. Компилировать Python в машинный код</BaseQuizOption>
+<BaseQuizAnswer>Виртуальные окружения позволяют тестировать код Python в инкапсулированных средах и избегать заполнения базовой установки Python библиотеками, которые могут использоваться только для одного проекта. Это помогает управлять зависимостями для каждого проекта.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## virtualenv
 

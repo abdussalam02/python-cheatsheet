@@ -104,19 +104,17 @@ mo.group()
 '415-555-4242'
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-regular-expressions-1">
+<BaseQuiz id="cheatsheet-regular-expressions-1" correct="A">
 <template #question>
 일치 객체에서 <code>group()</code>을 호출하면 무엇이 반환됩니까?
 </template>
 
-<base-quiz-option value="A" correct>A. 전체 일치 텍스트</base-quiz-option>
-<base-quiz-option value="B">B. 첫 번째 그룹만</base-quiz-option>
-<base-quiz-option value="C">C. 모든 그룹을 리스트로</base-quiz-option>
-<base-quiz-option value="D">D. 일치의 인덱스</base-quiz-option>
-<base-quiz-answer value="A"><code>group()</code> 메서드 (또는 <code>group(0)</code>) 는 전체 일치 텍스트를 반환합니다. 특정 그룹을 얻으려면 <code>group(1)</code>, <code>group(2)</code> 등을 사용합니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. 전체 일치 텍스트</BaseQuizOption>
+<BaseQuizOption value="B">B. 첫 번째 그룹만</BaseQuizOption>
+<BaseQuizOption value="C">C. 모든 그룹을 리스트로</BaseQuizOption>
+<BaseQuizOption value="D">D. 일치의 인덱스</BaseQuizOption>
+<BaseQuizAnswer><code>group()</code> 메서드 (또는 <code>group(0)</code>) 는 전체 일치 텍스트를 반환합니다. 특정 그룹을 얻으려면 <code>group(1)</code>, <code>group(2)</code> 등을 사용합니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 한 번에 모든 그룹을 검색하려면 `groups()` 메서드를 사용합니다:
 
@@ -342,19 +340,17 @@ mo2.group()
 'HaHaHa'
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-regular-expressions-2">
+<BaseQuiz id="cheatsheet-regular-expressions-2" correct="B">
 <template #question>
 정규 표현식 패턴을 비탐욕적으로 만드는 것은 무엇입니까?
 </template>
 
-<base-quiz-option value="A">A. <code>+</code> 대신 <code>_</code> 사용</base-quiz-option>
-<base-quiz-option value="B" correct>B. 한정자 뒤에 <code>?</code> 추가 (예: <code>_?</code>, <code>+?</code>, <code>{3,5}?</code>)</base-quiz-option>
-<base-quiz-option value="C">C. 괄호 사용</base-quiz-option>
-<base-quiz-option value="D">D. 대괄호 사용</base-quiz-option>
-<base-quiz-answer value="B"><code>\*</code>, <code>+</code> 또는 <code>{n,m}</code>과 같은 한정자 뒤에 <code>?</code>를 추가하면 비탐욕적이 되어 가장 긴 문자열 대신 가장 짧은 문자열과 일치하게 됩니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>+</code> 대신 <code>_</code> 사용</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. 한정자 뒤에 <code>?</code> 추가 (예: <code>_?</code>, <code>+?</code>, <code>{3,5}?</code>)</BaseQuizOption>
+<BaseQuizOption value="C">C. 괄호 사용</BaseQuizOption>
+<BaseQuizOption value="D">D. 대괄호 사용</BaseQuizOption>
+<BaseQuizAnswer><code>\*</code>, <code>+</code> 또는 <code>{n,m}</code>과 같은 한정자 뒤에 <code>?</code>를 추가하면 비탐욕적이 되어 가장 긴 문자열 대신 가장 짧은 문자열과 일치하게 됩니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## findall() 메서드
 
@@ -579,19 +575,17 @@ names_regex.sub('CENSORED', 'Agent Alice gave the secret documents to Agent Bob.
 'CENSORED gave the secret documents to CENSORED.'
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-regular-expressions-3">
+<BaseQuiz id="cheatsheet-regular-expressions-3" correct="B">
 <template #question>
 <code>sub()</code> 메서드는 무엇을 합니까?
 </template>
 
-<base-quiz-option value="A">A. 문자열에서 모든 일치 항목을 찾습니다</base-quiz-option>
-<base-quiz-option value="B" correct>B. 모든 일치 항목을 대체 문자열로 바꿉니다</base-quiz-option>
-<base-quiz-option value="C">C. 일치 항목에서 문자열을 분할합니다</base-quiz-option>
-<base-quiz-option value="D">D. 문자열 형식을 검증합니다</base-quiz-option>
-<base-quiz-answer value="B"><code>sub()</code> 메서드는 패턴의 모든 일치 항목을 대체 문자열로 치환합니다. 치환이 적용된 새 문자열을 반환합니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 문자열에서 모든 일치 항목을 찾습니다</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. 모든 일치 항목을 대체 문자열로 바꿉니다</BaseQuizOption>
+<BaseQuizOption value="C">C. 일치 항목에서 문자열을 분할합니다</BaseQuizOption>
+<BaseQuizOption value="D">D. 문자열 형식을 검증합니다</BaseQuizOption>
+<BaseQuizAnswer><code>sub()</code> 메서드는 패턴의 모든 일치 항목을 대체 문자열로 치환합니다. 치환이 적용된 새 문자열을 반환합니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 복잡한 Regex 관리
 
@@ -616,19 +610,17 @@ phone_regex = re.compile(r'''(
     )''', re.VERBOSE)
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-regular-expressions-4">
+<BaseQuiz id="cheatsheet-regular-expressions-4" correct="A">
 <template #question>
 <code>re.compile()</code>에 전달될 때 <code>re.VERBOSE</code>는 무엇을 합니까?
 </template>
 
-<base-quiz-option value="A" correct>A. 가독성 향상을 위해 정규식 패턴에 공백과 주석을 허용합니다</base-quiz-option>
-<base-quiz-option value="B">B. 정규식을 대소문자 구분 없이 만듭니다</base-quiz-option>
-<base-quiz-option value="C">C. 점이 줄 바꿈 문자와 일치하도록 만듭니다</base-quiz-option>
-<base-quiz-option value="D">D. 정규식 일치를 가속화합니다</base-quiz-option>
-<base-quiz-answer value="A"><code>re.VERBOSE</code> 플래그를 사용하면 정규식 패턴에 공백과 주석을 추가할 수 있어 복잡한 정규식을 훨씬 더 읽기 쉽게 만들 수 있으며 패턴 일치에는 영향을 주지 않습니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. 가독성 향상을 위해 정규식 패턴에 공백과 주석을 허용합니다</BaseQuizOption>
+<BaseQuizOption value="B">B. 정규식을 대소문자 구분 없이 만듭니다</BaseQuizOption>
+<BaseQuizOption value="C">C. 점이 줄 바꿈 문자와 일치하도록 만듭니다</BaseQuizOption>
+<BaseQuizOption value="D">D. 정규식 일치를 가속화합니다</BaseQuizOption>
+<BaseQuizAnswer><code>re.VERBOSE</code> 플래그를 사용하면 정규식 패턴에 공백과 주석을 추가할 수 있어 복잡한 정규식을 훨씬 더 읽기 쉽게 만들 수 있으며 패턴 일치에는 영향을 주지 않습니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 관련 링크
 

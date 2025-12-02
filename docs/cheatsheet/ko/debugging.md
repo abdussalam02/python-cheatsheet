@@ -39,19 +39,17 @@ Traceback (most recent call last):
 Exception: This is the error message.
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-debugging-1">
+<BaseQuiz id="cheatsheet-debugging-1" correct="B">
 <template #question>
 Python 에서 예외를 수동으로 발생시키는 데 사용되는 키워드는 무엇입니까?
 </template>
 
-<base-quiz-option value="A">A. <code>throw</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>raise</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>error</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>exception</code></base-quiz-option>
-<base-quiz-answer value="B"><code>raise</code> 키워드는 Python 에서 예외를 수동으로 발생시키는 데 사용됩니다. 내장 예외 또는 사용자 지정 예외를 발생시킬 수 있습니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>throw</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>raise</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>error</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>exception</code></BaseQuizOption>
+<BaseQuizAnswer><code>raise</code> 키워드는 Python 에서 예외를 수동으로 발생시키는 데 사용됩니다. 내장 예외 또는 사용자 지정 예외를 발생시킬 수 있습니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 일반적으로 예외를 처리하는 방법을 아는 것은 함수를 호출하는 코드이지 함수 자체가 아닙니다. 따라서 함수 내부에서는 `raise` 문을, 함수를 호출하는 코드에서는 `try` 및 `except` 문을 흔히 볼 수 있습니다.
 
@@ -145,19 +143,17 @@ Traceback (most recent call last):
 AssertionError: The pod bay doors need to be "open".
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-debugging-2">
+<BaseQuiz id="cheatsheet-debugging-2" correct="C">
 <template #question>
 <code>assert</code> 문이 실패하면 어떻게 됩니까?
 </template>
 
-<base-quiz-option value="A">A. 프로그램이 계속 실행됩니다</base-quiz-option>
-<base-quiz-option value="B">B. 경고가 출력됩니다</base-quiz-option>
-<base-quiz-option value="C" correct>C. <code>AssertionError</code>가 발생하고 프로그램이 충돌해야 합니다</base-quiz-option>
-<base-quiz-option value="D">D. 조건이 자동으로 수정됩니다</base-quiz-option>
-<base-quiz-answer value="C"><code>assert</code> 문이 실패하면 <code>AssertionError</code>가 발생합니다. 예외와 달리 assert 문은 try-except 로 처리해서는 안 됩니다. assert 가 실패하면 버그를 신속하게 찾는 데 도움이 되도록 프로그램이 충돌해야 합니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 프로그램이 계속 실행됩니다</BaseQuizOption>
+<BaseQuizOption value="B">B. 경고가 출력됩니다</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. <code>AssertionError</code>가 발생하고 프로그램이 충돌해야 합니다</BaseQuizOption>
+<BaseQuizOption value="D">D. 조건이 자동으로 수정됩니다</BaseQuizOption>
+<BaseQuizAnswer><code>assert</code> 문이 실패하면 <code>AssertionError</code>가 발생합니다. 예외와 달리 assert 문은 try-except 로 처리해서는 안 됩니다. assert 가 실패하면 버그를 신속하게 찾는 데 도움이 되도록 프로그램이 충돌해야 합니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 간단히 말해, assert 문은 "나는 이 조건이 참이라고 단언하며, 그렇지 않다면 프로그램 어딘가에 버그가 있는 것이다"라고 말합니다. 예외와 달리 코드는 try 및 except 로 assert 문을 처리해서는 안 됩니다. assert 가 실패하면 프로그램이 충돌해야 합니다. 이처럼 빠르게 실패함으로써 버그의 원래 원인과 버그를 처음 발견한 시점 사이의 시간을 단축할 수 있습니다. 이렇게 하면 버그를 유발하는 코드를 찾기 위해 확인해야 하는 코드 양이 줄어듭니다.
 
@@ -174,19 +170,17 @@ import logging
 logging.basicConfig(level=logging.DEBUG, format=' %(asctime)s - %(levelname)s- %(message)s')
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-debugging-3">
+<BaseQuiz id="cheatsheet-debugging-3" correct="A">
 <template #question>
 Python 에서 <code>logging</code> 모듈의 목적은 무엇입니까?
 </template>
 
-<base-quiz-option value="A" correct>A. 디버깅 및 모니터링을 위해 프로그램 실행에 대한 정보를 기록하는 것</base-quiz-option>
-<base-quiz-option value="B">B. 오류 발생을 방지하는 것</base-quiz-option>
-<base-quiz-option value="C">C. 프로그램 실행 속도를 높이는 것</base-quiz-option>
-<base-quiz-option value="D">D. 로그 메시지를 암호화하는 것</base-quiz-option>
-<base-quiz-answer value="A"><code>logging</code> 모듈을 사용하면 다양한 수준 (DEBUG, INFO, WARNING, ERROR, CRITICAL) 에서 프로그램 실행에 대한 정보를 기록할 수 있으며, 이는 디버깅 및 모니터링에 유용합니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. 디버깅 및 모니터링을 위해 프로그램 실행에 대한 정보를 기록하는 것</BaseQuizOption>
+<BaseQuizOption value="B">B. 오류 발생을 방지하는 것</BaseQuizOption>
+<BaseQuizOption value="C">C. 프로그램 실행 속도를 높이는 것</BaseQuizOption>
+<BaseQuizOption value="D">D. 로그 메시지를 암호화하는 것</BaseQuizOption>
+<BaseQuizAnswer><code>logging</code> 모듈을 사용하면 다양한 수준 (DEBUG, INFO, WARNING, ERROR, CRITICAL) 에서 프로그램 실행에 대한 정보를 기록할 수 있으며, 이는 디버깅 및 모니터링에 유용합니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 숫자의 팩토리얼을 계산하는 함수를 작성했다고 가정해 봅시다. 수학에서 팩토리얼 4 는 1 × 2 × 3 × 4, 즉 24 입니다. 팩토리얼 7 은 1 × 2 × 3 × 4 × 5 × 6 × 7, 즉 5,040 입니다. 새 파일 편집기 창을 열고 다음 코드를 입력하십시오. 이 코드에는 버그가 있지만, 무엇이 잘못되고 있는지 파악하는 데 도움이 되도록 여러 로그 메시지도 입력할 것입니다. 프로그램을 factorialLog.py 로 저장합니다.
 
@@ -234,19 +228,17 @@ logging.debug('End of program')
 | `ERROR`    | `logging.error()`    | 프로그램이 무언가를 수행하지 못한 오류를 기록하는 데 사용됩니다.                                                               |
 | `CRITICAL` | `logging.critical()` | 가장 높은 수준. 프로그램 실행을 완전히 중단했거나 중단하려고 하는 치명적인 오류를 나타내는 데 사용됩니다.                      |
 
-<base-quiz>
-<base-quiz-question correct="D" id="cheatsheet-debugging-4">
+<BaseQuiz id="cheatsheet-debugging-4" correct="D">
 <template #question>
 Python 에서 가장 낮은 로깅 수준은 무엇입니까?
 </template>
 
-<base-quiz-option value="A">A. <code>INFO</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>WARNING</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>ERROR</code></base-quiz-option>
-<base-quiz-option value="D" correct>D. <code>DEBUG</code></base-quiz-option>
-<base-quiz-answer value="D">로깅 수준은 가장 낮은 수준부터 가장 높은 수준까지 <code>DEBUG</code>, <code>INFO</code>, <code>WARNING</code>, <code>ERROR</code>, <code>CRITICAL</code>입니다. <code>DEBUG</code>가 가장 낮은 수준이며 자세한 진단 정보에 사용됩니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>INFO</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>WARNING</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>ERROR</code></BaseQuizOption>
+<BaseQuizOption value="D" correct>D. <code>DEBUG</code></BaseQuizOption>
+<BaseQuizAnswer>로깅 수준은 가장 낮은 수준부터 가장 높은 수준까지 <code>DEBUG</code>, <code>INFO</code>, <code>WARNING</code>, <code>ERROR</code>, <code>CRITICAL</code>입니다. <code>DEBUG</code>가 가장 낮은 수준이며 자세한 진단 정보에 사용됩니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 로깅 비활성화
 
@@ -278,19 +270,17 @@ import logging
 logging.basicConfig(filename='myProgramLog.txt', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-debugging-5">
+<BaseQuiz id="cheatsheet-debugging-5" correct="B">
 <template #question>
 화면에 표시하는 대신 로그 메시지를 파일에 쓰려면 어떻게 해야 합니까?
 </template>
 
-<base-quiz-option value="A">A. <code>logging.file()</code> 사용</base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>logging.basicConfig()</code>에 <code>filename</code> 매개변수 전달</base-quiz-option>
-<base-quiz-option value="C">C. <code>logging.write()</code> 사용</base-quiz-option>
-<base-quiz-option value="D">D. 로그는 항상 자동으로 파일에 기록됩니다</base-quiz-option>
-<base-quiz-answer value="B">로그 메시지를 파일에 쓰려면 <code>logging.basicConfig()</code>에 <code>filename</code> 매개변수를 전달합니다. 이렇게 하면 모든 로그 메시지가 화면에 표시되는 대신 지정된 파일에 기록됩니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>logging.file()</code> 사용</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>logging.basicConfig()</code>에 <code>filename</code> 매개변수 전달</BaseQuizOption>
+<BaseQuizOption value="C">C. <code>logging.write()</code> 사용</BaseQuizOption>
+<BaseQuizOption value="D">D. 로그는 항상 자동으로 파일에 기록됩니다</BaseQuizOption>
+<BaseQuizAnswer>로그 메시지를 파일에 쓰려면 <code>logging.basicConfig()</code>에 <code>filename</code> 매개변수를 전달합니다. 이렇게 하면 모든 로그 메시지가 화면에 표시되는 대신 지정된 파일에 기록됩니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 관련 링크
 

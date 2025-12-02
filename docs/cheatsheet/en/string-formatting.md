@@ -98,19 +98,17 @@ f'Hello {name}!'  # f prefix allows expressions in {}
 'Hello Elizabeth!'
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-string-formatting-1">
+<BaseQuiz id="cheatsheet-string-formatting-1" correct="B">
 <template #question>
 What prefix is used for f-strings in Python?
 </template>
 
-<base-quiz-option value="A">A. <code>fmt</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>f</code> or <code>F</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>format</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>str</code></base-quiz-option>
-<base-quiz-answer value="B">F-strings are prefixed with <code>f</code> or <code>F</code> before the opening quote. They allow you to embed expressions inside curly braces <code>{}</code>.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>fmt</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>f</code> or <code>F</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>format</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>str</code></BaseQuizOption>
+<BaseQuizAnswer>F-strings are prefixed with <code>f</code> or <code>F</code> before the opening quote. They allow you to embed expressions inside curly braces <code>{}</code>.</BaseQuizAnswer>
+</BaseQuiz>
 
 It is even possible to do inline arithmetic with it:
 
@@ -206,19 +204,17 @@ f"{a:.2f}"
 '3.14'
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-string-formatting-2">
+<BaseQuiz id="cheatsheet-string-formatting-2" correct="C">
 <template #question>
 What does <code>f"{a:.2f}"</code> do?
 </template>
 
-<base-quiz-option value="A">A. Rounds the number to the nearest integer</base-quiz-option>
-<base-quiz-option value="B">B. Formats as a percentage</base-quiz-option>
-<base-quiz-option value="C" correct>C. Formats the number as a float with 2 decimal places</base-quiz-option>
-<base-quiz-option value="D">D. Converts to scientific notation</base-quiz-option>
-<base-quiz-answer value="C">The format specifier <code>:.2f</code> formats a number as a float with exactly 2 decimal places. The <code>.2</code> specifies the precision, and <code>f</code> means float format.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Rounds the number to the nearest integer</BaseQuizOption>
+<BaseQuizOption value="B">B. Formats as a percentage</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. Formats the number as a float with 2 decimal places</BaseQuizOption>
+<BaseQuizOption value="D">D. Converts to scientific notation</BaseQuizOption>
+<BaseQuizAnswer>The format specifier <code>:.2f</code> formats a number as a float with exactly 2 decimal places. The <code>.2</code> specifies the precision, and <code>f</code> means float format.</BaseQuizAnswer>
+</BaseQuiz>
 
 Showing as Percentage
 

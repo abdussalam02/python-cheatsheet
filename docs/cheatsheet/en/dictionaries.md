@@ -239,19 +239,17 @@ wife
 {'name': 'Rose', 'hair': 'brown'}
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-dictionaries-1">
+<BaseQuiz id="cheatsheet-dictionaries-1" correct="B">
 <template #question>
 What does <code>pop()</code> do when called on a dictionary?
 </template>
 
-<base-quiz-option value="A">A. Only removes the key-value pair</base-quiz-option>
-<base-quiz-option value="B" correct>B. Removes and returns the value for the specified key</base-quiz-option>
-<base-quiz-option value="C">C. Only returns the value without removing it</base-quiz-option>
-<base-quiz-option value="D">D. Removes all items from the dictionary</base-quiz-option>
-<base-quiz-answer value="B">The <code>pop()</code> method removes the key-value pair for the specified key and returns the value. If the key doesn't exist, it raises a <code>KeyError</code> (unless you provide a default value).</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Only removes the key-value pair</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Removes and returns the value for the specified key</BaseQuizOption>
+<BaseQuizOption value="C">C. Only returns the value without removing it</BaseQuizOption>
+<BaseQuizOption value="D">D. Removes all items from the dictionary</BaseQuizOption>
+<BaseQuizAnswer>The <code>pop()</code> method removes the key-value pair for the specified key and returns the value. If the key doesn't exist, it raises a <code>KeyError</code> (unless you provide a default value).</BaseQuizAnswer>
+</BaseQuiz>
 
 ### popitem()
 
@@ -383,19 +381,17 @@ dict_c
 {'a': 1, 'b': 3, 'c': 4}
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-dictionaries-2">
+<BaseQuiz id="cheatsheet-dictionaries-2" correct="B">
 <template #question>
 When merging two dictionaries using <code>{**dict_b, **dict_a}</code>, what happens if both dictionaries have the same key?
 </template>
 
-<base-quiz-option value="A">A. The value from <code>dict_b</code> overwrites the value from <code>dict_a</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. The value from <code>dict_a</code> overwrites the value from <code>dict_b</code></base-quiz-option>
-<base-quiz-option value="C">C. Both values are kept in a list</base-quiz-option>
-<base-quiz-option value="D">D. An error is raised</base-quiz-option>
-<base-quiz-answer value="B">When merging dictionaries with the <code>\*\*</code> unpacking operator, if both dictionaries have the same key, the value from the dictionary that comes later (in this case <code>dict_a</code>) overwrites the value from the earlier dictionary.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. The value from <code>dict_b</code> overwrites the value from <code>dict_a</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. The value from <code>dict_a</code> overwrites the value from <code>dict_b</code></BaseQuizOption>
+<BaseQuizOption value="C">C. Both values are kept in a list</BaseQuizOption>
+<BaseQuizOption value="D">D. An error is raised</BaseQuizOption>
+<BaseQuizAnswer>When merging dictionaries with the <code>\*\*</code> unpacking operator, if both dictionaries have the same key, the value from the dictionary that comes later (in this case <code>dict_a</code>) overwrites the value from the earlier dictionary.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Relevant links
 

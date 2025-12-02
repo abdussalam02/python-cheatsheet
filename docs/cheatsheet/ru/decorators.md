@@ -44,19 +44,17 @@ Hello World!
 After func!
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-decorators-1">
+<BaseQuiz id="cheatsheet-decorators-1" correct="A">
 <template #question>
 Что такое декоратор в Python?
 </template>
 
-<base-quiz-option value="A" correct>A. Функция, которая принимает другую функцию и возвращает функцию-обертку</base-quiz-option>
-<base-quiz-option value="B">B. Особый тип класса</base-quiz-option>
-<base-quiz-option value="C">C. Встроенное ключевое слово Python</base-quiz-option>
-<base-quiz-option value="D">D. Способ удаления функций</base-quiz-option>
-<base-quiz-answer value="A">Декоратор — это функция, которая принимает другую функцию в качестве аргумента и возвращает функцию-обертку. Синтаксис <code>@</code> является синтаксическим сахаром, который применяет декоратор к функции.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. Функция, которая принимает другую функцию и возвращает функцию-обертку</BaseQuizOption>
+<BaseQuizOption value="B">B. Особый тип класса</BaseQuizOption>
+<BaseQuizOption value="C">C. Встроенное ключевое слово Python</BaseQuizOption>
+<BaseQuizOption value="D">D. Способ удаления функций</BaseQuizOption>
+<BaseQuizAnswer>Декоратор — это функция, которая принимает другую функцию в качестве аргумента и возвращает функцию-обертку. Синтаксис <code>@</code> является синтаксическим сахаром, который применяет декоратор к функции.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Декоратор для функции с параметрами
 
@@ -103,19 +101,17 @@ def your_decorator(func):
   return wrapper
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-decorators-2">
+<BaseQuiz id="cheatsheet-decorators-2" correct="B">
 <template #question>
 Что делает <code>@functools.wraps(func)</code> в декораторе?
 </template>
 
-<base-quiz-option value="A">A. Заставляет декоратор выполняться быстрее</base-quiz-option>
-<base-quiz-option value="B" correct>B. Сохраняет метаданные исходной функции (имя, docstring и т. д.)</base-quiz-option>
-<base-quiz-option value="C">C. Предотвращает вызов функции</base-quiz-option>
-<base-quiz-option value="D">D. Преобразует функцию в класс</base-quiz-option>
-<base-quiz-answer value="B">Декоратор <code>@functools.wraps(func)</code> сохраняет метаданные исходной функции (такие как ее имя и docstring) в функции-обертке. Это считается лучшей практикой при написании декораторов.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Заставляет декоратор выполняться быстрее</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Сохраняет метаданные исходной функции (имя, docstring и т. д.)</BaseQuizOption>
+<BaseQuizOption value="C">C. Предотвращает вызов функции</BaseQuizOption>
+<BaseQuizOption value="D">D. Преобразует функцию в класс</BaseQuizOption>
+<BaseQuizAnswer>Декоратор <code>@functools.wraps(func)</code> сохраняет метаданные исходной функции (такие как ее имя и docstring) в функции-обертке. Это считается лучшей практикой при написании декораторов.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Декоратор с параметрами
 

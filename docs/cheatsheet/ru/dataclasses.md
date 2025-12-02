@@ -88,19 +88,17 @@ obj.price
 0.0
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-dataclasses-1">
+<BaseQuiz id="cheatsheet-dataclasses-1" correct="B">
 <template #question>
 В dataclass, где должны располагаться поля со значениями по умолчанию?
 </template>
 
-<base-quiz-option value="A">A. Перед полями без значений по умолчанию</base-quiz-option>
-<base-quiz-option value="B" correct>B. После полей без значений по умолчанию</base-quiz-option>
-<base-quiz-option value="C">C. Это не имеет значения</base-quiz-option>
-<base-quiz-option value="D">D. В отдельном разделе</base-quiz-option>
-<base-quiz-answer value="B">В dataclasses поля со значениями по умолчанию должны следовать за полями без значений по умолчанию. Это связано с тем, что Python должен знать порядок обязательных и необязательных параметров для сгенерированного метода <code>**init**</code>.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Перед полями без значений по умолчанию</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. После полей без значений по умолчанию</BaseQuizOption>
+<BaseQuizOption value="C">C. Это не имеет значения</BaseQuizOption>
+<BaseQuizOption value="D">D. В отдельном разделе</BaseQuizOption>
+<BaseQuizAnswer>В dataclasses поля со значениями по умолчанию должны следовать за полями без значений по умолчанию. Это связано с тем, что Python должен знать порядок обязательных и необязательных параметров для сгенерированного метода <code>**init**</code>.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Подсказки типов (Type hints)
 

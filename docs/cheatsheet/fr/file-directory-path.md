@@ -58,19 +58,17 @@ usr/bin/spam
 
 Remarquez que le séparateur de chemin est différent entre Windows et les systèmes d'exploitation basés sur Unix, c'est pourquoi vous voulez utiliser `pathlib` au lieu d'ajouter des chaînes de caractères ensemble pour joindre des chemins.
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-file-directory-path-1">
+<BaseQuiz id="cheatsheet-file-directory-path-1" correct="B">
 <template #question>
 Quelle est la bonne façon de joindre des chemins en utilisant pathlib en Python ?
 </template>
 
-<base-quiz-option value="A">A. <code>Path('usr') + 'bin' + 'spam'</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>Path('usr') / 'bin' / 'spam'</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>Path('usr').join('bin').join('spam')</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>Path('usr/bin/spam')</code></base-quiz-option>
-<base-quiz-answer value="B">L'opérateur <code>/</code> est la méthode recommandée pour joindre des chemins avec pathlib. Il fonctionne sur toutes les plateformes et est plus lisible que la concaténation de chaînes.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>Path('usr') + 'bin' + 'spam'</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>Path('usr') / 'bin' / 'spam'</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>Path('usr').join('bin').join('spam')</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>Path('usr/bin/spam')</code></BaseQuizOption>
+<BaseQuizAnswer>L'opérateur <code>/</code> est la méthode recommandée pour joindre des chemins avec pathlib. Il fonctionne sur toutes les plateformes et est plus lisible que la concaténation de chaînes.</BaseQuizAnswer>
+</BaseQuiz>
 
 Joindre des chemins est utile si vous avez besoin de créer différents chemins de fichiers sous le même répertoire.
 
@@ -199,19 +197,17 @@ Path('..').is_absolute()
 False
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-file-directory-path-2">
+<BaseQuiz id="cheatsheet-file-directory-path-2" correct="A">
 <template #question>
 Que retourne <code>Path('/').is_absolute()</code> ?
 </template>
 
-<base-quiz-option value="A" correct>A. <code>True</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>False</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>None</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>'/'</code></base-quiz-option>
-<base-quiz-answer value="A">La méthode <code>is_absolute()</code> retourne <code>True</code> pour les chemins absolus (ceux qui commencent par <code>/</code> sur Unix ou une lettre de lecteur sur Windows).</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. <code>True</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>False</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>None</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>'/'</code></BaseQuizOption>
+<BaseQuizAnswer>La méthode <code>is_absolute()</code> retourne <code>True</code> pour les chemins absolus (ceux qui commencent par <code>/</code> sur Unix ou une lettre de lecteur sur Windows).</BaseQuizAnswer>
+</BaseQuiz>
 
 Vous pouvez extraire un chemin absolu avec `pathlib` :
 
@@ -315,19 +311,17 @@ Path('nonexistentfile').is_file()
 False
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-file-directory-path-3">
+<BaseQuiz id="cheatsheet-file-directory-path-3" correct="C">
 <template #question>
 Que retournera <code>Path('setup.py').is_file()</code> si setup.py existe ?
 </template>
 
-<base-quiz-option value="A">A. <code>'setup.py'</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>False</code></base-quiz-option>
-<base-quiz-option value="C" correct>C. <code>True</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>None</code></base-quiz-option>
-<base-quiz-answer value="C">La méthode <code>is_file()</code> retourne <code>True</code> si le chemin existe et est un fichier, <code>False</code> sinon.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>'setup.py'</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>False</code></BaseQuizOption>
+<BaseQuizOption value="C" correct>C. <code>True</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>None</code></BaseQuizOption>
+<BaseQuizAnswer>La méthode <code>is_file()</code> retourne <code>True</code> si le chemin existe et est un fichier, <code>False</code> sinon.</BaseQuizAnswer>
+</BaseQuiz>
 
 ### Vérification si un chemin est un répertoire
 
@@ -458,19 +452,17 @@ shutil.copy('/tmp/eggs.txt', '/tmp/delicious/eggs2.txt')
 /tmp/delicious/eggs2.txt
 ```
 
-<base-quiz>
-<base-quiz-question correct="D" id="cheatsheet-file-directory-path-4">
+<BaseQuiz id="cheatsheet-file-directory-path-4" correct="D">
 <template #question>
 Quelle fonction devez-vous utiliser pour copier une arborescence de répertoires entière, y compris tous les sous-répertoires et fichiers ?
 </template>
 
-<base-quiz-option value="A">A. <code>shutil.copy()</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>Path.copy()</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>os.copy()</code></base-quiz-option>
-<base-quiz-option value="D" correct>D. <code>shutil.copytree()</code></base-quiz-option>
-<base-quiz-answer value="D">La fonction <code>shutil.copytree()</code> copie une arborescence de répertoires entière de manière récursive, tandis que <code>shutil.copy()</code> ne copie qu'un seul fichier.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>shutil.copy()</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>Path.copy()</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>os.copy()</code></BaseQuizOption>
+<BaseQuizOption value="D" correct>D. <code>shutil.copytree()</code></BaseQuizOption>
+<BaseQuizAnswer>La fonction <code>shutil.copytree()</code> copie une arborescence de répertoires entière de manière récursive, tandis que <code>shutil.copy()</code> ne copie qu'un seul fichier.</BaseQuizAnswer>
+</BaseQuiz>
 
 Alors que `shutil.copy()` copiera un seul fichier, `shutil.copytree()` copiera un dossier entier et tous les dossiers et fichiers qu'il contient :
 
@@ -522,19 +514,17 @@ shutil.move('/tmp/bacon.txt', '/tmp/eggs')
 - Appeler `Path.rmdir()` supprimera le dossier au chemin spécifié. Ce dossier doit être vide de tout fichier ou dossier.
 - Appeler `shutil.rmtree(path)` supprimera le dossier au chemin spécifié, et tous les fichiers et dossiers qu'il contient seront également supprimés.
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-file-directory-path-5">
+<BaseQuiz id="cheatsheet-file-directory-path-5" correct="B">
 <template #question>
 Quelle méthode peut supprimer un répertoire non vide et tout son contenu ?
 </template>
 
-<base-quiz-option value="A">A. <code>Path.rmdir()</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>shutil.rmtree()</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>Path.unlink()</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>os.remove()</code></base-quiz-option>
-<base-quiz-answer value="B">La fonction <code>shutil.rmtree()</code> peut supprimer un répertoire et tout son contenu de manière récursive. <code>Path.rmdir()</code> ne fonctionne que sur les répertoires vides.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>Path.rmdir()</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>shutil.rmtree()</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>Path.unlink()</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>os.remove()</code></BaseQuizOption>
+<BaseQuizAnswer>La fonction <code>shutil.rmtree()</code> peut supprimer un répertoire et tout son contenu de manière récursive. <code>Path.rmdir()</code> ne fonctionne que sur les répertoires vides.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Parcours d'une arborescence de répertoires
 

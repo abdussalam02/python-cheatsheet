@@ -71,19 +71,17 @@ divide(dividend=10, divisor=0)
 0으로 나눌 수 없습니다
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-exception-handling-1">
+<BaseQuiz id="cheatsheet-exception-handling-1" correct="A">
 <template #question>
 Python 에서 예외를 처리하는 데 사용되는 키워드는 무엇입니까?
 </template>
 
-<base-quiz-option value="A" correct>A. <code>try</code> 및 <code>except</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>catch</code> 및 <code>handle</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>error</code> 및 <code>rescue</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>if</code> 및 <code>else</code></base-quiz-option>
-<base-quiz-answer value="A">Python 은 예외를 발생시킬 수 있는 코드를 표시하기 위해 <code>try</code>를 사용하고, 발생하는 특정 예외를 처리하기 위해 <code>except</code>를 사용합니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. <code>try</code> 및 <code>except</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>catch</code> 및 <code>handle</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>error</code> 및 <code>rescue</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>if</code> 및 <code>else</code></BaseQuizOption>
+<BaseQuizAnswer>Python 은 예외를 발생시킬 수 있는 코드를 표시하기 위해 <code>try</code>를 사용하고, 발생하는 특정 예외를 처리하기 위해 <code>except</code>를 사용합니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 단일 예외 블록을 사용한 여러 예외 처리
 
@@ -123,19 +121,17 @@ divide(dividend=10, divisor=0)
 division by zero
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-exception-handling-2">
+<BaseQuiz id="cheatsheet-exception-handling-2" correct="B">
 <template #question>
 단일 <code>except</code> 블록에서 여러 예외 유형을 처리할 수 있습니까?
 </template>
 
-<base-quiz-option value="A">A. 아니요, 각 예외 유형에 대해 별도의 <code>except</code> 블록을 사용해야 합니다</base-quiz-option>
-<base-quiz-option value="B" correct>B. 예, <code>except (Exception1, Exception2)</code>와 같이 튜플로 묶으면 가능합니다</base-quiz-option>
-<base-quiz-option value="C">C. 예, 하지만 관련이 있는 경우에만 가능합니다</base-quiz-option>
-<base-quiz-option value="D">D. 아니요, Python 은 이를 지원하지 않습니다</base-quiz-option>
-<base-quiz-answer value="B"><code>except (ZeroDivisionError, TypeError) as error:</code>와 같이 튜플로 묶으면 단일 <code>except</code> 블록에서 여러 예외 유형을 처리할 수 있습니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 아니요, 각 예외 유형에 대해 별도의 <code>except</code> 블록을 사용해야 합니다</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. 예, <code>except (Exception1, Exception2)</code>와 같이 튜플로 묶으면 가능합니다</BaseQuizOption>
+<BaseQuizOption value="C">C. 예, 하지만 관련이 있는 경우에만 가능합니다</BaseQuizOption>
+<BaseQuizOption value="D">D. 아니요, Python 은 이를 지원하지 않습니다</BaseQuizOption>
+<BaseQuizAnswer><code>except (ZeroDivisionError, TypeError) as error:</code>와 같이 튜플로 묶으면 단일 <code>except</code> 블록에서 여러 예외 유형을 처리할 수 있습니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 예외 처리의 Finally 코드
 
@@ -168,19 +164,17 @@ divide(dividend=10, divisor=0)
 실행 완료
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-exception-handling-3">
+<BaseQuiz id="cheatsheet-exception-handling-3" correct="C">
 <template #question>
 <code>finally</code> 블록은 언제 실행됩니까?
 </template>
 
-<base-quiz-option value="A">A. 예외가 발생했을 때만</base-quiz-option>
-<base-quiz-option value="B">B. 예외가 발생하지 않았을 때만</base-quiz-option>
-<base-quiz-option value="C" correct>C. 예외 발생 여부와 관계없이 항상</base-quiz-option>
-<base-quiz-option value="D">D. 절대 실행되지 않음</base-quiz-option>
-<base-quiz-answer value="C"><code>finally</code> 블록은 예외 발생 여부와 관계없이 항상 실행됩니다. 결과에 관계없이 실행되어야 하는 정리 코드에 유용합니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 예외가 발생했을 때만</BaseQuizOption>
+<BaseQuizOption value="B">B. 예외가 발생하지 않았을 때만</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. 예외 발생 여부와 관계없이 항상</BaseQuizOption>
+<BaseQuizOption value="D">D. 절대 실행되지 않음</BaseQuizOption>
+<BaseQuizAnswer><code>finally</code> 블록은 예외 발생 여부와 관계없이 항상 실행됩니다. 결과에 관계없이 실행되어야 하는 정리 코드에 유용합니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 사용자 정의 예외
 
@@ -228,19 +222,17 @@ except MyCustomException:
 내 사용자 정의 예외가 발생했습니다
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-exception-handling-4">
+<BaseQuiz id="cheatsheet-exception-handling-4" correct="A">
 <template #question>
 Python 에서 사용자 정의 예외를 만드는 방법은 무엇입니까?
 </template>
 
-<base-quiz-option value="A" correct>A. <code>Exception</code> 클래스를 상속하는 클래스 생성</base-quiz-option>
-<base-quiz-option value="B">B. <code>@exception</code> 데코레이터 사용</base-quiz-option>
-<base-quiz-option value="C">C. <code>Exception.create()</code> 호출</base-quiz-option>
-<base-quiz-option value="D">D. 특수 모듈에서 가져오기</base-quiz-option>
-<base-quiz-answer value="A">사용자 정의 예외는 기본 <code>Exception</code> 클래스를 상속하는 클래스를 정의하여 생성됩니다. 그런 다음 내장 예외처럼 발생시키고 처리할 수 있습니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. <code>Exception</code> 클래스를 상속하는 클래스 생성</BaseQuizOption>
+<BaseQuizOption value="B">B. <code>@exception</code> 데코레이터 사용</BaseQuizOption>
+<BaseQuizOption value="C">C. <code>Exception.create()</code> 호출</BaseQuizOption>
+<BaseQuizOption value="D">D. 특수 모듈에서 가져오기</BaseQuizOption>
+<BaseQuizAnswer>사용자 정의 예외는 기본 <code>Exception</code> 클래스를 상속하는 클래스를 정의하여 생성됩니다. 그런 다음 내장 예외처럼 발생시키고 처리할 수 있습니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 관련 링크
 

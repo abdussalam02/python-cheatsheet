@@ -98,19 +98,17 @@ f'Hello {name}!'  # f Präfix erlaubt Ausdrücke in {}
 'Hello Elizabeth!'
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-string-formatting-1">
+<BaseQuiz id="cheatsheet-string-formatting-1" correct="B">
 <template #question>
 Welches Präfix wird für f-Strings in Python verwendet?
 </template>
 
-<base-quiz-option value="A">A. <code>fmt</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>f</code> oder <code>F</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>format</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>str</code></base-quiz-option>
-<base-quiz-answer value="B">F-Strings wird <code>f</code> oder <code>F</code> vor dem öffnenden Anführungszeichen vorangestellt. Sie ermöglichen das Einbetten von Ausdrücken in geschweifte Klammern <code>{}</code>.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>fmt</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>f</code> oder <code>F</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>format</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>str</code></BaseQuizOption>
+<BaseQuizAnswer>F-Strings wird <code>f</code> oder <code>F</code> vor dem öffnenden Anführungszeichen vorangestellt. Sie ermöglichen das Einbetten von Ausdrücken in geschweifte Klammern <code>{}</code>.</BaseQuizAnswer>
+</BaseQuiz>
 
 Es ist sogar möglich, Inline-Arithmetik damit durchzuführen:
 
@@ -206,19 +204,17 @@ f"{a:.2f}"
 '3.14'
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-string-formatting-2">
+<BaseQuiz id="cheatsheet-string-formatting-2" correct="C">
 <template #question>
 Was bewirkt <code>f"{a:.2f}"</code>?
 </template>
 
-<base-quiz-option value="A">A. Rundet die Zahl auf die nächste ganze Zahl</base-quiz-option>
-<base-quiz-option value="B">B. Formatiert als Prozentsatz</base-quiz-option>
-<base-quiz-option value="C" correct>C. Formatiert die Zahl als Gleitkommazahl mit 2 Dezimalstellen</base-quiz-option>
-<base-quiz-option value="D">D. Konvertiert in wissenschaftliche Notation</base-quiz-option>
-<base-quiz-answer value="C">Der Format-Spezifizierer <code>:.2f</code> formatiert eine Zahl als Gleitkommazahl mit genau 2 Dezimalstellen. Die <code>.2</code> gibt die Genauigkeit an und <code>f</code> bedeutet Gleitkommaformat.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Rundet die Zahl auf die nächste ganze Zahl</BaseQuizOption>
+<BaseQuizOption value="B">B. Formatiert als Prozentsatz</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. Formatiert die Zahl als Gleitkommazahl mit 2 Dezimalstellen</BaseQuizOption>
+<BaseQuizOption value="D">D. Konvertiert in wissenschaftliche Notation</BaseQuizOption>
+<BaseQuizAnswer>Der Format-Spezifizierer <code>:.2f</code> formatiert eine Zahl als Gleitkommazahl mit genau 2 Dezimalstellen. Die <code>.2</code> gibt die Genauigkeit an und <code>f</code> bedeutet Gleitkommaformat.</BaseQuizAnswer>
+</BaseQuiz>
 
 Als Prozentsatz anzeigen
 

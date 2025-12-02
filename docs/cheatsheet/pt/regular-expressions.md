@@ -104,19 +104,17 @@ mo.group()
 '415-555-4242'
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-regular-expressions-1">
+<BaseQuiz id="cheatsheet-regular-expressions-1" correct="A">
 <template #question>
 O que <code>group()</code> retorna quando chamado em um objeto de correspondência?
 </template>
 
-<base-quiz-option value="A" correct>A. O texto correspondido inteiro</base-quiz-option>
-<base-quiz-option value="B">B. Apenas o primeiro grupo</base-quiz-option>
-<base-quiz-option value="C">C. Todos os grupos como uma lista</base-quiz-option>
-<base-quiz-option value="D">D. O índice da correspondência</base-quiz-option>
-<base-quiz-answer value="A">O método <code>group()</code> (ou <code>group(0)</code>) retorna o texto correspondido inteiro. Para obter grupos específicos, use <code>group(1)</code>, <code>group(2)</code>, etc.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. O texto correspondido inteiro</BaseQuizOption>
+<BaseQuizOption value="B">B. Apenas o primeiro grupo</BaseQuizOption>
+<BaseQuizOption value="C">C. Todos os grupos como uma lista</BaseQuizOption>
+<BaseQuizOption value="D">D. O índice da correspondência</BaseQuizOption>
+<BaseQuizAnswer>O método <code>group()</code> (ou <code>group(0)</code>) retorna o texto correspondido inteiro. Para obter grupos específicos, use <code>group(1)</code>, <code>group(2)</code>, etc.</BaseQuizAnswer>
+</BaseQuiz>
 
 Para recuperar todos os grupos de uma vez, use o método `groups()`:
 
@@ -342,19 +340,17 @@ mo2.group()
 'HaHaHa'
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-regular-expressions-2">
+<BaseQuiz id="cheatsheet-regular-expressions-2" correct="B">
 <template #question>
 O que torna um padrão regex não-guloso (non-greedy)?
 </template>
 
-<base-quiz-option value="A">A. Usar <code>_</code> em vez de <code>+</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. Adicionar um <code>?</code> após o quantificador (ex: <code>_?</code>, <code>+?</code>, <code>{3,5}?</code>)</base-quiz-option>
-<base-quiz-option value="C">C. Usar parênteses</base-quiz-option>
-<base-quiz-option value="D">D. Usar colchetes</base-quiz-option>
-<base-quiz-answer value="B">Adicionar um <code>?</code> após quantificadores como <code>\*</code>, <code>+</code>, ou <code>{n,m}</code> os torna não-gulosos, correspondendo à string mais curta possível em vez da mais longa.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Usar <code>_</code> em vez de <code>+</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Adicionar um <code>?</code> após o quantificador (ex: <code>_?</code>, <code>+?</code>, <code>{3,5}?</code>)</BaseQuizOption>
+<BaseQuizOption value="C">C. Usar parênteses</BaseQuizOption>
+<BaseQuizOption value="D">D. Usar colchetes</BaseQuizOption>
+<BaseQuizAnswer>Adicionar um <code>?</code> após quantificadores como <code>\*</code>, <code>+</code>, ou <code>{n,m}</code> os torna não-gulosos, correspondendo à string mais curta possível em vez da mais longa.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## O método findall()
 
@@ -579,19 +575,17 @@ names_regex.sub('CENSORED', 'Agent Alice gave the secret documents to Agent Bob.
 'CENSORED gave the secret documents to CENSORED.'
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-regular-expressions-3">
+<BaseQuiz id="cheatsheet-regular-expressions-3" correct="B">
 <template #question>
 O que o método <code>sub()</code> faz?
 </template>
 
-<base-quiz-option value="A">A. Encontra todas as correspondências em uma string</base-quiz-option>
-<base-quiz-option value="B" correct>B. Substitui todas as correspondências por uma string de substituição</base-quiz-option>
-<base-quiz-option value="C">C. Divide uma string nas correspondências</base-quiz-option>
-<base-quiz-option value="D">D. Valida o formato de uma string</base-quiz-option>
-<base-quiz-answer value="B">O método <code>sub()</code> substitui todas as correspondências do padrão por uma string de substituição. Ele retorna uma nova string com as substituições aplicadas.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Encontra todas as correspondências em uma string</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Substitui todas as correspondências por uma string de substituição</BaseQuizOption>
+<BaseQuizOption value="C">C. Divide uma string nas correspondências</BaseQuizOption>
+<BaseQuizOption value="D">D. Valida o formato de uma string</BaseQuizOption>
+<BaseQuizAnswer>O método <code>sub()</code> substitui todas as correspondências do padrão por uma string de substituição. Ele retorna uma nova string com as substituições aplicadas.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Gerenciando Regexes complexos
 
@@ -616,19 +610,17 @@ phone_regex = re.compile(r'''(
     )''', re.VERBOSE)
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-regular-expressions-4">
+<BaseQuiz id="cheatsheet-regular-expressions-4" correct="A">
 <template #question>
 O que <code>re.VERBOSE</code> faz quando passado para <code>re.compile()</code>?
 </template>
 
-<base-quiz-option value="A" correct>A. Permite espaços em branco e comentários no padrão regex para melhor legibilidade</base-quiz-option>
-<base-quiz-option value="B">B. Torna o regex insensível a maiúsculas e minúsculas</base-quiz-option>
-<base-quiz-option value="C">C. Faz com que o ponto corresponda a caracteres de nova linha</base-quiz-option>
-<base-quiz-option value="D">D. Acelera a correspondência regex</base-quiz-option>
-<base-quiz-answer value="A">O flag <code>re.VERBOSE</code> permite que você adicione espaços em branco e comentários ao seu padrão regex, tornando regexes complexos muito mais legíveis sem afetar a correspondência do padrão.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. Permite espaços em branco e comentários no padrão regex para melhor legibilidade</BaseQuizOption>
+<BaseQuizOption value="B">B. Torna o regex insensível a maiúsculas e minúsculas</BaseQuizOption>
+<BaseQuizOption value="C">C. Faz com que o ponto corresponda a caracteres de nova linha</BaseQuizOption>
+<BaseQuizOption value="D">D. Acelera a correspondência regex</BaseQuizOption>
+<BaseQuizAnswer>O flag <code>re.VERBOSE</code> permite que você adicione espaços em branco e comentários ao seu padrão regex, tornando regexes complexos muito mais legíveis sem afetar a correspondência do padrão.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Links relevantes
 

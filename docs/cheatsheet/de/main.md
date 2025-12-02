@@ -37,19 +37,17 @@ if __name__ == "__main__":  # Wird nur ausgeführt, wenn die Datei ausgeführt w
     add(3, 5)
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-main-1">
+<BaseQuiz id="cheatsheet-main-1" correct="B">
 <template #question>
 Was ist der Wert von <code>__name__</code>, wenn eine Python-Datei direkt als Skript ausgeführt wird?
 </template>
 
-<base-quiz-option value="A">A. Der Dateiname</base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>"**main**"</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>None</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>True</code></base-quiz-option>
-<base-quiz-answer value="B">Wenn eine Python-Datei direkt als Skript ausgeführt wird, wird <code>**name**</code> auf <code>"**main**"</code> gesetzt. Wenn die Datei als Modul importiert wird, wird <code>**name**</code> auf den Namen des Moduls gesetzt.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Der Dateiname</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>"**main**"</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>None</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>True</code></BaseQuizOption>
+<BaseQuizAnswer>Wenn eine Python-Datei direkt als Skript ausgeführt wird, wird <code>**name**</code> auf <code>"**main**"</code> gesetzt. Wenn die Datei als Modul importiert wird, wird <code>**name**</code> auf den Namen des Moduls gesetzt.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Vorteile
 
@@ -58,19 +56,17 @@ Was ist der Wert von <code>__name__</code>, wenn eine Python-Datei direkt als Sk
 3. Python-Dateien können entweder als wiederverwendbare Module oder als eigenständige Programme fungieren.
 4. `if __name__ == "__main__":` wird verwendet, um Code nur dann auszuführen, wenn die Datei direkt ausgeführt und nicht importiert wird.
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-main-2">
+<BaseQuiz id="cheatsheet-main-2" correct="A">
 <template #question>
 Was ist der Hauptzweck der Verwendung von <code>if __name__ == "__main__":</code>?
 </template>
 
-<base-quiz-option value="A" correct>A. Code nur auszuführen, wenn die Datei direkt ausgeführt und nicht importiert wird</base-quiz-option>
-<base-quiz-option value="B">B. Zu verhindern, dass die Datei importiert wird</base-quiz-option>
-<base-quiz-option value="C">C. Um die Ausführung der Datei zu beschleunigen</base-quiz-option>
-<base-quiz-option value="D">D. Um Code vor anderen Modulen zu verbergen</base-quiz-option>
-<base-quiz-answer value="A">Das Idiom <code>if **name** == "**main**":</code> ermöglicht es einer Python-Datei, sowohl als wiederverwendbares Modul als auch als eigenständiges Programm zu fungieren. Code innerhalb dieses Blocks wird nur ausgeführt, wenn die Datei direkt ausgeführt wird, nicht wenn sie importiert wird.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. Code nur auszuführen, wenn die Datei direkt ausgeführt und nicht importiert wird</BaseQuizOption>
+<BaseQuizOption value="B">B. Zu verhindern, dass die Datei importiert wird</BaseQuizOption>
+<BaseQuizOption value="C">C. Um die Ausführung der Datei zu beschleunigen</BaseQuizOption>
+<BaseQuizOption value="D">D. Um Code vor anderen Modulen zu verbergen</BaseQuizOption>
+<BaseQuizAnswer>Das Idiom <code>if **name** == "**main**":</code> ermöglicht es einer Python-Datei, sowohl als wiederverwendbares Modul als auch als eigenständiges Programm zu fungieren. Code innerhalb dieses Blocks wird nur ausgeführt, wenn die Datei direkt ausgeführt wird, nicht wenn sie importiert wird.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Relevante Links
 

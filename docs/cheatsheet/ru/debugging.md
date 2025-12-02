@@ -39,19 +39,17 @@ Traceback (most recent call last):
 Exception: This is the error message.
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-debugging-1">
+<BaseQuiz id="cheatsheet-debugging-1" correct="B">
 <template #question>
 Какое ключевое слово используется для ручного вызова исключения в Python?
 </template>
 
-<base-quiz-option value="A">A. <code>throw</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>raise</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>error</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>exception</code></base-quiz-option>
-<base-quiz-answer value="B">Ключевое слово <code>raise</code> используется для ручного вызова исключения в Python. Вы можете вызывать встроенные исключения или пользовательские исключения.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>throw</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>raise</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>error</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>exception</code></BaseQuizOption>
+<BaseQuizAnswer>Ключевое слово <code>raise</code> используется для ручного вызова исключения в Python. Вы можете вызывать встроенные исключения или пользовательские исключения.</BaseQuizAnswer>
+</BaseQuiz>
 
 Обычно код, который вызывает функцию, а не сама функция, знает, как обработать исключение. Поэтому вы часто увидите оператор `raise` внутри функции, а операторы `try` и `except` — в коде, вызывающем функцию.
 
@@ -145,19 +143,17 @@ Traceback (most recent call last):
 AssertionError: The pod bay doors need to be "open".
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-debugging-2">
+<BaseQuiz id="cheatsheet-debugging-2" correct="C">
 <template #question>
 Что происходит, когда оператор <code>assert</code> завершается неудачей?
 </template>
 
-<base-quiz-option value="A">A. Программа продолжает выполнение</base-quiz-option>
-<base-quiz-option value="B">B. Выводится предупреждение</base-quiz-option>
-<base-quiz-option value="C" correct>C. Вызывается <code>AssertionError</code>, и программа должна аварийно завершиться</base-quiz-option>
-<base-quiz-option value="D">D. Условие исправляется автоматически</base-quiz-option>
-<base-quiz-answer value="C">Когда оператор <code>assert</code> завершается неудачей, он вызывает <code>AssertionError</code>. В отличие от исключений, операторы assert не следует перехватывать с помощью try-except; если assert не проходит, ваша программа должна аварийно завершиться, чтобы помочь вам быстро найти ошибки.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Программа продолжает выполнение</BaseQuizOption>
+<BaseQuizOption value="B">B. Выводится предупреждение</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. Вызывается <code>AssertionError</code>, и программа должна аварийно завершиться</BaseQuizOption>
+<BaseQuizOption value="D">D. Условие исправляется автоматически</BaseQuizOption>
+<BaseQuizAnswer>Когда оператор <code>assert</code> завершается неудачей, он вызывает <code>AssertionError</code>. В отличие от исключений, операторы assert не следует перехватывать с помощью try-except; если assert не проходит, ваша программа должна аварийно завершиться, чтобы помочь вам быстро найти ошибки.</BaseQuizAnswer>
+</BaseQuiz>
 
 Проще говоря, оператор assert гласит: «Я утверждаю, что это условие истинно, а если нет, то где-то в программе есть ошибка». В отличие от исключений, ваш код не должен обрабатывать операторы assert с помощью try и except; если assert не проходит, ваша программа должна аварийно завершиться. Такой быстрый отказ сокращает время между первопричиной ошибки и первым обнаружением ошибки. Это уменьшит объем кода, который вам придется проверять, прежде чем найти код, вызывающий ошибку.
 
@@ -174,19 +170,17 @@ import logging
 logging.basicConfig(level=logging.DEBUG, format=' %(asctime)s - %(levelname)s- %(message)s')
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-debugging-3">
+<BaseQuiz id="cheatsheet-debugging-3" correct="A">
 <template #question>
 Какова цель модуля <code>logging</code> в Python?
 </template>
 
-<base-quiz-option value="A" correct>A. Запись информации о выполнении программы для отладки и мониторинга</base-quiz-option>
-<base-quiz-option value="B">B. Предотвращение возникновения ошибок</base-quiz-option>
-<base-quiz-option value="C">C. Ускорение выполнения программы</base-quiz-option>
-<base-quiz-option value="D">D. Шифрование сообщений журнала</base-quiz-option>
-<base-quiz-answer value="A">Модуль <code>logging</code> позволяет записывать информацию о выполнении вашей программы на разных уровнях (DEBUG, INFO, WARNING, ERROR, CRITICAL), что полезно для отладки и мониторинга.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. Запись информации о выполнении программы для отладки и мониторинга</BaseQuizOption>
+<BaseQuizOption value="B">B. Предотвращение возникновения ошибок</BaseQuizOption>
+<BaseQuizOption value="C">C. Ускорение выполнения программы</BaseQuizOption>
+<BaseQuizOption value="D">D. Шифрование сообщений журнала</BaseQuizOption>
+<BaseQuizAnswer>Модуль <code>logging</code> позволяет записывать информацию о выполнении вашей программы на разных уровнях (DEBUG, INFO, WARNING, ERROR, CRITICAL), что полезно для отладки и мониторинга.</BaseQuizAnswer>
+</BaseQuiz>
 
 Предположим, вы написали функцию для вычисления факториала числа. В математике факториал 4 равен 1 × 2 × 3 × 4, или 24. Факториал 7 равен 1 × 2 × 3 × 4 × 5 × 6 × 7, или 5040. Откройте новое окно редактора файлов и введите следующий код. В нем есть ошибка, но вы также добавите несколько сообщений журнала, чтобы помочь себе выяснить, что идет не так. Сохраните программу как factorialLog.py.
 
@@ -234,19 +228,17 @@ logging.debug('End of program')
 | `ERROR`    | `logging.error()`    | Используется для записи ошибки, из-за которой программа не смогла что-то сделать.                                                             |
 | `CRITICAL` | `logging.critical()` | Самый высокий уровень. Используется для указания на фатальную ошибку, которая вызвала или вот-вот вызовет полную остановку работы программы.  |
 
-<base-quiz>
-<base-quiz-question correct="D" id="cheatsheet-debugging-4">
+<BaseQuiz id="cheatsheet-debugging-4" correct="D">
 <template #question>
 Какой самый низкий уровень логирования в Python?
 </template>
 
-<base-quiz-option value="A">A. <code>INFO</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>WARNING</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>ERROR</code></base-quiz-option>
-<base-quiz-option value="D" correct>D. <code>DEBUG</code></base-quiz-option>
-<base-quiz-answer value="D">Уровни логирования от самого низкого к самому высокому: <code>DEBUG</code>, <code>INFO</code>, <code>WARNING</code>, <code>ERROR</code>, <code>CRITICAL</code>. <code>DEBUG</code> — самый низкий уровень, используемый для подробной диагностической информации.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>INFO</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>WARNING</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>ERROR</code></BaseQuizOption>
+<BaseQuizOption value="D" correct>D. <code>DEBUG</code></BaseQuizOption>
+<BaseQuizAnswer>Уровни логирования от самого низкого к самому высокому: <code>DEBUG</code>, <code>INFO</code>, <code>WARNING</code>, <code>ERROR</code>, <code>CRITICAL</code>. <code>DEBUG</code> — самый низкий уровень, используемый для подробной диагностической информации.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Отключение логирования
 
@@ -278,19 +270,17 @@ import logging
 logging.basicConfig(filename='myProgramLog.txt', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-debugging-5">
+<BaseQuiz id="cheatsheet-debugging-5" correct="B">
 <template #question>
 Как записать сообщения журнала в файл вместо отображения их на экране?
 </template>
 
-<base-quiz-option value="A">A. Использовать <code>logging.file()</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. Передать параметр <code>filename</code> в <code>logging.basicConfig()</code></base-quiz-option>
-<base-quiz-option value="C">C. Использовать <code>logging.write()</code></base-quiz-option>
-<base-quiz-option value="D">D. Журналы всегда записываются в файлы автоматически</base-quiz-option>
-<base-quiz-answer value="B">Чтобы записать сообщения журнала в файл, передайте параметр <code>filename</code> в <code>logging.basicConfig()</code>. Это запишет все сообщения журнала в указанный файл вместо отображения их на экране.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Использовать <code>logging.file()</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Передать параметр <code>filename</code> в <code>logging.basicConfig()</code></BaseQuizOption>
+<BaseQuizOption value="C">C. Использовать <code>logging.write()</code></BaseQuizOption>
+<BaseQuizOption value="D">D. Журналы всегда записываются в файлы автоматически</BaseQuizOption>
+<BaseQuizAnswer>Чтобы записать сообщения журнала в файл, передайте параметр <code>filename</code> в <code>logging.basicConfig()</code>. Это запишет все сообщения журнала в указанный файл вместо отображения их на экране.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Связанные ссылки
 

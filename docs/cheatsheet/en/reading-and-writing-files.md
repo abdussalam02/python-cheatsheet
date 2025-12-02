@@ -33,19 +33,17 @@ hello_content
 'Hello World!'
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-reading-and-writing-files-1">
+<BaseQuiz id="cheatsheet-reading-and-writing-files-1" correct="A">
 <template #question>
 What is the main advantage of using the <code>with</code> statement when opening files?
 </template>
 
-<base-quiz-option value="A" correct>A. The file is automatically closed when done, even if an error occurs</base-quiz-option>
-<base-quiz-option value="B">B. Files open faster</base-quiz-option>
-<base-quiz-option value="C">C. Files can be opened in read and write mode simultaneously</base-quiz-option>
-<base-quiz-option value="D">D. Files are automatically compressed</base-quiz-option>
-<base-quiz-answer value="A">The <code>with</code> statement ensures the file is automatically closed when the block exits, even if an exception occurs. This helps manage resources properly.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. The file is automatically closed when done, even if an error occurs</BaseQuizOption>
+<BaseQuizOption value="B">B. Files open faster</BaseQuizOption>
+<BaseQuizOption value="C">C. Files can be opened in read and write mode simultaneously</BaseQuizOption>
+<BaseQuizOption value="D">D. Files are automatically compressed</BaseQuizOption>
+<BaseQuizAnswer>The <code>with</code> statement ensures the file is automatically closed when the block exits, even if an exception occurs. This helps manage resources properly.</BaseQuizAnswer>
+</BaseQuiz>
 
 Alternatively, you can use the _readlines()_ method to get a list of string values from the file, one string for each line of text:
 
@@ -112,19 +110,17 @@ Hello world!
 Bacon is not a vegetable.
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-reading-and-writing-files-2">
+<BaseQuiz id="cheatsheet-reading-and-writing-files-2" correct="B">
 <template #question>
 What is the difference between opening a file with mode <code>'w'</code> and mode <code>'a'</code>?
 </template>
 
-<base-quiz-option value="A">A. <code>'w'</code> is for reading, <code>'a'</code> is for writing</base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>'w'</code> overwrites the file, <code>'a'</code> appends to the file</base-quiz-option>
-<base-quiz-option value="C">C. <code>'w'</code> is for Windows, <code>'a'</code> is for Apple</base-quiz-option>
-<base-quiz-option value="D">D. There is no difference</base-quiz-option>
-<base-quiz-answer value="B">Mode <code>'w'</code> opens the file for writing and overwrites any existing content. Mode <code>'a'</code> opens the file for appending, adding new content to the end of the file.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>'w'</code> is for reading, <code>'a'</code> is for writing</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>'w'</code> overwrites the file, <code>'a'</code> appends to the file</BaseQuizOption>
+<BaseQuizOption value="C">C. <code>'w'</code> is for Windows, <code>'a'</code> is for Apple</BaseQuizOption>
+<BaseQuizOption value="D">D. There is no difference</BaseQuizOption>
+<BaseQuizAnswer>Mode <code>'w'</code> opens the file for writing and overwrites any existing content. Mode <code>'a'</code> opens the file for appending, adding new content to the end of the file.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Relevant links
 

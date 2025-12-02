@@ -37,19 +37,17 @@ if __name__ == "__main__":  # Solo se ejecuta cuando se ejecuta el archivo, no c
     add(3, 5)
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-main-1">
+<BaseQuiz id="cheatsheet-main-1" correct="B">
 <template #question>
 ¿Cuál es el valor de <code>__name__</code> cuando un archivo Python se ejecuta directamente como un script?
 </template>
 
-<base-quiz-option value="A">A. El nombre del archivo</base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>"**main**"</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>None</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>True</code></base-quiz-option>
-<base-quiz-answer value="B">Cuando un archivo Python se ejecuta directamente como un script, <code>**name**</code> se establece en <code>"**main**"</code>. Cuando el archivo se importa como un módulo, <code>**name**</code> se establece en el nombre del módulo.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. El nombre del archivo</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>"**main**"</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>None</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>True</code></BaseQuizOption>
+<BaseQuizAnswer>Cuando un archivo Python se ejecuta directamente como un script, <code>**name**</code> se establece en <code>"**main**"</code>. Cuando el archivo se importa como un módulo, <code>**name**</code> se establece en el nombre del módulo.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Ventajas
 
@@ -58,19 +56,17 @@ if __name__ == "__main__":  # Solo se ejecuta cuando se ejecuta el archivo, no c
 3. Los archivos de Python pueden actuar como módulos reutilizables o como programas independientes.
 4. `if __name__ == "__main__":` se utiliza para ejecutar algo de código solo si el archivo se ejecuta directamente y no se está importando.
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-main-2">
+<BaseQuiz id="cheatsheet-main-2" correct="A">
 <template #question>
 ¿Cuál es el propósito principal de usar <code>if __name__ == "__main__":</code>?
 </template>
 
-<base-quiz-option value="A" correct>A. Ejecutar código solo cuando el archivo se ejecuta directamente, no cuando se importa</base-quiz-option>
-<base-quiz-option value="B">B. Evitar que el archivo sea importado</base-quiz-option>
-<base-quiz-option value="C">C. Hacer que el archivo se ejecute más rápido</base-quiz-option>
-<base-quiz-option value="D">D. Ocultar código a otros módulos</base-quiz-option>
-<base-quiz-answer value="A">El modismo <code>if **name** == "**main**":</code> permite que un archivo de Python actúe tanto como un módulo reutilizable como un programa independiente. El código dentro de este bloque solo se ejecuta cuando el archivo se ejecuta directamente, no cuando se importa.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. Ejecutar código solo cuando el archivo se ejecuta directamente, no cuando se importa</BaseQuizOption>
+<BaseQuizOption value="B">B. Evitar que el archivo sea importado</BaseQuizOption>
+<BaseQuizOption value="C">C. Hacer que el archivo se ejecute más rápido</BaseQuizOption>
+<BaseQuizOption value="D">D. Ocultar código a otros módulos</BaseQuizOption>
+<BaseQuizAnswer>El modismo <code>if **name** == "**main**":</code> permite que un archivo de Python actúe tanto como un módulo reutilizable como un programa independiente. El código dentro de este bloque solo se ejecuta cuando el archivo se ejecuta directamente, no cuando se importa.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Enlaces relevantes
 

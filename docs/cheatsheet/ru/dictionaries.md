@@ -239,19 +239,17 @@ wife
 {'name': 'Rose', 'hair': 'brown'}
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-dictionaries-1">
+<BaseQuiz id="cheatsheet-dictionaries-1" correct="B">
 <template #question>
 Что делает <code>pop()</code> при вызове на словаре?
 </template>
 
-<base-quiz-option value="A">A. Только удаляет пару ключ-значение</base-quiz-option>
-<base-quiz-option value="B" correct>B. Удаляет и возвращает значение для указанного ключа</base-quiz-option>
-<base-quiz-option value="C">C. Только возвращает значение, не удаляя его</base-quiz-option>
-<base-quiz-option value="D">D. Удаляет все элементы из словаря</base-quiz-option>
-<base-quiz-answer value="B">Метод <code>pop()</code> удаляет пару ключ-значение для указанного ключа и возвращает значение. Если ключ не существует, он вызывает <code>KeyError</code> (если не предоставлено значение по умолчанию).</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Только удаляет пару ключ-значение</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Удаляет и возвращает значение для указанного ключа</BaseQuizOption>
+<BaseQuizOption value="C">C. Только возвращает значение, не удаляя его</BaseQuizOption>
+<BaseQuizOption value="D">D. Удаляет все элементы из словаря</BaseQuizOption>
+<BaseQuizAnswer>Метод <code>pop()</code> удаляет пару ключ-значение для указанного ключа и возвращает значение. Если ключ не существует, он вызывает <code>KeyError</code> (если не предоставлено значение по умолчанию).</BaseQuizAnswer>
+</BaseQuiz>
 
 ### popitem()
 
@@ -383,19 +381,17 @@ dict_c
 {'a': 1, 'b': 3, 'c': 4}
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-dictionaries-2">
+<BaseQuiz id="cheatsheet-dictionaries-2" correct="B">
 <template #question>
 При объединении двух словарей с помощью <code>{**dict_b, **dict_a}</code>, что произойдет, если у обоих словарей есть один и тот же ключ?
 </template>
 
-<base-quiz-option value="A">A. Значение из <code>dict_b</code> перезаписывает значение из <code>dict_a</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. Значение из <code>dict_a</code> перезаписывает значение из <code>dict_b</code></base-quiz-option>
-<base-quiz-option value="C">C. Оба значения сохраняются в списке</base-quiz-option>
-<base-quiz-option value="D">D. Вызывается ошибка</base-quiz-option>
-<base-quiz-answer value="B">При объединении словарей с помощью оператора распаковки <code>\*\*</code>, если у обоих словарей есть один и тот же ключ, значение из словаря, который идет позже (в данном случае <code>dict_a</code>), перезаписывает значение из предыдущего словаря.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Значение из <code>dict_b</code> перезаписывает значение из <code>dict_a</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Значение из <code>dict_a</code> перезаписывает значение из <code>dict_b</code></BaseQuizOption>
+<BaseQuizOption value="C">C. Оба значения сохраняются в списке</BaseQuizOption>
+<BaseQuizOption value="D">D. Вызывается ошибка</BaseQuizOption>
+<BaseQuizAnswer>При объединении словарей с помощью оператора распаковки <code>\*\*</code>, если у обоих словарей есть один и тот же ключ, значение из словаря, который идет позже (в данном случае <code>dict_a</code>), перезаписывает значение из предыдущего словаря.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Связанные ссылки
 

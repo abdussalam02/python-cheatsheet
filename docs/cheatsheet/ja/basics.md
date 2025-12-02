@@ -97,8 +97,7 @@ Python の基本概要
 16.0
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-basics-1">
+<BaseQuiz id="cheatsheet-basics-1" correct="A">
 <template #question>
 この Python 式の結果は何ですか？
 
@@ -108,13 +107,12 @@ Python の基本概要
 
 </template>
 
-<base-quiz-option value="A" correct>A. 10</base-quiz-option>
-<base-quiz-option value="B">B. 18</base-quiz-option>
-<base-quiz-option value="C">C. 12</base-quiz-option>
-<base-quiz-option value="D">D. 20</base-quiz-option>
-<base-quiz-answer value="A">乗算は加算よりも優先順位が高いため、これは次のように評価されます：4 + (2 \* 3) = 4 + 6 = 10</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. 10</BaseQuizOption>
+<BaseQuizOption value="B">B. 18</BaseQuizOption>
+<BaseQuizOption value="C">C. 12</BaseQuizOption>
+<BaseQuizOption value="D">D. 20</BaseQuizOption>
+<BaseQuizAnswer>乗算は加算よりも優先順位が高いため、これは次のように評価されます：4 + (2 \* 3) = 4 + 6 = 10</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 複合代入演算子
 
@@ -163,8 +161,7 @@ my_list
 ['item', 'item', 'item']
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-basics-2">
+<BaseQuiz id="cheatsheet-basics-2" correct="B">
 <template #question>
 このコードを実行した後、<code>x</code>の値は何になりますか？
 
@@ -175,13 +172,12 @@ x += 3
 
 </template>
 
-<base-quiz-option value="A">A. 3</base-quiz-option>
-<base-quiz-option value="B" correct>B. 8</base-quiz-option>
-<base-quiz-option value="C">C. 5</base-quiz-option>
-<base-quiz-option value="D">D. 15</base-quiz-option>
-<base-quiz-answer value="B">複合代入演算子 <code>+=</code> は <code>x = x + 3</code> と同等です。したがって、<code>x</code>は 5 から始まり、5 + 3 = 8 になります。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 3</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. 8</BaseQuizOption>
+<BaseQuizOption value="C">C. 5</BaseQuizOption>
+<BaseQuizOption value="D">D. 15</BaseQuizOption>
+<BaseQuizAnswer>複合代入演算子 <code>+=</code> は <code>x = x + 3</code> と同等です。したがって、<code>x</code>は 5 から始まり、5 + 3 = 8 になります。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## ウォルラス演算子 (Walrus Operator)
 
@@ -340,19 +336,17 @@ my_var_2 = 'Hello'
 _spam = 'Hello'
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-basics-3">
+<BaseQuiz id="cheatsheet-basics-3" correct="C">
 <template #question>
 Python の基本において、次のうち有効な変数名はどれですか？
 </template>
 
-<base-quiz-option value="A">A. <code>3value</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>user-name</code></base-quiz-option>
-<base-quiz-option value="C" correct>C. <code>user_name</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>for</code></base-quiz-option>
-<base-quiz-answer value="C"><code>user_name</code>は、英字、数字、アンダースコアのみを使用し、数字で始まらないため、有効な変数名です。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>3value</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>user-name</code></BaseQuizOption>
+<BaseQuizOption value="C" correct>C. <code>user_name</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>for</code></BaseQuizOption>
+<BaseQuizAnswer><code>user_name</code>は、英字、数字、アンダースコアのみを使用し、数字で始まらないため、有効な変数名です。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## コメント
 
@@ -479,19 +473,17 @@ What is your name? Martha
 Hi, Martha
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-basics-4">
+<BaseQuiz id="cheatsheet-basics-4" correct="B">
 <template #question>
 Python の基本において、`input()` は何を返しますか？
 </template>
 
-<base-quiz-option value="A">A. int</base-quiz-option>
-<base-quiz-option value="B" correct>B. str</base-quiz-option>
-<base-quiz-option value="C">C. float</base-quiz-option>
-<base-quiz-option value="D">D. ユーザー入力による</base-quiz-option>
-<base-quiz-answer value="B"><code>input()</code>関数は、ユーザーが入力した内容に関わらず、常に文字列を返します。必要に応じて他の型に変換する必要があります。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. int</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. str</BaseQuizOption>
+<BaseQuizOption value="C">C. float</BaseQuizOption>
+<BaseQuizOption value="D">D. ユーザー入力による</BaseQuizOption>
+<BaseQuizAnswer><code>input()</code>関数は、ユーザーが入力した内容に関わらず、常に文字列を返します。必要に応じて他の型に変換する必要があります。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## len() 関数
 
@@ -587,8 +579,7 @@ float('3.14')  # 3.14 を返します
 3.14
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-basics-5">
+<BaseQuiz id="cheatsheet-basics-5" correct="C">
 <template #question>
 この Python コードの結果は何ですか？
 
@@ -599,13 +590,12 @@ type(result)
 
 </template>
 
-<base-quiz-option value="A">A. <code>str</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>float</code></base-quiz-option>
-<base-quiz-option value="C" correct>C. <code>int</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>NoneType</code></base-quiz-option>
-<base-quiz-answer value="C"><code>int()</code>関数は文字列を整数に変換します。したがって、<code>int('42')</code>は整数<code>42</code>を返し、<code>type(42)</code>は<code>int</code>を返します。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>str</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>float</code></BaseQuizOption>
+<BaseQuizOption value="C" correct>C. <code>int</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>NoneType</code></BaseQuizOption>
+<BaseQuizAnswer><code>int()</code>関数は文字列を整数に変換します。したがって、<code>int('42')</code>は整数<code>42</code>を返し、<code>type(42)</code>は<code>int</code>を返します。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 関連リンク
 

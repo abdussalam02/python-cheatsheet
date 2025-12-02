@@ -98,19 +98,17 @@ f'Hello {name}!'  # f プレフィックスにより {} 内に式を含めるこ
 'Hello Elizabeth!'
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-string-formatting-1">
+<BaseQuiz id="cheatsheet-string-formatting-1" correct="B">
 <template #question>
 Python の f-string に使用されるプレフィックスは何ですか？
 </template>
 
-<base-quiz-option value="A">A. <code>fmt</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>f</code> または <code>F</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>format</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>str</code></base-quiz-option>
-<base-quiz-answer value="B">f-string は、開始引用符の前に <code>f</code> または <code>F</code> でプレフィックスが付けられます。波括弧 <code>{}</code> 内に式を埋め込むことができます。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>fmt</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>f</code> または <code>F</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>format</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>str</code></BaseQuizOption>
+<BaseQuizAnswer>f-string は、開始引用符の前に <code>f</code> または <code>F</code> でプレフィックスが付けられます。波括弧 <code>{}</code> 内に式を埋め込むことができます。</BaseQuizAnswer>
+</BaseQuiz>
 
 インライン計算を行うことも可能です。
 
@@ -206,19 +204,17 @@ f"{a:.2f}"
 '3.14'
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-string-formatting-2">
+<BaseQuiz id="cheatsheet-string-formatting-2" correct="C">
 <template #question>
 <code>f"{a:.2f}"</code> は何を行いますか？
 </template>
 
-<base-quiz-option value="A">A. 数値を最も近い整数に丸める</base-quiz-option>
-<base-quiz-option value="B">B. パーセンテージとしてフォーマットする</base-quiz-option>
-<base-quiz-option value="C" correct>C. 数値を小数点以下 2 桁の浮動小数点数としてフォーマットする</base-quiz-option>
-<base-quiz-option value="D">D. 科学的記数法に変換する</base-quiz-option>
-<base-quiz-answer value="C">フォーマット指定子 <code>:.2f</code> は、数値を小数点以下 2 桁の浮動小数点数としてフォーマットします。<code>.2</code> は精度を、<code>f</code> は浮動小数点形式を指定します。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 数値を最も近い整数に丸める</BaseQuizOption>
+<BaseQuizOption value="B">B. パーセンテージとしてフォーマットする</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. 数値を小数点以下 2 桁の浮動小数点数としてフォーマットする</BaseQuizOption>
+<BaseQuizOption value="D">D. 科学的記数法に変換する</BaseQuizOption>
+<BaseQuizAnswer>フォーマット指定子 <code>:.2f</code> は、数値を小数点以下 2 桁の浮動小数点数としてフォーマットします。<code>.2</code> は精度を、<code>f</code> は浮動小数点形式を指定します。</BaseQuizAnswer>
+</BaseQuiz>
 
 パーセンテージとして表示
 

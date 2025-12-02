@@ -27,19 +27,17 @@ with open(filename) as f:  # 'f' es el objeto de archivo
 # El archivo se cierra automáticamente aquí, incluso si ocurrió un error
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-context-manager-1">
+<BaseQuiz id="cheatsheet-context-manager-1" correct="A">
 <template #question>
 ¿Cuál es el principal beneficio de usar un administrador de contexto (la sentencia <code>with</code>)?
 </template>
 
-<base-quiz-option value="A" correct>A. Maneja automáticamente la limpieza de recursos, incluso si ocurre un error</base-quiz-option>
-<base-quiz-option value="B">B. Hace que el código se ejecute más rápido</base-quiz-option>
-<base-quiz-option value="C">C. Permite abrir múltiples archivos simultáneamente</base-quiz-option>
-<base-quiz-option value="D">D. Previene todos los errores</base-quiz-option>
-<base-quiz-answer value="A">Los administradores de contexto aseguran que los recursos (como los archivos) se limpien adecuadamente al salir del bloque, incluso si ocurre una excepción. Esto previene fugas de recursos y pérdida de datos.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. Maneja automáticamente la limpieza de recursos, incluso si ocurre un error</BaseQuizOption>
+<BaseQuizOption value="B">B. Hace que el código se ejecute más rápido</BaseQuizOption>
+<BaseQuizOption value="C">C. Permite abrir múltiples archivos simultáneamente</BaseQuizOption>
+<BaseQuizOption value="D">D. Previene todos los errores</BaseQuizOption>
+<BaseQuizAnswer>Los administradores de contexto aseguran que los recursos (como los archivos) se limpien adecuadamente al salir del bloque, incluso si ocurre una excepción. Esto previene fugas de recursos y pérdida de datos.</BaseQuizAnswer>
+</BaseQuiz>
 
 Cualquier cosa que finalice la ejecución del bloque provoca que se llame al método de salida del administrador de contexto. Esto incluye excepciones, y puede ser útil cuando un error provoca que salga prematuramente de un archivo o conexión abierta. Salir de un script sin cerrar correctamente los archivos/conexiones es una mala idea, lo que puede causar pérdida de datos u otros problemas. Al usar un administrador de contexto, puede asegurarse de que siempre se tomen precauciones para prevenir daños o pérdidas de esta manera.
 
@@ -90,19 +88,17 @@ test
 --exit--
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-context-manager-2">
+<BaseQuiz id="cheatsheet-context-manager-2" correct="B">
 <template #question>
 ¿Qué métodos debe implementar una clase para ser utilizada como administrador de contexto?
 </template>
 
-<base-quiz-option value="A">A. <code>**init**</code> y <code>**del**</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>**enter**</code> y <code>**exit**</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>open</code> y <code>close</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>start</code> y <code>stop</code></base-quiz-option>
-<base-quiz-answer value="B">Un administrador de contexto basado en clases debe implementar <code>**enter**</code> (llamado al entrar en el bloque <code>with</code>) y <code>**exit**</code> (llamado al salir del bloque).</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>**init**</code> y <code>**del**</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>**enter**</code> y <code>**exit**</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>open</code> y <code>close</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>start</code> y <code>stop</code></BaseQuizOption>
+<BaseQuizAnswer>Un administrador de contexto basado en clases debe implementar <code>**enter**</code> (llamado al entrar en el bloque <code>with</code>) y <code>**exit**</code> (llamado al salir del bloque).</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Enlaces relevantes
 

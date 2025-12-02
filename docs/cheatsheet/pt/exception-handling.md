@@ -71,19 +71,17 @@ divide(dividend=10, divisor=0)
 Você não pode dividir por 0
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-exception-handling-1">
+<BaseQuiz id="cheatsheet-exception-handling-1" correct="A">
 <template #question>
 Quais palavras-chave são usadas para tratar exceções em Python?
 </template>
 
-<base-quiz-option value="A" correct>A. <code>try</code> e <code>except</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>catch</code> e <code>handle</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>error</code> e <code>rescue</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>if</code> e <code>else</code></base-quiz-option>
-<base-quiz-answer value="A">Python usa <code>try</code> para marcar o código que pode levantar uma exceção, e <code>except</code> para tratar exceções específicas que ocorrem.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. <code>try</code> e <code>except</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>catch</code> e <code>handle</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>error</code> e <code>rescue</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>if</code> e <code>else</code></BaseQuizOption>
+<BaseQuizAnswer>Python usa <code>try</code> para marcar o código que pode levantar uma exceção, e <code>except</code> para tratar exceções específicas que ocorrem.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Tratamento de Múltiplas exceções usando um bloco de exceção
 
@@ -123,19 +121,17 @@ divide(dividend=10, divisor=0)
 division by zero
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-exception-handling-2">
+<BaseQuiz id="cheatsheet-exception-handling-2" correct="B">
 <template #question>
 Você pode tratar múltiplos tipos de exceção em um único bloco <code>except</code>?
 </template>
 
-<base-quiz-option value="A">A. Não, você deve usar blocos <code>except</code> separados para cada tipo de exceção</base-quiz-option>
-<base-quiz-option value="B" correct>B. Sim, colocando-os em uma tupla como <code>except (Exception1, Exception2)</code></base-quiz-option>
-<base-quiz-option value="C">C. Sim, mas apenas se estiverem relacionados</base-quiz-option>
-<base-quiz-option value="D">D. Não, Python não suporta isso</base-quiz-option>
-<base-quiz-answer value="B">Você pode tratar múltiplos tipos de exceção em um único bloco <code>except</code> colocando-os em uma tupla: <code>except (ZeroDivisionError, TypeError) as error:</code></base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Não, você deve usar blocos <code>except</code> separados para cada tipo de exceção</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Sim, colocando-os em uma tupla como <code>except (Exception1, Exception2)</code></BaseQuizOption>
+<BaseQuizOption value="C">C. Sim, mas apenas se estiverem relacionados</BaseQuizOption>
+<BaseQuizOption value="D">D. Não, Python não suporta isso</BaseQuizOption>
+<BaseQuizAnswer>Você pode tratar múltiplos tipos de exceção em um único bloco <code>except</code> colocando-os em uma tupla: <code>except (ZeroDivisionError, TypeError) as error:</code></BaseQuizAnswer>
+</BaseQuiz>
 
 ## Código Finally no tratamento de exceções
 
@@ -168,19 +164,17 @@ Você não pode dividir por 0
 Execução finalizada
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-exception-handling-3">
+<BaseQuiz id="cheatsheet-exception-handling-3" correct="C">
 <template #question>
 Quando o bloco <code>finally</code> é executado?
 </template>
 
-<base-quiz-option value="A">A. Apenas quando uma exceção ocorre</base-quiz-option>
-<base-quiz-option value="B">B. Apenas quando nenhuma exceção ocorre</base-quiz-option>
-<base-quiz-option value="C" correct>C. Sempre, independentemente de uma exceção ter ocorrido ou não</base-quiz-option>
-<base-quiz-option value="D">D. Nunca</base-quiz-option>
-<base-quiz-answer value="C">O bloco <code>finally</code> sempre é executado, quer uma exceção tenha ocorrido ou não. É útil para código de limpeza que deve ser executado independentemente do resultado.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Apenas quando uma exceção ocorre</BaseQuizOption>
+<BaseQuizOption value="B">B. Apenas quando nenhuma exceção ocorre</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. Sempre, independentemente de uma exceção ter ocorrido ou não</BaseQuizOption>
+<BaseQuizOption value="D">D. Nunca</BaseQuizOption>
+<BaseQuizAnswer>O bloco <code>finally</code> sempre é executado, quer uma exceção tenha ocorrido ou não. É útil para código de limpeza que deve ser executado independentemente do resultado.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Exceções Personalizadas
 
@@ -228,19 +222,17 @@ except MyCustomException:
 Minha exceção personalizada foi levantada
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-exception-handling-4">
+<BaseQuiz id="cheatsheet-exception-handling-4" correct="A">
 <template #question>
 Como você cria uma exceção personalizada em Python?
 </template>
 
-<base-quiz-option value="A" correct>A. Criando uma classe que herda da classe <code>Exception</code></base-quiz-option>
-<base-quiz-option value="B">B. Usando o decorador <code>@exception</code></base-quiz-option>
-<base-quiz-option value="C">C. Chamando <code>Exception.create()</code></base-quiz-option>
-<base-quiz-option value="D">D. Importando-a de um módulo especial</base-quiz-option>
-<base-quiz-answer value="A">Exceções personalizadas são criadas definindo uma classe que herda da classe base <code>Exception</code>. Você pode então levantá-las e tratá-las como exceções embutidas.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. Criando uma classe que herda da classe <code>Exception</code></BaseQuizOption>
+<BaseQuizOption value="B">B. Usando o decorador <code>@exception</code></BaseQuizOption>
+<BaseQuizOption value="C">C. Chamando <code>Exception.create()</code></BaseQuizOption>
+<BaseQuizOption value="D">D. Importando-a de um módulo especial</BaseQuizOption>
+<BaseQuizAnswer>Exceções personalizadas são criadas definindo uma classe que herda da classe base <code>Exception</code>. Você pode então levantá-las e tratá-las como exceções embutidas.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Links relevantes
 

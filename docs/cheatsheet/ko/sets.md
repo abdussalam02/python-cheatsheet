@@ -64,19 +64,17 @@ s  # {1, 2, 3, 4} 반환
 {1, 2, 3, 4}
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-sets-1">
+<BaseQuiz id="cheatsheet-sets-1" correct="A">
 <template #question>
 중복 값이 있는 집합을 생성하면 어떻게 됩니까?
 </template>
 
-<base-quiz-option value="A" correct>A. 중복이 자동으로 제거됩니다</base-quiz-option>
-<base-quiz-option value="B">B. 오류가 발생합니다</base-quiz-option>
-<base-quiz-option value="C">C. 집합은 모든 중복을 유지합니다</base-quiz-option>
-<base-quiz-option value="D">D. 첫 번째 발생만 유지됩니다</base-quiz-option>
-<base-quiz-answer value="A">집합은 중복 값을 자동으로 제거합니다. 집합은 중복 요소가 없는 순서가 없는 컬렉션입니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. 중복이 자동으로 제거됩니다</BaseQuizOption>
+<BaseQuizOption value="B">B. 오류가 발생합니다</BaseQuizOption>
+<BaseQuizOption value="C">C. 집합은 모든 중복을 유지합니다</BaseQuizOption>
+<BaseQuizOption value="D">D. 첫 번째 발생만 유지됩니다</BaseQuizOption>
+<BaseQuizAnswer>집합은 중복 값을 자동으로 제거합니다. 집합은 중복 요소가 없는 순서가 없는 컬렉션입니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 그리고 순서가 없는 데이터 유형이므로 인덱싱할 수 없습니다.
 
@@ -161,19 +159,17 @@ s
 s.discard(3)
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-sets-2">
+<BaseQuiz id="cheatsheet-sets-2" correct="C">
 <template #question>
 집합의 <code>remove()</code>와 <code>discard()</code> 메서드의 차이점은 무엇입니까?
 </template>
 
-<base-quiz-option value="A">A. <code>remove()</code>는 하나의 요소를 제거하고, <code>discard()</code>는 모든 요소를 제거합니다</base-quiz-option>
-<base-quiz-option value="B">B. 차이점이 없습니다</base-quiz-option>
-<base-quiz-option value="C" correct>C. <code>remove()</code>는 요소가 존재하지 않으면 오류를 발생시키지만, <code>discard()</code>는 그렇지 않습니다</base-quiz-option>
-<base-quiz-option value="D">D. <code>remove()</code>가 더 빠릅니다</base-quiz-option>
-<base-quiz-answer value="C">두 메서드 모두 집합에서 요소를 제거하지만, <code>remove()</code>는 요소가 존재하지 않으면 <code>KeyError</code>를 발생시키는 반면, <code>discard()</code>는 요소가 누락된 경우 아무 작업도 수행하지 않습니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>remove()</code>는 하나의 요소를 제거하고, <code>discard()</code>는 모든 요소를 제거합니다</BaseQuizOption>
+<BaseQuizOption value="B">B. 차이점이 없습니다</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. <code>remove()</code>는 요소가 존재하지 않으면 오류를 발생시키지만, <code>discard()</code>는 그렇지 않습니다</BaseQuizOption>
+<BaseQuizOption value="D">D. <code>remove()</code>가 더 빠릅니다</BaseQuizOption>
+<BaseQuizAnswer>두 메서드 모두 집합에서 요소를 제거하지만, <code>remove()</code>는 요소가 존재하지 않으면 <code>KeyError</code>를 발생시키는 반면, <code>discard()</code>는 요소가 누락된 경우 아무 작업도 수행하지 않습니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## set union (합집합)
 
@@ -206,19 +202,17 @@ s1.intersection(s2, s3)  # 또는 's1 & s2 & s3' - {3} 반환
 {3}
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-sets-3">
+<BaseQuiz id="cheatsheet-sets-3" correct="B">
 <template #question>
 <code>intersection()</code>은 집합에 대해 무엇을 반환합니까?
 </template>
 
-<base-quiz-option value="A">A. 모든 집합의 모든 요소</base-quiz-option>
-<base-quiz-option value="B" correct>B. 모든 집합에 공통된 요소만</base-quiz-option>
-<base-quiz-option value="C">C. 첫 번째 집합에는 있지만 다른 집합에는 없는 요소</base-quiz-option>
-<base-quiz-option value="D">D. 두 집합 중 하나에는 있지만 둘 다에는 없는 요소</base-quiz-option>
-<base-quiz-answer value="B"><code>intersection()</code> 메서드는 비교되는 모든 집합에 존재하는 요소만 포함하는 집합을 반환합니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 모든 집합의 모든 요소</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. 모든 집합에 공통된 요소만</BaseQuizOption>
+<BaseQuizOption value="C">C. 첫 번째 집합에는 있지만 다른 집합에는 없는 요소</BaseQuizOption>
+<BaseQuizOption value="D">D. 두 집합 중 하나에는 있지만 둘 다에는 없는 요소</BaseQuizOption>
+<BaseQuizAnswer><code>intersection()</code> 메서드는 비교되는 모든 집합에 존재하는 요소만 포함하는 집합을 반환합니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## set difference (차집합)
 
@@ -259,19 +253,17 @@ s1.symmetric_difference(s2)  # 또는 's1 ^ s2' - {1, 4} 반환
 {1, 4}
 ```
 
-<base-quiz>
-<base-quiz-question correct="D" id="cheatsheet-sets-4">
+<BaseQuiz id="cheatsheet-sets-4" correct="D">
 <template #question>
 두 집합에 대해 <code>symmetric_difference()</code>는 무엇을 반환합니까?
 </template>
 
-<base-quiz-option value="A">A. 두 집합의 모든 요소</base-quiz-option>
-<base-quiz-option value="B">B. 두 집합에 공통된 요소만</base-quiz-option>
-<base-quiz-option value="C">C. 첫 번째 집합에는 있지만 두 번째 집합에는 없는 요소</base-quiz-option>
-<base-quiz-option value="D" correct>D. 두 집합 중 하나에는 있지만 둘 다에는 없는 요소</base-quiz-option>
-<base-quiz-answer value="D"><code>symmetric_difference()</code> 메서드는 두 집합 모두에 포함되지 않고 어느 한쪽에만 포함된 요소를 포함하는 집합을 반환합니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 두 집합의 모든 요소</BaseQuizOption>
+<BaseQuizOption value="B">B. 두 집합에 공통된 요소만</BaseQuizOption>
+<BaseQuizOption value="C">C. 첫 번째 집합에는 있지만 두 번째 집합에는 없는 요소</BaseQuizOption>
+<BaseQuizOption value="D" correct>D. 두 집합 중 하나에는 있지만 둘 다에는 없는 요소</BaseQuizOption>
+<BaseQuizAnswer><code>symmetric_difference()</code> 메서드는 두 집합 모두에 포함되지 않고 어느 한쪽에만 포함된 요소를 포함하는 집합을 반환합니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 관련 링크
 

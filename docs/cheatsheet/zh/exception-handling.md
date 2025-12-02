@@ -71,19 +71,17 @@ divide(dividend=10, divisor=0)
 你不能除以 0
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-exception-handling-1">
+<BaseQuiz id="cheatsheet-exception-handling-1" correct="A">
 <template #question>
 在 Python 中，使用哪些关键字来处理异常？
 </template>
 
-<base-quiz-option value="A" correct>A. <code>try</code> 和 <code>except</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>catch</code> 和 <code>handle</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>error</code> 和 <code>rescue</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>if</code> 和 <code>else</code></base-quiz-option>
-<base-quiz-answer value="A">Python 使用 <code>try</code> 来标记可能引发异常的代码，使用 <code>except</code> 来处理发生的特定异常。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. <code>try</code> 和 <code>except</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>catch</code> 和 <code>handle</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>error</code> 和 <code>rescue</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>if</code> 和 <code>else</code></BaseQuizOption>
+<BaseQuizAnswer>Python 使用 <code>try</code> 来标记可能引发异常的代码，使用 <code>except</code> 来处理发生的特定异常。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 使用一个异常块处理多个异常
 
@@ -123,19 +121,17 @@ divide(dividend=10, divisor=0)
 division by zero
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-exception-handling-2">
+<BaseQuiz id="cheatsheet-exception-handling-2" correct="B">
 <template #question>
 可以在单个 <code>except</code> 块中处理多种异常类型吗？
 </template>
 
-<base-quiz-option value="A">A. 不行，必须为每种异常类型使用单独的 <code>except</code> 块</base-quiz-option>
-<base-quiz-option value="B" correct>B. 可以，通过将它们放在一个元组中，如 <code>except (Exception1, Exception2)</code></base-quiz-option>
-<base-quiz-option value="C">C. 可以，但仅当它们相关时</base-quiz-option>
-<base-quiz-option value="D">D. 不行，Python 不支持此功能</base-quiz-option>
-<base-quiz-answer value="B">你可以通过将多种异常类型放在一个元组中来在一个 <code>except</code> 块中处理它们：<code>except (ZeroDivisionError, TypeError) as error:</code></base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 不行，必须为每种异常类型使用单独的 <code>except</code> 块</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. 可以，通过将它们放在一个元组中，如 <code>except (Exception1, Exception2)</code></BaseQuizOption>
+<BaseQuizOption value="C">C. 可以，但仅当它们相关时</BaseQuizOption>
+<BaseQuizOption value="D">D. 不行，Python 不支持此功能</BaseQuizOption>
+<BaseQuizAnswer>你可以通过将多种异常类型放在一个元组中来在一个 <code>except</code> 块中处理它们：<code>except (ZeroDivisionError, TypeError) as error:</code></BaseQuizAnswer>
+</BaseQuiz>
 
 ## 异常处理中的 Finally 代码
 
@@ -168,19 +164,17 @@ divide(dividend=10, divisor=0)
 执行完毕
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-exception-handling-3">
+<BaseQuiz id="cheatsheet-exception-handling-3" correct="C">
 <template #question>
 <code>finally</code> 块何时执行？
 </template>
 
-<base-quiz-option value="A">A. 仅在发生异常时</base-quiz-option>
-<base-quiz-option value="B">B. 仅在未发生异常时</base-quiz-option>
-<base-quiz-option value="C" correct>C. 始终执行，无论是否发生异常</base-quiz-option>
-<base-quiz-option value="D">D. 从不执行</base-quiz-option>
-<base-quiz-answer value="C"><code>finally</code> 块始终执行，无论是否发生异常。它对于无论结果如何都必须运行的清理代码很有用。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 仅在发生异常时</BaseQuizOption>
+<BaseQuizOption value="B">B. 仅在未发生异常时</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. 始终执行，无论是否发生异常</BaseQuizOption>
+<BaseQuizOption value="D">D. 从不执行</BaseQuizOption>
+<BaseQuizAnswer><code>finally</code> 块始终执行，无论是否发生异常。它对于无论结果如何都必须运行的清理代码很有用。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 自定义异常
 
@@ -228,19 +222,17 @@ except MyCustomException:
 My custom exception was raised
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-exception-handling-4">
+<BaseQuiz id="cheatsheet-exception-handling-4" correct="A">
 <template #question>
 如何在 Python 中创建自定义异常？
 </template>
 
-<base-quiz-option value="A" correct>A. 创建一个继承自 <code>Exception</code> 类的类</base-quiz-option>
-<base-quiz-option value="B">B. 使用 <code>@exception</code> 装饰器</base-quiz-option>
-<base-quiz-option value="C">C. 调用 <code>Exception.create()</code></base-quiz-option>
-<base-quiz-option value="D">D. 从特殊模块导入它</base-quiz-option>
-<base-quiz-answer value="A">自定义异常是通过定义一个继承自基类 <code>Exception</code> 的类来创建的。然后你可以像处理内置异常一样引发和处理它们。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. 创建一个继承自 <code>Exception</code> 类的类</BaseQuizOption>
+<BaseQuizOption value="B">B. 使用 <code>@exception</code> 装饰器</BaseQuizOption>
+<BaseQuizOption value="C">C. 调用 <code>Exception.create()</code></BaseQuizOption>
+<BaseQuizOption value="D">D. 从特殊模块导入它</BaseQuizOption>
+<BaseQuizAnswer>自定义异常是通过定义一个继承自基类 <code>Exception</code> 的类来创建的。然后你可以像处理内置异常一样引发和处理它们。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 相关链接
 

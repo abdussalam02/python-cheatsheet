@@ -37,19 +37,17 @@ if __name__ == "__main__":  # 仅在文件被执行时运行，而不是被导�
     add(3, 5)
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-main-1">
+<BaseQuiz id="cheatsheet-main-1" correct="B">
 <template #question>
 当一个 Python 文件作为脚本直接运行时，<code>__name__</code> 的值是多少？
 </template>
 
-<base-quiz-option value="A">A. 文件名</base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>"**main**"</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>None</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>True</code></base-quiz-option>
-<base-quiz-answer value="B">当一个 Python 文件作为脚本直接运行时，<code>**name**</code> 被设置为 <code>"**main**"</code>。当文件被导入为一个模块时，<code>**name**</code> 被设置为模块的名称。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 文件名</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>"**main**"</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>None</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>True</code></BaseQuizOption>
+<BaseQuizAnswer>当一个 Python 文件作为脚本直接运行时，<code>**name**</code> 被设置为 <code>"**main**"</code>。当文件被导入为一个模块时，<code>**name**</code> 被设置为模块的名称。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 优点
 
@@ -58,19 +56,17 @@ if __name__ == "__main__":  # 仅在文件被执行时运行，而不是被导�
 3. Python 文件可以充当可重用的模块，也可以充当独立程序。
 4. `if __name__ == "__main__":` 用于仅在文件被直接运行时执行某些代码，而不是在被导入时执行。
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-main-2">
+<BaseQuiz id="cheatsheet-main-2" correct="A">
 <template #question>
 使用 <code>if __name__ == "__main__":</code> 的主要目的是什么？
 </template>
 
-<base-quiz-option value="A" correct>A. 仅在文件被直接运行时执行代码，而不是在被导入时执行</base-quiz-option>
-<base-quiz-option value="B">B. 防止文件被导入</base-quiz-option>
-<base-quiz-option value="C">C. 使文件执行速度更快</base-quiz-option>
-<base-quiz-option value="D">D. 向其他模块隐藏代码</base-quiz-option>
-<base-quiz-answer value="A"><code>if **name** == "**main**":</code> 惯用法允许 Python 文件同时充当可重用的模块和独立程序。只有当文件被直接执行而不是被导入时，该代码块内的代码才会运行。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. 仅在文件被直接运行时执行代码，而不是在被导入时执行</BaseQuizOption>
+<BaseQuizOption value="B">B. 防止文件被导入</BaseQuizOption>
+<BaseQuizOption value="C">C. 使文件执行速度更快</BaseQuizOption>
+<BaseQuizOption value="D">D. 向其他模块隐藏代码</BaseQuizOption>
+<BaseQuizAnswer><code>if **name** == "**main**":</code> 惯用法允许 Python 文件同时充当可重用的模块和独立程序。只有当文件被直接执行而不是被导入时，该代码块内的代码才会运行。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 相关链接
 

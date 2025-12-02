@@ -71,19 +71,17 @@ divide(dividend=10, divisor=0)
 You can not divide by 0
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-exception-handling-1">
+<BaseQuiz id="cheatsheet-exception-handling-1" correct="A">
 <template #question>
 Welche Schlüsselwörter werden in Python zur Ausnahmebehandlung verwendet?
 </template>
 
-<base-quiz-option value="A" correct>A. <code>try</code> und <code>except</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>catch</code> und <code>handle</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>error</code> und <code>rescue</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>if</code> und <code>else</code></base-quiz-option>
-<base-quiz-answer value="A">Python verwendet <code>try</code>, um Code zu kennzeichnen, der eine Ausnahme auslösen könnte, und <code>except</code>, um aufgetretene spezifische Ausnahmen zu behandeln.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. <code>try</code> und <code>except</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>catch</code> und <code>handle</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>error</code> und <code>rescue</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>if</code> und <code>else</code></BaseQuizOption>
+<BaseQuizAnswer>Python verwendet <code>try</code>, um Code zu kennzeichnen, der eine Ausnahme auslösen könnte, und <code>except</code>, um aufgetretene spezifische Ausnahmen zu behandeln.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Behandlung mehrerer Ausnahmen mit einem Ausnahmeblock
 
@@ -123,19 +121,17 @@ divide(dividend=10, divisor=0)
 division by zero
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-exception-handling-2">
+<BaseQuiz id="cheatsheet-exception-handling-2" correct="B">
 <template #question>
 Können Sie mehrere Ausnahmetypen in einem einzigen <code>except</code>-Block behandeln?
 </template>
 
-<base-quiz-option value="A">A. Nein, Sie müssen für jeden Ausnahmetyp separate <code>except</code>-Blöcke verwenden</base-quiz-option>
-<base-quiz-option value="B" correct>B. Ja, indem Sie sie in ein Tupel wie <code>except (Exception1, Exception2)</code> setzen</base-quiz-option>
-<base-quiz-option value="C">C. Ja, aber nur, wenn sie verwandt sind</base-quiz-option>
-<base-quiz-option value="D">D. Nein, Python unterstützt dies nicht</base-quiz-option>
-<base-quiz-answer value="B">Sie können mehrere Ausnahmetypen in einem <code>except</code>-Block behandeln, indem Sie sie in ein Tupel setzen: <code>except (ZeroDivisionError, TypeError) as error:</code></base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Nein, Sie müssen für jeden Ausnahmetyp separate <code>except</code>-Blöcke verwenden</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Ja, indem Sie sie in ein Tupel wie <code>except (Exception1, Exception2)</code> setzen</BaseQuizOption>
+<BaseQuizOption value="C">C. Ja, aber nur, wenn sie verwandt sind</BaseQuizOption>
+<BaseQuizOption value="D">D. Nein, Python unterstützt dies nicht</BaseQuizOption>
+<BaseQuizAnswer>Sie können mehrere Ausnahmetypen in einem <code>except</code>-Block behandeln, indem Sie sie in ein Tupel setzen: <code>except (ZeroDivisionError, TypeError) as error:</code></BaseQuizAnswer>
+</BaseQuiz>
 
 ## Finally-Code in der Ausnahmebehandlung
 
@@ -168,19 +164,17 @@ You can not divide by 0
 Execution finished
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-exception-handling-3">
+<BaseQuiz id="cheatsheet-exception-handling-3" correct="C">
 <template #question>
 Wann wird der <code>finally</code>-Block ausgeführt?
 </template>
 
-<base-quiz-option value="A">A. Nur wenn eine Ausnahme auftritt</base-quiz-option>
-<base-quiz-option value="B">B. Nur wenn keine Ausnahme auftritt</base-quiz-option>
-<base-quiz-option value="C" correct>C. Immer, unabhängig davon, ob eine Ausnahme aufgetreten ist oder nicht</base-quiz-option>
-<base-quiz-option value="D">D. Niemals</base-quiz-option>
-<base-quiz-answer value="C">Der <code>finally</code>-Block wird immer ausgeführt, unabhängig davon, ob eine Ausnahme aufgetreten ist oder nicht. Er ist nützlich für Aufräumarbeiten, die unabhängig vom Ergebnis ausgeführt werden müssen.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Nur wenn eine Ausnahme auftritt</BaseQuizOption>
+<BaseQuizOption value="B">B. Nur wenn keine Ausnahme auftritt</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. Immer, unabhängig davon, ob eine Ausnahme aufgetreten ist oder nicht</BaseQuizOption>
+<BaseQuizOption value="D">D. Niemals</BaseQuizOption>
+<BaseQuizAnswer>Der <code>finally</code>-Block wird immer ausgeführt, unabhängig davon, ob eine Ausnahme aufgetreten ist oder nicht. Er ist nützlich für Aufräumarbeiten, die unabhängig vom Ergebnis ausgeführt werden müssen.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Benutzerdefinierte Ausnahmen
 
@@ -228,19 +222,17 @@ except MyCustomException:
 My custom exception was raised
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-exception-handling-4">
+<BaseQuiz id="cheatsheet-exception-handling-4" correct="A">
 <template #question>
 Wie erstellt man eine benutzerdefinierte Ausnahme in Python?
 </template>
 
-<base-quiz-option value="A" correct>A. Erstellen Sie eine Klasse, die von der <code>Exception</code>-Klasse erbt</base-quiz-option>
-<base-quiz-option value="B">B. Verwenden Sie den Decorator <code>@exception</code></base-quiz-option>
-<base-quiz-option value="C">C. Rufen Sie <code>Exception.create()</code> auf</base-quiz-option>
-<base-quiz-option value="D">D. Importieren Sie sie aus einem speziellen Modul</base-quiz-option>
-<base-quiz-answer value="A">Benutzerdefinierte Ausnahmen werden erstellt, indem eine Klasse definiert wird, die von der Basisklasse <code>Exception</code> erbt. Sie können sie dann wie eingebaute Ausnahmen auslösen und behandeln.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. Erstellen Sie eine Klasse, die von der <code>Exception</code>-Klasse erbt</BaseQuizOption>
+<BaseQuizOption value="B">B. Verwenden Sie den Decorator <code>@exception</code></BaseQuizOption>
+<BaseQuizOption value="C">C. Rufen Sie <code>Exception.create()</code> auf</BaseQuizOption>
+<BaseQuizOption value="D">D. Importieren Sie sie aus einem speziellen Modul</BaseQuizOption>
+<BaseQuizAnswer>Benutzerdefinierte Ausnahmen werden erstellt, indem eine Klasse definiert wird, die von der Basisklasse <code>Exception</code> erbt. Sie können sie dann wie eingebaute Ausnahmen auslösen und behandeln.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Relevante Links
 

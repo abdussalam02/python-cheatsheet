@@ -90,19 +90,17 @@ True
 False
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-control-flow-1">
+<BaseQuiz id="cheatsheet-control-flow-1" correct="B">
 <template #question>
 <code>'hello' == 'Hello'</code>는 무엇으로 평가됩니까?
 </template>
 
-<base-quiz-option value="A">A. <code>True</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>False</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>None</code></base-quiz-option>
-<base-quiz-option value="D">D. 오류 발생</base-quiz-option>
-<base-quiz-answer value="B">Python 에서 문자열 비교는 대소문자를 구분합니다. <code>'hello'</code>와 <code>'Hello'</code>는 다른 문자열이므로 비교 결과는 <code>False</code>를 반환합니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>True</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>False</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>None</code></BaseQuizOption>
+<BaseQuizOption value="D">D. 오류 발생</BaseQuizOption>
+<BaseQuizAnswer>Python 에서 문자열 비교는 대소문자를 구분합니다. <code>'hello'</code>와 <code>'Hello'</code>는 다른 문자열이므로 비교 결과는 <code>False</code>를 반환합니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 불리언 연산자
 
@@ -232,19 +230,17 @@ else:  # if 조건이 False 일 때 실행
 You are not George
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-control-flow-2">
+<BaseQuiz id="cheatsheet-control-flow-2" correct="B">
 <template #question>
 if-else 문에서 <code>else</code> 블록은 언제 실행됩니까?
 </template>
 
-<base-quiz-option value="A">A. 항상</base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>if</code> 조건 (및 존재하는 경우 모든 <code>elif</code> 조건) 이 <code>False</code>일 때만</base-quiz-option>
-<base-quiz-option value="C">C. <code>if</code> 조건이 <code>True</code>일 때만</base-quiz-option>
-<base-quiz-option value="D">D. 실행되지 않음</base-quiz-option>
-<base-quiz-answer value="B"><code>else</code> 블록은 <code>if</code> 조건과 모든 <code>elif</code> 조건 (있는 경우) 이 <code>False</code>로 평가될 때만 실행됩니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 항상</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>if</code> 조건 (및 존재하는 경우 모든 <code>elif</code> 조건) 이 <code>False</code>일 때만</BaseQuizOption>
+<BaseQuizOption value="C">C. <code>if</code> 조건이 <code>True</code>일 때만</BaseQuizOption>
+<BaseQuizOption value="D">D. 실행되지 않음</BaseQuizOption>
+<BaseQuizAnswer><code>else</code> 블록은 <code>if</code> 조건과 모든 <code>elif</code> 조건 (있는 경우) 이 <code>False</code>로 평가될 때만 실행됩니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 `if` 문 표현식이 `False`인 경우에만 `elif` 문이 평가되고 실행됩니다:
 
@@ -501,19 +497,17 @@ Hello, world.
 Hello, world.
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-control-flow-3">
+<BaseQuiz id="cheatsheet-control-flow-3" correct="A">
 <template #question>
 <code>while</code> 루프는 무엇을 합니까?
 </template>
 
-<base-quiz-option value="A" correct>A. 조건이 <code>True</code>인 동안 코드를 반복합니다</base-quiz-option>
-<base-quiz-option value="B">B. 코드를 정확히 한 번 실행합니다</base-quiz-option>
-<base-quiz-option value="C">C. 코드를 고정된 횟수만큼 실행합니다</base-quiz-option>
-<base-quiz-option value="D">D. 코드 실행을 건너뜁니다</base-quiz-option>
-<base-quiz-answer value="A"><code>while</code> 루프는 조건이 <code>True</code>로 평가되는 동안 코드 블록을 반복적으로 실행합니다. 조건이 <code>False</code>가 되면 루프가 중지됩니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. 조건이 <code>True</code>인 동안 코드를 반복합니다</BaseQuizOption>
+<BaseQuizOption value="B">B. 코드를 정확히 한 번 실행합니다</BaseQuizOption>
+<BaseQuizOption value="C">C. 코드를 고정된 횟수만큼 실행합니다</BaseQuizOption>
+<BaseQuizOption value="D">D. 코드 실행을 건너뜁니다</BaseQuizOption>
+<BaseQuizAnswer><code>while</code> 루프는 조건이 <code>True</code>로 평가되는 동안 코드 블록을 반복적으로 실행합니다. 조건이 <code>False</code>가 되면 루프가 중지됩니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## break 문
 
@@ -576,19 +570,17 @@ Milo
 Loki
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-control-flow-4">
+<BaseQuiz id="cheatsheet-control-flow-4" correct="C">
 <template #question>
 <code>for</code> 루프는 무엇을 반복합니까?
 </template>
 
-<base-quiz-option value="A">A. 숫자만</base-quiz-option>
-<base-quiz-option value="B">B. 문자열만</base-quiz-option>
-<base-quiz-option value="C" correct>C. 모든 이터러블 시퀀스 (리스트, 튜플, 딕셔너리, 세트 등)</base-quiz-option>
-<base-quiz-option value="D">D. 리스트만</base-quiz-option>
-<base-quiz-answer value="C"><code>for</code> 루프는 리스트, 튜플, 딕셔너리, 세트, 문자열 및 기타 이터러블 객체를 포함하여 모든 이터러블 시퀀스를 반복할 수 있습니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 숫자만</BaseQuizOption>
+<BaseQuizOption value="B">B. 문자열만</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. 모든 이터러블 시퀀스 (리스트, 튜플, 딕셔너리, 세트 등)</BaseQuizOption>
+<BaseQuizOption value="D">D. 리스트만</BaseQuizOption>
+<BaseQuizAnswer><code>for</code> 루프는 리스트, 튜플, 딕셔너리, 세트, 문자열 및 기타 이터러블 객체를 포함하여 모든 이터러블 시퀀스를 반복할 수 있습니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## range() 함수
 
@@ -607,19 +599,17 @@ Will stop at 5! or 4? (3)
 Will stop at 5! or 4? (4)
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-control-flow-5">
+<BaseQuiz id="cheatsheet-control-flow-5" correct="B">
 <template #question>
 <code>range(5)</code>는 무엇을 생성합니까?
 </template>
 
-<base-quiz-option value="A">A. 1 부터 5 까지의 숫자</base-quiz-option>
-<base-quiz-option value="B" correct>B. 0 부터 4 까지의 숫자</base-quiz-option>
-<base-quiz-option value="C">C. 0 부터 5 까지의 숫자</base-quiz-option>
-<base-quiz-option value="D">D. 다섯 개의 무작위 숫자</base-quiz-option>
-<base-quiz-answer value="B"><code>range(5)</code> 함수는 0 부터 4 까지의 숫자를 생성합니다 (총 5 개). 중지 값은 배타적이므로 5 에 도달하기 전에 멈춥니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 1 부터 5 까지의 숫자</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. 0 부터 4 까지의 숫자</BaseQuizOption>
+<BaseQuizOption value="C">C. 0 부터 5 까지의 숫자</BaseQuizOption>
+<BaseQuizOption value="D">D. 다섯 개의 무작위 숫자</BaseQuizOption>
+<BaseQuizAnswer><code>range(5)</code> 함수는 0 부터 4 까지의 숫자를 생성합니다 (총 5 개). 중지 값은 배타적이므로 5 에 도달하기 전에 멈춥니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 `range()` 함수는 3 가지 기본 인수를 수정할 수도 있습니다. 처음 두 개는 `start` 및 `stop` 값이 되고 세 번째는 `step` 인수가 됩니다. step 은 각 반복 후 변수가 증가하는 양입니다.
 

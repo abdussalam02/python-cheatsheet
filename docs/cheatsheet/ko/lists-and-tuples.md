@@ -83,19 +83,17 @@ f'The {furniture[-1]} is bigger than the {furniture[-3]}'
 'The shelf is bigger than the chair'
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-lists-and-tuples-1">
+<BaseQuiz id="cheatsheet-lists-and-tuples-1" correct="B">
 <template #question>
 <code>furniture = ['table', 'chair', 'rack', 'shelf']</code>일 때 <code>furniture[-1]</code>은 무엇을 반환합니까?
 </template>
 
-<base-quiz-option value="A">A. <code>'table'</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>'shelf'</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>['shelf']</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>IndexError</code></base-quiz-option>
-<base-quiz-answer value="B">음수 인덱스는 리스트 끝에서부터 요소에 접근합니다. <code>-1</code>은 마지막 요소를, <code>-2</code>는 끝에서 두 번째 요소를 나타냅니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>'table'</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>'shelf'</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>['shelf']</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>IndexError</code></BaseQuizOption>
+<BaseQuizAnswer>음수 인덱스는 리스트 끝에서부터 요소에 접근합니다. <code>-1</code>은 마지막 요소를, <code>-2</code>는 끝에서 두 번째 요소를 나타냅니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 슬라이싱으로 부분 리스트 가져오기
 
@@ -182,19 +180,17 @@ spam2
 ['cat', 'bat', 'rat', 'elephant']
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-lists-and-tuples-2">
+<BaseQuiz id="cheatsheet-lists-and-tuples-2" correct="C">
 <template #question>
 <code>spam</code>이 리스트일 때 <code>spam[:]</code>은 무엇을 생성합니까?
 </template>
 
-<base-quiz-option value="A">A. 동일한 리스트에 대한 참조</base-quiz-option>
-<base-quiz-option value="B">B. 빈 리스트</base-quiz-option>
-<base-quiz-option value="C" correct>C. 리스트의 얕은 복사본</base-quiz-option>
-<base-quiz-option value="D">D. 뒤집힌 리스트</base-quiz-option>
-<base-quiz-answer value="C">전체 리스트를 <code>[:]</code>로 슬라이싱하면 얕은 복사본이 생성됩니다. 복사본을 수정해도 원본 리스트에는 영향을 미치지 않습니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 동일한 리스트에 대한 참조</BaseQuizOption>
+<BaseQuizOption value="B">B. 빈 리스트</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. 리스트의 얕은 복사본</BaseQuizOption>
+<BaseQuizOption value="D">D. 뒤집힌 리스트</BaseQuizOption>
+<BaseQuizAnswer>전체 리스트를 <code>[:]</code>로 슬라이싱하면 얕은 복사본이 생성됩니다. 복사본을 수정해도 원본 리스트에는 영향을 미치지 않습니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## len() 으로 리스트 길이 얻기
 
@@ -456,19 +452,17 @@ furniture
 ['table', 'chair', 'rack', 'shelf', 'bed']
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-lists-and-tuples-3">
+<BaseQuiz id="cheatsheet-lists-and-tuples-3" correct="A">
 <template #question>
 <code>append()</code> 메서드는 리스트에 대해 어떤 작업을 수행합니까?
 </template>
 
-<base-quiz-option value="A" correct>A. 리스트 끝에 요소를 추가합니다</base-quiz-option>
-<base-quiz-option value="B">B. 리스트 시작 부분에 요소를 추가합니다</base-quiz-option>
-<base-quiz-option value="C">C. 마지막 요소를 대체합니다</base-quiz-option>
-<base-quiz-option value="D">D. 마지막 요소를 제거합니다</base-quiz-option>
-<base-quiz-answer value="A"><code>append()</code> 메서드는 단일 요소를 리스트 끝에 추가합니다. 특정 위치에 요소를 추가하려면 <code>insert()</code>를 사용합니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. 리스트 끝에 요소를 추가합니다</BaseQuizOption>
+<BaseQuizOption value="B">B. 리스트 시작 부분에 요소를 추가합니다</BaseQuizOption>
+<BaseQuizOption value="C">C. 마지막 요소를 대체합니다</BaseQuizOption>
+<BaseQuizOption value="D">D. 마지막 요소를 제거합니다</BaseQuizOption>
+<BaseQuizAnswer><code>append()</code> 메서드는 단일 요소를 리스트 끝에 추가합니다. 특정 위치에 요소를 추가하려면 <code>insert()</code>를 사용합니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ### insert()
 
@@ -570,19 +564,17 @@ animals
 ['bat', 'rat']
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-lists-and-tuples-4">
+<BaseQuiz id="cheatsheet-lists-and-tuples-4" correct="B">
 <template #question>
 리스트에서 <code>pop()</code>을 호출하면 어떤 작업이 수행됩니까?
 </template>
 
-<base-quiz-option value="A">A. 마지막 항목만 제거합니다</base-quiz-option>
-<base-quiz-option value="B" correct>B. 항목을 제거하고 반환합니다 (기본적으로 마지막 항목, 또는 지정된 인덱스)</base-quiz-option>
-<base-quiz-option value="C">C. 마지막 항목만 반환하고 제거하지 않습니다</base-quiz-option>
-<base-quiz-option value="D">D. 리스트의 모든 항목을 제거합니다</base-quiz-option>
-<base-quiz-answer value="B"><code>pop()</code> 메서드는 항목을 제거하고 반환합니다. 기본적으로 마지막 항목을 제거하지만, 인덱스를 전달하여 특정 항목을 제거할 수 있습니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 마지막 항목만 제거합니다</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. 항목을 제거하고 반환합니다 (기본적으로 마지막 항목, 또는 지정된 인덱스)</BaseQuizOption>
+<BaseQuizOption value="C">C. 마지막 항목만 반환하고 제거하지 않습니다</BaseQuizOption>
+<BaseQuizOption value="D">D. 리스트의 모든 항목을 제거합니다</BaseQuizOption>
+<BaseQuizAnswer><code>pop()</code> 메서드는 항목을 제거하고 반환합니다. 기본적으로 마지막 항목을 제거하지만, 인덱스를 전달하여 특정 항목을 제거할 수 있습니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## sort() 로 값 정렬하기
 
@@ -705,19 +697,17 @@ list('hello')
 ['h', 'e', 'l', 'l', 'o']
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-lists-and-tuples-5">
+<BaseQuiz id="cheatsheet-lists-and-tuples-5" correct="C">
 <template #question>
 파이썬에서 리스트와 튜플의 주요 차이점은 무엇입니까?
 </template>
 
-<base-quiz-option value="A">A. 리스트는 숫자만 포함할 수 있고, 튜플은 모든 것을 포함할 수 있습니다</base-quiz-option>
-<base-quiz-option value="B">B. 튜플이 생성 속도가 더 빠릅니다</base-quiz-option>
-<base-quiz-option value="C" correct>C. 리스트는 가변 (변경 가능) 이고, 튜플은 불변 (변경 불가능) 입니다</base-quiz-option>
-<base-quiz-option value="D">D. 리스트는 대괄호를 사용하고, 튜플은 중괄호를 사용합니다</base-quiz-option>
-<base-quiz-answer value="C">리스트는 생성 후 수정할 수 있는 가변 객체입니다. 튜플은 생성 후 변경할 수 없는 불변 객체입니다. 둘 다 모든 유형의 데이터를 포함할 수 있습니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 리스트는 숫자만 포함할 수 있고, 튜플은 모든 것을 포함할 수 있습니다</BaseQuizOption>
+<BaseQuizOption value="B">B. 튜플이 생성 속도가 더 빠릅니다</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. 리스트는 가변 (변경 가능) 이고, 튜플은 불변 (변경 불가능) 입니다</BaseQuizOption>
+<BaseQuizOption value="D">D. 리스트는 대괄호를 사용하고, 튜플은 중괄호를 사용합니다</BaseQuizOption>
+<BaseQuizAnswer>리스트는 생성 후 수정할 수 있는 가변 객체입니다. 튜플은 생성 후 변경할 수 없는 불변 객체입니다. 둘 다 모든 유형의 데이터를 포함할 수 있습니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 관련 링크
 

@@ -98,19 +98,17 @@ f'Hello {name}!'  # f 접두사는 {} 내의 표현식을 허용합니다
 'Hello Elizabeth!'
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-string-formatting-1">
+<BaseQuiz id="cheatsheet-string-formatting-1" correct="B">
 <template #question>
 Python 에서 f-문자열에 사용되는 접두사는 무엇입니까?
 </template>
 
-<base-quiz-option value="A">A. <code>fmt</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>f</code> 또는 <code>F</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>format</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>str</code></base-quiz-option>
-<base-quiz-answer value="B">f-문자열은 여는 따옴표 앞에 <code>f</code> 또는 <code>F</code>로 접두사가 붙습니다. 중괄호 <code>{}</code> 안에 표현식을 포함할 수 있습니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>fmt</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>f</code> 또는 <code>F</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>format</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>str</code></BaseQuizOption>
+<BaseQuizAnswer>f-문자열은 여는 따옴표 앞에 <code>f</code> 또는 <code>F</code>로 접두사가 붙습니다. 중괄호 <code>{}</code> 안에 표현식을 포함할 수 있습니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 인라인 산술 연산도 가능합니다:
 
@@ -206,19 +204,17 @@ f"{a:.2f}"
 '3.14'
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-string-formatting-2">
+<BaseQuiz id="cheatsheet-string-formatting-2" correct="C">
 <template #question>
 <code>f"{a:.2f}"</code>는 무엇을 수행합니까?
 </template>
 
-<base-quiz-option value="A">A. 숫자를 가장 가까운 정수로 반올림합니다</base-quiz-option>
-<base-quiz-option value="B">B. 백분율로 포맷합니다</base-quiz-option>
-<base-quiz-option value="C" correct>C. 숫자를 소수점 이하 2 자리 부동 소수점으로 포맷합니다</base-quiz-option>
-<base-quiz-option value="D">D. 과학적 표기법으로 변환합니다</base-quiz-option>
-<base-quiz-answer value="C">포맷 지정자 <code>:.2f</code>는 숫자를 소수점 이하 2 자리 부동 소수점으로 포맷합니다. <code>.2</code>는 정밀도를, <code>f</code>는 부동 소수점 형식을 나타냅니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 숫자를 가장 가까운 정수로 반올림합니다</BaseQuizOption>
+<BaseQuizOption value="B">B. 백분율로 포맷합니다</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. 숫자를 소수점 이하 2 자리 부동 소수점으로 포맷합니다</BaseQuizOption>
+<BaseQuizOption value="D">D. 과학적 표기법으로 변환합니다</BaseQuizOption>
+<BaseQuizAnswer>포맷 지정자 <code>:.2f</code>는 숫자를 소수점 이하 2 자리 부동 소수점으로 포맷합니다. <code>.2</code>는 정밀도를, <code>f</code>는 부동 소수점 형식을 나타냅니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 백분율로 표시
 

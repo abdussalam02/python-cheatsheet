@@ -61,19 +61,17 @@ setup(
 )
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-packaging-1">
+<BaseQuiz id="cheatsheet-packaging-1" correct="C">
 <template #question>
 <code>setup.py</code>ファイルにおける 3 つの必須フィールドは何ですか？
 </template>
 
-<base-quiz-option value="A">A. name, author, license</base-quiz-option>
-<base-quiz-option value="B">B. name, description, packages</base-quiz-option>
-<base-quiz-option value="C" correct>C. name, version, packages</base-quiz-option>
-<base-quiz-option value="D">D. name, version, license</base-quiz-option>
-<base-quiz-answer value="C"><code>setup.py</code>の 3 つの必須フィールドは、<code>name</code>（パッケージ名、PyPI で一意である必要があります）、<code>version</code>（リリースを追跡）、および<code>packages</code>（Python ソースコードの場所を記述）です。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. name, author, license</BaseQuizOption>
+<BaseQuizOption value="B">B. name, description, packages</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. name, version, packages</BaseQuizOption>
+<BaseQuizOption value="D">D. name, version, license</BaseQuizOption>
+<BaseQuizAnswer><code>setup.py</code>の 3 つの必須フィールドは、<code>name</code>（パッケージ名、PyPI で一意である必要があります）、<code>version</code>（リリースを追跡）、および<code>packages</code>（Python ソースコードの場所を記述）です。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 最新の アプローチ：pyproject.toml
 
@@ -131,19 +129,17 @@ pip install .
 pip install -e .
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-packaging-2">
+<BaseQuiz id="cheatsheet-packaging-2" correct="B">
 <template #question>
 <code>pyproject.toml</code>が<code>setup.py</code>よりも優れている主な利点は何ですか？
 </template>
 
-<base-quiz-option value="A">A. 実行が速いこと</base-quiz-option>
-<base-quiz-option value="B" correct>B. 宣言的であり、安全（コード実行なし）、PEP 標準に従っていること</base-quiz-option>
-<base-quiz-option value="C">C. 設定が少なくて済むこと</base-quiz-option>
-<base-quiz-option value="D">D. Python 3.10+ でのみ動作すること</base-quiz-option>
-<base-quiz-answer value="B"><code>pyproject.toml</code>アプローチは宣言的（すべてのメタデータが一箇所）、<code>setup.py</code>のようにコードを実行しないため安全であり、より良いツールサポートのために PEP 標準（PEP-517、PEP-518、PEP-660）に従っています。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 実行が速いこと</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. 宣言的であり、安全（コード実行なし）、PEP 標準に従っていること</BaseQuizOption>
+<BaseQuizOption value="C">C. 設定が少なくて済むこと</BaseQuizOption>
+<BaseQuizOption value="D">D. Python 3.10+ でのみ動作すること</BaseQuizOption>
+<BaseQuizAnswer><code>pyproject.toml</code>アプローチは宣言的（すべてのメタデータが一箇所）、<code>setup.py</code>のようにコードを実行しないため安全であり、より良いツールサポートのために PEP 標準（PEP-517、PEP-518、PEP-660）に従っています。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 適切なアプローチの選択
 

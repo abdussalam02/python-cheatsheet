@@ -61,19 +61,17 @@ print(obj.__private_var)    # AttributeError: 'MyClass' object has no attribute 
 
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-oop-basics-1">
+<BaseQuiz id="cheatsheet-oop-basics-1" correct="B">
 <template #question>
 Python で protected 変数を指定するにはどうすればよいですか？
 </template>
 
-<base-quiz-option value="A">A. 2 つのアンダースコアプレフィックス：<code>**variable</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. 単一のアンダースコアプレフィックス：<code>_variable</code></base-quiz-option>
-<base-quiz-option value="C">C. アンダースコアは不要</base-quiz-option>
-<base-quiz-option value="D">D. 3 つのアンダースコアプレフィックス：<code>_**variable</code></base-quiz-option>
-<base-quiz-answer value="B">Python では、単一のアンダースコアプレフィックス（<code>\_variable</code>）が protected 変数を表し、クラス内またはそのサブクラス内で使用されるべきであることを示す規約です。2 つのアンダースコア（<code>\_\_variable</code>）は private 変数を表します。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 2 つのアンダースコアプレフィックス：<code>**variable</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. 単一のアンダースコアプレフィックス：<code>_variable</code></BaseQuizOption>
+<BaseQuizOption value="C">C. アンダースコアは不要</BaseQuizOption>
+<BaseQuizOption value="D">D. 3 つのアンダースコアプレフィックス：<code>_**variable</code></BaseQuizOption>
+<BaseQuizAnswer>Python では、単一のアンダースコアプレフィックス（<code>\_variable</code>）が protected 変数を表し、クラス内またはそのサブクラス内で使用されるべきであることを示す規約です。2 つのアンダースコア（<code>\_\_variable</code>）は private 変数を表します。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 継承 (Inheritance)
 
@@ -130,19 +128,17 @@ cat.speak()   # 出力：Meow!
 
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-oop-basics-2">
+<BaseQuiz id="cheatsheet-oop-basics-2" correct="A">
 <template #question>
 Python における継承とは何ですか？
 </template>
 
-<base-quiz-option value="A" correct>A. クラスが別のクラスから属性とメソッドを継承できるメカニズム</base-quiz-option>
-<base-quiz-option value="B">B. オブジェクトをコピーする方法</base-quiz-option>
-<base-quiz-option value="C">C. クラスを削除する方法</base-quiz-option>
-<base-quiz-option value="D">D. ビルトイン関数</base-quiz-option>
-<base-quiz-answer value="A">継承により、クラス（子クラス/サブクラス）は別のクラス（親クラス/基本クラス）から属性とメソッドを継承できます。これによりコードの再利用が促進され、クラスの階層を作成できます。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. クラスが別のクラスから属性とメソッドを継承できるメカニズム</BaseQuizOption>
+<BaseQuizOption value="B">B. オブジェクトをコピーする方法</BaseQuizOption>
+<BaseQuizOption value="C">C. クラスを削除する方法</BaseQuizOption>
+<BaseQuizOption value="D">D. ビルトイン関数</BaseQuizOption>
+<BaseQuizAnswer>継承により、クラス（子クラス/サブクラス）は別のクラス（親クラス/基本クラス）から属性とメソッドを継承できます。これによりコードの再利用が促進され、クラスの階層を作成できます。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 多態性 (Polymorphism)
 
@@ -189,19 +185,17 @@ for shape in shapes:
 
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-oop-basics-3">
+<BaseQuiz id="cheatsheet-oop-basics-3" correct="C">
 <template #question>
 Python における多態性とは何ですか？
 </template>
 
-<base-quiz-option value="A">A. 同じ名前の複数のクラスを作成すること</base-quiz-option>
-<base-quiz-option value="B">B. 実装の詳細を隠蔽すること</base-quiz-option>
-<base-quiz-option value="C" correct>C. 共通のインターフェースを介して異なるクラスのオブジェクトを統一された方法で使用できる能力</base-quiz-option>
-<base-quiz-option value="D">D. オブジェクトのコピー</base-quiz-option>
-<base-quiz-answer value="C">多態性により、オブジェクトの特定の型を知ることなく、さまざまなクラスのオブジェクトに対して統一された方法で動作するコードを記述できます。異なるクラスが同じメソッド名を実装でき、Python はオブジェクトの型に基づいて適切な実装を呼び出します。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 同じ名前の複数のクラスを作成すること</BaseQuizOption>
+<BaseQuizOption value="B">B. 実装の詳細を隠蔽すること</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. 共通のインターフェースを介して異なるクラスのオブジェクトを統一された方法で使用できる能力</BaseQuizOption>
+<BaseQuizOption value="D">D. オブジェクトのコピー</BaseQuizOption>
+<BaseQuizAnswer>多態性により、オブジェクトの特定の型を知ることなく、さまざまなクラスのオブジェクトに対して統一された方法で動作するコードを記述できます。異なるクラスが同じメソッド名を実装でき、Python はオブジェクトの型に基づいて適切な実装を呼び出します。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 抽象化 (Abstraction)
 

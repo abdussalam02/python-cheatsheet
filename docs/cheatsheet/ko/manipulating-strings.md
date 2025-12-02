@@ -52,19 +52,17 @@ Hello there!\nHow are you?\nI\'m doing fine.
 
 원시 문자열은 주로 <router-link to="/cheatsheet/regular-expressions">정규 표현식</router-link> 정의에 사용됩니다.
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-manipulating-strings-1">
+<BaseQuiz id="cheatsheet-manipulating-strings-1" correct="B">
 <template #question>
 Python 에서 원시 문자열 (<code>r</code>로 접두사가 붙은 문자열) 은 어떤 역할을 합니까?
 </template>
 
-<base-quiz-option value="A">A. 모든 문자를 대문자로 변환합니다</base-quiz-option>
-<base-quiz-option value="B" correct>B. 백슬래시를 리터럴 문자로 취급하여 이스케이프 시퀀스를 무시합니다</base-quiz-option>
-<base-quiz-option value="C">C. 모든 공백을 제거합니다</base-quiz-option>
-<base-quiz-option value="D">D. 문자열을 뒤집습니다</base-quiz-option>
-<base-quiz-answer value="B">원시 문자열 (<code>r</code> 접두사) 은 백슬래시를 리터럴 문자로 취급하므로 <code>\n</code>과 같은 이스케이프 시퀀스를 해석하지 않습니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 모든 문자를 대문자로 변환합니다</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. 백슬래시를 리터럴 문자로 취급하여 이스케이프 시퀀스를 무시합니다</BaseQuizOption>
+<BaseQuizOption value="C">C. 모든 공백을 제거합니다</BaseQuizOption>
+<BaseQuizOption value="D">D. 문자열을 뒤집습니다</BaseQuizOption>
+<BaseQuizAnswer>원시 문자열 (<code>r</code> 접두사) 은 백슬래시를 리터럴 문자로 취급하므로 <code>\n</code>과 같은 이스케이프 시퀀스를 해석하지 않습니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 여러 줄 문자열 (Multiline Strings)
 
@@ -177,19 +175,17 @@ spam[::-1]
 '!dlrow olleH'
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-manipulating-strings-2">
+<BaseQuiz id="cheatsheet-manipulating-strings-2" correct="C">
 <template #question>
 <code>spam[::-1]</code>은 문자열에 대해 어떤 작업을 수행합니까?
 </template>
 
-<base-quiz-option value="A">A. 첫 번째 문자를 반환합니다</base-quiz-option>
-<base-quiz-option value="B">B. 마지막 문자를 반환합니다</base-quiz-option>
-<base-quiz-option value="C" correct>C. 문자열을 뒤집습니다</base-quiz-option>
-<base-quiz-option value="D">D. 모든 문자를 제거합니다</base-quiz-option>
-<base-quiz-answer value="C">슬라이스 <code>[::-1]</code>은 <code>-1</code>의 스텝 값 (뒤로 이동) 을 사용하여 모든 문자를 역순으로 탐색하여 문자열을 뒤집습니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 첫 번째 문자를 반환합니다</BaseQuizOption>
+<BaseQuizOption value="B">B. 마지막 문자를 반환합니다</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. 문자열을 뒤집습니다</BaseQuizOption>
+<BaseQuizOption value="D">D. 모든 문자를 제거합니다</BaseQuizOption>
+<BaseQuizAnswer>슬라이스 <code>[::-1]</code>은 <code>-1</code>의 스텝 값 (뒤로 이동) 을 사용하여 모든 문자를 역순으로 탐색하여 문자열을 뒤집습니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ```python
 fizz = spam[0:5]
@@ -384,19 +380,17 @@ True
 True
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-manipulating-strings-3">
+<BaseQuiz id="cheatsheet-manipulating-strings-3" correct="A">
 <template #question>
 <code>startswith()</code>은 무엇을 반환합니까?
 </template>
 
-<base-quiz-option value="A" correct>A. 문자열이 지정된 부분 문자열로 시작하면 <code>True</code>를 반환하고, 그렇지 않으면 <code>False</code>를 반환합니다</base-quiz-option>
-<base-quiz-option value="B">B. 시작 부분과 일치하는 부분 문자열</base-quiz-option>
-<base-quiz-option value="C">C. 부분 문자열이 시작되는 인덱스</base-quiz-option>
-<base-quiz-option value="D">D. 접두사가 없는 새 문자열</base-quiz-option>
-<base-quiz-answer value="A"><code>startswith()</code> 메서드는 부울 값 (boolean value) 을 반환합니다: 문자열이 지정된 부분 문자열로 시작하면 <code>True</code>를, 그렇지 않으면 <code>False</code>를 반환합니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. 문자열이 지정된 부분 문자열로 시작하면 <code>True</code>를 반환하고, 그렇지 않으면 <code>False</code>를 반환합니다</BaseQuizOption>
+<BaseQuizOption value="B">B. 시작 부분과 일치하는 부분 문자열</BaseQuizOption>
+<BaseQuizOption value="C">C. 부분 문자열이 시작되는 인덱스</BaseQuizOption>
+<BaseQuizOption value="D">D. 접두사가 없는 새 문자열</BaseQuizOption>
+<BaseQuizAnswer><code>startswith()</code> 메서드는 부울 값 (boolean value) 을 반환합니다: 문자열이 지정된 부분 문자열로 시작하면 <code>True</code>를, 그렇지 않으면 <code>False</code>를 반환합니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## join() 및 split()
 
@@ -480,19 +474,17 @@ True
 ['', 'My', '', 'name', 'is', '', 'Simon']
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-manipulating-strings-4">
+<BaseQuiz id="cheatsheet-manipulating-strings-4" correct="B">
 <template #question>
 문자열에서 <code>split()</code>을 호출하면 무엇이 반환됩니까?
 </template>
 
-<base-quiz-option value="A">A. 문자열</base-quiz-option>
-<base-quiz-option value="B" correct>B. 문자열 리스트</base-quiz-option>
-<base-quiz-option value="C">C. 문자열 튜플</base-quiz-option>
-<base-quiz-option value="D">D. 딕셔너리</base-quiz-option>
-<base-quiz-answer value="B"><code>split()</code> 메서드는 문자열을 부분 문자열 리스트로 분할합니다. 기본적으로 공백을 기준으로 분할하지만, 다른 구분자를 지정할 수 있습니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 문자열</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. 문자열 리스트</BaseQuizOption>
+<BaseQuizOption value="C">C. 문자열 튜플</BaseQuizOption>
+<BaseQuizOption value="D">D. 딕셔너리</BaseQuizOption>
+<BaseQuizAnswer><code>split()</code> 메서드는 문자열을 부분 문자열 리스트로 분할합니다. 기본적으로 공백을 기준으로 분할하지만, 다른 구분자를 지정할 수 있습니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## rjust(), ljust() 및 center() 를 사용한 텍스트 정렬
 
@@ -667,19 +659,17 @@ sentence.replace("apples", "oranges")
 'I like oranges, Apples are my favorite fruit'
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-manipulating-strings-5">
+<BaseQuiz id="cheatsheet-manipulating-strings-5" correct="C">
 <template #question>
 <code>replace()</code> 메서드는 무엇을 반환합니까?
 </template>
 
-<base-quiz-option value="A">A. 원본 문자열을 수정합니다</base-quiz-option>
-<base-quiz-option value="B">B. <code>None</code>을 반환합니다</base-quiz-option>
-<base-quiz-option value="C" correct>C. 대체가 이루어진 새 문자열을 반환합니다</base-quiz-option>
-<base-quiz-option value="D">D. 대체된 문자열 리스트를 반환합니다</base-quiz-option>
-<base-quiz-answer value="C"><code>replace()</code> 메서드는 오래된 부분 문자열의 모든 발생이 새 부분 문자열로 대체된 새 문자열을 반환합니다. 원본 문자열은 수정되지 않습니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 원본 문자열을 수정합니다</BaseQuizOption>
+<BaseQuizOption value="B">B. <code>None</code>을 반환합니다</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. 대체가 이루어진 새 문자열을 반환합니다</BaseQuizOption>
+<BaseQuizOption value="D">D. 대체된 문자열 리스트를 반환합니다</BaseQuizOption>
+<BaseQuizAnswer><code>replace()</code> 메서드는 오래된 부분 문자열의 모든 발생이 새 부분 문자열로 대체된 새 문자열을 반환합니다. 원본 문자열은 수정되지 않습니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 관련 링크
 

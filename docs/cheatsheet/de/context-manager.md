@@ -27,19 +27,17 @@ with open(filename) as f:  # 'f' ist das Datei-Objekt
 # Die Datei ist hier automatisch geschlossen, auch wenn ein Fehler aufgetreten ist
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-context-manager-1">
+<BaseQuiz id="cheatsheet-context-manager-1" correct="A">
 <template #question>
 Was ist der Hauptvorteil der Verwendung eines Kontextmanagers (der <code>with</code>-Anweisung)?
 </template>
 
-<base-quiz-option value="A" correct>A. Automatische Bereinigung von Ressourcen, auch wenn ein Fehler auftritt</base-quiz-option>
-<base-quiz-option value="B">B. Lässt Code schneller ausführen</base-quiz-option>
-<base-quiz-option value="C">C. Ermöglicht das gleichzeitige Öffnen mehrerer Dateien</base-quiz-option>
-<base-quiz-option value="D">D. Verhindert alle Fehler</base-quiz-option>
-<base-quiz-answer value="A">Kontextmanager stellen sicher, dass Ressourcen (wie Dateien) ordnungsgemäß bereinigt werden, wenn der Block verlassen wird, auch wenn eine Ausnahme auftritt. Dies verhindert Ressourcenlecks und Datenverlust.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. Automatische Bereinigung von Ressourcen, auch wenn ein Fehler auftritt</BaseQuizOption>
+<BaseQuizOption value="B">B. Lässt Code schneller ausführen</BaseQuizOption>
+<BaseQuizOption value="C">C. Ermöglicht das gleichzeitige Öffnen mehrerer Dateien</BaseQuizOption>
+<BaseQuizOption value="D">D. Verhindert alle Fehler</BaseQuizOption>
+<BaseQuizAnswer>Kontextmanager stellen sicher, dass Ressourcen (wie Dateien) ordnungsgemäß bereinigt werden, wenn der Block verlassen wird, auch wenn eine Ausnahme auftritt. Dies verhindert Ressourcenlecks und Datenverlust.</BaseQuizAnswer>
+</BaseQuiz>
 
 Alles, was die Ausführung des Blocks beendet, führt dazu, dass die Exit-Methode des Kontextmanagers aufgerufen wird. Dies schließt Ausnahmen ein und kann nützlich sein, wenn ein Fehler dazu führt, dass Sie vorzeitig eine geöffnete Datei oder Verbindung verlassen. Ein Skript zu beenden, ohne Dateien/Verbindungen ordnungsgemäß zu schließen, ist eine schlechte Idee, die zu Datenverlust oder anderen Problemen führen kann. Durch die Verwendung eines Kontextmanagers können Sie sicherstellen, dass Vorkehrungen immer getroffen werden, um auf diese Weise Schäden oder Verluste zu verhindern.
 
@@ -90,19 +88,17 @@ test
 --exit--
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-context-manager-2">
+<BaseQuiz id="cheatsheet-context-manager-2" correct="B">
 <template #question>
 Welche Methoden muss eine Klasse implementieren, um als Kontextmanager verwendet werden zu können?
 </template>
 
-<base-quiz-option value="A">A. <code>**init**</code> und <code>**del**</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>**enter**</code> und <code>**exit**</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>open</code> und <code>close</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>start</code> und <code>stop</code></base-quiz-option>
-<base-quiz-answer value="B">Ein klassenbasierter Kontextmanager muss <code>**enter**</code> (aufgerufen beim Betreten des <code>with</code>-Blocks) und <code>**exit**</code> (aufgerufen beim Verlassen des Blocks) implementieren.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>**init**</code> und <code>**del**</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>**enter**</code> und <code>**exit**</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>open</code> und <code>close</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>start</code> und <code>stop</code></BaseQuizOption>
+<BaseQuizAnswer>Ein klassenbasierter Kontextmanager muss <code>**enter**</code> (aufgerufen beim Betreten des <code>with</code>-Blocks) und <code>**exit**</code> (aufgerufen beim Verlassen des Blocks) implementieren.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Relevante Links
 

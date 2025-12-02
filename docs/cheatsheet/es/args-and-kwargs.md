@@ -69,19 +69,17 @@ some_function('arg1', 'arg2', 'arg3')
 Argumentos pasados: ('arg1', 'arg2', 'arg3') como <class 'tuple'>
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-args-and-kwargs-1">
+<BaseQuiz id="cheatsheet-args-and-kwargs-1" correct="B">
 <template #question>
 ¿En qué tipo de dato recopila los argumentos <code>*args</code>?
 </template>
 
-<base-quiz-option value="A">A. Una lista</base-quiz-option>
-<base-quiz-option value="B" correct>B. Una tupla</base-quiz-option>
-<base-quiz-option value="C">C. Un diccionario</base-quiz-option>
-<base-quiz-option value="D">D. Un conjunto</base-quiz-option>
-<base-quiz-answer value="B">El parámetro <code>\*args</code> recopila los argumentos posicionales en una tupla. Esto permite que una función acepte cualquier número de argumentos posicionales.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Una lista</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Una tupla</BaseQuizOption>
+<BaseQuizOption value="C">C. Un diccionario</BaseQuizOption>
+<BaseQuizOption value="D">D. Un conjunto</BaseQuizOption>
+<BaseQuizAnswer>El parámetro <code>\*args</code> recopila los argumentos posicionales en una tupla. Esto permite que una función acepte cualquier número de argumentos posicionales.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Kwargs
 
@@ -100,19 +98,17 @@ some_function(key1='arg1', key2='arg2')
 palabras clave: {'key1': 'arg1', 'key2': 'arg2'} como <class 'dict'>
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-args-and-kwargs-2">
+<BaseQuiz id="cheatsheet-args-and-kwargs-2" correct="C">
 <template #question>
 ¿En qué tipo de dato recopila los argumentos <code>**kwargs</code>?
 </template>
 
-<base-quiz-option value="A">A. Una lista</base-quiz-option>
-<base-quiz-option value="B">B. Una tupla</base-quiz-option>
-<base-quiz-option value="C" correct>C. Un diccionario</base-quiz-option>
-<base-quiz-option value="D">D. Un conjunto</base-quiz-option>
-<base-quiz-answer value="C">El parámetro <code>\*\*kwargs</code> recopila los argumentos de palabra clave en un diccionario. Esto permite que una función acepte cualquier número de argumentos de palabra clave.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Una lista</BaseQuizOption>
+<BaseQuizOption value="B">B. Una tupla</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. Un diccionario</BaseQuizOption>
+<BaseQuizOption value="D">D. Un conjunto</BaseQuizOption>
+<BaseQuizAnswer>El parámetro <code>\*\*kwargs</code> recopila los argumentos de palabra clave en un diccionario. Esto permite que una función acepte cualquier número de argumentos de palabra clave.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Enlaces relevantes
 

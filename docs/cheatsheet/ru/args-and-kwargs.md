@@ -69,19 +69,17 @@ some_function('arg1', 'arg2', 'arg3')
 Arguments passed: ('arg1', 'arg2', 'arg3') as <class 'tuple'>
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-args-and-kwargs-1">
+<BaseQuiz id="cheatsheet-args-and-kwargs-1" correct="B">
 <template #question>
 В какой тип данных собираются аргументы <code>*args</code>?
 </template>
 
-<base-quiz-option value="A">A. Список</base-quiz-option>
-<base-quiz-option value="B" correct>B. Кортеж (tuple)</base-quiz-option>
-<base-quiz-option value="C">C. Словарь</base-quiz-option>
-<base-quiz-option value="D">D. Множество (set)</base-quiz-option>
-<base-quiz-answer value="B">Параметр <code>\*args</code> собирает позиционные аргументы в кортеж. Это позволяет функции принимать любое количество позиционных аргументов.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Список</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Кортеж (tuple)</BaseQuizOption>
+<BaseQuizOption value="C">C. Словарь</BaseQuizOption>
+<BaseQuizOption value="D">D. Множество (set)</BaseQuizOption>
+<BaseQuizAnswer>Параметр <code>\*args</code> собирает позиционные аргументы в кортеж. Это позволяет функции принимать любое количество позиционных аргументов.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## kwargs
 
@@ -100,19 +98,17 @@ some_function(key1='arg1', key2='arg2')
 keywords: {'key1': 'arg1', 'key2': 'arg2'} as <class 'dict'>
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-args-and-kwargs-2">
+<BaseQuiz id="cheatsheet-args-and-kwargs-2" correct="C">
 <template #question>
 В какой тип данных собираются аргументы <code>**kwargs</code>?
 </template>
 
-<base-quiz-option value="A">A. Список</base-quiz-option>
-<base-quiz-option value="B">B. Кортеж (tuple)</base-quiz-option>
-<base-quiz-option value="C" correct>C. Словарь</base-quiz-option>
-<base-quiz-option value="D">D. Множество (set)</base-quiz-option>
-<base-quiz-answer value="C">Параметр <code>\*\*kwargs</code> собирает именованные аргументы в словарь. Это позволяет функции принимать любое количество именованных аргументов.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Список</BaseQuizOption>
+<BaseQuizOption value="B">B. Кортеж (tuple)</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. Словарь</BaseQuizOption>
+<BaseQuizOption value="D">D. Множество (set)</BaseQuizOption>
+<BaseQuizAnswer>Параметр <code>\*\*kwargs</code> собирает именованные аргументы в словарь. Это позволяет функции принимать любое количество именованных аргументов.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Relevant links
 

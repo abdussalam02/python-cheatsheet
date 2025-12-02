@@ -61,19 +61,17 @@ print(obj.__private_var)    # AttributeError: 'MyClass' object has no attribute 
 
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-oop-basics-1">
+<BaseQuiz id="cheatsheet-oop-basics-1" correct="B">
 <template #question>
 Como você indica uma variável protegida em Python?
 </template>
 
-<base-quiz-option value="A">A. Prefixo de dois sublinhados: <code>**variable</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. Prefixo de sublinhado único: <code>_variable</code></base-quiz-option>
-<base-quiz-option value="C">C. Nenhum sublinhado necessário</base-quiz-option>
-<base-quiz-option value="D">D. Prefixo de três sublinhados: <code>_**variable</code></base-quiz-option>
-<base-quiz-answer value="B">Em Python, um prefixo de sublinhado único (<code>\_variable</code>) indica uma variável protegida, que é uma convenção que significa que deve ser usada dentro da classe ou suas subclasses. Dois sublinhados (<code>\_\_variable</code>) indicam uma variável privada.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Prefixo de dois sublinhados: <code>**variable</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Prefixo de sublinhado único: <code>_variable</code></BaseQuizOption>
+<BaseQuizOption value="C">C. Nenhum sublinhado necessário</BaseQuizOption>
+<BaseQuizOption value="D">D. Prefixo de três sublinhados: <code>_**variable</code></BaseQuizOption>
+<BaseQuizAnswer>Em Python, um prefixo de sublinhado único (<code>\_variable</code>) indica uma variável protegida, que é uma convenção que significa que deve ser usada dentro da classe ou suas subclasses. Dois sublinhados (<code>\_\_variable</code>) indicam uma variável privada.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Herança
 
@@ -130,19 +128,17 @@ cat.speak()   # output: Meow!
 
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-oop-basics-2">
+<BaseQuiz id="cheatsheet-oop-basics-2" correct="A">
 <template #question>
 O que é herança em Python OOP?
 </template>
 
-<base-quiz-option value="A" correct>A. Um mecanismo onde uma classe pode herdar atributos e métodos de outra classe</base-quiz-option>
-<base-quiz-option value="B">B. Uma maneira de copiar objetos</base-quiz-option>
-<base-quiz-option value="C">C. Um método para deletar classes</base-quiz-option>
-<base-quiz-option value="D">D. Uma função embutida</base-quiz-option>
-<base-quiz-answer value="A">A herança permite que uma classe (filha/subclasse) herde atributos e métodos de outra classe (pai/base). Isso promove a reutilização de código e permite criar uma hierarquia de classes.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. Um mecanismo onde uma classe pode herdar atributos e métodos de outra classe</BaseQuizOption>
+<BaseQuizOption value="B">B. Uma maneira de copiar objetos</BaseQuizOption>
+<BaseQuizOption value="C">C. Um método para deletar classes</BaseQuizOption>
+<BaseQuizOption value="D">D. Uma função embutida</BaseQuizOption>
+<BaseQuizAnswer>A herança permite que uma classe (filha/subclasse) herde atributos e métodos de outra classe (pai/base). Isso promove a reutilização de código e permite criar uma hierarquia de classes.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Polimorfismo
 
@@ -193,19 +189,17 @@ for shape in shapes:
 
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-oop-basics-3">
+<BaseQuiz id="cheatsheet-oop-basics-3" correct="C">
 <template #question>
 O que é polimorfismo em Python OOP?
 </template>
 
-<base-quiz-option value="A">A. Criação de múltiplas classes com o mesmo nome</base-quiz-option>
-<base-quiz-option value="B">B. Ocultação de detalhes de implementação</base-quiz-option>
-<base-quiz-option value="C" correct>C. A capacidade de usar objetos de diferentes classes de maneira uniforme através de uma interface comum</base-quiz-option>
-<base-quiz-option value="D">D. Cópia de objetos</base-quiz-option>
-<base-quiz-answer value="C">O polimorfismo permite que você escreva código que pode funcionar com objetos de diferentes classes de maneira uniforme. Classes diferentes podem implementar o mesmo nome de método, e Python chamará a implementação apropriada com base no tipo do objeto.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Criação de múltiplas classes com o mesmo nome</BaseQuizOption>
+<BaseQuizOption value="B">B. Ocultação de detalhes de implementação</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. A capacidade de usar objetos de diferentes classes de maneira uniforme através de uma interface comum</BaseQuizOption>
+<BaseQuizOption value="D">D. Cópia de objetos</BaseQuizOption>
+<BaseQuizAnswer>O polimorfismo permite que você escreva código que pode funcionar com objetos de diferentes classes de maneira uniforme. Classes diferentes podem implementar o mesmo nome de método, e Python chamará a implementação apropriada com base no tipo do objeto.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Abstração
 

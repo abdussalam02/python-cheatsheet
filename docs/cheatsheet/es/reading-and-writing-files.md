@@ -32,19 +32,17 @@ hello_content
 'Hello World!'
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-reading-and-writing-files-1">
+<BaseQuiz id="cheatsheet-reading-and-writing-files-1" correct="A">
 <template #question>
 ¿Cuál es la principal ventaja de usar la declaración <code>with</code> al abrir archivos?
 </template>
 
-<base-quiz-option value="A" correct>A. El archivo se cierra automáticamente cuando termina, incluso si ocurre un error</base-quiz-option>
-<base-quiz-option value="B">B. Los archivos se abren más rápido</base-quiz-option>
-<base-quiz-option value="C">C. Los archivos se pueden abrir en modo lectura y escritura simultáneamente</base-quiz-option>
-<base-quiz-option value="D">D. Los archivos se comprimen automáticamente</base-quiz-option>
-<base-quiz-answer value="A">La declaración <code>with</code> asegura que el archivo se cierre automáticamente cuando el bloque finaliza, incluso si ocurre una excepción. Esto ayuda a administrar los recursos adecuadamente.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. El archivo se cierra automáticamente cuando termina, incluso si ocurre un error</BaseQuizOption>
+<BaseQuizOption value="B">B. Los archivos se abren más rápido</BaseQuizOption>
+<BaseQuizOption value="C">C. Los archivos se pueden abrir en modo lectura y escritura simultáneamente</BaseQuizOption>
+<BaseQuizOption value="D">D. Los archivos se comprimen automáticamente</BaseQuizOption>
+<BaseQuizAnswer>La declaración <code>with</code> asegura que el archivo se cierre automáticamente cuando el bloque finaliza, incluso si ocurre una excepción. Esto ayuda a administrar los recursos adecuadamente.</BaseQuizAnswer>
+</BaseQuiz>
 
 Alternativamente, puede usar el método _readlines()_ para obtener una lista de valores de cadena del archivo, una cadena por cada línea de texto:
 
@@ -111,19 +109,17 @@ Hello world!
 Bacon is not a vegetable.
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-reading-and-writing-files-2">
+<BaseQuiz id="cheatsheet-reading-and-writing-files-2" correct="B">
 <template #question>
 ¿Cuál es la diferencia entre abrir un archivo con el modo <code>'w'</code> y el modo <code>'a'</code>?
 </template>
 
-<base-quiz-option value="A">A. <code>'w'</code> es para leer, <code>'a'</code> es para escribir</base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>'w'</code> sobrescribe el archivo, <code>'a'</code> añade contenido al archivo</base-quiz-option>
-<base-quiz-option value="C">C. <code>'w'</code> es para Windows, <code>'a'</code> es para Apple</base-quiz-option>
-<base-quiz-option value="D">D. No hay diferencia</base-quiz-option>
-<base-quiz-answer value="B">El modo <code>'w'</code> abre el archivo para escritura y sobrescribe cualquier contenido existente. El modo <code>'a'</code> abre el archivo para añadir, agregando nuevo contenido al final del archivo.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>'w'</code> es para leer, <code>'a'</code> es para escribir</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>'w'</code> sobrescribe el archivo, <code>'a'</code> añade contenido al archivo</BaseQuizOption>
+<BaseQuizOption value="C">C. <code>'w'</code> es para Windows, <code>'a'</code> es para Apple</BaseQuizOption>
+<BaseQuizOption value="D">D. No hay diferencia</BaseQuizOption>
+<BaseQuizAnswer>El modo <code>'w'</code> abre el archivo para escritura y sobrescribe cualquier contenido existente. El modo <code>'a'</code> abre el archivo para añadir, agregando nuevo contenido al final del archivo.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Enlaces relevantes
 

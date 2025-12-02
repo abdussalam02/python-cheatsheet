@@ -88,19 +88,17 @@ obj.price
 0.0
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-dataclasses-1">
+<BaseQuiz id="cheatsheet-dataclasses-1" correct="B">
 <template #question>
 In einer Dataclass, wo müssen Felder mit Standardwerten platziert werden?
 </template>
 
-<base-quiz-option value="A">A. Vor Feldern ohne Standardwerte</base-quiz-option>
-<base-quiz-option value="B" correct>B. Nach Feldern ohne Standardwerte</base-quiz-option>
-<base-quiz-option value="C">C. Es spielt keine Rolle</base-quiz-option>
-<base-quiz-option value="D">D. In einem separaten Abschnitt</base-quiz-option>
-<base-quiz-answer value="B">In Dataclasses müssen Felder mit Standardwerten nach Feldern ohne Standardwerte kommen. Dies liegt daran, dass Python die Reihenfolge der erforderlichen vs. optionalen Parameter für die generierte <code>**init**</code> Methode kennen muss.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Vor Feldern ohne Standardwerte</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Nach Feldern ohne Standardwerte</BaseQuizOption>
+<BaseQuizOption value="C">C. Es spielt keine Rolle</BaseQuizOption>
+<BaseQuizOption value="D">D. In einem separaten Abschnitt</BaseQuizOption>
+<BaseQuizAnswer>In Dataclasses müssen Felder mit Standardwerten nach Feldern ohne Standardwerte kommen. Dies liegt daran, dass Python die Reihenfolge der erforderlichen vs. optionalen Parameter für die generierte <code>**init**</code> Methode kennen muss.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Typ-Hinweise (Type hints)
 

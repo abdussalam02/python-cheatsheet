@@ -239,19 +239,17 @@ wife
 {'name': 'Rose', 'hair': 'brown'}
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-dictionaries-1">
+<BaseQuiz id="cheatsheet-dictionaries-1" correct="B">
 <template #question>
 Was bewirkt <code>pop()</code>, wenn es auf einem Dictionary aufgerufen wird?
 </template>
 
-<base-quiz-option value="A">A. Entfernt nur das Schlüssel-Wert-Paar</base-quiz-option>
-<base-quiz-option value="B" correct>B. Entfernt und gibt den Wert für den angegebenen Schlüssel zurück</base-quiz-option>
-<base-quiz-option value="C">C. Gibt nur den Wert zurück, ohne ihn zu entfernen</base-quiz-option>
-<base-quiz-option value="D">D. Entfernt alle Elemente aus dem Dictionary</base-quiz-option>
-<base-quiz-answer value="B">Die Methode <code>pop()</code> entfernt das Schlüssel-Wert-Paar für den angegebenen Schlüssel und gibt den Wert zurück. Wenn der Schlüssel nicht existiert, wird ein <code>KeyError</code> ausgelöst (es sei denn, Sie geben einen Standardwert an).</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Entfernt nur das Schlüssel-Wert-Paar</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Entfernt und gibt den Wert für den angegebenen Schlüssel zurück</BaseQuizOption>
+<BaseQuizOption value="C">C. Gibt nur den Wert zurück, ohne ihn zu entfernen</BaseQuizOption>
+<BaseQuizOption value="D">D. Entfernt alle Elemente aus dem Dictionary</BaseQuizOption>
+<BaseQuizAnswer>Die Methode <code>pop()</code> entfernt das Schlüssel-Wert-Paar für den angegebenen Schlüssel und gibt den Wert zurück. Wenn der Schlüssel nicht existiert, wird ein <code>KeyError</code> ausgelöst (es sei denn, Sie geben einen Standardwert an).</BaseQuizAnswer>
+</BaseQuiz>
 
 ### popitem()
 
@@ -383,19 +381,17 @@ dict_c
 {'a': 1, 'b': 3, 'c': 4}
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-dictionaries-2">
+<BaseQuiz id="cheatsheet-dictionaries-2" correct="B">
 <template #question>
 Was passiert beim Zusammenführen von zwei Dictionaries mit <code>{**dict_b, **dict_a}</code>, wenn beide Dictionaries denselben Schlüssel haben?
 </template>
 
-<base-quiz-option value="A">A. Der Wert von <code>dict_b</code> überschreibt den Wert von <code>dict_a</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. Der Wert von <code>dict_a</code> überschreibt den Wert von <code>dict_b</code></base-quiz-option>
-<base-quiz-option value="C">C. Beide Werte werden in einer Liste beibehalten</base-quiz-option>
-<base-quiz-option value="D">D. Es wird ein Fehler ausgelöst</base-quiz-option>
-<base-quiz-answer value="B">Beim Zusammenführen von Dictionaries mit dem Entpackungsoperator <code>\*\*</code> überschreibt der Wert des Dictionaries, das später kommt (in diesem Fall <code>dict_a</code>), den Wert des früheren Dictionaries, falls beide denselben Schlüssel haben.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Der Wert von <code>dict_b</code> überschreibt den Wert von <code>dict_a</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Der Wert von <code>dict_a</code> überschreibt den Wert von <code>dict_b</code></BaseQuizOption>
+<BaseQuizOption value="C">C. Beide Werte werden in einer Liste beibehalten</BaseQuizOption>
+<BaseQuizOption value="D">D. Es wird ein Fehler ausgelöst</BaseQuizOption>
+<BaseQuizAnswer>Beim Zusammenführen von Dictionaries mit dem Entpackungsoperator <code>\*\*</code> überschreibt der Wert des Dictionaries, das später kommt (in diesem Fall <code>dict_a</code>), den Wert des früheren Dictionaries, falls beide denselben Schlüssel haben.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Relevante Links
 

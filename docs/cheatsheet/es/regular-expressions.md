@@ -104,19 +104,17 @@ mo.group()
 '415-555-4242'
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-regular-expressions-1">
+<BaseQuiz id="cheatsheet-regular-expressions-1" correct="A">
 <template #question>
 ¿Qué devuelve <code>group()</code> cuando se llama en un objeto de coincidencia?
 </template>
 
-<base-quiz-option value="A" correct>A. El texto completo coincidente</base-quiz-option>
-<base-quiz-option value="B">B. Solo el primer grupo</base-quiz-option>
-<base-quiz-option value="C">C. Todos los grupos como una lista</base-quiz-option>
-<base-quiz-option value="D">D. El índice de la coincidencia</base-quiz-option>
-<base-quiz-answer value="A">El método <code>group()</code> (o <code>group(0)</code>) devuelve el texto completo coincidente. Para obtener grupos específicos, use <code>group(1)</code>, <code>group(2)</code>, etc.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. El texto completo coincidente</BaseQuizOption>
+<BaseQuizOption value="B">B. Solo el primer grupo</BaseQuizOption>
+<BaseQuizOption value="C">C. Todos los grupos como una lista</BaseQuizOption>
+<BaseQuizOption value="D">D. El índice de la coincidencia</BaseQuizOption>
+<BaseQuizAnswer>El método <code>group()</code> (o <code>group(0)</code>) devuelve el texto completo coincidente. Para obtener grupos específicos, use <code>group(1)</code>, <code>group(2)</code>, etc.</BaseQuizAnswer>
+</BaseQuiz>
 
 Para recuperar todos los grupos a la vez, use el método `groups()`:
 
@@ -342,19 +340,17 @@ mo2.group()
 'HaHaHa'
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-regular-expressions-2">
+<BaseQuiz id="cheatsheet-regular-expressions-2" correct="B">
 <template #question>
 ¿Qué hace que un patrón regex no sea codicioso (non-greedy)?
 </template>
 
-<base-quiz-option value="A">A. Usar <code>_</code> en lugar de <code>+</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. Añadir un <code>?</code> después del cuantificador (ej. <code>_?</code>, <code>+?</code>, <code>{3,5}?</code>)</base-quiz-option>
-<base-quiz-option value="C">C. Usar paréntesis</base-quiz-option>
-<base-quiz-option value="D">D. Usar corchetes</base-quiz-option>
-<base-quiz-answer value="B">Añadir un <code>?</code> después de cuantificadores como <code>\*</code>, <code>+</code>, o <code>{n,m}</code> los hace no codiciosos, haciendo coincidir la cadena más corta posible en lugar de la más larga.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Usar <code>_</code> en lugar de <code>+</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Añadir un <code>?</code> después del cuantificador (ej. <code>_?</code>, <code>+?</code>, <code>{3,5}?</code>)</BaseQuizOption>
+<BaseQuizOption value="C">C. Usar paréntesis</BaseQuizOption>
+<BaseQuizOption value="D">D. Usar corchetes</BaseQuizOption>
+<BaseQuizAnswer>Añadir un <code>?</code> después de cuantificadores como <code>\*</code>, <code>+</code>, o <code>{n,m}</code> los hace no codiciosos, haciendo coincidir la cadena más corta posible en lugar de la más larga.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## El método findall()
 
@@ -579,19 +575,17 @@ names_regex.sub('CENSURADO', 'El Agente Alice dio los documentos secretos al Age
 'CENSORED gave the secret documents to CENSORED.'
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-regular-expressions-3">
+<BaseQuiz id="cheatsheet-regular-expressions-3" correct="B">
 <template #question>
 ¿Qué hace el método <code>sub()</code>?
 </template>
 
-<base-quiz-option value="A">A. Encuentra todas las coincidencias en una cadena</base-quiz-option>
-<base-quiz-option value="B" correct>B. Reemplaza todas las coincidencias con una cadena de reemplazo</base-quiz-option>
-<base-quiz-option value="C">C. Divide una cadena en las coincidencias</base-quiz-option>
-<base-quiz-option value="D">D. Valida el formato de una cadena</base-quiz-option>
-<base-quiz-answer value="B">El método <code>sub()</code> sustituye todas las coincidencias del patrón con una cadena de reemplazo. Devuelve una nueva cadena con las sustituciones aplicadas.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Encuentra todas las coincidencias en una cadena</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Reemplaza todas las coincidencias con una cadena de reemplazo</BaseQuizOption>
+<BaseQuizOption value="C">C. Divide una cadena en las coincidencias</BaseQuizOption>
+<BaseQuizOption value="D">D. Valida el formato de una cadena</BaseQuizOption>
+<BaseQuizAnswer>El método <code>sub()</code> sustituye todas las coincidencias del patrón con una cadena de reemplazo. Devuelve una nueva cadena con las sustituciones aplicadas.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Gestión de Regexes complejas
 
@@ -616,19 +610,17 @@ phone_regex = re.compile(r'''(
     )''', re.VERBOSE)
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-regular-expressions-4">
+<BaseQuiz id="cheatsheet-regular-expressions-4" correct="A">
 <template #question>
 ¿Qué hace <code>re.VERBOSE</code> cuando se pasa a <code>re.compile()</code>?
 </template>
 
-<base-quiz-option value="A" correct>A. Permite espacios en blanco y comentarios en el patrón regex para una mejor legibilidad</base-quiz-option>
-<base-quiz-option value="B">B. Hace que la regex no distinga entre mayúsculas y minúsculas</base-quiz-option>
-<base-quiz-option value="C">C. Hace que el punto coincida con los caracteres de nueva línea</base-quiz-option>
-<base-quiz-option value="D">D. Acelera la coincidencia de regex</base-quiz-option>
-<base-quiz-answer value="A">La bandera <code>re.VERBOSE</code> le permite agregar espacios en blanco y comentarios a su patrón regex, haciendo que las regex complejas sean mucho más legibles sin afectar la coincidencia del patrón.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. Permite espacios en blanco y comentarios en el patrón regex para una mejor legibilidad</BaseQuizOption>
+<BaseQuizOption value="B">B. Hace que la regex no distinga entre mayúsculas y minúsculas</BaseQuizOption>
+<BaseQuizOption value="C">C. Hace que el punto coincida con los caracteres de nueva línea</BaseQuizOption>
+<BaseQuizOption value="D">D. Acelera la coincidencia de regex</BaseQuizOption>
+<BaseQuizAnswer>La bandera <code>re.VERBOSE</code> le permite agregar espacios en blanco y comentarios a su patrón regex, haciendo que las regex complejas sean mucho más legibles sin afectar la coincidencia del patrón.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Enlaces relevantes
 

@@ -98,19 +98,17 @@ f'Hello {name}!'  # префикс f позволяет использовать
 'Hello Elizabeth!'
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-string-formatting-1">
+<BaseQuiz id="cheatsheet-string-formatting-1" correct="B">
 <template #question>
 Какой префикс используется для f-строк в Python?
 </template>
 
-<base-quiz-option value="A">A. <code>fmt</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>f</code> или <code>F</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>format</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>str</code></base-quiz-option>
-<base-quiz-answer value="B">F-строки предваряются префиксом <code>f</code> или <code>F</code> перед открывающей кавычкой. Они позволяют встраивать выражения в фигурные скобки <code>{}</code>.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>fmt</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>f</code> или <code>F</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>format</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>str</code></BaseQuizOption>
+<BaseQuizAnswer>F-строки предваряются префиксом <code>f</code> или <code>F</code> перед открывающей кавычкой. Они позволяют встраивать выражения в фигурные скобки <code>{}</code>.</BaseQuizAnswer>
+</BaseQuiz>
 
 В них даже можно выполнять встроенные вычисления:
 
@@ -206,19 +204,17 @@ f"{a:.2f}"
 '3.14'
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-string-formatting-2">
+<BaseQuiz id="cheatsheet-string-formatting-2" correct="C">
 <template #question>
 Что делает <code>f"{a:.2f}"</code>?
 </template>
 
-<base-quiz-option value="A">A. Округляет число до ближайшего целого</base-quiz-option>
-<base-quiz-option value="B">B. Форматирует как процент</base-quiz-option>
-<base-quiz-option value="C" correct>C. Форматирует число как число с плавающей точкой с 2 знаками после запятой</base-quiz-option>
-<base-quiz-option value="D">D. Преобразует в экспоненциальную нотацию</base-quiz-option>
-<base-quiz-answer value="C">Спецификатор формата <code>:.2f</code> форматирует число как число с плавающей точкой с ровно 2 знаками после запятой. <code>.2</code> указывает точность, а <code>f</code> означает формат float.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Округляет число до ближайшего целого</BaseQuizOption>
+<BaseQuizOption value="B">B. Форматирует как процент</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. Форматирует число как число с плавающей точкой с 2 знаками после запятой</BaseQuizOption>
+<BaseQuizOption value="D">D. Преобразует в экспоненциальную нотацию</BaseQuizOption>
+<BaseQuizAnswer>Спецификатор формата <code>:.2f</code> форматирует число как число с плавающей точкой с ровно 2 знаками после запятой. <code>.2</code> указывает точность, а <code>f</code> означает формат float.</BaseQuizAnswer>
+</BaseQuiz>
 
 Отображение в виде процента
 

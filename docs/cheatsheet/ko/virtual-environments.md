@@ -30,19 +30,17 @@ python3 -m venv venv
 
 이것은 현재 폴더에 가상 환경을 포함하는 `venv` 디렉토리를 생성합니다.
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-virtual-environments-1">
+<BaseQuiz id="cheatsheet-virtual-environments-1" correct="A">
 <template #question>
 <code>venv</code>를 사용하여 가상 환경을 만드는 데 사용되는 명령어는 무엇입니까?
 </template>
 
-<base-quiz-option value="A" correct>A. <code>python -m venv venv</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>python create venv</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>venv create</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>python venv new</code></base-quiz-option>
-<base-quiz-answer value="A"><code>python -m venv venv</code> 명령어는 가상 환경을 생성합니다. <code>-m</code> 플래그는 venv 모듈을 실행하며, 마지막의 <code>venv</code>는 생성할 디렉토리 이름입니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. <code>python -m venv venv</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>python create venv</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>venv create</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>python venv new</code></BaseQuizOption>
+<BaseQuizAnswer><code>python -m venv venv</code> 명령어는 가상 환경을 생성합니다. <code>-m</code> 플래그는 venv 모듈을 실행하며, 마지막의 <code>venv</code>는 생성할 디렉토리 이름입니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 2. 가상 환경 활성화
 
@@ -60,19 +58,17 @@ venv\Scripts\activate
 
 활성화되면 명령 프롬프트 시작 부분에 `(venv)`가 표시되어 가상 환경이 활성화되었음을 나타냅니다.
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-virtual-environments-2">
+<BaseQuiz id="cheatsheet-virtual-environments-2" correct="B">
 <template #question>
 Linux/macOS에서 가상 환경을 활성화하는 방법은 무엇입니까?
 </template>
 
-<base-quiz-option value="A">A. <code>activate venv</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>source venv/bin/activate</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>venv activate</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>python venv activate</code></base-quiz-option>
-<base-quiz-answer value="B">Linux/macOS에서는 <code>source venv/bin/activate</code>를 사용하여 가상 환경을 활성화합니다. Windows 에서는 <code>venv\Scripts\activate</code>를 사용합니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>activate venv</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>source venv/bin/activate</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>venv activate</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>python venv activate</code></BaseQuizOption>
+<BaseQuizAnswer>Linux/macOS에서는 <code>source venv/bin/activate</code>를 사용하여 가상 환경을 활성화합니다. Windows 에서는 <code>venv\Scripts\activate</code>를 사용합니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 3. 패키지 설치
 
@@ -94,19 +90,17 @@ deactivate
 
 명령 프롬프트에서 `(venv)` 접두사가 사라집니다.
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-virtual-environments-3">
+<BaseQuiz id="cheatsheet-virtual-environments-3" correct="A">
 <template #question>
 가상 환경을 사용하는 주된 목적은 무엇입니까?
 </template>
 
-<base-quiz-option value="A" correct>A. 프로젝트 종속성을 격리하고 기본 Python 설치가 채워지는 것을 방지하기 위함</base-quiz-option>
-<base-quiz-option value="B">B. Python 실행 속도를 높이기 위함</base-quiz-option>
-<base-quiz-option value="C">C. Python 코드를 암호화하기 위함</base-quiz-option>
-<base-quiz-option value="D">D. Python 을 기계어 코드로 컴파일하기 위함</base-quiz-option>
-<base-quiz-answer value="A">가상 환경을 사용하면 캡슐화된 환경에서 Python 코드를 테스트하고, 단 하나의 프로젝트에만 사용될 수 있는 라이브러리로 기본 Python 설치를 채우는 것을 방지할 수 있습니다. 이는 프로젝트별 종속성 관리에 도움이 됩니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. 프로젝트 종속성을 격리하고 기본 Python 설치가 채워지는 것을 방지하기 위함</BaseQuizOption>
+<BaseQuizOption value="B">B. Python 실행 속도를 높이기 위함</BaseQuizOption>
+<BaseQuizOption value="C">C. Python 코드를 암호화하기 위함</BaseQuizOption>
+<BaseQuizOption value="D">D. Python 을 기계어 코드로 컴파일하기 위함</BaseQuizOption>
+<BaseQuizAnswer>가상 환경을 사용하면 캡슐화된 환경에서 Python 코드를 테스트하고, 단 하나의 프로젝트에만 사용될 수 있는 라이브러리로 기본 Python 설치를 채우는 것을 방지할 수 있습니다. 이는 프로젝트별 종속성 관리에 도움이 됩니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## virtualenv
 

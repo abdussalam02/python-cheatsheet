@@ -97,8 +97,7 @@ Beispiele für Ausdrücke:
 16.0
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-basics-1">
+<BaseQuiz id="cheatsheet-basics-1" correct="A">
 <template #question>
 Was ist das Ergebnis dieses Python-Ausdrucks?
 
@@ -108,13 +107,12 @@ Was ist das Ergebnis dieses Python-Ausdrucks?
 
 </template>
 
-<base-quiz-option value="A" correct>A. 10</base-quiz-option>
-<base-quiz-option value="B">B. 18</base-quiz-option>
-<base-quiz-option value="C">C. 12</base-quiz-option>
-<base-quiz-option value="D">D. 20</base-quiz-option>
-<base-quiz-answer value="A">Multiplikation hat eine höhere Priorität als Addition, daher wird dies ausgewertet als: 4 + (2 \* 3) = 4 + 6 = 10</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. 10</BaseQuizOption>
+<BaseQuizOption value="B">B. 18</BaseQuizOption>
+<BaseQuizOption value="C">C. 12</BaseQuizOption>
+<BaseQuizOption value="D">D. 20</BaseQuizOption>
+<BaseQuizAnswer>Multiplikation hat eine höhere Priorität als Addition, daher wird dies ausgewertet als: 4 + (2 \* 3) = 4 + 6 = 10</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Augmented Assignment Operatoren
 
@@ -163,8 +161,7 @@ my_list
 ['item', 'item', 'item']
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-basics-2">
+<BaseQuiz id="cheatsheet-basics-2" correct="B">
 <template #question>
 Was ist der Wert von <code>x</code> nach Ausführung dieses Codes?
 
@@ -175,13 +172,12 @@ x += 3
 
 </template>
 
-<base-quiz-option value="A">A. 3</base-quiz-option>
-<base-quiz-option value="B" correct>B. 8</base-quiz-option>
-<base-quiz-option value="C">C. 5</base-quiz-option>
-<base-quiz-option value="D">D. 15</base-quiz-option>
-<base-quiz-answer value="B">Der Augmented Assignment Operator <code>+=</code> entspricht <code>x = x + 3</code>. Also beginnt <code>x</code> bei 5 und wird dann zu 5 + 3 = 8.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 3</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. 8</BaseQuizOption>
+<BaseQuizOption value="C">C. 5</BaseQuizOption>
+<BaseQuizOption value="D">D. 15</BaseQuizOption>
+<BaseQuizAnswer>Der Augmented Assignment Operator <code>+=</code> entspricht <code>x = x + 3</code>. Also beginnt <code>x</code> bei 5 und wird dann zu 5 + 3 = 8.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Walrus Operator
 
@@ -340,19 +336,17 @@ my_var_2 = 'Hello'
 _spam = 'Hello'
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-basics-3">
+<BaseQuiz id="cheatsheet-basics-3" correct="C">
 <template #question>
 Welche der folgenden Bezeichnungen ist in Python-Grundlagen ein gültiger Variablenname?
 </template>
 
-<base-quiz-option value="A">A. <code>3value</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>user-name</code></base-quiz-option>
-<base-quiz-option value="C" correct>C. <code>user_name</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>for</code></base-quiz-option>
-<base-quiz-answer value="C"><code>user_name</code> ist ein gültiger Variablenname, da er nur Buchstaben, Zahlen und Unterstriche verwendet und nicht mit einer Zahl beginnt.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>3value</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>user-name</code></BaseQuizOption>
+<BaseQuizOption value="C" correct>C. <code>user_name</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>for</code></BaseQuizOption>
+<BaseQuizAnswer><code>user_name</code> ist ein gültiger Variablenname, da er nur Buchstaben, Zahlen und Unterstriche verwendet und nicht mit einer Zahl beginnt.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Kommentare
 
@@ -479,19 +473,17 @@ What is your name? Martha
 Hi, Martha
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-basics-4">
+<BaseQuiz id="cheatsheet-basics-4" correct="B">
 <template #question>
 Welchen Typ gibt `input()` in Python-Grundlagen zurück?
 </template>
 
-<base-quiz-option value="A">A. int</base-quiz-option>
-<base-quiz-option value="B" correct>B. str</base-quiz-option>
-<base-quiz-option value="C">C. float</base-quiz-option>
-<base-quiz-option value="D">D. Hängt von der Benutzereingabe ab</base-quiz-option>
-<base-quiz-answer value="B">Die Funktion <code>input()</code> gibt immer einen String zurück, unabhängig davon, was der Benutzer eingibt. Sie müssen ihn bei Bedarf in andere Typen umwandeln.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. int</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. str</BaseQuizOption>
+<BaseQuizOption value="C">C. float</BaseQuizOption>
+<BaseQuizOption value="D">D. Hängt von der Benutzereingabe ab</BaseQuizOption>
+<BaseQuizAnswer>Die Funktion <code>input()</code> gibt immer einen String zurück, unabhängig davon, was der Benutzer eingibt. Sie müssen ihn bei Bedarf in andere Typen umwandeln.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Die len() Funktion
 
@@ -588,8 +580,7 @@ float('3.14')  # Gibt 3.14 zurück
 3.14
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-basics-5">
+<BaseQuiz id="cheatsheet-basics-5" correct="C">
 <template #question>
 Was ist das Ergebnis dieses Python-Codes?
 
@@ -600,13 +591,12 @@ type(result)
 
 </template>
 
-<base-quiz-option value="A">A. <code>str</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>float</code></base-quiz-option>
-<base-quiz-option value="C" correct>C. <code>int</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>NoneType</code></base-quiz-option>
-<base-quiz-answer value="C">Die Funktion <code>int()</code> konvertiert einen String in einen Integer. Daher gibt <code>int('42')</code> den Integer <code>42</code> zurück, und <code>type(42)</code> gibt <code>int</code> zurück.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>str</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>float</code></BaseQuizOption>
+<BaseQuizOption value="C" correct>C. <code>int</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>NoneType</code></BaseQuizOption>
+<BaseQuizAnswer>Die Funktion <code>int()</code> konvertiert einen String in einen Integer. Daher gibt <code>int('42')</code> den Integer <code>42</code> zurück, und <code>type(42)</code> gibt <code>int</code> zurück.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Relevante Links
 

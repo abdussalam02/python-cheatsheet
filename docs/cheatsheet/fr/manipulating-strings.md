@@ -52,19 +52,17 @@ Hello there!\nHow are you?\nI\'m doing fine.
 
 Les chaînes brutes sont principalement utilisées pour la définition des <router-link to="/cheatsheet/regular-expressions">expressions régulières</router-link>.
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-manipulating-strings-1">
+<BaseQuiz id="cheatsheet-manipulating-strings-1" correct="B">
 <template #question>
 Que fait une chaîne brute (précédée de <code>r</code>) en Python ?
 </template>
 
-<base-quiz-option value="A">A. Convertit tous les caractères en majuscules</base-quiz-option>
-<base-quiz-option value="B" correct>B. Traite les barres obliques inverses comme des caractères littéraux, ignorant les séquences d'échappement</base-quiz-option>
-<base-quiz-option value="C">C. Supprime tous les espaces</base-quiz-option>
-<base-quiz-option value="D">D. Inverse la chaîne</base-quiz-option>
-<base-quiz-answer value="B">Les chaînes brutes (précédées de <code>r</code>) traitent les barres obliques inverses comme des caractères littéraux, de sorte que les séquences d'échappement telles que <code>\n</code> ne sont pas interprétées.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Convertit tous les caractères en majuscules</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Traite les barres obliques inverses comme des caractères littéraux, ignorant les séquences d'échappement</BaseQuizOption>
+<BaseQuizOption value="C">C. Supprime tous les espaces</BaseQuizOption>
+<BaseQuizOption value="D">D. Inverse la chaîne</BaseQuizOption>
+<BaseQuizAnswer>Les chaînes brutes (précédées de <code>r</code>) traitent les barres obliques inverses comme des caractères littéraux, de sorte que les séquences d'échappement telles que <code>\n</code> ne sont pas interprétées.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Chaînes multilignes
 
@@ -177,19 +175,17 @@ spam[::-1]
 '!dlrow olleH'
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-manipulating-strings-2">
+<BaseQuiz id="cheatsheet-manipulating-strings-2" correct="C">
 <template #question>
 Que fait <code>spam[::-1]</code> sur une chaîne ?
 </template>
 
-<base-quiz-option value="A">A. Retourne le premier caractère</base-quiz-option>
-<base-quiz-option value="B">B. Retourne le dernier caractère</base-quiz-option>
-<base-quiz-option value="C" correct>C. Inverse la chaîne</base-quiz-option>
-<base-quiz-option value="D">D. Supprime tous les caractères</base-quiz-option>
-<base-quiz-answer value="C">La tranche <code>[::-1]</code> inverse une chaîne en parcourant tous les caractères à rebours. La valeur de pas <code>-1</code> signifie "revenir en arrière".</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Retourne le premier caractère</BaseQuizOption>
+<BaseQuizOption value="B">B. Retourne le dernier caractère</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. Inverse la chaîne</BaseQuizOption>
+<BaseQuizOption value="D">D. Supprime tous les caractères</BaseQuizOption>
+<BaseQuizAnswer>La tranche <code>[::-1]</code> inverse une chaîne en parcourant tous les caractères à rebours. La valeur de pas <code>-1</code> signifie "revenir en arrière".</BaseQuizAnswer>
+</BaseQuiz>
 
 ```python
 fizz = spam[0:5]
@@ -384,19 +380,17 @@ True
 True
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-manipulating-strings-3">
+<BaseQuiz id="cheatsheet-manipulating-strings-3" correct="A">
 <template #question>
 Que retourne <code>startswith()</code> ?
 </template>
 
-<base-quiz-option value="A" correct>A. <code>True</code> si la chaîne commence par la sous-chaîne spécifiée, <code>False</code> sinon</base-quiz-option>
-<base-quiz-option value="B">B. La sous-chaîne qui correspond au début</base-quiz-option>
-<base-quiz-option value="C">C. L'index où la sous-chaîne commence</base-quiz-option>
-<base-quiz-option value="D">D. Une nouvelle chaîne sans le préfixe</base-quiz-option>
-<base-quiz-answer value="A">La méthode <code>startswith()</code> retourne une valeur booléenne : <code>True</code> si la chaîne commence par la sous-chaîne spécifiée, <code>False</code> sinon.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. <code>True</code> si la chaîne commence par la sous-chaîne spécifiée, <code>False</code> sinon</BaseQuizOption>
+<BaseQuizOption value="B">B. La sous-chaîne qui correspond au début</BaseQuizOption>
+<BaseQuizOption value="C">C. L'index où la sous-chaîne commence</BaseQuizOption>
+<BaseQuizOption value="D">D. Une nouvelle chaîne sans le préfixe</BaseQuizOption>
+<BaseQuizAnswer>La méthode <code>startswith()</code> retourne une valeur booléenne : <code>True</code> si la chaîne commence par la sous-chaîne spécifiée, <code>False</code> sinon.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## join() et split()
 
@@ -480,19 +474,17 @@ La méthode `split()` divise une `chaîne` en une `liste`. Par défaut, elle uti
 ['', 'My', '', 'name', 'is', '', 'Simon']
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-manipulating-strings-4">
+<BaseQuiz id="cheatsheet-manipulating-strings-4" correct="B">
 <template #question>
 Que retourne <code>split()</code> lorsqu'il est appelé sur une chaîne ?
 </template>
 
-<base-quiz-option value="A">A. Une chaîne</base-quiz-option>
-<base-quiz-option value="B" correct>B. Une liste de chaînes</base-quiz-option>
-<base-quiz-option value="C">C. Un tuple de chaînes</base-quiz-option>
-<base-quiz-option value="D">D. Un dictionnaire</base-quiz-option>
-<base-quiz-answer value="B">La méthode <code>split()</code> divise une chaîne en une liste de sous-chaînes. Par défaut, elle divise sur les espaces, mais vous pouvez spécifier un séparateur différent.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Une chaîne</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Une liste de chaînes</BaseQuizOption>
+<BaseQuizOption value="C">C. Un tuple de chaînes</BaseQuizOption>
+<BaseQuizOption value="D">D. Un dictionnaire</BaseQuizOption>
+<BaseQuizAnswer>La méthode <code>split()</code> divise une chaîne en une liste de sous-chaînes. Par défaut, elle divise sur les espaces, mais vous pouvez spécifier un séparateur différent.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Justification du texte avec rjust(), ljust() et center()
 
@@ -667,19 +659,17 @@ sentence.replace("apples", "oranges")
 'I like oranges, Apples are my favorite fruit'
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-manipulating-strings-5">
+<BaseQuiz id="cheatsheet-manipulating-strings-5" correct="C">
 <template #question>
 Que retourne la méthode <code>replace()</code> ?
 </template>
 
-<base-quiz-option value="A">A. Modifie la chaîne d'origine</base-quiz-option>
-<base-quiz-option value="B">B. Retourne <code>None</code></base-quiz-option>
-<base-quiz-option value="C" correct>C. Retourne une nouvelle chaîne avec les remplacements effectués</base-quiz-option>
-<base-quiz-option value="D">D. Retourne une liste des chaînes remplacées</base-quiz-option>
-<base-quiz-answer value="C">La méthode <code>replace()</code> retourne une nouvelle chaîne avec toutes les occurrences de l'ancienne sous-chaîne remplacées par la nouvelle sous-chaîne. La chaîne d'origine n'est pas modifiée.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Modifie la chaîne d'origine</BaseQuizOption>
+<BaseQuizOption value="B">B. Retourne <code>None</code></BaseQuizOption>
+<BaseQuizOption value="C" correct>C. Retourne une nouvelle chaîne avec les remplacements effectués</BaseQuizOption>
+<BaseQuizOption value="D">D. Retourne une liste des chaînes remplacées</BaseQuizOption>
+<BaseQuizAnswer>La méthode <code>replace()</code> retourne une nouvelle chaîne avec toutes les occurrences de l'ancienne sous-chaîne remplacées par la nouvelle sous-chaîne. La chaîne d'origine n'est pas modifiée.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Liens pertinents
 

@@ -104,19 +104,17 @@ mo.group()
 '415-555-4242'
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-regular-expressions-1">
+<BaseQuiz id="cheatsheet-regular-expressions-1" correct="A">
 <template #question>
 マッチオブジェクトに対して <code>group()</code> を呼び出すと、何が返されますか？
 </template>
 
-<base-quiz-option value="A" correct>A. 一致したテキスト全体</base-quiz-option>
-<base-quiz-option value="B">B. 最初のグループのみ</base-quiz-option>
-<base-quiz-option value="C">C. すべてのグループをリストとして</base-quiz-option>
-<base-quiz-option value="D">D. マッチのインデックス</base-quiz-option>
-<base-quiz-answer value="A"><code>group()</code> メソッド (または <code>group(0)</code>) は、一致したテキスト全体を返します。特定のグループを取得するには、<code>group(1)</code>、<code>group(2)</code> などを指定します。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. 一致したテキスト全体</BaseQuizOption>
+<BaseQuizOption value="B">B. 最初のグループのみ</BaseQuizOption>
+<BaseQuizOption value="C">C. すべてのグループをリストとして</BaseQuizOption>
+<BaseQuizOption value="D">D. マッチのインデックス</BaseQuizOption>
+<BaseQuizAnswer><code>group()</code> メソッド (または <code>group(0)</code>) は、一致したテキスト全体を返します。特定のグループを取得するには、<code>group(1)</code>、<code>group(2)</code> などを指定します。</BaseQuizAnswer>
+</BaseQuiz>
 
 すべてのグループを一度に取得するには、`groups()` メソッドを使用します。
 
@@ -342,19 +340,17 @@ mo2.group()
 'HaHaHa'
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-regular-expressions-2">
+<BaseQuiz id="cheatsheet-regular-expressions-2" correct="B">
 <template #question>
 正規表現パターンを非貪欲にするものは何ですか？
 </template>
 
-<base-quiz-option value="A">A. <code>+</code> の代わりに <code>_</code> を使用する</base-quiz-option>
-<base-quiz-option value="B" correct>B. 量指定子 (例：<code>_?</code>、<code>+?</code>、<code>{3,5}?</code>) の後に <code>?</code> を追加する</base-quiz-option>
-<base-quiz-option value="C">C. 丸括弧を使用する</base-quiz-option>
-<base-quiz-option value="D">D. 角括弧を使用する</base-quiz-option>
-<base-quiz-answer value="B"><code>\*</code>、<code>+</code>、または <code>{n,m}</code> などの量指定子の後に <code>?</code> を追加すると、それらは非貪欲になり、最長の文字列ではなく最短の文字列に一致します。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>+</code> の代わりに <code>_</code> を使用する</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. 量指定子 (例：<code>_?</code>、<code>+?</code>、<code>{3,5}?</code>) の後に <code>?</code> を追加する</BaseQuizOption>
+<BaseQuizOption value="C">C. 丸括弧を使用する</BaseQuizOption>
+<BaseQuizOption value="D">D. 角括弧を使用する</BaseQuizOption>
+<BaseQuizAnswer><code>\*</code>、<code>+</code>、または <code>{n,m}</code> などの量指定子の後に <code>?</code> を追加すると、それらは非貪欲になり、最長の文字列ではなく最短の文字列に一致します。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## findall() メソッド
 
@@ -579,19 +575,17 @@ names_regex.sub('CENSORED', 'Agent Alice gave the secret documents to Agent Bob.
 'CENSORED gave the secret documents to CENSORED.'
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-regular-expressions-3">
+<BaseQuiz id="cheatsheet-regular-expressions-3" correct="B">
 <template #question>
 <code>sub()</code> メソッドは何をしますか？
 </template>
 
-<base-quiz-option value="A">A. 文字列内のすべての一致を見つける</base-quiz-option>
-<base-quiz-option value="B" correct>B. すべての一致を指定された置換文字列に置き換える</base-quiz-option>
-<base-quiz-option value="C">C. 一致箇所で文字列を分割する</base-quiz-option>
-<base-quiz-option value="D">D. 文字列形式を検証する</base-quiz-option>
-<base-quiz-answer value="B"><code>sub()</code> メソッドは、パターンのすべての一致を指定された置換文字列に置き換えます。置換が適用された新しい文字列を返します。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 文字列内のすべての一致を見つける</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. すべての一致を指定された置換文字列に置き換える</BaseQuizOption>
+<BaseQuizOption value="C">C. 一致箇所で文字列を分割する</BaseQuizOption>
+<BaseQuizOption value="D">D. 文字列形式を検証する</BaseQuizOption>
+<BaseQuizAnswer><code>sub()</code> メソッドは、パターンのすべての一致を指定された置換文字列に置き換えます。置換が適用された新しい文字列を返します。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 複雑な Regex の管理
 
@@ -616,19 +610,17 @@ phone_regex = re.compile(r'''(
     )''', re.VERBOSE)
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-regular-expressions-4">
+<BaseQuiz id="cheatsheet-regular-expressions-4" correct="A">
 <template #question>
 <code>re.compile()</code> に渡された <code>re.VERBOSE</code> は何を行いますか？
 </template>
 
-<base-quiz-option value="A" correct>A. 正規表現パターン内の空白文字とコメントを許可し、可読性を向上させる</base-quiz-option>
-<base-quiz-option value="B">B. 正規表現を大文字・小文字を区別しないようにする</base-quiz-option>
-<base-quiz-option value="C">C. ドット文字が改行文字に一致するようにする</base-quiz-option>
-<base-quiz-option value="D">D. 正規表現のマッチングを高速化する</base-quiz-option>
-<base-quiz-answer value="A"><code>re.VERBOSE</code> フラグを使用すると、正規表現パターンに空白文字とコメントを追加でき、複雑な正規表現の可読性が大幅に向上しますが、パターンマッチングには影響しません。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. 正規表現パターン内の空白文字とコメントを許可し、可読性を向上させる</BaseQuizOption>
+<BaseQuizOption value="B">B. 正規表現を大文字・小文字を区別しないようにする</BaseQuizOption>
+<BaseQuizOption value="C">C. ドット文字が改行文字に一致するようにする</BaseQuizOption>
+<BaseQuizOption value="D">D. 正規表現のマッチングを高速化する</BaseQuizOption>
+<BaseQuizAnswer><code>re.VERBOSE</code> フラグを使用すると、正規表現パターンに空白文字とコメントを追加でき、複雑な正規表現の可読性が大幅に向上しますが、パターンマッチングには影響しません。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 関連リンク
 

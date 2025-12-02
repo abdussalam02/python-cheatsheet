@@ -61,19 +61,17 @@ print(obj.__private_var)    # AttributeError: 'MyClass' object has no attribute 
 
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-oop-basics-1">
+<BaseQuiz id="cheatsheet-oop-basics-1" correct="B">
 <template #question>
 Как обозначается защищенная переменная в Python?
 </template>
 
-<base-quiz-option value="A">A. Префикс из двух подчеркиваний: <code>**variable</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. Префикс из одного подчеркивания: <code>_variable</code></base-quiz-option>
-<base-quiz-option value="C">C. Подчеркивание не требуется</base-quiz-option>
-<base-quiz-option value="D">D. Префикс из трех подчеркиваний: <code>_**variable</code></base-quiz-option>
-<base-quiz-answer value="B">В Python префикс из одного подчеркивания (<code>\_variable</code>) указывает на защищенную переменную, что является соглашением, означающим, что ее следует использовать внутри класса или его подклассов. Два подчеркивания (<code>\_\_variable</code>) указывают на приватную переменную.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Префикс из двух подчеркиваний: <code>**variable</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Префикс из одного подчеркивания: <code>_variable</code></BaseQuizOption>
+<BaseQuizOption value="C">C. Подчеркивание не требуется</BaseQuizOption>
+<BaseQuizOption value="D">D. Префикс из трех подчеркиваний: <code>_**variable</code></BaseQuizOption>
+<BaseQuizAnswer>В Python префикс из одного подчеркивания (<code>\_variable</code>) указывает на защищенную переменную, что является соглашением, означающим, что ее следует использовать внутри класса или его подклассов. Два подчеркивания (<code>\_\_variable</code>) указывают на приватную переменную.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Наследование
 
@@ -130,19 +128,17 @@ cat.speak()   # вывод: Meow!
 
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-oop-basics-2">
+<BaseQuiz id="cheatsheet-oop-basics-2" correct="A">
 <template #question>
 Что такое наследование в ООП на Python?
 </template>
 
-<base-quiz-option value="A" correct>A. Механизм, посредством которого класс может наследовать атрибуты и методы от другого класса</base-quiz-option>
-<base-quiz-option value="B">B. Способ копирования объектов</base-quiz-option>
-<base-quiz-option value="C">C. Метод для удаления классов</base-quiz-option>
-<base-quiz-option value="D">D. Встроенная функция</base-quiz-option>
-<base-quiz-answer value="A">Наследование позволяет классу (дочернему/подклассу) наследовать атрибуты и методы от другого класса (родительского/базового класса). Это способствует повторному использованию кода и позволяет создавать иерархию классов.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. Механизм, посредством которого класс может наследовать атрибуты и методы от другого класса</BaseQuizOption>
+<BaseQuizOption value="B">B. Способ копирования объектов</BaseQuizOption>
+<BaseQuizOption value="C">C. Метод для удаления классов</BaseQuizOption>
+<BaseQuizOption value="D">D. Встроенная функция</BaseQuizOption>
+<BaseQuizAnswer>Наследование позволяет классу (дочернему/подклассу) наследовать атрибуты и методы от другого класса (родительского/базового класса). Это способствует повторному использованию кода и позволяет создавать иерархию классов.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Полиморфизм
 
@@ -193,19 +189,17 @@ for shape in shapes:
 
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-oop-basics-3">
+<BaseQuiz id="cheatsheet-oop-basics-3" correct="C">
 <template #question>
 Что такое полиморфизм в ООП на Python?
 </template>
 
-<base-quiz-option value="A">A. Создание нескольких классов с одинаковым именем</base-quiz-option>
-<base-quiz-option value="B">B. Скрытие деталей реализации</base-quiz-option>
-<base-quiz-option value="C" correct>C. Способность использовать объекты разных классов единообразным образом через общий интерфейс</base-quiz-option>
-<base-quiz-option value="D">D. Копирование объектов</base-quiz-option>
-<base-quiz-answer value="C">Полиморфизм позволяет писать код, который может работать с объектами разных классов единообразным образом. Разные классы могут реализовывать одно и то же имя метода, и Python вызовет соответствующую реализацию в зависимости от типа объекта.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Создание нескольких классов с одинаковым именем</BaseQuizOption>
+<BaseQuizOption value="B">B. Скрытие деталей реализации</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. Способность использовать объекты разных классов единообразным образом через общий интерфейс</BaseQuizOption>
+<BaseQuizOption value="D">D. Копирование объектов</BaseQuizOption>
+<BaseQuizAnswer>Полиморфизм позволяет писать код, который может работать с объектами разных классов единообразным образом. Разные классы могут реализовывать одно и то же имя метода, и Python вызовет соответствующую реализацию в зависимости от типа объекта.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Абстракция
 

@@ -61,19 +61,17 @@ setup(
 )
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-packaging-1">
+<BaseQuiz id="cheatsheet-packaging-1" correct="C">
 <template #question>
 <code>setup.py</code> 文件中三个必需的字段是什么？
 </template>
 
-<base-quiz-option value="A">A. name, author, license</base-quiz-option>
-<base-quiz-option value="B">B. name, description, packages</base-quiz-option>
-<base-quiz-option value="C" correct>C. name, version, packages</base-quiz-option>
-<base-quiz-option value="D">D. name, version, license</base-quiz-option>
-<base-quiz-answer value="C"><code>setup.py</code> 中的三个必需字段是 <code>name</code>（包名，在 PyPI 上必须唯一）、<code>version</code>（跟踪版本）和 <code>packages</code>（描述 Python 源代码所在位置）。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. name, author, license</BaseQuizOption>
+<BaseQuizOption value="B">B. name, description, packages</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. name, version, packages</BaseQuizOption>
+<BaseQuizOption value="D">D. name, version, license</BaseQuizOption>
+<BaseQuizAnswer><code>setup.py</code> 中的三个必需字段是 <code>name</code>（包名，在 PyPI 上必须唯一）、<code>version</code>（跟踪版本）和 <code>packages</code>（描述 Python 源代码所在位置）。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 现代方法：pyproject.toml
 
@@ -131,19 +129,17 @@ pip install .
 pip install -e .
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-packaging-2">
+<BaseQuiz id="cheatsheet-packaging-2" correct="B">
 <template #question>
 <code>pyproject.toml</code> 相对于 <code>setup.py</code> 的主要优势是什么？
 </template>
 
-<base-quiz-option value="A">A. 执行速度更快</base-quiz-option>
-<base-quiz-option value="B" correct>B. 它是声明式的、更安全（无代码执行）并遵循 PEP 标准</base-quiz-option>
-<base-quiz-option value="C">C. 它需要的配置更少</base-quiz-option>
-<base-quiz-option value="D">D. 它只适用于 Python 3.10+</base-quiz-option>
-<base-quiz-answer value="B"><code>pyproject.toml</code> 方法是声明式的（所有元数据集中在一个地方），比执行代码的 <code>setup.py</code> 更安全，并且遵循 PEP 标准（PEP-517、PEP-518、PEP-660）以获得更好的工具支持。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 执行速度更快</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. 它是声明式的、更安全（无代码执行）并遵循 PEP 标准</BaseQuizOption>
+<BaseQuizOption value="C">C. 它需要的配置更少</BaseQuizOption>
+<BaseQuizOption value="D">D. 它只适用于 Python 3.10+</BaseQuizOption>
+<BaseQuizAnswer><code>pyproject.toml</code> 方法是声明式的（所有元数据集中在一个地方），比执行代码的 <code>setup.py</code> 更安全，并且遵循 PEP 标准（PEP-517、PEP-518、PEP-660）以获得更好的工具支持。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 选择正确的方法
 

@@ -58,19 +58,17 @@ usr/bin/spam
 
 경로 구분 기호가 Windows 와 Unix 기반 운영 체제 간에 다르다는 점에 유의하십시오. 이것이 바로 문자열을 연결하여 경로를 결합하는 대신 `pathlib`을 사용하려는 이유입니다.
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-file-directory-path-1">
+<BaseQuiz id="cheatsheet-file-directory-path-1" correct="B">
 <template #question>
 Python 에서 pathlib 를 사용하여 경로를 결합하는 올바른 방법은 무엇입니까?
 </template>
 
-<base-quiz-option value="A">A. <code>Path('usr') + 'bin' + 'spam'</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>Path('usr') / 'bin' / 'spam'</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>Path('usr').join('bin').join('spam')</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>Path('usr/bin/spam')</code></base-quiz-option>
-<base-quiz-answer value="B"><code>/</code> 연산자는 pathlib 로 경로를 결합하는 권장되는 방법입니다. 크로스 플랫폼으로 작동하며 문자열 연결보다 가독성이 좋습니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>Path('usr') + 'bin' + 'spam'</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>Path('usr') / 'bin' / 'spam'</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>Path('usr').join('bin').join('spam')</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>Path('usr/bin/spam')</code></BaseQuizOption>
+<BaseQuizAnswer><code>/</code> 연산자는 pathlib 로 경로를 결합하는 권장되는 방법입니다. 크로스 플랫폼으로 작동하며 문자열 연결보다 가독성이 좋습니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 경로를 결합하는 것은 동일한 디렉터리 아래에 다른 파일 경로를 생성해야 할 때 유용합니다.
 
@@ -199,19 +197,17 @@ Path('..').is_absolute()
 False
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-file-directory-path-2">
+<BaseQuiz id="cheatsheet-file-directory-path-2" correct="A">
 <template #question>
 <code>Path('/').is_absolute()</code>는 무엇을 반환합니까?
 </template>
 
-<base-quiz-option value="A" correct>A. <code>True</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>False</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>None</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>'/'</code></base-quiz-option>
-<base-quiz-answer value="A"><code>is_absolute()</code> 메서드는 절대 경로 (Unix 에서는 <code>/</code>로 시작하거나 Windows 에서는 드라이브 문자로 시작하는 경로) 에 대해 <code>True</code>를 반환합니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. <code>True</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>False</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>None</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>'/'</code></BaseQuizOption>
+<BaseQuizAnswer><code>is_absolute()</code> 메서드는 절대 경로 (Unix 에서는 <code>/</code>로 시작하거나 Windows 에서는 드라이브 문자로 시작하는 경로) 에 대해 <code>True</code>를 반환합니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 `pathlib`을 사용하여 절대 경로를 추출할 수 있습니다:
 
@@ -315,19 +311,17 @@ Path('nonexistentfile').is_file()
 False
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-file-directory-path-3">
+<BaseQuiz id="cheatsheet-file-directory-path-3" correct="C">
 <template #question>
 setup.py 가 존재하는 경우 <code>Path('setup.py').is_file()</code>은 무엇을 반환합니까?
 </template>
 
-<base-quiz-option value="A">A. <code>'setup.py'</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>False</code></base-quiz-option>
-<base-quiz-option value="C" correct>C. <code>True</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>None</code></base-quiz-option>
-<base-quiz-answer value="C"><code>is_file()</code> 메서드는 경로가 존재하고 파일인 경우 <code>True</code>를 반환하고 그렇지 않으면 <code>False</code>를 반환합니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>'setup.py'</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>False</code></BaseQuizOption>
+<BaseQuizOption value="C" correct>C. <code>True</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>None</code></BaseQuizOption>
+<BaseQuizAnswer><code>is_file()</code> 메서드는 경로가 존재하고 파일인 경우 <code>True</code>를 반환하고 그렇지 않으면 <code>False</code>를 반환합니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ### 경로가 디렉터리인지 확인
 
@@ -458,19 +452,17 @@ shutil.copy('/tmp/eggs.txt', '/tmp/delicious/eggs2.txt')
 /tmp/delicious/eggs2.txt
 ```
 
-<base-quiz>
-<base-quiz-question correct="D" id="cheatsheet-file-directory-path-4">
+<BaseQuiz id="cheatsheet-file-directory-path-4" correct="D">
 <template #question>
 모든 하위 디렉터리와 파일을 포함하여 전체 디렉터리 트리를 복사하려면 어떤 함수를 사용해야 합니까?
 </template>
 
-<base-quiz-option value="A">A. <code>shutil.copy()</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>Path.copy()</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>os.copy()</code></base-quiz-option>
-<base-quiz-option value="D" correct>D. <code>shutil.copytree()</code></base-quiz-option>
-<base-quiz-answer value="D"><code>shutil.copytree()</code> 함수는 전체 디렉터리 트리를 재귀적으로 복사하는 반면 <code>shutil.copy()</code>는 단일 파일만 복사합니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>shutil.copy()</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>Path.copy()</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>os.copy()</code></BaseQuizOption>
+<BaseQuizOption value="D" correct>D. <code>shutil.copytree()</code></BaseQuizOption>
+<BaseQuizAnswer><code>shutil.copytree()</code> 함수는 전체 디렉터리 트리를 재귀적으로 복사하는 반면 <code>shutil.copy()</code>는 단일 파일만 복사합니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 `shutil.copy()`는 단일 파일을 복사하지만 `shutil.copytree()`는 전체 폴더와 그 안에 포함된 모든 폴더 및 파일을 복사합니다:
 
@@ -522,19 +514,17 @@ shutil.move('/tmp/bacon.txt', '/tmp/eggs')
 - `Path.rmdir()`을 호출하면 해당 경로의 폴더가 삭제됩니다. 이 폴더에는 파일이나 폴더가 없어야 합니다.
 - `shutil.rmtree(path)`를 호출하면 해당 경로의 폴더가 제거되고 포함된 모든 파일과 폴더도 삭제됩니다.
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-file-directory-path-5">
+<BaseQuiz id="cheatsheet-file-directory-path-5" correct="B">
 <template #question>
 비어 있지 않은 디렉터리와 그 내용을 모두 삭제할 수 있는 메서드는 무엇입니까?
 </template>
 
-<base-quiz-option value="A">A. <code>Path.rmdir()</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>shutil.rmtree()</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>Path.unlink()</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>os.remove()</code></base-quiz-option>
-<base-quiz-answer value="B"><code>shutil.rmtree()</code> 함수는 디렉터리와 그 내용을 재귀적으로 삭제할 수 있습니다. <code>Path.rmdir()</code>은 비어 있는 디렉터리에서만 작동합니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>Path.rmdir()</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>shutil.rmtree()</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>Path.unlink()</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>os.remove()</code></BaseQuizOption>
+<BaseQuizAnswer><code>shutil.rmtree()</code> 함수는 디렉터리와 그 내용을 재귀적으로 삭제할 수 있습니다. <code>Path.rmdir()</code>은 비어 있는 디렉터리에서만 작동합니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 디렉터리 트리 순회
 

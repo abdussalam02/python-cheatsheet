@@ -80,19 +80,17 @@ say_hi(name='Anna', greeting='Hi')
 Hi Anna
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-functions-1">
+<BaseQuiz id="cheatsheet-functions-1" correct="C">
 <template #question>
 Qual é a principal vantagem de usar argumentos de palavra-chave em funções Python?
 </template>
 
-<base-quiz-option value="A">A. Eles são executados mais rapidamente</base-quiz-option>
-<base-quiz-option value="B">B. Eles usam menos memória</base-quiz-option>
-<base-quiz-option value="C" correct>C. Eles melhoram a legibilidade do código e a ordem não importa</base-quiz-option>
-<base-quiz-option value="D">D. Eles previnem erros</base-quiz-option>
-<base-quiz-answer value="C">Argumentos de palavra-chave melhoram a legibilidade do código ao deixar claro o que cada argumento representa, e eles permitem que você passe argumentos em qualquer ordem.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Eles são executados mais rapidamente</BaseQuizOption>
+<BaseQuizOption value="B">B. Eles usam menos memória</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. Eles melhoram a legibilidade do código e a ordem não importa</BaseQuizOption>
+<BaseQuizOption value="D">D. Eles previnem erros</BaseQuizOption>
+<BaseQuizAnswer>Argumentos de palavra-chave melhoram a legibilidade do código ao deixar claro o que cada argumento representa, e eles permitem que você passe argumentos em qualquer ordem.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Valores de Retorno
 
@@ -116,19 +114,17 @@ print(result)
 15
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-functions-2">
+<BaseQuiz id="cheatsheet-functions-2" correct="A">
 <template #question>
 Qual palavra-chave é usada para retornar um valor de uma função em Python?
 </template>
 
-<base-quiz-option value="A" correct>A. <code>return</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>output</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>yield</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>exit</code></base-quiz-option>
-<base-quiz-answer value="A">A palavra-chave <code>return</code> é usada para retornar um valor de uma função. Se nenhuma instrução return for usada, a função retorna <code>None</code>.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. <code>return</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>output</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>yield</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>exit</code></BaseQuizOption>
+<BaseQuizAnswer>A palavra-chave <code>return</code> é usada para retornar um valor de uma função. Se nenhuma instrução return for usada, a função retorna <code>None</code>.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Escopo Local e Global
 
@@ -179,19 +175,17 @@ print(eggs)  # Imprime 'spam', não 'global'
 spam
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-functions-3">
+<BaseQuiz id="cheatsheet-functions-3" correct="B">
 <template #question>
 Qual palavra-chave você deve usar dentro de uma função para modificar uma variável global?
 </template>
 
-<base-quiz-option value="A">A. <code>nonlocal</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>global</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>extern</code></base-quiz-option>
-<base-quiz-option value="D">D. Nenhuma palavra-chave necessária</base-quiz-option>
-<base-quiz-answer value="B">A palavra-chave <code>global</code> deve ser usada dentro de uma função para modificar uma variável global. Sem ela, o Python criará uma variável local em vez disso.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>nonlocal</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>global</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>extern</code></BaseQuizOption>
+<BaseQuizOption value="D">D. Nenhuma palavra-chave necessária</BaseQuizOption>
+<BaseQuizAnswer>A palavra-chave <code>global</code> deve ser usada dentro de uma função para modificar uma variável global. Sem ela, o Python criará uma variável local em vez disso.</BaseQuizAnswer>
+</BaseQuiz>
 
 Existem quatro regras para saber se uma variável está em um escopo local ou global:
 
@@ -252,19 +246,17 @@ add(5, 3)
 8
 ```
 
-<base-quiz>
-<base-quiz-question correct="D" id="cheatsheet-functions-4">
+<BaseQuiz id="cheatsheet-functions-4" correct="D">
 <template #question>
 O que é uma função lambda em Python?
 </template>
 
-<base-quiz-option value="A">A. Uma função que só pode ser chamada uma vez</base-quiz-option>
-<base-quiz-option value="B">B. Uma função que não recebe argumentos</base-quiz-option>
-<base-quiz-option value="C">C. Uma função que retorna múltiplos valores</base-quiz-option>
-<base-quiz-option value="D" correct>D. Uma função anônima de linha única que pode ter qualquer número de argumentos, mas apenas uma expressão</base-quiz-option>
-<base-quiz-answer value="D">Uma função lambda é uma função anônima de linha única definida usando a palavra-chave <code>lambda</code>. Ela pode aceitar qualquer número de argumentos, mas pode conter apenas uma única expressão.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Uma função que só pode ser chamada uma vez</BaseQuizOption>
+<BaseQuizOption value="B">B. Uma função que não recebe argumentos</BaseQuizOption>
+<BaseQuizOption value="C">C. Uma função que retorna múltiplos valores</BaseQuizOption>
+<BaseQuizOption value="D" correct>D. Uma função anônima de linha única que pode ter qualquer número de argumentos, mas apenas uma expressão</BaseQuizOption>
+<BaseQuizAnswer>Uma função lambda é uma função anônima de linha única definida usando a palavra-chave <code>lambda</code>. Ela pode aceitar qualquer número de argumentos, mas pode conter apenas uma única expressão.</BaseQuizAnswer>
+</BaseQuiz>
 
 Assim como as funções aninhadas regulares, as lambdas também funcionam como fechamentos lexicais (closures):
 
@@ -292,19 +284,17 @@ plus_5(4)
 9
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-functions-5">
+<BaseQuiz id="cheatsheet-functions-5" correct="A">
 <template #question>
 O que um fechamento lambda permite que você faça?
 </template>
 
-<base-quiz-option value="A" correct>A. Capturar variáveis do escopo externo</base-quiz-option>
-<base-quiz-option value="B">B. Modificar variáveis globais sem a palavra-chave global</base-quiz-option>
-<base-quiz-option value="C">C. Retornar múltiplos valores</base-quiz-option>
-<base-quiz-option value="D">D. Executar código de forma assíncrona</base-quiz-option>
-<base-quiz-answer value="A">Fechamentos lambda permitem que funções lambda capturem e usem variáveis de seu escopo circundante, de forma semelhante às funções aninhadas regulares.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. Capturar variáveis do escopo externo</BaseQuizOption>
+<BaseQuizOption value="B">B. Modificar variáveis globais sem a palavra-chave global</BaseQuizOption>
+<BaseQuizOption value="C">C. Retornar múltiplos valores</BaseQuizOption>
+<BaseQuizOption value="D">D. Executar código de forma assíncrona</BaseQuizOption>
+<BaseQuizAnswer>Fechamentos lambda permitem que funções lambda capturem e usem variáveis de seu escopo circundante, de forma semelhante às funções aninhadas regulares.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Links Relevantes
 

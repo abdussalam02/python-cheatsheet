@@ -104,19 +104,17 @@ mo.group()
 '415-555-4242'
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-regular-expressions-1">
+<BaseQuiz id="cheatsheet-regular-expressions-1" correct="A">
 <template #question>
 当在匹配对象上调用 <code>group()</code> 时，它返回什么？
 </template>
 
-<base-quiz-option value="A" correct>A. 整个匹配的文本</base-quiz-option>
-<base-quiz-option value="B">B. 仅第一个组</base-quiz-option>
-<base-quiz-option value="C">C. 所有组作为一个列表</base-quiz-option>
-<base-quiz-option value="D">D. 匹配的索引</base-quiz-option>
-<base-quiz-answer value="A"><code>group()</code> 方法（或 <code>group(0)</code>）返回整个匹配的文本。要获取特定组，请使用 <code>group(1)</code>、<code>group(2)</code> 等。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. 整个匹配的文本</BaseQuizOption>
+<BaseQuizOption value="B">B. 仅第一个组</BaseQuizOption>
+<BaseQuizOption value="C">C. 所有组作为一个列表</BaseQuizOption>
+<BaseQuizOption value="D">D. 匹配的索引</BaseQuizOption>
+<BaseQuizAnswer><code>group()</code> 方法（或 <code>group(0)</code>）返回整个匹配的文本。要获取特定组，请使用 <code>group(1)</code>、<code>group(2)</code> 等。</BaseQuizAnswer>
+</BaseQuiz>
 
 要一次性检索所有组，请使用 `groups()` 方法：
 
@@ -342,19 +340,17 @@ mo2.group()
 'HaHaHa'
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-regular-expressions-2">
+<BaseQuiz id="cheatsheet-regular-expressions-2" correct="B">
 <template #question>
 什么使得正则表达式模式成为非贪婪的？
 </template>
 
-<base-quiz-option value="A">A. 使用 <code>_</code> 而不是 <code>+</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. 在量词后添加一个 <code>?</code> (例如 <code>_?</code>, <code>+?</code>, <code>{3,5}?</code>)</base-quiz-option>
-<base-quiz-option value="C">C. 使用圆括号</base-quiz-option>
-<base-quiz-option value="D">D. 使用方括号</base-quiz-option>
-<base-quiz-answer value="B">在 <code>\*</code>、<code>+</code> 或 <code>{n,m}</code> 等量词后添加 <code>?</code> 会使其成为非贪婪的，匹配最短的可能字符串而不是最长的。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 使用 <code>_</code> 而不是 <code>+</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. 在量词后添加一个 <code>?</code> (例如 <code>_?</code>, <code>+?</code>, <code>{3,5}?</code>)</BaseQuizOption>
+<BaseQuizOption value="C">C. 使用圆括号</BaseQuizOption>
+<BaseQuizOption value="D">D. 使用方括号</BaseQuizOption>
+<BaseQuizAnswer>在 <code>\*</code>、<code>+</code> 或 <code>{n,m}</code> 等量词后添加 <code>?</code> 会使其成为非贪婪的，匹配最短的可能字符串而不是最长的。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## findall() 方法
 
@@ -579,19 +575,17 @@ names_regex.sub('CENSORED', 'Agent Alice gave the secret documents to Agent Bob.
 'CENSORED gave the secret documents to CENSORED.'
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-regular-expressions-3">
+<BaseQuiz id="cheatsheet-regular-expressions-3" correct="B">
 <template #question>
 <code>sub()</code> 方法的作用是什么？
 </template>
 
-<base-quiz-option value="A">A. 查找字符串中的所有匹配项</base-quiz-option>
-<base-quiz-option value="B" correct>B. 用替换字符串替换所有匹配项</base-quiz-option>
-<base-quiz-option value="C">C. 在匹配处分割字符串</base-quiz-option>
-<base-quiz-option value="D">D. 验证字符串格式</base-quiz-option>
-<base-quiz-answer value="B"><code>sub()</code> 方法用替换字符串替换模式的所有匹配项。它返回一个应用了替换的新字符串。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 查找字符串中的所有匹配项</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. 用替换字符串替换所有匹配项</BaseQuizOption>
+<BaseQuizOption value="C">C. 在匹配处分割字符串</BaseQuizOption>
+<BaseQuizOption value="D">D. 验证字符串格式</BaseQuizOption>
+<BaseQuizAnswer><code>sub()</code> 方法用替换字符串替换模式的所有匹配项。它返回一个应用了替换的新字符串。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 管理复杂的 Regexes
 
@@ -616,19 +610,17 @@ phone_regex = re.compile(r'''(
     )''', re.VERBOSE)
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-regular-expressions-4">
+<BaseQuiz id="cheatsheet-regular-expressions-4" correct="A">
 <template #question>
 传递给 <code>re.compile()</code> 的 <code>re.VERBOSE</code> 会做什么？
 </template>
 
-<base-quiz-option value="A" correct>A. 允许在 regex 模式中使用空格和注释以提高可读性</base-quiz-option>
-<base-quiz-option value="B">B. 使 regex 忽略大小写</base-quiz-option>
-<base-quiz-option value="C">C. 使点字符匹配换行符</base-quiz-option>
-<base-quiz-option value="D">D. 加快 regex 匹配速度</base-quiz-option>
-<base-quiz-answer value="A"><code>re.VERBOSE</code> 标志允许您在正则表达式模式中添加空格和注释，使复杂的正则表达式更具可读性，同时不影响模式匹配。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. 允许在 regex 模式中使用空格和注释以提高可读性</BaseQuizOption>
+<BaseQuizOption value="B">B. 使 regex 忽略大小写</BaseQuizOption>
+<BaseQuizOption value="C">C. 使点字符匹配换行符</BaseQuizOption>
+<BaseQuizOption value="D">D. 加快 regex 匹配速度</BaseQuizOption>
+<BaseQuizAnswer><code>re.VERBOSE</code> 标志允许您在正则表达式模式中添加空格和注释，使复杂的正则表达式更具可读性，同时不影响模式匹配。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 相关链接
 

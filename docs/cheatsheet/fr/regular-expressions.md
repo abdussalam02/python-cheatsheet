@@ -104,19 +104,17 @@ mo.group()
 '415-555-4242'
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-regular-expressions-1">
+<BaseQuiz id="cheatsheet-regular-expressions-1" correct="A">
 <template #question>
 Que renvoie <code>group()</code> lorsqu'il est appelé sur un objet match ?
 </template>
 
-<base-quiz-option value="A" correct>A. Le texte correspondant entier</base-quiz-option>
-<base-quiz-option value="B">B. Le premier groupe uniquement</base-quiz-option>
-<base-quiz-option value="C">C. Tous les groupes sous forme de liste</base-quiz-option>
-<base-quiz-option value="D">D. L'index de la correspondance</base-quiz-option>
-<base-quiz-answer value="A">La méthode <code>group()</code> (ou <code>group(0)</code>) renvoie le texte correspondant entier. Pour obtenir des groupes spécifiques, utilisez <code>group(1)</code>, <code>group(2)</code>, etc.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. Le texte correspondant entier</BaseQuizOption>
+<BaseQuizOption value="B">B. Le premier groupe uniquement</BaseQuizOption>
+<BaseQuizOption value="C">C. Tous les groupes sous forme de liste</BaseQuizOption>
+<BaseQuizOption value="D">D. L'index de la correspondance</BaseQuizOption>
+<BaseQuizAnswer>La méthode <code>group()</code> (ou <code>group(0)</code>) renvoie le texte correspondant entier. Pour obtenir des groupes spécifiques, utilisez <code>group(1)</code>, <code>group(2)</code>, etc.</BaseQuizAnswer>
+</BaseQuiz>
 
 Pour récupérer tous les groupes en une seule fois, utilisez la méthode `groups()` :
 
@@ -342,19 +340,17 @@ mo2.group()
 'HaHaHa'
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-regular-expressions-2">
+<BaseQuiz id="cheatsheet-regular-expressions-2" correct="B">
 <template #question>
 Qu'est-ce qui rend un motif regex non gourmand ?
 </template>
 
-<base-quiz-option value="A">A. Utiliser <code>_</code> au lieu de <code>+</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. Ajouter un <code>?</code> après le quantificateur (ex : <code>_?</code>, <code>+?</code>, <code>{3,5}?</code>)</base-quiz-option>
-<base-quiz-option value="C">C. Utiliser des parenthèses</base-quiz-option>
-<base-quiz-option value="D">D. Utiliser des crochets</base-quiz-option>
-<base-quiz-answer value="B">L'ajout d'un <code>?</code> après les quantificateurs comme <code>\*</code>, <code>+</code>, ou <code>{n,m}</code> les rend non gourmands, faisant correspondre la chaîne la plus courte possible au lieu de la plus longue.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Utiliser <code>_</code> au lieu de <code>+</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Ajouter un <code>?</code> après le quantificateur (ex : <code>_?</code>, <code>+?</code>, <code>{3,5}?</code>)</BaseQuizOption>
+<BaseQuizOption value="C">C. Utiliser des parenthèses</BaseQuizOption>
+<BaseQuizOption value="D">D. Utiliser des crochets</BaseQuizOption>
+<BaseQuizAnswer>L'ajout d'un <code>?</code> après les quantificateurs comme <code>\*</code>, <code>+</code>, ou <code>{n,m}</code> les rend non gourmands, faisant correspondre la chaîne la plus courte possible au lieu de la plus longue.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## La méthode findall()
 
@@ -579,19 +575,17 @@ names_regex.sub('CENSORED', 'Agent Alice gave the secret documents to Agent Bob.
 'CENSORED gave the secret documents to CENSORED.'
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-regular-expressions-3">
+<BaseQuiz id="cheatsheet-regular-expressions-3" correct="B">
 <template #question>
 Que fait la méthode <code>sub()</code> ?
 </template>
 
-<base-quiz-option value="A">A. Trouve toutes les correspondances dans une chaîne</base-quiz-option>
-<base-quiz-option value="B" correct>B. Remplace toutes les correspondances par une chaîne de remplacement</base-quiz-option>
-<base-quiz-option value="C">C. Divise une chaîne aux correspondances</base-quiz-option>
-<base-quiz-option value="D">D. Valide le format d'une chaîne</base-quiz-option>
-<base-quiz-answer value="B">La méthode <code>sub()</code> substitue toutes les correspondances du motif par une chaîne de remplacement. Elle renvoie une nouvelle chaîne avec les substitutions appliquées.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Trouve toutes les correspondances dans une chaîne</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Remplace toutes les correspondances par une chaîne de remplacement</BaseQuizOption>
+<BaseQuizOption value="C">C. Divise une chaîne aux correspondances</BaseQuizOption>
+<BaseQuizOption value="D">D. Valide le format d'une chaîne</BaseQuizOption>
+<BaseQuizAnswer>La méthode <code>sub()</code> substitue toutes les correspondances du motif par une chaîne de remplacement. Elle renvoie une nouvelle chaîne avec les substitutions appliquées.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Gestion des Regex complexes
 
@@ -616,19 +610,17 @@ phone_regex = re.compile(r'''(
     )''', re.VERBOSE)
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-regular-expressions-4">
+<BaseQuiz id="cheatsheet-regular-expressions-4" correct="A">
 <template #question>
 Que fait <code>re.VERBOSE</code> lorsqu'il est passé à <code>re.compile()</code> ?
 </template>
 
-<base-quiz-option value="A" correct>A. Permet les espaces et les commentaires dans le motif regex pour une meilleure lisibilité</base-quiz-option>
-<base-quiz-option value="B">B. Rend le regex insensible à la casse</base-quiz-option>
-<base-quiz-option value="C">C. Fait correspondre le point aux caractères de nouvelle ligne</base-quiz-option>
-<base-quiz-option value="D">D. Accélère la correspondance regex</base-quiz-option>
-<base-quiz-answer value="A">Le drapeau <code>re.VERBOSE</code> vous permet d'ajouter des espaces et des commentaires à votre motif regex, rendant les regex complexes beaucoup plus lisibles sans affecter la correspondance du motif.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. Permet les espaces et les commentaires dans le motif regex pour une meilleure lisibilité</BaseQuizOption>
+<BaseQuizOption value="B">B. Rend le regex insensible à la casse</BaseQuizOption>
+<BaseQuizOption value="C">C. Fait correspondre le point aux caractères de nouvelle ligne</BaseQuizOption>
+<BaseQuizOption value="D">D. Accélère la correspondance regex</BaseQuizOption>
+<BaseQuizAnswer>Le drapeau <code>re.VERBOSE</code> vous permet d'ajouter des espaces et des commentaires à votre motif regex, rendant les regex complexes beaucoup plus lisibles sans affecter la correspondance du motif.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Liens pertinents
 

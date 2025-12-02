@@ -61,19 +61,17 @@ setup(
 )
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-packaging-1">
+<BaseQuiz id="cheatsheet-packaging-1" correct="C">
 <template #question>
 <code>setup.py</code> 파일에서 요구되는 세 가지 필드는 무엇입니까?
 </template>
 
-<base-quiz-option value="A">A. name, author, license</base-quiz-option>
-<base-quiz-option value="B">B. name, description, packages</base-quiz-option>
-<base-quiz-option value="C" correct>C. name, version, packages</base-quiz-option>
-<base-quiz-option value="D">D. name, version, license</base-quiz-option>
-<base-quiz-answer value="C"><code>setup.py</code>의 세 가지 필수 필드는 <code>name</code>(패키지 이름, PyPI 에서 고유해야 함), <code>version</code>(릴리스 추적) 및 <code>packages</code>(Python 소스 코드가 위치한 곳 설명) 입니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. name, author, license</BaseQuizOption>
+<BaseQuizOption value="B">B. name, description, packages</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. name, version, packages</BaseQuizOption>
+<BaseQuizOption value="D">D. name, version, license</BaseQuizOption>
+<BaseQuizAnswer><code>setup.py</code>의 세 가지 필수 필드는 <code>name</code>(패키지 이름, PyPI 에서 고유해야 함), <code>version</code>(릴리스 추적) 및 <code>packages</code>(Python 소스 코드가 위치한 곳 설명) 입니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 최신 접근 방식: pyproject.toml
 
@@ -131,19 +129,17 @@ pip install .
 pip install -e .
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-packaging-2">
+<BaseQuiz id="cheatsheet-packaging-2" correct="B">
 <template #question>
 <code>pyproject.toml</code>이 <code>setup.py</code>보다 갖는 주요 이점은 무엇입니까?
 </template>
 
-<base-quiz-option value="A">A. 실행 속도가 더 빠릅니다</base-quiz-option>
-<base-quiz-option value="B" correct>B. 선언적이며, 더 안전하고 (코드 실행 없음), PEP 표준을 따릅니다</base-quiz-option>
-<base-quiz-option value="C">C. 구성이 덜 필요합니다</base-quiz-option>
-<base-quiz-option value="D">D. Python 3.10 이상에서만 작동합니다</base-quiz-option>
-<base-quiz-answer value="B"><code>pyproject.toml</code> 접근 방식은 선언적이며 (모든 메타데이터가 한 곳에 위치), <code>setup.py</code>처럼 코드를 실행하지 않으므로 더 안전하고, 더 나은 도구 지원을 위해 PEP 표준 (PEP-517, PEP-518, PEP-660) 을 따릅니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 실행 속도가 더 빠릅니다</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. 선언적이며, 더 안전하고 (코드 실행 없음), PEP 표준을 따릅니다</BaseQuizOption>
+<BaseQuizOption value="C">C. 구성이 덜 필요합니다</BaseQuizOption>
+<BaseQuizOption value="D">D. Python 3.10 이상에서만 작동합니다</BaseQuizOption>
+<BaseQuizAnswer><code>pyproject.toml</code> 접근 방식은 선언적이며 (모든 메타데이터가 한 곳에 위치), <code>setup.py</code>처럼 코드를 실행하지 않으므로 더 안전하고, 더 나은 도구 지원을 위해 PEP 표준 (PEP-517, PEP-518, PEP-660) 을 따릅니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 올바른 접근 방식 선택
 

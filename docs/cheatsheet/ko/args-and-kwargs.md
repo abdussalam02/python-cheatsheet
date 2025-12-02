@@ -69,19 +69,17 @@ some_function('arg1', 'arg2', 'arg3')
 Arguments passed: ('arg1', 'arg2', 'arg3') as <class 'tuple'>
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-args-and-kwargs-1">
+<BaseQuiz id="cheatsheet-args-and-kwargs-1" correct="B">
 <template #question>
 <code>*args</code>는 인수를 어떤 데이터 타입으로 수집합니까?
 </template>
 
-<base-quiz-option value="A">A. 리스트</base-quiz-option>
-<base-quiz-option value="B" correct>B. 튜플</base-quiz-option>
-<base-quiz-option value="C">C. 딕셔너리</base-quiz-option>
-<base-quiz-option value="D">D. 집합</base-quiz-option>
-<base-quiz-answer value="B"><code>\*args</code> 매개변수는 위치 인수를 튜플로 수집합니다. 이를 통해 함수는 임의의 수의 위치 인수를 허용할 수 있습니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 리스트</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. 튜플</BaseQuizOption>
+<BaseQuizOption value="C">C. 딕셔너리</BaseQuizOption>
+<BaseQuizOption value="D">D. 집합</BaseQuizOption>
+<BaseQuizAnswer><code>\*args</code> 매개변수는 위치 인수를 튜플로 수집합니다. 이를 통해 함수는 임의의 수의 위치 인수를 허용할 수 있습니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## kwargs
 
@@ -100,19 +98,17 @@ some_function(key1='arg1', key2='arg2')
 keywords: {'key1': 'arg1', 'key2': 'arg2'} as <class 'dict'>
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-args-and-kwargs-2">
+<BaseQuiz id="cheatsheet-args-and-kwargs-2" correct="C">
 <template #question>
 <code>**kwargs</code>는 인수를 어떤 데이터 타입으로 수집합니까?
 </template>
 
-<base-quiz-option value="A">A. 리스트</base-quiz-option>
-<base-quiz-option value="B">B. 튜플</base-quiz-option>
-<base-quiz-option value="C" correct>C. 딕셔너리</base-quiz-option>
-<base-quiz-option value="D">D. 집합</base-quiz-option>
-<base-quiz-answer value="C"><code>\*\*kwargs</code> 매개변수는 키워드 인수를 딕셔너리로 수집합니다. 이를 통해 함수는 임의의 수의 키워드 인수를 허용할 수 있습니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 리스트</BaseQuizOption>
+<BaseQuizOption value="B">B. 튜플</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. 딕셔너리</BaseQuizOption>
+<BaseQuizOption value="D">D. 집합</BaseQuizOption>
+<BaseQuizAnswer><code>\*\*kwargs</code> 매개변수는 키워드 인수를 딕셔너리로 수집합니다. 이를 통해 함수는 임의의 수의 키워드 인수를 허용할 수 있습니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 관련 링크
 

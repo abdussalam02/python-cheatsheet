@@ -104,19 +104,17 @@ mo.group()
 '415-555-4242'
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-regular-expressions-1">
+<BaseQuiz id="cheatsheet-regular-expressions-1" correct="A">
 <template #question>
 Was gibt <code>group()</code> zurück, wenn es auf ein Match-Objekt aufgerufen wird?
 </template>
 
-<base-quiz-option value="A" correct>A. Der gesamte gefundene Text</base-quiz-option>
-<base-quiz-option value="B">B. Nur die erste Gruppe</base-quiz-option>
-<base-quiz-option value="C">C. Alle Gruppen als Liste</base-quiz-option>
-<base-quiz-option value="D">D. Der Index des Treffers</base-quiz-option>
-<base-quiz-answer value="A">Die Methode <code>group()</code> (oder <code>group(0)</code>) gibt den gesamten gefundenen Text zurück. Um spezifische Gruppen zu erhalten, verwenden Sie <code>group(1)</code>, <code>group(2)</code> usw.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. Der gesamte gefundene Text</BaseQuizOption>
+<BaseQuizOption value="B">B. Nur die erste Gruppe</BaseQuizOption>
+<BaseQuizOption value="C">C. Alle Gruppen als Liste</BaseQuizOption>
+<BaseQuizOption value="D">D. Der Index des Treffers</BaseQuizOption>
+<BaseQuizAnswer>Die Methode <code>group()</code> (oder <code>group(0)</code>) gibt den gesamten gefundenen Text zurück. Um spezifische Gruppen zu erhalten, verwenden Sie <code>group(1)</code>, <code>group(2)</code> usw.</BaseQuizAnswer>
+</BaseQuiz>
 
 Um alle Gruppen auf einmal abzurufen, verwenden Sie die Methode `groups()`:
 
@@ -342,19 +340,17 @@ mo2.group()
 'HaHaHa'
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-regular-expressions-2">
+<BaseQuiz id="cheatsheet-regular-expressions-2" correct="B">
 <template #question>
 Was macht ein Regex-Muster nicht-gierig?
 </template>
 
-<base-quiz-option value="A">A. Verwendung von <code>_</code> anstelle von <code>+</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. Hinzufügen eines <code>?</code> nach dem Quantifizierer (z. B. <code>_?</code>, <code>+?</code>, <code>{3,5}?</code>)</base-quiz-option>
-<base-quiz-option value="C">C. Verwendung von Klammern</base-quiz-option>
-<base-quiz-option value="D">D. Verwendung von eckigen Klammern</base-quiz-option>
-<base-quiz-answer value="B">Das Hinzufügen eines <code>?</code> nach Quantifizierern wie <code>\*</code>, <code>+</code> oder <code>{n,m}</code> macht diese nicht-gierig und lässt sie die kürzestmögliche Zeichenfolge abgleichen, anstatt der längsten.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Verwendung von <code>_</code> anstelle von <code>+</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Hinzufügen eines <code>?</code> nach dem Quantifizierer (z. B. <code>_?</code>, <code>+?</code>, <code>{3,5}?</code>)</BaseQuizOption>
+<BaseQuizOption value="C">C. Verwendung von Klammern</BaseQuizOption>
+<BaseQuizOption value="D">D. Verwendung von eckigen Klammern</BaseQuizOption>
+<BaseQuizAnswer>Das Hinzufügen eines <code>?</code> nach Quantifizierern wie <code>\*</code>, <code>+</code> oder <code>{n,m}</code> macht diese nicht-gierig und lässt sie die kürzestmögliche Zeichenfolge abgleichen, anstatt der längsten.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Die findall()-Methode
 
@@ -579,19 +575,17 @@ names_regex.sub('ZENSIERT', 'Agent Alice gab die geheimen Dokumente an Agent Bob
 'ZENSIERT gab die geheimen Dokumente an ZENSIERT.'
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-regular-expressions-3">
+<BaseQuiz id="cheatsheet-regular-expressions-3" correct="B">
 <template #question>
 Was bewirkt die Methode <code>sub()</code>?
 </template>
 
-<base-quiz-option value="A">A. Findet alle Übereinstimmungen in einem String</base-quiz-option>
-<base-quiz-option value="B" correct>B. Ersetzt alle Übereinstimmungen durch einen Ersatzstring</base-quiz-option>
-<base-quiz-option value="C">C. Teilt einen String an Übereinstimmungen</base-quiz-option>
-<base-quiz-option value="D">D. Validiert ein Stringformat</base-quiz-option>
-<base-quiz-answer value="B">Die Methode <code>sub()</code> ersetzt alle Übereinstimmungen des Musters durch einen Ersatzstring. Sie gibt einen neuen String mit den angewendeten Ersetzungen zurück.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Findet alle Übereinstimmungen in einem String</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Ersetzt alle Übereinstimmungen durch einen Ersatzstring</BaseQuizOption>
+<BaseQuizOption value="C">C. Teilt einen String an Übereinstimmungen</BaseQuizOption>
+<BaseQuizOption value="D">D. Validiert ein Stringformat</BaseQuizOption>
+<BaseQuizAnswer>Die Methode <code>sub()</code> ersetzt alle Übereinstimmungen des Musters durch einen Ersatzstring. Sie gibt einen neuen String mit den angewendeten Ersetzungen zurück.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Verwaltung komplexer Regexes
 
@@ -616,19 +610,17 @@ phone_regex = re.compile(r'''(
     )''', re.VERBOSE)
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-regular-expressions-4">
+<BaseQuiz id="cheatsheet-regular-expressions-4" correct="A">
 <template #question>
 Was bewirkt <code>re.VERBOSE</code>, wenn es an <code>re.compile()</code> übergeben wird?
 </template>
 
-<base-quiz-option value="A" correct>A. Ermöglicht Leerzeichen und Kommentare im Regex-Muster zur besseren Lesbarkeit</base-quiz-option>
-<base-quiz-option value="B">B. Macht das Regex fallunempfindlich</base-quiz-option>
-<base-quiz-option value="C">C. Lässt den Punkt Zeilenumbrüche abgleichen</base-quiz-option>
-<base-quiz-option value="D">D. Beschleunigt das Regex-Matching</base-quiz-option>
-<base-quiz-answer value="A">Das Flag <code>re.VERBOSE</code> ermöglicht es Ihnen, Leerzeichen und Kommentare zu Ihrem Regex-Muster hinzuzufügen, was komplexe Regexes viel lesbarer macht, ohne das Muster-Matching zu beeinflussen.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. Ermöglicht Leerzeichen und Kommentare im Regex-Muster zur besseren Lesbarkeit</BaseQuizOption>
+<BaseQuizOption value="B">B. Macht das Regex fallunempfindlich</BaseQuizOption>
+<BaseQuizOption value="C">C. Lässt den Punkt Zeilenumbrüche abgleichen</BaseQuizOption>
+<BaseQuizOption value="D">D. Beschleunigt das Regex-Matching</BaseQuizOption>
+<BaseQuizAnswer>Das Flag <code>re.VERBOSE</code> ermöglicht es Ihnen, Leerzeichen und Kommentare zu Ihrem Regex-Muster hinzuzufügen, was komplexe Regexes viel lesbarer macht, ohne das Muster-Matching zu beeinflussen.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Relevante Links
 

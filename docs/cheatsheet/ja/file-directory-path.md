@@ -58,19 +58,17 @@ usr/bin/spam
 
 パス区切り文字が Windows と Unix ベースのオペレーティングシステムで異なることに注意してください。これが、パスを結合するために文字列を結合する代わりに `pathlib` を使用したい理由です。
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-file-directory-path-1">
+<BaseQuiz id="cheatsheet-file-directory-path-1" correct="B">
 <template #question>
 Python で pathlib を使用してパスを結合する正しい方法はどれですか？
 </template>
 
-<base-quiz-option value="A">A. <code>Path('usr') + 'bin' + 'spam'</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>Path('usr') / 'bin' / 'spam'</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>Path('usr').join('bin').join('spam')</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>Path('usr/bin/spam')</code></base-quiz-option>
-<base-quiz-answer value="B"><code>/</code> 演算子は、pathlib でパスを結合するための推奨される方法です。クロスプラットフォームで動作し、文字列連結よりも読みやすいです。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>Path('usr') + 'bin' + 'spam'</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>Path('usr') / 'bin' / 'spam'</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>Path('usr').join('bin').join('spam')</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>Path('usr/bin/spam')</code></BaseQuizOption>
+<BaseQuizAnswer><code>/</code> 演算子は、pathlib でパスを結合するための推奨される方法です。クロスプラットフォームで動作し、文字列連結よりも読みやすいです。</BaseQuizAnswer>
+</BaseQuiz>
 
 同じディレクトリの下に異なるファイルパスを作成する必要がある場合、パスの結合は役立ちます。
 
@@ -199,19 +197,17 @@ Path('..').is_absolute()
 False
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-file-directory-path-2">
+<BaseQuiz id="cheatsheet-file-directory-path-2" correct="A">
 <template #question>
 <code>Path('/').is_absolute()</code> は何を返しますか？
 </template>
 
-<base-quiz-option value="A" correct>A. <code>True</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>False</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>None</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>'/'</code></base-quiz-option>
-<base-quiz-answer value="A"><code>is_absolute()</code> メソッドは、絶対パス（Unix では <code>/</code> で始まるパス、Windows ではドライブ文字で始まるパス）に対して <code>True</code> を返します。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. <code>True</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>False</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>None</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>'/'</code></BaseQuizOption>
+<BaseQuizAnswer><code>is_absolute()</code> メソッドは、絶対パス（Unix では <code>/</code> で始まるパス、Windows ではドライブ文字で始まるパス）に対して <code>True</code> を返します。</BaseQuizAnswer>
+</BaseQuiz>
 
 `pathlib` を使用して絶対パスを抽出できます：
 
@@ -315,19 +311,17 @@ Path('nonexistentfile').is_file()
 False
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-file-directory-path-3">
+<BaseQuiz id="cheatsheet-file-directory-path-3" correct="C">
 <template #question>
 setup.py が存在する場合、<code>Path('setup.py').is_file()</code> は何を返しますか？
 </template>
 
-<base-quiz-option value="A">A. <code>'setup.py'</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>False</code></base-quiz-option>
-<base-quiz-option value="C" correct>C. <code>True</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>None</code></base-quiz-option>
-<base-quiz-answer value="C"><code>is_file()</code> メソッドは、パスが存在しファイルである場合に <code>True</code> を返し、そうでない場合は <code>False</code> を返します。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>'setup.py'</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>False</code></BaseQuizOption>
+<BaseQuizOption value="C" correct>C. <code>True</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>None</code></BaseQuizOption>
+<BaseQuizAnswer><code>is_file()</code> メソッドは、パスが存在しファイルである場合に <code>True</code> を返し、そうでない場合は <code>False</code> を返します。</BaseQuizAnswer>
+</BaseQuiz>
 
 ### パスがディレクトリであることの確認
 
@@ -458,19 +452,17 @@ shutil.copy('/tmp/eggs.txt', '/tmp/delicious/eggs2.txt')
 /tmp/delicious/eggs2.txt
 ```
 
-<base-quiz>
-<base-quiz-question correct="D" id="cheatsheet-file-directory-path-4">
+<BaseQuiz id="cheatsheet-file-directory-path-4" correct="D">
 <template #question>
 サブディレクトリとファイルをすべて含むディレクトリツリー全体をコピーするには、どの関数を使用する必要がありますか？
 </template>
 
-<base-quiz-option value="A">A. <code>shutil.copy()</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>Path.copy()</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>os.copy()</code></base-quiz-option>
-<base-quiz-option value="D" correct>D. <code>shutil.copytree()</code></base-quiz-option>
-<base-quiz-answer value="D"><code>shutil.copytree()</code> 関数はディレクトリツリー全体を再帰的にコピーしますが、<code>shutil.copy()</code> は単一のファイルをコピーするだけです。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>shutil.copy()</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>Path.copy()</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>os.copy()</code></BaseQuizOption>
+<BaseQuizOption value="D" correct>D. <code>shutil.copytree()</code></BaseQuizOption>
+<BaseQuizAnswer><code>shutil.copytree()</code> 関数はディレクトリツリー全体を再帰的にコピーしますが、<code>shutil.copy()</code> は単一のファイルをコピーするだけです。</BaseQuizAnswer>
+</BaseQuiz>
 
 `shutil.copy()` は単一のファイルをコピーしますが、`shutil.copytree()` はフォルダ全体と、それに含まれるすべてのフォルダとファイルをコピーします：
 
@@ -522,19 +514,17 @@ shutil.move('/tmp/bacon.txt', '/tmp/eggs')
 - `Path.rmdir()` を呼び出すと、パス上のフォルダが削除されます。このフォルダはファイルやフォルダを含んでいてはいけません。
 - `shutil.rmtree(path)` を呼び出すと、パス上のフォルダが削除され、含まれるすべてのファイルとフォルダも削除されます。
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-file-directory-path-5">
+<BaseQuiz id="cheatsheet-file-directory-path-5" correct="B">
 <template #question>
 空でないディレクトリとそのすべてのコンテンツを削除できるメソッドはどれですか？
 </template>
 
-<base-quiz-option value="A">A. <code>Path.rmdir()</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>shutil.rmtree()</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>Path.unlink()</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>os.remove()</code></base-quiz-option>
-<base-quiz-answer value="B"><code>shutil.rmtree()</code> 関数は、ディレクトリとそのすべてのコンテンツを再帰的に削除できます。<code>Path.rmdir()</code> は空のディレクトリでのみ機能します。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>Path.rmdir()</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>shutil.rmtree()</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>Path.unlink()</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>os.remove()</code></BaseQuizOption>
+<BaseQuizAnswer><code>shutil.rmtree()</code> 関数は、ディレクトリとそのすべてのコンテンツを再帰的に削除できます。<code>Path.rmdir()</code> は空のディレクトリでのみ機能します。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## ディレクトリツリーのウォーク
 

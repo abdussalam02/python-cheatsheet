@@ -57,19 +57,17 @@ new_list
 ['Charles', 'Susan', 'Patrick', 'George']
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-comprehensions-1">
+<BaseQuiz id="cheatsheet-comprehensions-1" correct="A">
 <template #question>
 リスト内包表記の基本的な構文は何ですか？
 </template>
 
-<base-quiz-option value="A" correct>A. <code>[expression for item in iterable]</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>(expression for item in iterable)</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>{expression for item in iterable}</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>expression for item in iterable</code></base-quiz-option>
-<base-quiz-answer value="A">リスト内包表記は角括弧 <code>[]</code> を使用し、構文は <code>[expression for item in iterable]</code> です。これにより、各アイテムに式を適用して新しいリストが作成されます。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. <code>[expression for item in iterable]</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>(expression for item in iterable)</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>{expression for item in iterable}</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>expression for item in iterable</code></BaseQuizOption>
+<BaseQuizAnswer>リスト内包表記は角括弧 <code>[]</code> を使用し、構文は <code>[expression for item in iterable]</code> です。これにより、各アイテムに式を適用して新しいリストが作成されます。</BaseQuizAnswer>
+</BaseQuiz>
 
 数値でも同じことができます。
 
@@ -117,19 +115,17 @@ print(new_list)
 ['Charles', 'Carol']
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-comprehensions-2">
+<BaseQuiz id="cheatsheet-comprehensions-2" correct="B">
 <template #question>
 リスト内包表記で<code>if</code>条件はどこに配置されますか？
 </template>
 
-<base-quiz-option value="A">A. <code>for</code>キーワードの前</base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>for</code>句の後</base-quiz-option>
-<base-quiz-option value="C">C. 式の中</base-quiz-option>
-<base-quiz-option value="D">D. 角括弧の前</base-quiz-option>
-<base-quiz-answer value="B">リスト内包表記では、<code>if</code>条件は<code>for</code>句の後に来ます：<code>[expression for item in iterable if condition]</code>。これにより、条件に基づいてアイテムがフィルタリングされます。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>for</code>キーワードの前</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>for</code>句の後</BaseQuizOption>
+<BaseQuizOption value="C">C. 式の中</BaseQuizOption>
+<BaseQuizOption value="D">D. 角括弧の前</BaseQuizOption>
+<BaseQuizAnswer>リスト内包表記では、<code>if</code>条件は<code>for</code>句の後に来ます：<code>[expression for item in iterable if condition]</code>。これにより、条件に基づいてアイテムがフィルタリングされます。</BaseQuizAnswer>
+</BaseQuiz>
 
 リスト内包表記で `if-else` ステートメントを使用するには：
 
@@ -180,19 +176,17 @@ c = {'name': 'Pooka', 'age': 5}
 {'Pooka': 'name', 5: 'age'}
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-comprehensions-3">
+<BaseQuiz id="cheatsheet-comprehensions-3" correct="C">
 <template #question>
 辞書内包表記に使用される構文は何ですか？
 </template>
 
-<base-quiz-option value="A">A. <code>[key: value for item in iterable]</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>(key: value for item in iterable)</code></base-quiz-option>
-<base-quiz-option value="C" correct>C. <code>{key_expression: value_expression for item in iterable}</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>{key, value for item in iterable}</code></base-quiz-option>
-<base-quiz-answer value="C">辞書内包表記は波括弧 <code>{}</code> を使用し、構文は <code>{key_expression: value_expression for item in iterable}</code> です。これはリスト内包表記に似ていますが、キーと値のペアを使用します。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>[key: value for item in iterable]</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>(key: value for item in iterable)</code></BaseQuizOption>
+<BaseQuizOption value="C" correct>C. <code>{key_expression: value_expression for item in iterable}</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>{key, value for item in iterable}</code></BaseQuizOption>
+<BaseQuizAnswer>辞書内包表記は波括弧 <code>{}</code> を使用し、構文は <code>{key_expression: value_expression for item in iterable}</code> です。これはリスト内包表記に似ていますが、キーと値のペアを使用します。</BaseQuizAnswer>
+</BaseQuiz>
 
 辞書からリスト内包表記を生成できます。
 

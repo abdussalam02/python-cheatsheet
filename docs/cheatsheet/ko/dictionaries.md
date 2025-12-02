@@ -239,19 +239,17 @@ wife
 {'name': 'Rose', 'hair': 'brown'}
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-dictionaries-1">
+<BaseQuiz id="cheatsheet-dictionaries-1" correct="B">
 <template #question>
 딕셔너리에서 <code>pop()</code>을 호출하면 어떻게 되나요?
 </template>
 
-<base-quiz-option value="A">A. 키 - 값 쌍만 제거합니다</base-quiz-option>
-<base-quiz-option value="B" correct>B. 지정된 키에 대한 값을 제거하고 반환합니다</base-quiz-option>
-<base-quiz-option value="C">C. 값을 반환하기만 하고 제거하지는 않습니다</base-quiz-option>
-<base-quiz-option value="D">D. 딕셔너리의 모든 항목을 제거합니다</base-quiz-option>
-<base-quiz-answer value="B"><code>pop()</code> 메서드는 지정된 키에 대한 키 - 값 쌍을 제거하고 해당 값을 반환합니다. 키가 존재하지 않으면 (기본값을 제공하지 않는 한) <code>KeyError</code>를 발생시킵니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 키 - 값 쌍만 제거합니다</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. 지정된 키에 대한 값을 제거하고 반환합니다</BaseQuizOption>
+<BaseQuizOption value="C">C. 값을 반환하기만 하고 제거하지는 않습니다</BaseQuizOption>
+<BaseQuizOption value="D">D. 딕셔너리의 모든 항목을 제거합니다</BaseQuizOption>
+<BaseQuizAnswer><code>pop()</code> 메서드는 지정된 키에 대한 키 - 값 쌍을 제거하고 해당 값을 반환합니다. 키가 존재하지 않으면 (기본값을 제공하지 않는 한) <code>KeyError</code>를 발생시킵니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ### popitem()
 
@@ -383,19 +381,17 @@ dict_c
 {'a': 1, 'b': 3, 'c': 4}
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-dictionaries-2">
+<BaseQuiz id="cheatsheet-dictionaries-2" correct="B">
 <template #question>
 <code>{**dict_b, **dict_a}</code>를 사용하여 두 딕셔너리를 병합할 때, 두 딕셔너리에 동일한 키가 있으면 어떻게 되나요?
 </template>
 
-<base-quiz-option value="A">A. <code>dict_b</code>의 값이 <code>dict_a</code>의 값을 덮어씁니다</base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>dict_a</code>의 값이 <code>dict_b</code>의 값을 덮어씁니다</base-quiz-option>
-<base-quiz-option value="C">C. 두 값이 리스트로 유지됩니다</base-quiz-option>
-<base-quiz-option value="D">D. 오류가 발생합니다</base-quiz-option>
-<base-quiz-answer value="B"><code>\*\*</code> 언패킹 연산자를 사용하여 딕셔너리를 병합할 때, 두 딕셔너리에 동일한 키가 있으면 나중에 오는 딕셔너리 (이 경우 <code>dict_a</code>) 의 값이 이전 딕셔너리의 값을 덮어씁니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>dict_b</code>의 값이 <code>dict_a</code>의 값을 덮어씁니다</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>dict_a</code>의 값이 <code>dict_b</code>의 값을 덮어씁니다</BaseQuizOption>
+<BaseQuizOption value="C">C. 두 값이 리스트로 유지됩니다</BaseQuizOption>
+<BaseQuizOption value="D">D. 오류가 발생합니다</BaseQuizOption>
+<BaseQuizAnswer><code>\*\*</code> 언패킹 연산자를 사용하여 딕셔너리를 병합할 때, 두 딕셔너리에 동일한 키가 있으면 나중에 오는 딕셔너리 (이 경우 <code>dict_a</code>) 의 값이 이전 딕셔너리의 값을 덮어씁니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 관련 링크
 

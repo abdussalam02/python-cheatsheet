@@ -239,19 +239,17 @@ wife
 {'name': 'Rose', 'hair': 'brown'}
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-dictionaries-1">
+<BaseQuiz id="cheatsheet-dictionaries-1" correct="B">
 <template #question>
 Que fait <code>pop()</code> lorsqu'il est appelé sur un dictionnaire ?
 </template>
 
-<base-quiz-option value="A">A. Supprime uniquement la paire clé-valeur</base-quiz-option>
-<base-quiz-option value="B" correct>B. Supprime et retourne la valeur pour la clé spécifiée</base-quiz-option>
-<base-quiz-option value="C">C. Retourne uniquement la valeur sans la supprimer</base-quiz-option>
-<base-quiz-option value="D">D. Supprime tous les éléments du dictionnaire</base-quiz-option>
-<base-quiz-answer value="B">La méthode <code>pop()</code> supprime la paire clé-valeur pour la clé spécifiée et retourne la valeur. Si la clé n'existe pas, elle lève une <code>KeyError</code> (sauf si vous fournissez une valeur par défaut).</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Supprime uniquement la paire clé-valeur</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Supprime et retourne la valeur pour la clé spécifiée</BaseQuizOption>
+<BaseQuizOption value="C">C. Retourne uniquement la valeur sans la supprimer</BaseQuizOption>
+<BaseQuizOption value="D">D. Supprime tous les éléments du dictionnaire</BaseQuizOption>
+<BaseQuizAnswer>La méthode <code>pop()</code> supprime la paire clé-valeur pour la clé spécifiée et retourne la valeur. Si la clé n'existe pas, elle lève une <code>KeyError</code> (sauf si vous fournissez une valeur par défaut).</BaseQuizAnswer>
+</BaseQuiz>
 
 ### popitem()
 
@@ -383,19 +381,17 @@ dict_c
 {'a': 1, 'b': 3, 'c': 4}
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-dictionaries-2">
+<BaseQuiz id="cheatsheet-dictionaries-2" correct="B">
 <template #question>
 Lors de la fusion de deux dictionnaires en utilisant <code>{**dict_b, **dict_a}</code>, que se passe-t-il si les deux dictionnaires ont la même clé ?
 </template>
 
-<base-quiz-option value="A">A. La valeur de <code>dict_b</code> écrase la valeur de <code>dict_a</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. La valeur de <code>dict_a</code> écrase la valeur de <code>dict_b</code></base-quiz-option>
-<base-quiz-option value="C">C. Les deux valeurs sont conservées dans une liste</base-quiz-option>
-<base-quiz-option value="D">D. Une erreur est levée</base-quiz-option>
-<base-quiz-answer value="B">Lors de la fusion de dictionnaires avec l'opérateur de dépaquetage <code>\*\*</code>, si les deux dictionnaires ont la même clé, la valeur du dictionnaire qui vient après (dans ce cas <code>dict_a</code>) écrase la valeur du dictionnaire précédent.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. La valeur de <code>dict_b</code> écrase la valeur de <code>dict_a</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. La valeur de <code>dict_a</code> écrase la valeur de <code>dict_b</code></BaseQuizOption>
+<BaseQuizOption value="C">C. Les deux valeurs sont conservées dans une liste</BaseQuizOption>
+<BaseQuizOption value="D">D. Une erreur est levée</BaseQuizOption>
+<BaseQuizAnswer>Lors de la fusion de dictionnaires avec l'opérateur de dépaquetage <code>\*\*</code>, si les deux dictionnaires ont la même clé, la valeur du dictionnaire qui vient après (dans ce cas <code>dict_a</code>) écrase la valeur du dictionnaire précédent.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Liens pertinents
 

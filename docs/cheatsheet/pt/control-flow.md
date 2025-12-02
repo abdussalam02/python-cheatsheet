@@ -90,19 +90,17 @@ True
 False
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-control-flow-1">
+<BaseQuiz id="cheatsheet-control-flow-1" correct="B">
 <template #question>
 A que avalia <code>'hello' == 'Hello'</code>?
 </template>
 
-<base-quiz-option value="A">A. <code>True</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>False</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>None</code></base-quiz-option>
-<base-quiz-option value="D">D. Levanta um erro</base-quiz-option>
-<base-quiz-answer value="B">A comparação de strings em Python diferencia maiúsculas de minúsculas. <code>'hello'</code> e <code>'Hello'</code> são strings diferentes, então a comparação retorna <code>False</code>.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>True</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>False</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>None</code></BaseQuizOption>
+<BaseQuizOption value="D">D. Levanta um erro</BaseQuizOption>
+<BaseQuizAnswer>A comparação de strings em Python diferencia maiúsculas de minúsculas. <code>'hello'</code> e <code>'Hello'</code> são strings diferentes, então a comparação retorna <code>False</code>.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Operadores Booleanos
 
@@ -232,19 +230,17 @@ else:  # Executa se a condição if for False
 You are not George
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-control-flow-2">
+<BaseQuiz id="cheatsheet-control-flow-2" correct="B">
 <template #question>
 Quando o bloco <code>else</code> é executado em uma instrução if-else?
 </template>
 
-<base-quiz-option value="A">A. Sempre</base-quiz-option>
-<base-quiz-option value="B" correct>B. Somente quando a condição <code>if</code> (e todas as condições <code>elif</code>, se presentes) forem <code>False</code></base-quiz-option>
-<base-quiz-option value="C">C. Somente quando a condição <code>if</code> for <code>True</code></base-quiz-option>
-<base-quiz-option value="D">D. Nunca</base-quiz-option>
-<base-quiz-answer value="B">O bloco <code>else</code> é executado somente quando a condição <code>if</code> e todas as condições <code>elif</code> (se houver) avaliam para <code>False</code>.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Sempre</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Somente quando a condição <code>if</code> (e todas as condições <code>elif</code>, se presentes) forem <code>False</code></BaseQuizOption>
+<BaseQuizOption value="C">C. Somente quando a condição <code>if</code> for <code>True</code></BaseQuizOption>
+<BaseQuizOption value="D">D. Nunca</BaseQuizOption>
+<BaseQuizAnswer>O bloco <code>else</code> é executado somente quando a condição <code>if</code> e todas as condições <code>elif</code> (se houver) avaliam para <code>False</code>.</BaseQuizAnswer>
+</BaseQuiz>
 
 Somente depois que a expressão da instrução `if` for `False`, a instrução `elif` é avaliada e executada:
 
@@ -501,19 +497,17 @@ Hello, world.
 Hello, world.
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-control-flow-3">
+<BaseQuiz id="cheatsheet-control-flow-3" correct="A">
 <template #question>
 O que um loop <code>while</code> faz?
 </template>
 
-<base-quiz-option value="A" correct>A. Repete o código enquanto a condição for <code>True</code></base-quiz-option>
-<base-quiz-option value="B">B. Executa o código exatamente uma vez</base-quiz-option>
-<base-quiz-option value="C">C. Executa o código um número fixo de vezes</base-quiz-option>
-<base-quiz-option value="D">D. Pula a execução do código</base-quiz-option>
-<base-quiz-answer value="A">Um loop <code>while</code> executa repetidamente um bloco de código enquanto a condição for avaliada como <code>True</code>. Quando a condição se torna <code>False</code>, o loop para.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. Repete o código enquanto a condição for <code>True</code></BaseQuizOption>
+<BaseQuizOption value="B">B. Executa o código exatamente uma vez</BaseQuizOption>
+<BaseQuizOption value="C">C. Executa o código um número fixo de vezes</BaseQuizOption>
+<BaseQuizOption value="D">D. Pula a execução do código</BaseQuizOption>
+<BaseQuizAnswer>Um loop <code>while</code> executa repetidamente um bloco de código enquanto a condição for avaliada como <code>True</code>. Quando a condição se torna <code>False</code>, o loop para.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Instruções break
 
@@ -576,19 +570,17 @@ Milo
 Loki
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-control-flow-4">
+<BaseQuiz id="cheatsheet-control-flow-4" correct="C">
 <template #question>
 Sobre o que um loop <code>for</code> itera?
 </template>
 
-<base-quiz-option value="A">A. Apenas números</base-quiz-option>
-<base-quiz-option value="B">B. Apenas strings</base-quiz-option>
-<base-quiz-option value="C" correct>C. Qualquer sequência iterável (lista, tupla, dicionário, conjunto, string, etc.)</base-quiz-option>
-<base-quiz-option value="D">D. Apenas listas</base-quiz-option>
-<base-quiz-answer value="C">Um loop <code>for</code> pode iterar sobre qualquer sequência iterável, incluindo listas, tuplas, dicionários, conjuntos, strings e outros objetos iteráveis.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Apenas números</BaseQuizOption>
+<BaseQuizOption value="B">B. Apenas strings</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. Qualquer sequência iterável (lista, tupla, dicionário, conjunto, string, etc.)</BaseQuizOption>
+<BaseQuizOption value="D">D. Apenas listas</BaseQuizOption>
+<BaseQuizAnswer>Um loop <code>for</code> pode iterar sobre qualquer sequência iterável, incluindo listas, tuplas, dicionários, conjuntos, strings e outros objetos iteráveis.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## A função range()
 
@@ -607,19 +599,17 @@ Will stop at 5! or 4? (3)
 Will stop at 5! or 4? (4)
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-control-flow-5">
+<BaseQuiz id="cheatsheet-control-flow-5" correct="B">
 <template #question>
 O que <code>range(5)</code> gera?
 </template>
 
-<base-quiz-option value="A">A. Números de 1 a 5</base-quiz-option>
-<base-quiz-option value="B" correct>B. Números de 0 a 4</base-quiz-option>
-<base-quiz-option value="C">C. Números de 0 a 5</base-quiz-option>
-<base-quiz-option value="D">D. Cinco números aleatórios</base-quiz-option>
-<base-quiz-answer value="B">A função <code>range(5)</code> gera números de 0 a 4 (5 números no total). O valor de parada é exclusivo, então para antes de atingir 5.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Números de 1 a 5</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Números de 0 a 4</BaseQuizOption>
+<BaseQuizOption value="C">C. Números de 0 a 5</BaseQuizOption>
+<BaseQuizOption value="D">D. Cinco números aleatórios</BaseQuizOption>
+<BaseQuizAnswer>A função <code>range(5)</code> gera números de 0 a 4 (5 números no total). O valor de parada é exclusivo, então para antes de atingir 5.</BaseQuizAnswer>
+</BaseQuiz>
 
 A função `range()` também pode modificar seus 3 argumentos padrão. Os dois primeiros serão os valores de `start` e `stop`, e o terceiro será o argumento `step`. O passo é a quantidade pela qual a variável é aumentada após cada iteração.
 

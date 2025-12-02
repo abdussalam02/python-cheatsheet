@@ -52,19 +52,17 @@ Hello there!\nHow are you?\nI\'m doing fine.
 
 Raw 文字列は、主に <router-link to="/cheatsheet/regular-expressions">正規表現</router-link> の定義に使用されます。
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-manipulating-strings-1">
+<BaseQuiz id="cheatsheet-manipulating-strings-1" correct="B">
 <template #question>
 Python で<code>r</code>をプレフィックスとする Raw 文字列は何をしますか？
 </template>
 
-<base-quiz-option value="A">A. すべての文字を大文字に変換する</base-quiz-option>
-<base-quiz-option value="B" correct>B. バックスラッシュをリテラル文字として扱い、エスケープシーケンスを無視する</base-quiz-option>
-<base-quiz-option value="C">C. すべての空白を削除する</base-quiz-option>
-<base-quiz-option value="D">D. 文字列を反転させる</base-quiz-option>
-<base-quiz-answer value="B">Raw 文字列（<code>r</code>をプレフィックスとする）は、バックスラッシュをリテラル文字として扱うため、<code>\n</code>のようなエスケープシーケンスは解釈されません。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. すべての文字を大文字に変換する</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. バックスラッシュをリテラル文字として扱い、エスケープシーケンスを無視する</BaseQuizOption>
+<BaseQuizOption value="C">C. すべての空白を削除する</BaseQuizOption>
+<BaseQuizOption value="D">D. 文字列を反転させる</BaseQuizOption>
+<BaseQuizAnswer>Raw 文字列（<code>r</code>をプレフィックスとする）は、バックスラッシュをリテラル文字として扱うため、<code>\n</code>のようなエスケープシーケンスは解釈されません。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 複数行文字列
 
@@ -177,19 +175,17 @@ spam[::-1]
 '!dlrow olleH'
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-manipulating-strings-2">
+<BaseQuiz id="cheatsheet-manipulating-strings-2" correct="C">
 <template #question>
 <code>spam[::-1]</code>は文字列に対して何を行いますか？
 </template>
 
-<base-quiz-option value="A">A. 最初の文字を返します</base-quiz-option>
-<base-quiz-option value="B">B. 最後の文字を返します</base-quiz-option>
-<base-quiz-option value="C" correct>C. 文字列を反転させます</base-quiz-option>
-<base-quiz-option value="D">D. すべての文字を削除します</base-quiz-option>
-<base-quiz-answer value="C">スライス <code>[::-1]</code> は、すべての文字を逆方向にステップすることで文字列を反転させます。ステップ値 <code>-1</code> は「逆行する」ことを意味します。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 最初の文字を返します</BaseQuizOption>
+<BaseQuizOption value="B">B. 最後の文字を返します</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. 文字列を反転させます</BaseQuizOption>
+<BaseQuizOption value="D">D. すべての文字を削除します</BaseQuizOption>
+<BaseQuizAnswer>スライス <code>[::-1]</code> は、すべての文字を逆方向にステップすることで文字列を反転させます。ステップ値 <code>-1</code> は「逆行する」ことを意味します。</BaseQuizAnswer>
+</BaseQuiz>
 
 ```python
 fizz = spam[0:5]
@@ -384,19 +380,17 @@ True
 True
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-manipulating-strings-3">
+<BaseQuiz id="cheatsheet-manipulating-strings-3" correct="A">
 <template #question>
 <code>startswith()</code>は何を返しますか？
 </template>
 
-<base-quiz-option value="A" correct>A. 文字列が指定された部分文字列で始まる場合は<code>True</code>、そうでない場合は<code>False</code></base-quiz-option>
-<base-quiz-option value="B">B. 一致する部分文字列</base-quiz-option>
-<base-quiz-option value="C">C. 部分文字列が始まるインデックス</base-quiz-option>
-<base-quiz-option value="D">D. プレフィックスのない新しい文字列</base-quiz-option>
-<base-quiz-answer value="A"><code>startswith()</code>メソッドはブール値を返します：文字列が指定された部分文字列で始まる場合は<code>True</code>、そうでない場合は<code>False</code>です。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. 文字列が指定された部分文字列で始まる場合は<code>True</code>、そうでない場合は<code>False</code></BaseQuizOption>
+<BaseQuizOption value="B">B. 一致する部分文字列</BaseQuizOption>
+<BaseQuizOption value="C">C. 部分文字列が始まるインデックス</BaseQuizOption>
+<BaseQuizOption value="D">D. プレフィックスのない新しい文字列</BaseQuizOption>
+<BaseQuizAnswer><code>startswith()</code>メソッドはブール値を返します：文字列が指定された部分文字列で始まる場合は<code>True</code>、そうでない場合は<code>False</code>です。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## join() および split()
 
@@ -480,19 +474,17 @@ True
 ['', 'My', '', 'name', 'is', '', 'Simon']
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-manipulating-strings-4">
+<BaseQuiz id="cheatsheet-manipulating-strings-4" correct="B">
 <template #question>
 文字列に対して<code>split()</code>を呼び出すと、何が返されますか？
 </template>
 
-<base-quiz-option value="A">A. 文字列</base-quiz-option>
-<base-quiz-option value="B" correct>B. 文字列のリスト</base-quiz-option>
-<base-quiz-option value="C">C. 文字列のタプル</base-quiz-option>
-<base-quiz-option value="D">D. 辞書</base-quiz-option>
-<base-quiz-answer value="B"><code>split()</code>メソッドは、文字列を部分文字列のリストに分割します。デフォルトでは空白文字で分割しますが、別の区切り文字を指定できます。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 文字列</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. 文字列のリスト</BaseQuizOption>
+<BaseQuizOption value="C">C. 文字列のタプル</BaseQuizOption>
+<BaseQuizOption value="D">D. 辞書</BaseQuizOption>
+<BaseQuizAnswer><code>split()</code>メソッドは、文字列を部分文字列のリストに分割します。デフォルトでは空白文字で分割しますが、別の区切り文字を指定できます。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## rjust(), ljust() および center() によるテキストの配置調整
 
@@ -667,19 +659,17 @@ sentence.replace("apples", "oranges")
 'I like oranges, Apples are my favorite fruit'
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-manipulating-strings-5">
+<BaseQuiz id="cheatsheet-manipulating-strings-5" correct="C">
 <template #question>
 <code>replace()</code>メソッドは何を返しますか？
 </template>
 
-<base-quiz-option value="A">A. 元の文字列を変更する</base-quiz-option>
-<base-quiz-option value="B">B. <code>None</code>を返す</base-quiz-option>
-<base-quiz-option value="C" correct>C. 置換が行われた新しい文字列を返す</base-quiz-option>
-<base-quiz-option value="D">D. 置換された文字列のリストを返す</base-quiz-option>
-<base-quiz-answer value="C"><code>replace()</code>メソッドは、古い部分文字列のすべての出現が新しい部分文字列に置き換えられた新しい文字列を返します。元の文字列は変更されません。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 元の文字列を変更する</BaseQuizOption>
+<BaseQuizOption value="B">B. <code>None</code>を返す</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. 置換が行われた新しい文字列を返す</BaseQuizOption>
+<BaseQuizOption value="D">D. 置換された文字列のリストを返す</BaseQuizOption>
+<BaseQuizAnswer><code>replace()</code>メソッドは、古い部分文字列のすべての出現が新しい部分文字列に置き換えられた新しい文字列を返します。元の文字列は変更されません。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 関連リンク
 

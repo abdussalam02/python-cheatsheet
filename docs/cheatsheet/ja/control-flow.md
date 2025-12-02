@@ -90,19 +90,17 @@ True
 False
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-control-flow-1">
+<BaseQuiz id="cheatsheet-control-flow-1" correct="B">
 <template #question>
 <code>'hello' == 'Hello'</code> は何と評価されますか？
 </template>
 
-<base-quiz-option value="A">A. <code>True</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>False</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>None</code></base-quiz-option>
-<base-quiz-option value="D">D. エラーを発生させる</base-quiz-option>
-<base-quiz-answer value="B">Python での文字列比較は大文字と小文字を区別します。<code>'hello'</code> と <code>'Hello'</code> は異なる文字列であるため、比較結果は <code>False</code> になります。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>True</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>False</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>None</code></BaseQuizOption>
+<BaseQuizOption value="D">D. エラーを発生させる</BaseQuizOption>
+<BaseQuizAnswer>Python での文字列比較は大文字と小文字を区別します。<code>'hello'</code> と <code>'Hello'</code> は異なる文字列であるため、比較結果は <code>False</code> になります。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## ブール演算子
 
@@ -232,19 +230,17 @@ else:  # if 条件が False の場合に実行
 You are not George
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-control-flow-2">
+<BaseQuiz id="cheatsheet-control-flow-2" correct="B">
 <template #question>
 if-else ステートメントで <code>else</code> ブロックはいつ実行されますか？
 </template>
 
-<base-quiz-option value="A">A. 常に</base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>if</code> 条件（および存在するすべての <code>elif</code> 条件）が <code>False</code> の場合のみ</base-quiz-option>
-<base-quiz-option value="C">C. <code>if</code> 条件が <code>True</code> の場合のみ</base-quiz-option>
-<base-quiz-option value="D">D. 実行されない</base-quiz-option>
-<base-quiz-answer value="B"><code>else</code> ブロックは、<code>if</code> 条件および（存在するならば）すべての <code>elif</code> 条件が <code>False</code> と評価された場合にのみ実行されます。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 常に</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>if</code> 条件（および存在するすべての <code>elif</code> 条件）が <code>False</code> の場合のみ</BaseQuizOption>
+<BaseQuizOption value="C">C. <code>if</code> 条件が <code>True</code> の場合のみ</BaseQuizOption>
+<BaseQuizOption value="D">D. 実行されない</BaseQuizOption>
+<BaseQuizAnswer><code>else</code> ブロックは、<code>if</code> 条件および（存在するならば）すべての <code>elif</code> 条件が <code>False</code> と評価された場合にのみ実行されます。</BaseQuizAnswer>
+</BaseQuiz>
 
 `if` 文の式が `False` になった後にのみ、`elif` 文が評価され実行されます：
 
@@ -501,19 +497,17 @@ Hello, world.
 Hello, world.
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-control-flow-3">
+<BaseQuiz id="cheatsheet-control-flow-3" correct="A">
 <template #question>
 <code>while</code> ループは何をしますか？
 </template>
 
-<base-quiz-option value="A" correct>A. 条件が <code>True</code> である限りコードを繰り返す</base-quiz-option>
-<base-quiz-option value="B">B. コードを正確に 1 回実行する</base-quiz-option>
-<base-quiz-option value="C">C. コードを固定回数実行する</base-quiz-option>
-<base-quiz-option value="D">D. コードの実行をスキップする</base-quiz-option>
-<base-quiz-answer value="A"><code>while</code> ループは、条件が <code>True</code> と評価されている限り、コードブロックを繰り返し実行します。条件が <code>False</code> になると、ループは停止します。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. 条件が <code>True</code> である限りコードを繰り返す</BaseQuizOption>
+<BaseQuizOption value="B">B. コードを正確に 1 回実行する</BaseQuizOption>
+<BaseQuizOption value="C">C. コードを固定回数実行する</BaseQuizOption>
+<BaseQuizOption value="D">D. コードの実行をスキップする</BaseQuizOption>
+<BaseQuizAnswer><code>while</code> ループは、条件が <code>True</code> と評価されている限り、コードブロックを繰り返し実行します。条件が <code>False</code> になると、ループは停止します。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## break ステートメント
 
@@ -576,19 +570,17 @@ Milo
 Loki
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-control-flow-4">
+<BaseQuiz id="cheatsheet-control-flow-4" correct="C">
 <template #question>
 <code>for</code> ループは何を反復処理しますか？
 </template>
 
-<base-quiz-option value="A">A. 数値のみ</base-quiz-option>
-<base-quiz-option value="B">B. 文字列のみ</base-quiz-option>
-<base-quiz-option value="C" correct>C. すべての反復可能なシーケンス（リスト、タプル、辞書、セット、文字列など）</base-quiz-option>
-<base-quiz-option value="D">D. リストのみ</base-quiz-option>
-<base-quiz-answer value="C"><code>for</code> ループは、リスト、タプル、辞書、セット、文字列、その他の反復可能なオブジェクトを含む、あらゆる反復可能なシーケンスを反復処理できます。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 数値のみ</BaseQuizOption>
+<BaseQuizOption value="B">B. 文字列のみ</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. すべての反復可能なシーケンス（リスト、タプル、辞書、セット、文字列など）</BaseQuizOption>
+<BaseQuizOption value="D">D. リストのみ</BaseQuizOption>
+<BaseQuizAnswer><code>for</code> ループは、リスト、タプル、辞書、セット、文字列、その他の反復可能なオブジェクトを含む、あらゆる反復可能なシーケンスを反復処理できます。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## range() 関数
 
@@ -607,19 +599,17 @@ Will stop at 5! or 4? (3)
 Will stop at 5! or 4? (4)
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-control-flow-5">
+<BaseQuiz id="cheatsheet-control-flow-5" correct="B">
 <template #question>
 <code>range(5)</code> は何を生成しますか？
 </template>
 
-<base-quiz-option value="A">A. 1 から 5 までの数値</base-quiz-option>
-<base-quiz-option value="B" correct>B. 0 から 4 までの数値</base-quiz-option>
-<base-quiz-option value="C">C. 0 から 5 までの数値</base-quiz-option>
-<base-quiz-option value="D">D. 5 つのランダムな数値</base-quiz-option>
-<base-quiz-answer value="B"><code>range(5)</code> 関数は、0 から 4 までの数値を生成します（合計 5 個の数値）。停止値は排他的であるため、5 に達する前に停止します。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 1 から 5 までの数値</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. 0 から 4 までの数値</BaseQuizOption>
+<BaseQuizOption value="C">C. 0 から 5 までの数値</BaseQuizOption>
+<BaseQuizOption value="D">D. 5 つのランダムな数値</BaseQuizOption>
+<BaseQuizAnswer><code>range(5)</code> 関数は、0 から 4 までの数値を生成します（合計 5 個の数値）。停止値は排他的であるため、5 に達する前に停止します。</BaseQuizAnswer>
+</BaseQuiz>
 
 `range()` 関数は、3 つのデフォルト引数（`start`、`stop`、`step`）を変更することもできます。最初の 2 つが `start` と `stop` 値になり、3 番目が `step` 引数になります。ステップは、各イテレーション後に変数がどれだけ増加するかを示す量です。
 

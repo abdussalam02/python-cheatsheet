@@ -37,19 +37,17 @@ if __name__ == "__main__":  # Only runs when file is executed, not when imported
     add(3, 5)
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-main-1">
+<BaseQuiz id="cheatsheet-main-1" correct="B">
 <template #question>
 What is the value of <code>__name__</code> when a Python file is run directly as a script?
 </template>
 
-<base-quiz-option value="A">A. The filename</base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>"**main**"</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>None</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>True</code></base-quiz-option>
-<base-quiz-answer value="B">When a Python file is run directly as a script, <code>**name**</code> is set to <code>"**main**"</code>. When the file is imported as a module, <code>**name**</code> is set to the module's name.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. The filename</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>"**main**"</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>None</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>True</code></BaseQuizOption>
+<BaseQuizAnswer>When a Python file is run directly as a script, <code>**name**</code> is set to <code>"**main**"</code>. When the file is imported as a module, <code>**name**</code> is set to the module's name.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Advantages
 
@@ -58,19 +56,17 @@ What is the value of <code>__name__</code> when a Python file is run directly as
 3. Python files can act as either reusable modules, or as standalone programs.
 4. `if __name__ == "__main__":` is used to execute some code only if the file is run directly, and is not being imported.
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-main-2">
+<BaseQuiz id="cheatsheet-main-2" correct="A">
 <template #question>
 What is the main purpose of using <code>if __name__ == "__main__":</code>?
 </template>
 
-<base-quiz-option value="A" correct>A. To execute code only when the file is run directly, not when imported</base-quiz-option>
-<base-quiz-option value="B">B. To prevent the file from being imported</base-quiz-option>
-<base-quiz-option value="C">C. To make the file execute faster</base-quiz-option>
-<base-quiz-option value="D">D. To hide code from other modules</base-quiz-option>
-<base-quiz-answer value="A">The <code>if **name** == "**main**":</code> idiom allows a Python file to act as both a reusable module and a standalone program. Code inside this block only runs when the file is executed directly, not when it's imported.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. To execute code only when the file is run directly, not when imported</BaseQuizOption>
+<BaseQuizOption value="B">B. To prevent the file from being imported</BaseQuizOption>
+<BaseQuizOption value="C">C. To make the file execute faster</BaseQuizOption>
+<BaseQuizOption value="D">D. To hide code from other modules</BaseQuizOption>
+<BaseQuizAnswer>The <code>if **name** == "**main**":</code> idiom allows a Python file to act as both a reusable module and a standalone program. Code inside this block only runs when the file is executed directly, not when it's imported.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Relevant links
 

@@ -61,19 +61,17 @@ setup(
 )
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-packaging-1">
+<BaseQuiz id="cheatsheet-packaging-1" correct="C">
 <template #question>
 Quais são os três campos obrigatórios em um arquivo <code>setup.py</code>?
 </template>
 
-<base-quiz-option value="A">A. name, author, license</base-quiz-option>
-<base-quiz-option value="B">B. name, description, packages</base-quiz-option>
-<base-quiz-option value="C" correct>C. name, version, packages</base-quiz-option>
-<base-quiz-option value="D">D. name, version, license</base-quiz-option>
-<base-quiz-answer value="C">Os três campos obrigatórios em <code>setup.py</code> são <code>name</code> (nome do pacote, deve ser exclusivo no PyPI), <code>version</code> (rastreia lançamentos) e <code>packages</code> (descreve onde o código-fonte Python está localizado).</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. name, author, license</BaseQuizOption>
+<BaseQuizOption value="B">B. name, description, packages</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. name, version, packages</BaseQuizOption>
+<BaseQuizOption value="D">D. name, version, license</BaseQuizOption>
+<BaseQuizAnswer>Os três campos obrigatórios em <code>setup.py</code> são <code>name</code> (nome do pacote, deve ser exclusivo no PyPI), <code>version</code> (rastreia lançamentos) e <code>packages</code> (descreve onde o código-fonte Python está localizado).</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Abordagem Moderna: pyproject.toml
 
@@ -131,19 +129,17 @@ Ou no modo editável:
 pip install -e .
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-packaging-2">
+<BaseQuiz id="cheatsheet-packaging-2" correct="B">
 <template #question>
 Qual é a principal vantagem do <code>pyproject.toml</code> sobre o <code>setup.py</code>?
 </template>
 
-<base-quiz-option value="A">A. É mais rápido de executar</base-quiz-option>
-<base-quiz-option value="B" correct>B. É declarativo, mais seguro (sem execução de código) e segue os padrões PEP</base-quiz-option>
-<base-quiz-option value="C">C. Requer menos configuração</base-quiz-option>
-<base-quiz-option value="D">D. Só funciona com Python 3.10+</base-quiz-option>
-<base-quiz-answer value="B">A abordagem <code>pyproject.toml</code> é declarativa (todos os metadados em um só lugar), mais segura porque não executa código como o <code>setup.py</code> faz, e segue os padrões PEP (PEP-517, PEP-518, PEP-660) para melhor suporte de ferramentas.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. É mais rápido de executar</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. É declarativo, mais seguro (sem execução de código) e segue os padrões PEP</BaseQuizOption>
+<BaseQuizOption value="C">C. Requer menos configuração</BaseQuizOption>
+<BaseQuizOption value="D">D. Só funciona com Python 3.10+</BaseQuizOption>
+<BaseQuizAnswer>A abordagem <code>pyproject.toml</code> é declarativa (todos os metadados em um só lugar), mais segura porque não executa código como o <code>setup.py</code> faz, e segue os padrões PEP (PEP-517, PEP-518, PEP-660) para melhor suporte de ferramentas.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Escolhendo a Abordagem Certa
 

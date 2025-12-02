@@ -90,19 +90,17 @@ True
 False
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-control-flow-1">
+<BaseQuiz id="cheatsheet-control-flow-1" correct="B">
 <template #question>
 <code>'hello' == 'Hello'</code> 的评估结果是什么？
 </template>
 
-<base-quiz-option value="A">A. <code>True</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>False</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>None</code></base-quiz-option>
-<base-quiz-option value="D">D. 抛出错误</base-quiz-option>
-<base-quiz-answer value="B">Python 中的字符串比较是区分大小写的。<code>'hello'</code> 和 <code>'Hello'</code> 是不同的字符串，因此比较结果为 <code>False</code>。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>True</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>False</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>None</code></BaseQuizOption>
+<BaseQuizOption value="D">D. 抛出错误</BaseQuizOption>
+<BaseQuizAnswer>Python 中的字符串比较是区分大小写的。<code>'hello'</code> 和 <code>'Hello'</code> 是不同的字符串，因此比较结果为 <code>False</code>。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 布尔运算符
 
@@ -232,19 +230,17 @@ else:  # 如果 if 条件为 False，则执行
 You are not George
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-control-flow-2">
+<BaseQuiz id="cheatsheet-control-flow-2" correct="B">
 <template #question>
 在 if-else 语句中，<code>else</code> 块何时执行？
 </template>
 
-<base-quiz-option value="A">A. 总是</base-quiz-option>
-<base-quiz-option value="B" correct>B. 仅当 <code>if</code> 条件（以及所有 <code>elif</code> 条件（如果存在））为 <code>False</code> 时</base-quiz-option>
-<base-quiz-option value="C">C. 仅当 <code>if</code> 条件为 <code>True</code> 时</base-quiz-option>
-<base-quiz-option value="D">D. 从不</base-quiz-option>
-<base-quiz-answer value="B">只有当 <code>if</code> 条件和所有 <code>elif</code> 条件（如果存在）都评估为 <code>False</code> 时，<code>else</code> 块才会执行。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 总是</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. 仅当 <code>if</code> 条件（以及所有 <code>elif</code> 条件（如果存在））为 <code>False</code> 时</BaseQuizOption>
+<BaseQuizOption value="C">C. 仅当 <code>if</code> 条件为 <code>True</code> 时</BaseQuizOption>
+<BaseQuizOption value="D">D. 从不</BaseQuizOption>
+<BaseQuizAnswer>只有当 <code>if</code> 条件和所有 <code>elif</code> 条件（如果存在）都评估为 <code>False</code> 时，<code>else</code> 块才会执行。</BaseQuizAnswer>
+</BaseQuiz>
 
 只有在 `if` 语句的表达式为 `False` 之后，才会评估并执行 `elif` 语句：
 
@@ -501,19 +497,17 @@ Hello, world.
 Hello, world.
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-control-flow-3">
+<BaseQuiz id="cheatsheet-control-flow-3" correct="A">
 <template #question>
 <code>while</code> 循环做什么？
 </template>
 
-<base-quiz-option value="A" correct>A. 只要条件为 <code>True</code> 就重复执行代码</base-quiz-option>
-<base-quiz-option value="B">B. 只执行代码一次</base-quiz-option>
-<base-quiz-option value="C">C. 执行固定次数的代码</base-quiz-option>
-<base-quiz-option value="D">D. 跳过代码执行</base-quiz-option>
-<base-quiz-answer value="A"><code>while</code> 循环只要条件评估为 <code>True</code> 就重复执行一段代码。当条件变为 <code>False</code> 时，循环停止。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. 只要条件为 <code>True</code> 就重复执行代码</BaseQuizOption>
+<BaseQuizOption value="B">B. 只执行代码一次</BaseQuizOption>
+<BaseQuizOption value="C">C. 执行固定次数的代码</BaseQuizOption>
+<BaseQuizOption value="D">D. 跳过代码执行</BaseQuizOption>
+<BaseQuizAnswer><code>while</code> 循环只要条件评估为 <code>True</code> 就重复执行一段代码。当条件变为 <code>False</code> 时，循环停止。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## break 语句
 
@@ -576,19 +570,17 @@ Milo
 Loki
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-control-flow-4">
+<BaseQuiz id="cheatsheet-control-flow-4" correct="C">
 <template #question>
 <code>for</code> 循环迭代什么？
 </template>
 
-<base-quiz-option value="A">A. 仅数字</base-quiz-option>
-<base-quiz-option value="B">B. 仅字符串</base-quiz-option>
-<base-quiz-option value="C" correct>C. 任何可迭代序列（列表、元组、字典、集合、字符串等）</base-quiz-option>
-<base-quiz-option value="D">D. 仅列表</base-quiz-option>
-<base-quiz-answer value="C"><code>for</code> 循环可以迭代任何可迭代序列，包括列表、元组、字典、集合、字符串和其他可迭代对象。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 仅数字</BaseQuizOption>
+<BaseQuizOption value="B">B. 仅字符串</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. 任何可迭代序列（列表、元组、字典、集合、字符串等）</BaseQuizOption>
+<BaseQuizOption value="D">D. 仅列表</BaseQuizOption>
+<BaseQuizAnswer><code>for</code> 循环可以迭代任何可迭代序列，包括列表、元组、字典、集合、字符串和其他可迭代对象。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## range() 函数
 
@@ -607,19 +599,17 @@ Will stop at 5! or 4? (3)
 Will stop at 5! or 4? (4)
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-control-flow-5">
+<BaseQuiz id="cheatsheet-control-flow-5" correct="B">
 <template #question>
 <code>range(5)</code> 生成什么？
 </template>
 
-<base-quiz-option value="A">A. 从 1 到 5 的数字</base-quiz-option>
-<base-quiz-option value="B" correct>B. 从 0 到 4 的数字</base-quiz-option>
-<base-quiz-option value="C">C. 从 0 到 5 的数字</base-quiz-option>
-<base-quiz-option value="D">D. 五个随机数</base-quiz-option>
-<base-quiz-answer value="B"><code>range(5)</code> 函数生成从 0 到 4 的数字（共 5 个数字）。停止值是排他的，因此它在到达 5 之前停止。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 从 1 到 5 的数字</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. 从 0 到 4 的数字</BaseQuizOption>
+<BaseQuizOption value="C">C. 从 0 到 5 的数字</BaseQuizOption>
+<BaseQuizOption value="D">D. 五个随机数</BaseQuizOption>
+<BaseQuizAnswer><code>range(5)</code> 函数生成从 0 到 4 的数字（共 5 个数字）。停止值是排他的，因此它在到达 5 之前停止。</BaseQuizAnswer>
+</BaseQuiz>
 
 `range()` 函数也可以修改其 3 个默认参数。前两个是 `start` 和 `stop` 值，第三个是 `step` 参数。`step` 是每次迭代后变量增加的量。
 

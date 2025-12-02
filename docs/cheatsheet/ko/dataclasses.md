@@ -88,19 +88,17 @@ obj.price
 0.0
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-dataclasses-1">
+<BaseQuiz id="cheatsheet-dataclasses-1" correct="B">
 <template #question>
 데이터 클래스에서 기본값이 있는 필드는 어디에 배치되어야 합니까?
 </template>
 
-<base-quiz-option value="A">A. 기본값이 없는 필드 앞에</base-quiz-option>
-<base-quiz-option value="B" correct>B. 기본값이 없는 필드 뒤에</base-quiz-option>
-<base-quiz-option value="C">C. 상관없다</base-quiz-option>
-<base-quiz-option value="D">D. 별도의 섹션에</base-quiz-option>
-<base-quiz-answer value="B">데이터 클래스에서는 기본값이 있는 필드가 기본값이 없는 필드 뒤에 와야 합니다. 이는 Python 이 생성된 <code>**init**</code> 메서드에 대해 필수 매개변수와 선택적 매개변수의 순서를 알아야 하기 때문입니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 기본값이 없는 필드 앞에</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. 기본값이 없는 필드 뒤에</BaseQuizOption>
+<BaseQuizOption value="C">C. 상관없다</BaseQuizOption>
+<BaseQuizOption value="D">D. 별도의 섹션에</BaseQuizOption>
+<BaseQuizAnswer>데이터 클래스에서는 기본값이 있는 필드가 기본값이 없는 필드 뒤에 와야 합니다. 이는 Python 이 생성된 <code>**init**</code> 메서드에 대해 필수 매개변수와 선택적 매개변수의 순서를 알아야 하기 때문입니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 타입 힌트 (Type hints)
 

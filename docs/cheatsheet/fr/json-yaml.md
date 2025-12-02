@@ -32,19 +32,17 @@ with open("filename.json", "w") as f:  # Open file in write mode
     json.dump(content, f, indent=2)  # Write JSON with 2-space indentation
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-json-yaml-1">
+<BaseQuiz id="cheatsheet-json-yaml-1" correct="B">
 <template #question>
 Quelle fonction est utilisée pour écrire un dictionnaire Python dans un fichier JSON ?
 </template>
 
-<base-quiz-option value="A">A. <code>json.write()</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>json.dump()</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>json.save()</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>json.export()</code></base-quiz-option>
-<base-quiz-answer value="B">La fonction <code>json.dump()</code> écrit un objet Python (comme un dictionnaire) dans un fichier JSON. <code>json.load()</code> est utilisée pour lire les fichiers JSON.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>json.write()</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>json.dump()</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>json.save()</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>json.export()</code></BaseQuizOption>
+<BaseQuizAnswer>La fonction <code>json.dump()</code> écrit un objet Python (comme un dictionnaire) dans un fichier JSON. <code>json.load()</code> est utilisée pour lire les fichiers JSON.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## YAML
 
@@ -70,19 +68,17 @@ with open("filename.yaml") as f:
     yaml.load(f)  # Parse YAML and return Python dict/list
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-json-yaml-2">
+<BaseQuiz id="cheatsheet-json-yaml-2" correct="C">
 <template #question>
 Quel est un avantage de YAML par rapport à JSON ?
 </template>
 
-<base-quiz-option value="A">A. Les fichiers YAML sont plus petits</base-quiz-option>
-<base-quiz-option value="B">B. YAML est plus rapide à analyser</base-quiz-option>
-<base-quiz-option value="C" correct>C. YAML permet les commentaires et est plus lisible par l'homme</base-quiz-option>
-<base-quiz-option value="D">D. YAML est intégré à Python</base-quiz-option>
-<base-quiz-answer value="C">YAML permet les commentaires et est plus lisible par l'homme que JSON, ce qui en fait un choix pratique pour les fichiers de configuration que les humains doivent éditer.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Les fichiers YAML sont plus petits</BaseQuizOption>
+<BaseQuizOption value="B">B. YAML est plus rapide à analyser</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. YAML permet les commentaires et est plus lisible par l'homme</BaseQuizOption>
+<BaseQuizOption value="D">D. YAML est intégré à Python</BaseQuizOption>
+<BaseQuizAnswer>YAML permet les commentaires et est plus lisible par l'homme que JSON, ce qui en fait un choix pratique pour les fichiers de configuration que les humains doivent éditer.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Anyconfig
 
@@ -102,19 +98,17 @@ import anyconfig
 conf1 = anyconfig.load("/path/to/foo/conf.d/a.yml")  # Auto-detects format
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-json-yaml-3">
+<BaseQuiz id="cheatsheet-json-yaml-3" correct="A">
 <template #question>
 Que permet la bibliothèque anyconfig ?
 </template>
 
-<base-quiz-option value="A" correct>A. Charger des fichiers de configuration dans divers formats (JSON, YAML, TOML) sans spécifier le format</base-quiz-option>
-<base-quiz-option value="B">B. Convertir entre différents formats de configuration</base-quiz-option>
-<base-quiz-option value="C">C. Valider la syntaxe des fichiers de configuration</base-quiz-option>
-<base-quiz-option value="D">D. Crypter les fichiers de configuration</base-quiz-option>
-<base-quiz-answer value="A">La bibliothèque anyconfig abstrait le format de fichier de configuration sous-jacent, vous permettant de charger des dictionnaires Python à partir de JSON, YAML, TOML et d'autres formats sans avoir besoin de savoir quel format est utilisé.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. Charger des fichiers de configuration dans divers formats (JSON, YAML, TOML) sans spécifier le format</BaseQuizOption>
+<BaseQuizOption value="B">B. Convertir entre différents formats de configuration</BaseQuizOption>
+<BaseQuizOption value="C">C. Valider la syntaxe des fichiers de configuration</BaseQuizOption>
+<BaseQuizOption value="D">D. Crypter les fichiers de configuration</BaseQuizOption>
+<BaseQuizAnswer>La bibliothèque anyconfig abstrait le format de fichier de configuration sous-jacent, vous permettant de charger des dictionnaires Python à partir de JSON, YAML, TOML et d'autres formats sans avoir besoin de savoir quel format est utilisé.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Liens pertinents
 

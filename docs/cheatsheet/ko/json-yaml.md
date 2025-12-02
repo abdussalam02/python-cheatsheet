@@ -32,19 +32,17 @@ with open("filename.json", "w") as f:  # 쓰기 모드로 파일 열기
     json.dump(content, f, indent=2)  # 2 칸 들여쓰기로 JSON 쓰기
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-json-yaml-1">
+<BaseQuiz id="cheatsheet-json-yaml-1" correct="B">
 <template #question>
 Python 딕셔너리를 JSON 파일에 쓰는 데 사용되는 함수는 무엇입니까?
 </template>
 
-<base-quiz-option value="A">A. <code>json.write()</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>json.dump()</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>json.save()</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>json.export()</code></base-quiz-option>
-<base-quiz-answer value="B"><code>json.dump()</code> 함수는 Python 객체 (딕셔너리 등) 를 JSON 파일에 씁니다. <code>json.load()</code>는 JSON 파일을 읽는 데 사용됩니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>json.write()</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>json.dump()</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>json.save()</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>json.export()</code></BaseQuizOption>
+<BaseQuizAnswer><code>json.dump()</code> 함수는 Python 객체 (딕셔너리 등) 를 JSON 파일에 씁니다. <code>json.load()</code>는 JSON 파일을 읽는 데 사용됩니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## YAML
 
@@ -70,19 +68,17 @@ with open("filename.yaml") as f:
     yaml.load(f)  # YAML 을 구문 분석하여 Python dict/list 반환
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-json-yaml-2">
+<BaseQuiz id="cheatsheet-json-yaml-2" correct="C">
 <template #question>
 JSON 에 비해 YAML 의 장점은 무엇입니까?
 </template>
 
-<base-quiz-option value="A">A. YAML 파일이 더 작습니다</base-quiz-option>
-<base-quiz-option value="B">B. YAML 구문 분석이 더 빠릅니다</base-quiz-option>
-<base-quiz-option value="C" correct>C. YAML 은 주석을 허용하며 인간이 읽기 쉽습니다</base-quiz-option>
-<base-quiz-option value="D">D. YAML 은 Python 에 내장되어 있습니다</base-quiz-option>
-<base-quiz-answer value="C">YAML 은 JSON 보다 주석을 허용하며 인간이 읽기 쉽기 때문에 사람이 편집해야 하는 구성 파일에 편리한 선택입니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. YAML 파일이 더 작습니다</BaseQuizOption>
+<BaseQuizOption value="B">B. YAML 구문 분석이 더 빠릅니다</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. YAML 은 주석을 허용하며 인간이 읽기 쉽습니다</BaseQuizOption>
+<BaseQuizOption value="D">D. YAML 은 Python 에 내장되어 있습니다</BaseQuizOption>
+<BaseQuizAnswer>YAML 은 JSON 보다 주석을 허용하며 인간이 읽기 쉽기 때문에 사람이 편집해야 하는 구성 파일에 편리한 선택입니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Anyconfig
 
@@ -102,19 +98,17 @@ import anyconfig
 conf1 = anyconfig.load("/path/to/foo/conf.d/a.yml")  # 형식을 자동 감지
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-json-yaml-3">
+<BaseQuiz id="cheatsheet-json-yaml-3" correct="A">
 <template #question>
 anyconfig 라이브러리는 무엇을 할 수 있게 해줍니까?
 </template>
 
-<base-quiz-option value="A" correct>A. 형식을 지정하지 않고 다양한 형식 (JSON, YAML, TOML) 의 구성 파일을 로드</base-quiz-option>
-<base-quiz-option value="B">B. 다른 구성 형식 간 변환</base-quiz-option>
-<base-quiz-option value="C">C. 구성 파일 구문 검증</base-quiz-option>
-<base-quiz-option value="D">D. 구성 파일 암호화</base-quiz-option>
-<base-quiz-answer value="A">anyconfig 라이브러리는 기본 구성 파일 형식을 추상화하여 어떤 형식이 사용되는지 알 필요 없이 JSON, YAML, TOML 등에서 Python 딕셔너리를 로드할 수 있게 해줍니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. 형식을 지정하지 않고 다양한 형식 (JSON, YAML, TOML) 의 구성 파일을 로드</BaseQuizOption>
+<BaseQuizOption value="B">B. 다른 구성 형식 간 변환</BaseQuizOption>
+<BaseQuizOption value="C">C. 구성 파일 구문 검증</BaseQuizOption>
+<BaseQuizOption value="D">D. 구성 파일 암호화</BaseQuizOption>
+<BaseQuizAnswer>anyconfig 라이브러리는 기본 구성 파일 형식을 추상화하여 어떤 형식이 사용되는지 알 필요 없이 JSON, YAML, TOML 등에서 Python 딕셔너리를 로드할 수 있게 해줍니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 관련 링크
 

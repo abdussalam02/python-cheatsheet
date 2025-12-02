@@ -39,19 +39,17 @@ Traceback (most recent call last):
 Exception: This is the error message.
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-debugging-1">
+<BaseQuiz id="cheatsheet-debugging-1" correct="B">
 <template #question>
 What keyword is used to manually raise an exception in Python?
 </template>
 
-<base-quiz-option value="A">A. <code>throw</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>raise</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>error</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>exception</code></base-quiz-option>
-<base-quiz-answer value="B">The <code>raise</code> keyword is used to manually raise an exception in Python. You can raise built-in exceptions or custom exceptions.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>throw</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>raise</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>error</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>exception</code></BaseQuizOption>
+<BaseQuizAnswer>The <code>raise</code> keyword is used to manually raise an exception in Python. You can raise built-in exceptions or custom exceptions.</BaseQuizAnswer>
+</BaseQuiz>
 
 Typically, it's the code that calls the function, not the function itself, that knows how to handle an exception. So, you will commonly see a raise statement inside a function and the `try` and `except` statements in the code calling the function.
 
@@ -145,19 +143,17 @@ Traceback (most recent call last):
 AssertionError: The pod bay doors need to be "open".
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-debugging-2">
+<BaseQuiz id="cheatsheet-debugging-2" correct="C">
 <template #question>
 What happens when an <code>assert</code> statement fails?
 </template>
 
-<base-quiz-option value="A">A. The program continues running</base-quiz-option>
-<base-quiz-option value="B">B. A warning is printed</base-quiz-option>
-<base-quiz-option value="C" correct>C. An <code>AssertionError</code> is raised and the program should crash</base-quiz-option>
-<base-quiz-option value="D">D. The condition is automatically fixed</base-quiz-option>
-<base-quiz-answer value="C">When an <code>assert</code> statement fails, it raises an <code>AssertionError</code>. Unlike exceptions, assert statements should not be caught with try-except; if an assert fails, your program should crash to help you find bugs quickly.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. The program continues running</BaseQuizOption>
+<BaseQuizOption value="B">B. A warning is printed</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. An <code>AssertionError</code> is raised and the program should crash</BaseQuizOption>
+<BaseQuizOption value="D">D. The condition is automatically fixed</BaseQuizOption>
+<BaseQuizAnswer>When an <code>assert</code> statement fails, it raises an <code>AssertionError</code>. Unlike exceptions, assert statements should not be caught with try-except; if an assert fails, your program should crash to help you find bugs quickly.</BaseQuizAnswer>
+</BaseQuiz>
 
 In plain English, an assert statement says, "I assert that this condition holds true, and if not, there is a bug somewhere in the program." Unlike exceptions, your code should not handle assert statements with try and except; if an assert fails, your program should crash. By failing fast like this, you shorten the time between the original cause of the bug and when you first notice the bug. This will reduce the amount of code you will have to check before finding the code that's causing the bug.
 
@@ -174,19 +170,17 @@ import logging
 logging.basicConfig(level=logging.DEBUG, format=' %(asctime)s - %(levelname)s- %(message)s')
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-debugging-3">
+<BaseQuiz id="cheatsheet-debugging-3" correct="A">
 <template #question>
 What is the purpose of the <code>logging</code> module in Python?
 </template>
 
-<base-quiz-option value="A" correct>A. To record information about program execution for debugging and monitoring</base-quiz-option>
-<base-quiz-option value="B">B. To prevent errors from occurring</base-quiz-option>
-<base-quiz-option value="C">C. To speed up program execution</base-quiz-option>
-<base-quiz-option value="D">D. To encrypt log messages</base-quiz-option>
-<base-quiz-answer value="A">The <code>logging</code> module allows you to record information about your program's execution at different levels (DEBUG, INFO, WARNING, ERROR, CRITICAL), which is useful for debugging and monitoring.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. To record information about program execution for debugging and monitoring</BaseQuizOption>
+<BaseQuizOption value="B">B. To prevent errors from occurring</BaseQuizOption>
+<BaseQuizOption value="C">C. To speed up program execution</BaseQuizOption>
+<BaseQuizOption value="D">D. To encrypt log messages</BaseQuizOption>
+<BaseQuizAnswer>The <code>logging</code> module allows you to record information about your program's execution at different levels (DEBUG, INFO, WARNING, ERROR, CRITICAL), which is useful for debugging and monitoring.</BaseQuizAnswer>
+</BaseQuiz>
 
 Say you wrote a function to calculate the factorial of a number. In mathematics, factorial 4 is 1 × 2 × 3 × 4, or 24. Factorial 7 is 1 × 2 × 3 × 4 × 5 × 6 × 7, or 5,040. Open a new file editor window and enter the following code. It has a bug in it, but you will also enter several log messages to help yourself figure out what is going wrong. Save the program as factorialLog.py.
 
@@ -234,19 +228,17 @@ Logging levels provide a way to categorize your log messages by importance. Ther
 | `ERROR`    | `logging.error()`    | Used to record an error that caused the program to fail to do something.                                                       |
 | `CRITICAL` | `logging.critical()` | The highest level. Used to indicate a fatal error that has caused or is about to cause the program to stop running entirely.   |
 
-<base-quiz>
-<base-quiz-question correct="D" id="cheatsheet-debugging-4">
+<BaseQuiz id="cheatsheet-debugging-4" correct="D">
 <template #question>
 What is the lowest logging level in Python?
 </template>
 
-<base-quiz-option value="A">A. <code>INFO</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>WARNING</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>ERROR</code></base-quiz-option>
-<base-quiz-option value="D" correct>D. <code>DEBUG</code></base-quiz-option>
-<base-quiz-answer value="D">The logging levels from lowest to highest are: <code>DEBUG</code>, <code>INFO</code>, <code>WARNING</code>, <code>ERROR</code>, <code>CRITICAL</code>. <code>DEBUG</code> is the lowest level, used for detailed diagnostic information.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>INFO</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>WARNING</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>ERROR</code></BaseQuizOption>
+<BaseQuizOption value="D" correct>D. <code>DEBUG</code></BaseQuizOption>
+<BaseQuizAnswer>The logging levels from lowest to highest are: <code>DEBUG</code>, <code>INFO</code>, <code>WARNING</code>, <code>ERROR</code>, <code>CRITICAL</code>. <code>DEBUG</code> is the lowest level, used for detailed diagnostic information.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Disabling Logging
 
@@ -278,19 +270,17 @@ import logging
 logging.basicConfig(filename='myProgramLog.txt', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-debugging-5">
+<BaseQuiz id="cheatsheet-debugging-5" correct="B">
 <template #question>
 How do you write log messages to a file instead of displaying them on screen?
 </template>
 
-<base-quiz-option value="A">A. Use <code>logging.file()</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. Pass <code>filename</code> parameter to <code>logging.basicConfig()</code></base-quiz-option>
-<base-quiz-option value="C">C. Use <code>logging.write()</code></base-quiz-option>
-<base-quiz-option value="D">D. Logs are always written to files automatically</base-quiz-option>
-<base-quiz-answer value="B">To write log messages to a file, pass the <code>filename</code> parameter to <code>logging.basicConfig()</code>. This will write all log messages to the specified file instead of displaying them on screen.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Use <code>logging.file()</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Pass <code>filename</code> parameter to <code>logging.basicConfig()</code></BaseQuizOption>
+<BaseQuizOption value="C">C. Use <code>logging.write()</code></BaseQuizOption>
+<BaseQuizOption value="D">D. Logs are always written to files automatically</BaseQuizOption>
+<BaseQuizAnswer>To write log messages to a file, pass the <code>filename</code> parameter to <code>logging.basicConfig()</code>. This will write all log messages to the specified file instead of displaying them on screen.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Relevant links
 

@@ -39,19 +39,17 @@ Traceback (most recent call last):
 Exception: This is the error message.
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-debugging-1">
+<BaseQuiz id="cheatsheet-debugging-1" correct="B">
 <template #question>
 在 Python 中，用于手动抛出异常的关键字是什么？
 </template>
 
-<base-quiz-option value="A">A. <code>throw</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>raise</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>error</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>exception</code></base-quiz-option>
-<base-quiz-answer value="B"><code>raise</code> 关键字用于在 Python 中手动抛出异常。您可以抛出内置异常或自定义异常。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>throw</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>raise</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>error</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>exception</code></BaseQuizOption>
+<BaseQuizAnswer><code>raise</code> 关键字用于在 Python 中手动抛出异常。您可以抛出内置异常或自定义异常。</BaseQuizAnswer>
+</BaseQuiz>
 
 通常，知道如何处理异常的是调用函数的代码，而不是函数本身。因此，您通常会在函数内部看到 `raise` 语句，在调用函数的代码中看到 `try` 和 `except` 语句。
 
@@ -145,19 +143,17 @@ Traceback (most recent call last):
 AssertionError: The pod bay doors need to be "open".
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-debugging-2">
+<BaseQuiz id="cheatsheet-debugging-2" correct="C">
 <template #question>
 当 <code>assert</code> 语句失败时会发生什么？
 </template>
 
-<base-quiz-option value="A">A. 程序继续运行</base-quiz-option>
-<base-quiz-option value="B">B. 打印警告</base-quiz-option>
-<base-quiz-option value="C" correct>C. 抛出 <code>AssertionError</code> 并且程序应该崩溃</base-quiz-option>
-<base-quiz-option value="D">D. 条件自动修复</base-quiz-option>
-<base-quiz-answer value="C">当 <code>assert</code> 语句失败时，它会抛出 <code>AssertionError</code>。与异常不同，不应使用 try-except 来捕获 assert 语句；如果 assert 失败，您的程序应该崩溃，以帮助您快速找到 Bug。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 程序继续运行</BaseQuizOption>
+<BaseQuizOption value="B">B. 打印警告</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. 抛出 <code>AssertionError</code> 并且程序应该崩溃</BaseQuizOption>
+<BaseQuizOption value="D">D. 条件自动修复</BaseQuizOption>
+<BaseQuizAnswer>当 <code>assert</code> 语句失败时，它会抛出 <code>AssertionError</code>。与异常不同，不应使用 try-except 来捕获 assert 语句；如果 assert 失败，您的程序应该崩溃，以帮助您快速找到 Bug。</BaseQuizAnswer>
+</BaseQuiz>
 
 用通俗的话来说，`assert` 语句的意思是：“我断言这个条件为真，如果不是，那么程序中就存在一个 Bug。”与异常不同，您的代码不应该使用 try 和 except 来处理 assert 语句；如果 assert 失败，您的程序应该崩溃。通过这种快速失败的方式，您可以缩短从 Bug 的原始原因到您首次注意到该 Bug 之间的时间，这将减少您需要检查以查找导致 Bug 的代码的量。
 
@@ -174,19 +170,17 @@ import logging
 logging.basicConfig(level=logging.DEBUG, format=' %(asctime)s - %(levelname)s- %(message)s')
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-debugging-3">
+<BaseQuiz id="cheatsheet-debugging-3" correct="A">
 <template #question>
 Python 中 <code>logging</code> 模块的目的是什么？
 </template>
 
-<base-quiz-option value="A" correct>A. 记录程序执行信息以供调试和监控</base-quiz-option>
-<base-quiz-option value="B">B. 防止错误发生</base-quiz-option>
-<base-quiz-option value="C">C. 加快程序执行速度</base-quiz-option>
-<base-quiz-option value="D">D. 加密日志消息</base-quiz-option>
-<base-quiz-answer value="A"><code>logging</code> 模块允许您记录程序执行信息（在不同级别：DEBUG、INFO、WARNING、ERROR、CRITICAL），这对于调试和监控非常有用。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. 记录程序执行信息以供调试和监控</BaseQuizOption>
+<BaseQuizOption value="B">B. 防止错误发生</BaseQuizOption>
+<BaseQuizOption value="C">C. 加快程序执行速度</BaseQuizOption>
+<BaseQuizOption value="D">D. 加密日志消息</BaseQuizOption>
+<BaseQuizAnswer><code>logging</code> 模块允许您记录程序执行信息（在不同级别：DEBUG、INFO、WARNING、ERROR、CRITICAL），这对于调试和监控非常有用。</BaseQuizAnswer>
+</BaseQuiz>
 
 假设您编写了一个函数来计算一个数的阶乘。在数学中，4 的阶乘是 1 × 2 × 3 × 4，即 24。7 的阶乘是 1 × 2 × 3 × 4 × 5 × 6 × 7，即 5,040。打开一个新的文件编辑器窗口，输入以下代码。它有一个 Bug，但您也将输入几条日志消息来帮助自己找出哪里出了问题。将程序保存为 factorialLog.py。
 
@@ -234,19 +228,17 @@ logging.debug('End of program')
 | `ERROR`    | `logging.error()`    | 用于记录导致程序未能执行某项操作的错误。                       |
 | `CRITICAL` | `logging.critical()` | 最高级别。用于指示已导致或即将导致程序完全停止运行的致命错误。 |
 
-<base-quiz>
-<base-quiz-question correct="D" id="cheatsheet-debugging-4">
+<BaseQuiz id="cheatsheet-debugging-4" correct="D">
 <template #question>
 Python 中最低的日志级别是什么？
 </template>
 
-<base-quiz-option value="A">A. <code>INFO</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>WARNING</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>ERROR</code></base-quiz-option>
-<base-quiz-option value="D" correct>D. <code>DEBUG</code></base-quiz-option>
-<base-quiz-answer value="D">日志级别从低到高依次是：<code>DEBUG</code>、<code>INFO</code>、<code>WARNING</code>、<code>ERROR</code>、<code>CRITICAL</code>。<code>DEBUG</code> 是最低级别，用于详细的诊断信息。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>INFO</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>WARNING</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>ERROR</code></BaseQuizOption>
+<BaseQuizOption value="D" correct>D. <code>DEBUG</code></BaseQuizOption>
+<BaseQuizAnswer>日志级别从低到高依次是：<code>DEBUG</code>、<code>INFO</code>、<code>WARNING</code>、<code>ERROR</code>、<code>CRITICAL</code>。<code>DEBUG</code> 是最低级别，用于详细的诊断信息。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 禁用日志记录
 
@@ -278,19 +270,17 @@ import logging
 logging.basicConfig(filename='myProgramLog.txt', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-debugging-5">
+<BaseQuiz id="cheatsheet-debugging-5" correct="B">
 <template #question>
 如何将日志消息写入文件而不是显示在屏幕上？
 </template>
 
-<base-quiz-option value="A">A. 使用 <code>logging.file()</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. 将 <code>filename</code> 参数传递给 <code>logging.basicConfig()</code></base-quiz-option>
-<base-quiz-option value="C">C. 使用 <code>logging.write()</code></base-quiz-option>
-<base-quiz-option value="D">D. 日志总是自动写入文件</base-quiz-option>
-<base-quiz-answer value="B">要将日志消息写入文件，请将 <code>filename</code> 参数传递给 <code>logging.basicConfig()</code>。这将把所有日志消息写入指定的日志文件，而不是显示在屏幕上。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 使用 <code>logging.file()</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. 将 <code>filename</code> 参数传递给 <code>logging.basicConfig()</code></BaseQuizOption>
+<BaseQuizOption value="C">C. 使用 <code>logging.write()</code></BaseQuizOption>
+<BaseQuizOption value="D">D. 日志总是自动写入文件</BaseQuizOption>
+<BaseQuizAnswer>要将日志消息写入文件，请将 <code>filename</code> 参数传递给 <code>logging.basicConfig()</code>。这将把所有日志消息写入指定的日志文件，而不是显示在屏幕上。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 相关链接
 

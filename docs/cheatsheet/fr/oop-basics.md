@@ -61,19 +61,17 @@ print(obj.__private_var)    # AttributeError: 'MyClass' object has no attribute 
 
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-oop-basics-1">
+<BaseQuiz id="cheatsheet-oop-basics-1" correct="B">
 <template #question>
 Comment indiquez-vous une variable protégée en Python ?
 </template>
 
-<base-quiz-option value="A">A. Préfixe de deux traits de soulignement : <code>**variable</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. Préfixe de trait de soulignement unique : <code>_variable</code></base-quiz-option>
-<base-quiz-option value="C">C. Aucun trait de soulignement nécessaire</base-quiz-option>
-<base-quiz-option value="D">D. Préfixe de trois traits de soulignement : <code>_**variable</code></base-quiz-option>
-<base-quiz-answer value="B">En Python, un préfixe de trait de soulignement unique (<code>\_variable</code>) indique une variable protégée, ce qui est une convention signifiant qu'elle doit être utilisée à l'intérieur de la classe ou de ses sous-classes. Deux traits de soulignement (<code>\_\_variable</code>) indiquent une variable privée.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Préfixe de deux traits de soulignement : <code>**variable</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Préfixe de trait de soulignement unique : <code>_variable</code></BaseQuizOption>
+<BaseQuizOption value="C">C. Aucun trait de soulignement nécessaire</BaseQuizOption>
+<BaseQuizOption value="D">D. Préfixe de trois traits de soulignement : <code>_**variable</code></BaseQuizOption>
+<BaseQuizAnswer>En Python, un préfixe de trait de soulignement unique (<code>\_variable</code>) indique une variable protégée, ce qui est une convention signifiant qu'elle doit être utilisée à l'intérieur de la classe ou de ses sous-classes. Deux traits de soulignement (<code>\_\_variable</code>) indiquent une variable privée.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Héritage
 
@@ -130,19 +128,17 @@ cat.speak()   # sortie : Meow!
 
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-oop-basics-2">
+<BaseQuiz id="cheatsheet-oop-basics-2" correct="A">
 <template #question>
 Qu'est-ce que l'héritage en POO Python ?
 </template>
 
-<base-quiz-option value="A" correct>A. Un mécanisme par lequel une classe peut hériter des attributs et des méthodes d'une autre classe</base-quiz-option>
-<base-quiz-option value="B">B. Une façon de copier des objets</base-quiz-option>
-<base-quiz-option value="C">C. Une méthode pour supprimer des classes</base-quiz-option>
-<base-quiz-option value="D">D. Une fonction intégrée</base-quiz-option>
-<base-quiz-answer value="A">L'héritage permet à une classe (enfant/sous-classe) d'hériter des attributs et des méthodes d'une autre classe (parent/classe de base). Cela favorise la réutilisation du code et permet de créer une hiérarchie de classes.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. Un mécanisme par lequel une classe peut hériter des attributs et des méthodes d'une autre classe</BaseQuizOption>
+<BaseQuizOption value="B">B. Une façon de copier des objets</BaseQuizOption>
+<BaseQuizOption value="C">C. Une méthode pour supprimer des classes</BaseQuizOption>
+<BaseQuizOption value="D">D. Une fonction intégrée</BaseQuizOption>
+<BaseQuizAnswer>L'héritage permet à une classe (enfant/sous-classe) d'hériter des attributs et des méthodes d'une autre classe (parent/classe de base). Cela favorise la réutilisation du code et permet de créer une hiérarchie de classes.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Polymorphisme
 
@@ -193,19 +189,17 @@ for shape in shapes:
 
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-oop-basics-3">
+<BaseQuiz id="cheatsheet-oop-basics-3" correct="C">
 <template #question>
 Qu'est-ce que le polymorphisme en POO Python ?
 </template>
 
-<base-quiz-option value="A">A. Créer plusieurs classes portant le même nom</base-quiz-option>
-<base-quiz-option value="B">B. Cacher les détails d'implémentation</base-quiz-option>
-<base-quiz-option value="C" correct>C. La capacité d'utiliser des objets de différentes classes d'une manière uniforme via une interface commune</base-quiz-option>
-<base-quiz-option value="D">D. Copier des objets</base-quiz-option>
-<base-quiz-answer value="C">Le polymorphisme vous permet d'écrire du code qui peut fonctionner avec des objets de différentes classes d'une manière uniforme. Différentes classes peuvent implémenter le même nom de méthode, et Python appellera l'implémentation appropriée en fonction du type de l'objet.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Créer plusieurs classes portant le même nom</BaseQuizOption>
+<BaseQuizOption value="B">B. Cacher les détails d'implémentation</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. La capacité d'utiliser des objets de différentes classes d'une manière uniforme via une interface commune</BaseQuizOption>
+<BaseQuizOption value="D">D. Copier des objets</BaseQuizOption>
+<BaseQuizAnswer>Le polymorphisme vous permet d'écrire du code qui peut fonctionner avec des objets de différentes classes d'une manière uniforme. Différentes classes peuvent implémenter le même nom de méthode, et Python appellera l'implémentation appropriée en fonction du type de l'objet.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Abstraction
 

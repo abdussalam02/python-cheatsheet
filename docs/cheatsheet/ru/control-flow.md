@@ -90,19 +90,17 @@ True
 False
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-control-flow-1">
+<BaseQuiz id="cheatsheet-control-flow-1" correct="B">
 <template #question>
 Чему равно выражение <code>'hello' == 'Hello'</code>?
 </template>
 
-<base-quiz-option value="A">A. <code>True</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>False</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>None</code></base-quiz-option>
-<base-quiz-option value="D">D. Вызывает ошибку</base-quiz-option>
-<base-quiz-answer value="B">Сравнение строк в Python чувствительно к регистру. <code>'hello'</code> и <code>'Hello'</code> — разные строки, поэтому сравнение возвращает <code>False</code>.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>True</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>False</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>None</code></BaseQuizOption>
+<BaseQuizOption value="D">D. Вызывает ошибку</BaseQuizOption>
+<BaseQuizAnswer>Сравнение строк в Python чувствительно к регистру. <code>'hello'</code> и <code>'Hello'</code> — разные строки, поэтому сравнение возвращает <code>False</code>.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Логические операторы
 
@@ -232,19 +230,17 @@ else:  # Выполняется, если условие if ложно
 You are not George
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-control-flow-2">
+<BaseQuiz id="cheatsheet-control-flow-2" correct="B">
 <template #question>
 Когда выполняется блок <code>else</code> в операторе if-else?
 </template>
 
-<base-quiz-option value="A">A. Всегда</base-quiz-option>
-<base-quiz-option value="B" correct>B. Только когда условие <code>if</code> (и все условия <code>elif</code>, если они есть) равны <code>False</code></base-quiz-option>
-<base-quiz-option value="C">C. Только когда условие <code>if</code> равно <code>True</code></base-quiz-option>
-<base-quiz-option value="D">D. Никогда</base-quiz-option>
-<base-quiz-answer value="B">Блок <code>else</code> выполняется только тогда, когда условие <code>if</code> и все условия <code>elif</code> (если таковые имеются) оцениваются как <code>False</code>.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Всегда</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Только когда условие <code>if</code> (и все условия <code>elif</code>, если они есть) равны <code>False</code></BaseQuizOption>
+<BaseQuizOption value="C">C. Только когда условие <code>if</code> равно <code>True</code></BaseQuizOption>
+<BaseQuizOption value="D">D. Никогда</BaseQuizOption>
+<BaseQuizAnswer>Блок <code>else</code> выполняется только тогда, когда условие <code>if</code> и все условия <code>elif</code> (если таковые имеются) оцениваются как <code>False</code>.</BaseQuizAnswer>
+</BaseQuiz>
 
 Только после того, как выражение оператора `if` окажется `False`, оператор `elif` будет оценен и выполнен:
 
@@ -501,19 +497,17 @@ Hello, world.
 Hello, world.
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-control-flow-3">
+<BaseQuiz id="cheatsheet-control-flow-3" correct="A">
 <template #question>
 Что делает цикл <code>while</code>?
 </template>
 
-<base-quiz-option value="A" correct>A. Повторяет код, пока условие <code>True</code></base-quiz-option>
-<base-quiz-option value="B">B. Выполняет код ровно один раз</base-quiz-option>
-<base-quiz-option value="C">C. Выполняет код фиксированное количество раз</base-quiz-option>
-<base-quiz-option value="D">D. Пропускает выполнение кода</base-quiz-option>
-<base-quiz-answer value="A">Цикл <code>while</code> многократно выполняет блок кода, пока условие оценивается как <code>True</code>. Когда условие становится <code>False</code>, цикл останавливается.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. Повторяет код, пока условие <code>True</code></BaseQuizOption>
+<BaseQuizOption value="B">B. Выполняет код ровно один раз</BaseQuizOption>
+<BaseQuizOption value="C">C. Выполняет код фиксированное количество раз</BaseQuizOption>
+<BaseQuizOption value="D">D. Пропускает выполнение кода</BaseQuizOption>
+<BaseQuizAnswer>Цикл <code>while</code> многократно выполняет блок кода, пока условие оценивается как <code>True</code>. Когда условие становится <code>False</code>, цикл останавливается.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Операторы break
 
@@ -576,19 +570,17 @@ Milo
 Loki
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-control-flow-4">
+<BaseQuiz id="cheatsheet-control-flow-4" correct="C">
 <template #question>
 Что перебирает цикл <code>for</code>?
 </template>
 
-<base-quiz-option value="A">A. Только числа</base-quiz-option>
-<base-quiz-option value="B">B. Только строки</base-quiz-option>
-<base-quiz-option value="C" correct>C. Любая итерируемая последовательность (список, кортеж, словарь, множество и т. д.)</base-quiz-option>
-<base-quiz-option value="D">D. Только списки</base-quiz-option>
-<base-quiz-answer value="C">Цикл <code>for</code> может перебирать любую итерируемую последовательность, включая списки, кортежи, словари, множества, строки и другие итерируемые объекты.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Только числа</BaseQuizOption>
+<BaseQuizOption value="B">B. Только строки</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. Любая итерируемая последовательность (список, кортеж, словарь, множество и т. д.)</BaseQuizOption>
+<BaseQuizOption value="D">D. Только списки</BaseQuizOption>
+<BaseQuizAnswer>Цикл <code>for</code> может перебирать любую итерируемую последовательность, включая списки, кортежи, словари, множества, строки и другие итерируемые объекты.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Функция range()
 
@@ -607,19 +599,17 @@ Will stop at 5! or 4? (3)
 Will stop at 5! or 4? (4)
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-control-flow-5">
+<BaseQuiz id="cheatsheet-control-flow-5" correct="B">
 <template #question>
 Что генерирует <code>range(5)</code>?
 </template>
 
-<base-quiz-option value="A">A. Числа от 1 до 5</base-quiz-option>
-<base-quiz-option value="B" correct>B. Числа от 0 до 4</base-quiz-option>
-<base-quiz-option value="C">C. Числа от 0 до 5</base-quiz-option>
-<base-quiz-option value="D">D. Пять случайных чисел</base-quiz-option>
-<base-quiz-answer value="B">Функция <code>range(5)</code> генерирует числа от 0 до 4 (всего 5 чисел). Конечное значение не включается, поэтому она останавливается, не достигая 5.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Числа от 1 до 5</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Числа от 0 до 4</BaseQuizOption>
+<BaseQuizOption value="C">C. Числа от 0 до 5</BaseQuizOption>
+<BaseQuizOption value="D">D. Пять случайных чисел</BaseQuizOption>
+<BaseQuizAnswer>Функция <code>range(5)</code> генерирует числа от 0 до 4 (всего 5 чисел). Конечное значение не включается, поэтому она останавливается, не достигая 5.</BaseQuizAnswer>
+</BaseQuiz>
 
 Функция `range()` также может изменять свои 3 значения по умолчанию. Первые два будут значениями `start` (начало) и `stop` (конец), а третье будет аргументом `step` (шаг). Шаг — это величина, на которую увеличивается переменная после каждой итерации.
 

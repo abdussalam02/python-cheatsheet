@@ -61,19 +61,17 @@ print(obj.__private_var)    # AttributeError: 'MyClass' object has no attribute 
 
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-oop-basics-1">
+<BaseQuiz id="cheatsheet-oop-basics-1" correct="B">
 <template #question>
 Python 에서 보호 변수를 나타내는 방법은 무엇입니까?
 </template>
 
-<base-quiz-option value="A">A. 두 개의 밑줄 접두사: <code>**variable</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. 단일 밑줄 접두사: <code>_variable</code></base-quiz-option>
-<base-quiz-option value="C">C. 밑줄이 필요 없음</base-quiz-option>
-<base-quiz-option value="D">D. 세 개의 밑줄 접두사: <code>_**variable</code></base-quiz-option>
-<base-quiz-answer value="B">Python 에서 단일 밑줄 접두사 (<code>\_variable</code>) 는 보호 변수를 나타내며, 이는 클래스 또는 그 서브클래스 내에서 사용되어야 함을 의미하는 관례입니다. 두 개의 밑줄 (<code>\_\_variable</code>) 은 private 변수를 나타냅니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 두 개의 밑줄 접두사: <code>**variable</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. 단일 밑줄 접두사: <code>_variable</code></BaseQuizOption>
+<BaseQuizOption value="C">C. 밑줄이 필요 없음</BaseQuizOption>
+<BaseQuizOption value="D">D. 세 개의 밑줄 접두사: <code>_**variable</code></BaseQuizOption>
+<BaseQuizAnswer>Python 에서 단일 밑줄 접두사 (<code>\_variable</code>) 는 보호 변수를 나타내며, 이는 클래스 또는 그 서브클래스 내에서 사용되어야 함을 의미하는 관례입니다. 두 개의 밑줄 (<code>\_\_variable</code>) 은 private 변수를 나타냅니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 상속 (Inheritance)
 
@@ -130,19 +128,17 @@ cat.speak()   # 출력: Meow!
 
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-oop-basics-2">
+<BaseQuiz id="cheatsheet-oop-basics-2" correct="A">
 <template #question>
 Python OOP 에서 상속이란 무엇입니까?
 </template>
 
-<base-quiz-option value="A" correct>A. 한 클래스가 다른 클래스로부터 속성과 메서드를 상속받는 메커니즘</base-quiz-option>
-<base-quiz-option value="B">B. 객체를 복사하는 방법</base-quiz-option>
-<base-quiz-option value="C">C. 클래스를 삭제하는 메서드</base-quiz-option>
-<base-quiz-option value="D">D. 내장 함수</base-quiz-option>
-<base-quiz-answer value="A">상속은 클래스 (자식/서브클래스) 가 다른 클래스 (부모/기본 클래스) 로부터 속성과 메서드를 상속받을 수 있도록 허용합니다. 이는 코드 재사용을 촉진하고 클래스 계층 구조를 생성할 수 있게 합니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. 한 클래스가 다른 클래스로부터 속성과 메서드를 상속받는 메커니즘</BaseQuizOption>
+<BaseQuizOption value="B">B. 객체를 복사하는 방법</BaseQuizOption>
+<BaseQuizOption value="C">C. 클래스를 삭제하는 메서드</BaseQuizOption>
+<BaseQuizOption value="D">D. 내장 함수</BaseQuizOption>
+<BaseQuizAnswer>상속은 클래스 (자식/서브클래스) 가 다른 클래스 (부모/기본 클래스) 로부터 속성과 메서드를 상속받을 수 있도록 허용합니다. 이는 코드 재사용을 촉진하고 클래스 계층 구조를 생성할 수 있게 합니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 다형성 (Polymorphism)
 
@@ -189,19 +185,17 @@ for shape in shapes:
     print(shape.area())  # 각 Shape 객체의 면적 출력
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-oop-basics-3">
+<BaseQuiz id="cheatsheet-oop-basics-3" correct="C">
 <template #question>
 Python OOP 에서 다형성이란 무엇입니까?
 </template>
 
-<base-quiz-option value="A">A. 동일한 이름을 가진 여러 클래스 생성</base-quiz-option>
-<base-quiz-option value="B">B. 구현 세부 사항 숨기기</base-quiz-option>
-<base-quiz-option value="C" correct>C. 공통 인터페이스를 통해 서로 다른 클래스의 객체를 균일한 방식으로 사용할 수 있는 능력</base-quiz-option>
-<base-quiz-option value="D">D. 객체 복사</base-quiz-option>
-<base-quiz-answer value="C">다형성은 서로 다른 클래스의 객체에 대해 균일한 방식으로 작동하는 코드를 작성할 수 있도록 합니다. 서로 다른 클래스가 동일한 메서드 이름을 구현할 수 있으며, Python 은 객체의 유형에 따라 적절한 구현을 호출합니다.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 동일한 이름을 가진 여러 클래스 생성</BaseQuizOption>
+<BaseQuizOption value="B">B. 구현 세부 사항 숨기기</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. 공통 인터페이스를 통해 서로 다른 클래스의 객체를 균일한 방식으로 사용할 수 있는 능력</BaseQuizOption>
+<BaseQuizOption value="D">D. 객체 복사</BaseQuizOption>
+<BaseQuizAnswer>다형성은 서로 다른 클래스의 객체에 대해 균일한 방식으로 작동하는 코드를 작성할 수 있도록 합니다. 서로 다른 클래스가 동일한 메서드 이름을 구현할 수 있으며, Python 은 객체의 유형에 따라 적절한 구현을 호출합니다.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 추상화 (Abstraction)
 

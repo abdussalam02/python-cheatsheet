@@ -69,19 +69,17 @@ some_function('arg1', 'arg2', 'arg3')
 Arguments passés: ('arg1', 'arg2', 'arg3') en tant que <class 'tuple'>
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-args-and-kwargs-1">
+<BaseQuiz id="cheatsheet-args-and-kwargs-1" correct="B">
 <template #question>
 Quel type de données <code>*args</code> utilise pour collecter les arguments ?
 </template>
 
-<base-quiz-option value="A">A. Une liste</base-quiz-option>
-<base-quiz-option value="B" correct>B. Un tuple</base-quiz-option>
-<base-quiz-option value="C">C. Un dictionnaire</base-quiz-option>
-<base-quiz-option value="D">D. Un ensemble (set)</base-quiz-option>
-<base-quiz-answer value="B">Le paramètre <code>\*args</code> collecte les arguments positionnels dans un tuple. Cela permet à une fonction d'accepter un nombre quelconque d'arguments positionnels.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Une liste</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Un tuple</BaseQuizOption>
+<BaseQuizOption value="C">C. Un dictionnaire</BaseQuizOption>
+<BaseQuizOption value="D">D. Un ensemble (set)</BaseQuizOption>
+<BaseQuizAnswer>Le paramètre <code>\*args</code> collecte les arguments positionnels dans un tuple. Cela permet à une fonction d'accepter un nombre quelconque d'arguments positionnels.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Kwargs
 
@@ -100,19 +98,17 @@ some_function(key1='arg1', key2='arg2')
 Mots-clés: {'key1': 'arg1', 'key2': 'arg2'} en tant que <class 'dict'>
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-args-and-kwargs-2">
+<BaseQuiz id="cheatsheet-args-and-kwargs-2" correct="C">
 <template #question>
 Quel type de données <code>**kwargs</code> utilise pour collecter les arguments ?
 </template>
 
-<base-quiz-option value="A">A. Une liste</base-quiz-option>
-<base-quiz-option value="B">B. Un tuple</base-quiz-option>
-<base-quiz-option value="C" correct>C. Un dictionnaire</base-quiz-option>
-<base-quiz-option value="D">D. Un ensemble (set)</base-quiz-option>
-<base-quiz-answer value="C">Le paramètre <code>\*\*kwargs</code> collecte les arguments de mots-clés dans un dictionnaire. Cela permet à une fonction d'accepter un nombre quelconque d'arguments de mots-clés.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Une liste</BaseQuizOption>
+<BaseQuizOption value="B">B. Un tuple</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. Un dictionnaire</BaseQuizOption>
+<BaseQuizOption value="D">D. Un ensemble (set)</BaseQuizOption>
+<BaseQuizAnswer>Le paramètre <code>\*\*kwargs</code> collecte les arguments de mots-clés dans un dictionnaire. Cela permet à une fonction d'accepter un nombre quelconque d'arguments de mots-clés.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Liens pertinents
 

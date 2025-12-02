@@ -88,19 +88,17 @@ obj.price
 0.0
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-dataclasses-1">
+<BaseQuiz id="cheatsheet-dataclasses-1" correct="B">
 <template #question>
 Em uma dataclass, onde os campos com valores padrão devem ser colocados?
 </template>
 
-<base-quiz-option value="A">A. Antes dos campos sem valores padrão</base-quiz-option>
-<base-quiz-option value="B" correct>B. Depois dos campos sem valores padrão</base-quiz-option>
-<base-quiz-option value="C">C. Não importa</base-quiz-option>
-<base-quiz-option value="D">D. Em uma seção separada</base-quiz-option>
-<base-quiz-answer value="B">Em dataclasses, campos com valores padrão devem vir depois de campos sem valores padrão. Isso ocorre porque o Python precisa saber a ordem dos parâmetros obrigatórios versus opcionais para o método <code>**init**</code> gerado.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Antes dos campos sem valores padrão</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Depois dos campos sem valores padrão</BaseQuizOption>
+<BaseQuizOption value="C">C. Não importa</BaseQuizOption>
+<BaseQuizOption value="D">D. Em uma seção separada</BaseQuizOption>
+<BaseQuizAnswer>Em dataclasses, campos com valores padrão devem vir depois de campos sem valores padrão. Isso ocorre porque o Python precisa saber a ordem dos parâmetros obrigatórios versus opcionais para o método <code>**init**</code> gerado.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Dicas de Tipo (Type hints)
 

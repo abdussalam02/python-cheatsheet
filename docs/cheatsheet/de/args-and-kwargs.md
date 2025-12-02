@@ -69,19 +69,17 @@ some_function('arg1', 'arg2', 'arg3')
 Arguments passed: ('arg1', 'arg2', 'arg3') as <class 'tuple'>
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-args-and-kwargs-1">
+<BaseQuiz id="cheatsheet-args-and-kwargs-1" correct="B">
 <template #question>
 In welchen Datentyp sammelt <code>*args</code> Argumente?
 </template>
 
-<base-quiz-option value="A">A. Eine Liste</base-quiz-option>
-<base-quiz-option value="B" correct>B. Ein Tupel</base-quiz-option>
-<base-quiz-option value="C">C. Ein Dictionary</base-quiz-option>
-<base-quiz-option value="D">D. Eine Menge</base-quiz-option>
-<base-quiz-answer value="B">Der Parameter <code>\*args</code> sammelt positionelle Argumente in einem Tupel. Dies ermöglicht es einer Funktion, eine beliebige Anzahl positioneller Argumente anzunehmen.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Eine Liste</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Ein Tupel</BaseQuizOption>
+<BaseQuizOption value="C">C. Ein Dictionary</BaseQuizOption>
+<BaseQuizOption value="D">D. Eine Menge</BaseQuizOption>
+<BaseQuizAnswer>Der Parameter <code>\*args</code> sammelt positionelle Argumente in einem Tupel. Dies ermöglicht es einer Funktion, eine beliebige Anzahl positioneller Argumente anzunehmen.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## kwargs
 
@@ -100,19 +98,17 @@ some_function(key1='arg1', key2='arg2')
 keywords: {'key1': 'arg1', 'key2': 'arg2'} as <class 'dict'>
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-args-and-kwargs-2">
+<BaseQuiz id="cheatsheet-args-and-kwargs-2" correct="C">
 <template #question>
 In welchen Datentyp sammelt <code>**kwargs</code> Argumente?
 </template>
 
-<base-quiz-option value="A">A. Eine Liste</base-quiz-option>
-<base-quiz-option value="B">B. Ein Tupel</base-quiz-option>
-<base-quiz-option value="C" correct>C. Ein Dictionary</base-quiz-option>
-<base-quiz-option value="D">D. Eine Menge</base-quiz-option>
-<base-quiz-answer value="C">Der Parameter <code>\*\*kwargs</code> sammelt Schlüsselwortargumente in einem Dictionary. Dies ermöglicht es einer Funktion, eine beliebige Anzahl von Schlüsselwortargumenten anzunehmen.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Eine Liste</BaseQuizOption>
+<BaseQuizOption value="B">B. Ein Tupel</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. Ein Dictionary</BaseQuizOption>
+<BaseQuizOption value="D">D. Eine Menge</BaseQuizOption>
+<BaseQuizAnswer>Der Parameter <code>\*\*kwargs</code> sammelt Schlüsselwortargumente in einem Dictionary. Dies ermöglicht es einer Funktion, eine beliebige Anzahl von Schlüsselwortargumenten anzunehmen.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Relevante Links
 

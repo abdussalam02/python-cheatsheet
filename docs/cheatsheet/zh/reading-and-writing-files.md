@@ -32,19 +32,17 @@ hello_content
 'Hello World!'
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-reading-and-writing-files-1">
+<BaseQuiz id="cheatsheet-reading-and-writing-files-1" correct="A">
 <template #question>
 使用 <code>with</code> 语句打开文件的主要优点是什么？
 </template>
 
-<base-quiz-option value="A" correct>A. 完成后文件会自动关闭，即使发生错误</base-quiz-option>
-<base-quiz-option value="B">B. 文件打开速度更快</base-quiz-option>
-<base-quiz-option value="C">C. 文件可以同时以读写模式打开</base-quiz-option>
-<base-quiz-option value="D">D. 文件会自动压缩</base-quiz-option>
-<base-quiz-answer value="A"><code>with</code> 语句确保在退出代码块时文件会自动关闭，即使发生异常也是如此。这有助于正确管理资源。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. 完成后文件会自动关闭，即使发生错误</BaseQuizOption>
+<BaseQuizOption value="B">B. 文件打开速度更快</BaseQuizOption>
+<BaseQuizOption value="C">C. 文件可以同时以读写模式打开</BaseQuizOption>
+<BaseQuizOption value="D">D. 文件会自动压缩</BaseQuizOption>
+<BaseQuizAnswer><code>with</code> 语句确保在退出代码块时文件会自动关闭，即使发生异常也是如此。这有助于正确管理资源。</BaseQuizAnswer>
+</BaseQuiz>
 
 或者，您可以使用 _readlines()_ 方法从文件中获取字符串值列表，文件中的每一行对应一个字符串：
 
@@ -111,19 +109,17 @@ Hello world!
 Bacon is not a vegetable.
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-reading-and-writing-files-2">
+<BaseQuiz id="cheatsheet-reading-and-writing-files-2" correct="B">
 <template #question>
 打开文件时，模式 <code>'w'</code> 和模式 <code>'a'</code> 有什么区别？
 </template>
 
-<base-quiz-option value="A">A. <code>'w'</code> 用于读取，<code>'a'</code> 用于写入</base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>'w'</code> 覆盖文件，<code>'a'</code> 追加到文件</base-quiz-option>
-<base-quiz-option value="C">C. <code>'w'</code> 用于 Windows，<code>'a'</code> 用于 Apple</base-quiz-option>
-<base-quiz-option value="D">D. 没有区别</base-quiz-option>
-<base-quiz-answer value="B">模式 <code>'w'</code> 以写入方式打开文件并覆盖任何现有内容。模式 <code>'a'</code> 以追加方式打开文件，将新内容添加到文件末尾。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>'w'</code> 用于读取，<code>'a'</code> 用于写入</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>'w'</code> 覆盖文件，<code>'a'</code> 追加到文件</BaseQuizOption>
+<BaseQuizOption value="C">C. <code>'w'</code> 用于 Windows，<code>'a'</code> 用于 Apple</BaseQuizOption>
+<BaseQuizOption value="D">D. 没有区别</BaseQuizOption>
+<BaseQuizAnswer>模式 <code>'w'</code> 以写入方式打开文件并覆盖任何现有内容。模式 <code>'a'</code> 以追加方式打开文件，将新内容添加到文件末尾。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 相关链接
 

@@ -27,19 +27,17 @@ with open(filename) as f:  # 'f' はファイルオブジェクト
 # エラーが発生した場合でも、ここでファイルは自動的に閉じられる
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-context-manager-1">
+<BaseQuiz id="cheatsheet-context-manager-1" correct="A">
 <template #question>
 コンテキストマネージャ（<code>with</code>ステートメント）を使用する主な利点は何ですか？
 </template>
 
-<base-quiz-option value="A" correct>A. エラーが発生した場合でも、リソースのクリーンアップを自動的に処理する</base-quiz-option>
-<base-quiz-option value="B">B. コードの実行速度を向上させる</base-quiz-option>
-<base-quiz-option value="C">C. 複数のファイルを同時に開くことができる</base-quiz-option>
-<base-quiz-option value="D">D. すべてのエラーを防ぐ</base-quiz-option>
-<base-quiz-answer value="A">コンテキストマネージャは、例外が発生した場合でも、リソース（ファイルなど）がブロックを終了するときに適切にクリーンアップされることを保証します。これにより、リソースリークやデータ損失を防ぎます。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. エラーが発生した場合でも、リソースのクリーンアップを自動的に処理する</BaseQuizOption>
+<BaseQuizOption value="B">B. コードの実行速度を向上させる</BaseQuizOption>
+<BaseQuizOption value="C">C. 複数のファイルを同時に開くことができる</BaseQuizOption>
+<BaseQuizOption value="D">D. すべてのエラーを防ぐ</BaseQuizOption>
+<BaseQuizAnswer>コンテキストマネージャは、例外が発生した場合でも、リソース（ファイルなど）がブロックを終了するときに適切にクリーンアップされることを保証します。これにより、リソースリークやデータ損失を防ぎます。</BaseQuizAnswer>
+</BaseQuiz>
 
 ブロックの実行が終了するものは何でも、コンテキストマネージャの終了メソッドが呼び出されます。これには例外が含まれ、エラーによって開いているファイルや接続から予期せず終了する場合に役立ちます。ファイルを閉じたり接続を切断したりせずにスクリプトを終了するのは悪い考えであり、データ損失やその他の問題を引き起こす可能性があります。コンテキストマネージャを使用することで、このようにして損害や損失を防ぐための予防措置が常に取られることを保証できます。
 
@@ -90,19 +88,17 @@ test
 --exit--
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-context-manager-2">
+<BaseQuiz id="cheatsheet-context-manager-2" correct="B">
 <template #question>
 クラスがコンテキストマネージャとして使用されるために実装しなければならないメソッドは何ですか？
 </template>
 
-<base-quiz-option value="A">A. <code>**init**</code> および <code>**del**</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>**enter**</code> および <code>**exit**</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>open</code> および <code>close</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>start</code> および <code>stop</code></base-quiz-option>
-<base-quiz-answer value="B">クラスベースのコンテキストマネージャは、<code>**enter**</code>（<code>with</code>ブロックに入るときに呼び出される）と<code>**exit**</code>（ブロックを抜けるときに呼び出される）を実装する必要があります。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>**init**</code> および <code>**del**</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>**enter**</code> および <code>**exit**</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>open</code> および <code>close</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>start</code> および <code>stop</code></BaseQuizOption>
+<BaseQuizAnswer>クラスベースのコンテキストマネージャは、<code>**enter**</code>（<code>with</code>ブロックに入るときに呼び出される）と<code>**exit**</code>（ブロックを抜けるときに呼び出される）を実装する必要があります。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 関連リンク
 

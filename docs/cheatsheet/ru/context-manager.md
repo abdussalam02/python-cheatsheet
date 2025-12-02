@@ -27,19 +27,17 @@ with open(filename) as f:  # 'f' — это файловый объект
 # Файл автоматически закрыт здесь, даже если произошла ошибка
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-context-manager-1">
+<BaseQuiz id="cheatsheet-context-manager-1" correct="A">
 <template #question>
 Каково основное преимущество использования менеджера контекста (оператора <code>with</code>)?
 </template>
 
-<base-quiz-option value="A" correct>A. Автоматически обрабатывает очистку ресурсов, даже если возникает ошибка</base-quiz-option>
-<base-quiz-option value="B">B. Ускоряет выполнение кода</base-quiz-option>
-<base-quiz-option value="C">C. Позволяет одновременно открывать несколько файлов</base-quiz-option>
-<base-quiz-option value="D">D. Предотвращает все ошибки</base-quiz-option>
-<base-quiz-answer value="A">Менеджеры контекста гарантируют, что ресурсы (например, файлы) будут должным образом очищены при выходе из блока, даже если возникает исключение. Это предотвращает утечки ресурсов и потерю данных.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. Автоматически обрабатывает очистку ресурсов, даже если возникает ошибка</BaseQuizOption>
+<BaseQuizOption value="B">B. Ускоряет выполнение кода</BaseQuizOption>
+<BaseQuizOption value="C">C. Позволяет одновременно открывать несколько файлов</BaseQuizOption>
+<BaseQuizOption value="D">D. Предотвращает все ошибки</BaseQuizOption>
+<BaseQuizAnswer>Менеджеры контекста гарантируют, что ресурсы (например, файлы) будут должным образом очищены при выходе из блока, даже если возникает исключение. Это предотвращает утечки ресурсов и потерю данных.</BaseQuizAnswer>
+</BaseQuiz>
 
 Все, что приводит к завершению выполнения блока, вызывает вызов метода выхода менеджера контекста. Это включает исключения и может быть полезно, когда ошибка приводит к преждевременному выходу из открытого файла или соединения. Завершение работы скрипта без надлежащего закрытия файлов/соединений — плохая идея, которая может привести к потере данных или другим проблемам. Используя менеджер контекста, вы можете гарантировать, что меры предосторожности всегда принимаются для предотвращения повреждения или потерь таким образом.
 
@@ -90,19 +88,17 @@ test
 --exit--
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-context-manager-2">
+<BaseQuiz id="cheatsheet-context-manager-2" correct="B">
 <template #question>
 Какие методы должен реализовать класс, чтобы использоваться в качестве менеджера контекста?
 </template>
 
-<base-quiz-option value="A">A. <code>**init**</code> и <code>**del**</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>**enter**</code> и <code>**exit**</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>open</code> и <code>close</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>start</code> и <code>stop</code></base-quiz-option>
-<base-quiz-answer value="B">Менеджер контекста на основе класса должен реализовать <code>**enter**</code> (вызывается при входе в блок <code>with</code>) и <code>**exit**</code> (вызывается при выходе из блока).</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>**init**</code> и <code>**del**</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>**enter**</code> и <code>**exit**</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>open</code> и <code>close</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>start</code> и <code>stop</code></BaseQuizOption>
+<BaseQuizAnswer>Менеджер контекста на основе класса должен реализовать <code>**enter**</code> (вызывается при входе в блок <code>with</code>) и <code>**exit**</code> (вызывается при выходе из блока).</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Связанные ссылки
 

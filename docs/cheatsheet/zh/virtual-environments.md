@@ -30,19 +30,17 @@ python3 -m venv venv
 
 这将在当前文件夹中创建一个包含虚拟环境的 `venv` 目录。
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-virtual-environments-1">
+<BaseQuiz id="cheatsheet-virtual-environments-1" correct="A">
 <template #question>
 使用 <code>venv</code> 创建虚拟环境的命令是什么？
 </template>
 
-<base-quiz-option value="A" correct>A. <code>python -m venv venv</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>python create venv</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>venv create</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>python venv new</code></base-quiz-option>
-<base-quiz-answer value="A">命令 <code>python -m venv venv</code> 创建一个虚拟环境。<code>-m</code> 标志运行 venv 模块，末尾的 <code>venv</code> 是要创建的目录的名称。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. <code>python -m venv venv</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>python create venv</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>venv create</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>python venv new</code></BaseQuizOption>
+<BaseQuizAnswer>命令 <code>python -m venv venv</code> 创建一个虚拟环境。<code>-m</code> 标志运行 venv 模块，末尾的 <code>venv</code> 是要创建的目录的名称。</BaseQuizAnswer>
+</BaseQuiz>
 
 2. 激活虚拟环境
 
@@ -60,19 +58,17 @@ venv\Scripts\activate
 
 激活后，您将在命令提示符的开头看到 `(venv)`，表示虚拟环境已激活。
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-virtual-environments-2">
+<BaseQuiz id="cheatsheet-virtual-environments-2" correct="B">
 <template #question>
 如何在 Linux/macOS 上激活虚拟环境？
 </template>
 
-<base-quiz-option value="A">A. <code>activate venv</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>source venv/bin/activate</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>venv activate</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>python venv activate</code></base-quiz-option>
-<base-quiz-answer value="B">在 Linux/macOS 上，使用 <code>source venv/bin/activate</code> 激活虚拟环境。在 Windows 上，您将使用 <code>venv\Scripts\activate</code>。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>activate venv</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>source venv/bin/activate</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>venv activate</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>python venv activate</code></BaseQuizOption>
+<BaseQuizAnswer>在 Linux/macOS 上，使用 <code>source venv/bin/activate</code> 激活虚拟环境。在 Windows 上，您将使用 <code>venv\Scripts\activate</code>。</BaseQuizAnswer>
+</BaseQuiz>
 
 3. 安装包
 
@@ -94,19 +90,17 @@ deactivate
 
 命令提示符中的 `(venv)` 前缀将消失。
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-virtual-environments-3">
+<BaseQuiz id="cheatsheet-virtual-environments-3" correct="A">
 <template #question>
 使用虚拟环境的主要目的是什么？
 </template>
 
-<base-quiz-option value="A" correct>A. 隔离项目依赖项并避免填充基础 Python 安装</base-quiz-option>
-<base-quiz-option value="B">B. 使 Python 运行得更快</base-quiz-option>
-<base-quiz-option value="C">C. 加密 Python 代码</base-quiz-option>
-<base-quiz-option value="D">D. 将 Python 编译成机器码</base-quiz-option>
-<base-quiz-answer value="A">虚拟环境允许您在封装的环境中测试 Python 代码，并避免用可能仅用于一个项目的库填充基础 Python 安装。这有助于按项目管理依赖项。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. 隔离项目依赖项并避免填充基础 Python 安装</BaseQuizOption>
+<BaseQuizOption value="B">B. 使 Python 运行得更快</BaseQuizOption>
+<BaseQuizOption value="C">C. 加密 Python 代码</BaseQuizOption>
+<BaseQuizOption value="D">D. 将 Python 编译成机器码</BaseQuizOption>
+<BaseQuizAnswer>虚拟环境允许您在封装的环境中测试 Python 代码，并避免用可能仅用于一个项目的库填充基础 Python 安装。这有助于按项目管理依赖项。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## virtualenv
 

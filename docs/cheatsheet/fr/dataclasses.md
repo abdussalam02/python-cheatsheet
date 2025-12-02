@@ -88,19 +88,17 @@ obj.price
 0.0
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-dataclasses-1">
+<BaseQuiz id="cheatsheet-dataclasses-1" correct="B">
 <template #question>
 Dans une dataclass, où les champs avec des valeurs par défaut doivent-ils être placés ?
 </template>
 
-<base-quiz-option value="A">A. Avant les champs sans valeurs par défaut</base-quiz-option>
-<base-quiz-option value="B" correct>B. Après les champs sans valeurs par défaut</base-quiz-option>
-<base-quiz-option value="C">C. Cela n'a pas d'importance</base-quiz-option>
-<base-quiz-option value="D">D. Dans une section séparée</base-quiz-option>
-<base-quiz-answer value="B">Dans les dataclasses, les champs avec des valeurs par défaut doivent suivre les champs sans valeurs par défaut. Ceci est dû au fait que Python doit connaître l'ordre des paramètres requis par rapport aux paramètres optionnels pour la méthode <code>**init**</code> générée.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Avant les champs sans valeurs par défaut</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Après les champs sans valeurs par défaut</BaseQuizOption>
+<BaseQuizOption value="C">C. Cela n'a pas d'importance</BaseQuizOption>
+<BaseQuizOption value="D">D. Dans une section séparée</BaseQuizOption>
+<BaseQuizAnswer>Dans les dataclasses, les champs avec des valeurs par défaut doivent suivre les champs sans valeurs par défaut. Ceci est dû au fait que Python doit connaître l'ordre des paramètres requis par rapport aux paramètres optionnels pour la méthode <code>**init**</code> générée.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Annotations de type (Type hints)
 

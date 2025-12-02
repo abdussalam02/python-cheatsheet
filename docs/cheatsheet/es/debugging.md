@@ -39,19 +39,17 @@ Traceback (most recent call last):
 Exception: This is the error message.
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-debugging-1">
+<BaseQuiz id="cheatsheet-debugging-1" correct="B">
 <template #question>
 ¿Qué palabra clave se utiliza para lanzar manualmente una excepción en Python?
 </template>
 
-<base-quiz-option value="A">A. <code>throw</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>raise</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>error</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>exception</code></base-quiz-option>
-<base-quiz-answer value="B">La palabra clave <code>raise</code> se utiliza para lanzar manualmente una excepción en Python. Puedes lanzar excepciones integradas o excepciones personalizadas.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>throw</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>raise</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>error</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>exception</code></BaseQuizOption>
+<BaseQuizAnswer>La palabra clave <code>raise</code> se utiliza para lanzar manualmente una excepción en Python. Puedes lanzar excepciones integradas o excepciones personalizadas.</BaseQuizAnswer>
+</BaseQuiz>
 
 Normalmente, es el código que llama a la función, no la función en sí, el que sabe cómo manejar una excepción. Por lo tanto, es común ver una sentencia `raise` dentro de una función y las sentencias `try` y `except` en el código que llama a la función.
 
@@ -145,19 +143,17 @@ Traceback (most recent call last):
 AssertionError: The pod bay doors need to be "open".
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-debugging-2">
+<BaseQuiz id="cheatsheet-debugging-2" correct="C">
 <template #question>
 ¿Qué sucede cuando falla una sentencia <code>assert</code>?
 </template>
 
-<base-quiz-option value="A">A. El programa sigue ejecutándose</base-quiz-option>
-<base-quiz-option value="B">B. Se imprime una advertencia</base-quiz-option>
-<base-quiz-option value="C" correct>C. Se lanza una <code>AssertionError</code> y el programa debería fallar</base-quiz-option>
-<base-quiz-option value="D">D. La condición se corrige automáticamente</base-quiz-option>
-<base-quiz-answer value="C">Cuando falla una sentencia <code>assert</code>, lanza una <code>AssertionError</code>. A diferencia de las excepciones, las sentencias assert no deben capturarse con try-except; si una afirmación falla, su programa debería fallar para ayudarle a encontrar errores rápidamente.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. El programa sigue ejecutándose</BaseQuizOption>
+<BaseQuizOption value="B">B. Se imprime una advertencia</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. Se lanza una <code>AssertionError</code> y el programa debería fallar</BaseQuizOption>
+<BaseQuizOption value="D">D. La condición se corrige automáticamente</BaseQuizOption>
+<BaseQuizAnswer>Cuando falla una sentencia <code>assert</code>, lanza una <code>AssertionError</code>. A diferencia de las excepciones, las sentencias assert no deben capturarse con try-except; si una afirmación falla, su programa debería fallar para ayudarle a encontrar errores rápidamente.</BaseQuizAnswer>
+</BaseQuiz>
 
 En lenguaje sencillo, una sentencia `assert` dice: "Afirmo que esta condición es verdadera, y si no lo es, hay un error en algún lugar del programa". A diferencia de las excepciones, su código no debe manejar las sentencias `assert` con `try` y `except`; si una afirmación falla, su programa debe fallar. Al fallar rápidamente de esta manera, acorta el tiempo entre la causa original del error y la primera vez que nota el error. Esto reducirá la cantidad de código que tendrá que revisar antes de encontrar el código que está causando el error.
 
@@ -174,19 +170,17 @@ import logging
 logging.basicConfig(level=logging.DEBUG, format=' %(asctime)s - %(levelname)s- %(message)s')
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-debugging-3">
+<BaseQuiz id="cheatsheet-debugging-3" correct="A">
 <template #question>
 ¿Cuál es el propósito del módulo <code>logging</code> en Python?
 </template>
 
-<base-quiz-option value="A" correct>A. Registrar información sobre la ejecución del programa para depuración y monitoreo</base-quiz-option>
-<base-quiz-option value="B">B. Prevenir que ocurran errores</base-quiz-option>
-<base-quiz-option value="C">C. Acelerar la ejecución del programa</base-quiz-option>
-<base-quiz-option value="D">D. Cifrar los mensajes de registro</base-quiz-option>
-<base-quiz-answer value="A">El módulo <code>logging</code> le permite registrar información sobre la ejecución de su programa en diferentes niveles (DEBUG, INFO, WARNING, ERROR, CRITICAL), lo cual es útil para la depuración y el monitoreo.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. Registrar información sobre la ejecución del programa para depuración y monitoreo</BaseQuizOption>
+<BaseQuizOption value="B">B. Prevenir que ocurran errores</BaseQuizOption>
+<BaseQuizOption value="C">C. Acelerar la ejecución del programa</BaseQuizOption>
+<BaseQuizOption value="D">D. Cifrar los mensajes de registro</BaseQuizOption>
+<BaseQuizAnswer>El módulo <code>logging</code> le permite registrar información sobre la ejecución de su programa en diferentes niveles (DEBUG, INFO, WARNING, ERROR, CRITICAL), lo cual es útil para la depuración y el monitoreo.</BaseQuizAnswer>
+</BaseQuiz>
 
 Supongamos que escribió una función para calcular el factorial de un número. En matemáticas, el factorial de 4 es 1 × 2 × 3 × 4, o 24. El factorial de 7 es 1 × 2 × 3 × 4 × 5 × 6 × 7, o 5,040. Abra una nueva ventana del editor de archivos e ingrese el siguiente código. Tiene un error, pero también ingresará varias sentencias de registro para ayudarse a descubrir qué está saliendo mal. Guarde el programa como factorialLog.py.
 
@@ -234,19 +228,17 @@ Los niveles de registro proporcionan una forma de categorizar sus mensajes de re
 | `ERROR`    | `logging.error()`    | Se utiliza para registrar un error que hizo que el programa no pudiera hacer algo.                                                                 |
 | `CRITICAL` | `logging.critical()` | El nivel más alto. Se utiliza para indicar un error fatal que ha causado o está a punto de causar que el programa deje de ejecutarse por completo. |
 
-<base-quiz>
-<base-quiz-question correct="D" id="cheatsheet-debugging-4">
+<BaseQuiz id="cheatsheet-debugging-4" correct="D">
 <template #question>
 ¿Cuál es el nivel de registro más bajo en Python?
 </template>
 
-<base-quiz-option value="A">A. <code>INFO</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>WARNING</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>ERROR</code></base-quiz-option>
-<base-quiz-option value="D" correct>D. <code>DEBUG</code></base-quiz-option>
-<base-quiz-answer value="D">Los niveles de registro de menor a mayor son: <code>DEBUG</code>, <code>INFO</code>, <code>WARNING</code>, <code>ERROR</code>, <code>CRITICAL</code>. <code>DEBUG</code> es el nivel más bajo, utilizado para información de diagnóstico detallada.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>INFO</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>WARNING</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>ERROR</code></BaseQuizOption>
+<BaseQuizOption value="D" correct>D. <code>DEBUG</code></BaseQuizOption>
+<BaseQuizAnswer>Los niveles de registro de menor a mayor son: <code>DEBUG</code>, <code>INFO</code>, <code>WARNING</code>, <code>ERROR</code>, <code>CRITICAL</code>. <code>DEBUG</code> es el nivel más bajo, utilizado para información de diagnóstico detallada.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Deshabilitar el Registro
 
@@ -278,19 +270,17 @@ import logging
 logging.basicConfig(filename='myProgramLog.txt', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-debugging-5">
+<BaseQuiz id="cheatsheet-debugging-5" correct="B">
 <template #question>
 ¿Cómo se escriben los mensajes de registro en un archivo en lugar de mostrarlos en pantalla?
 </template>
 
-<base-quiz-option value="A">A. Usando <code>logging.file()</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. Pasando el parámetro <code>filename</code> a <code>logging.basicConfig()</code></base-quiz-option>
-<base-quiz-option value="C">C. Usando <code>logging.write()</code></base-quiz-option>
-<base-quiz-option value="D">D. Los registros siempre se escriben en archivos automáticamente</base-quiz-option>
-<base-quiz-answer value="B">Para escribir mensajes de registro en un archivo, pase el parámetro <code>filename</code> a <code>logging.basicConfig()</code>. Esto escribirá todos los mensajes de registro en el archivo especificado en lugar de mostrarlos en pantalla.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Usando <code>logging.file()</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Pasando el parámetro <code>filename</code> a <code>logging.basicConfig()</code></BaseQuizOption>
+<BaseQuizOption value="C">C. Usando <code>logging.write()</code></BaseQuizOption>
+<BaseQuizOption value="D">D. Los registros siempre se escriben en archivos automáticamente</BaseQuizOption>
+<BaseQuizAnswer>Para escribir mensajes de registro en un archivo, pase el parámetro <code>filename</code> a <code>logging.basicConfig()</code>. Esto escribirá todos los mensajes de registro en el archivo especificado en lugar de mostrarlos en pantalla.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Enlaces relevantes
 

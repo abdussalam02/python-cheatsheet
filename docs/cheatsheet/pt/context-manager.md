@@ -27,19 +27,17 @@ with open(filename) as f:  # 'f' é o objeto de arquivo
 # O arquivo é fechado automaticamente aqui, mesmo que um erro tenha ocorrido
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-context-manager-1">
+<BaseQuiz id="cheatsheet-context-manager-1" correct="A">
 <template #question>
 Qual é o principal benefício de usar um gerenciador de contexto (a instrução <code>with</code>)?
 </template>
 
-<base-quiz-option value="A" correct>A. Lida automaticamente com a limpeza de recursos, mesmo que ocorra um erro</base-quiz-option>
-<base-quiz-option value="B">B. Faz o código ser executado mais rapidamente</base-quiz-option>
-<base-quiz-option value="C">C. Permite que vários arquivos sejam abertos simultaneamente</base-quiz-option>
-<base-quiz-option value="D">D. Previne todos os erros</base-quiz-option>
-<base-quiz-answer value="A">Gerenciadores de contexto garantem que os recursos (como arquivos) sejam devidamente limpos ao sair do bloco, mesmo que ocorra uma exceção. Isso evita vazamento de recursos e perda de dados.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. Lida automaticamente com a limpeza de recursos, mesmo que ocorra um erro</BaseQuizOption>
+<BaseQuizOption value="B">B. Faz o código ser executado mais rapidamente</BaseQuizOption>
+<BaseQuizOption value="C">C. Permite que vários arquivos sejam abertos simultaneamente</BaseQuizOption>
+<BaseQuizOption value="D">D. Previne todos os erros</BaseQuizOption>
+<BaseQuizAnswer>Gerenciadores de contexto garantem que os recursos (como arquivos) sejam devidamente limpos ao sair do bloco, mesmo que ocorra uma exceção. Isso evita vazamento de recursos e perda de dados.</BaseQuizAnswer>
+</BaseQuiz>
 
 Qualquer coisa que termine a execução do bloco faz com que o método de saída do gerenciador de contexto seja chamado. Isso inclui exceções e pode ser útil quando um erro faz com que você saia prematuramente de um arquivo ou conexão aberta. Sair de um script sem fechar adequadamente arquivos/conexões é uma má ideia, o que pode causar perda de dados ou outros problemas. Ao usar um gerenciador de contexto, você pode garantir que precauções sejam sempre tomadas para evitar danos ou perdas dessa forma.
 
@@ -90,19 +88,17 @@ test
 --exit--
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-context-manager-2">
+<BaseQuiz id="cheatsheet-context-manager-2" correct="B">
 <template #question>
 Quais métodos uma classe deve implementar para ser usada como um gerenciador de contexto?
 </template>
 
-<base-quiz-option value="A">A. <code>**init**</code> e <code>**del**</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>**enter**</code> e <code>**exit**</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>open</code> e <code>close</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>start</code> e <code>stop</code></base-quiz-option>
-<base-quiz-answer value="B">Um gerenciador de contexto baseado em classe deve implementar <code>**enter**</code> (chamado ao entrar no bloco <code>with</code>) e <code>**exit**</code> (chamado ao sair do bloco).</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>**init**</code> e <code>**del**</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>**enter**</code> e <code>**exit**</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>open</code> e <code>close</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>start</code> e <code>stop</code></BaseQuizOption>
+<BaseQuizAnswer>Um gerenciador de contexto baseado em classe deve implementar <code>**enter**</code> (chamado ao entrar no bloco <code>with</code>) e <code>**exit**</code> (chamado ao sair do bloco).</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Links relevantes
 

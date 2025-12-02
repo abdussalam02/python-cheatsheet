@@ -61,19 +61,17 @@ print(obj.__private_var)    # AttributeError: 'MyClass' object has no attribute 
 
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-oop-basics-1">
+<BaseQuiz id="cheatsheet-oop-basics-1" correct="B">
 <template #question>
 How do you indicate a protected variable in Python?
 </template>
 
-<base-quiz-option value="A">A. Two underscores prefix: <code>**variable</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. Single underscore prefix: <code>_variable</code></base-quiz-option>
-<base-quiz-option value="C">C. No underscore needed</base-quiz-option>
-<base-quiz-option value="D">D. Three underscores prefix: <code>_**variable</code></base-quiz-option>
-<base-quiz-answer value="B">In Python, a single underscore prefix (<code>\_variable</code>) indicates a protected variable, which is a convention meaning it should be used within the class or its subclasses. Two underscores (<code>\_\_variable</code>) indicate a private variable.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Two underscores prefix: <code>**variable</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Single underscore prefix: <code>_variable</code></BaseQuizOption>
+<BaseQuizOption value="C">C. No underscore needed</BaseQuizOption>
+<BaseQuizOption value="D">D. Three underscores prefix: <code>_**variable</code></BaseQuizOption>
+<BaseQuizAnswer>In Python, a single underscore prefix (<code>\_variable</code>) indicates a protected variable, which is a convention meaning it should be used within the class or its subclasses. Two underscores (<code>\_\_variable</code>) indicate a private variable.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Vererbung (Inheritance)
 
@@ -130,19 +128,17 @@ cat.speak()   # output: Meow!
 
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-oop-basics-2">
+<BaseQuiz id="cheatsheet-oop-basics-2" correct="A">
 <template #question>
 What is inheritance in Python OOP?
 </template>
 
-<base-quiz-option value="A" correct>A. A mechanism where a class can inherit attributes and methods from another class</base-quiz-option>
-<base-quiz-option value="B">B. A way to copy objects</base-quiz-option>
-<base-quiz-option value="C">C. A method to delete classes</base-quiz-option>
-<base-quiz-option value="D">D. A built-in function</base-quiz-option>
-<base-quiz-answer value="A">Inheritance allows a class (child/subclass) to inherit attributes and methods from another class (parent/base class). This promotes code reuse and allows you to create a hierarchy of classes.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. A mechanism where a class can inherit attributes and methods from another class</BaseQuizOption>
+<BaseQuizOption value="B">B. A way to copy objects</BaseQuizOption>
+<BaseQuizOption value="C">C. A method to delete classes</BaseQuizOption>
+<BaseQuizOption value="D">D. A built-in function</BaseQuizOption>
+<BaseQuizAnswer>Inheritance allows a class (child/subclass) to inherit attributes and methods from another class (parent/base class). This promotes code reuse and allows you to create a hierarchy of classes.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Polymorphismus (Polymorphism)
 
@@ -193,19 +189,17 @@ for shape in shapes:
 
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-oop-basics-3">
+<BaseQuiz id="cheatsheet-oop-basics-3" correct="C">
 <template #question>
 What is polymorphism in Python OOP?
 </template>
 
-<base-quiz-option value="A">A. Creating multiple classes with the same name</base-quiz-option>
-<base-quiz-option value="B">B. Hiding implementation details</base-quiz-option>
-<base-quiz-option value="C" correct>C. The ability to use objects of different classes in a uniform way through a common interface</base-quiz-option>
-<base-quiz-option value="D">D. Copying objects</base-quiz-option>
-<base-quiz-answer value="C">Polymorphism allows you to write code that can work with objects of different classes in a uniform way. Different classes can implement the same method name, and Python will call the appropriate implementation based on the object's type.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Creating multiple classes with the same name</BaseQuizOption>
+<BaseQuizOption value="B">B. Hiding implementation details</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. The ability to use objects of different classes in a uniform way through a common interface</BaseQuizOption>
+<BaseQuizOption value="D">D. Copying objects</BaseQuizOption>
+<BaseQuizAnswer>Polymorphism allows you to write code that can work with objects of different classes in a uniform way. Different classes can implement the same method name, and Python will call the appropriate implementation based on the object's type.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Abstraktion (Abstraction)
 

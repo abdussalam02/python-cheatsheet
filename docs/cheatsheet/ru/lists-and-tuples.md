@@ -83,19 +83,17 @@ f'The {furniture[-1]} is bigger than the {furniture[-3]}'
 'The shelf is bigger than the chair'
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-lists-and-tuples-1">
+<BaseQuiz id="cheatsheet-lists-and-tuples-1" correct="B">
 <template #question>
 Что вернет <code>furniture[-1]</code>, если <code>furniture = ['table', 'chair', 'rack', 'shelf']</code>?
 </template>
 
-<base-quiz-option value="A">A. <code>'table'</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>'shelf'</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>['shelf']</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>IndexError</code></base-quiz-option>
-<base-quiz-answer value="B">Отрицательные индексы обращаются к элементам с конца списка. <code>-1</code> относится к последнему элементу, <code>-2</code> — к предпоследнему и так далее.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>'table'</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>'shelf'</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>['shelf']</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>IndexError</code></BaseQuizOption>
+<BaseQuizAnswer>Отрицательные индексы обращаются к элементам с конца списка. <code>-1</code> относится к последнему элементу, <code>-2</code> — к предпоследнему и так далее.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Получение подсписков с помощью срезов (Slices)
 
@@ -182,19 +180,17 @@ spam2
 ['cat', 'bat', 'rat', 'elephant']
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-lists-and-tuples-2">
+<BaseQuiz id="cheatsheet-lists-and-tuples-2" correct="C">
 <template #question>
 Что создает <code>spam[:]</code>, когда <code>spam</code> — это список?
 </template>
 
-<base-quiz-option value="A">A. Ссылка на тот же список</base-quiz-option>
-<base-quiz-option value="B">B. Пустой список</base-quiz-option>
-<base-quiz-option value="C" correct>C. Неглубокая копия списка</base-quiz-option>
-<base-quiz-option value="D">D. Перевернутый список</base-quiz-option>
-<base-quiz-answer value="C">Создание среза всего списка с помощью <code>[:]</code> создает неглубокую копию. Изменение копии не повлияет на исходный список.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Ссылка на тот же список</BaseQuizOption>
+<BaseQuizOption value="B">B. Пустой список</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. Неглубокая копия списка</BaseQuizOption>
+<BaseQuizOption value="D">D. Перевернутый список</BaseQuizOption>
+<BaseQuizAnswer>Создание среза всего списка с помощью <code>[:]</code> создает неглубокую копию. Изменение копии не повлияет на исходный список.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Получение длины списка с помощью len()
 
@@ -456,19 +452,17 @@ furniture
 ['table', 'chair', 'rack', 'shelf', 'bed']
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-lists-and-tuples-3">
+<BaseQuiz id="cheatsheet-lists-and-tuples-3" correct="A">
 <template #question>
 Что делает метод <code>append()</code> со списком?
 </template>
 
-<base-quiz-option value="A" correct>A. Добавляет элемент в конец списка</base-quiz-option>
-<base-quiz-option value="B">B. Добавляет элемент в начало списка</base-quiz-option>
-<base-quiz-option value="C">C. Заменяет последний элемент</base-quiz-option>
-<base-quiz-option value="D">D. Удаляет последний элемент</base-quiz-option>
-<base-quiz-answer value="A">Метод <code>append()</code> добавляет один элемент в конец списка. Чтобы добавить элемент в определенную позицию, используйте <code>insert()</code>.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. Добавляет элемент в конец списка</BaseQuizOption>
+<BaseQuizOption value="B">B. Добавляет элемент в начало списка</BaseQuizOption>
+<BaseQuizOption value="C">C. Заменяет последний элемент</BaseQuizOption>
+<BaseQuizOption value="D">D. Удаляет последний элемент</BaseQuizOption>
+<BaseQuizAnswer>Метод <code>append()</code> добавляет один элемент в конец списка. Чтобы добавить элемент в определенную позицию, используйте <code>insert()</code>.</BaseQuizAnswer>
+</BaseQuiz>
 
 ### insert()
 
@@ -570,19 +564,17 @@ animals
 ['bat', 'rat']
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-lists-and-tuples-4">
+<BaseQuiz id="cheatsheet-lists-and-tuples-4" correct="B">
 <template #question>
 Что делает <code>pop()</code> при вызове для списка?
 </template>
 
-<base-quiz-option value="A">A. Только удаляет последний элемент</base-quiz-option>
-<base-quiz-option value="B" correct>B. Удаляет и возвращает элемент (по умолчанию последний элемент или указанный индекс)</base-quiz-option>
-<base-quiz-option value="C">C. Только возвращает последний элемент, не удаляя его</base-quiz-option>
-<base-quiz-option value="D">D. Удаляет все элементы из списка</base-quiz-option>
-<base-quiz-answer value="B">Метод <code>pop()</code> удаляет и возвращает элемент. По умолчанию он удаляет последний элемент, но вы можете передать индекс, чтобы удалить определенный элемент.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Только удаляет последний элемент</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. Удаляет и возвращает элемент (по умолчанию последний элемент или указанный индекс)</BaseQuizOption>
+<BaseQuizOption value="C">C. Только возвращает последний элемент, не удаляя его</BaseQuizOption>
+<BaseQuizOption value="D">D. Удаляет все элементы из списка</BaseQuizOption>
+<BaseQuizAnswer>Метод <code>pop()</code> удаляет и возвращает элемент. По умолчанию он удаляет последний элемент, но вы можете передать индекс, чтобы удалить определенный элемент.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Сортировка значений с помощью sort()
 
@@ -705,19 +697,17 @@ list('hello')
 ['h', 'e', 'l', 'l', 'o']
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-lists-and-tuples-5">
+<BaseQuiz id="cheatsheet-lists-and-tuples-5" correct="C">
 <template #question>
 Каково основное различие между списками и кортежами в Python?
 </template>
 
-<base-quiz-option value="A">A. Списки могут содержать только числа, кортежи могут содержать что угодно</base-quiz-option>
-<base-quiz-option value="B">B. Кортежи создаются быстрее</base-quiz-option>
-<base-quiz-option value="C" correct>C. Списки изменяемы (могут быть изменены), кортежи неизменяемы (не могут быть изменены)</base-quiz-option>
-<base-quiz-option value="D">D. Списки используют квадратные скобки, кортежи используют фигурные скобки</base-quiz-option>
-<base-quiz-answer value="C">Списки изменяемы, что означает, что вы можете изменять их после создания. Кортежи неизменяемы, что означает, что после создания их нельзя изменить. Оба могут содержать любые типы данных.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. Списки могут содержать только числа, кортежи могут содержать что угодно</BaseQuizOption>
+<BaseQuizOption value="B">B. Кортежи создаются быстрее</BaseQuizOption>
+<BaseQuizOption value="C" correct>C. Списки изменяемы (могут быть изменены), кортежи неизменяемы (не могут быть изменены)</BaseQuizOption>
+<BaseQuizOption value="D">D. Списки используют квадратные скобки, кортежи используют фигурные скобки</BaseQuizOption>
+<BaseQuizAnswer>Списки изменяемы, что означает, что вы можете изменять их после создания. Кортежи неизменяемы, что означает, что после создания их нельзя изменить. Оба могут содержать любые типы данных.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Связанные ссылки
 

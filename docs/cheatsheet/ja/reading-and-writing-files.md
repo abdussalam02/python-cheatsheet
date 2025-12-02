@@ -32,19 +32,17 @@ hello_content
 'Hello World!'
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-reading-and-writing-files-1">
+<BaseQuiz id="cheatsheet-reading-and-writing-files-1" correct="A">
 <template #question>
 ファイルをオープンする際に<code>with</code>ステートメントを使用する主な利点は何ですか？
 </template>
 
-<base-quiz-option value="A" correct>A. エラーが発生した場合でも、処理が完了するとファイルが自動的に閉じられる</base-quiz-option>
-<base-quiz-option value="B">B. ファイルのオープンが速くなる</base-quiz-option>
-<base-quiz-option value="C">C. ファイルを読み取りモードと書き込みモードで同時に開くことができる</base-quiz-option>
-<base-quiz-option value="D">D. ファイルが自動的に圧縮される</base-quiz-option>
-<base-quiz-answer value="A"><code>with</code>ステートメントは、例外が発生した場合でもブロックを抜けるときにファイルが自動的に閉じられることを保証します。これはリソースを適切に管理するのに役立ちます。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. エラーが発生した場合でも、処理が完了するとファイルが自動的に閉じられる</BaseQuizOption>
+<BaseQuizOption value="B">B. ファイルのオープンが速くなる</BaseQuizOption>
+<BaseQuizOption value="C">C. ファイルを読み取りモードと書き込みモードで同時に開くことができる</BaseQuizOption>
+<BaseQuizOption value="D">D. ファイルが自動的に圧縮される</BaseQuizOption>
+<BaseQuizAnswer><code>with</code>ステートメントは、例外が発生した場合でもブロックを抜けるときにファイルが自動的に閉じられることを保証します。これはリソースを適切に管理するのに役立ちます。</BaseQuizAnswer>
+</BaseQuiz>
 
 あるいは、_readlines()_ メソッドを使用して、ファイルから文字列のリストを取得することもできます。これは、テキストの各行に対して 1 つの文字列となります。
 
@@ -111,19 +109,17 @@ Hello world!
 Bacon is not a vegetable.
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-reading-and-writing-files-2">
+<BaseQuiz id="cheatsheet-reading-and-writing-files-2" correct="B">
 <template #question>
 モード<code>'w'</code>でファイルを開くこととモード<code>'a'</code>でファイルを開くことの違いは何ですか？
 </template>
 
-<base-quiz-option value="A">A. <code>'w'</code>は読み取り用、<code>'a'</code>は書き込み用</base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>'w'</code>はファイルを上書きし、<code>'a'</code>はファイルに追記する</base-quiz-option>
-<base-quiz-option value="C">C. <code>'w'</code>は Windows 用、<code>'a'</code>は Apple 用</base-quiz-option>
-<base-quiz-option value="D">D. 違いはない</base-quiz-option>
-<base-quiz-answer value="B">モード<code>'w'</code>はファイルを書き込み用に開き、既存の内容をすべて上書きします。モード<code>'a'</code>はファイルを追記用に開き、新しいコンテンツをファイルの末尾に追加します。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>'w'</code>は読み取り用、<code>'a'</code>は書き込み用</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>'w'</code>はファイルを上書きし、<code>'a'</code>はファイルに追記する</BaseQuizOption>
+<BaseQuizOption value="C">C. <code>'w'</code>は Windows 用、<code>'a'</code>は Apple 用</BaseQuizOption>
+<BaseQuizOption value="D">D. 違いはない</BaseQuizOption>
+<BaseQuizAnswer>モード<code>'w'</code>はファイルを書き込み用に開き、既存の内容をすべて上書きします。モード<code>'a'</code>はファイルを追記用に開き、新しいコンテンツをファイルの末尾に追加します。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 関連リンク
 

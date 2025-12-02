@@ -58,19 +58,17 @@ usr/bin/spam
 
 请注意，路径分隔符在 Windows 和基于 Unix 的操作系统之间是不同的，这就是您想要使用 `pathlib` 而不是将字符串连接起来以连接路径的原因。
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-file-directory-path-1">
+<BaseQuiz id="cheatsheet-file-directory-path-1" correct="B">
 <template #question>
 在 Python 中，使用 pathlib 连接路径的正确方法是什么？
 </template>
 
-<base-quiz-option value="A">A. <code>Path('usr') + 'bin' + 'spam'</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>Path('usr') / 'bin' / 'spam'</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>Path('usr').join('bin').join('spam')</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>Path('usr/bin/spam')</code></base-quiz-option>
-<base-quiz-answer value="B"><code>/</code> 运算符是使用 pathlib 连接路径的推荐方法。它具有跨平台性，并且比字符串连接更具可读性。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>Path('usr') + 'bin' + 'spam'</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>Path('usr') / 'bin' / 'spam'</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>Path('usr').join('bin').join('spam')</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>Path('usr/bin/spam')</code></BaseQuizOption>
+<BaseQuizAnswer><code>/</code> 运算符是使用 pathlib 连接路径的推荐方法。它具有跨平台性，并且比字符串连接更具可读性。</BaseQuizAnswer>
+</BaseQuiz>
 
 连接路径在您需要在同一目录下创建不同文件路径时非常有用。
 
@@ -199,19 +197,17 @@ Path('..').is_absolute()
 False
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-file-directory-path-2">
+<BaseQuiz id="cheatsheet-file-directory-path-2" correct="A">
 <template #question>
 <code>Path('/').is_absolute()</code> 返回什么？
 </template>
 
-<base-quiz-option value="A" correct>A. <code>True</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>False</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>None</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>'/'</code></base-quiz-option>
-<base-quiz-answer value="A"><code>is_absolute()</code> 方法对绝对路径（在 Unix 上以 <code>/</code> 开头或在 Windows 上以驱动器号开头的路径）返回 <code>True</code>。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. <code>True</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>False</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>None</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>'/'</code></BaseQuizOption>
+<BaseQuizAnswer><code>is_absolute()</code> 方法对绝对路径（在 Unix 上以 <code>/</code> 开头或在 Windows 上以驱动器号开头的路径）返回 <code>True</code>。</BaseQuizAnswer>
+</BaseQuiz>
 
 您可以使用 `pathlib` 提取绝对路径：
 
@@ -315,19 +311,17 @@ Path('nonexistentfile').is_file()
 False
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-file-directory-path-3">
+<BaseQuiz id="cheatsheet-file-directory-path-3" correct="C">
 <template #question>
 如果 setup.py 存在，<code>Path('setup.py').is_file()</code> 将返回什么？
 </template>
 
-<base-quiz-option value="A">A. <code>'setup.py'</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>False</code></base-quiz-option>
-<base-quiz-option value="C" correct>C. <code>True</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>None</code></base-quiz-option>
-<base-quiz-answer value="C"><code>is_file()</code> 方法在路径存在且是文件时返回 <code>True</code>，否则返回 <code>False</code>。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>'setup.py'</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>False</code></BaseQuizOption>
+<BaseQuizOption value="C" correct>C. <code>True</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>None</code></BaseQuizOption>
+<BaseQuizAnswer><code>is_file()</code> 方法在路径存在且是文件时返回 <code>True</code>，否则返回 <code>False</code>。</BaseQuizAnswer>
+</BaseQuiz>
 
 ### 检查路径是否为目录
 
@@ -458,19 +452,17 @@ shutil.copy('/tmp/eggs.txt', '/tmp/delicious/eggs2.txt')
 /tmp/delicious/eggs2.txt
 ```
 
-<base-quiz>
-<base-quiz-question correct="D" id="cheatsheet-file-directory-path-4">
+<BaseQuiz id="cheatsheet-file-directory-path-4" correct="D">
 <template #question>
 您应该使用哪个函数来复制整个目录树，包括所有子目录和文件？
 </template>
 
-<base-quiz-option value="A">A. <code>shutil.copy()</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>Path.copy()</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>os.copy()</code></base-quiz-option>
-<base-quiz-option value="D" correct>D. <code>shutil.copytree()</code></base-quiz-option>
-<base-quiz-answer value="D"><code>shutil.copytree()</code> 函数递归地复制整个目录树，而 <code>shutil.copy()</code> 只复制单个文件。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>shutil.copy()</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>Path.copy()</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>os.copy()</code></BaseQuizOption>
+<BaseQuizOption value="D" correct>D. <code>shutil.copytree()</code></BaseQuizOption>
+<BaseQuizAnswer><code>shutil.copytree()</code> 函数递归地复制整个目录树，而 <code>shutil.copy()</code> 只复制单个文件。</BaseQuizAnswer>
+</BaseQuiz>
 
 虽然 `shutil.copy()` 会复制单个文件，但 `shutil.copytree()` 会复制整个文件夹及其包含的所有文件夹和文件：
 
@@ -522,19 +514,17 @@ shutil.move('/tmp/bacon.txt', '/tmp/eggs')
 - 调用 `Path.rmdir()` 将删除路径处的**文件夹**。此文件夹必须为空，不包含任何文件或文件夹。
 - 调用 `shutil.rmtree(path)` 将删除路径处的**文件夹**，以及其中包含的所有文件和文件夹。
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-file-directory-path-5">
+<BaseQuiz id="cheatsheet-file-directory-path-5" correct="B">
 <template #question>
 哪个方法可以删除非空目录及其所有内容？
 </template>
 
-<base-quiz-option value="A">A. <code>Path.rmdir()</code></base-quiz-option>
-<base-quiz-option value="B" correct>B. <code>shutil.rmtree()</code></base-quiz-option>
-<base-quiz-option value="C">C. <code>Path.unlink()</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>os.remove()</code></base-quiz-option>
-<base-quiz-answer value="B"><code>shutil.rmtree()</code> 函数可以递归地删除目录及其所有内容。<code>Path.rmdir()</code> 仅适用于空目录。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>Path.rmdir()</code></BaseQuizOption>
+<BaseQuizOption value="B" correct>B. <code>shutil.rmtree()</code></BaseQuizOption>
+<BaseQuizOption value="C">C. <code>Path.unlink()</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>os.remove()</code></BaseQuizOption>
+<BaseQuizAnswer><code>shutil.rmtree()</code> 函数可以递归地删除目录及其所有内容。<code>Path.rmdir()</code> 仅适用于空目录。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 遍历目录树
 

@@ -97,8 +97,7 @@ labUrl: 'https://labex.io/ru/labs/python-python-basics-633647?course=python-chea
 16.0
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-basics-1">
+<BaseQuiz id="cheatsheet-basics-1" correct="A">
 <template #question>
 Каков результат этого выражения Python?
 
@@ -108,13 +107,12 @@ labUrl: 'https://labex.io/ru/labs/python-python-basics-633647?course=python-chea
 
 </template>
 
-<base-quiz-option value="A" correct>A. 10</base-quiz-option>
-<base-quiz-option value="B">B. 18</base-quiz-option>
-<base-quiz-option value="C">C. 12</base-quiz-option>
-<base-quiz-option value="D">D. 20</base-quiz-option>
-<base-quiz-answer value="A">Умножение имеет более высокий приоритет, чем сложение, поэтому это вычисляется как: 4 + (2 \* 3) = 4 + 6 = 10</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. 10</BaseQuizOption>
+<BaseQuizOption value="B">B. 18</BaseQuizOption>
+<BaseQuizOption value="C">C. 12</BaseQuizOption>
+<BaseQuizOption value="D">D. 20</BaseQuizOption>
+<BaseQuizAnswer>Умножение имеет более высокий приоритет, чем сложение, поэтому это вычисляется как: 4 + (2 \* 3) = 4 + 6 = 10</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Операторы присваивания с расширением
 
@@ -163,8 +161,7 @@ my_list
 ['item', 'item', 'item']
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-basics-2">
+<BaseQuiz id="cheatsheet-basics-2" correct="B">
 <template #question>
 Каково значение <code>x</code> после выполнения этого кода?
 
@@ -175,13 +172,12 @@ x += 3
 
 </template>
 
-<base-quiz-option value="A">A. 3</base-quiz-option>
-<base-quiz-option value="B" correct>B. 8</base-quiz-option>
-<base-quiz-option value="C">C. 5</base-quiz-option>
-<base-quiz-option value="D">D. 15</base-quiz-option>
-<base-quiz-answer value="B">Оператор присваивания с расширением <code>+=</code> эквивалентен <code>x = x + 3</code>. Таким образом, <code>x</code> начинается с 5, а затем становится 5 + 3 = 8.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 3</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. 8</BaseQuizOption>
+<BaseQuizOption value="C">C. 5</BaseQuizOption>
+<BaseQuizOption value="D">D. 15</BaseQuizOption>
+<BaseQuizAnswer>Оператор присваивания с расширением <code>+=</code> эквивалентен <code>x = x + 3</code>. Таким образом, <code>x</code> начинается с 5, а затем становится 5 + 3 = 8.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Оператор "Морж" (Walrus Operator)
 
@@ -340,19 +336,17 @@ my_var_2 = 'Hello'
 _spam = 'Hello'
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-basics-3">
+<BaseQuiz id="cheatsheet-basics-3" correct="C">
 <template #question>
 В основах Python, какое из следующих имен является допустимым именем переменной?
 </template>
 
-<base-quiz-option value="A">A. <code>3value</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>user-name</code></base-quiz-option>
-<base-quiz-option value="C" correct>C. <code>user_name</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>for</code></base-quiz-option>
-<base-quiz-answer value="C"><code>user_name</code> является допустимым именем переменной, поскольку оно использует только буквы, цифры и подчеркивания и не начинается с цифры.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>3value</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>user-name</code></BaseQuizOption>
+<BaseQuizOption value="C" correct>C. <code>user_name</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>for</code></BaseQuizOption>
+<BaseQuizAnswer><code>user_name</code> является допустимым именем переменной, поскольку оно использует только буквы, цифры и подчеркивания и не начинается с цифры.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Комментарии
 
@@ -479,19 +473,17 @@ What is your name? Martha
 Hi, Martha
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-basics-4">
+<BaseQuiz id="cheatsheet-basics-4" correct="B">
 <template #question>
 В основах Python, какой тип возвращает `input()`?
 </template>
 
-<base-quiz-option value="A">A. int</base-quiz-option>
-<base-quiz-option value="B" correct>B. str</base-quiz-option>
-<base-quiz-option value="C">C. float</base-quiz-option>
-<base-quiz-option value="D">D. Зависит от ввода пользователя</base-quiz-option>
-<base-quiz-answer value="B">Функция <code>input()</code> всегда возвращает строку, независимо от того, что вводит пользователь. Вам нужно преобразовать ее в другой тип, если это необходимо.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. int</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. str</BaseQuizOption>
+<BaseQuizOption value="C">C. float</BaseQuizOption>
+<BaseQuizOption value="D">D. Зависит от ввода пользователя</BaseQuizOption>
+<BaseQuizAnswer>Функция <code>input()</code> всегда возвращает строку, независимо от того, что вводит пользователь. Вам нужно преобразовать ее в другой тип, если это необходимо.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Функция len()
 
@@ -588,8 +580,7 @@ float('3.14')  # Возвращает 3.14
 3.14
 ```
 
-<base-quiz>
-<base-quiz-question correct="C" id="cheatsheet-basics-5">
+<BaseQuiz id="cheatsheet-basics-5" correct="C">
 <template #question>
 Каков результат этого кода Python?
 
@@ -600,13 +591,12 @@ type(result)
 
 </template>
 
-<base-quiz-option value="A">A. <code>str</code></base-quiz-option>
-<base-quiz-option value="B">B. <code>float</code></base-quiz-option>
-<base-quiz-option value="C" correct>C. <code>int</code></base-quiz-option>
-<base-quiz-option value="D">D. <code>NoneType</code></base-quiz-option>
-<base-quiz-answer value="C">Функция <code>int()</code> преобразует строку в целое число. Таким образом, <code>int('42')</code> возвращает целое число <code>42</code>, а <code>type(42)</code> возвращает <code>int</code>.</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. <code>str</code></BaseQuizOption>
+<BaseQuizOption value="B">B. <code>float</code></BaseQuizOption>
+<BaseQuizOption value="C" correct>C. <code>int</code></BaseQuizOption>
+<BaseQuizOption value="D">D. <code>NoneType</code></BaseQuizOption>
+<BaseQuizAnswer>Функция <code>int()</code> преобразует строку в целое число. Таким образом, <code>int('42')</code> возвращает целое число <code>42</code>, а <code>type(42)</code> возвращает <code>int</code>.</BaseQuizAnswer>
+</BaseQuiz>
 
 ## Связанные ссылки
 

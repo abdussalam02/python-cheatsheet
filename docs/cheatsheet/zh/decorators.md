@@ -41,19 +41,17 @@ Hello World!
 After func!
 ```
 
-<base-quiz>
-<base-quiz-question correct="A" id="cheatsheet-decorators-1">
+<BaseQuiz id="cheatsheet-decorators-1" correct="A">
 <template #question>
 Python 中的装饰器是什么？
 </template>
 
-<base-quiz-option value="A" correct>A. 一个接受另一个函数并返回一个包装器函数的函数</base-quiz-option>
-<base-quiz-option value="B">B. 一种特殊的类</base-quiz-option>
-<base-quiz-option value="C">C. 一个内置的 Python 关键字</base-quiz-option>
-<base-quiz-option value="D">D. 一种删除函数的方法</base-quiz-option>
-<base-quiz-answer value="A">装饰器是一个接受另一个函数作为参数并返回一个包装器函数的函数。<code>@</code> 语法是应用于函数的装饰器的简写。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A" correct>A. 一个接受另一个函数并返回一个包装器函数的函数</BaseQuizOption>
+<BaseQuizOption value="B">B. 一种特殊的类</BaseQuizOption>
+<BaseQuizOption value="C">C. 一个内置的 Python 关键字</BaseQuizOption>
+<BaseQuizOption value="D">D. 一种删除函数的方法</BaseQuizOption>
+<BaseQuizAnswer>装饰器是一个接受另一个函数作为参数并返回一个包装器函数的函数。<code>@</code> 语法是应用于函数的装饰器的简写。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 带有参数的函数装饰器
 
@@ -99,19 +97,17 @@ def your_decorator(func):
   return wrapper
 ```
 
-<base-quiz>
-<base-quiz-question correct="B" id="cheatsheet-decorators-2">
+<BaseQuiz id="cheatsheet-decorators-2" correct="B">
 <template #question>
 <code>@functools.wraps(func)</code> 在装饰器中做什么？
 </template>
 
-<base-quiz-option value="A">A. 使装饰器执行得更快</base-quiz-option>
-<base-quiz-option value="B" correct>B. 保留原始函数的元数据（名称、文档字符串等）</base-quiz-option>
-<base-quiz-option value="C">C. 阻止函数被调用</base-quiz-option>
-<base-quiz-option value="D">D. 将函数转换为类</base-quiz-option>
-<base-quiz-answer value="B"><code>@functools.wraps(func)</code> 装饰器将原始函数的元数据（如其名称和文档字符串）保留在包装器函数中。在编写装饰器时，这被认为是一种最佳实践。</base-quiz-answer>
-</base-quiz-question>
-</base-quiz>
+<BaseQuizOption value="A">A. 使装饰器执行得更快</BaseQuizOption>
+<BaseQuizOption value="B" correct>B. 保留原始函数的元数据（名称、文档字符串等）</BaseQuizOption>
+<BaseQuizOption value="C">C. 阻止函数被调用</BaseQuizOption>
+<BaseQuizOption value="D">D. 将函数转换为类</BaseQuizOption>
+<BaseQuizAnswer><code>@functools.wraps(func)</code> 装饰器将原始函数的元数据（如其名称和文档字符串）保留在包装器函数中。在编写装饰器时，这被认为是一种最佳实践。</BaseQuizAnswer>
+</BaseQuiz>
 
 ## 带参数的装饰器
 
