@@ -1,6 +1,5 @@
 import { promises as fs } from 'fs'
 import { ofetch } from 'ofetch'
-import { fetchAvatars } from './fetch-avatars'
 
 interface Contributor {
   login: string
@@ -40,7 +39,6 @@ async function generate() {
 
 const init = async () => {
   await generate()
-  await fetchAvatars()
 }
 
 init()

@@ -59,7 +59,7 @@ export function generateOrganizationSchema() {
     '@type': 'Organization',
     name: 'Python Cheatsheet',
     url: siteUrl,
-    logo: `${siteUrl}/logo.svg`,
+    logo: `${siteUrl}/labex-logo-dark.svg`,
     sameAs: [
       'https://github.com/labex-labs/python-cheatsheet',
     ],
@@ -119,7 +119,7 @@ export function generateArticleSchema(
       name: 'Python Cheatsheet',
       logo: {
         '@type': 'ImageObject',
-        url: `${siteUrl}/logo.svg`,
+        url: `${siteUrl}/labex-logo-dark.svg`,
       },
     },
     mainEntityOfPage: {
