@@ -62,7 +62,7 @@ setup(
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-packaging-1">
 <template #question>
 <code>setup.py</code>ファイルにおける 3 つの必須フィールドは何ですか？
 </template>
@@ -132,7 +132,7 @@ pip install -e .
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-packaging-2">
 <template #question>
 <code>pyproject.toml</code>が<code>setup.py</code>よりも優れている主な利点は何ですか？
 </template>

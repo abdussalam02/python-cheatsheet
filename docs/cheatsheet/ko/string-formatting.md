@@ -99,7 +99,7 @@ f'Hello {name}!'  # f 접두사는 {} 내의 표현식을 허용합니다
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-string-formatting-1">
 <template #question>
 Python 에서 f-문자열에 사용되는 접두사는 무엇입니까?
 </template>
@@ -207,7 +207,7 @@ f"{a:.2f}"
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-string-formatting-2">
 <template #question>
 <code>f"{a:.2f}"</code>는 무엇을 수행합니까?
 </template>

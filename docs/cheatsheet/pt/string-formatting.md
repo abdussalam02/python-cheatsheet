@@ -99,7 +99,7 @@ f'Hello {name}!'  # prefixo f permite expressões em {}
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-string-formatting-1">
 <template #question>
 Qual prefixo é usado para f-strings em Python?
 </template>
@@ -207,7 +207,7 @@ f"{a:.2f}"
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-string-formatting-2">
 <template #question>
 O que <code>f"{a:.2f}"</code> faz?
 </template>

@@ -105,7 +105,7 @@ mo.group()
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-regular-expressions-1">
 <template #question>
 Was gibt <code>group()</code> zurück, wenn es auf ein Match-Objekt aufgerufen wird?
 </template>
@@ -343,7 +343,7 @@ mo2.group()
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-regular-expressions-2">
 <template #question>
 Was macht ein Regex-Muster nicht-gierig?
 </template>
@@ -580,7 +580,7 @@ names_regex.sub('ZENSIERT', 'Agent Alice gab die geheimen Dokumente an Agent Bob
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-regular-expressions-3">
 <template #question>
 Was bewirkt die Methode <code>sub()</code>?
 </template>
@@ -617,7 +617,7 @@ phone_regex = re.compile(r'''(
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-regular-expressions-4">
 <template #question>
 Was bewirkt <code>re.VERBOSE</code>, wenn es an <code>re.compile()</code> übergeben wird?
 </template>

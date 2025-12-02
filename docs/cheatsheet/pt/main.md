@@ -38,7 +38,7 @@ if __name__ == "__main__":  # Só é executado quando o arquivo é executado, n�
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-main-1">
 <template #question>
 Qual é o valor de <code>__name__</code> quando um arquivo Python é executado diretamente como um script?
 </template>
@@ -59,7 +59,7 @@ Qual é o valor de <code>__name__</code> quando um arquivo Python é executado d
 4. `if __name__ == "__main__":` é usado para executar algum código somente se o arquivo for executado diretamente e não estiver sendo importado.
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-main-2">
 <template #question>
 Qual é o principal objetivo de usar <code>if __name__ == "__main__":</code>?
 </template>

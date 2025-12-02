@@ -63,7 +63,7 @@ Observe que el separador de ruta es diferente entre Windows y los sistemas opera
 agregar cadenas para unir rutas.
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-file-directory-path-1">
 <template #question>
 ¿Cuál es la forma correcta de unir rutas usando pathlib en Python?
 </template>
@@ -206,7 +206,7 @@ False
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-file-directory-path-2">
 <template #question>
 ¿Qué devuelve <code>Path('/').is_absolute()</code>?
 </template>
@@ -322,7 +322,7 @@ False
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-file-directory-path-3">
 <template #question>
 ¿Qué devolverá <code>Path('setup.py').is_file()</code> si existe setup.py?
 </template>
@@ -465,7 +465,7 @@ shutil.copy('/tmp/eggs.txt', '/tmp/delicious/eggs2.txt')
 ```
 
 <base-quiz>
-<base-quiz-question correct="D">
+<base-quiz-question correct="D" id="cheatsheet-file-directory-path-4">
 <template #question>
 ¿Qué función debe usar para copiar un árbol de directorios completo, incluidos todos los subdirectorios y archivos?
 </template>
@@ -529,7 +529,7 @@ shutil.move('/tmp/bacon.txt', '/tmp/eggs')
 - Llamar a `shutil.rmtree(path)` eliminará la carpeta en la ruta, y todos los archivos y carpetas que contenga también se eliminarán.
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-file-directory-path-5">
 <template #question>
 ¿Qué método puede eliminar un directorio no vacío y todo su contenido?
 </template>

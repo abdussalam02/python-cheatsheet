@@ -31,7 +31,7 @@ python3 -m venv venv
 Dadurch wird ein `venv`-Verzeichnis in Ihrem aktuellen Ordner erstellt, das die virtuelle Umgebung enthält.
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-virtual-environments-1">
 <template #question>
 Welcher Befehl wird verwendet, um eine virtuelle Umgebung mit <code>venv</code> zu erstellen?
 </template>
@@ -61,7 +61,7 @@ venv\Scripts\activate
 Sobald sie aktiviert ist, sehen Sie `(venv)` am Anfang Ihrer Eingabeaufforderung, was anzeigt, dass die virtuelle Umgebung aktiv ist.
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-virtual-environments-2">
 <template #question>
 Wie aktivieren Sie eine virtuelle Umgebung unter Linux/macOS?
 </template>
@@ -95,7 +95,7 @@ deactivate
 Das Präfix `(venv)` verschwindet aus Ihrer Eingabeaufforderung.
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-virtual-environments-3">
 <template #question>
 Was ist der Hauptzweck der Verwendung einer virtuellen Umgebung?
 </template>

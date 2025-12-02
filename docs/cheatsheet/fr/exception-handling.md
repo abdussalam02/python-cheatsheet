@@ -72,7 +72,7 @@ Vous ne pouvez pas diviser par 0
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-exception-handling-1">
 <template #question>
 Quels mots-clés sont utilisés pour gérer les exceptions en Python ?
 </template>
@@ -124,7 +124,7 @@ division by zero
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-exception-handling-2">
 <template #question>
 Pouvez-vous gérer plusieurs types d'exceptions dans un seul bloc <code>except</code> ?
 </template>
@@ -169,7 +169,7 @@ Exécution terminée
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-exception-handling-3">
 <template #question>
 Quand le bloc <code>finally</code> s'exécute-t-il ?
 </template>
@@ -229,7 +229,7 @@ Mon exception personnalisée a été levée
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-exception-handling-4">
 <template #question>
 Comment créez-vous une exception personnalisée en Python ?
 </template>

@@ -81,7 +81,7 @@ Hi Anna
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-functions-1">
 <template #question>
 What is the main advantage of using keyword arguments in Python functions?
 </template>
@@ -117,7 +117,7 @@ print(result)
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-functions-2">
 <template #question>
 What keyword is used to return a value from a function in Python?
 </template>
@@ -180,7 +180,7 @@ spam
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-functions-3">
 <template #question>
 What keyword must you use inside a function to modify a global variable?
 </template>
@@ -253,7 +253,7 @@ add(5, 3)
 ```
 
 <base-quiz>
-<base-quiz-question correct="D">
+<base-quiz-question correct="D" id="cheatsheet-functions-4">
 <template #question>
 What is a lambda function in Python?
 </template>
@@ -293,7 +293,7 @@ plus_5(4)
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-functions-5">
 <template #question>
 What does a lambda closure allow you to do?
 </template>

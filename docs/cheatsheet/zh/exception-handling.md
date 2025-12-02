@@ -72,7 +72,7 @@ divide(dividend=10, divisor=0)
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-exception-handling-1">
 <template #question>
 在 Python 中，使用哪些关键字来处理异常？
 </template>
@@ -124,7 +124,7 @@ division by zero
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-exception-handling-2">
 <template #question>
 可以在单个 <code>except</code> 块中处理多种异常类型吗？
 </template>
@@ -169,7 +169,7 @@ divide(dividend=10, divisor=0)
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-exception-handling-3">
 <template #question>
 <code>finally</code> 块何时执行？
 </template>
@@ -229,7 +229,7 @@ My custom exception was raised
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-exception-handling-4">
 <template #question>
 如何在 Python 中创建自定义异常？
 </template>

@@ -89,7 +89,7 @@ obj.price
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-dataclasses-1">
 <template #question>
 在数据类中，带有默认值的字段必须放在哪里？
 </template>

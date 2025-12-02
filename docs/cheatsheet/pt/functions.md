@@ -81,7 +81,7 @@ Hi Anna
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-functions-1">
 <template #question>
 Qual é a principal vantagem de usar argumentos de palavra-chave em funções Python?
 </template>
@@ -117,7 +117,7 @@ print(result)
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-functions-2">
 <template #question>
 Qual palavra-chave é usada para retornar um valor de uma função em Python?
 </template>
@@ -180,7 +180,7 @@ spam
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-functions-3">
 <template #question>
 Qual palavra-chave você deve usar dentro de uma função para modificar uma variável global?
 </template>
@@ -253,7 +253,7 @@ add(5, 3)
 ```
 
 <base-quiz>
-<base-quiz-question correct="D">
+<base-quiz-question correct="D" id="cheatsheet-functions-4">
 <template #question>
 O que é uma função lambda em Python?
 </template>
@@ -293,7 +293,7 @@ plus_5(4)
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-functions-5">
 <template #question>
 O que um fechamento lambda permite que você faça?
 </template>

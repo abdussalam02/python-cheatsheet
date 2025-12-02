@@ -65,7 +65,7 @@ s  # {1, 2, 3, 4} 반환
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-sets-1">
 <template #question>
 중복 값이 있는 집합을 생성하면 어떻게 됩니까?
 </template>
@@ -162,7 +162,7 @@ s.discard(3)
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-sets-2">
 <template #question>
 집합의 <code>remove()</code>와 <code>discard()</code> 메서드의 차이점은 무엇입니까?
 </template>
@@ -207,7 +207,7 @@ s1.intersection(s2, s3)  # 또는 's1 & s2 & s3' - {3} 반환
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-sets-3">
 <template #question>
 <code>intersection()</code>은 집합에 대해 무엇을 반환합니까?
 </template>
@@ -260,7 +260,7 @@ s1.symmetric_difference(s2)  # 또는 's1 ^ s2' - {1, 4} 반환
 ```
 
 <base-quiz>
-<base-quiz-question correct="D">
+<base-quiz-question correct="D" id="cheatsheet-sets-4">
 <template #question>
 두 집합에 대해 <code>symmetric_difference()</code>는 무엇을 반환합니까?
 </template>

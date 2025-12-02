@@ -33,7 +33,7 @@ with open("filename.json", "w") as f:  # ファイルを書き込みモードで
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-json-yaml-1">
 <template #question>
 Python の辞書を JSON ファイルに書き込むために使用される関数はどれですか？
 </template>
@@ -71,7 +71,7 @@ with open("filename.yaml") as f:
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-json-yaml-2">
 <template #question>
 JSON に対する YAML の利点は何ですか？
 </template>
@@ -103,7 +103,7 @@ conf1 = anyconfig.load("/path/to/foo/conf.d/a.yml")  # 形式を自動検出
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-json-yaml-3">
 <template #question>
 anyconfig ライブラリは何を可能にしますか？
 </template>

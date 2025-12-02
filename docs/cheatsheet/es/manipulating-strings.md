@@ -53,7 +53,7 @@ Hello there!\nHow are you?\nI\'m doing fine.
 Las cadenas sin formato se utilizan principalmente para la definición de <router-link to="/cheatsheet/regular-expressions">expresiones regulares</router-link>.
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-manipulating-strings-1">
 <template #question>
 ¿Qué hace una cadena sin formato (precedida por <code>r</code>) en Python?
 </template>
@@ -178,7 +178,7 @@ spam[::-1]
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-manipulating-strings-2">
 <template #question>
 ¿Qué hace <code>spam[::-1]</code> a una cadena?
 </template>
@@ -385,7 +385,7 @@ True
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-manipulating-strings-3">
 <template #question>
 ¿Qué devuelve <code>startswith()</code>?
 </template>
@@ -481,7 +481,7 @@ El método `split()` divide una `cadena` en una `lista`. Por defecto, utilizará
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-manipulating-strings-4">
 <template #question>
 ¿Qué devuelve <code>split()</code> cuando se llama en una cadena?
 </template>
@@ -668,7 +668,7 @@ sentence.replace("apples", "oranges")
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-manipulating-strings-5">
 <template #question>
 ¿Qué devuelve el método <code>replace()</code>?
 </template>

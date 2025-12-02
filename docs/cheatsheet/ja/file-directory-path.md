@@ -59,7 +59,7 @@ usr/bin/spam
 パス区切り文字が Windows と Unix ベースのオペレーティングシステムで異なることに注意してください。これが、パスを結合するために文字列を結合する代わりに `pathlib` を使用したい理由です。
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-file-directory-path-1">
 <template #question>
 Python で pathlib を使用してパスを結合する正しい方法はどれですか？
 </template>
@@ -200,7 +200,7 @@ False
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-file-directory-path-2">
 <template #question>
 <code>Path('/').is_absolute()</code> は何を返しますか？
 </template>
@@ -316,7 +316,7 @@ False
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-file-directory-path-3">
 <template #question>
 setup.py が存在する場合、<code>Path('setup.py').is_file()</code> は何を返しますか？
 </template>
@@ -459,7 +459,7 @@ shutil.copy('/tmp/eggs.txt', '/tmp/delicious/eggs2.txt')
 ```
 
 <base-quiz>
-<base-quiz-question correct="D">
+<base-quiz-question correct="D" id="cheatsheet-file-directory-path-4">
 <template #question>
 サブディレクトリとファイルをすべて含むディレクトリツリー全体をコピーするには、どの関数を使用する必要がありますか？
 </template>
@@ -523,7 +523,7 @@ shutil.move('/tmp/bacon.txt', '/tmp/eggs')
 - `shutil.rmtree(path)` を呼び出すと、パス上のフォルダが削除され、含まれるすべてのファイルとフォルダも削除されます。
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-file-directory-path-5">
 <template #question>
 空でないディレクトリとそのすべてのコンテンツを削除できるメソッドはどれですか？
 </template>

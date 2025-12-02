@@ -53,7 +53,7 @@ Hello there!\nHow are you?\nI\'m doing fine.
 原始字符串主要用于 <router-link to="/cheatsheet/regular-expressions">正则表达式</router-link> 定义。
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-manipulating-strings-1">
 <template #question>
 Python 中以 <code>r</code> 为前缀的原始字符串的作用是什么？
 </template>
@@ -178,7 +178,7 @@ spam[::-1]
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-manipulating-strings-2">
 <template #question>
 <code>spam[::-1]</code> 对字符串做什么？
 </template>
@@ -385,7 +385,7 @@ True
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-manipulating-strings-3">
 <template #question>
 <code>startswith()</code> 返回什么？
 </template>
@@ -481,7 +481,7 @@ True
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-manipulating-strings-4">
 <template #question>
 对字符串调用 <code>split()</code> 会返回什么？
 </template>
@@ -668,7 +668,7 @@ sentence.replace("apples", "oranges")
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-manipulating-strings-5">
 <template #question>
 <code>replace()</code> 方法返回什么？
 </template>

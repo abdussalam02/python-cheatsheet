@@ -53,7 +53,7 @@ Hello there!\nHow are you?\nI\'m doing fine.
 Сырые строки в основном используются для определения <router-link to="/cheatsheet/regular-expressions">регулярных выражений</router-link>.
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-manipulating-strings-1">
 <template #question>
 Что делает сырая строка (с префиксом <code>r</code>) в Python?
 </template>
@@ -178,7 +178,7 @@ spam[::-1]
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-manipulating-strings-2">
 <template #question>
 Что делает <code>spam[::-1]</code> со строкой?
 </template>
@@ -385,7 +385,7 @@ True
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-manipulating-strings-3">
 <template #question>
 Что возвращает <code>startswith()</code>?
 </template>
@@ -481,7 +481,7 @@ True
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-manipulating-strings-4">
 <template #question>
 Что возвращает <code>split()</code> при вызове на строке?
 </template>
@@ -668,7 +668,7 @@ sentence.replace("apples", "oranges")
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-manipulating-strings-5">
 <template #question>
 Что возвращает метод <code>replace()</code>?
 </template>

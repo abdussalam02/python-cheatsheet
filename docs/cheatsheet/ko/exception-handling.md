@@ -72,7 +72,7 @@ divide(dividend=10, divisor=0)
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-exception-handling-1">
 <template #question>
 Python 에서 예외를 처리하는 데 사용되는 키워드는 무엇입니까?
 </template>
@@ -124,7 +124,7 @@ division by zero
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-exception-handling-2">
 <template #question>
 단일 <code>except</code> 블록에서 여러 예외 유형을 처리할 수 있습니까?
 </template>
@@ -169,7 +169,7 @@ divide(dividend=10, divisor=0)
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-exception-handling-3">
 <template #question>
 <code>finally</code> 블록은 언제 실행됩니까?
 </template>
@@ -229,7 +229,7 @@ except MyCustomException:
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-exception-handling-4">
 <template #question>
 Python 에서 사용자 정의 예외를 만드는 방법은 무엇입니까?
 </template>

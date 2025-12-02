@@ -53,7 +53,7 @@ Hello there!\nHow are you?\nI\'m doing fine.
 Les chaînes brutes sont principalement utilisées pour la définition des <router-link to="/cheatsheet/regular-expressions">expressions régulières</router-link>.
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-manipulating-strings-1">
 <template #question>
 Que fait une chaîne brute (précédée de <code>r</code>) en Python ?
 </template>
@@ -178,7 +178,7 @@ spam[::-1]
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-manipulating-strings-2">
 <template #question>
 Que fait <code>spam[::-1]</code> sur une chaîne ?
 </template>
@@ -385,7 +385,7 @@ True
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-manipulating-strings-3">
 <template #question>
 Que retourne <code>startswith()</code> ?
 </template>
@@ -481,7 +481,7 @@ La méthode `split()` divise une `chaîne` en une `liste`. Par défaut, elle uti
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-manipulating-strings-4">
 <template #question>
 Que retourne <code>split()</code> lorsqu'il est appelé sur une chaîne ?
 </template>
@@ -668,7 +668,7 @@ sentence.replace("apples", "oranges")
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-manipulating-strings-5">
 <template #question>
 Que retourne la méthode <code>replace()</code> ?
 </template>

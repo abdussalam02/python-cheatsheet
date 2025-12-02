@@ -65,7 +65,7 @@ s  # Returns {1, 2, 3, 4}
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-sets-1">
 <template #question>
 What happens when you create a set with duplicate values?
 </template>
@@ -162,7 +162,7 @@ s.discard(3)
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-sets-2">
 <template #question>
 What is the difference between <code>remove()</code> and <code>discard()</code> methods for sets?
 </template>
@@ -207,7 +207,7 @@ s1.intersection(s2, s3)  # or 's1 & s2 & s3' - returns {3}
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-sets-3">
 <template #question>
 What does <code>intersection()</code> return for sets?
 </template>
@@ -260,7 +260,7 @@ s1.symmetric_difference(s2)  # or 's1 ^ s2' - returns {1, 4}
 ```
 
 <base-quiz>
-<base-quiz-question correct="D">
+<base-quiz-question correct="D" id="cheatsheet-sets-4">
 <template #question>
 What does <code>symmetric_difference()</code> return for two sets?
 </template>

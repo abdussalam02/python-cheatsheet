@@ -33,7 +33,7 @@ with open("filename.json", "w") as f:  # 以写入模式打开文件
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-json-yaml-1">
 <template #question>
 哪个函数用于将 Python 字典写入 JSON 文件？
 </template>
@@ -71,7 +71,7 @@ with open("filename.yaml") as f:
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-json-yaml-2">
 <template #question>
 YAML 相对于 JSON 的一个优点是什么？
 </template>
@@ -103,7 +103,7 @@ conf1 = anyconfig.load("/path/to/foo/conf.d/a.yml")  # 自动检测格式
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-json-yaml-3">
 <template #question>
 anyconfig 库允许您做什么？
 </template>

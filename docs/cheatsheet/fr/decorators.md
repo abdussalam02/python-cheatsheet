@@ -45,7 +45,7 @@ After func!
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-decorators-1">
 <template #question>
 Qu'est-ce qu'un décorateur en Python ?
 </template>
@@ -104,7 +104,7 @@ def your_decorator(func):
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-decorators-2">
 <template #question>
 Que fait <code>@functools.wraps(func)</code> dans un décorateur ?
 </template>

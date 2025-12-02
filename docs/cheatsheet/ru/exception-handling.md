@@ -72,7 +72,7 @@ You can not divide by 0
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-exception-handling-1">
 <template #question>
 Какие ключевые слова используются для обработки исключений в Python?
 </template>
@@ -124,7 +124,7 @@ division by zero
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-exception-handling-2">
 <template #question>
 Можно ли обрабатывать несколько типов исключений в одном блоке <code>except</code>?
 </template>
@@ -169,7 +169,7 @@ Execution finished
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-exception-handling-3">
 <template #question>
 Когда выполняется блок <code>finally</code>?
 </template>
@@ -229,7 +229,7 @@ My custom exception was raised
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-exception-handling-4">
 <template #question>
 Как создать пользовательское исключение в Python?
 </template>

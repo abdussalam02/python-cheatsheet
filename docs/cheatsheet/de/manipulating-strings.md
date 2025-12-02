@@ -53,7 +53,7 @@ Hello there!\nHow are you?\nI\'m doing fine.
 Raw Strings werden hauptsächlich für die Definition von <router-link to="/cheatsheet/regular-expressions">Regulären Ausdrücken</router-link> verwendet.
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-manipulating-strings-1">
 <template #question>
 Was bewirkt ein Raw String (mit <code>r</code> präfixiert) in Python?
 </template>
@@ -178,7 +178,7 @@ spam[::-1]
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-manipulating-strings-2">
 <template #question>
 Was bewirkt <code>spam[::-1]</code> mit einer Zeichenkette?
 </template>
@@ -385,7 +385,7 @@ True
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-manipulating-strings-3">
 <template #question>
 Was gibt <code>startswith()</code> zurück?
 </template>
@@ -481,7 +481,7 @@ Die Methode `split()` teilt eine `string` in eine `list` auf. Standardmäßig ve
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-manipulating-strings-4">
 <template #question>
 Was gibt <code>split()</code> zurück, wenn es auf eine Zeichenkette angewendet wird?
 </template>
@@ -668,7 +668,7 @@ sentence.replace("apples", "oranges")
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-manipulating-strings-5">
 <template #question>
 Was gibt die <code>replace()</code> Methode zurück?
 </template>

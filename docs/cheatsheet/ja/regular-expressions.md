@@ -105,7 +105,7 @@ mo.group()
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-regular-expressions-1">
 <template #question>
 マッチオブジェクトに対して <code>group()</code> を呼び出すと、何が返されますか？
 </template>
@@ -343,7 +343,7 @@ mo2.group()
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-regular-expressions-2">
 <template #question>
 正規表現パターンを非貪欲にするものは何ですか？
 </template>
@@ -580,7 +580,7 @@ names_regex.sub('CENSORED', 'Agent Alice gave the secret documents to Agent Bob.
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-regular-expressions-3">
 <template #question>
 <code>sub()</code> メソッドは何をしますか？
 </template>
@@ -617,7 +617,7 @@ phone_regex = re.compile(r'''(
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-regular-expressions-4">
 <template #question>
 <code>re.compile()</code> に渡された <code>re.VERBOSE</code> は何を行いますか？
 </template>

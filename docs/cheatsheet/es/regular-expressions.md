@@ -105,7 +105,7 @@ mo.group()
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-regular-expressions-1">
 <template #question>
 ¿Qué devuelve <code>group()</code> cuando se llama en un objeto de coincidencia?
 </template>
@@ -343,7 +343,7 @@ mo2.group()
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-regular-expressions-2">
 <template #question>
 ¿Qué hace que un patrón regex no sea codicioso (non-greedy)?
 </template>
@@ -580,7 +580,7 @@ names_regex.sub('CENSURADO', 'El Agente Alice dio los documentos secretos al Age
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-regular-expressions-3">
 <template #question>
 ¿Qué hace el método <code>sub()</code>?
 </template>
@@ -617,7 +617,7 @@ phone_regex = re.compile(r'''(
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-regular-expressions-4">
 <template #question>
 ¿Qué hace <code>re.VERBOSE</code> cuando se pasa a <code>re.compile()</code>?
 </template>

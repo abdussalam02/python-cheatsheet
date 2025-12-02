@@ -28,7 +28,7 @@ with open(filename) as f:  # 'f' — это файловый объект
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-context-manager-1">
 <template #question>
 Каково основное преимущество использования менеджера контекста (оператора <code>with</code>)?
 </template>
@@ -91,7 +91,7 @@ test
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-context-manager-2">
 <template #question>
 Какие методы должен реализовать класс, чтобы использоваться в качестве менеджера контекста?
 </template>

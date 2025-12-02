@@ -33,7 +33,7 @@ hello_content
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-reading-and-writing-files-1">
 <template #question>
 ¿Cuál es la principal ventaja de usar la declaración <code>with</code> al abrir archivos?
 </template>
@@ -112,7 +112,7 @@ Bacon is not a vegetable.
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-reading-and-writing-files-2">
 <template #question>
 ¿Cuál es la diferencia entre abrir un archivo con el modo <code>'w'</code> y el modo <code>'a'</code>?
 </template>

@@ -62,7 +62,7 @@ print(obj.__private_var)    # AttributeError: 'MyClass' object has no attribute 
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-oop-basics-1">
 <template #question>
 如何在 Python 中指示一个受保护的变量？
 </template>
@@ -131,7 +131,7 @@ cat.speak()   # 输出：Meow!
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-oop-basics-2">
 <template #question>
 Python 中的继承是什么？
 </template>
@@ -194,7 +194,7 @@ for shape in shapes:
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-oop-basics-3">
 <template #question>
 Python 中的多态性是什么？
 </template>

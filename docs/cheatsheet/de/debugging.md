@@ -40,7 +40,7 @@ Exception: This is the error message.
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-debugging-1">
 <template #question>
 Welches Schlüsselwort wird verwendet, um in Python manuell eine Ausnahme auszulösen?
 </template>
@@ -146,7 +146,7 @@ AssertionError: The pod bay doors need to be "open".
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-debugging-2">
 <template #question>
 Was passiert, wenn eine <code>assert</code>-Anweisung fehlschlägt?
 </template>
@@ -175,7 +175,7 @@ logging.basicConfig(level=logging.DEBUG, format=' %(asctime)s - %(levelname)s- %
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-debugging-3">
 <template #question>
 Was ist der Zweck des <code>logging</code>-Moduls in Python?
 </template>
@@ -235,7 +235,7 @@ Logging-Level bieten eine Möglichkeit, Ihre Log-Meldungen nach Wichtigkeit zu k
 | `CRITICAL` | `logging.critical()` | Die höchste Stufe. Wird verwendet, um einen fatalen Fehler anzuzeigen, der dazu geführt hat oder kurz davor steht, dass das Programm vollständig beendet wird.        |
 
 <base-quiz>
-<base-quiz-question correct="D">
+<base-quiz-question correct="D" id="cheatsheet-debugging-4">
 <template #question>
 Was ist die niedrigste Logging-Stufe in Python?
 </template>
@@ -279,7 +279,7 @@ logging.basicConfig(filename='myProgramLog.txt', level=logging.DEBUG, format='%(
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-debugging-5">
 <template #question>
 Wie schreiben Sie Log-Meldungen in eine Datei, anstatt sie auf dem Bildschirm anzuzeigen?
 </template>

@@ -105,7 +105,7 @@ mo.group()
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-regular-expressions-1">
 <template #question>
 Que renvoie <code>group()</code> lorsqu'il est appelé sur un objet match ?
 </template>
@@ -343,7 +343,7 @@ mo2.group()
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-regular-expressions-2">
 <template #question>
 Qu'est-ce qui rend un motif regex non gourmand ?
 </template>
@@ -580,7 +580,7 @@ names_regex.sub('CENSORED', 'Agent Alice gave the secret documents to Agent Bob.
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-regular-expressions-3">
 <template #question>
 Que fait la méthode <code>sub()</code> ?
 </template>
@@ -617,7 +617,7 @@ phone_regex = re.compile(r'''(
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-regular-expressions-4">
 <template #question>
 Que fait <code>re.VERBOSE</code> lorsqu'il est passé à <code>re.compile()</code> ?
 </template>

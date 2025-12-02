@@ -98,7 +98,7 @@ Examples of expressions:
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-basics-1">
 <template #question>
 What is the result of this Python expression?
 
@@ -164,7 +164,7 @@ my_list
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-basics-2">
 <template #question>
 What is the value of <code>x</code> after executing this code?
 
@@ -341,7 +341,7 @@ _spam = 'Hello'
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-basics-3">
 <template #question>
 In Python basics, which of the following is a valid variable name?
 </template>
@@ -480,7 +480,7 @@ Hi, Martha
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-basics-4">
 <template #question>
 In Python basics, what type does `input()` return?
 </template>
@@ -589,7 +589,7 @@ float('3.14')  # Returns 3.14
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-basics-5">
 <template #question>
 What is the result of this Python code?
 

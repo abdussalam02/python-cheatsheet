@@ -105,7 +105,7 @@ mo.group()
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-regular-expressions-1">
 <template #question>
 일치 객체에서 <code>group()</code>을 호출하면 무엇이 반환됩니까?
 </template>
@@ -343,7 +343,7 @@ mo2.group()
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-regular-expressions-2">
 <template #question>
 정규 표현식 패턴을 비탐욕적으로 만드는 것은 무엇입니까?
 </template>
@@ -580,7 +580,7 @@ names_regex.sub('CENSORED', 'Agent Alice gave the secret documents to Agent Bob.
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-regular-expressions-3">
 <template #question>
 <code>sub()</code> 메서드는 무엇을 합니까?
 </template>
@@ -617,7 +617,7 @@ phone_regex = re.compile(r'''(
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-regular-expressions-4">
 <template #question>
 <code>re.compile()</code>에 전달될 때 <code>re.VERBOSE</code>는 무엇을 합니까?
 </template>

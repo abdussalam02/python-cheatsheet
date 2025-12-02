@@ -58,7 +58,7 @@ new_list
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-comprehensions-1">
 <template #question>
 What is the basic syntax of a list comprehension?
 </template>
@@ -118,7 +118,7 @@ print(new_list)
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-comprehensions-2">
 <template #question>
 Where does the <code>if</code> condition go in a list comprehension?
 </template>
@@ -181,7 +181,7 @@ c = {'name': 'Pooka', 'age': 5}
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-comprehensions-3">
 <template #question>
 What syntax is used for dictionary comprehensions?
 </template>

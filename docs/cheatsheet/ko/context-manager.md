@@ -28,7 +28,7 @@ with open(filename) as f:  # 'f'는 파일 객체
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-context-manager-1">
 <template #question>
 컨텍스트 관리자 (<code>with</code> 문) 를 사용하는 주된 이점은 무엇입니까?
 </template>
@@ -91,7 +91,7 @@ test
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-context-manager-2">
 <template #question>
 클래스를 컨텍스트 관리자로 사용하려면 어떤 메서드를 구현해야 합니까?
 </template>

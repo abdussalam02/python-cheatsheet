@@ -70,7 +70,7 @@ Arguments passés: ('arg1', 'arg2', 'arg3') en tant que <class 'tuple'>
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-args-and-kwargs-1">
 <template #question>
 Quel type de données <code>*args</code> utilise pour collecter les arguments ?
 </template>
@@ -101,7 +101,7 @@ Mots-clés: {'key1': 'arg1', 'key2': 'arg2'} en tant que <class 'dict'>
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-args-and-kwargs-2">
 <template #question>
 Quel type de données <code>**kwargs</code> utilise pour collecter les arguments ?
 </template>

@@ -240,7 +240,7 @@ wife
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-dictionaries-1">
 <template #question>
 Что делает <code>pop()</code> при вызове на словаре?
 </template>
@@ -384,7 +384,7 @@ dict_c
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-dictionaries-2">
 <template #question>
 При объединении двух словарей с помощью <code>{**dict_b, **dict_a}</code>, что произойдет, если у обоих словарей есть один и тот же ключ?
 </template>

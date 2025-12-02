@@ -72,7 +72,7 @@ You can not divide by 0
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-exception-handling-1">
 <template #question>
 What keywords are used to handle exceptions in Python?
 </template>
@@ -124,7 +124,7 @@ division by zero
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-exception-handling-2">
 <template #question>
 Can you handle multiple exception types in a single <code>except</code> block?
 </template>
@@ -169,7 +169,7 @@ Execution finished
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-exception-handling-3">
 <template #question>
 When does the <code>finally</code> block execute?
 </template>
@@ -229,7 +229,7 @@ My custom exception was raised
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-exception-handling-4">
 <template #question>
 How do you create a custom exception in Python?
 </template>

@@ -105,7 +105,7 @@ mo.group()
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-regular-expressions-1">
 <template #question>
 O que <code>group()</code> retorna quando chamado em um objeto de correspondência?
 </template>
@@ -343,7 +343,7 @@ mo2.group()
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-regular-expressions-2">
 <template #question>
 O que torna um padrão regex não-guloso (non-greedy)?
 </template>
@@ -580,7 +580,7 @@ names_regex.sub('CENSORED', 'Agent Alice gave the secret documents to Agent Bob.
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-regular-expressions-3">
 <template #question>
 O que o método <code>sub()</code> faz?
 </template>
@@ -617,7 +617,7 @@ phone_regex = re.compile(r'''(
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-regular-expressions-4">
 <template #question>
 O que <code>re.VERBOSE</code> faz quando passado para <code>re.compile()</code>?
 </template>

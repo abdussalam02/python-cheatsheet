@@ -99,7 +99,7 @@ f'Hello {name}!'  # f プレフィックスにより {} 内に式を含めるこ
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-string-formatting-1">
 <template #question>
 Python の f-string に使用されるプレフィックスは何ですか？
 </template>
@@ -207,7 +207,7 @@ f"{a:.2f}"
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-string-formatting-2">
 <template #question>
 <code>f"{a:.2f}"</code> は何を行いますか？
 </template>

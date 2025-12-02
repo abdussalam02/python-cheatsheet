@@ -84,7 +84,7 @@ f'The {furniture[-1]} is bigger than the {furniture[-3]}'
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-lists-and-tuples-1">
 <template #question>
 <code>furniture = ['table', 'chair', 'rack', 'shelf']</code> の場合、<code>furniture[-1]</code> は何を返しますか？
 </template>
@@ -183,7 +183,7 @@ spam2
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-lists-and-tuples-2">
 <template #question>
 <code>spam</code> がリストである場合、<code>spam[:]</code> は何を作成しますか？
 </template>
@@ -457,7 +457,7 @@ furniture
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-lists-and-tuples-3">
 <template #question>
 <code>append()</code> メソッドはリストに対して何を行いますか？
 </template>
@@ -571,7 +571,7 @@ animals
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-lists-and-tuples-4">
 <template #question>
 リストに対して <code>pop()</code> を呼び出すと、何が起こりますか？
 </template>
@@ -706,7 +706,7 @@ list('hello')
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-lists-and-tuples-5">
 <template #question>
 Python のリストとタプルの主な違いは何ですか？
 </template>

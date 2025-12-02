@@ -64,7 +64,7 @@ system, that's why you want to use `pathlib` instead of
 adding strings together to join paths together.
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-file-directory-path-1">
 <template #question>
 What is the correct way to join paths using pathlib in Python?
 </template>
@@ -208,7 +208,7 @@ False
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-file-directory-path-2">
 <template #question>
 What does <code>Path('/').is_absolute()</code> return?
 </template>
@@ -324,7 +324,7 @@ False
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-file-directory-path-3">
 <template #question>
 What will <code>Path('setup.py').is_file()</code> return if setup.py exists?
 </template>
@@ -467,7 +467,7 @@ shutil.copy('/tmp/eggs.txt', '/tmp/delicious/eggs2.txt')
 ```
 
 <base-quiz>
-<base-quiz-question correct="D">
+<base-quiz-question correct="D" id="cheatsheet-file-directory-path-4">
 <template #question>
 Which function should you use to copy an entire directory tree including all subdirectories and files?
 </template>
@@ -531,7 +531,7 @@ shutil.move('/tmp/bacon.txt', '/tmp/eggs')
 - Calling `shutil.rmtree(path)` will remove the folder at path, and all files and folders it contains will also be deleted.
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-file-directory-path-5">
 <template #question>
 Which method can delete a non-empty directory and all its contents?
 </template>

@@ -99,7 +99,7 @@ f'Hello {name}!'  # f 前缀允许在 {} 中使用表达式
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-string-formatting-1">
 <template #question>
 Python 中 f-string 使用的前缀是什么？
 </template>
@@ -207,7 +207,7 @@ f"{a:.2f}"
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-string-formatting-2">
 <template #question>
 <code>f"{a:.2f}"</code> 的作用是什么？
 </template>

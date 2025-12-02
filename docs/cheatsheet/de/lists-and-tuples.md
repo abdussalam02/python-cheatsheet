@@ -84,7 +84,7 @@ f'The {furniture[-1]} is bigger than the {furniture[-3]}'
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-lists-and-tuples-1">
 <template #question>
 Was gibt <code>furniture[-1]</code> zurück, wenn <code>furniture = ['table', 'chair', 'rack', 'shelf']</code>?
 </template>
@@ -183,7 +183,7 @@ spam2
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-lists-and-tuples-2">
 <template #question>
 Was erstellt <code>spam[:]</code>, wenn <code>spam</code> eine Liste ist?
 </template>
@@ -457,7 +457,7 @@ furniture
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-lists-and-tuples-3">
 <template #question>
 Was bewirkt die Methode <code>append()</code> bei einer Liste?
 </template>
@@ -571,7 +571,7 @@ animals
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-lists-and-tuples-4">
 <template #question>
 Was bewirkt <code>pop()</code>, wenn es für eine Liste aufgerufen wird?
 </template>
@@ -706,7 +706,7 @@ list('hello')
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-lists-and-tuples-5">
 <template #question>
 Was ist der Hauptunterschied zwischen Listen und Tupeln in Python?
 </template>

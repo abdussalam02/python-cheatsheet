@@ -40,7 +40,7 @@ Exception: This is the error message.
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-debugging-1">
 <template #question>
 Python で例外を手動で発生させるために使用されるキーワードは何ですか？
 </template>
@@ -146,7 +146,7 @@ AssertionError: The pod bay doors need to be "open".
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-debugging-2">
 <template #question>
 <code>assert</code> ステートメントが失敗するとどうなりますか？
 </template>
@@ -175,7 +175,7 @@ logging.basicConfig(level=logging.DEBUG, format=' %(asctime)s - %(levelname)s- %
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-debugging-3">
 <template #question>
 Python における<code>logging</code>モジュールの目的は何ですか？
 </template>
@@ -235,7 +235,7 @@ logging.debug('End of program')
 | `CRITICAL` | `logging.critical()` | 最高レベル。プログラムの実行全体を停止させた、または停止させようとしている致命的なエラーを示すために使用されます。 |
 
 <base-quiz>
-<base-quiz-question correct="D">
+<base-quiz-question correct="D" id="cheatsheet-debugging-4">
 <template #question>
 Python における最も低いロギングレベルは何ですか？
 </template>
@@ -279,7 +279,7 @@ logging.basicConfig(filename='myProgramLog.txt', level=logging.DEBUG, format='%(
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-debugging-5">
 <template #question>
 ログメッセージを画面に表示する代わりにファイルに書き込むにはどうすればよいですか？
 </template>

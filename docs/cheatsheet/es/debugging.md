@@ -40,7 +40,7 @@ Exception: This is the error message.
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-debugging-1">
 <template #question>
 ¿Qué palabra clave se utiliza para lanzar manualmente una excepción en Python?
 </template>
@@ -146,7 +146,7 @@ AssertionError: The pod bay doors need to be "open".
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-debugging-2">
 <template #question>
 ¿Qué sucede cuando falla una sentencia <code>assert</code>?
 </template>
@@ -175,7 +175,7 @@ logging.basicConfig(level=logging.DEBUG, format=' %(asctime)s - %(levelname)s- %
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-debugging-3">
 <template #question>
 ¿Cuál es el propósito del módulo <code>logging</code> en Python?
 </template>
@@ -235,7 +235,7 @@ Los niveles de registro proporcionan una forma de categorizar sus mensajes de re
 | `CRITICAL` | `logging.critical()` | El nivel más alto. Se utiliza para indicar un error fatal que ha causado o está a punto de causar que el programa deje de ejecutarse por completo. |
 
 <base-quiz>
-<base-quiz-question correct="D">
+<base-quiz-question correct="D" id="cheatsheet-debugging-4">
 <template #question>
 ¿Cuál es el nivel de registro más bajo en Python?
 </template>
@@ -279,7 +279,7 @@ logging.basicConfig(filename='myProgramLog.txt', level=logging.DEBUG, format='%(
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-debugging-5">
 <template #question>
 ¿Cómo se escriben los mensajes de registro en un archivo en lugar de mostrarlos en pantalla?
 </template>

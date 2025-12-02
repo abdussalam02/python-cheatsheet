@@ -65,7 +65,7 @@ s  # Returns {1, 2, 3, 4}
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-sets-1">
 <template #question>
 Que se passe-t-il lorsque vous créez un ensemble avec des valeurs dupliquées ?
 </template>
@@ -162,7 +162,7 @@ s.discard(3)
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-sets-2">
 <template #question>
 Quelle est la différence entre les méthodes <code>remove()</code> et <code>discard()</code> pour les ensembles ?
 </template>
@@ -207,7 +207,7 @@ s1.intersection(s2, s3)  # or 's1 & s2 & s3' - returns {3}
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-sets-3">
 <template #question>
 Que retourne <code>intersection()</code> pour les ensembles ?
 </template>
@@ -260,7 +260,7 @@ s1.symmetric_difference(s2)  # or 's1 ^ s2' - returns {1, 4}
 ```
 
 <base-quiz>
-<base-quiz-question correct="D">
+<base-quiz-question correct="D" id="cheatsheet-sets-4">
 <template #question>
 Que retourne <code>symmetric_difference()</code> pour deux ensembles ?
 </template>

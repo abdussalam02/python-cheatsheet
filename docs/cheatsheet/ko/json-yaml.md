@@ -33,7 +33,7 @@ with open("filename.json", "w") as f:  # 쓰기 모드로 파일 열기
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-json-yaml-1">
 <template #question>
 Python 딕셔너리를 JSON 파일에 쓰는 데 사용되는 함수는 무엇입니까?
 </template>
@@ -71,7 +71,7 @@ with open("filename.yaml") as f:
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-json-yaml-2">
 <template #question>
 JSON 에 비해 YAML 의 장점은 무엇입니까?
 </template>
@@ -103,7 +103,7 @@ conf1 = anyconfig.load("/path/to/foo/conf.d/a.yml")  # 형식을 자동 감지
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-json-yaml-3">
 <template #question>
 anyconfig 라이브러리는 무엇을 할 수 있게 해줍니까?
 </template>

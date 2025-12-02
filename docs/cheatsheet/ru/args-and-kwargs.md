@@ -70,7 +70,7 @@ Arguments passed: ('arg1', 'arg2', 'arg3') as <class 'tuple'>
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-args-and-kwargs-1">
 <template #question>
 В какой тип данных собираются аргументы <code>*args</code>?
 </template>
@@ -101,7 +101,7 @@ keywords: {'key1': 'arg1', 'key2': 'arg2'} as <class 'dict'>
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-args-and-kwargs-2">
 <template #question>
 В какой тип данных собираются аргументы <code>**kwargs</code>?
 </template>

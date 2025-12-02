@@ -33,7 +33,7 @@ hello_content
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-reading-and-writing-files-1">
 <template #question>
 파일을 열 때 <code>with</code> 문을 사용하는 주된 이점은 무엇입니까?
 </template>
@@ -112,7 +112,7 @@ Bacon is not a vegetable.
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-reading-and-writing-files-2">
 <template #question>
 <code>'w'</code> 모드로 파일을 여는 것과 <code>'a'</code> 모드로 파일을 여는 것의 차이점은 무엇입니까?
 </template>

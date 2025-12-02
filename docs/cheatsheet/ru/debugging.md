@@ -40,7 +40,7 @@ Exception: This is the error message.
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-debugging-1">
 <template #question>
 Какое ключевое слово используется для ручного вызова исключения в Python?
 </template>
@@ -146,7 +146,7 @@ AssertionError: The pod bay doors need to be "open".
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-debugging-2">
 <template #question>
 Что происходит, когда оператор <code>assert</code> завершается неудачей?
 </template>
@@ -175,7 +175,7 @@ logging.basicConfig(level=logging.DEBUG, format=' %(asctime)s - %(levelname)s- %
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-debugging-3">
 <template #question>
 Какова цель модуля <code>logging</code> в Python?
 </template>
@@ -235,7 +235,7 @@ logging.debug('End of program')
 | `CRITICAL` | `logging.critical()` | Самый высокий уровень. Используется для указания на фатальную ошибку, которая вызвала или вот-вот вызовет полную остановку работы программы.  |
 
 <base-quiz>
-<base-quiz-question correct="D">
+<base-quiz-question correct="D" id="cheatsheet-debugging-4">
 <template #question>
 Какой самый низкий уровень логирования в Python?
 </template>
@@ -279,7 +279,7 @@ logging.basicConfig(filename='myProgramLog.txt', level=logging.DEBUG, format='%(
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-debugging-5">
 <template #question>
 Как записать сообщения журнала в файл вместо отображения их на экране?
 </template>

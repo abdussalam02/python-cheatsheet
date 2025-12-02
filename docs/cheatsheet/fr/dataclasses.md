@@ -89,7 +89,7 @@ obj.price
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-dataclasses-1">
 <template #question>
 Dans une dataclass, où les champs avec des valeurs par défaut doivent-ils être placés ?
 </template>

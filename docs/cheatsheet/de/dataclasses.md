@@ -89,7 +89,7 @@ obj.price
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-dataclasses-1">
 <template #question>
 In einer Dataclass, wo müssen Felder mit Standardwerten platziert werden?
 </template>

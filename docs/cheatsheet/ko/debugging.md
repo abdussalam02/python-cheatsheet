@@ -40,7 +40,7 @@ Exception: This is the error message.
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-debugging-1">
 <template #question>
 Python 에서 예외를 수동으로 발생시키는 데 사용되는 키워드는 무엇입니까?
 </template>
@@ -146,7 +146,7 @@ AssertionError: The pod bay doors need to be "open".
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-debugging-2">
 <template #question>
 <code>assert</code> 문이 실패하면 어떻게 됩니까?
 </template>
@@ -175,7 +175,7 @@ logging.basicConfig(level=logging.DEBUG, format=' %(asctime)s - %(levelname)s- %
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-debugging-3">
 <template #question>
 Python 에서 <code>logging</code> 모듈의 목적은 무엇입니까?
 </template>
@@ -235,7 +235,7 @@ logging.debug('End of program')
 | `CRITICAL` | `logging.critical()` | 가장 높은 수준. 프로그램 실행을 완전히 중단했거나 중단하려고 하는 치명적인 오류를 나타내는 데 사용됩니다.                      |
 
 <base-quiz>
-<base-quiz-question correct="D">
+<base-quiz-question correct="D" id="cheatsheet-debugging-4">
 <template #question>
 Python 에서 가장 낮은 로깅 수준은 무엇입니까?
 </template>
@@ -279,7 +279,7 @@ logging.basicConfig(filename='myProgramLog.txt', level=logging.DEBUG, format='%(
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-debugging-5">
 <template #question>
 화면에 표시하는 대신 로그 메시지를 파일에 쓰려면 어떻게 해야 합니까?
 </template>

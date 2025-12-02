@@ -84,7 +84,7 @@ f'The {furniture[-1]} is bigger than the {furniture[-3]}'
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-lists-and-tuples-1">
 <template #question>
 Что вернет <code>furniture[-1]</code>, если <code>furniture = ['table', 'chair', 'rack', 'shelf']</code>?
 </template>
@@ -183,7 +183,7 @@ spam2
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-lists-and-tuples-2">
 <template #question>
 Что создает <code>spam[:]</code>, когда <code>spam</code> — это список?
 </template>
@@ -457,7 +457,7 @@ furniture
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-lists-and-tuples-3">
 <template #question>
 Что делает метод <code>append()</code> со списком?
 </template>
@@ -571,7 +571,7 @@ animals
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-lists-and-tuples-4">
 <template #question>
 Что делает <code>pop()</code> при вызове для списка?
 </template>
@@ -706,7 +706,7 @@ list('hello')
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-lists-and-tuples-5">
 <template #question>
 Каково основное различие между списками и кортежами в Python?
 </template>

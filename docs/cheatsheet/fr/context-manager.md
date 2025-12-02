@@ -28,7 +28,7 @@ with open(filename) as f:  # 'f' est l'objet fichier
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-context-manager-1">
 <template #question>
 Quel est le principal avantage d'utiliser un gestionnaire de contexte (l'instruction <code>with</code>) ?
 </template>
@@ -91,7 +91,7 @@ test
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-context-manager-2">
 <template #question>
 Quelles méthodes une classe doit-elle implémenter pour être utilisée comme gestionnaire de contexte ?
 </template>

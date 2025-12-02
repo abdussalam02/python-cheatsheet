@@ -59,7 +59,7 @@ usr/bin/spam
 Обратите внимание, что разделитель путей отличается между Windows и операционными системами на базе Unix, поэтому вам следует использовать `pathlib` вместо конкатенации строк для объединения путей.
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-file-directory-path-1">
 <template #question>
 Какой правильный способ объединить пути с помощью pathlib в Python?
 </template>
@@ -200,7 +200,7 @@ False
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-file-directory-path-2">
 <template #question>
 Что вернет <code>Path('/').is_absolute()</code>?
 </template>
@@ -316,7 +316,7 @@ False
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-file-directory-path-3">
 <template #question>
 Что вернет <code>Path('setup.py').is_file()</code>, если setup.py существует?
 </template>
@@ -459,7 +459,7 @@ shutil.copy('/tmp/eggs.txt', '/tmp/delicious/eggs2.txt')
 ```
 
 <base-quiz>
-<base-quiz-question correct="D">
+<base-quiz-question correct="D" id="cheatsheet-file-directory-path-4">
 <template #question>
 Какую функцию следует использовать для копирования всего дерева каталогов, включая все подкаталоги и файлы?
 </template>
@@ -523,7 +523,7 @@ shutil.move('/tmp/bacon.txt', '/tmp/eggs')
 - Вызов `shutil.rmtree(path)` удалит папку по указанному пути, а также все содержащиеся в ней файлы и папки.
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-file-directory-path-5">
 <template #question>
 Какой метод может удалить непустой каталог и все его содержимое?
 </template>

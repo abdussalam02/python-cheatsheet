@@ -38,7 +38,7 @@ if __name__ == "__main__":  # 仅在文件被执行时运行，而不是被导�
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-main-1">
 <template #question>
 当一个 Python 文件作为脚本直接运行时，<code>__name__</code> 的值是多少？
 </template>
@@ -59,7 +59,7 @@ if __name__ == "__main__":  # 仅在文件被执行时运行，而不是被导�
 4. `if __name__ == "__main__":` 用于仅在文件被直接运行时执行某些代码，而不是在被导入时执行。
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-main-2">
 <template #question>
 使用 <code>if __name__ == "__main__":</code> 的主要目的是什么？
 </template>

@@ -62,7 +62,7 @@ print(obj.__private_var)    # AttributeError: 'MyClass' object has no attribute 
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-oop-basics-1">
 <template #question>
 How do you indicate a protected variable in Python?
 </template>
@@ -131,7 +131,7 @@ cat.speak()   # output: Meow!
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-oop-basics-2">
 <template #question>
 What is inheritance in Python OOP?
 </template>
@@ -194,7 +194,7 @@ for shape in shapes:
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-oop-basics-3">
 <template #question>
 What is polymorphism in Python OOP?
 </template>

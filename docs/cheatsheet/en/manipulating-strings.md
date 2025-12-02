@@ -53,7 +53,7 @@ Hello there!\nHow are you?\nI\'m doing fine.
 Raw strings are mostly used for <router-link to="/cheatsheet/regular-expressions">regular expression</router-link> definition.
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-manipulating-strings-1">
 <template #question>
 What does a raw string (prefixed with <code>r</code>) do in Python?
 </template>
@@ -178,7 +178,7 @@ spam[::-1]
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-manipulating-strings-2">
 <template #question>
 What does <code>spam[::-1]</code> do to a string?
 </template>
@@ -385,7 +385,7 @@ True
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-manipulating-strings-3">
 <template #question>
 What does <code>startswith()</code> return?
 </template>
@@ -481,7 +481,7 @@ The `split()` method splits a `string` into a `list`. By default, it will use wh
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-manipulating-strings-4">
 <template #question>
 What does <code>split()</code> return when called on a string?
 </template>
@@ -668,7 +668,7 @@ sentence.replace("apples", "oranges")
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-manipulating-strings-5">
 <template #question>
 What does the <code>replace()</code> method return?
 </template>

@@ -240,7 +240,7 @@ wife
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-dictionaries-1">
 <template #question>
 What does <code>pop()</code> do when called on a dictionary?
 </template>
@@ -384,7 +384,7 @@ dict_c
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-dictionaries-2">
 <template #question>
 When merging two dictionaries using <code>{**dict_b, **dict_a}</code>, what happens if both dictionaries have the same key?
 </template>

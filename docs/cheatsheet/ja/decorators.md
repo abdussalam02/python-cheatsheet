@@ -42,7 +42,7 @@ After func!
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-decorators-1">
 <template #question>
 Python におけるデコレータとは何ですか？
 </template>
@@ -100,7 +100,7 @@ def your_decorator(func):
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-decorators-2">
 <template #question>
 デコレータ内の<code>@functools.wraps(func)</code>は何をしますか？
 </template>

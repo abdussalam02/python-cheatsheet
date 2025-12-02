@@ -72,7 +72,7 @@ Você não pode dividir por 0
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-exception-handling-1">
 <template #question>
 Quais palavras-chave são usadas para tratar exceções em Python?
 </template>
@@ -124,7 +124,7 @@ division by zero
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-exception-handling-2">
 <template #question>
 Você pode tratar múltiplos tipos de exceção em um único bloco <code>except</code>?
 </template>
@@ -169,7 +169,7 @@ Execução finalizada
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-exception-handling-3">
 <template #question>
 Quando o bloco <code>finally</code> é executado?
 </template>
@@ -229,7 +229,7 @@ Minha exceção personalizada foi levantada
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-exception-handling-4">
 <template #question>
 Como você cria uma exceção personalizada em Python?
 </template>

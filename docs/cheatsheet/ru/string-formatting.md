@@ -99,7 +99,7 @@ f'Hello {name}!'  # префикс f позволяет использовать
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-string-formatting-1">
 <template #question>
 Какой префикс используется для f-строк в Python?
 </template>
@@ -207,7 +207,7 @@ f"{a:.2f}"
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-string-formatting-2">
 <template #question>
 Что делает <code>f"{a:.2f}"</code>?
 </template>

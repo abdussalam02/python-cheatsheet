@@ -84,7 +84,7 @@ f'The {furniture[-1]} is bigger than the {furniture[-3]}'
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-lists-and-tuples-1">
 <template #question>
 如果 <code>furniture = ['table', 'chair', 'rack', 'shelf']</code>，那么 <code>furniture[-1]</code> 返回什么？
 </template>
@@ -183,7 +183,7 @@ spam2
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-lists-and-tuples-2">
 <template #question>
 当 <code>spam</code> 是一个列表时，<code>spam[:]</code> 创建什么？
 </template>
@@ -457,7 +457,7 @@ furniture
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-lists-and-tuples-3">
 <template #question>
 <code>append()</code> 方法对列表做什么？
 </template>
@@ -571,7 +571,7 @@ animals
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-lists-and-tuples-4">
 <template #question>
 调用列表上的 <code>pop()</code> 会做什么？
 </template>
@@ -706,7 +706,7 @@ list('hello')
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-lists-and-tuples-5">
 <template #question>
 Python 中列表和元组的主要区别是什么？
 </template>

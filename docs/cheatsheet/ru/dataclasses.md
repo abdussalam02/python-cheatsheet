@@ -89,7 +89,7 @@ obj.price
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-dataclasses-1">
 <template #question>
 В dataclass, где должны располагаться поля со значениями по умолчанию?
 </template>

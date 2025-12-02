@@ -62,7 +62,7 @@ setup(
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-packaging-1">
 <template #question>
 Какие три поля являются обязательными в файле <code>setup.py</code>?
 </template>
@@ -132,7 +132,7 @@ pip install -e .
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-packaging-2">
 <template #question>
 Каково основное преимущество <code>pyproject.toml</code> перед <code>setup.py</code>?
 </template>

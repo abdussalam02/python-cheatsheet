@@ -38,7 +38,7 @@ if __name__ == "__main__":  # 파일이 직접 실행될 때만 실행됨, 가�
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-main-1">
 <template #question>
 파이썬 파일을 스크립트로 직접 실행할 때 <code>__name__</code>의 값은 무엇입니까?
 </template>
@@ -59,7 +59,7 @@ if __name__ == "__main__":  # 파일이 직접 실행될 때만 실행됨, 가�
 4. `if __name__ == "__main__":`은 파일이 직접 실행될 때만 특정 코드를 실행하고, 가져오기될 때는 실행하지 않도록 하는 데 사용됩니다.
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-main-2">
 <template #question>
 <code>if __name__ == "__main__":</code>을 사용하는 주된 목적은 무엇입니까?
 </template>

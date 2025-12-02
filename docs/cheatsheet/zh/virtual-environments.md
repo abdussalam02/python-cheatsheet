@@ -31,7 +31,7 @@ python3 -m venv venv
 这将在当前文件夹中创建一个包含虚拟环境的 `venv` 目录。
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-virtual-environments-1">
 <template #question>
 使用 <code>venv</code> 创建虚拟环境的命令是什么？
 </template>
@@ -61,7 +61,7 @@ venv\Scripts\activate
 激活后，您将在命令提示符的开头看到 `(venv)`，表示虚拟环境已激活。
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-virtual-environments-2">
 <template #question>
 如何在 Linux/macOS 上激活虚拟环境？
 </template>
@@ -95,7 +95,7 @@ deactivate
 命令提示符中的 `(venv)` 前缀将消失。
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-virtual-environments-3">
 <template #question>
 使用虚拟环境的主要目的是什么？
 </template>

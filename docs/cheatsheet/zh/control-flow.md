@@ -91,7 +91,7 @@ False
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-control-flow-1">
 <template #question>
 <code>'hello' == 'Hello'</code> 的评估结果是什么？
 </template>
@@ -233,7 +233,7 @@ You are not George
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-control-flow-2">
 <template #question>
 在 if-else 语句中，<code>else</code> 块何时执行？
 </template>
@@ -502,7 +502,7 @@ Hello, world.
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-control-flow-3">
 <template #question>
 <code>while</code> 循环做什么？
 </template>
@@ -577,7 +577,7 @@ Loki
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-control-flow-4">
 <template #question>
 <code>for</code> 循环迭代什么？
 </template>
@@ -608,7 +608,7 @@ Will stop at 5! or 4? (4)
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-control-flow-5">
 <template #question>
 <code>range(5)</code> 生成什么？
 </template>

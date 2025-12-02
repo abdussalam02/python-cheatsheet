@@ -98,7 +98,7 @@ Python 기본 개요
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-basics-1">
 <template #question>
 다음 Python 표현식의 결과는 무엇입니까?
 
@@ -164,7 +164,7 @@ my_list
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-basics-2">
 <template #question>
 이 코드를 실행한 후 <code>x</code>의 값은 얼마입니까?
 
@@ -341,7 +341,7 @@ _spam = 'Hello'
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-basics-3">
 <template #question>
 Python 기본 사항에서 다음 중 유효한 변수 이름은 무엇입니까?
 </template>
@@ -480,7 +480,7 @@ Hi, Martha
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-basics-4">
 <template #question>
 Python 기본 사항에서 `input()` 은 어떤 유형을 반환합니까?
 </template>
@@ -589,7 +589,7 @@ float('3.14')  # 3.14 반환
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-basics-5">
 <template #question>
 다음 Python 코드의 결과는 무엇입니까?
 

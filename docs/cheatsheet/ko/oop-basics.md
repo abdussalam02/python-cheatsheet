@@ -62,7 +62,7 @@ print(obj.__private_var)    # AttributeError: 'MyClass' object has no attribute 
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-oop-basics-1">
 <template #question>
 Python 에서 보호 변수를 나타내는 방법은 무엇입니까?
 </template>
@@ -131,7 +131,7 @@ cat.speak()   # 출력: Meow!
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-oop-basics-2">
 <template #question>
 Python OOP 에서 상속이란 무엇입니까?
 </template>
@@ -190,7 +190,7 @@ for shape in shapes:
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-oop-basics-3">
 <template #question>
 Python OOP 에서 다형성이란 무엇입니까?
 </template>

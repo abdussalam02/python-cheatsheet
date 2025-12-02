@@ -89,7 +89,7 @@ obj.price
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-dataclasses-1">
 <template #question>
 데이터 클래스에서 기본값이 있는 필드는 어디에 배치되어야 합니까?
 </template>

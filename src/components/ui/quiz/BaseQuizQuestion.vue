@@ -1,11 +1,9 @@
 <script setup lang="ts">
 import { ref, provide, useSlots, watch, computed, onMounted } from 'vue'
-import { useI18n, SUPPORTED_LOCALES } from '~/composables/useI18n'
+import { useI18n } from '~/composables/useI18n'
 import { useQuizTracking } from '~/composables/useQuizTracking'
-import { useRoute } from 'vue-router'
 
 const { t } = useI18n()
-const route = useRoute()
 const slots = useSlots()
 const { recordQuizCompletion, getQuizStats } = useQuizTracking()
 const selectedOption = ref<string | null>(null)
@@ -16,41 +14,17 @@ const isLoadingStats = ref(false)
 
 const props = defineProps<{
   correct?: string
+  id?: string
 }>()
 
 if (props.correct) {
   correctAnswer.value = props.correct
 }
 
-/**
- * Normalize path to English version by removing language prefix
- * This ensures all language versions of the same page share the same quiz data
- */
-function normalizePathToEnglish(path: string): string {
-  const segments = path.split('/').filter(Boolean)
-  if (segments.length > 0 && SUPPORTED_LOCALES.includes(segments[0] as typeof SUPPORTED_LOCALES[number])) {
-    segments.shift()
-    return segments.length > 0 ? '/' + segments.join('/') : '/'
-  }
-  return path
-}
-
-// Generate stable quiz ID based on page path and correct answer
-// Uses normalized English path to ensure all language versions share the same quiz data
+// Use custom id prop directly, or null if not provided
+// Only questions with id will record completion data
 const quizId = computed(() => {
-  const pagePath = normalizePathToEnglish(route.path)
-  // Use props.correct as primary identifier, fallback to correctAnswer if not available
-  const correct = props.correct || correctAnswer.value || 'default'
-  // Generate stable hash from page path and correct answer
-  const hash = `${pagePath}:${correct}`
-  // Simple hash function
-  let hashValue = 0
-  for (let i = 0; i < hash.length; i++) {
-    const char = hash.charCodeAt(i)
-    hashValue = (hashValue << 5) - hashValue + char
-    hashValue = hashValue & hashValue
-  }
-  return `quiz-${Math.abs(hashValue).toString(36)}`
+  return props.id || null
 })
 
 provide('quizState', {
@@ -104,7 +78,7 @@ onMounted(() => {
   loadStats()
 })
 
-// Reload stats when quizId changes (e.g., route change)
+// Reload stats when quizId changes
 watch(quizId, () => {
   completionCount.value = null
   loadStats()

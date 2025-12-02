@@ -28,7 +28,7 @@ with open(filename) as f:  # 'f' 是文件对象
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-context-manager-1">
 <template #question>
 使用上下文管理器（<code>with</code> 语句）的主要好处是什么？
 </template>
@@ -91,7 +91,7 @@ test
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-context-manager-2">
 <template #question>
 一个类要用作上下文管理器，必须实现哪些方法？
 </template>

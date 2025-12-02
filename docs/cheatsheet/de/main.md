@@ -38,7 +38,7 @@ if __name__ == "__main__":  # Wird nur ausgeführt, wenn die Datei ausgeführt w
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-main-1">
 <template #question>
 Was ist der Wert von <code>__name__</code>, wenn eine Python-Datei direkt als Skript ausgeführt wird?
 </template>
@@ -59,7 +59,7 @@ Was ist der Wert von <code>__name__</code>, wenn eine Python-Datei direkt als Sk
 4. `if __name__ == "__main__":` wird verwendet, um Code nur dann auszuführen, wenn die Datei direkt ausgeführt und nicht importiert wird.
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-main-2">
 <template #question>
 Was ist der Hauptzweck der Verwendung von <code>if __name__ == "__main__":</code>?
 </template>

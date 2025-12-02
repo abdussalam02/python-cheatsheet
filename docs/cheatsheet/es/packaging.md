@@ -62,7 +62,7 @@ setup(
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-packaging-1">
 <template #question>
 ¿Cuáles son los tres campos obligatorios en un archivo <code>setup.py</code>?
 </template>
@@ -132,7 +132,7 @@ pip install -e .
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-packaging-2">
 <template #question>
 ¿Cuál es la principal ventaja de <code>pyproject.toml</code> sobre <code>setup.py</code>?
 </template>

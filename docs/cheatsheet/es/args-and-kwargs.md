@@ -70,7 +70,7 @@ Argumentos pasados: ('arg1', 'arg2', 'arg3') como <class 'tuple'>
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-args-and-kwargs-1">
 <template #question>
 ¿En qué tipo de dato recopila los argumentos <code>*args</code>?
 </template>
@@ -101,7 +101,7 @@ palabras clave: {'key1': 'arg1', 'key2': 'arg2'} como <class 'dict'>
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-args-and-kwargs-2">
 <template #question>
 ¿En qué tipo de dato recopila los argumentos <code>**kwargs</code>?
 </template>

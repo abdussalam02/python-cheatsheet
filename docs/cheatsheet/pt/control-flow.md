@@ -91,7 +91,7 @@ False
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-control-flow-1">
 <template #question>
 A que avalia <code>'hello' == 'Hello'</code>?
 </template>
@@ -233,7 +233,7 @@ You are not George
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-control-flow-2">
 <template #question>
 Quando o bloco <code>else</code> é executado em uma instrução if-else?
 </template>
@@ -502,7 +502,7 @@ Hello, world.
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-control-flow-3">
 <template #question>
 O que um loop <code>while</code> faz?
 </template>
@@ -577,7 +577,7 @@ Loki
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-control-flow-4">
 <template #question>
 Sobre o que um loop <code>for</code> itera?
 </template>
@@ -608,7 +608,7 @@ Will stop at 5! or 4? (4)
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-control-flow-5">
 <template #question>
 O que <code>range(5)</code> gera?
 </template>

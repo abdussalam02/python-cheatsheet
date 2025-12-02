@@ -53,7 +53,7 @@ Hello there!\nHow are you?\nI\'m doing fine.
 Raw 文字列は、主に <router-link to="/cheatsheet/regular-expressions">正規表現</router-link> の定義に使用されます。
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-manipulating-strings-1">
 <template #question>
 Python で<code>r</code>をプレフィックスとする Raw 文字列は何をしますか？
 </template>
@@ -178,7 +178,7 @@ spam[::-1]
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-manipulating-strings-2">
 <template #question>
 <code>spam[::-1]</code>は文字列に対して何を行いますか？
 </template>
@@ -385,7 +385,7 @@ True
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-manipulating-strings-3">
 <template #question>
 <code>startswith()</code>は何を返しますか？
 </template>
@@ -481,7 +481,7 @@ True
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-manipulating-strings-4">
 <template #question>
 文字列に対して<code>split()</code>を呼び出すと、何が返されますか？
 </template>
@@ -668,7 +668,7 @@ sentence.replace("apples", "oranges")
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-manipulating-strings-5">
 <template #question>
 <code>replace()</code>メソッドは何を返しますか？
 </template>

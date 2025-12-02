@@ -53,7 +53,7 @@ Hello there!\nHow are you?\nI\'m doing fine.
 Strings brutas são usadas principalmente para definição de <router-link to="/cheatsheet/regular-expressions">expressões regulares</router-link>.
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-manipulating-strings-1">
 <template #question>
 O que uma string bruta (prefixada com <code>r</code>) faz em Python?
 </template>
@@ -178,7 +178,7 @@ spam[::-1]
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-manipulating-strings-2">
 <template #question>
 O que <code>spam[::-1]</code> faz com uma string?
 </template>
@@ -385,7 +385,7 @@ True
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-manipulating-strings-3">
 <template #question>
 O que <code>startswith()</code> retorna?
 </template>
@@ -481,7 +481,7 @@ O método `split()` divide uma `string` em uma `lista`. Por padrão, ele usará 
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-manipulating-strings-4">
 <template #question>
 O que <code>split()</code> retorna quando chamado em uma string?
 </template>
@@ -668,7 +668,7 @@ sentence.replace("apples", "oranges")
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-manipulating-strings-5">
 <template #question>
 O que o método <code>replace()</code> retorna?
 </template>

@@ -33,7 +33,7 @@ hello_content
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-reading-and-writing-files-1">
 <template #question>
 使用 <code>with</code> 语句打开文件的主要优点是什么？
 </template>
@@ -112,7 +112,7 @@ Bacon is not a vegetable.
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-reading-and-writing-files-2">
 <template #question>
 打开文件时，模式 <code>'w'</code> 和模式 <code>'a'</code> 有什么区别？
 </template>

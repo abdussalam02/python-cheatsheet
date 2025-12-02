@@ -59,7 +59,7 @@ usr/bin/spam
 경로 구분 기호가 Windows 와 Unix 기반 운영 체제 간에 다르다는 점에 유의하십시오. 이것이 바로 문자열을 연결하여 경로를 결합하는 대신 `pathlib`을 사용하려는 이유입니다.
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-file-directory-path-1">
 <template #question>
 Python 에서 pathlib 를 사용하여 경로를 결합하는 올바른 방법은 무엇입니까?
 </template>
@@ -200,7 +200,7 @@ False
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-file-directory-path-2">
 <template #question>
 <code>Path('/').is_absolute()</code>는 무엇을 반환합니까?
 </template>
@@ -316,7 +316,7 @@ False
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-file-directory-path-3">
 <template #question>
 setup.py 가 존재하는 경우 <code>Path('setup.py').is_file()</code>은 무엇을 반환합니까?
 </template>
@@ -459,7 +459,7 @@ shutil.copy('/tmp/eggs.txt', '/tmp/delicious/eggs2.txt')
 ```
 
 <base-quiz>
-<base-quiz-question correct="D">
+<base-quiz-question correct="D" id="cheatsheet-file-directory-path-4">
 <template #question>
 모든 하위 디렉터리와 파일을 포함하여 전체 디렉터리 트리를 복사하려면 어떤 함수를 사용해야 합니까?
 </template>
@@ -523,7 +523,7 @@ shutil.move('/tmp/bacon.txt', '/tmp/eggs')
 - `shutil.rmtree(path)`를 호출하면 해당 경로의 폴더가 제거되고 포함된 모든 파일과 폴더도 삭제됩니다.
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-file-directory-path-5">
 <template #question>
 비어 있지 않은 디렉터리와 그 내용을 모두 삭제할 수 있는 메서드는 무엇입니까?
 </template>

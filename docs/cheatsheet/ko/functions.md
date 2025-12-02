@@ -81,7 +81,7 @@ Hi Anna
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-functions-1">
 <template #question>
 Python 함수에서 키워드 인수를 사용하는 주된 이점은 무엇입니까?
 </template>
@@ -117,7 +117,7 @@ print(result)
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-functions-2">
 <template #question>
 Python 에서 함수로부터 값을 반환하기 위해 사용되는 키워드는 무엇입니까?
 </template>
@@ -180,7 +180,7 @@ spam
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-functions-3">
 <template #question>
 전역 변수를 수정하기 위해 함수 내에서 반드시 사용해야 하는 키워드는 무엇입니까?
 </template>
@@ -253,7 +253,7 @@ add(5, 3)
 ```
 
 <base-quiz>
-<base-quiz-question correct="D">
+<base-quiz-question correct="D" id="cheatsheet-functions-4">
 <template #question>
 Python 에서 람다 함수란 무엇입니까?
 </template>
@@ -293,7 +293,7 @@ plus_5(4)
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-functions-5">
 <template #question>
 람다 클로저는 무엇을 가능하게 합니까?
 </template>

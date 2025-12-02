@@ -63,7 +63,7 @@ Note que o separador de caminho é diferente entre Windows e sistemas operaciona
 adicionar strings juntas para juntar caminhos.
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-file-directory-path-1">
 <template #question>
 Qual é a maneira correta de juntar caminhos usando pathlib em Python?
 </template>
@@ -204,7 +204,7 @@ False
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-file-directory-path-2">
 <template #question>
 O que <code>Path('/').is_absolute()</code> retorna?
 </template>
@@ -320,7 +320,7 @@ False
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-file-directory-path-3">
 <template #question>
 O que <code>Path('setup.py').is_file()</code> retornará se setup.py existir?
 </template>
@@ -463,7 +463,7 @@ shutil.copy('/tmp/eggs.txt', '/tmp/delicious/eggs2.txt')
 ```
 
 <base-quiz>
-<base-quiz-question correct="D">
+<base-quiz-question correct="D" id="cheatsheet-file-directory-path-4">
 <template #question>
 Qual função você deve usar para copiar uma árvore de diretórios inteira, incluindo todos os subdiretórios e arquivos?
 </template>
@@ -527,7 +527,7 @@ shutil.move('/tmp/bacon.txt', '/tmp/eggs')
 - Chamar `shutil.rmtree(path)` removerá a pasta no caminho, e todos os arquivos e pastas que ela contém também serão excluídos.
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-file-directory-path-5">
 <template #question>
 Qual método pode excluir um diretório não vazio e todo o seu conteúdo?
 </template>

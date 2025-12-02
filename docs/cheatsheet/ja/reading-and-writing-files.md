@@ -33,7 +33,7 @@ hello_content
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-reading-and-writing-files-1">
 <template #question>
 ファイルをオープンする際に<code>with</code>ステートメントを使用する主な利点は何ですか？
 </template>
@@ -112,7 +112,7 @@ Bacon is not a vegetable.
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-reading-and-writing-files-2">
 <template #question>
 モード<code>'w'</code>でファイルを開くこととモード<code>'a'</code>でファイルを開くことの違いは何ですか？
 </template>

@@ -81,7 +81,7 @@ Hi Anna
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-functions-1">
 <template #question>
 在 Python 函数中使用关键字参数的主要优点是什么？
 </template>
@@ -117,7 +117,7 @@ print(result)
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-functions-2">
 <template #question>
 在 Python 中，使用哪个关键字从函数中返回一个值？
 </template>
@@ -180,7 +180,7 @@ spam
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-functions-3">
 <template #question>
 在函数内部，您必须使用哪个关键字来修改全局变量？
 </template>
@@ -253,7 +253,7 @@ add(5, 3)
 ```
 
 <base-quiz>
-<base-quiz-question correct="D">
+<base-quiz-question correct="D" id="cheatsheet-functions-4">
 <template #question>
 Python 中的 lambda 函数是什么？
 </template>
@@ -293,7 +293,7 @@ plus_5(4)
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-functions-5">
 <template #question>
 Lambda 闭包允许您做什么？
 </template>

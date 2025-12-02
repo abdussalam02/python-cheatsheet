@@ -31,7 +31,7 @@ python3 -m venv venv
 Это создает каталог `venv` в вашей текущей папке, содержащий виртуальное окружение.
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-virtual-environments-1">
 <template #question>
 Какая команда используется для создания виртуального окружения с помощью <code>venv</code>?
 </template>
@@ -61,7 +61,7 @@ venv\Scripts\activate
 После активации в начале вашей командной строки появится `(venv)`, указывающее на то, что виртуальное окружение активно.
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-virtual-environments-2">
 <template #question>
 Как активировать виртуальное окружение в Linux/macOS?
 </template>
@@ -95,7 +95,7 @@ deactivate
 Префикс `(venv)` исчезнет из вашей командной строки.
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-virtual-environments-3">
 <template #question>
 Какова основная цель использования виртуального окружения?
 </template>

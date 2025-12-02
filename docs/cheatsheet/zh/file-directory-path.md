@@ -59,7 +59,7 @@ usr/bin/spam
 请注意，路径分隔符在 Windows 和基于 Unix 的操作系统之间是不同的，这就是您想要使用 `pathlib` 而不是将字符串连接起来以连接路径的原因。
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-file-directory-path-1">
 <template #question>
 在 Python 中，使用 pathlib 连接路径的正确方法是什么？
 </template>
@@ -200,7 +200,7 @@ False
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-file-directory-path-2">
 <template #question>
 <code>Path('/').is_absolute()</code> 返回什么？
 </template>
@@ -316,7 +316,7 @@ False
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-file-directory-path-3">
 <template #question>
 如果 setup.py 存在，<code>Path('setup.py').is_file()</code> 将返回什么？
 </template>
@@ -459,7 +459,7 @@ shutil.copy('/tmp/eggs.txt', '/tmp/delicious/eggs2.txt')
 ```
 
 <base-quiz>
-<base-quiz-question correct="D">
+<base-quiz-question correct="D" id="cheatsheet-file-directory-path-4">
 <template #question>
 您应该使用哪个函数来复制整个目录树，包括所有子目录和文件？
 </template>
@@ -523,7 +523,7 @@ shutil.move('/tmp/bacon.txt', '/tmp/eggs')
 - 调用 `shutil.rmtree(path)` 将删除路径处的**文件夹**，以及其中包含的所有文件和文件夹。
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-file-directory-path-5">
 <template #question>
 哪个方法可以删除非空目录及其所有内容？
 </template>

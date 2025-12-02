@@ -240,7 +240,7 @@ wife
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-dictionaries-1">
 <template #question>
 辞書に対して <code>pop()</code> が呼び出された場合、何が起こりますか？
 </template>
@@ -384,7 +384,7 @@ dict_c
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-dictionaries-2">
 <template #question>
 <code>{**dict_b, **dict_a}</code> を使用して 2 つの辞書を結合する場合、両方の辞書に同じキーがある場合、どうなりますか？
 </template>

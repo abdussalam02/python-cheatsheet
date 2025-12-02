@@ -40,7 +40,7 @@ Exception: This is the error message.
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-debugging-1">
 <template #question>
 Quel mot-clé est utilisé pour lever manuellement une exception en Python ?
 </template>
@@ -146,7 +146,7 @@ AssertionError: The pod bay doors need to be "open".
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-debugging-2">
 <template #question>
 Que se passe-t-il lorsqu'une instruction <code>assert</code> échoue ?
 </template>
@@ -175,7 +175,7 @@ logging.basicConfig(level=logging.DEBUG, format=' %(asctime)s - %(levelname)s- %
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-debugging-3">
 <template #question>
 Quel est le but du module <code>logging</code> en Python ?
 </template>
@@ -235,7 +235,7 @@ Les niveaux de journalisation offrent un moyen de catégoriser vos messages de j
 | `CRITICAL` | `logging.critical()`       | Le niveau le plus élevé. Utilisé pour indiquer une erreur fatale qui a provoqué ou est sur le point de provoquer l'arrêt complet du programme.                                        |
 
 <base-quiz>
-<base-quiz-question correct="D">
+<base-quiz-question correct="D" id="cheatsheet-debugging-4">
 <template #question>
 Quel est le niveau de journalisation le plus bas en Python ?
 </template>
@@ -279,7 +279,7 @@ logging.basicConfig(filename='myProgramLog.txt', level=logging.DEBUG, format='%(
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-debugging-5">
 <template #question>
 Comment écrire des messages de journalisation dans un fichier au lieu de les afficher à l'écran ?
 </template>

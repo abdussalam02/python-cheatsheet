@@ -58,7 +58,7 @@ new_list
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-comprehensions-1">
 <template #question>
 リスト内包表記の基本的な構文は何ですか？
 </template>
@@ -118,7 +118,7 @@ print(new_list)
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-comprehensions-2">
 <template #question>
 リスト内包表記で<code>if</code>条件はどこに配置されますか？
 </template>
@@ -181,7 +181,7 @@ c = {'name': 'Pooka', 'age': 5}
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-comprehensions-3">
 <template #question>
 辞書内包表記に使用される構文は何ですか？
 </template>

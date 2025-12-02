@@ -53,7 +53,7 @@ Hello there!\nHow are you?\nI\'m doing fine.
 원시 문자열은 주로 <router-link to="/cheatsheet/regular-expressions">정규 표현식</router-link> 정의에 사용됩니다.
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-manipulating-strings-1">
 <template #question>
 Python 에서 원시 문자열 (<code>r</code>로 접두사가 붙은 문자열) 은 어떤 역할을 합니까?
 </template>
@@ -178,7 +178,7 @@ spam[::-1]
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-manipulating-strings-2">
 <template #question>
 <code>spam[::-1]</code>은 문자열에 대해 어떤 작업을 수행합니까?
 </template>
@@ -385,7 +385,7 @@ True
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-manipulating-strings-3">
 <template #question>
 <code>startswith()</code>은 무엇을 반환합니까?
 </template>
@@ -481,7 +481,7 @@ True
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-manipulating-strings-4">
 <template #question>
 문자열에서 <code>split()</code>을 호출하면 무엇이 반환됩니까?
 </template>
@@ -668,7 +668,7 @@ sentence.replace("apples", "oranges")
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-manipulating-strings-5">
 <template #question>
 <code>replace()</code> 메서드는 무엇을 반환합니까?
 </template>

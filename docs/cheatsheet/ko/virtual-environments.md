@@ -31,7 +31,7 @@ python3 -m venv venv
 이것은 현재 폴더에 가상 환경을 포함하는 `venv` 디렉토리를 생성합니다.
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-virtual-environments-1">
 <template #question>
 <code>venv</code>를 사용하여 가상 환경을 만드는 데 사용되는 명령어는 무엇입니까?
 </template>
@@ -61,7 +61,7 @@ venv\Scripts\activate
 활성화되면 명령 프롬프트 시작 부분에 `(venv)`가 표시되어 가상 환경이 활성화되었음을 나타냅니다.
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-virtual-environments-2">
 <template #question>
 Linux/macOS에서 가상 환경을 활성화하는 방법은 무엇입니까?
 </template>
@@ -95,7 +95,7 @@ deactivate
 명령 프롬프트에서 `(venv)` 접두사가 사라집니다.
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-virtual-environments-3">
 <template #question>
 가상 환경을 사용하는 주된 목적은 무엇입니까?
 </template>

@@ -59,7 +59,7 @@ usr/bin/spam
 Remarquez que le séparateur de chemin est différent entre Windows et les systèmes d'exploitation basés sur Unix, c'est pourquoi vous voulez utiliser `pathlib` au lieu d'ajouter des chaînes de caractères ensemble pour joindre des chemins.
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-file-directory-path-1">
 <template #question>
 Quelle est la bonne façon de joindre des chemins en utilisant pathlib en Python ?
 </template>
@@ -200,7 +200,7 @@ False
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-file-directory-path-2">
 <template #question>
 Que retourne <code>Path('/').is_absolute()</code> ?
 </template>
@@ -316,7 +316,7 @@ False
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-file-directory-path-3">
 <template #question>
 Que retournera <code>Path('setup.py').is_file()</code> si setup.py existe ?
 </template>
@@ -459,7 +459,7 @@ shutil.copy('/tmp/eggs.txt', '/tmp/delicious/eggs2.txt')
 ```
 
 <base-quiz>
-<base-quiz-question correct="D">
+<base-quiz-question correct="D" id="cheatsheet-file-directory-path-4">
 <template #question>
 Quelle fonction devez-vous utiliser pour copier une arborescence de répertoires entière, y compris tous les sous-répertoires et fichiers ?
 </template>
@@ -523,7 +523,7 @@ shutil.move('/tmp/bacon.txt', '/tmp/eggs')
 - Appeler `shutil.rmtree(path)` supprimera le dossier au chemin spécifié, et tous les fichiers et dossiers qu'il contient seront également supprimés.
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-file-directory-path-5">
 <template #question>
 Quelle méthode peut supprimer un répertoire non vide et tout son contenu ?
 </template>

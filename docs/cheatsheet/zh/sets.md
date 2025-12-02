@@ -65,7 +65,7 @@ s  # 返回 {1, 2, 3, 4}
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-sets-1">
 <template #question>
 当你创建一个包含重复值的集合时会发生什么？
 </template>
@@ -162,7 +162,7 @@ s.discard(3)
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-sets-2">
 <template #question>
 <code>remove()</code> 和 <code>discard()</code> 方法在集合上的区别是什么？
 </template>
@@ -207,7 +207,7 @@ s1.intersection(s2, s3)  # 或 's1 & s2 & s3' - 返回 {3}
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-sets-3">
 <template #question>
 <code>intersection()</code> 返回集合的什么？
 </template>
@@ -260,7 +260,7 @@ s1.symmetric_difference(s2)  # 或 's1 ^ s2' - 返回 {1, 4}
 ```
 
 <base-quiz>
-<base-quiz-question correct="D">
+<base-quiz-question correct="D" id="cheatsheet-sets-4">
 <template #question>
 <code>symmetric_difference()</code> 返回两个集合的什么？
 </template>

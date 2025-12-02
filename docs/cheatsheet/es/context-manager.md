@@ -28,7 +28,7 @@ with open(filename) as f:  # 'f' es el objeto de archivo
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-context-manager-1">
 <template #question>
 ¿Cuál es el principal beneficio de usar un administrador de contexto (la sentencia <code>with</code>)?
 </template>
@@ -91,7 +91,7 @@ test
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-context-manager-2">
 <template #question>
 ¿Qué métodos debe implementar una clase para ser utilizada como administrador de contexto?
 </template>

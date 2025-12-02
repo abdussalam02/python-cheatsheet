@@ -65,7 +65,7 @@ s  # {1, 2, 3, 4} を返します
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-sets-1">
 <template #question>
 重複する値を持つセットを作成するとどうなりますか？
 </template>
@@ -162,7 +162,7 @@ s.discard(3)
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-sets-2">
 <template #question>
 セットの <code>remove()</code> メソッドと <code>discard()</code> メソッドの違いは何ですか？
 </template>
@@ -207,7 +207,7 @@ s1.intersection(s2, s3)  # または 's1 & s2 & s3' - {3} を返します
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-sets-3">
 <template #question>
 セットに対して <code>intersection()</code> は何を返しますか？
 </template>
@@ -260,7 +260,7 @@ s1.symmetric_difference(s2)  # または 's1 ^ s2' - {1, 4} を返します
 ```
 
 <base-quiz>
-<base-quiz-question correct="D">
+<base-quiz-question correct="D" id="cheatsheet-sets-4">
 <template #question>
 2 つのセットに対して <code>symmetric_difference()</code> は何を返しますか？
 </template>

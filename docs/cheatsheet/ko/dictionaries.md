@@ -240,7 +240,7 @@ wife
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-dictionaries-1">
 <template #question>
 딕셔너리에서 <code>pop()</code>을 호출하면 어떻게 되나요?
 </template>
@@ -384,7 +384,7 @@ dict_c
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-dictionaries-2">
 <template #question>
 <code>{**dict_b, **dict_a}</code>를 사용하여 두 딕셔너리를 병합할 때, 두 딕셔너리에 동일한 키가 있으면 어떻게 되나요?
 </template>

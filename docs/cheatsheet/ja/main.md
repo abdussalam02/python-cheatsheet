@@ -38,7 +38,7 @@ if __name__ == "__main__":  # ファイルが直接実行された場合にの�
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-main-1">
 <template #question>
 Python ファイルをスクリプトとして直接実行した場合、<code>__name__</code> の値は何になりますか？
 </template>
@@ -59,7 +59,7 @@ Python ファイルをスクリプトとして直接実行した場合、<code>_
 4. `if __name__ == "__main__":` は、ファイルが直接実行された場合にのみコードを実行し、インポートされた場合には実行しないようにするために使用されます。
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-main-2">
 <template #question>
 <code>if __name__ == "__main__":</code> を使用する主な目的は何ですか？
 </template>

@@ -33,7 +33,7 @@ with open("filename.json", "w") as f:  # Abrir arquivo no modo de escrita
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-json-yaml-1">
 <template #question>
 Qual função é usada para escrever um dicionário Python em um arquivo JSON?
 </template>
@@ -71,7 +71,7 @@ with open("filename.yaml") as f:
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-json-yaml-2">
 <template #question>
 Qual é uma vantagem do YAML sobre o JSON?
 </template>
@@ -103,7 +103,7 @@ conf1 = anyconfig.load("/path/to/foo/conf.d/a.yml")  # Detecta o formato automat
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-json-yaml-3">
 <template #question>
 O que a biblioteca anyconfig permite que você faça?
 </template>

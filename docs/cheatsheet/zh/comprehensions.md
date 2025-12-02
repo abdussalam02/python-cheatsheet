@@ -58,7 +58,7 @@ new_list
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-comprehensions-1">
 <template #question>
 列表推导式的基本语法是什么？
 </template>
@@ -118,7 +118,7 @@ print(new_list)
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-comprehensions-2">
 <template #question>
 列表推导式中的 <code>if</code> 条件放在哪里？
 </template>
@@ -181,7 +181,7 @@ c = {'name': 'Pooka', 'age': 5}
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-comprehensions-3">
 <template #question>
 字典推导式使用什么语法？
 </template>

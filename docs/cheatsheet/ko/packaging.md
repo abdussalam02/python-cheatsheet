@@ -62,7 +62,7 @@ setup(
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-packaging-1">
 <template #question>
 <code>setup.py</code> 파일에서 요구되는 세 가지 필드는 무엇입니까?
 </template>
@@ -132,7 +132,7 @@ pip install -e .
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-packaging-2">
 <template #question>
 <code>pyproject.toml</code>이 <code>setup.py</code>보다 갖는 주요 이점은 무엇입니까?
 </template>

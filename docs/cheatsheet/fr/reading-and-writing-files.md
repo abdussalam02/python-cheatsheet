@@ -33,7 +33,7 @@ hello_content
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-reading-and-writing-files-1">
 <template #question>
 Quel est l'avantage principal d'utiliser l'instruction <code>with</code> lors de l'ouverture de fichiers ?
 </template>
@@ -112,7 +112,7 @@ Bacon is not a vegetable.
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-reading-and-writing-files-2">
 <template #question>
 Quelle est la différence entre ouvrir un fichier avec le mode <code>'w'</code> et le mode <code>'a'</code> ?
 </template>

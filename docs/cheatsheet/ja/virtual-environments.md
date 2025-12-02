@@ -31,7 +31,7 @@ python3 -m venv venv
 これにより、現在のフォルダー内に仮想環境を含む `venv` ディレクトリが作成されます。
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-virtual-environments-1">
 <template #question>
 <code>venv</code> を使用して仮想環境を作成するために使用されるコマンドは何ですか？
 </template>
@@ -61,7 +61,7 @@ venv\Scripts\activate
 アクティベートされると、コマンドプロンプトの先頭に `(venv)` と表示され、仮想環境がアクティブであることを示します。
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-virtual-environments-2">
 <template #question>
 Linux/macOS で仮想環境をアクティベートするにはどうすればよいですか？
 </template>
@@ -95,7 +95,7 @@ deactivate
 コマンドプロンプトから `(venv)` プレフィックスが消えます。
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-virtual-environments-3">
 <template #question>
 仮想環境を使用する主な目的は何ですか？
 </template>

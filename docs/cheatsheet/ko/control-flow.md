@@ -91,7 +91,7 @@ False
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-control-flow-1">
 <template #question>
 <code>'hello' == 'Hello'</code>는 무엇으로 평가됩니까?
 </template>
@@ -233,7 +233,7 @@ You are not George
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-control-flow-2">
 <template #question>
 if-else 문에서 <code>else</code> 블록은 언제 실행됩니까?
 </template>
@@ -502,7 +502,7 @@ Hello, world.
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-control-flow-3">
 <template #question>
 <code>while</code> 루프는 무엇을 합니까?
 </template>
@@ -577,7 +577,7 @@ Loki
 ```
 
 <base-quiz>
-<base-quiz-question correct="C">
+<base-quiz-question correct="C" id="cheatsheet-control-flow-4">
 <template #question>
 <code>for</code> 루프는 무엇을 반복합니까?
 </template>
@@ -608,7 +608,7 @@ Will stop at 5! or 4? (4)
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-control-flow-5">
 <template #question>
 <code>range(5)</code>는 무엇을 생성합니까?
 </template>

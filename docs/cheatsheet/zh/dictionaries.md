@@ -240,7 +240,7 @@ wife
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-dictionaries-1">
 <template #question>
 当在字典上调用 <code>pop()</code> 时，它会做什么？
 </template>
@@ -384,7 +384,7 @@ dict_c
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-dictionaries-2">
 <template #question>
 当使用 <code>{**dict_b, **dict_a}</code> 合并两个字典时，如果两个字典具有相同的键，会发生什么？
 </template>

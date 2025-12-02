@@ -28,7 +28,7 @@ with open(filename) as f:  # 'f' ist das Datei-Objekt
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-context-manager-1">
 <template #question>
 Was ist der Hauptvorteil der Verwendung eines Kontextmanagers (der <code>with</code>-Anweisung)?
 </template>
@@ -91,7 +91,7 @@ test
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-context-manager-2">
 <template #question>
 Welche Methoden muss eine Klasse implementieren, um als Kontextmanager verwendet werden zu können?
 </template>

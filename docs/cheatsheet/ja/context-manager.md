@@ -28,7 +28,7 @@ with open(filename) as f:  # 'f' はファイルオブジェクト
 ```
 
 <base-quiz>
-<base-quiz-question correct="A">
+<base-quiz-question correct="A" id="cheatsheet-context-manager-1">
 <template #question>
 コンテキストマネージャ（<code>with</code>ステートメント）を使用する主な利点は何ですか？
 </template>
@@ -91,7 +91,7 @@ test
 ```
 
 <base-quiz>
-<base-quiz-question correct="B">
+<base-quiz-question correct="B" id="cheatsheet-context-manager-2">
 <template #question>
 クラスがコンテキストマネージャとして使用されるために実装しなければならないメソッドは何ですか？
 </template>
