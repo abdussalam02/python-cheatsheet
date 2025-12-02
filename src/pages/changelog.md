@@ -2,12 +2,16 @@
 title: 'Changelog - Python Cheatsheet'
 description: See what is new, what got fixed, and what is coming.
 date: July 19, 2022
-updated: August 16, 2025
+updated: December 2, 2025
 ---
 
 <base-title :title="frontmatter.title" :description="frontmatter.description">
 Changelog
 </base-title>
+
+## 2025-12-02
+
+- Added `subprocess` module cheatsheet with examples of basic usage and reference. Thanks [@faseehfs](https://github.com/faseehfs) ([#510](https://github.com/labex-labs/python-cheatsheet/pull/510))
 
 ## 2025-11-19
 
