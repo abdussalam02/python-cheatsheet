@@ -33,7 +33,11 @@ export default {
     // For all other requests, let Cloudflare handle static assets
     // If ASSETS is available (for Workers with assets), use it; otherwise pass through
     if (env.ASSETS) {
-      return env.ASSETS.fetch(request)
+      const assetUrl = new URL(request.url)
+      if (assetUrl.pathname.startsWith('/pythoncheatsheet')) {
+        assetUrl.pathname = assetUrl.pathname.replace(/^\/pythoncheatsheet\/?/, '/')
+      }
+      return env.ASSETS.fetch(new Request(assetUrl.toString(), request))
     }
 
     // Fallback: return the request as-is (Cloudflare will handle it)
