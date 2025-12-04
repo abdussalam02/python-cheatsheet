@@ -68,6 +68,10 @@
       "blogDesc": "Leia artigos detalhados sobre Python e seu ecossistema.",
       "changelog": "Registro de alterações",
       "changelogDesc": "Veja o que há de novo, o que foi corrigido e o que está por vir."
+    },
+    "disclaimer": {
+      "title": "Python Cheat Sheet agora faz parte do LabEx!",
+      "content": "Agora com laboratórios interativos, downloads PDF, módulo de funções integradas, perguntas de quiz e suporte multilíngue (🇨🇳 🇯🇵 🇪🇸 🇩🇪 🇫🇷 🇵🇹 🇰🇷 🇷🇺), mantendo-se open-source e gratuito como sempre."
     }
   },
   "blog": {
