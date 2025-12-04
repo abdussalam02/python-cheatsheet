@@ -2,12 +2,16 @@
 title: 'Changelog - Python Cheatsheet'
 description: See what is new, what got fixed, and what is coming.
 date: July 19, 2022
-updated: December 2, 2025
+updated: December 3, 2025
 ---
 
 <base-title :title="frontmatter.title" :description="frontmatter.description">
 Changelog
 </base-title>
+
+## 2025-12-03
+
+- Added LabEx SSO account support to track quiz completion progress
 
 ## 2025-12-02
 
