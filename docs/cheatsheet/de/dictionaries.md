@@ -272,9 +272,9 @@ wife
 {'name': 'Rose', 'age': 33}
 ```
 
-### del()
+### del
 
-Die Methode `del()` entfernt ein Element basierend auf einem angegebenen Schlüssel.
+Die Methode `del` entfernt ein Element basierend auf einem angegebenen Schlüssel.
 
 ```python
 wife = {'name': 'Rose', 'age': 33, 'hair': 'brown'}

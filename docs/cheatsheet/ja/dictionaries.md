@@ -272,9 +272,9 @@ wife
 {'name': 'Rose', 'age': 33}
 ```
 
-### del()
+### del
 
-`del()` メソッドは、指定されたキーに基づいてアイテムを削除します。
+`del` メソッドは、指定されたキーに基づいてアイテムを削除します。
 
 ```python
 wife = {'name': 'Rose', 'age': 33, 'hair': 'brown'}

@@ -272,9 +272,9 @@ wife
 {'name': 'Rose', 'age': 33}
 ```
 
-### del()
+### del
 
-`del()` 메서드는 주어진 키를 기반으로 항목을 제거합니다.
+`del` 메서드는 주어진 키를 기반으로 항목을 제거합니다.
 
 ```python
 wife = {'name': 'Rose', 'age': 33, 'hair': 'brown'}

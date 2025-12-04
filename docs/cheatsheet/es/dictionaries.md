@@ -272,9 +272,9 @@ esposa
 {'name': 'Rose', 'age': 33}
 ```
 
-### del()
+### del
 
-El método `del()` elimina un elemento basado en una clave dada.
+El método `del` elimina un elemento basado en una clave dada.
 
 ```python
 esposa = {'name': 'Rose', 'age': 33, 'hair': 'brown'}

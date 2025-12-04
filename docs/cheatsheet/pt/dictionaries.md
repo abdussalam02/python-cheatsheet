@@ -272,9 +272,9 @@ esposa
 {'nome': 'Rose', 'idade': 33}
 ```
 
-### del()
+### del
 
-O método `del()` remove um item com base em uma chave fornecida.
+O método `del` remove um item com base em uma chave fornecida.
 
 ```python
 esposa = {'nome': 'Rose', 'idade': 33, 'cabelo': 'castanho'}

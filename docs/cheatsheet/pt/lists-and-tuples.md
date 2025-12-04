@@ -480,7 +480,7 @@ furniture
 
 ## Removendo Valores
 
-### del()
+### del
 
 `del` remove um item usando o índice:
 

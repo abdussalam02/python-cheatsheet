@@ -272,9 +272,9 @@ wife
 {'name': 'Rose', 'age': 33}
 ```
 
-### del()
+### del
 
-`del()` 方法根据给定的键移除一个项。
+`del` 方法根据给定的键移除一个项。
 
 ```python
 wife = {'name': 'Rose', 'age': 33, 'hair': 'brown'}

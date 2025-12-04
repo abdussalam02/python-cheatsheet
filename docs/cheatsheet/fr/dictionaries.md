@@ -272,9 +272,9 @@ wife
 {'name': 'Rose', 'age': 33}
 ```
 
-### del()
+### del
 
-La méthode `del()` supprime un élément basé sur une clé donnée.
+La méthode `del` supprime un élément basé sur une clé donnée.
 
 ```python
 wife = {'name': 'Rose', 'age': 33, 'hair': 'brown'}

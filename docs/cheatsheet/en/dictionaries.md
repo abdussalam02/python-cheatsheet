@@ -272,9 +272,9 @@ wife
 {'name': 'Rose', 'age': 33}
 ```
 
-### del()
+### del
 
-The `del()` method removes an item based on a given key.
+The `del` method removes an item based on a given key.
 
 ```python
 wife = {'name': 'Rose', 'age': 33, 'hair': 'brown'}
