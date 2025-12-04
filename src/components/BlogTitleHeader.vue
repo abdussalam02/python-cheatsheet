@@ -13,6 +13,13 @@ const props = defineProps<{
 
 const reader = useReaderStore()
 const tags = props.frontmatter.tags?.split(', ')
+
+const getImageSrc = (imagePath?: string): string => {
+  if (!imagePath) return ''
+  if (imagePath.startsWith('http')) return imagePath
+  const basePath = import.meta.env.BASE_URL || '/pythoncheatsheet/'
+  return basePath.endsWith('/') ? `${basePath}${imagePath.slice(1)}` : `${basePath}${imagePath}`
+}
 </script>
 
 <template>
@@ -46,7 +53,7 @@ const tags = props.frontmatter.tags?.split(', ')
 
     <img
       v-if="frontmatter.socialImage"
-      :src="frontmatter.socialImage"
+      :src="getImageSrc(frontmatter.socialImage)"
       :alt="`Image for ${title}`"
       class="w-full rounded-lg my-4"
     />

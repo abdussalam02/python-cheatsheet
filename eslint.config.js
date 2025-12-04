@@ -1,26 +1,36 @@
-import js from '@eslint/js';
-import prettier from 'eslint-config-prettier';
-import tseslint from '@typescript-eslint/eslint-plugin';
-import tsparser from '@typescript-eslint/parser';
-import vue from 'eslint-plugin-vue';
-import globals from 'globals';
-import { readFileSync } from 'fs';
-import { fileURLToPath } from 'url';
-import { dirname, join } from 'path';
+import js from '@eslint/js'
+import prettier from 'eslint-config-prettier'
+import tseslint from '@typescript-eslint/eslint-plugin'
+import tsparser from '@typescript-eslint/parser'
+import vue from 'eslint-plugin-vue'
+import globals from 'globals'
+import { readFileSync } from 'fs'
+import { fileURLToPath } from 'url'
+import { dirname, join } from 'path'
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
-const autoImportGlobals = JSON.parse(readFileSync(join(__dirname, '.eslintrc-auto-import.json'), 'utf-8'));
+const autoImportGlobals = JSON.parse(
+  readFileSync(join(__dirname, '.eslintrc-auto-import.json'), 'utf-8'),
+)
 
-const customGlobals = Object.keys(autoImportGlobals.globals).reduce((acc, key) => {
-  acc[key] = 'readonly';
-  return acc;
-}, {});
+const customGlobals = Object.keys(autoImportGlobals.globals).reduce(
+  (acc, key) => {
+    acc[key] = 'readonly'
+    return acc
+  },
+  {},
+)
 
 export default [
   {
-    ignores: ['dist', 'src/components.d.ts', 'src/auto-imports.d.ts', 'functions/**/*.ts'],
+    ignores: [
+      'dist',
+      'src/components.d.ts',
+      'src/auto-imports.d.ts',
+      'functions/**/*.ts',
+    ],
   },
   js.configs.recommended,
   ...vue.configs['flat/recommended'],
@@ -69,5 +79,28 @@ export default [
       'eslint-comments/no-unused-disable': 'off',
     },
   },
-];
-
+  {
+    files: ['worker.ts'],
+    languageOptions: {
+      parser: tsparser,
+      parserOptions: {
+        ecmaVersion: 12,
+        sourceType: 'module',
+      },
+      globals: {
+        ...globals.node,
+      },
+    },
+    plugins: {
+      '@typescript-eslint': tseslint,
+    },
+    rules: {
+      'no-undef': 'off', // TypeScript handles type checking
+      'no-unused-vars': 'off', // Turn off base rule
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        { argsIgnorePattern: '^_' },
+      ],
+    },
+  },
+]

@@ -90,6 +90,15 @@ function prevPage() {
     updatePage(currentPage.value - 1)
   }
 }
+
+const getImageSrc = (imagePath) => {
+  if (!imagePath) return ''
+  if (imagePath.startsWith('http')) return imagePath
+  const basePath = import.meta.env.BASE_URL || '/pythoncheatsheet/'
+  return basePath.endsWith('/')
+    ? `${basePath}${imagePath.slice(1)}`
+    : `${basePath}${imagePath}`
+}
 </script>
 
 <template>
@@ -102,7 +111,7 @@ function prevPage() {
         <div class="relative overflow-hidden md:w-1/2">
           <img
             v-if="featuredArticle.children[0]?.meta?.socialImage"
-            :src="featuredArticle.children[0]?.meta?.socialImage"
+            :src="getImageSrc(featuredArticle.children[0]?.meta?.socialImage)"
             alt=""
             class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
           />
@@ -181,7 +190,7 @@ function prevPage() {
       <div class="relative overflow-hidden">
         <img
           v-if="article.children[0]?.meta?.socialImage"
-          :src="article.children[0]?.meta?.socialImage"
+          :src="getImageSrc(article.children[0]?.meta?.socialImage)"
           alt=""
           class="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105"
         />

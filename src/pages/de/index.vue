@@ -65,7 +65,11 @@ const smAndLarger = breakpoints.greater('sm')
       <div class="flex justify-center sm:hidden">
         <img
           class="h-20 w-auto"
-          :src="isDark ? '/labex-logo-light.svg' : '/labex-logo-dark.svg'"
+          :src="
+            isDark
+              ? 'https://cdn.jsdelivr.net/gh/labex-labs/files@master/images/labex-logo-light.svg'
+              : 'https://cdn.jsdelivr.net/gh/labex-labs/files@master/images/labex-logo-dark.svg'
+          "
           alt="python-cheatsheet"
         />
       </div>

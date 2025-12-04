@@ -32,7 +32,11 @@ onMounted(() => {
             <router-link :to="localePath('/')" class="flex items-center">
               <img
                 class="h-6 w-auto sm:h-7"
-                :src="isDark ? '/labex-logo-light.svg' : '/labex-logo-dark.svg'"
+                :src="
+                  isDark
+                    ? 'https://cdn.jsdelivr.net/gh/labex-labs/files@master/images/labex-logo-light.svg'
+                    : 'https://cdn.jsdelivr.net/gh/labex-labs/files@master/images/labex-logo-dark.svg'
+                "
                 alt="LabEx"
                 height="10"
                 width="10"

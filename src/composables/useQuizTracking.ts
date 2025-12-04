@@ -35,8 +35,10 @@ export function useQuizTracking() {
   const recordQuizCompletion = async (quizId: string): Promise<number | null> => {
     try {
       const pagePath = normalizePathToEnglish(route.path)
+      const basePath = import.meta.env.BASE_URL || '/pythoncheatsheet/'
+      const apiPath = basePath.endsWith('/') ? `${basePath}api/quiz/record` : `${basePath}/api/quiz/record`
 
-      const response = await fetch('/api/quiz/record', {
+      const response = await fetch(apiPath, {
         method: 'POST',
         credentials: 'include',
         headers: {
@@ -64,7 +66,9 @@ export function useQuizTracking() {
   const getQuizStats = async (quizId: string): Promise<number | null> => {
     try {
       const pagePath = normalizePathToEnglish(route.path)
-      const url = new URL('/api/quiz/stats', window.location.origin)
+      const basePath = import.meta.env.BASE_URL || '/pythoncheatsheet/'
+      const apiPath = basePath.endsWith('/') ? `${basePath}api/quiz/stats` : `${basePath}/api/quiz/stats`
+      const url = new URL(apiPath, window.location.origin)
       url.searchParams.set('quizId', quizId)
       url.searchParams.set('pagePath', pagePath)
 
@@ -91,7 +95,9 @@ export function useQuizTracking() {
   const getUserQuizStatus = async (quizId: string): Promise<boolean | null> => {
     try {
       const pagePath = normalizePathToEnglish(route.path)
-      const url = new URL('/api/quiz/user-status', window.location.origin)
+      const basePath = import.meta.env.BASE_URL || '/pythoncheatsheet/'
+      const apiPath = basePath.endsWith('/') ? `${basePath}api/quiz/user-status` : `${basePath}/api/quiz/user-status`
+      const url = new URL(apiPath, window.location.origin)
       url.searchParams.set('quizId', quizId)
       url.searchParams.set('pagePath', pagePath)
 

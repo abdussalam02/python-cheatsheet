@@ -67,8 +67,8 @@ const smAndLarger = breakpoints.greater('sm')
           class="h-20 w-auto"
           :src="
             isDark
-              ? '/labex-logo-light.svg'
-              : '/labex-logo-dark.svg'
+              ? 'https://cdn.jsdelivr.net/gh/labex-labs/files@master/images/labex-logo-light.svg'
+              : 'https://cdn.jsdelivr.net/gh/labex-labs/files@master/images/labex-logo-dark.svg'
           "
           alt="python-cheatsheet"
         />

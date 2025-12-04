@@ -26,7 +26,7 @@ export default {
     const url = new URL(request.url)
 
     // Handle quiz API routes
-    if (url.pathname.startsWith('/api/quiz/')) {
+    if (url.pathname.startsWith('/pythoncheatsheet/api/quiz/')) {
       return handleQuizAPI(request, env)
     }
 
@@ -56,18 +56,18 @@ async function handleQuizAPI(request: Request, env: { PYTHONCHEATSHEET_QUIZ_KV: 
     })
   }
 
-  // Handle POST /api/quiz/record
-  if (url.pathname === '/api/quiz/record' && request.method === 'POST') {
+  // Handle POST /pythoncheatsheet/api/quiz/record
+  if (url.pathname === '/pythoncheatsheet/api/quiz/record' && request.method === 'POST') {
     return handleRecordQuiz(request, env)
   }
 
-  // Handle GET /api/quiz/stats
-  if (url.pathname === '/api/quiz/stats' && request.method === 'GET') {
+  // Handle GET /pythoncheatsheet/api/quiz/stats
+  if (url.pathname === '/pythoncheatsheet/api/quiz/stats' && request.method === 'GET') {
     return handleGetStats(request, env)
   }
 
-  // Handle GET /api/quiz/user-status
-  if (url.pathname === '/api/quiz/user-status' && request.method === 'GET') {
+  // Handle GET /pythoncheatsheet/api/quiz/user-status
+  if (url.pathname === '/pythoncheatsheet/api/quiz/user-status' && request.method === 'GET') {
     return handleGetUserStatus(request, env)
   }
 

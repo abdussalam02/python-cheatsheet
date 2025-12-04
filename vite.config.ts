@@ -41,6 +41,7 @@ export default defineConfig(({ mode }) => {
   }
 
   return {
+    base: '/pythoncheatsheet/',
     resolve: {
       alias: {
         '~/': `${path.resolve(__dirname, 'src')}/`,
