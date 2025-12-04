@@ -56,9 +56,10 @@ export function useAuth() {
 
   const login = () => {
     if (typeof window !== 'undefined') {
-      const route = useRoute()
-      const currentPath = route.fullPath || route.path
-      const rd = encodeURIComponent(currentPath)
+      const currentPath = window.location.pathname
+      // Ensure we have a valid path to redirect back to
+      const redirectPath = currentPath && currentPath !== '/' ? currentPath : '/pythoncheatsheet/'
+      const rd = encodeURIComponent(redirectPath)
       window.open(`https://labex.io/register?rd=${rd}`, '_blank')
     }
   }
