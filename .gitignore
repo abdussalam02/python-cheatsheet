@@ -26,3 +26,4 @@ coverage
 .env.local
 .github/prompts/custom.prompt.md
 .vite
+.wrangler
