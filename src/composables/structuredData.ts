@@ -2,7 +2,7 @@ import type { RouteLocationNormalized } from 'vue-router'
 import { SUPPORTED_LOCALES } from './useI18n'
 
 function getSiteUrl(): string {
-  const envBaseUrl = import.meta.env.VITE_BASE_URL || 'pythoncheatsheet.org'
+  const envBaseUrl = import.meta.env.VITE_BASE_URL || 'labex.io/pythoncheatsheet'
   const isDev = import.meta.env.DEV || import.meta.env.MODE === 'development'
 
   const isLocalhost = typeof window !== 'undefined' &&
@@ -16,7 +16,7 @@ function getSiteUrl(): string {
     envBaseUrl.includes('preview.')
 
   if (isDev || isLocalhost || isPreviewDomain) {
-    return 'https://pythoncheatsheet.org'
+    return 'https://labex.io/pythoncheatsheet'
   }
 
   const baseUrl = envBaseUrl.startsWith('http') ? envBaseUrl : `https://${envBaseUrl}`
@@ -79,12 +79,12 @@ export function generateArticleSchema(
     : `${siteUrl}/screenshots/dark.png`
 
   const tags = meta.tags
-    ? (typeof meta.tags === 'string' 
-        ? meta.tags 
-        : Array.isArray(meta.tags) 
-          ? (meta.tags as string[]).join(',')
-          : String(meta.tags)
-      ).split(',').map((tag: string) => tag.trim()).filter(Boolean)
+    ? (typeof meta.tags === 'string'
+      ? meta.tags
+      : Array.isArray(meta.tags)
+        ? (meta.tags as string[]).join(',')
+        : String(meta.tags)
+    ).split(',').map((tag: string) => tag.trim()).filter(Boolean)
     : []
 
   const parseDate = (dateStr: string | undefined): string | undefined => {

@@ -10,7 +10,7 @@ interface ArticleMeta {
 }
 
 function getBaseUrl(): string {
-  const envBaseUrl = import.meta.env.VITE_BASE_URL || 'pythoncheatsheet.org'
+  const envBaseUrl = import.meta.env.VITE_BASE_URL || 'labex.io/pythoncheatsheet'
   const isDev = import.meta.env.DEV || import.meta.env.MODE === 'development'
 
   const isLocalhost = typeof window !== 'undefined' &&
@@ -24,7 +24,7 @@ function getBaseUrl(): string {
     envBaseUrl.includes('preview.')
 
   if (isDev || isLocalhost || isPreviewDomain) {
-    return 'pythoncheatsheet.org'
+    return 'labex.io/pythoncheatsheet'
   }
 
   return envBaseUrl.startsWith('http')
@@ -195,9 +195,9 @@ export function useMeta(articleMeta?: ArticleMeta) {
         tags.push({ property: 'article:modified_time', content: modifiedDate })
       }
       if (articleMeta.tags) {
-        const tagsValue = typeof articleMeta.tags === 'string' 
-          ? articleMeta.tags 
-          : Array.isArray(articleMeta.tags) 
+        const tagsValue = typeof articleMeta.tags === 'string'
+          ? articleMeta.tags
+          : Array.isArray(articleMeta.tags)
             ? (articleMeta.tags as string[]).join(',')
             : String(articleMeta.tags)
         const tagList = tagsValue.split(',').map((tag: string) => tag.trim()).filter(Boolean)

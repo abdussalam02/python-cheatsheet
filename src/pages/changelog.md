@@ -15,7 +15,7 @@ Changelog
 
 ## 2025-11-19
 
-🎉 Big news! [Python Cheat Sheet](https://pythoncheatsheet.org) is now part of [LabEx](https://labex.io)!
+🎉 Big news! [Python Cheat Sheet](https://labex.io/pythoncheatsheet) is now part of [LabEx](https://labex.io)!
 
 **What's new:**
 
@@ -61,7 +61,7 @@ What's the same: **open-source** & **free**, just like always.
 ## 2025-06-20
 
 - Update dependencies to the latest versions.
-- Added new blog post [UV: The Lightning-Fast Python Package Manager](https://pythoncheatsheet.org/blog/python-uv-package-manager/)
+- Added new blog post [UV: The Lightning-Fast Python Package Manager](https://labex.io/pythoncheatsheet/blog/python-uv-package-manager/)
 
 ## 2025-03-29
 
@@ -292,7 +292,7 @@ What's the same: **open-source** & **free**, just like always.
 
 ### Website
 
-- Launched Python Cheatsheet [newsletter](https://news.pythoncheatsheet.org/) 🎉
+- Launched Python Cheatsheet [newsletter](https://news.labex.io/pythoncheatsheet/) 🎉
 - Added a newsletter subscription form component.
 
 ### Cheatsheet
@@ -363,7 +363,7 @@ What's the same: **open-source** & **free**, just like always.
 
 ## 2022-07-17
 
-The release of the new **pythoncheatsheet.org** website:
+The release of the new **labex.io/pythoncheatsheet** website:
 
 - Complete re-design with **Vue 3** and **Tailwind CSS**.
 - The site is now a **PWA** (Progressive web app) and can be installed in any platform that has a compatible web browser. It is also available offline.

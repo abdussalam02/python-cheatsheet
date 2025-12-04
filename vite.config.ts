@@ -129,7 +129,7 @@ export default defineConfig(({ mode }) => {
       formatting: 'minify',
       format: 'esm', // changed from 'cjs' to 'esm' to fix ESM/CJS compatibility
       async onFinished() {
-        const baseUrl = process.env.VITE_BASE_URL || 'pythoncheatsheet.org'
+        const baseUrl = process.env.VITE_BASE_URL || 'labex.io/pythoncheatsheet'
         const hostname = baseUrl.startsWith('http') ? baseUrl : `https://${baseUrl}`
         await generateI18nSitemap(hostname, 'dist/pythoncheatsheet')
       },

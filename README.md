@@ -11,7 +11,7 @@
 <h1 align="center">Python Cheatsheet</h1>
 
 <div align="center">
-  <a href="https://pythoncheatsheet.org/">pythoncheatsheet.org</a> |
+  <a href="https://labex.io/pythoncheatsheet/">labex.io/pythoncheatsheet</a> |
   <a href="https://github.com/labex-labs/python-cheatsheet/blob/master/src/pages/contributing.md">Contribute</a> |
   <a href="https://github.com/labex-labs/python-cheatsheet/blob/master/src/pages/changelog.md">Changelog</a>
 </div>
@@ -34,13 +34,13 @@ Anyone can forget how to make character classes for a regex, slice a list, or do
 ## Quick Links
 
 - **[View on GitHub](https://github.com/labex-labs/python-cheatsheet)**: Drop a star on GitHub if you find this project useful
-- **[Contribute](https://pythoncheatsheet.org/contributing)**: Get to know how easy it is to contribute to the Python Cheatsheet
-- **[Blog](https://pythoncheatsheet.org/blog)**: Read detailed articles about Python and its ecosystem
-- **[Changelog](https://pythoncheatsheet.org/changelog)**: See what is new, what got fixed, and what is coming
+- **[Contribute](https://labex.io/pythoncheatsheet/contributing)**: Get to know how easy it is to contribute to the Python Cheatsheet
+- **[Blog](https://labex.io/pythoncheatsheet/blog)**: Read detailed articles about Python and its ecosystem
+- **[Changelog](https://labex.io/pythoncheatsheet/changelog)**: See what is new, what got fixed, and what is coming
 
 ## Contributing
 
-Contributions are welcome! Please see the [Contributing Guide](https://pythoncheatsheet.org/contributing) for details on how to get started.
+Contributions are welcome! Please see the [Contributing Guide](https://labex.io/pythoncheatsheet/contributing) for details on how to get started.
 
 ## License
 
