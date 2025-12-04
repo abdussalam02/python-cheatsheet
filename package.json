@@ -8,7 +8,6 @@
     "test": "vitest --run",
     "lint": "eslint .",
     "typecheck": "vue-tsc --noEmit",
-    "fetch-contributors": "esno scripts/fetch-contributors.ts",
     "wrangler:dev": "wrangler dev",
     "wrangler:deploy": "wrangler deploy"
   },

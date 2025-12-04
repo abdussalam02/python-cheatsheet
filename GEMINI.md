@@ -48,7 +48,6 @@ This project is a Python cheatsheet website built with Vue.js and Vite. The cont
 - **Reader Mode**: Full-screen reading with font size controls (`src/store/reader.ts`)
 - **Dark Mode**: Theme toggle with system preference detection
 - **Search**: Algolia DocSearch integration (`src/components/AlgoliaDocSearch.vue`)
-- **Contributors**: Auto-fetched from GitHub API (`scripts/fetch-contributors.ts`)
 
 ## Available Scripts
 
@@ -60,7 +59,6 @@ The following scripts are available in `package.json`:
 *   `pnpm test`: Runs the tests.
 *   `pnpm lint`: Lints the code with ESLint.
 *   `pnpm typecheck`: Runs a type check with `vue-tsc`.
-*   `pnpm fetch-contributors`: Fetches the contributors from GitHub.
 
 
 ## Content Creation Patterns

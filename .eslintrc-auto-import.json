@@ -309,11 +309,11 @@
     "watchWithFilter": true,
     "whenever": true,
     "useQuizTracking": true,
+    "useAuth": true,
     "generateArticleSchema": true,
     "generateBreadcrumbSchema": true,
     "generateOrganizationSchema": true,
     "generateStructuredData": true,
-    "generateWebSiteSchema": true,
-    "useAuth": true
+    "generateWebSiteSchema": true
   }
 }

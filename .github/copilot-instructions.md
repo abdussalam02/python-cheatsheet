@@ -35,7 +35,6 @@ This is a Vue 3 + Vite-based documentation website for Python programming refere
 - **Reader Mode**: Full-screen reading with font size controls (`src/store/reader.ts`)
 - **Dark Mode**: Theme toggle with system preference detection
 - **Search**: Algolia DocSearch integration (`src/components/AlgoliaDocSearch.vue`)
-- **Contributors**: Auto-fetched from GitHub API (`scripts/fetch-contributors.ts`)
 
 ## Development Workflows
 
@@ -44,7 +43,6 @@ This is a Vue 3 + Vite-based documentation website for Python programming refere
 ```bash
 pnpm dev                    # Development server
 pnpm build                  # Production build (Vue-SSG)
-pnpm fetch-contributors     # Update contributors list
 pnpm lint                   # ESLint check
 pnpm typecheck              # TypeScript validation
 ```
@@ -135,7 +133,6 @@ meta:
 
 - **Edit links**: Point to correct repo paths (`docs/` vs `src/pages/`)
 - **Issue/discussion links**: Footer integration for feedback
-- **Contributors**: GitHub API for automatic contributor fetching
 
 ## Common Pitfalls & Solutions
 

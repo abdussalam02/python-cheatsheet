@@ -42,6 +42,15 @@ export default defineConfig(({ mode }) => {
 
   return {
     base: '/pythoncheatsheet/',
+    build: {
+      outDir: 'dist',
+      chunkSizeWarningLimit: 1000,
+      rollupOptions: {
+        output: {
+          manualChunks: undefined,
+        },
+      },
+    },
     resolve: {
       alias: {
         '~/': `${path.resolve(__dirname, 'src')}/`,
