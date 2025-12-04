@@ -53,7 +53,10 @@ export function useAuth() {
 
   const login = () => {
     if (typeof window !== 'undefined') {
-      window.open('https://labex.io/register?rd=/pythoncheatsheet', '_blank')
+      const route = useRoute()
+      const currentPath = route.fullPath || route.path
+      const rd = encodeURIComponent(currentPath)
+      window.open(`https://labex.io/register?rd=${rd}`, '_blank')
     }
   }
 

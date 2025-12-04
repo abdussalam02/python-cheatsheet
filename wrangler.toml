@@ -18,14 +18,6 @@ zone_name = "labex.io"
 pattern = "labex.io/pythoncheatsheet"
 zone_name = "labex.io"
 
-[[routes]]
-pattern = "pythoncheatsheet.org/*"
-zone_name = "pythoncheatsheet.org"
-
-[[routes]]
-pattern = "www.pythoncheatsheet.org/*"
-zone_name = "pythoncheatsheet.org"
-
 [observability]
 enabled = false
 head_sampling_rate = 1
