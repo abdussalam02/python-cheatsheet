@@ -38,6 +38,13 @@ export default {
   async fetch(request: Request, env: { PYTHONCHEATSHEET_QUIZ_KV: KVNamespace; ASSETS?: { fetch: (_req: Request) => Promise<Response> } }): Promise<Response> {
     const url = new URL(request.url)
 
+    // Handle redirects for custom domains
+    if (url.hostname === 'pythoncheatsheet.org' || url.hostname === 'www.pythoncheatsheet.org') {
+      const targetPath = url.pathname === '/' ? '' : url.pathname
+      const targetUrl = `https://labex.io/pythoncheatsheet${targetPath}${url.search}`
+      return Response.redirect(targetUrl, 301)
+    }
+
     // Handle quiz API routes
     if (url.pathname.startsWith('/pythoncheatsheet/api/quiz/')) {
       return handleQuizAPI(request, env)
