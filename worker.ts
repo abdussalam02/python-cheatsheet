@@ -8,6 +8,19 @@ interface QuizRecordRequest {
   userId?: number
 }
 
+interface UserInfo {
+  id?: number
+  name?: string
+  nick_name?: string
+  email?: string
+  [key: string]: unknown
+}
+
+interface UserData {
+  user?: UserInfo
+  [key: string]: unknown
+}
+
 /**
  * Normalize path to English version by removing language prefix
  * This ensures all language versions of the same page share the same quiz data
@@ -33,11 +46,7 @@ export default {
     // For all other requests, let Cloudflare handle static assets
     // If ASSETS is available (for Workers with assets), use it; otherwise pass through
     if (env.ASSETS) {
-      const assetUrl = new URL(request.url)
-      if (assetUrl.pathname.startsWith('/pythoncheatsheet')) {
-        assetUrl.pathname = assetUrl.pathname.replace(/^\/pythoncheatsheet\/?/, '/')
-      }
-      return env.ASSETS.fetch(new Request(assetUrl.toString(), request))
+      return env.ASSETS.fetch(request)
     }
 
     // Fallback: return the request as-is (Cloudflare will handle it)
@@ -84,6 +93,33 @@ async function handleQuizAPI(request: Request, env: { PYTHONCHEATSHEET_QUIZ_KV: 
   )
 }
 
+async function getUserFromCookies(request: Request): Promise<UserInfo | null> {
+  try {
+    const cookies = request.headers.get('Cookie')
+    if (!cookies) {
+      return null
+    }
+
+    const response = await fetch('https://labex.io/api/v2/users/me', {
+      method: 'GET',
+      headers: {
+        'Cookie': cookies,
+        'User-Agent': request.headers.get('User-Agent') || 'Cloudflare Worker',
+        'Content-Type': 'application/json',
+      },
+    })
+
+    if (response.ok) {
+      const userData = await response.json() as UserData
+      return userData.user || null
+    }
+    return null
+  } catch (error) {
+    console.error('Error fetching user from cookies:', error)
+    return null
+  }
+}
+
 async function handleRecordQuiz(request: Request, env: { PYTHONCHEATSHEET_QUIZ_KV: KVNamespace }): Promise<Response> {
   try {
     const body = await request.json() as QuizRecordRequest
@@ -119,13 +155,10 @@ async function handleRecordQuiz(request: Request, env: { PYTHONCHEATSHEET_QUIZ_K
     await env.PYTHONCHEATSHEET_QUIZ_KV.put(key, newCount.toString())
 
     // Record user completion status if user is authenticated
-    const cookies = request.headers.get('Cookie') || ''
-    const userIdMatch = cookies.match(/user_id=(\d+)/)
-    let userId: number | undefined
-    if (userIdMatch) {
-      userId = parseInt(userIdMatch[1], 10)
+    const user = await getUserFromCookies(request)
+    if (user && user.id) {
       // Format: pythoncheatsheet:user-quiz:${userId}:${normalizedPath}:${quizId}
-      const userKey = `pythoncheatsheet:user-quiz:${userId}:${normalizedPath}:${quizId}`
+      const userKey = `pythoncheatsheet:user-quiz:${user.id}:${normalizedPath}:${quizId}`
       await env.PYTHONCHEATSHEET_QUIZ_KV.put(userKey, 'true')
     }
 
@@ -135,7 +168,7 @@ async function handleRecordQuiz(request: Request, env: { PYTHONCHEATSHEET_QUIZ_K
         quizId,
         pagePath: normalizedPath,
         count: newCount,
-        ...(userId && { userId }),
+        ...(user && user.id && { userId: user.id }),
       }),
       {
         status: 200,
@@ -244,11 +277,10 @@ async function handleGetUserStatus(request: Request, env: { PYTHONCHEATSHEET_QUI
       )
     }
 
-    // Get userId from cookie (LabEx SSO cookie)
-    const cookies = request.headers.get('Cookie') || ''
-    const userIdMatch = cookies.match(/user_id=(\d+)/)
+    // Get user from cookies using LabEx API
+    const user = await getUserFromCookies(request)
 
-    if (!userIdMatch) {
+    if (!user || !user.id) {
       return new Response(
         JSON.stringify({ error: 'Unauthorized' }),
         {
@@ -261,7 +293,7 @@ async function handleGetUserStatus(request: Request, env: { PYTHONCHEATSHEET_QUI
       )
     }
 
-    const userId = parseInt(userIdMatch[1], 10)
+    const userId = user.id
 
     const normalizedPath = normalizePathToEnglish(pagePath)
     // Generate unique key for user completion status with pythoncheatsheet prefix
@@ -305,4 +337,3 @@ async function handleGetUserStatus(request: Request, env: { PYTHONCHEATSHEET_QUI
     )
   }
 }
-

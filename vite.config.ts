@@ -43,7 +43,7 @@ export default defineConfig(({ mode }) => {
   return {
     base: '/pythoncheatsheet/',
     build: {
-      outDir: 'dist',
+      outDir: 'dist/pythoncheatsheet',
       chunkSizeWarningLimit: 1000,
       rollupOptions: {
         output: {
@@ -131,7 +131,7 @@ export default defineConfig(({ mode }) => {
       async onFinished() {
         const baseUrl = process.env.VITE_BASE_URL || 'pythoncheatsheet.org'
         const hostname = baseUrl.startsWith('http') ? baseUrl : `https://${baseUrl}`
-        await generateI18nSitemap(hostname, 'dist')
+        await generateI18nSitemap(hostname, 'dist/pythoncheatsheet')
       },
     },
 
