@@ -123,12 +123,6 @@
       "zipfile-module": "Zipfile"
     }
   },
-  "banner": {
-    "title": "Cyber Monday 2025: ¡Termina pronto! Hasta 40% de descuento en LabEx Pro.",
-    "getDiscount": "Obtén 40% de descuento ahora →",
-    "shortMessage": "Cyber Monday 2025: ¡Termina pronto! Hasta 40% de descuento en LabEx Pro.",
-    "shortDiscount": "Obtén 40% de descuento ahora →"
-  },
   "codeBlock": {
     "copy": "Copiar",
     "copied": "Copiado",

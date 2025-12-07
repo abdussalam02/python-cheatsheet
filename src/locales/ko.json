@@ -71,7 +71,7 @@
     },
     "disclaimer": {
       "title": "Python Cheat Sheet 가 이제 LabEx 의 일부가 되었습니다!",
-      "content": "이제 인터랙티브 랩, PDF 다운로드, 내장 함수 모듈, 퀴즈 문제, 다국어 지원 (🇨🇳 🇯🇵 🇪🇸 🇩🇪 🇫🇷 🇵🇹 🇰🇷 🇷🇺)을 제공하며, 여전히 오픈 소스이며 항상 그렇듯이 무료입니다."
+      "content": "이제 인터랙티브 랩, PDF 다운로드, 내장 함수 모듈, 퀴즈 문제, 다국어 지원 (🇨🇳 🇯🇵 🇪🇸 🇩🇪 🇫🇷 🇵🇹 🇰🇷 🇷🇺) 을 제공하며, 여전히 오픈 소스이며 항상 그렇듯이 무료입니다."
     }
   },
   "blog": {
@@ -122,12 +122,6 @@
       "shelve-module": "Shelve",
       "zipfile-module": "Zipfile"
     }
-  },
-  "banner": {
-    "title": "사이버 먼데이 2025: 곧 종료! LabEx Pro 최대 40% 할인.",
-    "getDiscount": "지금 40% 할인 받기 →",
-    "shortMessage": "사이버 먼데이 2025: 곧 종료! LabEx Pro 최대 40% 할인.",
-    "shortDiscount": "지금 40% 할인 받기 →"
   },
   "codeBlock": {
     "copy": "복사",

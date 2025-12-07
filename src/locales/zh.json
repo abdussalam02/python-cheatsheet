@@ -123,12 +123,6 @@
       "zipfile-module": "Zipfile"
     }
   },
-  "banner": {
-    "title": "网络星期一 2025：即将结束！LabEx Pro 最高 40% 折扣。",
-    "getDiscount": "立即享受 40% 折扣 →",
-    "shortMessage": "网络星期一 2025：即将结束！LabEx Pro 最高 40% 折扣。",
-    "shortDiscount": "立即享受 40% 折扣 →"
-  },
   "codeBlock": {
     "copy": "复制",
     "copied": "已复制",
