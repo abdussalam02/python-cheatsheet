@@ -78,31 +78,5 @@ if (gTag && gTag !== 'tag' && gTag.trim() !== '') {
 </script>
 
 <template>
-  <BaseBanner storage-key-name="cyber-monday-2025-banner">
-    <template #message>
-      <span class="text-white">
-        {{ t('banner.title') }}
-        <a
-          href="https://labex.io/pricing"
-          target="_blank"
-          class="ml-1 font-semibold text-white underline hover:text-slate-200"
-        >
-          {{ t('banner.getDiscount') }}
-        </a>
-      </span>
-    </template>
-    <template #shortMsg>
-      <span class="text-white">
-        {{ t('banner.shortMessage') }}
-        <a
-          href="https://labex.io/pricing"
-          target="_blank"
-          class="ml-1 font-semibold text-white underline hover:text-slate-200"
-        >
-          {{ t('banner.shortDiscount') }}
-        </a>
-      </span>
-    </template>
-  </BaseBanner>
   <RouterView />
 </template>
