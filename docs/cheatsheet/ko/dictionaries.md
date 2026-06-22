@@ -370,6 +370,8 @@ pprint.pprint(wife)
 
 Python 3.5 이상:
 
+참고: 언패킹 구문은 Python 3.5 이상에서 작동하지만, 표시되는 딕셔너리 순서는 Python 3.7 이상에서 보장됩니다.
+
 ```python
 dict_a = {'a': 1, 'b': 2}
 dict_b = {'b': 3, 'c': 4}

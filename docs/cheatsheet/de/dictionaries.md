@@ -370,6 +370,8 @@ pprint.pprint(wife)
 
 Für Python 3.5+:
 
+Hinweis: Die Unpacking-Syntax funktioniert ab Python 3.5, während die angezeigte Dictionary-Reihenfolge erst ab Python 3.7 garantiert ist.
+
 ```python
 dict_a = {'a': 1, 'b': 2}
 dict_b = {'b': 3, 'c': 4}

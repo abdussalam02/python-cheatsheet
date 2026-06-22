@@ -370,6 +370,8 @@ pprint.pprint(esposa)
 
 Para Python 3.5+:
 
+Nota: La sintaxis de desempaquetado funciona en Python 3.5+, mientras que el orden mostrado del diccionario está garantizado en Python 3.7+.
+
 ```python
 dict_a = {'a': 1, 'b': 2}
 dict_b = {'b': 3, 'c': 4}

@@ -370,6 +370,8 @@ pprint.pprint(wife)
 
 对于 Python 3.5+：
 
+注意：解包语法适用于 Python 3.5+，而字典显示顺序从 Python 3.7+ 起才得到保证。
+
 ```python
 dict_a = {'a': 1, 'b': 2}
 dict_b = {'b': 3, 'c': 4}

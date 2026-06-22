@@ -370,6 +370,8 @@ pprint.pprint(wife)
 
 Pour Python 3.5 et supérieur :
 
+Remarque : la syntaxe de dépaquetage fonctionne avec Python 3.5 et supérieur, tandis que l'ordre d'affichage du dictionnaire n'est garanti qu'à partir de Python 3.7.
+
 ```python
 dict_a = {'a': 1, 'b': 2}
 dict_b = {'b': 3, 'c': 4}

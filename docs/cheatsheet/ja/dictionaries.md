@@ -370,6 +370,8 @@ pprint.pprint(wife)
 
 Python 3.5 以降の場合：
 
+注: アンパック構文は Python 3.5 以降で使用できますが、辞書の表示順序が保証されるのは Python 3.7 以降です。
+
 ```python
 dict_a = {'a': 1, 'b': 2}
 dict_b = {'b': 3, 'c': 4}
