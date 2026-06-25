@@ -48,7 +48,7 @@ Hello, world!
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/debugging">Cheatsheet: Отладка</router-link>
+- <router-link to="/cheatsheet/debugging">Cheat Sheet: Отладка</router-link>
 - <router-link to="/builtin/exec">exec()</router-link>
 - <router-link to="/builtin/eval">eval()</router-link>
 - <router-link to="/builtin/breakpoint">breakpoint()</router-link>

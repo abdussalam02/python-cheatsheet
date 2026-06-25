@@ -1,5 +1,5 @@
 ---
-title: 'Python Decorators - Simple Patterns to Level Up Your Code - Python Cheatsheet'
+title: 'Python Decorators - Simple Patterns to Level Up Your Code - Python Cheat Sheet'
 description: If you can write a function, you can write a decorator. Learn to add features like timers and loggers to your code with these easy, beginner-friendly patterns.
 date: Aug 16, 2025
 updated: Aug 16, 2025

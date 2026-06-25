@@ -1,5 +1,5 @@
 ---
-title: Python dict() built-in function - Python Cheatsheet
+title: Python dict() built-in function - Python Cheat Sheet
 description: Create a new dictionary. The dict object is the dictionary class. See dict and Mapping Types — dict for documentation about this class.
 ---
 

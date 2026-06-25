@@ -1,5 +1,5 @@
 ---
-title: Python type() built-in function - Python Cheatsheet
+title: Python type() built-in function - Python Cheat Sheet
 description: With one argument, return the type of an object. The return value is a type object and generally the same object as returned by object.__class__.
 ---
 

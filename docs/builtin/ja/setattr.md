@@ -49,7 +49,7 @@ Jane
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/oop-basics">Cheatsheet: OOP Basics</router-link>
+- <router-link to="/cheatsheet/oop-basics">Cheat Sheet: OOP Basics</router-link>
 - <router-link to="/builtin/object">object()</router-link>
 - <router-link to="/builtin/dir">dir()</router-link>
 - <router-link to="/builtin/getattr">getattr()</router-link>

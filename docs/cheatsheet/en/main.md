@@ -1,5 +1,5 @@
 ---
-title: Python Main function - Python Cheatsheet
+title: Python Main function - Python Cheat Sheet
 description: is the name of the scope in which top-level code executes. A module's name is set equal to main when read from standard input, a script, or from an interactive prompt.
 labUrl: https://labex.io/labs/python-python-main-function-633661?course=python-cheatsheet
 ---

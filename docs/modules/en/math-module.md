@@ -1,5 +1,5 @@
 ---
-title: Python Math Module - Python Cheatsheet
+title: Python Math Module - Python Cheat Sheet
 description: The math module provides mathematical functions such as sqrt, ceil, floor, pi, and isclose.
 ---
 
@@ -96,5 +96,5 @@ print(math.gcd(12, 18))
 ## Relevant links
 
 - <router-link to="/modules/statistics-module">Module: statistics</router-link>
-- <router-link to="/cheatsheet/basics">Cheatsheet: Basics</router-link>
+- <router-link to="/cheatsheet/basics">Cheat Sheet: Basics</router-link>
 - <router-link to="/builtin/round">round()</router-link>

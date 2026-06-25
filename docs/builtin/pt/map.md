@@ -91,8 +91,8 @@ Note como o comprimento da lista resultante é igual ao comprimento de list1?
 
 ## Links relevantes
 
-- <router-link to="/cheatsheet/functions">Cheatsheet: Funções (incluindo Lambdas)</router-link>
-- <router-link to="/cheatsheet/comprehensions">Cheatsheet: Comprehensions</router-link>
+- <router-link to="/cheatsheet/functions">Cheat Sheet: Funções (incluindo Lambdas)</router-link>
+- <router-link to="/cheatsheet/comprehensions">Cheat Sheet: Comprehensions</router-link>
 - <router-link to="/blog/python-comprehensions-step-by-step">Blog: Python Comprehensions Passo a Passo</router-link>
 - <router-link to="/modules/itertools-module">Módulo: itertools</router-link>
 - <router-link to="/builtin/filter">filter()</router-link>

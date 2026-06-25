@@ -1,5 +1,5 @@
 ---
-title: 'Changelog - Python Cheatsheet'
+title: 'Changelog - Python Cheat Sheet'
 description: See what is new, what got fixed, and what is coming.
 date: July 19, 2022
 updated: May 13, 2026
@@ -274,7 +274,7 @@ What's the same: **open-source** & **free**, just like always.
 - Updated dependencies to the latest version
 - Removed some workarounds for workbox that were not needed anymore
 
-### Cheatsheet
+### Cheat Sheet
 
 - Added Python <router-link to='/modules/zipfile-module'>Zipfile Module</router-link> ([e7538ee](https://github.com/labex-labs/python-cheatsheet/commit/e7538ee7e8d7ab9b5888ad39560ad940a25dde6d)).
 - Added Python <router-link to='/modules/shelve-module'>Shelve Module</router-link> ([0afd2b3](https://github.com/labex-labs/python-cheatsheet/commit/0afd2b3002764c13b7d016c1e39b6c124445340c)).
@@ -292,7 +292,7 @@ What's the same: **open-source** & **free**, just like always.
 - Added transitions for mobile navigation ([4cdfca4](https://github.com/labex-labs/python-cheatsheet/commit/4cdfca4ba0f21e4cb1021b917e49660eccdefa7e))
 - Fixed an issue that prevented the sidebar to close on mobile navigation([48b58e0](https://github.com/labex-labs/python-cheatsheet/commit/48b58e0beef8dfd15e5450087a125af4872422d0))
 
-### Cheatsheet
+### Cheat Sheet
 
 - Simplify json load/dump usage ([#118](https://github.com/labex-labs/python-cheatsheet/pull/118))
 
@@ -300,10 +300,10 @@ What's the same: **open-source** & **free**, just like always.
 
 ### Website
 
-- Launched Python Cheatsheet [newsletter](https://news.labex.io/pythoncheatsheet/) 🎉
+- Launched Python Cheat Sheet [newsletter](https://news.labex.io/pythoncheatsheet/) 🎉
 - Added a newsletter subscription form component.
 
-### Cheatsheet
+### Cheat Sheet
 
 - Fixed many code examples, grammar and typo errors.
 - Added examples for:
@@ -316,7 +316,7 @@ What's the same: **open-source** & **free**, just like always.
 
 - Fixed a bug that prevented the toc to be updated when scrolling ([1e5eb39](https://github.com/labex-labs/python-cheatsheet/commit/1e5eb3938cbe9241ac8eb25834784de3ee91af6e))
 
-### Cheatsheet
+### Cheat Sheet
 
 - Added a `Removing Items` section to `Dictionaries` ([971aef6](https://github.com/labex-labs/python-cheatsheet/commit/971aef6e8afd503b6804951292137d94abaa841e))
 - Fixed a `lists-and-tuples.md` example ([41519b3](https://github.com/labex-labs/python-cheatsheet/commit/41519b3727593997011b167ef00dcba5e245aaaa))
@@ -331,7 +331,7 @@ What's the same: **open-source** & **free**, just like always.
 - Fixed DocSearch results by enabling `renderJavaScript`.
 - Fixed DocSearch behavior.
 
-### Cheatsheet
+### Cheat Sheet
 
 - Added `Formatting Digits` to `String formatting` ([#92](https://github.com/labex-labs/python-cheatsheet/pull/92)) ([caac300](https://github.com/labex-labs/python-cheatsheet/commit/caac300483cbd103e0f9666e647160b2e337d36e))
 - Fixed `function.md` example ([#89](https://github.com/labex-labs/python-cheatsheet/pull/89))
@@ -352,7 +352,7 @@ What's the same: **open-source** & **free**, just like always.
 - Added useful community links to the footer.
 - Added Pagination.
 
-### Cheatsheet
+### Cheat Sheet
 
 - Changed titles to be more descriptive.
 - Changed TOC titles to be more concise and descriptive.

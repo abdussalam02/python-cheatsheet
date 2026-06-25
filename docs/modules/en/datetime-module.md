@@ -1,5 +1,5 @@
 ---
-title: Python Datetime Module - Python Cheatsheet
+title: Python Datetime Module - Python Cheat Sheet
 description: 'The Datetime module allows us to work with date and time by providing 3 additional data types: date, time and datetime.'
 ---
 
@@ -438,7 +438,7 @@ datetime.datetime(2022, 7, 13, 21, 59, 41, 100883)
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/string-formatting">Cheatsheet: String Formatting</router-link>
+- <router-link to="/cheatsheet/string-formatting">Cheat Sheet: String Formatting</router-link>
 - <router-link to="/blog/python-data-types">Blog: Python Data Types</router-link>
 - <router-link to="/builtin/str">str()</router-link>
 - <router-link to="/builtin/format">format()</router-link>

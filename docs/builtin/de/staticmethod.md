@@ -51,8 +51,8 @@ Eine statische Methode hat keinen Zugriff auf die Klasse (`cls`) oder die Instan
 
 ## Relevante Links
 
-- <router-link to="/cheatsheet/oop-basics">Cheatsheet: OOP-Grundlagen</router-link>
-- <router-link to="/cheatsheet/decorators">Cheatsheet: Dekoratoren</router-link>
-- <router-link to="/cheatsheet/functions">Cheatsheet: Funktionen</router-link>
+- <router-link to="/cheatsheet/oop-basics">Cheat Sheet: OOP-Grundlagen</router-link>
+- <router-link to="/cheatsheet/decorators">Cheat Sheet: Dekoratoren</router-link>
+- <router-link to="/cheatsheet/functions">Cheat Sheet: Funktionen</router-link>
 - <router-link to="/builtin/classmethod">classmethod()</router-link>
 - <router-link to="/builtin/property">property()</router-link>

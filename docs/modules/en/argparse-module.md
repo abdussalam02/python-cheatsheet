@@ -1,5 +1,5 @@
 ---
-title: Python Argparse Module - Python Cheatsheet
+title: Python Argparse Module - Python Cheat Sheet
 description: The argparse module helps you build command-line interfaces with positional arguments, options, flags, and help messages.
 ---
 
@@ -155,5 +155,5 @@ Hello Ada!
 ## Relevant links
 
 - <router-link to="/modules/sys-module">Module: sys</router-link>
-- <router-link to="/cheatsheet/functions">Cheatsheet: Functions</router-link>
-- <router-link to="/cheatsheet/control-flow">Cheatsheet: Control Flow</router-link>
+- <router-link to="/cheatsheet/functions">Cheat Sheet: Functions</router-link>
+- <router-link to="/cheatsheet/control-flow">Cheat Sheet: Control Flow</router-link>

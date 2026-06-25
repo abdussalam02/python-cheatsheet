@@ -1,5 +1,5 @@
 ---
-title: Python Zipfile Module - Python Cheatsheet
+title: Python Zipfile Module - Python Cheat Sheet
 description: This module provides tools to create, read, write, append, and list a ZIP file.
 ---
 
@@ -131,9 +131,9 @@ Uncompressed: 76 bytes
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/reading-and-writing-files">Cheatsheet: Reading and Writing Files</router-link>
-- <router-link to="/cheatsheet/file-directory-path">Cheatsheet: File & Directory Path</router-link>
-- <router-link to="/cheatsheet/context-manager">Cheatsheet: Context Managers</router-link>
+- <router-link to="/cheatsheet/reading-and-writing-files">Cheat Sheet: Reading and Writing Files</router-link>
+- <router-link to="/cheatsheet/file-directory-path">Cheat Sheet: File & Directory Path</router-link>
+- <router-link to="/cheatsheet/context-manager">Cheat Sheet: Context Managers</router-link>
 - <router-link to="/modules/os-module">Module: os</router-link>
 - <router-link to="/modules/pathlib-module">Module: pathlib</router-link>
 - <router-link to="/builtin/open">open()</router-link>

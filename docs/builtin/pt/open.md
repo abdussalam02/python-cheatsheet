@@ -49,9 +49,9 @@ Minha segunda linha
 
 ## Links Relevantes
 
-- <router-link to="/cheatsheet/reading-and-writing-files">Cheatsheet: Leitura e Escrita de Arquivos</router-link>
-- <router-link to="/cheatsheet/file-directory-path">Cheatsheet: Caminho de Arquivo e Diretório</router-link>
-- <router-link to="/cheatsheet/context-manager">Cheatsheet: Gerenciadores de Contexto (instrução with)</router-link>
+- <router-link to="/cheatsheet/reading-and-writing-files">Cheat Sheet: Leitura e Escrita de Arquivos</router-link>
+- <router-link to="/cheatsheet/file-directory-path">Cheat Sheet: Caminho de Arquivo e Diretório</router-link>
+- <router-link to="/cheatsheet/context-manager">Cheat Sheet: Gerenciadores de Contexto (instrução with)</router-link>
 - <router-link to="/blog/python-pathlib-essentials">Blog: Essenciais do Pathlib</router-link>
 - <router-link to="/modules/os-module">Módulo: os</router-link>
 - <router-link to="/modules/pathlib-module">Módulo: pathlib</router-link>

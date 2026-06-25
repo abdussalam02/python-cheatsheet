@@ -1,5 +1,5 @@
 ---
-title: Python Hashlib Module - Python Cheatsheet
+title: Python Hashlib Module - Python Cheat Sheet
 description: The hashlib module provides secure hash functions such as SHA-256 and MD5.
 ---
 
@@ -111,5 +111,5 @@ b94d27b9934d3e08a52e52d7da7dabfac484efe37a5380ee9088f7ace2efcde9
 ## Relevant links
 
 - <router-link to="/modules/pathlib-module">Module: pathlib</router-link>
-- <router-link to="/cheatsheet/reading-and-writing-files">Cheatsheet: Reading and Writing Files</router-link>
+- <router-link to="/cheatsheet/reading-and-writing-files">Cheat Sheet: Reading and Writing Files</router-link>
 - <router-link to="/builtin/open">open()</router-link>

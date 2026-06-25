@@ -49,8 +49,8 @@ print(my_tuple)
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/lists-and-tuples">Cheatsheet: リストとタプル</router-link>
-- <router-link to="/cheatsheet/args-and-kwargs">Cheatsheet: \*args と \*\*kwargs</router-link>
+- <router-link to="/cheatsheet/lists-and-tuples">Cheat Sheet: リストとタプル</router-link>
+- <router-link to="/cheatsheet/args-and-kwargs">Cheat Sheet: \*args と \*\*kwargs</router-link>
 - <router-link to="/blog/python-data-types">Blog: Python データ型</router-link>
 - <router-link to="/blog/python-easy-args-kwargs">Blog: \*args と \*\*kwargs の解説</router-link>
 - <router-link to="/builtin/len">len()</router-link>

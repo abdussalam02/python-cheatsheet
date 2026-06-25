@@ -1,5 +1,5 @@
 ---
-title: Python bool() built-in function - Python Cheatsheet
+title: Python bool() built-in function - Python Cheat Sheet
 description: Return a Boolean value, i.e. one of True or False. x is converted using the standard truth testing procedure. If x is false or omitted, this returns False; otherwise, it returns True. The bool class is a subclass of int. It cannot be subclassed further. Its only instances are False and True.
 ---
 
@@ -72,7 +72,7 @@ True
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/control-flow">Cheatsheet: Control Flow</router-link>
+- <router-link to="/cheatsheet/control-flow">Cheat Sheet: Control Flow</router-link>
 - <router-link to="/blog/python-data-types">Blog: Python Data Types</router-link>
 - <router-link to="/builtin/all">all()</router-link>
 - <router-link to="/builtin/any">any()</router-link>

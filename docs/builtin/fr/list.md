@@ -37,8 +37,8 @@ print(l)
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/lists-and-tuples">Cheatsheet : Listes et Tuples</router-link>
-- <router-link to="/cheatsheet/comprehensions">Cheatsheet : Compréhensions</router-link>
+- <router-link to="/cheatsheet/lists-and-tuples">Cheat Sheet : Listes et Tuples</router-link>
+- <router-link to="/cheatsheet/comprehensions">Cheat Sheet : Compréhensions</router-link>
 - <router-link to="/blog/python-comprehensions-step-by-step">Blog : Compréhensions Python Étape par Étape</router-link>
 - <router-link to="/blog/python-data-types">Blog : Types de Données Python</router-link>
 - <router-link to="/builtin/tuple">tuple()</router-link>

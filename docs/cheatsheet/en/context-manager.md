@@ -1,5 +1,5 @@
 ---
-title: Python Context Manager - Python Cheatsheet
+title: Python Context Manager - Python Cheat Sheet
 description: While Python's context managers are widely used, few understand the purpose behind their use. These statements, commonly used with reading and writing files, assist the application in conserving system memory and improve resource management by ensuring specific resources are only in use for certain processes.
 labUrl: https://labex.io/labs/python-python-context-manager-633650?course=python-cheatsheet
 ---

@@ -1,5 +1,5 @@
 ---
-title: Python Dictionaries - Python Cheatsheet
+title: Python Dictionaries - Python Cheat Sheet
 description: In Python, a dictionary is an insertion-ordered (from Python > 3.7) collection of key, value pairs.
 labUrl: https://labex.io/labs/python-python-dictionaries-633655?course=python-cheatsheet
 ---

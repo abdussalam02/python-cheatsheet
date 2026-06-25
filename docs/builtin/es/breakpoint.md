@@ -49,8 +49,8 @@ print(final_sum)
 
 ## Enlaces relevantes
 
-- <router-link to="/cheatsheet/debugging">Cheatsheet: Debugging</router-link>
-- <router-link to="/cheatsheet/control-flow">Cheatsheet: Control Flow</router-link>
+- <router-link to="/cheatsheet/debugging">Cheat Sheet: Debugging</router-link>
+- <router-link to="/cheatsheet/control-flow">Cheat Sheet: Control Flow</router-link>
 - <router-link to="/builtin/print">print()</router-link>
 - <router-link to="/builtin/input">input()</router-link>
 - <router-link to="/builtin/eval">eval()</router-link>

@@ -91,8 +91,8 @@ Remarquez comme la longueur de la liste résultante est égale à la longueur de
 
 ## Liens pertinents
 
-- <router-link to="/cheatsheet/functions">Cheatsheet : Fonctions (y compris Lambdas)</router-link>
-- <router-link to="/cheatsheet/comprehensions">Cheatsheet : Compréhensions</router-link>
+- <router-link to="/cheatsheet/functions">Cheat Sheet : Fonctions (y compris Lambdas)</router-link>
+- <router-link to="/cheatsheet/comprehensions">Cheat Sheet : Compréhensions</router-link>
 - <router-link to="/blog/python-comprehensions-step-by-step">Blog : Compréhensions Python Étape par Étape</router-link>
 - <router-link to="/modules/itertools-module">Module : itertools</router-link>
 - <router-link to="/builtin/filter">filter()</router-link>

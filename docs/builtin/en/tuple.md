@@ -1,5 +1,5 @@
 ---
-title: Python tuple() built-in function - Python Cheatsheet
+title: Python tuple() built-in function - Python Cheat Sheet
 description: Rather than being a function, tuple is actually an immutable sequence type, as documented in Tuples and Sequence Types — list, tuple, range.
 ---
 
@@ -49,8 +49,8 @@ print(my_tuple)
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/lists-and-tuples">Cheatsheet: Lists and Tuples</router-link>
-- <router-link to="/cheatsheet/args-and-kwargs">Cheatsheet: \*args and \*\*kwargs</router-link>
+- <router-link to="/cheatsheet/lists-and-tuples">Cheat Sheet: Lists and Tuples</router-link>
+- <router-link to="/cheatsheet/args-and-kwargs">Cheat Sheet: \*args and \*\*kwargs</router-link>
 - <router-link to="/blog/python-data-types">Blog: Python Data Types</router-link>
 - <router-link to="/blog/python-easy-args-kwargs">Blog: \*args and \*\*kwargs Explained</router-link>
 - <router-link to="/builtin/len">len()</router-link>

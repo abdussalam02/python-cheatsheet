@@ -1,5 +1,5 @@
 ---
-title: 'Cheatsheet Python : Chemins de Fichiers et Répertoires'
+title: 'Cheat Sheet Python : Chemins de Fichiers et Répertoires'
 description: 'Python utilise deux modules principaux pour la manipulation des chemins : le module os.path et le module pathlib.'
 labUrl: 'https://labex.io/fr/labs/python-python-file-and-directory-path-manipulation-633657?course=python-cheatsheet'
 ---

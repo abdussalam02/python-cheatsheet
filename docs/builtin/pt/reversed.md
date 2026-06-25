@@ -66,8 +66,8 @@ print(next(i))
 
 ## Links relevantes
 
-- <router-link to="/cheatsheet/control-flow">Cheatsheet: Controle de Fluxo (laços for)</router-link>
-- <router-link to="/cheatsheet/lists-and-tuples">Cheatsheet: Listas e Tuplas</router-link>
+- <router-link to="/cheatsheet/control-flow">Cheat Sheet: Controle de Fluxo (laços for)</router-link>
+- <router-link to="/cheatsheet/lists-and-tuples">Cheat Sheet: Listas e Tuplas</router-link>
 - <router-link to="/builtin/sorted">sorted()</router-link>
 - <router-link to="/builtin/len">len()</router-link>
 - <router-link to="/builtin/next">next()</router-link>

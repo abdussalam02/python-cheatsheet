@@ -1,5 +1,5 @@
 ---
-title: Python Random Module - Python Cheatsheet
+title: Python Random Module - Python Cheat Sheet
 description: The random module is a built-in module that allow us to generate random elements.
 ---
 
@@ -342,7 +342,7 @@ random.uniform(1, 5)
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/lists-and-tuples">Cheatsheet: Lists and Tuples</router-link>
+- <router-link to="/cheatsheet/lists-and-tuples">Cheat Sheet: Lists and Tuples</router-link>
 - <router-link to="/blog/python-data-types">Blog: Python Data Types</router-link>
 - <router-link to="/builtin/list">list()</router-link>
 - <router-link to="/builtin/set">set()</router-link>

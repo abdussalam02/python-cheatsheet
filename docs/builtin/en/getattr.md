@@ -1,5 +1,5 @@
 ---
-title: Python getattr() built-in function - Python Cheatsheet
+title: Python getattr() built-in function - Python Cheat Sheet
 description: Return the value of the named attribute of object. name must be a string. If the string is the name of one of the object’s attributes, the result is the value of that attribute.
 ---
 

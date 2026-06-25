@@ -52,7 +52,7 @@ print(max(10, 20, 5))
 
 ## Liens pertinents
 
-- <router-link to="/cheatsheet/lists-and-tuples">Cheatsheet : Listes et Tuples</router-link>
+- <router-link to="/cheatsheet/lists-and-tuples">Cheat Sheet : Listes et Tuples</router-link>
 - <router-link to="/builtin/min">min()</router-link>
 - <router-link to="/builtin/sorted">sorted()</router-link>
 - <router-link to="/builtin/sum">sum()</router-link>

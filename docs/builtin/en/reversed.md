@@ -1,5 +1,5 @@
 ---
-title: Python reversed() built-in function - Python Cheatsheet
+title: Python reversed() built-in function - Python Cheat Sheet
 description: Return a reverse iterator. seq must be an object which has a __reversed__() method or supports the sequence protocol (the __len__() method and the __getitem__() method with integer arguments starting at 0).
 ---
 
@@ -66,8 +66,8 @@ print(next(i))
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/control-flow">Cheatsheet: Control Flow (for loops)</router-link>
-- <router-link to="/cheatsheet/lists-and-tuples">Cheatsheet: Lists and Tuples</router-link>
+- <router-link to="/cheatsheet/control-flow">Cheat Sheet: Control Flow (for loops)</router-link>
+- <router-link to="/cheatsheet/lists-and-tuples">Cheat Sheet: Lists and Tuples</router-link>
 - <router-link to="/builtin/sorted">sorted()</router-link>
 - <router-link to="/builtin/len">len()</router-link>
 - <router-link to="/builtin/next">next()</router-link>

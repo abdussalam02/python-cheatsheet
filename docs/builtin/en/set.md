@@ -1,5 +1,5 @@
 ---
-title: Python set() built-in function - Python Cheatsheet
+title: Python set() built-in function - Python Cheat Sheet
 description: Return a new set object, optionally with elements taken from iterable. set is a built-in class. See set and Set Types — set, frozenset for documentation about this class.
 ---
 
@@ -47,8 +47,8 @@ print(my_set)
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/sets">Cheatsheet: Sets</router-link>
-- <router-link to="/cheatsheet/comprehensions">Cheatsheet: Comprehensions</router-link>
+- <router-link to="/cheatsheet/sets">Cheat Sheet: Sets</router-link>
+- <router-link to="/cheatsheet/comprehensions">Cheat Sheet: Comprehensions</router-link>
 - <router-link to="/blog/python-sets-what-why-how">Blog: Python Sets - What, Why, How</router-link>
 - <router-link to="/blog/python-data-types">Blog: Python Data Types</router-link>
 - <router-link to="/builtin/len">len()</router-link>

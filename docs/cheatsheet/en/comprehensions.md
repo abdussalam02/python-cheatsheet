@@ -1,5 +1,5 @@
 ---
-title: Python Comprehensions - Python Cheatsheet
+title: Python Comprehensions - Python Cheat Sheet
 description: List comprehensions provide a concise way to create lists
 labUrl: https://labex.io/labs/python-python-comprehensions-633649?course=python-cheatsheet
 ---

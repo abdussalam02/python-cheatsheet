@@ -1,5 +1,5 @@
 ---
-title: Python *args and **kwargs Made Easy - Python Cheatsheet
+title: Python *args and **kwargs Made Easy - Python Cheat Sheet
 description: args and kwargs may seem scary, but the truth is that they are not that difficult to grasp and have the power to grant your functions with lots of flexibility.
 date: March 08, 2019
 updated: July 1, 2022

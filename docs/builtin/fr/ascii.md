@@ -45,7 +45,7 @@ ascii(['A', 'ë'])
 
 ## Liens pertinents
 
-- <router-link to="/cheatsheet/manipulating-strings">Cheatsheet : Manipulation des chaînes</router-link>
+- <router-link to="/cheatsheet/manipulating-strings">Cheat Sheet : Manipulation des chaînes</router-link>
 - <router-link to="/blog/python-data-types">Blog : Types de données Python</router-link>
 - <router-link to="/builtin/repr">repr()</router-link>
 - <router-link to="/builtin/str">str()</router-link>

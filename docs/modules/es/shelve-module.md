@@ -58,8 +58,8 @@ with shelve.open('mydata') as shelf_file:
 
 ## Enlaces relevantes
 
-- <router-link to="/cheatsheet/reading-and-writing-files">Cheatsheet: Lectura y Escritura de Archivos</router-link>
-- <router-link to="/cheatsheet/dictionaries">Cheatsheet: Diccionarios</router-link>
-- <router-link to="/cheatsheet/context-manager">Cheatsheet: Gestores de Contexto</router-link>
+- <router-link to="/cheatsheet/reading-and-writing-files">Cheat Sheet: Lectura y Escritura de Archivos</router-link>
+- <router-link to="/cheatsheet/dictionaries">Cheat Sheet: Diccionarios</router-link>
+- <router-link to="/cheatsheet/context-manager">Cheat Sheet: Gestores de Contexto</router-link>
 - <router-link to="/builtin/open">open()</router-link>
 - <router-link to="/builtin/dict">dict()</router-link>

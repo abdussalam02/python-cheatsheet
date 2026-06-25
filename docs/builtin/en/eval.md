@@ -1,5 +1,5 @@
 ---
-title: Python eval() built-in function - Python Cheatsheet
+title: Python eval() built-in function - Python Cheat Sheet
 description: The arguments are a string and optional globals and locals. If provided, globals must be a dictionary. If provided, locals can be any mapping object.
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: Python SQLite3 Module - Python Cheatsheet
+title: Python SQLite3 Module - Python Cheat Sheet
 description: The sqlite3 module lets you use SQLite databases directly from Python without a separate database server.
 ---
 
@@ -106,5 +106,5 @@ print(rows)
 ## Relevant links
 
 - <router-link to="/modules/json-module">Module: json</router-link>
-- <router-link to="/cheatsheet/reading-and-writing-files">Cheatsheet: Reading and Writing Files</router-link>
+- <router-link to="/cheatsheet/reading-and-writing-files">Cheat Sheet: Reading and Writing Files</router-link>
 - <router-link to="/builtin/open">open()</router-link>

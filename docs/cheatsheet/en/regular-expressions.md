@@ -1,5 +1,5 @@
 ---
-title: Python Regular Expressions - Python Cheatsheet
+title: Python Regular Expressions - Python Cheat Sheet
 description: A regular expression (shortened as regex) is a sequence of characters that specifies a search pattern in text and used by string-searching algorithms.
 labUrl: https://labex.io/labs/python-python-regular-expressions-633664?course=python-cheatsheet
 ---

@@ -75,7 +75,7 @@ print(next(i))
 
 ## Relevante Links
 
-- <router-link to="/cheatsheet/control-flow">Cheatsheet: Kontrollfluss (for-Schleifen)</router-link>
+- <router-link to="/cheatsheet/control-flow">Cheat Sheet: Kontrollfluss (for-Schleifen)</router-link>
 - <router-link to="/modules/itertools-module">Modul: itertools</router-link>
 - <router-link to="/builtin/iter">iter()</router-link>
 - <router-link to="/builtin/map">map()</router-link>

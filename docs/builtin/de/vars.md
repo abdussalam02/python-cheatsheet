@@ -56,9 +56,9 @@ my_function()
 
 ## Relevante Links
 
-- <router-link to="/cheatsheet/oop-basics">Cheatsheet: OOP Grundlagen</router-link>
-- <router-link to="/cheatsheet/debugging">Cheatsheet: Debugging</router-link>
-- <router-link to="/cheatsheet/dictionaries">Cheatsheet: Dictionaries</router-link>
+- <router-link to="/cheatsheet/oop-basics">Cheat Sheet: OOP Grundlagen</router-link>
+- <router-link to="/cheatsheet/debugging">Cheat Sheet: Debugging</router-link>
+- <router-link to="/cheatsheet/dictionaries">Cheat Sheet: Dictionaries</router-link>
 - <router-link to="/builtin/dir">dir()</router-link>
 - <router-link to="/builtin/object">object()</router-link>
 - <router-link to="/builtin/globals">globals()</router-link>

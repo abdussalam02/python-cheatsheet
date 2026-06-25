@@ -1,5 +1,5 @@
 ---
-title: Python dir() built-in function - Python Cheatsheet
+title: Python dir() built-in function - Python Cheat Sheet
 description: Without arguments, return the list of names in the current local scope. With an argument, attempt to return a list of valid attributes for that object.
 ---
 

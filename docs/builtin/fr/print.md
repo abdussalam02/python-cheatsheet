@@ -65,8 +65,8 @@ cats,dogs,mice
 
 ## Liens pertinents
 
-- <router-link to="/cheatsheet/string-formatting">Cheatsheet : Formatage de chaînes</router-link>
-- <router-link to="/cheatsheet/manipulating-strings">Cheatsheet : Manipulation de chaînes</router-link>
+- <router-link to="/cheatsheet/string-formatting">Cheat Sheet : Formatage de chaînes</router-link>
+- <router-link to="/cheatsheet/manipulating-strings">Cheat Sheet : Manipulation de chaînes</router-link>
 - <router-link to="/builtin/format">format()</router-link>
 - <router-link to="/builtin/input">input()</router-link>
 - <router-link to="/builtin/open">open()</router-link>

@@ -1,5 +1,5 @@
 ---
-title: Python locals() built-in function - Python Cheatsheet
+title: Python locals() built-in function - Python Cheat Sheet
 description: Update and return a dictionary representing the current local symbol table. Free variables are returned by locals() when it is called in function blocks, but not in class blocks. Note that at the module level, locals() and globals() are the same dictionary.
 ---
 
@@ -38,8 +38,8 @@ my_function("hello", "world")
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/debugging">Cheatsheet: Debugging</router-link>
-- <router-link to="/cheatsheet/functions">Cheatsheet: Functions</router-link>
-- <router-link to="/cheatsheet/dictionaries">Cheatsheet: Dictionaries</router-link>
+- <router-link to="/cheatsheet/debugging">Cheat Sheet: Debugging</router-link>
+- <router-link to="/cheatsheet/functions">Cheat Sheet: Functions</router-link>
+- <router-link to="/cheatsheet/dictionaries">Cheat Sheet: Dictionaries</router-link>
 - <router-link to="/builtin/globals">globals()</router-link>
 - <router-link to="/builtin/dir">dir()</router-link>

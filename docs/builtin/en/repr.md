@@ -1,5 +1,5 @@
 ---
-title: Python repr() built-in function - Python Cheatsheet
+title: Python repr() built-in function - Python Cheat Sheet
 description: Return a string containing a printable representation of an object. For many types, this function makes an attempt to return a string that would yield an object with the same value when passed to eval(); otherwise, the representation is a string enclosed in angle brackets that contains the name of the type of the object together with additional information often including the name and address of the object. A class can control what this function returns for its instances by defining a __repr__() method.
 ---
 
@@ -54,9 +54,9 @@ Person(name='John')
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/oop-basics">Cheatsheet: OOP Basics</router-link>
-- <router-link to="/cheatsheet/debugging">Cheatsheet: Debugging</router-link>
-- <router-link to="/cheatsheet/string-formatting">Cheatsheet: String Formatting</router-link>
+- <router-link to="/cheatsheet/oop-basics">Cheat Sheet: OOP Basics</router-link>
+- <router-link to="/cheatsheet/debugging">Cheat Sheet: Debugging</router-link>
+- <router-link to="/cheatsheet/string-formatting">Cheat Sheet: String Formatting</router-link>
 - <router-link to="/builtin/str">str()</router-link>
 - <router-link to="/builtin/ascii">ascii()</router-link>
 - <router-link to="/builtin/eval">eval()</router-link>

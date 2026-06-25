@@ -51,8 +51,8 @@ Um método estático não tem acesso à classe (`cls`) ou à instância (`self`)
 
 ## Links relevantes
 
-- <router-link to="/cheatsheet/oop-basics">Cheatsheet: Noções Básicas de OOP</router-link>
-- <router-link to="/cheatsheet/decorators">Cheatsheet: Decoradores</router-link>
-- <router-link to="/cheatsheet/functions">Cheatsheet: Funções</router-link>
+- <router-link to="/cheatsheet/oop-basics">Cheat Sheet: Noções Básicas de OOP</router-link>
+- <router-link to="/cheatsheet/decorators">Cheat Sheet: Decoradores</router-link>
+- <router-link to="/cheatsheet/functions">Cheat Sheet: Funções</router-link>
 - <router-link to="/builtin/classmethod">classmethod()</router-link>
 - <router-link to="/builtin/property">property()</router-link>

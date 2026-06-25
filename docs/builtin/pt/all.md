@@ -45,8 +45,8 @@ True
 
 ## Links relevantes
 
-- <router-link to="/cheatsheet/control-flow">Cheatsheet: Controle de Fluxo</router-link>
-- <router-link to="/cheatsheet/comprehensions">Cheatsheet: Compreensões</router-link>
+- <router-link to="/cheatsheet/control-flow">Cheat Sheet: Controle de Fluxo</router-link>
+- <router-link to="/cheatsheet/comprehensions">Cheat Sheet: Compreensões</router-link>
 - <router-link to="/blog/python-data-types">Blog: Tipos de Dados Python</router-link>
 - <router-link to="/builtin/any">any()</router-link>
 - <router-link to="/builtin/bool">bool()</router-link>

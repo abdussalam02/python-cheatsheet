@@ -44,9 +44,9 @@ Hello from Child
 
 ## Enlaces relevantes
 
-- <router-link to="/cheatsheet/oop-basics">Cheatsheet: Conceptos básicos de OOP</router-link>
-- <router-link to="/cheatsheet/decorators">Cheatsheet: Decoradores</router-link>
-- <router-link to="/cheatsheet/functions">Cheatsheet: Funciones</router-link>
+- <router-link to="/cheatsheet/oop-basics">Cheat Sheet: Conceptos básicos de OOP</router-link>
+- <router-link to="/cheatsheet/decorators">Cheat Sheet: Decoradores</router-link>
+- <router-link to="/cheatsheet/functions">Cheat Sheet: Funciones</router-link>
 - <router-link to="/builtin/object">object()</router-link>
 - <router-link to="/builtin/isinstance">isinstance()</router-link>
 - <router-link to="/builtin/issubclass">issubclass()</router-link>

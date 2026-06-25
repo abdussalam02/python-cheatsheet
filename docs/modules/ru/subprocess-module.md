@@ -123,8 +123,8 @@ with open('output.txt', 'w') as f:
 
 ## Соответствующие ссылки
 
-- <router-link to="/cheatsheet/reading-and-writing-files">Cheatsheet: Чтение и запись файлов</router-link>
-- <router-link to="/cheatsheet/file-directory-path">Cheatsheet: Путь к файлу и каталогу</router-link>
-- <router-link to="/cheatsheet/exception-handling">Cheatsheet: Обработка исключений</router-link>
+- <router-link to="/cheatsheet/reading-and-writing-files">Cheat Sheet: Чтение и запись файлов</router-link>
+- <router-link to="/cheatsheet/file-directory-path">Cheat Sheet: Путь к файлу и каталогу</router-link>
+- <router-link to="/cheatsheet/exception-handling">Cheat Sheet: Обработка исключений</router-link>
 - <router-link to="/modules/os-module">Module: os</router-link>
 - <router-link to="/builtin/open">open()</router-link>

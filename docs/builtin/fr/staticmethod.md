@@ -51,8 +51,8 @@ Une méthode statique n'a pas accès à la classe (`cls`) ni à l'instance (`sel
 
 ## Liens pertinents
 
-- <router-link to="/cheatsheet/oop-basics">Cheatsheet : Bases de l'OOP</router-link>
-- <router-link to="/cheatsheet/decorators">Cheatsheet : Décorateurs</router-link>
-- <router-link to="/cheatsheet/functions">Cheatsheet : Fonctions</router-link>
+- <router-link to="/cheatsheet/oop-basics">Cheat Sheet : Bases de l'OOP</router-link>
+- <router-link to="/cheatsheet/decorators">Cheat Sheet : Décorateurs</router-link>
+- <router-link to="/cheatsheet/functions">Cheat Sheet : Fonctions</router-link>
 - <router-link to="/builtin/classmethod">classmethod()</router-link>
 - <router-link to="/builtin/property">property()</router-link>

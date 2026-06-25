@@ -44,7 +44,7 @@ print(oct(1000))
 ## Links relevantes
 
 - <router-link to="/blog/python-data-types">Blog: Tipos de Dados do Python</router-link>
-- <router-link to="/cheatsheet/string-formatting">Cheatsheet: Formatação de Strings</router-link>
+- <router-link to="/cheatsheet/string-formatting">Cheat Sheet: Formatação de Strings</router-link>
 - <router-link to="/builtin/bin">bin()</router-link>
 - <router-link to="/builtin/hex">hex()</router-link>
 - <router-link to="/builtin/int">int()</router-link>

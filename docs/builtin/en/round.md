@@ -1,5 +1,5 @@
 ---
-title: Python round() built-in function - Python Cheatsheet
+title: Python round() built-in function - Python Cheat Sheet
 description: Return number rounded to ndigits precision after the decimal point. If ndigits is omitted or is None, it returns the nearest integer to its input.
 ---
 
@@ -48,7 +48,7 @@ print(round(3.5))
 ## Relevant links
 
 - <router-link to="/blog/python-data-types">Blog: Python Data Types</router-link>
-- <router-link to="/cheatsheet/string-formatting">Cheatsheet: String Formatting</router-link>
+- <router-link to="/cheatsheet/string-formatting">Cheat Sheet: String Formatting</router-link>
 - <router-link to="/builtin/format">format()</router-link>
 - <router-link to="/builtin/abs">abs()</router-link>
 - <router-link to="/builtin/float">float()</router-link>

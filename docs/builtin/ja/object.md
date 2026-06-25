@@ -40,7 +40,7 @@ Note: 設定できる属性はありません。`o.name = "test"` は AttributeE
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/oop-basics">Cheatsheet: OOP Basics</router-link>
+- <router-link to="/cheatsheet/oop-basics">Cheat Sheet: OOP Basics</router-link>
 - <router-link to="/blog/python-data-types">Blog: Python Data Types</router-link>
 - <router-link to="/builtin/isinstance">isinstance()</router-link>
 - <router-link to="/builtin/issubclass">issubclass()</router-link>

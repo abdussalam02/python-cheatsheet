@@ -1,5 +1,5 @@
 ---
-title: Python setattr() built-in function - Python Cheatsheet
+title: Python setattr() built-in function - Python Cheat Sheet
 description: This is the counterpart of getattr(). The arguments are an object, a string, and an arbitrary value. The string may name an existing attribute or a new attribute. The function assigns the value to the attribute, provided the object allows it. For example, setattr(x, 'foobar', 123) is equivalent to x.foobar = 123.
 ---
 
@@ -49,7 +49,7 @@ Jane
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/oop-basics">Cheatsheet: OOP Basics</router-link>
+- <router-link to="/cheatsheet/oop-basics">Cheat Sheet: OOP Basics</router-link>
 - <router-link to="/builtin/object">object()</router-link>
 - <router-link to="/builtin/dir">dir()</router-link>
 - <router-link to="/builtin/getattr">getattr()</router-link>

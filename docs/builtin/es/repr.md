@@ -54,9 +54,9 @@ Person(name='John')
 
 ## Enlaces relevantes
 
-- <router-link to="/cheatsheet/oop-basics">Cheatsheet: Fundamentos de OOP</router-link>
-- <router-link to="/cheatsheet/debugging">Cheatsheet: Depuración</router-link>
-- <router-link to="/cheatsheet/string-formatting">Cheatsheet: Formato de Cadenas</router-link>
+- <router-link to="/cheatsheet/oop-basics">Cheat Sheet: Fundamentos de OOP</router-link>
+- <router-link to="/cheatsheet/debugging">Cheat Sheet: Depuración</router-link>
+- <router-link to="/cheatsheet/string-formatting">Cheat Sheet: Formato de Cadenas</router-link>
 - <router-link to="/builtin/str">str()</router-link>
 - <router-link to="/builtin/ascii">ascii()</router-link>
 - <router-link to="/builtin/eval">eval()</router-link>

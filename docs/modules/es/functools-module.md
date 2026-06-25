@@ -69,13 +69,13 @@ Para sumas simples, prefiere la función integrada `sum()`. `reduce` es más út
 ```python
 from functools import reduce
 
-words = ['Python', 'Cheatsheet']
+words = ['Python', 'Cheat Sheet']
 title = reduce(lambda left, right: f'{left} {right}', words)
 print(title)
 ```
 
 ```output
-Python Cheatsheet
+Python Cheat Sheet
 ```
 
 ## lru_cache()

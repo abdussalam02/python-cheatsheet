@@ -49,7 +49,7 @@ Jane
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/oop-basics">Cheatsheet: Основы ООП</router-link>
+- <router-link to="/cheatsheet/oop-basics">Cheat Sheet: Основы ООП</router-link>
 - <router-link to="/builtin/object">object()</router-link>
 - <router-link to="/builtin/dir">dir()</router-link>
 - <router-link to="/builtin/getattr">getattr()</router-link>

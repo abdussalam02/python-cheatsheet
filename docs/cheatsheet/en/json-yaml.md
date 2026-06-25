@@ -1,5 +1,5 @@
 ---
-title: Python JSON and YAML - Python Cheatsheet
+title: Python JSON and YAML - Python Cheat Sheet
 description: JSON stands for JavaScript Object Notation and is a lightweight format for storing and transporting data. JSON is often used when data is sent from a server to a web page.
 labUrl: https://labex.io/labs/python-python-json-and-yaml-633659?course=python-cheatsheet
 ---

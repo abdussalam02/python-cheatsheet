@@ -62,9 +62,9 @@ print(spam2)
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/lists-and-tuples">Cheatsheet : Listes et Tuples</router-link>
-- <router-link to="/cheatsheet/manipulating-strings">Cheatsheet : Manipulation de chaînes</router-link>
-- <router-link to="/cheatsheet/comprehensions">Cheatsheet : Compréhensions</router-link>
+- <router-link to="/cheatsheet/lists-and-tuples">Cheat Sheet : Listes et Tuples</router-link>
+- <router-link to="/cheatsheet/manipulating-strings">Cheat Sheet : Manipulation de chaînes</router-link>
+- <router-link to="/cheatsheet/comprehensions">Cheat Sheet : Compréhensions</router-link>
 - <router-link to="/modules/itertools-module">Module : itertools (islice)</router-link>
 - <router-link to="/builtin/range">range()</router-link>
 - <router-link to="/builtin/len">len()</router-link>

@@ -179,14 +179,14 @@ export function useMeta(articleMeta?: ArticleMeta) {
       { name: 'description', content: pageDescription.value },
       { name: 'language', content: currentLocale.value },
       { 'http-equiv': 'content-language', content: currentLocale.value },
-      { name: 'author', content: 'Python Cheatsheet' },
+      { name: 'author', content: 'Python Cheat Sheet' },
       { name: 'keywords', content: keywords.value },
       { property: 'og:title', content: pageTitle.value },
       { property: 'og:description', content: pageDescription.value },
       { property: 'og:url', content: url.value },
       { property: 'og:type', content: ogType.value },
       { property: 'og:image', content: pageImage.value },
-      { property: 'og:site_name', content: 'Python Cheatsheet' },
+      { property: 'og:site_name', content: 'Python Cheat Sheet' },
       { property: 'og:locale', content: localeCode.value },
       { name: 'twitter:title', content: pageTitle.value },
       { name: 'twitter:description', content: pageDescription.value },
@@ -215,7 +215,7 @@ export function useMeta(articleMeta?: ArticleMeta) {
           tags.push({ property: 'article:tag', content: tag })
         })
       }
-      tags.push({ property: 'article:author', content: 'Python Cheatsheet' })
+      tags.push({ property: 'article:author', content: 'Python Cheat Sheet' })
     }
 
     return tags

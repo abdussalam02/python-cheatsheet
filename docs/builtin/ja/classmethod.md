@@ -55,9 +55,9 @@ Name: John, Age: 30
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/oop-basics">Cheatsheet: OOP Basics</router-link>
-- <router-link to="/cheatsheet/decorators">Cheatsheet: Decorators</router-link>
-- <router-link to="/cheatsheet/functions">Cheatsheet: Functions</router-link>
+- <router-link to="/cheatsheet/oop-basics">Cheat Sheet: OOP Basics</router-link>
+- <router-link to="/cheatsheet/decorators">Cheat Sheet: Decorators</router-link>
+- <router-link to="/cheatsheet/functions">Cheat Sheet: Functions</router-link>
 - <router-link to="/builtin/staticmethod">staticmethod()</router-link>
 - <router-link to="/builtin/property">property()</router-link>
 - <router-link to="/builtin/object">object()</router-link>

@@ -1,5 +1,5 @@
 ---
-title: Python format() built-in function - Python Cheatsheet
+title: Python format() built-in function - Python Cheat Sheet
 description: Convert a value to a “formatted” representation, as controlled by format_spec. The interpretation of format_spec will depend on the type of the value argument. [...].
 ---
 

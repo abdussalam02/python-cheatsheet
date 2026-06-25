@@ -1,5 +1,5 @@
 ---
-title: Python len() built-in function - Python Cheatsheet
+title: Python len() built-in function - Python Cheat Sheet
 description: Return the length (the number of items) of an object. The argument may be a sequence (such as a string, bytes, tuple, list, or range) or a collection (such as a dictionary, set, or frozen set).
 ---
 
@@ -63,9 +63,9 @@ the list is not empty!
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/lists-and-tuples">Cheatsheet: Lists and Tuples</router-link>
-- <router-link to="/cheatsheet/dictionaries">Cheatsheet: Dictionaries</router-link>
-- <router-link to="/cheatsheet/sets">Cheatsheet: Sets</router-link>
+- <router-link to="/cheatsheet/lists-and-tuples">Cheat Sheet: Lists and Tuples</router-link>
+- <router-link to="/cheatsheet/dictionaries">Cheat Sheet: Dictionaries</router-link>
+- <router-link to="/cheatsheet/sets">Cheat Sheet: Sets</router-link>
 - <router-link to="/blog/python-data-types">Blog: Python Data Types</router-link>
 - <router-link to="/builtin/list">list()</router-link>
 - <router-link to="/builtin/tuple">tuple()</router-link>

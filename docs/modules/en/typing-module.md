@@ -1,5 +1,5 @@
 ---
-title: Python Typing Module - Python Cheatsheet
+title: Python Typing Module - Python Cheat Sheet
 description: The typing module provides type hints for function arguments, return values, and data structures.
 ---
 
@@ -106,6 +106,6 @@ print(show_location((12.5, 35.8)))
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/functions">Cheatsheet: Functions</router-link>
-- <router-link to="/cheatsheet/dictionaries">Cheatsheet: Dictionaries</router-link>
-- <router-link to="/cheatsheet/dataclasses">Cheatsheet: Dataclasses</router-link>
+- <router-link to="/cheatsheet/functions">Cheat Sheet: Functions</router-link>
+- <router-link to="/cheatsheet/dictionaries">Cheat Sheet: Dictionaries</router-link>
+- <router-link to="/cheatsheet/dataclasses">Cheat Sheet: Dataclasses</router-link>

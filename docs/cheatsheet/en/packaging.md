@@ -1,5 +1,5 @@
 ---
-title: Python Packaging - Python Cheatsheet
+title: Python Packaging - Python Cheat Sheet
 description: Learn how to package Python projects using setup.py and pyproject.toml. Understand the modern approach to Python packaging with PEP-517, PEP-518, and PEP-660 specifications.
 labUrl: https://labex.io/labs/python-python-setup-py-633666?course=python-cheatsheet
 ---

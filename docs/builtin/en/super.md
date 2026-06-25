@@ -1,5 +1,5 @@
 ---
-title: Python super() built-in function - Python Cheatsheet
+title: Python super() built-in function - Python Cheat Sheet
 description: Return a proxy object that delegates method calls to a parent or sibling class of type. This is useful for accessing inherited methods that have been overridden in a class.
 ---
 
@@ -44,9 +44,9 @@ Hello from Child
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/oop-basics">Cheatsheet: OOP Basics</router-link>
-- <router-link to="/cheatsheet/decorators">Cheatsheet: Decorators</router-link>
-- <router-link to="/cheatsheet/functions">Cheatsheet: Functions</router-link>
+- <router-link to="/cheatsheet/oop-basics">Cheat Sheet: OOP Basics</router-link>
+- <router-link to="/cheatsheet/decorators">Cheat Sheet: Decorators</router-link>
+- <router-link to="/cheatsheet/functions">Cheat Sheet: Functions</router-link>
 - <router-link to="/builtin/object">object()</router-link>
 - <router-link to="/builtin/isinstance">isinstance()</router-link>
 - <router-link to="/builtin/issubclass">issubclass()</router-link>

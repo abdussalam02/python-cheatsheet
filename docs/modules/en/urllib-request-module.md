@@ -1,5 +1,5 @@
 ---
-title: Python urllib.request Module - Python Cheatsheet
+title: Python urllib.request Module - Python Cheat Sheet
 description: The urllib.request module lets you fetch data from URLs using the Python standard library.
 ---
 
@@ -75,5 +75,5 @@ ok
 ## Relevant links
 
 - <router-link to="/modules/json-module">Module: json</router-link>
-- <router-link to="/cheatsheet/exception-handling">Cheatsheet: Exception Handling</router-link>
-- <router-link to="/cheatsheet/reading-and-writing-files">Cheatsheet: Reading and Writing Files</router-link>
+- <router-link to="/cheatsheet/exception-handling">Cheat Sheet: Exception Handling</router-link>
+- <router-link to="/cheatsheet/reading-and-writing-files">Cheat Sheet: Reading and Writing Files</router-link>

@@ -1,5 +1,5 @@
 ---
-title: Python OS Module - Python Cheatsheet
+title: Python OS Module - Python Cheat Sheet
 description: This module provides a portable way of using operating system dependent functionality.
 ---
 
@@ -350,8 +350,8 @@ FILE INSIDE /tmp/delicious/walnut/waffles: butter.txt
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/file-directory-path">Cheatsheet: File & Directory Path</router-link>
-- <router-link to="/cheatsheet/reading-and-writing-files">Cheatsheet: Reading and Writing Files</router-link>
+- <router-link to="/cheatsheet/file-directory-path">Cheat Sheet: File & Directory Path</router-link>
+- <router-link to="/cheatsheet/reading-and-writing-files">Cheat Sheet: Reading and Writing Files</router-link>
 - <router-link to="/blog/python-pathlib-essentials">Blog: Pathlib Essentials</router-link>
 - <router-link to="/modules/pathlib-module">Module: pathlib</router-link>
 - <router-link to="/builtin/open">open()</router-link>

@@ -54,9 +54,9 @@ Person(name='John')
 
 ## Links Relevantes
 
-- <router-link to="/cheatsheet/oop-basics">Cheatsheet: Noções Básicas de OOP</router-link>
-- <router-link to="/cheatsheet/debugging">Cheatsheet: Depuração (Debugging)</router-link>
-- <router-link to="/cheatsheet/string-formatting">Cheatsheet: Formatação de Strings</router-link>
+- <router-link to="/cheatsheet/oop-basics">Cheat Sheet: Noções Básicas de OOP</router-link>
+- <router-link to="/cheatsheet/debugging">Cheat Sheet: Depuração (Debugging)</router-link>
+- <router-link to="/cheatsheet/string-formatting">Cheat Sheet: Formatação de Strings</router-link>
 - <router-link to="/builtin/str">str()</router-link>
 - <router-link to="/builtin/ascii">ascii()</router-link>
 - <router-link to="/builtin/eval">eval()</router-link>

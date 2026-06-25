@@ -1,5 +1,5 @@
 ---
-title: Python Subprocess Module - Python Cheatsheet
+title: Python Subprocess Module - Python Cheat Sheet
 description: The subprocess module allows us to start and manage system processes.
 ---
 
@@ -123,8 +123,8 @@ Here, both normal output and errors will appear in the file, in the order they a
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/reading-and-writing-files">Cheatsheet: Reading and Writing Files</router-link>
-- <router-link to="/cheatsheet/file-directory-path">Cheatsheet: File & Directory Path</router-link>
-- <router-link to="/cheatsheet/exception-handling">Cheatsheet: Exception Handling</router-link>
+- <router-link to="/cheatsheet/reading-and-writing-files">Cheat Sheet: Reading and Writing Files</router-link>
+- <router-link to="/cheatsheet/file-directory-path">Cheat Sheet: File & Directory Path</router-link>
+- <router-link to="/cheatsheet/exception-handling">Cheat Sheet: Exception Handling</router-link>
 - <router-link to="/modules/os-module">Module: os</router-link>
 - <router-link to="/builtin/open">open()</router-link>

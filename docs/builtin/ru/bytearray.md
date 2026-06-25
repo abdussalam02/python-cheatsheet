@@ -55,8 +55,8 @@ bytearray(b'hello!')
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/reading-and-writing-files">Cheatsheet: Чтение и запись файлов</router-link>
-- <router-link to="/cheatsheet/lists-and-tuples">Cheatsheet: Списки и кортежи</router-link>
+- <router-link to="/cheatsheet/reading-and-writing-files">Cheat Sheet: Чтение и запись файлов</router-link>
+- <router-link to="/cheatsheet/lists-and-tuples">Cheat Sheet: Списки и кортежи</router-link>
 - <router-link to="/blog/python-data-types">Blog: Типы данных Python</router-link>
 - <router-link to="/builtin/bytes">bytes()</router-link>
 - <router-link to="/builtin/str">str()</router-link>

@@ -1,5 +1,5 @@
 ---
-title: Python Threading Module - Python Cheatsheet
+title: Python Threading Module - Python Cheat Sheet
 description: The threading module lets you run multiple threads in the same process and coordinate them with locks.
 ---
 
@@ -106,5 +106,5 @@ The actual completion order may vary because threads run concurrently, so this e
 ## Relevant links
 
 - <router-link to="/modules/subprocess-module">Module: subprocess</router-link>
-- <router-link to="/cheatsheet/functions">Cheatsheet: Functions</router-link>
-- <router-link to="/cheatsheet/context-manager">Cheatsheet: Context Manager</router-link>
+- <router-link to="/cheatsheet/functions">Cheat Sheet: Functions</router-link>
+- <router-link to="/cheatsheet/context-manager">Cheat Sheet: Context Manager</router-link>

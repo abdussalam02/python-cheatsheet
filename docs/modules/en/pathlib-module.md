@@ -1,5 +1,5 @@
 ---
-title: Python Pathlib Module - Python Cheatsheet
+title: Python Pathlib Module - Python Cheat Sheet
 description: The pathlib module was added in Python 3.4, offering an object-oriented way to handle file system paths.
 ---
 
@@ -374,7 +374,7 @@ print(total_size)
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/reading-and-writing-files">Cheatsheet: Reading and Writing Files</router-link>
+- <router-link to="/cheatsheet/reading-and-writing-files">Cheat Sheet: Reading and Writing Files</router-link>
 - <router-link to="/modules/os-module">Module: os</router-link>
 - <router-link to="/builtin/open">open()</router-link>
 - <router-link to="/builtin/str">str()</router-link>

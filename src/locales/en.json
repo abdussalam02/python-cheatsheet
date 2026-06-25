@@ -1,19 +1,19 @@
 {
   "sidebar": {
     "introduction": "Introduction",
-    "cheatsheet": "Cheatsheet",
+    "cheatsheet": "Cheat Sheet",
     "standardLibrary": "Standard Library",
     "builtinFunctions": "Built-in Functions",
     "gettingStarted": "Getting Started"
   },
   "navbar": {
     "blog": "Blog",
-    "pythonCheatsheetPdf": "Python Cheatsheet PDF",
-    "repositoryLink": "python cheatsheet repository",
+    "pythonCheatsheetPdf": "Python Cheat Sheet PDF",
+    "repositoryLink": "python cheat sheet repository",
     "login": "Login"
   },
   "footer": {
-    "moreCheatsheets": "More Cheatsheets"
+    "moreCheatsheets": "More Cheat Sheets"
   },
   "mobile": {
     "openNavigation": "Open navigation",
@@ -45,14 +45,14 @@
     "goBackHome": "Go back home"
   },
   "home": {
-    "title": "Python Cheatsheet",
+    "title": "Python Cheat Sheet",
     "anyoneCanForget": "Anyone can forget how to",
     "makeCharacterClasses": "make character classes",
     "forRegex": "for a regex,",
     "sliceAList": "slice a list",
     "orDoA": "or do a",
     "forLoop": "for loop",
-    "description": "This Python cheatsheet tries to provide basic reference for beginner and advanced developers, lower the entry barrier for newcomers and help veterans refresh the old tricks. View all",
+    "description": "This Python cheat sheet tries to provide basic reference for beginner and advanced developers, lower the entry barrier for newcomers and help veterans refresh the old tricks. View all",
     "contributors": "contributors",
     "onGithub": "on GitHub.",
     "cardLinks": {
@@ -63,7 +63,7 @@
       "pythonCourse": "Python Course",
       "pythonCourseDesc": "Learn Python with interactive hands-on labs and master Python programming.",
       "contribute": "Contribute",
-      "contributeDesc": "Get to know how easy it is to contribute to the Python Cheatsheet.",
+      "contributeDesc": "Get to know how easy it is to contribute to the Python Cheat Sheet.",
       "blog": "Blog",
       "blogDesc": "Read detailed articles about Python and it's ecosystem.",
       "changelog": "Changelog",
@@ -80,8 +80,8 @@
     "next": "Next",
     "olderPosts": "Older posts",
     "readArticle": "Read article",
-    "title": "Blog - Python Cheatsheet",
-    "description": "These articles provide a deeper look to the the contents of the Python Cheatsheet."
+    "title": "Blog - Python Cheat Sheet",
+    "description": "These articles provide a deeper look to the the contents of the Python Cheat Sheet."
   },
   "navigation": {
     "cheatsheet": {
@@ -146,6 +146,6 @@
   "meta": {
     "title": "Python Cheat Sheet – Python Basics for Beginners",
     "description": "The most complete Python cheat sheet online. Learn step-by-step with interactive labs, download free PDF cheat sheets, and explore beginner-friendly Python guides.",
-    "keywords": "python cheat sheet, python cheatsheet, python basics, python syntax guide, python reference, learn python, python pdf cheatsheet"
+    "keywords": "python cheat sheet, python basics, python syntax guide, python reference, learn python, python pdf cheat sheet"
   }
 }

@@ -1,5 +1,5 @@
 ---
-title: 'Contributing - Python Cheatsheet'
+title: 'Contributing - Python Cheat Sheet'
 description: The following is a set of guidelines for contributing to the Python cheatsheet. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document.
 date: June 09, 2018
 updated: August 03, 2025
@@ -9,7 +9,7 @@ updated: August 03, 2025
 Contributing
 </base-title>
 
-First off, thank you for considering contributing to the Python Cheatsheet! It's people like you that make this project a great resource for the Python community.
+First off, thank you for considering contributing to the Python Cheat Sheet! It's people like you that make this project a great resource for the Python community.
 
 Following these guidelines helps to communicate that you respect the time of the developers managing and developing this open source project. In return, they should reciprocate that respect in addressing your issue, assessing changes, and helping you finalize your pull requests.
 
@@ -93,7 +93,7 @@ Ready to start contributing? Here’s how to set up the project on your local ma
 
 ### Content Contribution Guide
 
-#### Adding a New Cheatsheet Page
+#### Adding a New Cheat Sheet Page
 
 1.  Create a new Markdown file in `docs/cheatsheet/en/` directory.
 2.  **Important:** English documentation must be placed in the `en/` subdirectory. Do not create translations for other languages - i18n translations will be handled automatically by scripts during deployment.
@@ -101,7 +101,7 @@ Ready to start contributing? Here’s how to set up the project on your local ma
 
     ```markdown
     ---
-    title: Topic Name - Python Cheatsheet
+    title: Topic Name - Python Cheat Sheet
     description: Brief description of the topic
     ---
 
@@ -124,7 +124,7 @@ Ready to start contributing? Here’s how to set up the project on your local ma
 
     ```markdown
     ---
-    title: Python Module Name - Python Cheatsheet
+    title: Python Module Name - Python Cheat Sheet
     description: Brief description of the module
     ---
 
@@ -140,7 +140,7 @@ Ready to start contributing? Here’s how to set up the project on your local ma
 
     ## Relevant links
 
-    - <router-link to="/cheatsheet/...">Cheatsheet: ...</router-link>
+    - <router-link to="/cheatsheet/...">Cheat Sheet: ...</router-link>
     - <router-link to="/modules/...">Module: ...</router-link>
     ```
 
@@ -154,7 +154,7 @@ Ready to start contributing? Here’s how to set up the project on your local ma
 
     ```markdown
     ---
-    title: Post Title - Python Cheatsheet
+    title: Post Title - Python Cheat Sheet
     description: Post description
     date: MMM DD, YYYY
     updated: MMM DD, YYYY
@@ -166,7 +166,7 @@ Ready to start contributing? Here’s how to set up the project on your local ma
     meta:
         layout: article
         # You must duplicate the frontmatter here for SSG
-        title: Post Title - Python Cheatsheet
+        title: Post Title - Python Cheat Sheet
         description: Post description
         date: MMM DD, YYYY
         updated: MMM DD, YYYY

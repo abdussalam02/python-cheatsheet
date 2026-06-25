@@ -1,5 +1,5 @@
 ---
-title: Python pow() built-in function - Python Cheatsheet
+title: Python pow() built-in function - Python Cheat Sheet
 description: The pow() function returns the power of a number.
 ---
 

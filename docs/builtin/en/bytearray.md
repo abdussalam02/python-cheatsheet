@@ -1,5 +1,5 @@
 ---
-title: Python bytearray() built-in function - Python Cheatsheet
+title: Python bytearray() built-in function - Python Cheat Sheet
 description: Return a new array of bytes. The bytearray class is a mutable sequence of integers in the range [...]. It has most of the usual methods of mutable sequences, described in Mutable Sequence Types, as well as most methods that the bytes type has [...]
 ---
 
@@ -55,8 +55,8 @@ bytearray(b'hello!')
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/reading-and-writing-files">Cheatsheet: Reading and Writing Files</router-link>
-- <router-link to="/cheatsheet/lists-and-tuples">Cheatsheet: Lists and Tuples</router-link>
+- <router-link to="/cheatsheet/reading-and-writing-files">Cheat Sheet: Reading and Writing Files</router-link>
+- <router-link to="/cheatsheet/lists-and-tuples">Cheat Sheet: Lists and Tuples</router-link>
 - <router-link to="/blog/python-data-types">Blog: Python Data Types</router-link>
 - <router-link to="/builtin/bytes">bytes()</router-link>
 - <router-link to="/builtin/str">str()</router-link>

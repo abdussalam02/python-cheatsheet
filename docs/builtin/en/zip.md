@@ -1,5 +1,5 @@
 ---
-title: Python zip() built-in function - Python Cheatsheet
+title: Python zip() built-in function - Python Cheat Sheet
 description: Iterate over several iterables in parallel, producing tuples with an item from each one.
 ---
 

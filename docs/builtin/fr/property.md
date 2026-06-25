@@ -72,9 +72,9 @@ John
 
 ## Liens pertinents
 
-- <router-link to="/cheatsheet/oop-basics">Cheatsheet : Bases de l'OOP</router-link>
-- <router-link to="/cheatsheet/decorators">Cheatsheet : Décorateurs</router-link>
-- <router-link to="/cheatsheet/dataclasses">Cheatsheet : Dataclasses</router-link>
+- <router-link to="/cheatsheet/oop-basics">Cheat Sheet : Bases de l'OOP</router-link>
+- <router-link to="/cheatsheet/decorators">Cheat Sheet : Décorateurs</router-link>
+- <router-link to="/cheatsheet/dataclasses">Cheat Sheet : Dataclasses</router-link>
 - <router-link to="/builtin/getattr">getattr()</router-link>
 - <router-link to="/builtin/setattr">setattr()</router-link>
 - <router-link to="/builtin/delattr">delattr()</router-link>

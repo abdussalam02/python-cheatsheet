@@ -68,7 +68,7 @@ Les motifs compilés sont utiles lorsque vous réutilisez la même expression.
 import re
 
 pattern = re.compile(r'^python', re.IGNORECASE)
-print(bool(pattern.match('Python Cheatsheet')))
+print(bool(pattern.match('Python Cheat Sheet')))
 ```
 
 ```output

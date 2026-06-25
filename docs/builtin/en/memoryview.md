@@ -1,5 +1,5 @@
 ---
-title: Python memoryview() built-in function - Python Cheatsheet
+title: Python memoryview() built-in function - Python Cheat Sheet
 description: Return a “memory view” object created from the given argument. See Memory Views for more information.
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: Python iter() built-in function - Python Cheatsheet
+title: Python iter() built-in function - Python Cheat Sheet
 description: Return an iterator object. The first argument is interpreted very differently depending on the presence of the second argument. Without a second argument, object must be a collection object which supports the iterable protocol, or it must support the sequence protocol. If it does not support either of those protocols, TypeError is raised.
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: 'Python projects with Poetry and VSCode Part 2 - Python Cheatsheet'
+title: 'Python projects with Poetry and VSCode Part 2 - Python Cheat Sheet'
 description: In this second part, we'll add our virtual Environment to VSCode, update our dependencies and integrate Flake8, Black and Pytest with the editor.
 date: April 23, 2019
 updated: July 3, 2022

@@ -342,7 +342,7 @@ random.uniform(1, 5)
 
 ## Links relevantes
 
-- <router-link to="/cheatsheet/lists-and-tuples">Cheatsheet: Listas e Tuplas</router-link>
+- <router-link to="/cheatsheet/lists-and-tuples">Cheat Sheet: Listas e Tuplas</router-link>
 - <router-link to="/blog/python-data-types">Blog: Tipos de Dados Python</router-link>
 - <router-link to="/builtin/list">list()</router-link>
 - <router-link to="/builtin/set">set()</router-link>

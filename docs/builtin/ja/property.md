@@ -72,9 +72,9 @@ John
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/oop-basics">Cheatsheet: OOP の基本</router-link>
-- <router-link to="/cheatsheet/decorators">Cheatsheet: デコレータ</router-link>
-- <router-link to="/cheatsheet/dataclasses">Cheatsheet: データクラス</router-link>
+- <router-link to="/cheatsheet/oop-basics">Cheat Sheet: OOP の基本</router-link>
+- <router-link to="/cheatsheet/decorators">Cheat Sheet: デコレータ</router-link>
+- <router-link to="/cheatsheet/dataclasses">Cheat Sheet: データクラス</router-link>
 - <router-link to="/builtin/getattr">getattr()</router-link>
 - <router-link to="/builtin/setattr">setattr()</router-link>
 - <router-link to="/builtin/delattr">delattr()</router-link>

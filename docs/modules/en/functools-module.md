@@ -1,5 +1,5 @@
 ---
-title: Python Functools Module - Python Cheatsheet
+title: Python Functools Module - Python Cheat Sheet
 description: The functools module contains tools for higher-order functions such as partial, reduce, and lru_cache.
 ---
 
@@ -69,13 +69,13 @@ For simple sums, prefer the built-in `sum()` function. `reduce` is more useful w
 ```python
 from functools import reduce
 
-words = ['Python', 'Cheatsheet']
+words = ['Python', 'Cheat Sheet']
 title = reduce(lambda left, right: f'{left} {right}', words)
 print(title)
 ```
 
 ```output
-Python Cheatsheet
+Python Cheat Sheet
 ```
 
 ## lru_cache()
@@ -110,6 +110,6 @@ True
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/functions">Cheatsheet: Functions</router-link>
-- <router-link to="/cheatsheet/decorators">Cheatsheet: Decorators</router-link>
+- <router-link to="/cheatsheet/functions">Cheat Sheet: Functions</router-link>
+- <router-link to="/cheatsheet/decorators">Cheat Sheet: Decorators</router-link>
 - <router-link to="/modules/itertools-module">Module: itertools</router-link>

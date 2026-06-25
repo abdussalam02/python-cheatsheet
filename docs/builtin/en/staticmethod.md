@@ -1,5 +1,5 @@
 ---
-title: Python staticmethod() built-in function - Python Cheatsheet
+title: Python staticmethod() built-in function - Python Cheat Sheet
 description: Transform a method into a static method.
 ---
 
@@ -51,8 +51,8 @@ A static method does not have access to the class (`cls`) or the instance (`self
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/oop-basics">Cheatsheet: OOP Basics</router-link>
-- <router-link to="/cheatsheet/decorators">Cheatsheet: Decorators</router-link>
-- <router-link to="/cheatsheet/functions">Cheatsheet: Functions</router-link>
+- <router-link to="/cheatsheet/oop-basics">Cheat Sheet: OOP Basics</router-link>
+- <router-link to="/cheatsheet/decorators">Cheat Sheet: Decorators</router-link>
+- <router-link to="/cheatsheet/functions">Cheat Sheet: Functions</router-link>
 - <router-link to="/builtin/classmethod">classmethod()</router-link>
 - <router-link to="/builtin/property">property()</router-link>

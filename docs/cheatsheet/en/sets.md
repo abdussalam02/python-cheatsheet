@@ -1,5 +1,5 @@
 ---
-title: Python Sets - Python Cheatsheet
+title: Python Sets - Python Cheat Sheet
 description: Python comes equipped with several built-in data types to help us organize our data. These structures include lists, dictionaries, tuples and sets.
 labUrl: https://labex.io/labs/python-python-sets-633665?course=python-cheatsheet
 ---

@@ -1,5 +1,5 @@
 ---
-title: Python Lists and Tuples - Python Cheatsheet
+title: Python Lists and Tuples - Python Cheat Sheet
 description: In python, Lists are are one of the 4 data types in Python used to store collections of data.
 labUrl: https://labex.io/labs/python-python-lists-and-tuples-633660?course=python-cheatsheet
 ---

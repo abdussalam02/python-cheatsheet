@@ -1,5 +1,5 @@
 ---
-title: Python max() built-in function - Python Cheatsheet
+title: Python max() built-in function - Python Cheat Sheet
 description: Return the largest item in an iterable or the largest of two or more arguments.
 ---
 
@@ -52,7 +52,7 @@ print(max(10, 20, 5))
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/lists-and-tuples">Cheatsheet: Lists and Tuples</router-link>
+- <router-link to="/cheatsheet/lists-and-tuples">Cheat Sheet: Lists and Tuples</router-link>
 - <router-link to="/builtin/min">min()</router-link>
 - <router-link to="/builtin/sorted">sorted()</router-link>
 - <router-link to="/builtin/sum">sum()</router-link>

@@ -1,5 +1,5 @@
 ---
-title: Python all() built-in function - Python Cheatsheet
+title: Python all() built-in function - Python Cheat Sheet
 description: Return True if all elements of the iterable are true (or if the iterable is empty).
 ---
 
@@ -45,8 +45,8 @@ True
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/control-flow">Cheatsheet: Control Flow</router-link>
-- <router-link to="/cheatsheet/comprehensions">Cheatsheet: Comprehensions</router-link>
+- <router-link to="/cheatsheet/control-flow">Cheat Sheet: Control Flow</router-link>
+- <router-link to="/cheatsheet/comprehensions">Cheat Sheet: Comprehensions</router-link>
 - <router-link to="/blog/python-data-types">Blog: Python Data Types</router-link>
 - <router-link to="/builtin/any">any()</router-link>
 - <router-link to="/builtin/bool">bool()</router-link>

@@ -1,5 +1,5 @@
 ---
-title: Python Itertools Module - Python Cheatsheet
+title: Python Itertools Module - Python Cheat Sheet
 description: The itertools module is a collection of tools intended to be fast and use memory efficiently when handling iterators (like lists or dictionaries).
 ---
 
@@ -571,10 +571,10 @@ for each in itertools.zip_longest(colors, data, fillvalue=None):
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/control-flow">Cheatsheet: Control Flow (for loops)</router-link>
-- <router-link to="/cheatsheet/lists-and-tuples">Cheatsheet: Lists and Tuples</router-link>
-- <router-link to="/cheatsheet/comprehensions">Cheatsheet: Comprehensions</router-link>
-- <router-link to="/cheatsheet/functions">Cheatsheet: Functions (Generators)</router-link>
+- <router-link to="/cheatsheet/control-flow">Cheat Sheet: Control Flow (for loops)</router-link>
+- <router-link to="/cheatsheet/lists-and-tuples">Cheat Sheet: Lists and Tuples</router-link>
+- <router-link to="/cheatsheet/comprehensions">Cheat Sheet: Comprehensions</router-link>
+- <router-link to="/cheatsheet/functions">Cheat Sheet: Functions (Generators)</router-link>
 - <router-link to="/blog/python-comprehensions-step-by-step">Blog: Python Comprehensions Step-by-Step</router-link>
 - <router-link to="/builtin/iter">iter()</router-link>
 - <router-link to="/builtin/next">next()</router-link>

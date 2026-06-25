@@ -123,8 +123,8 @@ Hier erscheinen sowohl die normale Ausgabe als auch Fehler in der Datei, in der 
 
 ## Relevante Links
 
-- <router-link to="/cheatsheet/reading-and-writing-files">Cheatsheet: Lesen und Schreiben von Dateien</router-link>
-- <router-link to="/cheatsheet/file-directory-path">Cheatsheet: Datei- & Verzeichnispfad</router-link>
-- <router-link to="/cheatsheet/exception-handling">Cheatsheet: Ausnahmebehandlung</router-link>
+- <router-link to="/cheatsheet/reading-and-writing-files">Cheat Sheet: Lesen und Schreiben von Dateien</router-link>
+- <router-link to="/cheatsheet/file-directory-path">Cheat Sheet: Datei- & Verzeichnispfad</router-link>
+- <router-link to="/cheatsheet/exception-handling">Cheat Sheet: Ausnahmebehandlung</router-link>
 - <router-link to="/modules/os-module">Modul: os</router-link>
 - <router-link to="/builtin/open">open()</router-link>

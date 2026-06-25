@@ -1,5 +1,5 @@
 ---
-title: Python ascii() built-in function - Python Cheatsheet
+title: Python ascii() built-in function - Python Cheat Sheet
 description: As repr(), return a string containing a printable representation of an object, but escape the non-ASCII characters in the string returned by repr() using \\x, \\u, or \\U escapes.
 ---
 
@@ -45,7 +45,7 @@ ascii(['A', 'ë'])
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/manipulating-strings">Cheatsheet: Manipulating Strings</router-link>
+- <router-link to="/cheatsheet/manipulating-strings">Cheat Sheet: Manipulating Strings</router-link>
 - <router-link to="/blog/python-data-types">Blog: Python Data Types</router-link>
 - <router-link to="/builtin/repr">repr()</router-link>
 - <router-link to="/builtin/str">str()</router-link>

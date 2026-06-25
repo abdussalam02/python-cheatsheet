@@ -1,5 +1,5 @@
 ---
-title: Python Shelve Module - Python Cheatsheet
+title: Python Shelve Module - Python Cheat Sheet
 description: A “shelf” is a persistent, dictionary-like object. in a shelf can be essentially arbitrary Python objects — anything that the pickle module can handle.
 ---
 
@@ -58,8 +58,8 @@ with shelve.open('mydata') as shelf_file:
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/reading-and-writing-files">Cheatsheet: Reading and Writing Files</router-link>
-- <router-link to="/cheatsheet/dictionaries">Cheatsheet: Dictionaries</router-link>
-- <router-link to="/cheatsheet/context-manager">Cheatsheet: Context Managers</router-link>
+- <router-link to="/cheatsheet/reading-and-writing-files">Cheat Sheet: Reading and Writing Files</router-link>
+- <router-link to="/cheatsheet/dictionaries">Cheat Sheet: Dictionaries</router-link>
+- <router-link to="/cheatsheet/context-manager">Cheat Sheet: Context Managers</router-link>
 - <router-link to="/builtin/open">open()</router-link>
 - <router-link to="/builtin/dict">dict()</router-link>

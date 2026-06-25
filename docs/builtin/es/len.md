@@ -63,9 +63,9 @@ the list is not empty!
 
 ## Enlaces relevantes
 
-- <router-link to="/cheatsheet/lists-and-tuples">Cheatsheet: Listas y Tuplas</router-link>
-- <router-link to="/cheatsheet/dictionaries">Cheatsheet: Diccionarios</router-link>
-- <router-link to="/cheatsheet/sets">Cheatsheet: Conjuntos</router-link>
+- <router-link to="/cheatsheet/lists-and-tuples">Cheat Sheet: Listas y Tuplas</router-link>
+- <router-link to="/cheatsheet/dictionaries">Cheat Sheet: Diccionarios</router-link>
+- <router-link to="/cheatsheet/sets">Cheat Sheet: Conjuntos</router-link>
 - <router-link to="/blog/python-data-types">Blog: Tipos de Datos de Python</router-link>
 - <router-link to="/builtin/list">list()</router-link>
 - <router-link to="/builtin/tuple">tuple()</router-link>

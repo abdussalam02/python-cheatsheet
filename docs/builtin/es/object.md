@@ -40,7 +40,7 @@ Nota: No tiene atributos que puedas establecer. `o.name = "test"` generaría un 
 
 ## Enlaces relevantes
 
-- <router-link to="/cheatsheet/oop-basics">Cheatsheet: Fundamentos de OOP</router-link>
+- <router-link to="/cheatsheet/oop-basics">Cheat Sheet: Fundamentos de OOP</router-link>
 - <router-link to="/blog/python-data-types">Blog: Tipos de Datos de Python</router-link>
 - <router-link to="/builtin/isinstance">isinstance()</router-link>
 - <router-link to="/builtin/issubclass">issubclass()</router-link>

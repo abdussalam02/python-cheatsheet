@@ -48,7 +48,7 @@ print(round(3.5))
 ## Liens pertinents
 
 - <router-link to="/blog/python-data-types">Blog : Types de données Python</router-link>
-- <router-link to="/cheatsheet/string-formatting">Cheatsheet : Formatage de chaînes</router-link>
+- <router-link to="/cheatsheet/string-formatting">Cheat Sheet : Formatage de chaînes</router-link>
 - <router-link to="/builtin/format">format()</router-link>
 - <router-link to="/builtin/abs">abs()</router-link>
 - <router-link to="/builtin/float">float()</router-link>

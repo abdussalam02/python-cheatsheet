@@ -131,9 +131,9 @@ Non compressé: 76 octets
 
 ## Liens pertinents
 
-- <router-link to="/cheatsheet/reading-and-writing-files">Cheatsheet : Lecture et écriture de fichiers</router-link>
-- <router-link to="/cheatsheet/file-directory-path">Cheatsheet : Chemin de fichier et de répertoire</router-link>
-- <router-link to="/cheatsheet/context-manager">Cheatsheet : Gestionnaires de contexte</router-link>
+- <router-link to="/cheatsheet/reading-and-writing-files">Cheat Sheet : Lecture et écriture de fichiers</router-link>
+- <router-link to="/cheatsheet/file-directory-path">Cheat Sheet : Chemin de fichier et de répertoire</router-link>
+- <router-link to="/cheatsheet/context-manager">Cheat Sheet : Gestionnaires de contexte</router-link>
 - <router-link to="/modules/os-module">Module : os</router-link>
 - <router-link to="/modules/pathlib-module">Module : pathlib</router-link>
 - <router-link to="/builtin/open">open()</router-link>

@@ -46,8 +46,8 @@ print(sum(numbers, 10))  # 10 + 1 + 2 + 3
 
 ## Links relevantes
 
-- <router-link to="/cheatsheet/lists-and-tuples">Cheatsheet: Listas e Tuplas</router-link>
-- <router-link to="/cheatsheet/comprehensions">Cheatsheet: Comprehensions</router-link>
+- <router-link to="/cheatsheet/lists-and-tuples">Cheat Sheet: Listas e Tuplas</router-link>
+- <router-link to="/cheatsheet/comprehensions">Cheat Sheet: Comprehensions</router-link>
 - <router-link to="/blog/python-data-types">Blog: Tipos de Dados do Python</router-link>
 - <router-link to="/modules/itertools-module">Módulo: itertools</router-link>
 - <router-link to="/builtin/len">len()</router-link>

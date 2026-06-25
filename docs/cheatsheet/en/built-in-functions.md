@@ -1,5 +1,5 @@
 ---
-title: Python built-in functions - Python Cheatsheet
+title: Python built-in functions - Python Cheat Sheet
 description: The Python interpreter has a number of functions and types built into it that are always available.
 labUrl: https://labex.io/labs/python-python-built-in-functions-633648?course=python-cheatsheet
 ---

@@ -1,5 +1,5 @@
 ---
-title: Python object() built-in function - Python Cheatsheet
+title: Python object() built-in function - Python Cheat Sheet
 description: Return a new featureless object. object is a base for all classes. It has methods that are common to all instances of Python classes. This function does not accept any arguments.
 ---
 
@@ -40,7 +40,7 @@ Note: It has no attributes you can set. `o.name = "test"` would raise an Attribu
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/oop-basics">Cheatsheet: OOP Basics</router-link>
+- <router-link to="/cheatsheet/oop-basics">Cheat Sheet: OOP Basics</router-link>
 - <router-link to="/blog/python-data-types">Blog: Python Data Types</router-link>
 - <router-link to="/builtin/isinstance">isinstance()</router-link>
 - <router-link to="/builtin/issubclass">issubclass()</router-link>

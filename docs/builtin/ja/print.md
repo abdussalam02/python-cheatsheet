@@ -65,8 +65,8 @@ cats,dogs,mice
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/string-formatting">Cheatsheet: 文字列のフォーマット</router-link>
-- <router-link to="/cheatsheet/manipulating-strings">Cheatsheet: 文字列の操作</router-link>
+- <router-link to="/cheatsheet/string-formatting">Cheat Sheet: 文字列のフォーマット</router-link>
+- <router-link to="/cheatsheet/manipulating-strings">Cheat Sheet: 文字列の操作</router-link>
 - <router-link to="/builtin/format">format()</router-link>
 - <router-link to="/builtin/input">input()</router-link>
 - <router-link to="/builtin/open">open()</router-link>

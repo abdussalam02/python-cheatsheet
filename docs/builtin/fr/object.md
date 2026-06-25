@@ -40,7 +40,7 @@ Note: Il n'a aucun attribut que vous pouvez définir. `o.name = "test"` lèverai
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/oop-basics">Cheatsheet : Bases de l'OOP</router-link>
+- <router-link to="/cheatsheet/oop-basics">Cheat Sheet : Bases de l'OOP</router-link>
 - <router-link to="/blog/python-data-types">Blog : Types de données Python</router-link>
 - <router-link to="/builtin/isinstance">isinstance()</router-link>
 - <router-link to="/builtin/issubclass">issubclass()</router-link>

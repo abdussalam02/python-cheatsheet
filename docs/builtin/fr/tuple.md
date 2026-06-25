@@ -49,8 +49,8 @@ print(my_tuple)
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/lists-and-tuples">Cheatsheet : Listes et Tuples</router-link>
-- <router-link to="/cheatsheet/args-and-kwargs">Cheatsheet : \*args et \*\*kwargs</router-link>
+- <router-link to="/cheatsheet/lists-and-tuples">Cheat Sheet : Listes et Tuples</router-link>
+- <router-link to="/cheatsheet/args-and-kwargs">Cheat Sheet : \*args et \*\*kwargs</router-link>
 - <router-link to="/blog/python-data-types">Blog : Types de données Python</router-link>
 - <router-link to="/blog/python-easy-args-kwargs">Blog : \*args et \*\*kwargs expliqués</router-link>
 - <router-link to="/builtin/len">len()</router-link>

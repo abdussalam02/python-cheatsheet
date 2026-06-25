@@ -1,5 +1,5 @@
 ---
-title: Python Dataclasses - Python Cheatsheet
+title: Python Dataclasses - Python Cheat Sheet
 description: Dataclasses are python classes, but are suited for storing data objects. This module provides a decorator and functions for automatically adding generated special methods such as __init__() and __repr__() to user-defined classes.
 labUrl: https://labex.io/labs/python-python-dataclasses-633652?course=python-cheatsheet
 ---

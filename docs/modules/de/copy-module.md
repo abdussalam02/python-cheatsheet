@@ -88,9 +88,9 @@ b
 
 ## Relevant links (Relevante Links)
 
-- <router-link to="/cheatsheet/oop-basics">Cheatsheet: OOP Basics</router-link>
-- <router-link to="/cheatsheet/lists-and-tuples">Cheatsheet: Listen und Tupel</router-link>
-- <router-link to="/cheatsheet/dictionaries">Cheatsheet: Dictionaries</router-link>
+- <router-link to="/cheatsheet/oop-basics">Cheat Sheet: OOP Basics</router-link>
+- <router-link to="/cheatsheet/lists-and-tuples">Cheat Sheet: Listen und Tupel</router-link>
+- <router-link to="/cheatsheet/dictionaries">Cheat Sheet: Dictionaries</router-link>
 - <router-link to="/blog/python-data-types">Blog: Python Datentypen</router-link>
 - <router-link to="/builtin/object">object()</router-link>
 - <router-link to="/builtin/list">list()</router-link>

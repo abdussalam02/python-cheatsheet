@@ -149,8 +149,8 @@ for i in range(1, 0):
 
 ## Relevante Links
 
-- <router-link to="/cheatsheet/control-flow">Cheatsheet: Kontrollfluss (for-Schleifen)</router-link>
-- <router-link to="/cheatsheet/lists-and-tuples">Cheatsheet: Listen und Tupel</router-link>
+- <router-link to="/cheatsheet/control-flow">Cheat Sheet: Kontrollfluss (for-Schleifen)</router-link>
+- <router-link to="/cheatsheet/lists-and-tuples">Cheat Sheet: Listen und Tupel</router-link>
 - <router-link to="/modules/itertools-module">Modul: itertools</router-link>
 - <router-link to="/builtin/len">len()</router-link>
 - <router-link to="/builtin/reversed">reversed()</router-link>

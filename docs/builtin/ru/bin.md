@@ -46,7 +46,7 @@ print(bin(1000))
 ## Relevant links
 
 - <router-link to="/blog/python-data-types">Blog: Python Data Types</router-link>
-- <router-link to="/cheatsheet/string-formatting">Cheatsheet: String Formatting</router-link>
+- <router-link to="/cheatsheet/string-formatting">Cheat Sheet: String Formatting</router-link>
 - <router-link to="/builtin/int">int()</router-link>
 - <router-link to="/builtin/hex">hex()</router-link>
 - <router-link to="/builtin/oct">oct()</router-link>

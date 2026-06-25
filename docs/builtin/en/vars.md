@@ -1,5 +1,5 @@
 ---
-title: Python vars() built-in function - Python Cheatsheet
+title: Python vars() built-in function - Python Cheat Sheet
 description: Return the __dict__ attribute for a module, class, instance, or any other object with a __dict__ attribute.
 ---
 
@@ -56,9 +56,9 @@ my_function()
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/oop-basics">Cheatsheet: OOP Basics</router-link>
-- <router-link to="/cheatsheet/debugging">Cheatsheet: Debugging</router-link>
-- <router-link to="/cheatsheet/dictionaries">Cheatsheet: Dictionaries</router-link>
+- <router-link to="/cheatsheet/oop-basics">Cheat Sheet: OOP Basics</router-link>
+- <router-link to="/cheatsheet/debugging">Cheat Sheet: Debugging</router-link>
+- <router-link to="/cheatsheet/dictionaries">Cheat Sheet: Dictionaries</router-link>
 - <router-link to="/builtin/dir">dir()</router-link>
 - <router-link to="/builtin/object">object()</router-link>
 - <router-link to="/builtin/globals">globals()</router-link>

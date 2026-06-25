@@ -1,5 +1,5 @@
 ---
-title: Python range() built-in function - Python Cheatsheet
+title: Python range() built-in function - Python Cheat Sheet
 description: Rather than being a function, range is actually an immutable sequence type, as documented in Ranges and Sequence Types — list, tuple, range.
 ---
 
@@ -149,8 +149,8 @@ for i in range(1, 0):
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/control-flow">Cheatsheet: Control Flow (for loops)</router-link>
-- <router-link to="/cheatsheet/lists-and-tuples">Cheatsheet: Lists and Tuples</router-link>
+- <router-link to="/cheatsheet/control-flow">Cheat Sheet: Control Flow (for loops)</router-link>
+- <router-link to="/cheatsheet/lists-and-tuples">Cheat Sheet: Lists and Tuples</router-link>
 - <router-link to="/modules/itertools-module">Module: itertools</router-link>
 - <router-link to="/builtin/len">len()</router-link>
 - <router-link to="/builtin/reversed">reversed()</router-link>

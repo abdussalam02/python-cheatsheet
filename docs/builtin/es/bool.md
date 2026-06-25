@@ -72,7 +72,7 @@ True
 
 ## Enlaces relevantes
 
-- <router-link to="/cheatsheet/control-flow">Cheatsheet: Control de Flujo</router-link>
+- <router-link to="/cheatsheet/control-flow">Cheat Sheet: Control de Flujo</router-link>
 - <router-link to="/blog/python-data-types">Blog: Tipos de Datos de Python</router-link>
 - <router-link to="/builtin/all">all()</router-link>
 - <router-link to="/builtin/any">any()</router-link>

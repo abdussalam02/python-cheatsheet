@@ -131,9 +131,9 @@ Sin comprimir: 76 bytes
 
 ## Enlaces relevantes
 
-- <router-link to="/cheatsheet/reading-and-writing-files">Cheatsheet: Lectura y Escritura de Archivos</router-link>
-- <router-link to="/cheatsheet/file-directory-path">Cheatsheet: Ruta de Archivo y Directorio</router-link>
-- <router-link to="/cheatsheet/context-manager">Cheatsheet: Context Managers</router-link>
+- <router-link to="/cheatsheet/reading-and-writing-files">Cheat Sheet: Lectura y Escritura de Archivos</router-link>
+- <router-link to="/cheatsheet/file-directory-path">Cheat Sheet: Ruta de Archivo y Directorio</router-link>
+- <router-link to="/cheatsheet/context-manager">Cheat Sheet: Context Managers</router-link>
 - <router-link to="/modules/os-module">Módulo: os</router-link>
 - <router-link to="/modules/pathlib-module">Módulo: pathlib</router-link>
 - <router-link to="/builtin/open">open()</router-link>

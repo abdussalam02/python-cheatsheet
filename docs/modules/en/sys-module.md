@@ -1,5 +1,5 @@
 ---
-title: Python Sys Module - Python Cheatsheet
+title: Python Sys Module - Python Cheat Sheet
 description: The sys module gives access to Python runtime details such as command-line arguments, the import path, and the current interpreter version.
 ---
 
@@ -101,4 +101,4 @@ except SystemExit as exc:
 
 - <router-link to="/modules/argparse-module">Module: argparse</router-link>
 - <router-link to="/modules/subprocess-module">Module: subprocess</router-link>
-- <router-link to="/cheatsheet/main">Cheatsheet: Main: Top-Level Script</router-link>
+- <router-link to="/cheatsheet/main">Cheat Sheet: Main: Top-Level Script</router-link>

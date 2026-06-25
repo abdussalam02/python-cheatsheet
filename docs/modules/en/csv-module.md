@@ -1,5 +1,5 @@
 ---
-title: Python CSV Module - Python Cheatsheet
+title: Python CSV Module - Python Cheat Sheet
 description: Python has a csv module, which allows us to work easily with CSV files.
 ---
 

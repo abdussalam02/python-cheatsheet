@@ -142,9 +142,9 @@ with open("filename.json", "w") as f:
 
 ## Liens pertinents
 
-- <router-link to="/cheatsheet/json-yaml">Cheatsheet : JSON et YAML</router-link>
-- <router-link to="/cheatsheet/dictionaries">Cheatsheet : Dictionnaires</router-link>
-- <router-link to="/cheatsheet/reading-and-writing-files">Cheatsheet : Lecture et Écriture de Fichiers</router-link>
+- <router-link to="/cheatsheet/json-yaml">Cheat Sheet : JSON et YAML</router-link>
+- <router-link to="/cheatsheet/dictionaries">Cheat Sheet : Dictionnaires</router-link>
+- <router-link to="/cheatsheet/reading-and-writing-files">Cheat Sheet : Lecture et Écriture de Fichiers</router-link>
 - <router-link to="/blog/python-data-types">Blog : Types de Données Python</router-link>
 - <router-link to="/builtin/dict">dict()</router-link>
 - <router-link to="/builtin/str">str()</router-link>

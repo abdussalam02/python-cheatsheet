@@ -37,8 +37,8 @@ print(l)
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/lists-and-tuples">Cheatsheet: リストとタプル</router-link>
-- <router-link to="/cheatsheet/comprehensions">Cheatsheet: 内包表記</router-link>
+- <router-link to="/cheatsheet/lists-and-tuples">Cheat Sheet: リストとタプル</router-link>
+- <router-link to="/cheatsheet/comprehensions">Cheat Sheet: 内包表記</router-link>
 - <router-link to="/blog/python-comprehensions-step-by-step">Blog: Python 内包表記 ステップバイステップ</router-link>
 - <router-link to="/blog/python-data-types">Blog: Python データ型</router-link>
 - <router-link to="/builtin/tuple">tuple()</router-link>

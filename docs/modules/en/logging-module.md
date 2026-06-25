@@ -1,5 +1,5 @@
 ---
-title: Python Logging Module - Python Cheatsheet
+title: Python Logging Module - Python Cheat Sheet
 description: The logging module lets you record debug, info, warning, error, and exception messages in a consistent way.
 ---
 
@@ -107,6 +107,6 @@ ZeroDivisionError: division by zero
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/debugging">Cheatsheet: Debugging</router-link>
-- <router-link to="/cheatsheet/exception-handling">Cheatsheet: Exception Handling</router-link>
+- <router-link to="/cheatsheet/debugging">Cheat Sheet: Debugging</router-link>
+- <router-link to="/cheatsheet/exception-handling">Cheat Sheet: Exception Handling</router-link>
 - <router-link to="/modules/sys-module">Module: sys</router-link>

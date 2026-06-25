@@ -1,5 +1,5 @@
 ---
-title: Python Decorators - Python Cheatsheet
+title: Python Decorators - Python Cheat Sheet
 description: A Python Decorator is a syntax that provide a concise and reusable way for extending a function or a class.
 labUrl: https://labex.io/labs/python-python-decorators-633654?course=python-cheatsheet
 ---

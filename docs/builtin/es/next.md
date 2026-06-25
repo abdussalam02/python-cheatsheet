@@ -75,7 +75,7 @@ print(next(i))
 
 ## Enlaces relevantes
 
-- <router-link to="/cheatsheet/control-flow">Cheatsheet: Control Flow (bucles for)</router-link>
+- <router-link to="/cheatsheet/control-flow">Cheat Sheet: Control Flow (bucles for)</router-link>
 - <router-link to="/modules/itertools-module">Módulo: itertools</router-link>
 - <router-link to="/builtin/iter">iter()</router-link>
 - <router-link to="/builtin/map">map()</router-link>

@@ -1,5 +1,5 @@
 ---
-title: Python divmod() built-in function - Python Cheatsheet
+title: Python divmod() built-in function - Python Cheat Sheet
 description: Take two (non-complex) numbers as arguments and return a pair of numbers consisting of their quotient and remainder when using integer division. With mixed operand types, the rules for binary arithmetic operators apply.
 ---
 

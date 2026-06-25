@@ -123,8 +123,8 @@ Ici, la sortie normale et les erreurs apparaîtront dans le fichier, dans l'ordr
 
 ## Liens Pertinents
 
-- <router-link to="/cheatsheet/reading-and-writing-files">Cheatsheet : Lecture et Écriture de Fichiers</router-link>
-- <router-link to="/cheatsheet/file-directory-path">Cheatsheet : Chemin de Fichier et de Répertoire</router-link>
-- <router-link to="/cheatsheet/exception-handling">Cheatsheet : Gestion des Exceptions</router-link>
+- <router-link to="/cheatsheet/reading-and-writing-files">Cheat Sheet : Lecture et Écriture de Fichiers</router-link>
+- <router-link to="/cheatsheet/file-directory-path">Cheat Sheet : Chemin de Fichier et de Répertoire</router-link>
+- <router-link to="/cheatsheet/exception-handling">Cheat Sheet : Gestion des Exceptions</router-link>
 - <router-link to="/modules/os-module">Module : os</router-link>
 - <router-link to="/builtin/open">open()</router-link>

@@ -1,5 +1,5 @@
 ---
-title: Python sum() built-in function - Python Cheatsheet
+title: Python sum() built-in function - Python Cheat Sheet
 description: Sums start and the items of an iterable from left to right and returns the total. The iterable’s items are normally numbers, and the start value is not allowed to be a string.
 ---
 
@@ -46,8 +46,8 @@ print(sum(numbers, 10))  # 10 + 1 + 2 + 3
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/lists-and-tuples">Cheatsheet: Lists and Tuples</router-link>
-- <router-link to="/cheatsheet/comprehensions">Cheatsheet: Comprehensions</router-link>
+- <router-link to="/cheatsheet/lists-and-tuples">Cheat Sheet: Lists and Tuples</router-link>
+- <router-link to="/cheatsheet/comprehensions">Cheat Sheet: Comprehensions</router-link>
 - <router-link to="/blog/python-data-types">Blog: Python Data Types</router-link>
 - <router-link to="/modules/itertools-module">Module: itertools</router-link>
 - <router-link to="/builtin/len">len()</router-link>

@@ -1,5 +1,5 @@
 ---
-title: Python map() built-in function - Python Cheatsheet
+title: Python map() built-in function - Python Cheat Sheet
 description: Return an iterator that applies function to every item of iterable, yielding the results. If additional iterable arguments are passed, function must take that many arguments and is applied to the items from all iterables in parallel. With multiple iterables, the iterator stops when the shortest iterable is exhausted. For cases where the function inputs are already arranged into argument tuples.
 ---
 
@@ -91,8 +91,8 @@ Notice how the length of the resultant list is equal to list1's length?
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/functions">Cheatsheet: Functions (including Lambdas)</router-link>
-- <router-link to="/cheatsheet/comprehensions">Cheatsheet: Comprehensions</router-link>
+- <router-link to="/cheatsheet/functions">Cheat Sheet: Functions (including Lambdas)</router-link>
+- <router-link to="/cheatsheet/comprehensions">Cheat Sheet: Comprehensions</router-link>
 - <router-link to="/blog/python-comprehensions-step-by-step">Blog: Python Comprehensions Step-by-Step</router-link>
 - <router-link to="/modules/itertools-module">Module: itertools</router-link>
 - <router-link to="/builtin/filter">filter()</router-link>

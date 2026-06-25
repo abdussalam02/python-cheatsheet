@@ -1,5 +1,5 @@
 ---
-title: Python min() built-in function - Python Cheatsheet
+title: Python min() built-in function - Python Cheat Sheet
 description: Return the smallest item in an iterable or the smallest of two or more arguments.
 ---
 
@@ -52,7 +52,7 @@ print(min(10, 20, 5))
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/lists-and-tuples">Cheatsheet: Lists and Tuples</router-link>
+- <router-link to="/cheatsheet/lists-and-tuples">Cheat Sheet: Lists and Tuples</router-link>
 - <router-link to="/builtin/max">max()</router-link>
 - <router-link to="/builtin/sorted">sorted()</router-link>
 - <router-link to="/builtin/sum">sum()</router-link>

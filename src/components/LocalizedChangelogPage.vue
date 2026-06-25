@@ -16,9 +16,9 @@ const { currentLocale } = useI18n()
 const contentMap: Record<Locale, LocalizedPageContent> = {
   en: {
     title: 'Changelog',
-    metaTitle: 'Changelog - Python Cheatsheet',
-    description: 'See the latest product, content, and documentation updates for Python Cheatsheet.',
-    intro: 'This page summarizes recent updates to the Python Cheatsheet project. The full historical changelog remains available in the main English document.',
+    metaTitle: 'Changelog - Python Cheat Sheet',
+    description: 'See the latest product, content, and documentation updates for Python Cheat Sheet.',
+    intro: 'This page summarizes recent updates to the Python Cheat Sheet project. The full historical changelog remains available in the main English document.',
     summaryTitle: 'Recent Highlights',
     entries: [
       'Interactive LabEx integration, PDF downloads, and multilingual support are now part of the site.',
@@ -42,9 +42,9 @@ const contentMap: Record<Locale, LocalizedPageContent> = {
   },
   es: {
     title: 'Registro de cambios',
-    metaTitle: 'Registro de cambios - Python Cheatsheet',
-    description: 'Consulta las actualizaciones recientes del producto, contenido y documentación de Python Cheatsheet.',
-    intro: 'Esta página resume las actualizaciones recientes de Python Cheatsheet. El historial completo sigue disponible en el changelog principal en inglés.',
+    metaTitle: 'Registro de cambios - Python Cheat Sheet',
+    description: 'Consulta las actualizaciones recientes del producto, contenido y documentación de Python Cheat Sheet.',
+    intro: 'Esta página resume las actualizaciones recientes de Python Cheat Sheet. El historial completo sigue disponible en el changelog principal en inglés.',
     summaryTitle: 'Novedades recientes',
     entries: [
       'El sitio ahora incluye integración con LabEx, descargas en PDF y soporte multilingüe.',
@@ -55,9 +55,9 @@ const contentMap: Record<Locale, LocalizedPageContent> = {
   },
   fr: {
     title: 'Journal des modifications',
-    metaTitle: 'Journal des modifications - Python Cheatsheet',
-    description: 'Consultez les dernières mises à jour produit, contenu et documentation de Python Cheatsheet.',
-    intro: 'Cette page résume les mises à jour récentes de Python Cheatsheet. L’historique complet reste disponible dans le changelog principal en anglais.',
+    metaTitle: 'Journal des modifications - Python Cheat Sheet',
+    description: 'Consultez les dernières mises à jour produit, contenu et documentation de Python Cheat Sheet.',
+    intro: 'Cette page résume les mises à jour récentes de Python Cheat Sheet. L’historique complet reste disponible dans le changelog principal en anglais.',
     summaryTitle: 'Points récents',
     entries: [
       'Le site propose désormais l’intégration LabEx, les téléchargements PDF et le support multilingue.',
@@ -68,9 +68,9 @@ const contentMap: Record<Locale, LocalizedPageContent> = {
   },
   de: {
     title: 'Änderungsprotokoll',
-    metaTitle: 'Änderungsprotokoll - Python Cheatsheet',
-    description: 'Sieh dir die neuesten Produkt-, Inhalts- und Dokumentationsupdates für das Python Cheatsheet an.',
-    intro: 'Diese Seite fasst die jüngsten Updates des Python Cheatsheets zusammen. Das vollständige Änderungsprotokoll bleibt im englischen Hauptdokument verfügbar.',
+    metaTitle: 'Änderungsprotokoll - Python Cheat Sheet',
+    description: 'Sieh dir die neuesten Produkt-, Inhalts- und Dokumentationsupdates für das Python Cheat Sheet an.',
+    intro: 'Diese Seite fasst die jüngsten Updates des Python Cheat Sheets zusammen. Das vollständige Änderungsprotokoll bleibt im englischen Hauptdokument verfügbar.',
     summaryTitle: 'Aktuelle Highlights',
     entries: [
       'Die Website bietet jetzt LabEx-Integration, PDF-Downloads und mehrsprachige Unterstützung.',
@@ -94,9 +94,9 @@ const contentMap: Record<Locale, LocalizedPageContent> = {
   },
   ru: {
     title: 'Журнал изменений',
-    metaTitle: 'Журнал изменений - Python Cheatsheet',
-    description: 'Смотрите последние обновления продукта, контента и документации Python Cheatsheet.',
-    intro: 'На этой странице собраны недавние обновления Python Cheatsheet. Полная история изменений по-прежнему доступна в основном английском changelog.',
+    metaTitle: 'Журнал изменений - Python Cheat Sheet',
+    description: 'Смотрите последние обновления продукта, контента и документации Python Cheat Sheet.',
+    intro: 'На этой странице собраны недавние обновления Python Cheat Sheet. Полная история изменений по-прежнему доступна в основном английском changelog.',
     summaryTitle: 'Недавние обновления',
     entries: [
       'На сайте появились интеграция с LabEx, загрузка PDF и многоязычная поддержка.',
@@ -107,9 +107,9 @@ const contentMap: Record<Locale, LocalizedPageContent> = {
   },
   ko: {
     title: '변경 로그',
-    metaTitle: '변경 로그 - Python Cheatsheet',
-    description: 'Python Cheatsheet의 최신 제품, 콘텐츠, 문서 업데이트를 확인하세요.',
-    intro: '이 페이지는 Python Cheatsheet의 최근 업데이트를 요약합니다. 전체 변경 이력은 영어 메인 변경 로그에서 계속 확인할 수 있습니다.',
+    metaTitle: '변경 로그 - Python Cheat Sheet',
+    description: 'Python Cheat Sheet의 최신 제품, 콘텐츠, 문서 업데이트를 확인하세요.',
+    intro: '이 페이지는 Python Cheat Sheet의 최근 업데이트를 요약합니다. 전체 변경 이력은 영어 메인 변경 로그에서 계속 확인할 수 있습니다.',
     summaryTitle: '최근 주요 변경 사항',
     entries: [
       '사이트에 LabEx 인터랙티브 랩, PDF 다운로드, 다국어 지원이 추가되었습니다.',
@@ -120,9 +120,9 @@ const contentMap: Record<Locale, LocalizedPageContent> = {
   },
   pt: {
     title: 'Registro de alterações',
-    metaTitle: 'Registro de alterações - Python Cheatsheet',
-    description: 'Veja as atualizações mais recentes de produto, conteúdo e documentação do Python Cheatsheet.',
-    intro: 'Esta página resume as atualizações recentes do Python Cheatsheet. O histórico completo continua disponível no changelog principal em inglês.',
+    metaTitle: 'Registro de alterações - Python Cheat Sheet',
+    description: 'Veja as atualizações mais recentes de produto, conteúdo e documentação do Python Cheat Sheet.',
+    intro: 'Esta página resume as atualizações recentes do Python Cheat Sheet. O histórico completo continua disponível no changelog principal em inglês.',
     summaryTitle: 'Destaques recentes',
     entries: [
       'O site agora inclui integração com LabEx, downloads em PDF e suporte multilíngue.',

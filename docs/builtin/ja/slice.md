@@ -62,9 +62,9 @@ print(spam2)
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/lists-and-tuples">Cheatsheet: リストとタプル</router-link>
-- <router-link to="/cheatsheet/manipulating-strings">Cheatsheet: 文字列の操作</router-link>
-- <router-link to="/cheatsheet/comprehensions">Cheatsheet: 内包表記</router-link>
+- <router-link to="/cheatsheet/lists-and-tuples">Cheat Sheet: リストとタプル</router-link>
+- <router-link to="/cheatsheet/manipulating-strings">Cheat Sheet: 文字列の操作</router-link>
+- <router-link to="/cheatsheet/comprehensions">Cheat Sheet: 内包表記</router-link>
 - <router-link to="/modules/itertools-module">Module: itertools (islice)</router-link>
 - <router-link to="/builtin/range">range()</router-link>
 - <router-link to="/builtin/len">len()</router-link>

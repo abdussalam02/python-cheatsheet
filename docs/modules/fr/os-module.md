@@ -16,7 +16,7 @@ Ce module fournit une manière portable d'utiliser des fonctionnalités dépenda
   <base-disclaimer-content>
     Le module <router-link to="/modules/pathlib-module">pathlib</router-link> fournit beaucoup plus de fonctionnalités que celles énumérées ici, comme obtenir le nom de fichier, obtenir l'extension de fichier, lire/écrire un fichier sans l'ouvrir manuellement, etc. Consultez la <a target="_blank" href="https://docs.python.org/3/library/pathlib.html">documentation officielle</a> si vous souhaitez en savoir plus.
     <br>
-    Pour un examen plus approfondi des deux, consultez la page <router-link to="/cheatsheet/file-directory-path">Cheatsheet : Chemins de fichiers et de répertoires</router-link>.
+    Pour un examen plus approfondi des deux, consultez la page <router-link to="/cheatsheet/file-directory-path">Cheat Sheet : Chemins de fichiers et de répertoires</router-link>.
   </base-disclaimer-content>
 </base-disclaimer>
 
@@ -346,8 +346,8 @@ FICHIER DANS /tmp/delicious/walnut/waffles: butter.txt
 
 ## Liens pertinents
 
-- <router-link to="/cheatsheet/file-directory-path">Cheatsheet : Chemins de fichiers et de répertoires</router-link>
-- <router-link to="/cheatsheet/reading-and-writing-files">Cheatsheet : Lecture et écriture de fichiers</router-link>
+- <router-link to="/cheatsheet/file-directory-path">Cheat Sheet : Chemins de fichiers et de répertoires</router-link>
+- <router-link to="/cheatsheet/reading-and-writing-files">Cheat Sheet : Lecture et écriture de fichiers</router-link>
 - <router-link to="/blog/python-pathlib-essentials">Blog : Essentiels de Pathlib</router-link>
 - <router-link to="/modules/pathlib-module">Module : pathlib</router-link>
 - <router-link to="/builtin/open">open()</router-link>

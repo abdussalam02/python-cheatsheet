@@ -1,5 +1,5 @@
 ---
-title: Python Tomllib Module - Python Cheatsheet
+title: Python Tomllib Module - Python Cheat Sheet
 description: The tomllib module parses TOML configuration files from Python.
 ---
 
@@ -88,5 +88,5 @@ with open('pyproject.toml', 'rb') as file:
 ## Relevant links
 
 - <router-link to="/modules/json-module">Module: json</router-link>
-- <router-link to="/cheatsheet/reading-and-writing-files">Cheatsheet: Reading and Writing Files</router-link>
+- <router-link to="/cheatsheet/reading-and-writing-files">Cheat Sheet: Reading and Writing Files</router-link>
 - <router-link to="/builtin/open">open()</router-link>

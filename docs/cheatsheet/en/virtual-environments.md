@@ -1,5 +1,5 @@
 ---
-title: Python Virtual environments - Python Cheatsheet
+title: Python Virtual environments - Python Cheat Sheet
 description: The use of a Virtual Environment is to test python code in encapsulated environments and to also avoid filling the base Python installation with libraries we might use for only one project.
 labUrl: https://labex.io/labs/python-python-virtual-environments-633669?course=python-cheatsheet
 ---

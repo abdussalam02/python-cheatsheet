@@ -38,9 +38,9 @@ export function generateWebSiteSchema(locale: string) {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'Python Cheatsheet',
+    name: 'Python Cheat Sheet',
     url: siteUrl,
-    description: 'A comprehensive Python cheatsheet with examples and explanations',
+    description: 'A comprehensive Python cheat sheet with examples and explanations',
     inLanguage: locale,
     potentialAction: {
       '@type': 'SearchAction',
@@ -57,7 +57,7 @@ export function generateOrganizationSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'Python Cheatsheet',
+    name: 'Python Cheat Sheet',
     url: siteUrl,
     logo: 'https://cdn.jsdelivr.net/gh/labex-labs/files@master/images/labex-logo-dark.svg',
     sameAs: [
@@ -111,12 +111,12 @@ export function generateArticleSchema(
     dateModified: modifiedDate,
     author: {
       '@type': 'Organization',
-      name: 'Python Cheatsheet',
+      name: 'Python Cheat Sheet',
       url: siteUrl,
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Python Cheatsheet',
+      name: 'Python Cheat Sheet',
       logo: {
         '@type': 'ImageObject',
         url: 'https://cdn.jsdelivr.net/gh/labex-labs/files@master/images/labex-logo-dark.svg',
@@ -216,4 +216,3 @@ export function generateStructuredData(
 
   return schemas
 }
-

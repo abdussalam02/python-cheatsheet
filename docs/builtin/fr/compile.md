@@ -48,7 +48,7 @@ Hello, world!
 
 ## Liens pertinents
 
-- <router-link to="/cheatsheet/debugging">Cheatsheet : Débogage</router-link>
+- <router-link to="/cheatsheet/debugging">Cheat Sheet : Débogage</router-link>
 - <router-link to="/builtin/exec">exec()</router-link>
 - <router-link to="/builtin/eval">eval()</router-link>
 - <router-link to="/builtin/breakpoint">breakpoint()</router-link>

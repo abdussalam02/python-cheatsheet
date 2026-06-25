@@ -62,9 +62,9 @@ print(sorted_numbers_desc)
 
 ## Links relevantes
 
-- <router-link to="/cheatsheet/lists-and-tuples">Cheatsheet: Listas e Tuplas</router-link>
-- <router-link to="/cheatsheet/dictionaries">Cheatsheet: Dicionários</router-link>
-- <router-link to="/cheatsheet/functions">Cheatsheet: Funções (para o argumento key)</router-link>
+- <router-link to="/cheatsheet/lists-and-tuples">Cheat Sheet: Listas e Tuplas</router-link>
+- <router-link to="/cheatsheet/dictionaries">Cheat Sheet: Dicionários</router-link>
+- <router-link to="/cheatsheet/functions">Cheat Sheet: Funções (para o argumento key)</router-link>
 - <router-link to="/builtin/list">list()</router-link>
 - <router-link to="/builtin/reversed">reversed()</router-link>
 - <router-link to="/builtin/min">min()</router-link>

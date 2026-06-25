@@ -68,7 +68,7 @@ Los patrones compilados son útiles cuando reutilizas la misma expresión.
 import re
 
 pattern = re.compile(r'^python', re.IGNORECASE)
-print(bool(pattern.match('Python Cheatsheet')))
+print(bool(pattern.match('Python Cheat Sheet')))
 ```
 
 ```output

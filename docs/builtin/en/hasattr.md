@@ -1,5 +1,5 @@
 ---
-title: Python hasattr() built-in function - Python Cheatsheet
+title: Python hasattr() built-in function - Python Cheat Sheet
 description: The arguments are an object and a string. The result is True if the string is the name of one of the object’s attributes, False if not. (This is implemented by calling getattr(object, name) and seeing whether it raises an AttributeError or not.)
 ---
 

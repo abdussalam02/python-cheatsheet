@@ -571,10 +571,10 @@ for each in itertools.zip_longest(colors, data, fillvalue=None):
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/control-flow">Cheatsheet: Fluxo de Controle (laços for)</router-link>
-- <router-link to="/cheatsheet/lists-and-tuples">Cheatsheet: Listas e Tuplas</router-link>
-- <router-link to="/cheatsheet/comprehensions">Cheatsheet: Compreensões</router-link>
-- <router-link to="/cheatsheet/functions">Cheatsheet: Funções (Geradores)</router-link>
+- <router-link to="/cheatsheet/control-flow">Cheat Sheet: Fluxo de Controle (laços for)</router-link>
+- <router-link to="/cheatsheet/lists-and-tuples">Cheat Sheet: Listas e Tuplas</router-link>
+- <router-link to="/cheatsheet/comprehensions">Cheat Sheet: Compreensões</router-link>
+- <router-link to="/cheatsheet/functions">Cheat Sheet: Funções (Geradores)</router-link>
 - <router-link to="/blog/python-comprehensions-step-by-step">Blog: Compreensões Python Passo a Passo</router-link>
 - <router-link to="/builtin/iter">iter()</router-link>
 - <router-link to="/builtin/next">next()</router-link>

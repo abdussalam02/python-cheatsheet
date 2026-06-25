@@ -41,8 +41,8 @@ False
 
 ## Enlaces relevantes
 
-- <router-link to="/cheatsheet/control-flow">Cheatsheet: Control Flow</router-link>
-- <router-link to="/cheatsheet/comprehensions">Cheatsheet: Comprehensions</router-link>
+- <router-link to="/cheatsheet/control-flow">Cheat Sheet: Control Flow</router-link>
+- <router-link to="/cheatsheet/comprehensions">Cheat Sheet: Comprehensions</router-link>
 - <router-link to="/blog/python-data-types">Blog: Tipos de datos de Python</router-link>
 - <router-link to="/builtin/all">all()</router-link>
 - <router-link to="/builtin/bool">bool()</router-link>

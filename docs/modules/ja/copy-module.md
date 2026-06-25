@@ -88,9 +88,9 @@ b
 
 ## 関連リンク (Relevant links)
 
-- <router-link to="/cheatsheet/oop-basics">Cheatsheet: OOP の基本</router-link>
-- <router-link to="/cheatsheet/lists-and-tuples">Cheatsheet: リストとタプル</router-link>
-- <router-link to="/cheatsheet/dictionaries">Cheatsheet: 辞書</router-link>
+- <router-link to="/cheatsheet/oop-basics">Cheat Sheet: OOP の基本</router-link>
+- <router-link to="/cheatsheet/lists-and-tuples">Cheat Sheet: リストとタプル</router-link>
+- <router-link to="/cheatsheet/dictionaries">Cheat Sheet: 辞書</router-link>
 - <router-link to="/blog/python-data-types">Blog: Python のデータ型</router-link>
 - <router-link to="/builtin/object">object()</router-link>
 - <router-link to="/builtin/list">list()</router-link>

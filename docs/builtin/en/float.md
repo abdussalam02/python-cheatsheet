@@ -1,5 +1,5 @@
 ---
-title: Python float() built-in function - Python Cheatsheet
+title: Python float() built-in function - Python Cheat Sheet
 description: Return a floating point number constructed from a number or string x.
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: Python Collections Module - Python Cheatsheet
+title: Python Collections Module - Python Cheat Sheet
 description: The collections module provides specialized container datatypes such as Counter, defaultdict, and deque.
 ---
 
@@ -122,7 +122,7 @@ deque(['docs', 'blog', 'contact'], maxlen=3)
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/lists-and-tuples">Cheatsheet: Lists and Tuples</router-link>
-- <router-link to="/cheatsheet/dictionaries">Cheatsheet: Dictionaries</router-link>
+- <router-link to="/cheatsheet/lists-and-tuples">Cheat Sheet: Lists and Tuples</router-link>
+- <router-link to="/cheatsheet/dictionaries">Cheat Sheet: Dictionaries</router-link>
 - <router-link to="/builtin/list">list()</router-link>
 - <router-link to="/builtin/dict">dict()</router-link>

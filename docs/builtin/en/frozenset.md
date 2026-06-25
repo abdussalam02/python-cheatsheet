@@ -1,5 +1,5 @@
 ---
-title: Python frozenset() built-in function - Python Cheatsheet
+title: Python frozenset() built-in function - Python Cheat Sheet
 description: Return a new frozenset object, optionally with elements taken from iterable. frozenset is a built-in class. See frozenset and Set Types — set, frozenset for documentation about this class.
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: 'Python Comprehensions: A step by step Introduction - Python Cheatsheet'
+title: 'Python Comprehensions: A step by step Introduction - Python Cheat Sheet'
 description: In this short article, we are going to make some for loops and rewrite them, step by step, into comprehensions.
 date: March 22, 2019
 updated: July 3, 2022

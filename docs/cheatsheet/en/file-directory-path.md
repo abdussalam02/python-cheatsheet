@@ -1,5 +1,5 @@
 ---
-title: File and directory Paths - Python Cheatsheet
+title: File and directory Paths - Python Cheat Sheet
 description: There are two main modules in Python that deals with path manipulation. One is the os.path module and the other is the pathlib module.
 labUrl: https://labex.io/labs/python-python-file-and-directory-path-manipulation-633657?course=python-cheatsheet
 ---

@@ -1,5 +1,5 @@
 ---
-title: Python Tempfile Module - Python Cheatsheet
+title: Python Tempfile Module - Python Cheat Sheet
 description: The tempfile module creates temporary files and directories safely.
 ---
 
@@ -88,5 +88,5 @@ True
 ## Relevant links
 
 - <router-link to="/modules/pathlib-module">Module: pathlib</router-link>
-- <router-link to="/cheatsheet/reading-and-writing-files">Cheatsheet: Reading and Writing Files</router-link>
+- <router-link to="/cheatsheet/reading-and-writing-files">Cheat Sheet: Reading and Writing Files</router-link>
 - <router-link to="/builtin/open">open()</router-link>

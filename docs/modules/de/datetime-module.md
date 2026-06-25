@@ -438,7 +438,7 @@ datetime.datetime(2022, 7, 13, 21, 59, 41, 100883)
 
 ## Relevante Links
 
-- <router-link to="/cheatsheet/string-formatting">Cheatsheet: String-Formatierung</router-link>
+- <router-link to="/cheatsheet/string-formatting">Cheat Sheet: String-Formatierung</router-link>
 - <router-link to="/blog/python-data-types">Blog: Python-Datentypen</router-link>
 - <router-link to="/builtin/str">str()</router-link>
 - <router-link to="/builtin/format">format()</router-link>

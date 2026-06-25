@@ -39,7 +39,7 @@ print(ord('a'))
 
 ## Links relevantes
 
-- <router-link to="/cheatsheet/manipulating-strings">Cheatsheet: Manipulando Strings</router-link>
+- <router-link to="/cheatsheet/manipulating-strings">Cheat Sheet: Manipulando Strings</router-link>
 - <router-link to="/blog/python-data-types">Blog: Tipos de Dados do Python</router-link>
 - <router-link to="/builtin/chr">chr()</router-link>
 - <router-link to="/builtin/ascii">ascii()</router-link>

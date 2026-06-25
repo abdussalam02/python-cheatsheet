@@ -1,5 +1,5 @@
 ---
-title: Python Statistics Module - Python Cheatsheet
+title: Python Statistics Module - Python Cheat Sheet
 description: The statistics module provides simple tools for calculating averages, medians, and other descriptive statistics.
 ---
 
@@ -115,5 +115,5 @@ StatisticsError
 ## Relevant links
 
 - <router-link to="/modules/math-module">Module: math</router-link>
-- <router-link to="/cheatsheet/lists-and-tuples">Cheatsheet: Lists and Tuples</router-link>
+- <router-link to="/cheatsheet/lists-and-tuples">Cheat Sheet: Lists and Tuples</router-link>
 - <router-link to="/builtin/round">round()</router-link>

@@ -38,8 +38,8 @@ my_function("hello", "world")
 
 ## Liens pertinents
 
-- <router-link to="/cheatsheet/debugging">Cheatsheet : Débogage</router-link>
-- <router-link to="/cheatsheet/functions">Cheatsheet : Fonctions</router-link>
-- <router-link to="/cheatsheet/dictionaries">Cheatsheet : Dictionnaires</router-link>
+- <router-link to="/cheatsheet/debugging">Cheat Sheet : Débogage</router-link>
+- <router-link to="/cheatsheet/functions">Cheat Sheet : Fonctions</router-link>
+- <router-link to="/cheatsheet/dictionaries">Cheat Sheet : Dictionnaires</router-link>
 - <router-link to="/builtin/globals">globals()</router-link>
 - <router-link to="/builtin/dir">dir()</router-link>

@@ -1,5 +1,5 @@
 ---
-title: Python sorted() built-in function - Python Cheatsheet
+title: Python sorted() built-in function - Python Cheat Sheet
 description: Return a new sorted list from the items in iterable.
 ---
 
@@ -62,9 +62,9 @@ print(sorted_numbers_desc)
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/lists-and-tuples">Cheatsheet: Lists and Tuples</router-link>
-- <router-link to="/cheatsheet/dictionaries">Cheatsheet: Dictionaries</router-link>
-- <router-link to="/cheatsheet/functions">Cheatsheet: Functions (for key argument)</router-link>
+- <router-link to="/cheatsheet/lists-and-tuples">Cheat Sheet: Lists and Tuples</router-link>
+- <router-link to="/cheatsheet/dictionaries">Cheat Sheet: Dictionaries</router-link>
+- <router-link to="/cheatsheet/functions">Cheat Sheet: Functions (for key argument)</router-link>
 - <router-link to="/builtin/list">list()</router-link>
 - <router-link to="/builtin/reversed">reversed()</router-link>
 - <router-link to="/builtin/min">min()</router-link>

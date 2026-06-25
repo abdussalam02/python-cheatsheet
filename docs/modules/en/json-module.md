@@ -1,5 +1,5 @@
 ---
-title: Python JSON Module - Python Cheatsheet
+title: Python JSON Module - Python Cheat Sheet
 description: Python has the built-in module json, which allow us to work with JSON (JavaScript Object Notation) data.
 ---
 
@@ -142,9 +142,9 @@ with open("filename.json", "w") as f:
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/json-yaml">Cheatsheet: JSON and YAML</router-link>
-- <router-link to="/cheatsheet/dictionaries">Cheatsheet: Dictionaries</router-link>
-- <router-link to="/cheatsheet/reading-and-writing-files">Cheatsheet: Reading and Writing Files</router-link>
+- <router-link to="/cheatsheet/json-yaml">Cheat Sheet: JSON and YAML</router-link>
+- <router-link to="/cheatsheet/dictionaries">Cheat Sheet: Dictionaries</router-link>
+- <router-link to="/cheatsheet/reading-and-writing-files">Cheat Sheet: Reading and Writing Files</router-link>
 - <router-link to="/blog/python-data-types">Blog: Python Data Types</router-link>
 - <router-link to="/builtin/dict">dict()</router-link>
 - <router-link to="/builtin/str">str()</router-link>

@@ -88,9 +88,9 @@ b
 
 ## 相关链接
 
-- <router-link to="/cheatsheet/oop-basics">Cheatsheet: OOP 基础</router-link>
-- <router-link to="/cheatsheet/lists-and-tuples">Cheatsheet: 列表和元组</router-link>
-- <router-link to="/cheatsheet/dictionaries">Cheatsheet: 字典</router-link>
+- <router-link to="/cheatsheet/oop-basics">Cheat Sheet: OOP 基础</router-link>
+- <router-link to="/cheatsheet/lists-and-tuples">Cheat Sheet: 列表和元组</router-link>
+- <router-link to="/cheatsheet/dictionaries">Cheat Sheet: 字典</router-link>
 - <router-link to="/blog/python-data-types">Blog: Python 数据类型</router-link>
 - <router-link to="/builtin/object">object()</router-link>
 - <router-link to="/builtin/list">list()</router-link>

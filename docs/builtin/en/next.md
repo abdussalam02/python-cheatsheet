@@ -1,5 +1,5 @@
 ---
-title: Python next() built-in function - Python Cheatsheet
+title: Python next() built-in function - Python Cheat Sheet
 description: Retrieve the next item from the iterator by calling its __next__() method. If default is given, it is returned if the iterator is exhausted, otherwise StopIteration is raised.
 ---
 
@@ -75,7 +75,7 @@ print(next(i))
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/control-flow">Cheatsheet: Control Flow (for loops)</router-link>
+- <router-link to="/cheatsheet/control-flow">Cheat Sheet: Control Flow (for loops)</router-link>
 - <router-link to="/modules/itertools-module">Module: itertools</router-link>
 - <router-link to="/builtin/iter">iter()</router-link>
 - <router-link to="/builtin/map">map()</router-link>

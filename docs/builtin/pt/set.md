@@ -47,8 +47,8 @@ print(my_set)
 
 ## Links Relevantes
 
-- <router-link to="/cheatsheet/sets">Cheatsheet: Sets</router-link>
-- <router-link to="/cheatsheet/comprehensions">Cheatsheet: Comprehensions</router-link>
+- <router-link to="/cheatsheet/sets">Cheat Sheet: Sets</router-link>
+- <router-link to="/cheatsheet/comprehensions">Cheat Sheet: Comprehensions</router-link>
 - <router-link to="/blog/python-sets-what-why-how">Blog: Python Sets - O Que, Por Que, Como</router-link>
 - <router-link to="/blog/python-data-types">Blog: Tipos de Dados Python</router-link>
 - <router-link to="/builtin/len">len()</router-link>

@@ -1,5 +1,5 @@
 ---
-title: Python compile() built-in function - Python Cheatsheet
+title: Python compile() built-in function - Python Cheat Sheet
 description: Compile the source into a code or AST object. Code objects can be executed by exec() or eval(). source can either be a normal string, a byte string, or an AST object. Refer to the ast module documentation for information on how to work with AST objects.
 ---
 
@@ -48,7 +48,7 @@ Hello, world!
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/debugging">Cheatsheet: Debugging</router-link>
+- <router-link to="/cheatsheet/debugging">Cheat Sheet: Debugging</router-link>
 - <router-link to="/builtin/exec">exec()</router-link>
 - <router-link to="/builtin/eval">eval()</router-link>
 - <router-link to="/builtin/breakpoint">breakpoint()</router-link>

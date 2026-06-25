@@ -1,5 +1,5 @@
 ---
-title: Python Basics - Python Cheatsheet
+title: Python Basics - Python Cheat Sheet
 description: Learn Python basics with our comprehensive guide covering operators, data types, variables, functions, and more. Perfect for beginners learning Python programming fundamentals.
 labUrl: https://labex.io/labs/python-python-basics-633647?course=python-cheatsheet
 ---

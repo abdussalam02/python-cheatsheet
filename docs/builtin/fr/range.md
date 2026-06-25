@@ -149,8 +149,8 @@ for i in range(1, 0):
 
 ## Liens pertinents
 
-- <router-link to="/cheatsheet/control-flow">Cheatsheet : Flux de contrôle (boucles for)</router-link>
-- <router-link to="/cheatsheet/lists-and-tuples">Cheatsheet : Listes et Tuples</router-link>
+- <router-link to="/cheatsheet/control-flow">Cheat Sheet : Flux de contrôle (boucles for)</router-link>
+- <router-link to="/cheatsheet/lists-and-tuples">Cheat Sheet : Listes et Tuples</router-link>
 - <router-link to="/modules/itertools-module">Module : itertools</router-link>
 - <router-link to="/builtin/len">len()</router-link>
 - <router-link to="/builtin/reversed">reversed()</router-link>

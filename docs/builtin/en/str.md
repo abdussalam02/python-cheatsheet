@@ -1,5 +1,5 @@
 ---
-title: Python str() built-in function - Python Cheatsheet
+title: Python str() built-in function - Python Cheat Sheet
 description: Return a string version of object. If object is not provided, returns the empty string. Otherwise, the behavior of str() depends on whether encoding or errors is given.
 ---
 
@@ -57,8 +57,8 @@ str()
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/manipulating-strings">Cheatsheet: Manipulating Strings</router-link>
-- <router-link to="/cheatsheet/string-formatting">Cheatsheet: String Formatting</router-link>
+- <router-link to="/cheatsheet/manipulating-strings">Cheat Sheet: Manipulating Strings</router-link>
+- <router-link to="/cheatsheet/string-formatting">Cheat Sheet: String Formatting</router-link>
 - <router-link to="/blog/python-data-types">Blog: Python Data Types</router-link>
 - <router-link to="/builtin/repr">repr()</router-link>
 - <router-link to="/builtin/ascii">ascii()</router-link>

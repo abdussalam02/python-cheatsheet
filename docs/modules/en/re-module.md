@@ -1,5 +1,5 @@
 ---
-title: Python re Module - Python Cheatsheet
+title: Python re Module - Python Cheat Sheet
 description: The re module lets you search, match, split, and replace text using regular expressions.
 ---
 
@@ -68,7 +68,7 @@ Compiled patterns are useful when you reuse the same expression.
 import re
 
 pattern = re.compile(r'^python', re.IGNORECASE)
-print(bool(pattern.match('Python Cheatsheet')))
+print(bool(pattern.match('Python Cheat Sheet')))
 ```
 
 ```output
@@ -112,6 +112,6 @@ No match
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/regular-expressions">Cheatsheet: Regular Expressions</router-link>
-- <router-link to="/cheatsheet/manipulating-strings">Cheatsheet: Manipulating Strings</router-link>
+- <router-link to="/cheatsheet/regular-expressions">Cheat Sheet: Regular Expressions</router-link>
+- <router-link to="/cheatsheet/manipulating-strings">Cheat Sheet: Manipulating Strings</router-link>
 - <router-link to="/builtin/str">str()</router-link>

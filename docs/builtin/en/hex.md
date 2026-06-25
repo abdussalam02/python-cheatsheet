@@ -1,5 +1,5 @@
 ---
-title: Python hex() built-in function - Python Cheatsheet
+title: Python hex() built-in function - Python Cheat Sheet
 description: Convert an integer number to a lowercase hexadecimal string prefixed with “0x”. If x is not a Python int object, it has to define an __index__() method that returns an integer.
 ---
 

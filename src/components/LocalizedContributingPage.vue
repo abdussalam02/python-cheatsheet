@@ -17,9 +17,9 @@ const { currentLocale } = useI18n()
 const contentMap: Record<Locale, LocalizedPageContent> = {
   en: {
     title: 'Contributing',
-    metaTitle: 'Contributing - Python Cheatsheet',
-    description: 'Learn how to contribute new content, fixes, and improvements to the Python Cheatsheet project.',
-    intro: 'The Python Cheatsheet is open source. Contributions are welcome for content updates, bug fixes, translations, and site improvements.',
+    metaTitle: 'Contributing - Python Cheat Sheet',
+    description: 'Learn how to contribute new content, fixes, and improvements to the Python Cheat Sheet project.',
+    intro: 'The Python Cheat Sheet is open source. Contributions are welcome for content updates, bug fixes, translations, and site improvements.',
     points: [
       'Open an issue if you want to report a bug or suggest an improvement.',
       'Submit pull requests for cheatsheet pages, modules, blog posts, or site fixes.',
@@ -45,9 +45,9 @@ const contentMap: Record<Locale, LocalizedPageContent> = {
   },
   es: {
     title: 'Contribuir',
-    metaTitle: 'Contribuir - Python Cheatsheet',
-    description: 'Aprende cómo contribuir con contenido, correcciones y mejoras al proyecto Python Cheatsheet.',
-    intro: 'Python Cheatsheet es un proyecto de código abierto. Se aceptan contribuciones de contenido, correcciones de errores, traducciones y mejoras del sitio.',
+    metaTitle: 'Contribuir - Python Cheat Sheet',
+    description: 'Aprende cómo contribuir con contenido, correcciones y mejoras al proyecto Python Cheat Sheet.',
+    intro: 'Python Cheat Sheet es un proyecto de código abierto. Se aceptan contribuciones de contenido, correcciones de errores, traducciones y mejoras del sitio.',
     points: [
       'Abre un issue si quieres informar un error o proponer una mejora.',
       'Envía pull requests para páginas del cheatsheet, módulos, artículos del blog o correcciones del sitio.',
@@ -59,9 +59,9 @@ const contentMap: Record<Locale, LocalizedPageContent> = {
   },
   fr: {
     title: 'Contribuer',
-    metaTitle: 'Contribuer - Python Cheatsheet',
-    description: 'Découvrez comment contribuer avec du contenu, des corrections et des améliorations au projet Python Cheatsheet.',
-    intro: 'Python Cheatsheet est un projet open source. Les contributions de contenu, correctifs, traductions et améliorations du site sont les bienvenues.',
+    metaTitle: 'Contribuer - Python Cheat Sheet',
+    description: 'Découvrez comment contribuer avec du contenu, des corrections et des améliorations au projet Python Cheat Sheet.',
+    intro: 'Python Cheat Sheet est un projet open source. Les contributions de contenu, correctifs, traductions et améliorations du site sont les bienvenues.',
     points: [
       'Ouvrez une issue pour signaler un bug ou proposer une amélioration.',
       'Envoyez des pull requests pour les pages du cheatsheet, les modules, les articles de blog ou les corrections du site.',
@@ -73,12 +73,12 @@ const contentMap: Record<Locale, LocalizedPageContent> = {
   },
   de: {
     title: 'Mitwirken',
-    metaTitle: 'Mitwirken - Python Cheatsheet',
-    description: 'Erfahre, wie du Inhalte, Korrekturen und Verbesserungen zum Python-Cheatsheet-Projekt beitragen kannst.',
-    intro: 'Das Python Cheatsheet ist ein Open-Source-Projekt. Beiträge zu Inhalten, Fehlerbehebungen, Übersetzungen und Verbesserungen der Website sind willkommen.',
+    metaTitle: 'Mitwirken - Python Cheat Sheet',
+    description: 'Erfahre, wie du Inhalte, Korrekturen und Verbesserungen zum Python-Cheat Sheet-Projekt beitragen kannst.',
+    intro: 'Das Python Cheat Sheet ist ein Open-Source-Projekt. Beiträge zu Inhalten, Fehlerbehebungen, Übersetzungen und Verbesserungen der Website sind willkommen.',
     points: [
       'Erstelle ein Issue, wenn du einen Fehler melden oder eine Verbesserung vorschlagen möchtest.',
-      'Sende Pull Requests für Cheatsheet-Seiten, Module, Blogartikel oder Website-Korrekturen.',
+      'Sende Pull Requests für Cheat Sheet-Seiten, Module, Blogartikel oder Website-Korrekturen.',
       'Halte Änderungen möglichst fokussiert und gut prüfbar und befolge die Richtlinien des Repositories.',
     ],
     setupTitle: 'Erste Schritte',
@@ -101,9 +101,9 @@ const contentMap: Record<Locale, LocalizedPageContent> = {
   },
   ru: {
     title: 'Участие в проекте',
-    metaTitle: 'Участие в проекте - Python Cheatsheet',
-    description: 'Узнайте, как вносить контент, исправления и улучшения в проект Python Cheatsheet.',
-    intro: 'Python Cheatsheet — это проект с открытым исходным кодом. Мы приветствуем обновления контента, исправления ошибок, переводы и улучшения сайта.',
+    metaTitle: 'Участие в проекте - Python Cheat Sheet',
+    description: 'Узнайте, как вносить контент, исправления и улучшения в проект Python Cheat Sheet.',
+    intro: 'Python Cheat Sheet — это проект с открытым исходным кодом. Мы приветствуем обновления контента, исправления ошибок, переводы и улучшения сайта.',
     points: [
       'Создайте issue, если хотите сообщить об ошибке или предложить улучшение.',
       'Отправляйте pull request для страниц шпаргалки, модулей, статей блога или исправлений сайта.',
@@ -115,9 +115,9 @@ const contentMap: Record<Locale, LocalizedPageContent> = {
   },
   ko: {
     title: '기여하기',
-    metaTitle: '기여하기 - Python Cheatsheet',
-    description: 'Python Cheatsheet 프로젝트에 콘텐츠, 수정 사항, 개선 사항을 기여하는 방법을 안내합니다.',
-    intro: 'Python Cheatsheet는 오픈 소스 프로젝트입니다. 콘텐츠 업데이트, 버그 수정, 번역, 사이트 개선 기여를 환영합니다.',
+    metaTitle: '기여하기 - Python Cheat Sheet',
+    description: 'Python Cheat Sheet 프로젝트에 콘텐츠, 수정 사항, 개선 사항을 기여하는 방법을 안내합니다.',
+    intro: 'Python Cheat Sheet는 오픈 소스 프로젝트입니다. 콘텐츠 업데이트, 버그 수정, 번역, 사이트 개선 기여를 환영합니다.',
     points: [
       '버그를 제보하거나 개선안을 제안하려면 먼저 이슈를 열어 주세요.',
       '치트시트 페이지, 모듈 문서, 블로그 글, 사이트 수정은 Pull Request로 제출할 수 있습니다.',
@@ -129,9 +129,9 @@ const contentMap: Record<Locale, LocalizedPageContent> = {
   },
   pt: {
     title: 'Contribuir',
-    metaTitle: 'Contribuir - Python Cheatsheet',
-    description: 'Saiba como contribuir com conteúdo, correções e melhorias para o projeto Python Cheatsheet.',
-    intro: 'Python Cheatsheet é um projeto de código aberto. Contribuições com conteúdo, correções de bugs, traduções e melhorias do site são bem-vindas.',
+    metaTitle: 'Contribuir - Python Cheat Sheet',
+    description: 'Saiba como contribuir com conteúdo, correções e melhorias para o projeto Python Cheat Sheet.',
+    intro: 'Python Cheat Sheet é um projeto de código aberto. Contribuições com conteúdo, correções de bugs, traduções e melhorias do site são bem-vindas.',
     points: [
       'Abra uma issue se quiser relatar um bug ou sugerir uma melhoria.',
       'Envie pull requests para páginas do cheatsheet, módulos, posts do blog ou correções no site.',

@@ -1,5 +1,5 @@
 ---
-title: 'Breaking Free: Python 3.14 Shatters the GIL Ceiling - Python Cheatsheet'
+title: 'Breaking Free: Python 3.14 Shatters the GIL Ceiling - Python Cheat Sheet'
 description: A Deep Dive Into Python’s Most Exciting Update Since 3.10
 date: July 8, 2025
 updated: July 8, 2025

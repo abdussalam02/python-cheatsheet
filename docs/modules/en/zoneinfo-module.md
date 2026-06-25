@@ -1,5 +1,5 @@
 ---
-title: Python Zoneinfo Module - Python Cheatsheet
+title: Python Zoneinfo Module - Python Cheat Sheet
 description: The zoneinfo module provides IANA time zone support for datetime objects.
 ---
 
@@ -73,4 +73,4 @@ Asia/Shanghai
 ## Relevant links
 
 - <router-link to="/modules/datetime-module">Module: datetime</router-link>
-- <router-link to="/cheatsheet/basics">Cheatsheet: Basics</router-link>
+- <router-link to="/cheatsheet/basics">Cheat Sheet: Basics</router-link>

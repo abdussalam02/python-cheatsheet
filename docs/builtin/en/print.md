@@ -1,5 +1,5 @@
 ---
-title: Python print() built-in function - Python Cheatsheet
+title: Python print() built-in function - Python Cheat Sheet
 description: Print objects to the text stream file, separated by sep and followed by end. sep, end, file, and flush, if present, must be given as keyword arguments.
 ---
 
@@ -65,8 +65,8 @@ cats,dogs,mice
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/string-formatting">Cheatsheet: String Formatting</router-link>
-- <router-link to="/cheatsheet/manipulating-strings">Cheatsheet: Manipulating Strings</router-link>
+- <router-link to="/cheatsheet/string-formatting">Cheat Sheet: String Formatting</router-link>
+- <router-link to="/cheatsheet/manipulating-strings">Cheat Sheet: Manipulating Strings</router-link>
 - <router-link to="/builtin/format">format()</router-link>
 - <router-link to="/builtin/input">input()</router-link>
 - <router-link to="/builtin/open">open()</router-link>

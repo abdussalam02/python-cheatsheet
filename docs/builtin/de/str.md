@@ -57,8 +57,8 @@ str()
 
 ## Relevante Links
 
-- <router-link to="/cheatsheet/manipulating-strings">Cheatsheet: Zeichenketten bearbeiten</router-link>
-- <router-link to="/cheatsheet/string-formatting">Cheatsheet: String-Formatierung</router-link>
+- <router-link to="/cheatsheet/manipulating-strings">Cheat Sheet: Zeichenketten bearbeiten</router-link>
+- <router-link to="/cheatsheet/string-formatting">Cheat Sheet: String-Formatierung</router-link>
 - <router-link to="/blog/python-data-types">Blog: Python Datentypen</router-link>
 - <router-link to="/builtin/repr">repr()</router-link>
 - <router-link to="/builtin/ascii">ascii()</router-link>

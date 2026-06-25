@@ -46,9 +46,9 @@ Hello from Child
 
 ## 関連リンク (Relevant links)
 
-- <router-link to="/cheatsheet/oop-basics">Cheatsheet: OOP の基本</router-link>
-- <router-link to="/cheatsheet/decorators">Cheatsheet: デコレータ</router-link>
-- <router-link to="/cheatsheet/functions">Cheatsheet: 関数</router-link>
+- <router-link to="/cheatsheet/oop-basics">Cheat Sheet: OOP の基本</router-link>
+- <router-link to="/cheatsheet/decorators">Cheat Sheet: デコレータ</router-link>
+- <router-link to="/cheatsheet/functions">Cheat Sheet: 関数</router-link>
 - <router-link to="/builtin/object">object()</router-link>
 - <router-link to="/builtin/isinstance">isinstance()</router-link>
 - <router-link to="/builtin/issubclass">issubclass()</router-link>

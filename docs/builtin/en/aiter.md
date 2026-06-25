@@ -1,5 +1,5 @@
 ---
-title: Python aiter() built-in function - Python Cheatsheet
+title: Python aiter() built-in function - Python Cheat Sheet
 description: Return an asynchronous iterator for an asynchronous iterable. Equivalent to calling x.__aiter__().
 ---
 
@@ -62,8 +62,8 @@ async def main():
 
 ## Relevant links
 
-- <router-link to="/cheatsheet/control-flow">Cheatsheet: Control Flow (async for)</router-link>
-- <router-link to="/cheatsheet/functions">Cheatsheet: Functions (async def)</router-link>
+- <router-link to="/cheatsheet/control-flow">Cheat Sheet: Control Flow (async for)</router-link>
+- <router-link to="/cheatsheet/functions">Cheat Sheet: Functions (async def)</router-link>
 - <router-link to="/modules/itertools-module">Module: itertools</router-link>
 - <router-link to="/builtin/iter">iter()</router-link>
 - <router-link to="/builtin/next">next()</router-link>

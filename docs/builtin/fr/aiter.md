@@ -62,8 +62,8 @@ async def main():
 
 ## Liens pertinents
 
-- <router-link to="/cheatsheet/control-flow">Cheatsheet : Flux de contrôle (async for)</router-link>
-- <router-link to="/cheatsheet/functions">Cheatsheet : Fonctions (async def)</router-link>
+- <router-link to="/cheatsheet/control-flow">Cheat Sheet : Flux de contrôle (async for)</router-link>
+- <router-link to="/cheatsheet/functions">Cheat Sheet : Fonctions (async def)</router-link>
 - <router-link to="/modules/itertools-module">Module : itertools</router-link>
 - <router-link to="/builtin/iter">iter()</router-link>
 - <router-link to="/builtin/next">next()</router-link>
